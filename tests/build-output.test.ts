@@ -10,6 +10,11 @@ import { dirname, join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { createEditorialBuildReport } from "../scripts/report-build-output.ts";
 
+const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as {
+	scripts: Record<string, string>;
+};
+const playwrightConfig = readFileSync("playwright.config.ts", "utf8");
+
 const temporaryDirectories: string[] = [];
 
 function fixture() {
@@ -66,6 +71,23 @@ describe("editorial build report", () => {
 	it("rejects a production build with no publishable homepage", () => {
 		expect(() => createEditorialBuildReport(fixture(), "production")).toThrow(
 			"Production build has no publishable editorial documents",
+		);
+	});
+});
+
+describe("local editorial preview", () => {
+	it("serves the standalone Node build through the shared preview command", () => {
+		expect(packageJson.scripts.preview).toBe(
+			"cross-env HOST=127.0.0.1 PORT=4322 node dist/server/entry.mjs",
+		);
+		expect(packageJson.scripts["preview:editorial"]).toBe(
+			"pnpm build:preview && pnpm preview",
+		);
+		expect(playwrightConfig).toContain(
+			'command: "pnpm build:preview && pnpm preview"',
+		);
+		expect(playwrightConfig).toContain(
+			'baseURL: "http://127.0.0.1:4322"',
 		);
 	});
 });

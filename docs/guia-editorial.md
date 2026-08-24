@@ -15,7 +15,7 @@ O seletor de idioma, os alternates e o sitemap só anunciam uma tradução quand
 
 - `pnpm dev` ou `pnpm dev:preview`: ambiente de desenvolvimento local do Astro/TinaCMS, com `import.meta.env.DEV` ativo. Páginas em `draft` podem ser vistas localmente para revisão, mas continuam marcadas com `noindex,nofollow`.
 - `pnpm build:preview`: build local de produção em modo de preview editorial. Usa `EDITORIAL_PREVIEW=true` para gerar documentos `draft` em modo de revisão, sem publicar no sitemap e com meta robots `noindex,nofollow`.
-- `pnpm preview:editorial`: cria o build editorial completo e abre o preview local correspondente.
+- `pnpm preview:editorial`: cria o build editorial completo e abre o preview local correspondente em `http://127.0.0.1:4322`, sem colidir com o servidor de desenvolvimento na porta 4321. O servidor usa diretamente o entrypoint standalone gerado pelo adapter Node; `pnpm preview` volta a servir o build existente sem o reconstruir.
 - `pnpm build:local`: build local equivalente a produção, sem checks do Tina Cloud. Documentos `draft` e `approvalPending` continuam excluídos das páginas publicáveis e do sitemap. O comando falha deliberadamente se não existir nenhum documento publicável, se a Home PT-PT não estiver publicável ou se algum HTML esperado estiver vazio/em falta.
 - `pnpm build`: build de produção com checks do Tina Cloud quando a configuração remota estiver disponível. Aplica as mesmas guardas de publicação do build local.
 
