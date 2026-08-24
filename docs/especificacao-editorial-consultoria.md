@@ -14,12 +14,12 @@ tradução EN, assets finais ou refinamento visual.
 
 | Página | Fonte textual PT-PT | Strings | Estado de migração |
 | --- | --- | ---: | --- |
-| Hub Consultoria | `src/messages/pt-pt/consultoria-hub.json` + cartões usados de `src/messages/pt-pt/_interface.json` | 26 | A migrar integralmente como draft |
-| Migração e Mobilidade | `src/messages/pt-pt/consultoria-migracao.json` | 39 | A migrar integralmente como draft |
-| Consultoria Jurídica | `src/messages/pt-pt/consultoria-juridica.json` | 32 | A migrar integralmente como draft |
-| Ambiental e ESG | `src/messages/pt-pt/consultoria-ambiental-esg.json` | 53 | A migrar integralmente como draft |
-| Políticas Públicas e Governança | `src/messages/pt-pt/consultoria-politicas-publicas.json` | 30 | A migrar integralmente como draft |
-| Pareceres e Notas Técnicas | `src/messages/pt-pt/consultoria-pareceres.json` | 23 | A migrar integralmente como draft |
+| Hub Consultoria | `src/messages/pt-pt/consultoria-hub.json` + cartões usados de `src/messages/pt-pt/_interface.json` | 26 | Migrado integralmente como draft |
+| Migração e Mobilidade | `src/messages/pt-pt/consultoria-migracao.json` | 39 | Migrado integralmente como draft |
+| Consultoria Jurídica | `src/messages/pt-pt/consultoria-juridica.json` | 32 | Migrado integralmente como draft |
+| Ambiental e ESG | `src/messages/pt-pt/consultoria-ambiental-esg.json` | 53 | Migrado integralmente como draft |
+| Políticas Públicas e Governança | `src/messages/pt-pt/consultoria-politicas-publicas.json` | 30 | Migrado integralmente como draft |
+| Pareceres e Notas Técnicas | `src/messages/pt-pt/consultoria-pareceres.json` | 23 | Migrado integralmente como draft |
 
 Total: **203 strings PT-PT**.
 

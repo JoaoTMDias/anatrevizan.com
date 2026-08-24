@@ -37,6 +37,18 @@ const jsonFiles = (directory: string): string[] =>
 				: [];
 	});
 
+const countStrings = (value: unknown): number => {
+	if (typeof value === "string") return 1;
+	if (Array.isArray(value))
+		return value.reduce((total, item) => total + countStrings(item), 0);
+	if (value && typeof value === "object")
+		return Object.values(value).reduce(
+			(total, item) => total + countStrings(item),
+			0,
+		);
+	return 0;
+};
+
 describe("editorial validation", () => {
 	it("allows the Tina Home form to keep its canonical empty slug", () => {
 		const slugField = localizedDocumentFields.find(
@@ -194,6 +206,80 @@ describe("editorial validation", () => {
 			expect(value.approvalPending).toBe(true);
 			expect(value.seo.noindex).toBe(true);
 			expect(value[name]).toBeUndefined();
+		}
+	});
+
+	it("accounts for all 203 Portuguese consulting source strings", () => {
+		const directory = join(process.cwd(), "src/content/editorial/pt-PT");
+		const hub = JSON.parse(readFileSync(join(directory, "consulting.json"), "utf8"));
+		const serviceNames = [
+			"immigration-mobility",
+			"legal",
+			"environmental-esg",
+			"public-policy",
+			"legal-opinions",
+		];
+		const expectedServiceCounts = [39, 32, 53, 30, 23];
+
+		const hubEditorialStrings =
+			1 +
+			countStrings({
+				subtitle: hub.consultingHub.subtitle,
+				introHeading: hub.consultingHub.introHeading,
+				introText: hub.consultingHub.introText,
+				filters: hub.consultingHub.filters,
+				areas: hub.consultingHub.areas.map(
+					(area: { title: string; tag: string; summary: string }) => ({
+						title: area.title,
+						tag: area.tag,
+						summary: area.summary,
+					}),
+				),
+				areaCta: hub.consultingHub.areaCta,
+				note: hub.consultingHub.note,
+				ctaHeading: hub.consultingHub.ctaHeading,
+				ctaText: hub.consultingHub.ctaText,
+			});
+		expect(hubEditorialStrings).toBe(26);
+
+		for (const [index, name] of serviceNames.entries()) {
+			const document = JSON.parse(
+				readFileSync(join(directory, `${name}.json`), "utf8"),
+			);
+			const technicalStrings = document.consultingService.crosslinkRouteKey ? 1 : 0;
+			expect(
+				1 + countStrings(document.consultingService) - technicalStrings,
+			).toBe(expectedServiceCounts[index]);
+			expect(document.status).toBe("draft");
+			expect(document.approvalPending).toBe(true);
+			expect(document.seo.noindex).toBe(true);
+		}
+
+		const manifest = readFileSync(
+			join(process.cwd(), "docs/especificacao-editorial-consultoria.md"),
+			"utf8",
+		);
+		expect(manifest).toContain("203 strings PT-PT");
+	});
+
+	it("keeps Portuguese consulting content out of English previews", () => {
+		for (const name of [
+			"consulting",
+			"immigration-mobility",
+			"legal",
+			"environmental-esg",
+			"public-policy",
+			"legal-opinions",
+		]) {
+			const value = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/en/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(value.approvalPending).toBe(true);
+			expect(value.consultingHub).toBeUndefined();
+			expect(value.consultingService).toBeUndefined();
 		}
 	});
 
