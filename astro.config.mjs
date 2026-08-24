@@ -73,6 +73,12 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: [tailwindcss(), tinaAdminDevRedirect()],
+		server: {
+			// Tina compiles its config into timestamped cache directories while
+			// starting. Vite 8 otherwise treats every temporary tsconfig.json as a
+			// project-config change and repeatedly invalidates Astro's SSR graph.
+			watch: { ignored: ['**/tina/__generated__/.cache/**'] },
+		},
 		// Bundle @tinacms/astro into the SSR build instead of resolving it
 		// per-module on every cold request — otherwise each
 		// `import TinaMarkdown from '@tinacms/astro/TinaMarkdown.astro'`

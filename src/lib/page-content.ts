@@ -7,7 +7,13 @@ export interface LinkCard {
 }
 
 export interface HomeContent {
-	hero: { heading: string; subtitle: string; brandWords: string[]; primaryCta: string; secondaryCta: string };
+	hero: {
+		heading: string;
+		subtitle: string;
+		brandWords: string[];
+		primaryCta: string;
+		secondaryCta: string;
+	};
 	gateways: Array<LinkCard & { eyebrow: string; cta: string }>;
 	differencesTitle: string;
 	differencesSubtitle: string;
@@ -19,7 +25,14 @@ export interface HomeContent {
 	academicSubtitle: string;
 	publicationsCta: string;
 	speakerKitCta: string;
-	featuredPublications: Array<{ title: string; publication?: string | null; year: string; language: string; badge?: string | null; url: string }>;
+	featuredPublications: Array<{
+		title: string;
+		publication?: string | null;
+		year: string;
+		language: string;
+		badge?: string | null;
+		url: string;
+	}>;
 	credentialsLabel: string;
 	credentials: string[];
 	finalCtaHeading: string;
@@ -46,6 +59,8 @@ export interface AboutContent {
 	finalCtaLabel: string;
 }
 
-export function hasValidRouteKey(value: { routeKey?: unknown }): value is { routeKey: RouteKey } {
+export function hasValidRouteKey(value: {
+	routeKey?: unknown;
+}): value is { routeKey: RouteKey } {
 	return isRouteKey(value.routeKey);
 }

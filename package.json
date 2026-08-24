@@ -7,7 +7,7 @@
 		"node": ">=22.22.0"
 	},
 	"scripts": {
-		"dev": "tinacms dev -c \"astro dev\"",
+		"dev": "tinacms dev -c \"cross-env ASTRO_DEV_BACKGROUND=0 astro dev\"",
 		"build": "pnpm validate:content && tinacms build --content=local -c \"astro build\"",
 		"build:local": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
 		"build:preview": "pnpm validate:content && cross-env EDITORIAL_PREVIEW=true tinacms build --local --skip-cloud-checks -c \"astro build\"",

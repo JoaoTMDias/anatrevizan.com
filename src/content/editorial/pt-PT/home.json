@@ -1,37 +1,139 @@
 {
-	"translationGroup": "home", "locale": "pt-PT", "routeKey": "home", "slug": "", "status": "draft", "approvalPending": true,
-	"title": "Início", "summary": "Conteúdo importado integralmente da referência Next.js; afirmações profissionais por aprovar.",
-	"seo": { "title": "Dra. Ana Trevizan — Consultoria Jurídica e Ambiental", "description": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.", "noindex": true },
+	"translationGroup": "home",
+	"locale": "pt-PT",
+	"routeKey": "home",
+	"slug": "",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Início",
+	"summary": "Conteúdo importado integralmente da referência Next.js; afirmações profissionais por aprovar.",
+	"seo": {
+		"title": "Dra. Ana Trevizan — Consultoria Jurídica e Ambiental",
+		"description": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
+		"noindex": true
+	},
 	"home": {
-		"hero": { "heading": "Transformo complexidade jurídica em decisões seguras, por meio de uma consultoria técnica, estratégica e genuinamente humana.", "subtitle": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.", "brandWords": ["Técnica", "Estratégica", "Humana", "Ética", "Inclusiva"], "primaryCta": "Agendar primeiro contacto", "secondaryCta": "Áreas de atuação" },
+		"hero": {
+			"heading": "Transformo complexidade jurídica em decisões seguras, por meio de uma consultoria técnica, estratégica e genuinamente humana.",
+			"subtitle": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
+			"brandWords": ["Técnica", "Estratégica", "Humana", "Ética", "Inclusiva"],
+			"primaryCta": "Agendar primeiro contacto",
+			"secondaryCta": "Áreas de atuação"
+		},
 		"gateways": [
-			{ "title": "Consultoria", "eyebrow": "Advogada ↔ Cliente", "description": "Consultoria jurídica e ambiental preventiva, consultiva e extrajudicial, com atuação focada em decisões seguras e fundamentadas.", "cta": "Ver áreas de atuação", "routeKey": "consulting" },
-			{ "title": "Academia", "eyebrow": "Mentorias · Publicações · Palestras", "description": "Hub académico que reúne mentorias, publicações científicas, eventos, palestras e cursos — da pesquisa à comunicação.", "cta": "Explorar Academia", "routeKey": "academic" }
+			{
+				"title": "Consultoria",
+				"eyebrow": "Advogada ↔ Cliente",
+				"description": "Consultoria jurídica e ambiental preventiva, consultiva e extrajudicial, com atuação focada em decisões seguras e fundamentadas.",
+				"cta": "Ver áreas de atuação",
+				"routeKey": "consulting"
+			},
+			{
+				"title": "Academia",
+				"eyebrow": "Mentorias · Publicações · Palestras",
+				"description": "Hub académico que reúne mentorias, publicações científicas, eventos, palestras e cursos — da pesquisa à comunicação.",
+				"cta": "Explorar Academia",
+				"routeKey": "academic"
+			}
 		],
-		"differencesTitle": "Por que a Dra. Ana Trevizan?", "differencesSubtitle": "Uma ponte real entre dois países, três idiomas e mundos que raramente se encontram.",
+		"differencesTitle": "Por que a Dra. Ana Trevizan?",
+		"differencesSubtitle": "Uma ponte real entre dois países, três idiomas e mundos que raramente se encontram.",
 		"differences": [
-			{ "title": "Binacional real", "description": "OAB desde 2013 + doutoramento e residência em Portugal. Vivência e atuação efetiva nos dois países." },
-			{ "title": "Trilíngue", "description": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas." },
-			{ "title": "Ponte ciência–Direito", "description": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática." },
-			{ "title": "Sábio + Cuidador", "description": "Rigor técnico aliado a uma escuta individualizada e atenta. Clareza sem juridiquês." }
+			{
+				"title": "Binacional real",
+				"description": "OAB desde 2013 + doutoramento e residência em Portugal. Vivência e atuação efetiva nos dois países."
+			},
+			{
+				"title": "Trilíngue",
+				"description": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas."
+			},
+			{
+				"title": "Ponte ciência–Direito",
+				"description": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática."
+			},
+			{
+				"title": "Sábio + Cuidador",
+				"description": "Rigor técnico aliado a uma escuta individualizada e atenta. Clareza sem juridiquês."
+			}
 		],
-		"servicesTitle": "Áreas de Consultoria", "servicesSubtitle": "Atuação preventiva, consultiva e extrajudicial. Cinco áreas com foco em decisões seguras e fundamentadas.",
+		"servicesTitle": "Áreas de Consultoria",
+		"servicesSubtitle": "Atuação preventiva, consultiva e extrajudicial. Cinco áreas com foco em decisões seguras e fundamentadas.",
 		"services": [
-			{ "title": "Migração e Mobilidade", "tag": "🇵🇹 Portugal", "description": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.", "cta": "Saber mais", "routeKey": "immigration-mobility" },
-			{ "title": "Consultoria Jurídica", "tag": "🇵🇹 Portugal", "description": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.", "cta": "Saber mais", "routeKey": "legal" },
-			{ "title": "Ambiental e ESG", "tag": "🇧🇷🇪🇺 Brasil · União Europeia", "description": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.", "cta": "Saber mais", "routeKey": "environmental-esg" },
-			{ "title": "Políticas Públicas e Governança", "tag": "🇧🇷 Brasil", "description": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.", "cta": "Saber mais", "routeKey": "public-policy" },
-			{ "title": "Pareceres e Notas Técnicas", "tag": "🇵🇹🇧🇷 Portugal e Brasil", "description": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.", "cta": "Saber mais", "routeKey": "legal-opinions" }
+			{
+				"title": "Migração e Mobilidade",
+				"tag": "🇵🇹 Portugal",
+				"description": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
+				"cta": "Saber mais",
+				"routeKey": "immigration-mobility"
+			},
+			{
+				"title": "Consultoria Jurídica",
+				"tag": "🇵🇹 Portugal",
+				"description": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
+				"cta": "Saber mais",
+				"routeKey": "legal"
+			},
+			{
+				"title": "Ambiental e ESG",
+				"tag": "🇧🇷🇪🇺 Brasil · União Europeia",
+				"description": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
+				"cta": "Saber mais",
+				"routeKey": "environmental-esg"
+			},
+			{
+				"title": "Políticas Públicas e Governança",
+				"tag": "🇧🇷 Brasil",
+				"description": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
+				"cta": "Saber mais",
+				"routeKey": "public-policy"
+			},
+			{
+				"title": "Pareceres e Notas Técnicas",
+				"tag": "🇵🇹🇧🇷 Portugal e Brasil",
+				"description": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
+				"cta": "Saber mais",
+				"routeKey": "legal-opinions"
+			}
 		],
-		"academicTitle": "Academia", "academicSubtitle": "Publicações recentes e produção científica com impacto internacional.", "publicationsCta": "Ver repositório completo", "speakerKitCta": "Kit de palestrante",
+		"academicTitle": "Academia",
+		"academicSubtitle": "Publicações recentes e produção científica com impacto internacional.",
+		"publicationsCta": "Ver repositório completo",
+		"speakerKitCta": "Kit de palestrante",
 		"featuredPublications": [
-			{ "title": "Exploring the Brussels Effect", "publication": "Revista de Direito", "year": "2024", "language": "EN", "badge": "Citado pela OCDE", "url": "https://doi.org/10.32361/2024160116014" },
-			{ "title": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR", "publication": "International Journal for the Semiotics of Law - Revue internationale de Sémiotique juridique", "year": "2025", "language": "EN", "url": "https://doi.org/10.1007/s11196-025-10250-7" },
-			{ "title": "The European Union’s forest diplomacy: A path toward ostensible environmental sustainability", "publication": "Pensar - Revista de Ciências Jurídicas", "year": "2025", "language": "EN", "url": "https://doi.org/10.5020/2317-2150.2025.16353" }
+			{
+				"title": "Exploring the Brussels Effect",
+				"publication": "Revista de Direito",
+				"year": "2024",
+				"language": "EN",
+				"badge": "Citado pela OCDE",
+				"url": "https://doi.org/10.32361/2024160116014"
+			},
+			{
+				"title": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+				"publication": "International Journal for the Semiotics of Law - Revue internationale de Sémiotique juridique",
+				"year": "2025",
+				"language": "EN",
+				"url": "https://doi.org/10.1007/s11196-025-10250-7"
+			},
+			{
+				"title": "The European Union’s forest diplomacy: A path toward ostensible environmental sustainability",
+				"publication": "Pensar - Revista de Ciências Jurídicas",
+				"year": "2025",
+				"language": "EN",
+				"url": "https://doi.org/10.5020/2317-2150.2025.16353"
+			}
 		],
 		"credentialsLabel": "Credenciais e vínculos",
-		"credentials": ["Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (2024)", "SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)", "Mestrado em Direito Agroambiental — UFMT, reconhecido pela U. Lisboa (2020)", "Docência em inglês — LUNEX, Luxemburgo", "Formadora certificada em Portugal (2026)"],
-		"finalCtaHeading": "Marque uma conversa inicial", "finalCtaText": "Um primeiro passo para transformar a complexidade jurídica em decisões seguras. Atendimento em português, inglês e espanhol.", "finalCtaLabel": "Agendar primeiro contacto"
+		"credentials": [
+			"Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (2024)",
+			"SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)",
+			"Mestrado em Direito Agroambiental — UFMT, reconhecido pela U. Lisboa (2020)",
+			"Docência em inglês — LUNEX, Luxemburgo",
+			"Formadora certificada em Portugal (2026)"
+		],
+		"finalCtaHeading": "Marque uma conversa inicial",
+		"finalCtaText": "Um primeiro passo para transformar a complexidade jurídica em decisões seguras. Atendimento em português, inglês e espanhol.",
+		"finalCtaLabel": "Agendar primeiro contacto"
 	},
 	"ctaRefs": ["booking", "consulting", "academic", "publications", "speaking"]
 }

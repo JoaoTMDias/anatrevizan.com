@@ -14,7 +14,7 @@ const destination = (item: { routeKey?: unknown }) => hasValidRouteKey(item) ? p
 <article id="main-content">
 	<DraftNotice locale={locale} />
 	{home ? <>
-		<header class="bg-slate-900 px-6 py-20 text-white md:py-28" data-tina-field={tinaField(data, 'home.hero')}>
+		<header class="bg-slate-900 px-6 py-20 text-white md:py-28" data-tina-field={tinaField(data, 'home')}>
 			<div class="mx-auto max-w-6xl">
 				<ul class="mb-6 flex flex-wrap gap-2" aria-label={locale === 'en' ? 'Brand values' : 'Valores da marca'}>{home.hero.brandWords.map((word) => <li class="rounded-full border border-white/30 px-3 py-1 text-sm">{word}</li>)}</ul>
 				<h1 class="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">{home.hero.heading}</h1>

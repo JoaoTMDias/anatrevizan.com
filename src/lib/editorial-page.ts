@@ -31,11 +31,13 @@ let editorialIndexPromise: Promise<EditorialListItem[]> | undefined;
 let configPromise: ReturnType<typeof getConfig> | undefined;
 
 function getEditorialIndex(): Promise<EditorialListItem[]> {
-	return (editorialIndexPromise ??= listEditorial());
+	if (!editorialIndexPromise) editorialIndexPromise = listEditorial();
+	return editorialIndexPromise;
 }
 
 function getSiteConfig() {
-	return (configPromise ??= getConfig());
+	if (!configPromise) configPromise = getConfig();
+	return configPromise;
 }
 
 function toPageView(
