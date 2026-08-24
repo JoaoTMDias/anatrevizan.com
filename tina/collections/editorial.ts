@@ -6,7 +6,12 @@ import {
 	routeKeys,
 } from "../../src/lib/routing";
 import { localizedDocumentFields } from "./common";
-import { aboutFields, homeFields } from "./editorial-sections";
+import {
+	aboutFields,
+	consultingHubFields,
+	consultingServiceFields,
+	homeFields,
+} from "./editorial-sections";
 
 export const EditorialCollection: Collection = {
 	name: "editorial",
@@ -44,6 +49,8 @@ export const EditorialCollection: Collection = {
 		},
 		...homeFields,
 		...aboutFields,
+		...consultingHubFields,
+		...consultingServiceFields,
 		{ name: "ctaRefs", label: "CTA identifiers", type: "string", list: true },
 		{
 			name: "legal",
