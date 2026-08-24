@@ -39,8 +39,8 @@ para omitir a aparência correspondente.
 | Hero interno, breadcrumb, tag e overlay estático | Migrado sem media final | `src/components/editorial/PageHero.astro` |
 | Hero líquido Ambiental/ESG | Aparência estática migrada; shader e media diferidos | `PageHero.astro`, `global.css` |
 | CTA partilhado | Migrado | `src/components/editorial/ContactCta.astro` |
-| Hub e cinco serviços de Consultoria | Migrado; QA visual em curso | `ConsultingHubPage.astro`, `ConsultingServicePage.astro` |
-| Hub e páginas da Academia | Pendente grupo 4 | `src/components/editorial/Academic*.astro` e páginas dedicadas |
+| Hub e cinco serviços de Consultoria | Migrado e validado | `ConsultingHubPage.astro`, `ConsultingServicePage.astro` |
+| Hub e páginas da Academia | Migrado e validado no grupo 4 | `src/components/editorial/Academic*.astro` e páginas dedicadas |
 | Home e Sobre | Pendente grupo 5 | `HomePage.astro`, `AboutPage.astro` |
 | Contacto e formulário visual | Pendente grupo 5; sem submissão funcional | `ContactPage.astro` |
 | Agendamento e Calendly visual | Pendente grupo 5; sem embed | `BookingPage.astro` |
