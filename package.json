@@ -8,11 +8,13 @@
   },
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "build": "tinacms build --content=local -c \"astro build\"",
-    "build:local": "tinacms build --local --skip-cloud-checks -c \"astro build\"",
+    "build": "pnpm validate:content && tinacms build --content=local -c \"astro build\"",
+    "build:local": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
     "build:search": "tinacms search-index",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "validate:content": "node --experimental-strip-types scripts/validate-content.ts"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.2.3",
