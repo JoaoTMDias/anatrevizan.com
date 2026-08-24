@@ -1,0 +1,61 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import type { ConsultingHubContent } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const hub = data.consultingHub as ConsultingHubContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+---
+
+<article id="main-content">
+	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
+	{hub ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'consultingHub')}>
+			<div class="mx-auto max-w-6xl">
+				<h1 class="text-4xl font-bold md:text-6xl">{data.title}</h1>
+				<p class="mt-5 max-w-3xl text-lg text-slate-200">{hub.subtitle}</p>
+			</div>
+		</header>
+		<section class="mx-auto max-w-6xl px-6 py-16">
+			<h2 class="text-3xl font-bold">{hub.introHeading}</h2>
+			<p class="mt-4 max-w-3xl">{hub.introText}</p>
+			<div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filtrar áreas por país" data-consulting-filters>
+				<button class="rounded border px-4 py-2" type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</button>
+				<button class="rounded border px-4 py-2" type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</button>
+				<button class="rounded border px-4 py-2" type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</button>
+			</div>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-consulting-areas>
+				{hub.areas.map((area) => <article class="rounded-lg border p-5" data-countries={area.countries.join(' ')}>
+					<p class="text-sm">{area.tag}</p>
+					<h3 class="mt-2 text-lg font-semibold">{area.title}</h3>
+					<p class="mt-2 text-sm">{area.summary}</p>
+					<a class="mt-4 inline-block font-semibold underline" href={pathFor(area.routeKey, locale)}>{hub.areaCta}</a>
+				</article>)}
+			</div>
+			<p class="mt-10 border-l-4 border-amber-500 pl-4 text-sm">{hub.note}</p>
+		</section>
+		<section class="bg-slate-900 px-6 py-16 text-center text-white">
+			<h2 class="text-3xl font-bold">{hub.ctaHeading}</h2>
+			<p class="mx-auto mt-4 max-w-2xl">{hub.ctaText}</p>
+			<a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>Agendar primeiro contacto</a>
+		</section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>
+
+<script>
+	const filters = document.querySelector('[data-consulting-filters]');
+	const areas = document.querySelectorAll<HTMLElement>('[data-consulting-areas] > [data-countries]');
+	filters?.addEventListener('click', (event) => {
+		const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button[data-filter]');
+		if (!button) return;
+		const filter = button.dataset.filter;
+		for (const candidate of filters.querySelectorAll('button[data-filter]'))
+			candidate.setAttribute('aria-pressed', String(candidate === button));
+		for (const area of areas)
+			area.hidden = filter !== 'all' && !(area.dataset.countries ?? '').split(' ').includes(filter ?? '');
+	});
+</script>

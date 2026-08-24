@@ -1,7 +1,11 @@
 ---
-interface Props { locale: string }
-const { locale } = Astro.props;
+interface Props { locale: string; approvalPending?: boolean }
+const { locale, approvalPending = true } = Astro.props;
 ---
 <p role="status" class="border-b border-amber-300 bg-amber-50 px-6 py-3 text-center text-sm text-amber-950">
-	{locale === 'en' ? 'This draft has not been translated or approved for publication.' : 'Conteúdo importado da referência Next.js, ainda por validar e aprovar editorialmente.'}
+	{locale === 'en'
+		? 'This draft has not been translated or approved for publication.'
+		: approvalPending
+			? 'Conteúdo importado da referência Next.js, ainda por validar e aprovar editorialmente.'
+			: 'Conteúdo aprovado editorialmente; publicação ainda pendente.'}
 </p>
