@@ -8,8 +8,13 @@ import {
 	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
+import {
+	safeCalendlyUrl,
+	safeEmailHref,
+	safeProfileUrl,
+	safeWhatsAppHref,
+} from "../src/lib/external-url.ts";
 import { islandContextFromParams } from "../src/lib/island-context.ts";
-import { safeCalendlyUrl } from "../src/lib/external-url.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
 import { localizedDocumentFields } from "../tina/collections/common.ts";
 
@@ -59,6 +64,16 @@ describe("editorial validation", () => {
 		expect(safeCalendlyUrl("https://example.com/calendly")).toBeNull();
 		expect(safeCalendlyUrl("http://calendly.com/ana")).toBeNull();
 		expect(safeCalendlyUrl("not a url")).toBeNull();
+		expect(safeEmailHref("ana@example.com")).toBe("mailto:ana@example.com");
+		expect(safeEmailHref("invalid")).toBeNull();
+		expect(safeWhatsAppHref("+351926430792")).toBe(
+			"https://wa.me/351926430792",
+		);
+		expect(safeWhatsAppHref("926430792")).toBeNull();
+		expect(safeProfileUrl("https://orcid.org/0000-0003-4365-6053")).toBe(
+			"https://orcid.org/0000-0003-4365-6053",
+		);
+		expect(safeProfileUrl("https://example.com/profile")).toBeNull();
 	});
 	it("allows the Tina Home form to keep its canonical empty slug", () => {
 		const slugField = localizedDocumentFields.find(
@@ -401,15 +416,18 @@ describe("editorial validation", () => {
 			contact.contactPage.contactMethods.map(
 				(method: { status: string }) => method.status,
 			),
-		).toEqual([
-			"unconfirmed",
-			"missing",
-			"placeholder",
-			"placeholder",
-			"placeholder",
-		]);
+		).toEqual(["valid", "valid", "valid", "valid", "valid"]);
 		expect(JSON.stringify(contact)).not.toContain('"#"');
 		expect(JSON.stringify(booking)).not.toContain("calendly.com");
+		const config = JSON.parse(
+			readFileSync(join(process.cwd(), "src/content/config/site.json"), "utf8"),
+		);
+		expect(config.contacts.email).toBe("af.trevizan@gmail.com");
+		expect(config.contacts.phone).toBe("+351926430792");
+		expect(config.contacts.calendlyUrl).toBe(
+			"https://calendly.com/dratrevizan",
+		);
+		expect(config.contacts.profiles).toHaveLength(3);
 		for (const document of [contact, booking]) {
 			expect(document.status).toBe("draft");
 			expect(document.approvalPending).toBe(true);

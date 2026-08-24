@@ -48,10 +48,10 @@
 
 ### Grupo 4 — Contacto e Agendamento
 
-- [x] Contacto e Agendamento auditados; 39 ocorrências de strings PT-PT, contactos sem destino, fallback Calendly e seis assets vazios contabilizados no manifesto `docs/especificacao-editorial-contacto-agendamento.md`.
+- [x] Contacto e Agendamento auditados; 39 ocorrências de strings PT-PT, contactos originalmente sem destino, fallback Calendly e seis assets vazios contabilizados no manifesto `docs/especificacao-editorial-contacto-agendamento.md`.
 - [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex` até revisão explícita.
-- [x] Formulário `mailto:`, perfis com `href="#"`, URL Calendly não confirmada, embed e scripts externos não foram promovidos a funcionalidades válidas.
-- [x] A futura ligação Calendly usa a configuração global do TinaCMS e aceita apenas URLs HTTPS do domínio Calendly; na ausência de configuração, apresenta a rota Contacto como alternativa.
+- [x] Formulário `mailto:` e perfis com `href="#"` não foram promovidos; email, WhatsApp, LinkedIn, Instagram, ORCID e Calendly foram posteriormente confirmados e centralizados na configuração global do TinaCMS.
+- [x] A ligação Calendly aceita apenas URLs HTTPS do domínio Calendly; na ausência de configuração, apresenta a rota Contacto como alternativa, sem embed ou script externo.
 - [ ] Conteúdo PT-PT das duas páginas revisto e aprovado pela Ana.
 - [ ] Formulário server-side, proteção anti-spam, retenção, integrações de entrega e configuração final do Calendly implementados nas fases próprias.
 

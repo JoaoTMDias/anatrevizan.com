@@ -42,18 +42,20 @@ links sem destinos reais.
 
 ## Contactos, perfis e Calendly
 
-- O email `af.trevizan@gmail.com` existe na referência, mas permanece por
-  confirmar como contacto profissional público.
-- `WhatsApp` não tem número nem destino.
+- O email `af.trevizan@gmail.com` foi confirmado pela cliente em 24 de agosto
+  de 2026 como contacto profissional público.
+- O WhatsApp `+351 926 430 792` foi fornecido e confirmado na mesma revisão.
 - LinkedIn, Instagram e ORCID usam `href="#"`; os nomes são preservados, mas
   os controlos falsos não são migrados.
 - `NEXT_PUBLIC_CALENDLY_URL` tem o fallback
   `https://calendly.com/dratrevizan`. A referência chama-lhe link fornecido
-  pela cliente, mas o checklist exige confirmação. A URL é registada como não
-  confirmada e não é publicada como destino válido.
-- A versão Astro deverá usar apenas o campo global `contacts.calendlyUrl`, sem
-  fallback enganador. Enquanto estiver vazio, a página mostra um estado
-  editorial honesto e mantém a rota de Contacto como alternativa.
+  pela cliente e foi confirmado em 24 de agosto de 2026. Está configurado no
+  campo global `contacts.calendlyUrl`, sem fallback no código.
+- LinkedIn, Instagram e ORCID receberam destinos confirmados na revisão. Todos
+  os contactos e perfis públicos ficam centralizados na configuração global do
+  TinaCMS e são validados antes de renderizar.
+- Se a configuração Calendly for removida ou inválida, a página mostra um
+  estado editorial honesto e mantém a rota de Contacto como alternativa.
 - O embed e o script global do Calendly não são migrados; v1 prevê somente um
   link externo configurável.
 

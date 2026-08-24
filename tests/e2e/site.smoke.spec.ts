@@ -358,7 +358,7 @@ test.describe("localized draft pages", () => {
 		}
 	});
 
-	test("Contact renders its dedicated draft structure without a fake form", async ({
+	test("Contact renders its inactive form and confirmed contact destinations", async ({
 		page,
 	}) => {
 		const errors: string[] = [];
@@ -373,13 +373,25 @@ test.describe("localized draft pages", () => {
 			page.getByRole("heading", { name: "Formulário de contacto" }),
 		).toBeVisible();
 		await expect(page.getByText("af.trevizan@gmail.com")).toBeVisible();
-		expect(await page.locator("form").count()).toBe(0);
-		expect(await page.locator('a[href^="mailto:"]').count()).toBe(0);
+		await expect(page.locator("form fieldset")).toHaveAttribute("disabled", "");
+		await expect(page.locator('form input[name="name"]')).toBeDisabled();
+		await expect(page.locator("form input")).toHaveCount(4);
+		await expect(page.locator("form textarea")).toHaveCount(1);
+		await expect(page.locator("form select")).toHaveCount(1);
+		await expect(
+			page.locator('a[href="mailto:af.trevizan@gmail.com"]'),
+		).toBeVisible();
+		await expect(
+			page.locator('a[href="https://wa.me/351926430792"]'),
+		).toBeVisible();
+		await expect(page.getByRole("link", { name: "LinkedIn" })).toBeVisible();
+		await expect(page.getByRole("link", { name: "Instagram" })).toBeVisible();
+		await expect(page.getByRole("link", { name: "ORCID" })).toBeVisible();
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		expect(errors).toEqual([]);
 	});
 
-	test("Booking exposes an honest unconfigured state without Calendly scripts", async ({
+	test("Booking exposes the confirmed Calendly link without an embed", async ({
 		page,
 	}) => {
 		const errors: string[] = [];
@@ -391,13 +403,10 @@ test.describe("localized draft pages", () => {
 			"Agende uma conversa inicial",
 		);
 		await expect(
-			page.getByText("A ligação de agendamento ainda não está configurada."),
-		).toBeVisible();
-		await expect(
-			page.getByRole("link", { name: "Usar a página de contacto" }),
-		).toHaveAttribute("href", "/contacto");
+			page.getByRole("link", { name: "Abrir calendário de agendamento" }),
+		).toHaveAttribute("href", "https://calendly.com/dratrevizan");
 		expect(await page.locator('script[src*="calendly"]').count()).toBe(0);
-		expect(await page.locator('a[href*="calendly.com"]').count()).toBe(0);
+		expect(await page.locator('a[href*="calendly.com"]').count()).toBe(1);
 		expect(errors).toEqual([]);
 	});
 

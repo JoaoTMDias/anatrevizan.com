@@ -40,12 +40,30 @@
 			{
 				"label": "E-mail",
 				"value": "af.trevizan@gmail.com",
-				"status": "unconfirmed"
+				"url": "mailto:af.trevizan@gmail.com",
+				"status": "valid"
 			},
-			{ "label": "WhatsApp", "status": "missing" },
-			{ "label": "LinkedIn", "status": "placeholder" },
-			{ "label": "Instagram", "status": "placeholder" },
-			{ "label": "ORCID", "status": "placeholder" }
+			{
+				"label": "WhatsApp",
+				"value": "+351 926 430 792",
+				"url": "https://wa.me/351926430792",
+				"status": "valid"
+			},
+			{
+				"label": "LinkedIn",
+				"url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/",
+				"status": "valid"
+			},
+			{
+				"label": "Instagram",
+				"url": "https://www.instagram.com/dratrevizan",
+				"status": "valid"
+			},
+			{
+				"label": "ORCID",
+				"url": "https://orcid.org/0000-0003-4365-6053",
+				"status": "valid"
+			}
 		],
 		"countriesLabel": "🇵🇹 Portugal · 🇧🇷 Brasil",
 		"languagesLabel": "Atendimento em PT · EN · ES",

@@ -227,7 +227,8 @@ export interface ContactPageContent {
 	contactMethods: Array<{
 		label: string;
 		value?: string | null;
-		status: "unconfirmed" | "missing" | "placeholder";
+		url?: string | null;
+		status: "valid" | "unconfirmed" | "missing" | "placeholder";
 	}>;
 	countriesLabel: string;
 	languagesLabel: string;

@@ -50,12 +50,13 @@ export const contactPageFields: TinaField[] = [
 				fields: [
 					text("label", "Label"),
 					text("value", "Value", false),
+					text("url", "Confirmed destination", false),
 					{
 						name: "status",
 						label: "Destination status",
 						type: "string",
 						required: true,
-						options: ["unconfirmed", "missing", "placeholder"],
+						options: ["valid", "unconfirmed", "missing", "placeholder"],
 					},
 				],
 			},

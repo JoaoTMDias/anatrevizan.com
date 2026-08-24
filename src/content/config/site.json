@@ -6,7 +6,25 @@
 			"en": "Editorial content awaiting approval"
 		}
 	},
-	"contacts": { "profiles": [] },
+	"contacts": {
+		"email": "af.trevizan@gmail.com",
+		"phone": "+351926430792",
+		"calendlyUrl": "https://calendly.com/dratrevizan",
+		"profiles": [
+			{
+				"label": { "pt": "LinkedIn", "en": "LinkedIn" },
+				"url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/"
+			},
+			{
+				"label": { "pt": "Instagram", "en": "Instagram" },
+				"url": "https://www.instagram.com/dratrevizan"
+			},
+			{
+				"label": { "pt": "ORCID", "en": "ORCID" },
+				"url": "https://orcid.org/0000-0003-4365-6053"
+			}
+		]
+	},
 	"navigation": [
 		{
 			"type": "menu",
