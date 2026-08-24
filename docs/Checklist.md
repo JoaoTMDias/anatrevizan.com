@@ -30,6 +30,13 @@
 - [x] Conteúdo profissional e académico PT-PT da Home e Sobre revisto e aprovado pela Ana em 24 de agosto de 2026; as duas páginas permanecem em `draft` e `noindex` até os destinos dependentes estarem prontos.
 - [x] Grupos 2–5 migrados e contabilizados nos respetivos manifestos; a fase 2 editorial das 19 páginas está estruturalmente concluída.
 
+## Estado da fase 3 — sistema visual e componentes partilhados (agosto de 2026)
+
+- [x] Sistema visual da referência Next.js auditado e dividido em cinco grupos verificáveis; manifesto em `docs/auditoria-visual-fase-3.md`.
+- [x] Limite inicial confirmado: fundação visual, shell global e primitivos partilhados, sem alterar conteúdo, rotas, modelos ou estados editoriais.
+- [ ] Grupo 1 — fundação visual, header, navegação, footer, botões, cards e notices validado e concluído.
+- [ ] Grupos 2–5 — estruturas comuns, Consultoria, Academia e fecho visual das restantes páginas.
+
 ### Grupo 2 — Consultoria
 
 - [x] Hub de Consultoria e cinco serviços auditados; 203 strings PT-PT contabilizadas no manifesto `docs/especificacao-editorial-consultoria.md`.

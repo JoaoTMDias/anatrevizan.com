@@ -65,6 +65,37 @@ test.describe("localized draft pages", () => {
 		}
 	});
 
+	test("mobile navigation behaves as a modal keyboard surface", async ({
+		page,
+	}) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		await page.goto("/sobre");
+		const menu = page.locator("details.mobile-nav");
+		const trigger = menu.locator(":scope > summary");
+		await trigger.focus();
+		await page.keyboard.press("Enter");
+		await expect(trigger).toHaveAttribute("aria-expanded", "true");
+		await expect(menu.getByRole("dialog")).toBeVisible();
+		expect(await page.locator("footer").getAttribute("inert")).not.toBeNull();
+		await page.keyboard.press("Escape");
+		await expect(trigger).toHaveAttribute("aria-expanded", "false");
+		expect(await page.locator("footer").getAttribute("inert")).toBeNull();
+		expect(await trigger.evaluate((node) => node === document.activeElement)).toBe(
+			true,
+		);
+	});
+
+	test("shared shell exposes visible focus and real configured destinations", async ({
+		page,
+	}) => {
+		await page.goto("/sobre");
+		const logo = page.getByRole("link", { name: "Ana Trevizan", exact: true }).first();
+		await logo.focus();
+		expect(await logo.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+		await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(1);
+	});
+
 	test("Portuguese Home renders the complete dedicated template", async ({
 		page,
 	}) => {
@@ -372,21 +403,24 @@ test.describe("localized draft pages", () => {
 		await expect(
 			page.getByRole("heading", { name: "Formulário de contacto" }),
 		).toBeVisible();
-		await expect(page.getByText("af.trevizan@gmail.com")).toBeVisible();
+		await expect(
+			page.locator("#main-content").getByText("af.trevizan@gmail.com"),
+		).toBeVisible();
 		await expect(page.locator("form fieldset")).toHaveAttribute("disabled", "");
 		await expect(page.locator('form input[name="name"]')).toBeDisabled();
 		await expect(page.locator("form input")).toHaveCount(4);
 		await expect(page.locator("form textarea")).toHaveCount(1);
 		await expect(page.locator("form select")).toHaveCount(1);
+		const contactContent = page.locator("#main-content");
 		await expect(
-			page.locator('a[href="mailto:af.trevizan@gmail.com"]'),
+			contactContent.locator('a[href="mailto:af.trevizan@gmail.com"]'),
 		).toBeVisible();
 		await expect(
-			page.locator('a[href="https://wa.me/351926430792"]'),
+			contactContent.locator('a[href="https://wa.me/351926430792"]'),
 		).toBeVisible();
-		await expect(page.getByRole("link", { name: "LinkedIn" })).toBeVisible();
-		await expect(page.getByRole("link", { name: "Instagram" })).toBeVisible();
-		await expect(page.getByRole("link", { name: "ORCID" })).toBeVisible();
+		await expect(contactContent.getByRole("link", { name: "LinkedIn" })).toBeVisible();
+		await expect(contactContent.getByRole("link", { name: "Instagram" })).toBeVisible();
+		await expect(contactContent.getByRole("link", { name: "ORCID" })).toBeVisible();
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		expect(errors).toEqual([]);
 	});
