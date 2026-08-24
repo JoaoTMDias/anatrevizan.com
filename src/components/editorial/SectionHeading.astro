@@ -1,0 +1,16 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string | null;
+	eyebrow?: string | null;
+	centered?: boolean;
+}
+
+const { title, subtitle, eyebrow, centered = false } = Astro.props;
+---
+
+<header class:list={['editorial-section-heading', centered && 'text-center']}>
+	{eyebrow && <p class="editorial-eyebrow">{eyebrow}</p>}
+	<h2>{title}</h2>
+	{subtitle && <p class:list={['editorial-section-heading__subtitle', centered && 'mx-auto']}>{subtitle}</p>}
+</header>

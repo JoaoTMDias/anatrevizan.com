@@ -3,7 +3,11 @@ import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { EventsPageContent } from '../../lib/page-content';
 import { pathFor } from '../../lib/routing';
+import Section from '../ui/Section.astro';
+import ContactCta from './ContactCta.astro';
 import DraftNotice from './DraftNotice.astro';
+import EmptyState from './EmptyState.astro';
+import PageHero from './PageHero.astro';
 interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const events = data.eventsPage as EventsPageContent | null | undefined;
@@ -12,8 +16,8 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{events ? <>
-		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'eventsPage')}><div class="mx-auto max-w-6xl"><a class="text-sm underline" href={pathFor('academic', locale)}>Academia</a><p class="mt-5">{events.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg text-slate-200">{events.subtitle}</p></div></header>
-		<section class="mx-auto max-w-5xl px-6 py-16">{events.entries?.length ? <ol class="space-y-8">{events.entries.map((entry) => <li><article><p class="text-sm">{entry.date} · {entry.city}, {entry.country}</p><h2 class="mt-2 text-xl font-semibold">{entry.event}</h2><p class="mt-2">{entry.institution}</p>{entry.url && <a class="mt-3 inline-block underline" href={entry.url} rel="external">Ver evento</a>}</article></li>)}</ol> : <div class="mx-auto max-w-2xl text-center"><h2 class="text-3xl font-bold">{events.emptyHeading}</h2><p class="mt-4">{events.emptyText}</p><a class="mt-7 inline-block font-semibold underline" href={pathFor('speaking', locale)}>{events.speakerKitCta}</a></div>}</section>
-		<section class="bg-slate-900 px-6 py-16 text-center text-white"><h2 class="text-3xl font-bold">{events.ctaHeading}</h2><p class="mx-auto mt-4 max-w-2xl">{events.ctaText}</p><a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('contact', locale)}>Enviar detalhes do convite</a></section>
+		<PageHero title={data.title} subtitle={events.subtitle} tag={events.tag} locale={locale} parent={{ label: 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'eventsPage')} />
+		<Section class="max-w-5xl">{events.entries?.length ? <ol class="space-y-8">{events.entries.map((entry) => <li><article><p class="text-sm text-muted-foreground">{entry.date} · {entry.city}, {entry.country}</p><h2 class="mt-2 text-xl font-semibold">{entry.event}</h2><p class="mt-2">{entry.institution}</p>{entry.url && <a class="site-link mt-3 inline-block" href={entry.url} rel="external">Ver evento</a>}</article></li>)}</ol> : <EmptyState heading={events.emptyHeading} text={events.emptyText} href={pathFor('speaking', locale)} linkLabel={events.speakerKitCta} />}</Section>
+		<ContactCta heading={events.ctaHeading} text={events.ctaText} locale={locale} />
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>
