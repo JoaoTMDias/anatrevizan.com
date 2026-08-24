@@ -6,11 +6,23 @@
 	"status": "draft",
 	"approvalPending": true,
 	"title": "Política de cookies",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"summary": "Página em construção — o conteúdo desta secção será adicionado em breve.",
 	"seo": {
 		"title": "Política de cookies — Ana Trevizan",
 		"description": "Descrição editorial por aprovar.",
 		"noindex": true
+	},
+	"cookiesPage": {
+		"sourceStatus": "A referência Next.js contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+		"reviewRequirements": [
+			"Cookies essenciais",
+			"Calendly",
+			"Analytics, se utilizado",
+			"Redes sociais",
+			"Fornecedores, finalidades e duração",
+			"Consentimento, retirada e alteração"
+		],
+		"sections": []
 	},
 	"ctaRefs": []
 }
