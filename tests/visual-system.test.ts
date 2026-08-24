@@ -19,6 +19,18 @@ const consultingService = readFileSync(
 	"src/components/editorial/ConsultingServicePage.astro",
 	"utf8",
 );
+const academicHub = readFileSync(
+	"src/components/editorial/AcademicHubPage.astro",
+	"utf8",
+);
+const publications = readFileSync(
+	"src/components/editorial/PublicationsPage.astro",
+	"utf8",
+);
+const speaking = readFileSync(
+	"src/components/editorial/SpeakingPage.astro",
+	"utf8",
+);
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -68,6 +80,28 @@ describe("Phase 3 consulting visual family", () => {
 		expect(css).toContain(
 			"grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr))",
 		);
+	});
+});
+
+describe("Phase 3 academic visual family", () => {
+	it("uses linked accent cards and dedicated academic icon treatments", () => {
+		expect(academicHub).toContain("academic-hub-card");
+		expect(academicHub).toContain("academic-hub-card--highlight");
+		expect(css).toContain(".academic-icon");
+		expect(css).toContain(".academic-service-card");
+	});
+
+	it("provides compact publication filters and responsive list cards", () => {
+		expect(publications).toContain("publication-filters");
+		expect(publications).toContain("publication-card");
+		expect(css).toContain(".publication-card__meta");
+		expect(css).toContain(".publication-filters select");
+	});
+
+	it("preserves unavailable speaker media without creating a fake download", () => {
+		expect(speaking).toContain("speaking-kit-notice");
+		expect(speaking).toContain("speaking-topic");
+		expect(speaking).not.toContain('href="#"');
 	});
 });
 

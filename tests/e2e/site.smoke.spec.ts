@@ -364,9 +364,26 @@ test.describe("localized draft pages", () => {
 		await expect(page.locator("[data-publications] > article")).toHaveCount(25);
 		await expect(page.getByText("Ligação não disponível.")).toHaveCount(2);
 		await page.locator('select[name="year"]').selectOption("2026");
-		await expect(page.locator("[data-publication-count]")).toContainText(
-			/publicaç(ão|ões)/,
+		await expect(page.locator("[data-publication-count]")).toHaveText(
+			/\d+ publicaç(ão|ões)/,
 		);
+		await page.getByRole("button", { name: "Limpar filtros" }).click();
+		await expect(page.locator("[data-publications] > article:visible")).toHaveCount(
+			25,
+		);
+	});
+
+	test("academic pages expose the migrated visual structures", async ({ page }) => {
+		await page.goto("/academia");
+		await expect(page.locator("a.academic-hub-card")).toHaveCount(5);
+		await page.goto("/academia/mentorias");
+		await expect(page.locator(".academic-service-card")).toHaveCount(6);
+		await page.goto("/academia/publicacoes");
+		await expect(page.locator(".publication-card")).toHaveCount(25);
+		await page.goto("/academia/eventos");
+		await expect(page.locator(".academic-empty")).toBeVisible();
+		await page.goto("/academia/palestras");
+		await expect(page.locator(".speaking-kit-card")).toHaveCount(3);
 	});
 
 	test("events expose an honest empty state and speaking has no fake download", async ({
@@ -391,8 +408,11 @@ test.describe("localized draft pages", () => {
 		await page.setViewportSize({ width: 320, height: 800 });
 		for (const route of [
 			"/academia",
+			"/academia/mentorias",
 			"/academia/publicacoes",
+			"/academia/eventos",
 			"/academia/palestras",
+			"/academia/formacoes",
 		]) {
 			await page.goto(route);
 			expect(
