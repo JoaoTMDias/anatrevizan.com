@@ -357,4 +357,74 @@ test.describe("localized draft pages", () => {
 			).toHaveCount(0);
 		}
 	});
+
+	test("Contact renders its dedicated draft structure without a fake form", async ({
+		page,
+	}) => {
+		const errors: string[] = [];
+		page.on("console", (message) => {
+			if (message.type() === "error") errors.push(message.text());
+		});
+		await page.goto("/contacto");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Vamos falar",
+		);
+		await expect(
+			page.getByRole("heading", { name: "Formulário de contacto" }),
+		).toBeVisible();
+		await expect(page.getByText("af.trevizan@gmail.com")).toBeVisible();
+		expect(await page.locator("form").count()).toBe(0);
+		expect(await page.locator('a[href^="mailto:"]').count()).toBe(0);
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+		expect(errors).toEqual([]);
+	});
+
+	test("Booking exposes an honest unconfigured state without Calendly scripts", async ({
+		page,
+	}) => {
+		const errors: string[] = [];
+		page.on("console", (message) => {
+			if (message.type() === "error") errors.push(message.text());
+		});
+		await page.goto("/agendar");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Agende uma conversa inicial",
+		);
+		await expect(
+			page.getByText("A ligação de agendamento ainda não está configurada."),
+		).toBeVisible();
+		await expect(
+			page.getByRole("link", { name: "Usar a página de contacto" }),
+		).toHaveAttribute("href", "/contacto");
+		expect(await page.locator('script[src*="calendly"]').count()).toBe(0);
+		expect(await page.locator('a[href*="calendly.com"]').count()).toBe(0);
+		expect(errors).toEqual([]);
+	});
+
+	test("Contact and Booking reflow at 320px", async ({ page }) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		for (const route of ["/contacto", "/agendar"]) {
+			await page.goto(route);
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		}
+	});
+
+	test("English Contact and Booking previews expose no Portuguese fallback", async ({
+		page,
+	}) => {
+		for (const route of ["/en/contact", "/en/book-a-call"]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(
+					/Vamos falar|Conte-me a sua situação|Agende uma conversa inicial|Fuso de Portugal/,
+				),
+			).toHaveCount(0);
+		}
+	});
 });

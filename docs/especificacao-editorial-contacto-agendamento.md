@@ -23,7 +23,7 @@ management ou refinamento visual final.
 | `_interface.json > agendar` | 7 strings: etiqueta, título, descrição, nota, validade, duração e fuso | Migrar sem reescrita |
 | `agendar/page.tsx` | 2 strings SEO | Migrar sem reescrita |
 
-Total: **40 strings editoriais PT-PT**, além de um endereço de email histórico.
+Total: **39 ocorrências de strings editoriais PT-PT**, além de um endereço de email histórico.
 Os nomes acessíveis das três redes são contabilizados, mas não promovidos a
 links sem destinos reais.
 
@@ -70,7 +70,7 @@ links sem destinos reais.
 - O ficheiro espanhol de Contacto também reproduz o português e não é
   publicado em v1.
 
-## Modelos e templates previstos
+## Modelos e templates implementados
 
 - Modelo específico de Contacto: hero, apresentação do formulário futuro,
   cópia dos campos, formas alternativas, âmbito geográfico/idiomas e CTA.
@@ -78,6 +78,8 @@ links sem destinos reais.
   aplicabilidade, fuso e alternativa de contacto.
 - Templates Astro próprios, HTML estático e sem JavaScript de formulário,
   widget externo ou renderer universal.
+- A configuração Calendly é validada antes de renderizar: apenas URLs HTTPS
+  do domínio `calendly.com` são aceites.
 
 ## Critério de conclusão
 
