@@ -1,0 +1,16 @@
+{
+	"translationGroup": "home",
+	"locale": "en",
+	"routeKey": "home",
+	"slug": "",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Home",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Home — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

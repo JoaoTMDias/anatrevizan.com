@@ -1,0 +1,16 @@
+{
+	"translationGroup": "contact",
+	"locale": "pt-PT",
+	"routeKey": "contact",
+	"slug": "contacto",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Contacto",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Contacto — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

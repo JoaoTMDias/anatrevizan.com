@@ -6,6 +6,22 @@
 >
 > As decisões concluídas estão registadas em `Decisões técnicas.md`.
 
+## Estado da fase — fundação editorial, i18n e routing (agosto de 2026)
+
+- [x] Fundação Astro 7 + TinaCMS 3 + TypeScript + Tailwind CSS 4 + pnpm confirmada; adapter host-neutral e deploy Netlify preservados.
+- [x] Conteúdo demonstrativo do starter removido; React mantido apenas como dependência do admin TinaCMS.
+- [x] Mapa canónico tipado das 19 rotas PT-PT/EN centralizado e reutilizado por routing, navegação, seletor/alternates, canonicals e sitemap.
+- [x] PT-PT configurado sem prefixo, inglês sob `/en` com slugs localizados; espanhol preparado apenas no modelo e PT-BR excluído.
+- [x] Modelo TinaCMS localizado para identidade, contactos, navegação, páginas e coleções repetíveis de serviços, eventos, palestras, formações e mentorias, além de CTAs, SEO, legal e media.
+- [x] Traduções modeladas como documentos separados com `translationGroup`, `locale`, `routeKey`, `slug`, `status` e metadata localizada.
+- [x] Conteúdo estrutural PT/EN criado como `draft`, explicitamente por aprovar e `noindex`.
+- [x] Preview visual validado manualmente no admin TinaCMS para a Home e para uma entidade de Mentoring, em PT-PT e EN; idioma, rota e organização por pasta confirmados.
+- [x] Testes automatizados para pares PT/EN, slugs duplicados, locales inválidos, traduções ausentes e estados editoriais.
+- [x] Validação editorial integrada como precondição de `pnpm build` e `pnpm build:local`.
+- [x] `pnpm build:local` concluído após as alterações finais desta fase.
+- [ ] `pnpm build` validado no Tina Cloud após publicação da branch; localmente, a verificação chega ao serviço e fica bloqueada apenas porque o schema remoto de `main` ainda não inclui o schema desta branch.
+- [ ] Conteúdo PT-PT e EN revisto pela Ana e por revisores adequados; todos os documentos permanecem em draft até essa aprovação.
+
 ## 1. Decisões de produto e arquitetura
 
 - **P0 — Decidir a fundação técnica final**

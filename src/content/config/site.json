@@ -1,0 +1,157 @@
+{
+	"identity": {
+		"name": "Ana Trevizan",
+		"tagline": {
+			"pt": "Conteúdo editorial por aprovar",
+			"en": "Editorial content awaiting approval"
+		}
+	},
+	"contacts": { "profiles": [] },
+	"navigation": [
+		{
+			"type": "menu",
+			"routeKey": "consulting",
+			"label": { "pt": "Consultoria", "en": "Consulting" },
+			"children": [
+				{
+					"routeKey": "immigration-mobility",
+					"label": {
+						"pt": "Migração e Mobilidade",
+						"en": "Immigration and mobility"
+					},
+					"description": {
+						"pt": "Vistos, residência e integração jurídica em Portugal",
+						"en": "Navigation description awaiting approval."
+					},
+					"tag": { "pt": "🇵🇹 Portugal", "en": "English tag awaiting approval" }
+				},
+				{
+					"routeKey": "legal",
+					"label": { "pt": "Consultoria Jurídica", "en": "Legal consulting" },
+					"description": {
+						"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico",
+						"en": "Navigation description awaiting approval."
+					},
+					"tag": { "pt": "🇵🇹 Portugal", "en": "English tag awaiting approval" }
+				},
+				{
+					"routeKey": "environmental-esg",
+					"label": { "pt": "Ambiental e ESG", "en": "Environmental and ESG" },
+					"description": {
+						"pt": "Compliance ambiental, due diligence e regulação da UE",
+						"en": "Navigation description awaiting approval."
+					},
+					"tag": {
+						"pt": "🇧🇷🇪🇺 Brasil · União Europeia",
+						"en": "English tag awaiting approval"
+					}
+				},
+				{
+					"routeKey": "public-policy",
+					"label": {
+						"pt": "Políticas Públicas e Governança",
+						"en": "Public policy"
+					},
+					"description": {
+						"pt": "Análise legislativa e consultoria para municípios e ONGs",
+						"en": "Navigation description awaiting approval."
+					},
+					"tag": { "pt": "🇧🇷 Brasil", "en": "English tag awaiting approval" }
+				},
+				{
+					"routeKey": "legal-opinions",
+					"label": {
+						"pt": "Pareceres e Notas Técnicas",
+						"en": "Legal opinions"
+					},
+					"description": {
+						"pt": "Pareceres fundamentados em múltiplas áreas do Direito",
+						"en": "Navigation description awaiting approval."
+					},
+					"tag": {
+						"pt": "🇵🇹🇧🇷 Portugal e Brasil",
+						"en": "English tag awaiting approval"
+					}
+				}
+			]
+		},
+		{
+			"type": "menu",
+			"routeKey": "academic",
+			"label": { "pt": "Academia", "en": "Academic" },
+			"children": [
+				{
+					"routeKey": "mentoring",
+					"label": { "pt": "Mentorias e Apoio Académico", "en": "Mentoring" },
+					"description": {
+						"pt": "Revisão técnica, orientação metodológica e preparação para publicação",
+						"en": "Navigation description awaiting approval."
+					}
+				},
+				{
+					"routeKey": "publications",
+					"label": { "pt": "Publicações", "en": "Publications" },
+					"description": {
+						"pt": "Artigos em revistas científicas internacionais",
+						"en": "Navigation description awaiting approval."
+					},
+					"highlight": true
+				},
+				{
+					"routeKey": "events",
+					"label": { "pt": "Eventos e Palestras", "en": "Events" },
+					"description": {
+						"pt": "Histórico de participações desde 2019",
+						"en": "Navigation description awaiting approval."
+					}
+				},
+				{
+					"routeKey": "speaking",
+					"label": { "pt": "Palestras e Convites", "en": "Speaking" },
+					"description": {
+						"pt": "Kit de palestrante e temas que ministra",
+						"en": "Navigation description awaiting approval."
+					},
+					"highlight": true
+				},
+				{
+					"routeKey": "training",
+					"label": { "pt": "Cursos e Formações", "en": "Training" },
+					"description": {
+						"pt": "Para universidades, empresas e organizações",
+						"en": "Navigation description awaiting approval."
+					}
+				}
+			]
+		},
+		{
+			"type": "link",
+			"routeKey": "about",
+			"label": { "pt": "Sobre", "en": "About" }
+		},
+		{
+			"type": "link",
+			"routeKey": "contact",
+			"label": { "pt": "Contacto", "en": "Contact" }
+		},
+		{
+			"type": "link",
+			"routeKey": "booking",
+			"label": { "pt": "Agendar", "en": "Book a call" },
+			"emphasis": true
+		}
+	],
+	"ctas": [],
+	"seo": {
+		"siteUrl": "https://anatrevizan.com",
+		"defaultTitle": { "pt": "Ana Trevizan", "en": "Ana Trevizan" },
+		"defaultDescription": {
+			"pt": "Conteúdo editorial por aprovar.",
+			"en": "Editorial content awaiting approval."
+		}
+	},
+	"footer": {
+		"copyright": { "pt": "Ana Trevizan", "en": "Ana Trevizan" },
+		"legalRouteKeys": ["privacy", "terms", "cookies"]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"translationGroup": "legal-opinions",
+	"locale": "en",
+	"slug": "legal-opinions",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Legal opinions",
+	"summary": "STRUCTURAL RECORD — awaiting approval.",
+	"seo": {
+		"title": "Legal opinions",
+		"description": "Draft structural record.",
+		"noindex": true
+	},
+	"parentRouteKey": "legal-opinions",
+	"jurisdictions": [],
+	"ctaRefs": []
+}

@@ -1,0 +1,16 @@
+{
+	"translationGroup": "terms",
+	"locale": "en",
+	"routeKey": "terms",
+	"slug": "terms",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Terms of use",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Terms of use — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

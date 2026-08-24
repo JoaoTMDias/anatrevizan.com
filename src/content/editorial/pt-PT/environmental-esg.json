@@ -1,0 +1,16 @@
+{
+	"translationGroup": "environmental-esg",
+	"locale": "pt-PT",
+	"routeKey": "environmental-esg",
+	"slug": "consultoria/ambiental-e-esg",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Ambiente e ESG",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Ambiente e ESG — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

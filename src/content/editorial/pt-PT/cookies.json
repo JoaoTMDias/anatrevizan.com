@@ -1,0 +1,16 @@
+{
+	"translationGroup": "cookies",
+	"locale": "pt-PT",
+	"routeKey": "cookies",
+	"slug": "cookies",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Política de cookies",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Política de cookies — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

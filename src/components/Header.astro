@@ -1,105 +1,81 @@
 ---
-import { Icon } from 'astro-icon/components';
-import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsConfig } from '../lib/data';
-import IconLink from "./IconLink.astro";
-import ThemeToggle from './ThemeToggle.astro';
-
-interface Props {
-	config?: CmsConfig | null;
-}
-
-const { config } = Astro.props;
-const seo = config?.seo ?? null;
-const nav = (config?.nav ?? []).filter(item => item !== null);
-const contactLinks = (config?.contactLinks ?? []).filter(item => item !== null);
+import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
+interface Props { config?: CmsConfig | null; locale?: PublishedLocale; routeKey?: RouteKey; languageAvailable?: boolean }
+const { config, locale = 'pt-PT', routeKey = 'home', languageAvailable = false } = Astro.props;
+type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
+const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> => isRouteKey(item.routeKey);
+const languageField = locale === 'pt-PT' ? 'pt' : 'en';
+const present = <T,>(value: T | null): value is T => value !== null;
+const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
+const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
+const isCurrentSection = (item: (typeof navigation)[number]) => item.routeKey === routeKey || (item.children ?? []).some((child) => child?.routeKey === routeKey);
+const navigationItems = navigation.map((item) => ({ item, itemRoute: item.routeKey, children: (item.children ?? []).filter(present).filter((child) => Boolean(child.label)).filter(hasRouteKey) }));
 ---
-
-<header class="fixed top-0 z-20 w-full border-b bg-background/50 backdrop-blur-xl">
-	<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-		<a href="/" class="flex items-center gap-2 font-semibold">
-			{seo?.logo && <img src={seo.logo} alt="Logo" width="32" height="32" data-tina-field={tinaField(seo, "logo")} />}
-			<span data-tina-field={seo ? tinaField(seo, "title") : undefined}>{seo?.title}</span>
-		</a>
-		<div class="hidden items-center gap-8 text-sm lg:flex">
-			{nav.map((item) => (
-				<a href={item.link} class="text-muted-foreground transition-colors hover:text-foreground" data-tina-field={tinaField(item, "title")}>{item.title}</a>
-			))}
-		</div>
-		<div class="flex items-center gap-3">
-			<div class="hidden items-center gap-3 lg:flex">
-				{contactLinks.map((link) => (
-					<IconLink title={link.title} link={link.link} icon={link.icon} data-tina-field={tinaField(link, "title")} />
-				))}
-				<ThemeToggle />
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-3" href="#main-content">{locale === 'en' ? 'Skip to content' : 'Saltar para o conteúdo'}</a>
+<header class="relative z-30 border-b bg-background">
+	<nav aria-label={locale === 'en' ? 'Main navigation' : 'Navegação principal'} class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+		<a href={pathFor('home', locale)} class="font-semibold" aria-current={routeKey === 'home' ? 'page' : undefined}>{config?.identity?.name ?? 'Ana Trevizan'}</a>
+		<ul class="hidden items-center justify-end gap-1 text-sm lg:flex">
+			{navigationItems.map(({ item, itemRoute, children }) => <li class="relative">
+					{item.type === 'menu' && children.length > 0 ? (
+						<details class="nav-menu group" data-current={isCurrentSection(item) ? 'true' : undefined}>
+							<summary class="cursor-pointer list-none rounded px-3 py-2 font-medium hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+								{labelFor(item.label)} <span aria-hidden="true" class="inline-block transition-transform group-open:rotate-180">⌄</span>
+							</summary>
+							<div class="right-0 z-40 mt-1 w-[min(22rem,calc(100vw-3rem))] rounded-lg border bg-background p-2 shadow-lg lg:absolute">
+								<a href={pathFor(itemRoute, locale)} class="block rounded px-3 py-2 font-semibold hover:bg-accent" aria-current={itemRoute === routeKey ? 'page' : undefined}>{locale === 'en' ? `All ${labelFor(item.label).toLowerCase()}` : `Toda a área de ${labelFor(item.label).toLowerCase()}`}</a>
+								<ul>{children.map((child) => <li>
+									<a href={pathFor(child.routeKey as RouteKey, locale)} class:list={["block rounded px-3 py-2 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", child.highlight && "border-l-2 border-primary"]} aria-current={child.routeKey === routeKey ? 'page' : undefined}>
+										{child.tag && <span class="block text-xs text-muted-foreground">{labelFor(child.tag)}</span>}
+										<span class="block font-medium">{labelFor(child.label)}</span>
+										{child.description && <span class="block text-xs text-muted-foreground">{labelFor(child.description)}</span>}
+									</a>
+								</li>)}</ul>
+							</div>
+						</details>
+					) : (
+						<a href={pathFor(itemRoute, locale)} class:list={["block rounded px-3 py-2 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", item.emphasis && "bg-primary text-primary-foreground"]} aria-current={itemRoute === routeKey ? 'page' : undefined}>{labelFor(item.label)}</a>
+					)}
+				</li>)}
+			{languageAvailable && <li><a class="block rounded px-3 py-2 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={pathFor(routeKey, locale === 'en' ? 'pt-PT' : 'en')} lang={locale === 'en' ? 'pt-PT' : 'en'} hreflang={locale === 'en' ? 'pt-PT' : 'en'} aria-label={locale === 'en' ? 'Mudar para português' : 'Switch to English'}>{locale === 'en' ? 'PT' : 'EN'}</a></li>}
+		</ul>
+		<details class="mobile-nav lg:hidden">
+			<summary class="cursor-pointer list-none rounded px-3 py-2 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">{locale === 'en' ? 'Menu' : 'Menu'} <span aria-hidden="true">⌄</span></summary>
+			<div class="absolute inset-x-0 top-full border-b bg-background p-4 shadow-lg">
+				<ul class="space-y-1">{navigationItems.map(({ item, itemRoute, children }) => <li>
+					{item.type === 'menu' && children.length > 0 ? <details class="mobile-section">
+						<summary class="cursor-pointer list-none rounded px-3 py-3 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">{labelFor(item.label)} <span aria-hidden="true">⌄</span></summary>
+						<ul class="ml-3 border-l pl-3">{children.map((child) => <li><a class="block rounded px-3 py-2" href={pathFor(child.routeKey as RouteKey, locale)} aria-current={child.routeKey === routeKey ? 'page' : undefined}><span class="block font-medium">{labelFor(child.label)}</span>{child.description && <span class="block text-xs text-muted-foreground">{labelFor(child.description)}</span>}</a></li>)}</ul>
+					</details> : <a class:list={["block rounded px-3 py-3 font-medium", item.emphasis && "bg-primary text-primary-foreground"]} href={pathFor(itemRoute, locale)} aria-current={itemRoute === routeKey ? 'page' : undefined}>{labelFor(item.label)}</a>}
+				</li>)}</ul>
+				{languageAvailable && <a class="mt-2 block rounded border-t px-3 py-3" href={pathFor(routeKey, locale === 'en' ? 'pt-PT' : 'en')} lang={locale === 'en' ? 'pt-PT' : 'en'} hreflang={locale === 'en' ? 'pt-PT' : 'en'}>{locale === 'en' ? 'Português' : 'English'}</a>}
 			</div>
-			<button
-				id="mobile-menu-toggle"
-				type="button"
-				aria-label="Toggle navigation menu"
-				aria-controls="mobile-menu-panel"
-				aria-expanded="false"
-				class="inline-flex size-9 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none lg:hidden"
-			>
-				<Icon name="tabler:menu-2" class="icon-open size-5" />
-				<Icon name="tabler:x" class="icon-close size-5" />
-			</button>
-		</div>
+		</details>
 	</nav>
-	<div
-		id="mobile-menu-panel"
-		hidden
-		class="border-t bg-background/95 backdrop-blur-xl lg:hidden"
-	>
-		<div class="mx-auto flex max-w-6xl flex-col px-6 py-4">
-			{nav.map((item) => (
-				<a
-					href={item.link}
-					class="border-b border-border/50 py-3 text-sm text-muted-foreground transition-colors last:border-b-0 hover:text-foreground"
-					data-tina-field={tinaField(item, "title")}
-				>
-					{item.title}
-				</a>
-			))}
-			<div class="mt-4 flex items-center justify-between gap-3 pt-4">
-				<div class="flex items-center gap-2">
-					{contactLinks.map((link) => (
-						<IconLink title={link.title} link={link.link} icon={link.icon} data-tina-field={tinaField(link, "title")} />
-					))}
-				</div>
-				<ThemeToggle />
-			</div>
-		</div>
-	</div>
 </header>
-<style>
-	#mobile-menu-toggle .icon-close { display: none; }
-	#mobile-menu-toggle[aria-expanded="true"] .icon-open { display: none; }
-	#mobile-menu-toggle[aria-expanded="true"] .icon-close { display: block; }
-</style>
-<script is:inline>
-	if (!window.__mobileMenuBound) {
-		window.__mobileMenuBound = true;
-		const setOpen = (open) => {
-			const btn = document.getElementById('mobile-menu-toggle');
-			const panel = document.getElementById('mobile-menu-panel');
-			if (!btn || !panel) return;
-			btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-			panel.hidden = !open;
-		};
-		document.addEventListener('click', (e) => {
-			const toggle = e.target.closest('#mobile-menu-toggle');
-			if (toggle) {
-				const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-				setOpen(!isOpen);
-				return;
-			}
-			if (e.target.closest('#mobile-menu-panel a')) {
-				setOpen(false);
-			}
-		});
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape') setOpen(false);
-		});
-	}
+<script>
+	const menus = () => [...document.querySelectorAll<HTMLDetailsElement>('details.nav-menu')];
+	document.addEventListener('toggle', (event) => {
+		const opened = event.target;
+		if (!(opened instanceof HTMLDetailsElement) || !opened.open || !opened.matches('.nav-menu')) return;
+		for (const menu of menus()) if (menu !== opened) menu.open = false;
+	}, true);
+	document.addEventListener('keydown', (event) => {
+		if (event.key !== 'Escape') return;
+		for (const menu of menus()) {
+			if (!menu.open) continue;
+			menu.open = false;
+			menu.querySelector<HTMLElement>('summary')?.focus();
+		}
+		const mobile = document.querySelector<HTMLDetailsElement>('details.mobile-nav');
+		if (mobile?.open) {
+			mobile.open = false;
+			mobile.querySelector<HTMLElement>(':scope > summary')?.focus();
+		}
+	});
+	document.addEventListener('click', (event) => {
+		if (!(event.target instanceof Node)) return;
+		for (const menu of menus()) if (menu.open && !menu.contains(event.target)) menu.open = false;
+	});
 </script>

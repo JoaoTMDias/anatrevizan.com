@@ -1,0 +1,16 @@
+{
+	"translationGroup": "booking",
+	"locale": "pt-PT",
+	"routeKey": "booking",
+	"slug": "agendar",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Agendar",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Agendar — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

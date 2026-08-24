@@ -1,0 +1,17 @@
+{
+	"translationGroup": "legal",
+	"locale": "pt-PT",
+	"slug": "juridica",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Consultoria Jurídica",
+	"summary": "REGISTO ESTRUTURAL — por aprovar.",
+	"seo": {
+		"title": "Consultoria Jurídica",
+		"description": "Registo estrutural em draft.",
+		"noindex": true
+	},
+	"parentRouteKey": "legal",
+	"jurisdictions": [],
+	"ctaRefs": []
+}

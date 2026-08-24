@@ -1,0 +1,16 @@
+{
+	"translationGroup": "events",
+	"locale": "en",
+	"routeKey": "events",
+	"slug": "academic/events",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Events",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Events — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

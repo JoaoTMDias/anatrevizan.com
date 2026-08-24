@@ -1,0 +1,16 @@
+{
+	"translationGroup": "legal-opinions",
+	"locale": "en",
+	"routeKey": "legal-opinions",
+	"slug": "consulting/legal-opinions",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Legal opinions",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Legal opinions — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

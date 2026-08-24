@@ -1,0 +1,16 @@
+{
+	"translationGroup": "legal",
+	"locale": "pt-PT",
+	"routeKey": "legal",
+	"slug": "consultoria/juridica",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Consultoria jurídica",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Consultoria jurídica — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

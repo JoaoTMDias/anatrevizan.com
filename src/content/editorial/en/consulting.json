@@ -1,0 +1,16 @@
+{
+	"translationGroup": "consulting",
+	"locale": "en",
+	"routeKey": "consulting",
+	"slug": "consulting",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Consulting",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Consulting — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

@@ -1,0 +1,16 @@
+{
+	"translationGroup": "academic",
+	"locale": "en",
+	"routeKey": "academic",
+	"slug": "academic",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Academic",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Academic — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}

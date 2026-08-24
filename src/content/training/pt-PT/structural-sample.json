@@ -1,0 +1,15 @@
+{
+	"translationGroup": "structural-sample",
+	"locale": "pt-PT",
+	"slug": "registo-estrutural",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Formação estrutural por aprovar",
+	"summary": "REGISTO ESTRUTURAL — por aprovar.",
+	"seo": {
+		"title": "Formação estrutural por aprovar",
+		"description": "Registo estrutural em draft.",
+		"noindex": true
+	},
+	"parentRouteKey": "training"
+}

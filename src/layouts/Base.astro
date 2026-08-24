@@ -3,31 +3,15 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import TinaIsland from '@tinacms/astro/TinaIsland.astro';
-import { getConfig } from '../lib/data';
+import type { CmsConfig } from '../lib/data';
 import { islands } from '../lib/islands';
-
-interface Props {
-	title: string;
-	description: string;
-	image?: string;
-}
-
-const { title, description, image } = Astro.props;
-const config = (await getConfig()).data?.config ?? null;
+import type { PublishedLocale, RouteKey } from '../lib/routing';
+interface Props { title: string; description: string; locale: PublishedLocale; routeKey: RouteKey; image?: string; noindex?: boolean; availableLocales?: PublishedLocale[]; config?: CmsConfig | null }
+const props = Astro.props;
+const config = props.config ?? null;
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} image={image} />
-	</head>
-	<body>
-		<TinaIsland name="global" wrapper={islands.global.wrapper}>
-			<Header config={config} />
-		</TinaIsland>
-		<slot />
-		<TinaIsland name="global-footer" wrapper={islands['global-footer'].wrapper}>
-			<Footer config={config} />
-		</TinaIsland>
-	</body>
-</html>
+<!doctype html><html lang={props.locale === 'en' ? 'en' : 'pt-PT'}><head><BaseHead {...props} canonicalOrigin={config?.seo?.siteUrl} /></head><body>
+	<TinaIsland name="global" wrapper={islands.global.wrapper} params={{ locale: props.locale, routeKey: props.routeKey }}><Header config={config} locale={props.locale} routeKey={props.routeKey} languageAvailable={props.availableLocales?.includes(props.locale === 'en' ? 'pt-PT' : 'en')} /></TinaIsland>
+	<slot />
+	<TinaIsland name="global-footer" wrapper={islands['global-footer'].wrapper} params={{ locale: props.locale, routeKey: props.routeKey }}><Footer config={config} locale={props.locale} /></TinaIsland>
+</body></html>

@@ -1,0 +1,16 @@
+{
+	"translationGroup": "booking",
+	"locale": "en",
+	"routeKey": "booking",
+	"slug": "book-a-call",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Book a call",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Book a call — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
+}
