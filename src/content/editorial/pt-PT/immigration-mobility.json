@@ -4,7 +4,7 @@
 	"routeKey": "immigration-mobility",
 	"slug": "consultoria/migracao-e-mobilidade",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Migração e Mobilidade",
 	"summary": "Mudar de país é uma das decisões mais importantes da sua vida. Não devia ter de a enfrentar sozinho, nem à mercê da burocracia.",
 	"seo": {

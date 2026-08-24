@@ -4,7 +4,7 @@
 	"routeKey": "legal-opinions",
 	"slug": "consultoria/pareceres",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Pareceres e Notas Técnicas",
 	"summary": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
 	"seo": {

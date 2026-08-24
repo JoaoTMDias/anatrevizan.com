@@ -251,7 +251,7 @@ describe("editorial validation", () => {
 				1 + countStrings(document.consultingService) - technicalStrings,
 			).toBe(expectedServiceCounts[index]);
 			expect(document.status).toBe("draft");
-			expect(document.approvalPending).toBe(true);
+			expect(document.approvalPending).toBe(false);
 			expect(document.seo.noindex).toBe(true);
 		}
 

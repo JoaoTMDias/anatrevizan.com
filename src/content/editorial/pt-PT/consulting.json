@@ -4,7 +4,7 @@
 	"routeKey": "consulting",
 	"slug": "consultoria",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Consultoria",
 	"summary": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
 	"seo": {

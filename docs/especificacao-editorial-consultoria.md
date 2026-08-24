@@ -3,9 +3,14 @@
 ## Fronteira
 
 Este grupo migra o hub de Consultoria e cinco páginas de serviço da referência
-Next.js. O conteúdo é preservado sem reescrita em modelos TinaCMS estruturados,
-templates Astro próprios e estado `draft`, `approvalPending: true` e
-`noindex: true`.
+Next.js. O conteúdo foi preservado sem reescrita em modelos TinaCMS
+estruturados e templates Astro próprios. Na importação entrou em `draft`, com
+`approvalPending: true` e `noindex: true`.
+
+Em 24 de agosto de 2026, a Ana reviu e aprovou integralmente o conteúdo PT-PT
+das seis páginas. `approvalPending` passou a `false`; todas permanecem em
+`draft` e `noindex` enquanto as páginas dependentes, a revisão qualificada
+quando aplicável e a tradução EN não estiverem concluídas.
 
 Não pertencem a este grupo o formulário, Calendly, integrações, publicação,
 tradução EN, assets finais ou refinamento visual.

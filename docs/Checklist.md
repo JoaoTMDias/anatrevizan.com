@@ -35,7 +35,7 @@
 - [x] Hub de Consultoria e cinco serviços auditados; 203 strings PT-PT contabilizadas no manifesto `docs/especificacao-editorial-consultoria.md`.
 - [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex`.
 - [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
-- [ ] Conteúdo profissional e jurídico das seis páginas revisto e aprovado pela Ana e, quando adequado, por revisor qualificado.
+- [x] Conteúdo profissional e jurídico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
 
 ## 1. Decisões de produto e arquitetura
 

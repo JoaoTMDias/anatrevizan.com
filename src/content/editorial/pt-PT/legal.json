@@ -4,7 +4,7 @@
 	"routeKey": "legal",
 	"slug": "consultoria/juridica",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Consultoria Jurídica",
 	"summary": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
 	"seo": {
