@@ -4,7 +4,7 @@
 	"routeKey": "contact",
 	"slug": "contacto",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Vamos falar",
 	"summary": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
 	"seo": {

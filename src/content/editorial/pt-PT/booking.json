@@ -4,7 +4,7 @@
 	"routeKey": "booking",
 	"slug": "agendar",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Agende uma conversa inicial",
 	"summary": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
 	"seo": {

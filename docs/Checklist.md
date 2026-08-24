@@ -52,7 +52,7 @@
 - [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex` até revisão explícita.
 - [x] Formulário `mailto:` e perfis com `href="#"` não foram promovidos; email, WhatsApp, LinkedIn, Instagram, ORCID e Calendly foram posteriormente confirmados e centralizados na configuração global do TinaCMS.
 - [x] A ligação Calendly aceita apenas URLs HTTPS do domínio Calendly; na ausência de configuração, apresenta a rota Contacto como alternativa, sem embed ou script externo.
-- [ ] Conteúdo PT-PT das duas páginas revisto e aprovado pela Ana.
+- [x] Conteúdo PT-PT das duas páginas, formulário inativo e destinos públicos revistos e aprovados pela Ana em 24 de agosto de 2026.
 - [ ] Formulário server-side, proteção anti-spam, retenção, integrações de entrega e configuração final do Calendly implementados nas fases próprias.
 
 ## 1. Decisões de produto e arquitetura

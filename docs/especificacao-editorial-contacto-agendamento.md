@@ -4,8 +4,8 @@
 
 Este grupo migra a estrutura editorial e o conteúdo histórico das páginas
 Contacto e Agendamento da referência Next.js. Os componentes React não são
-copiados. O conteúdo PT-PT entra em `draft`, com `approvalPending: true` e
-`noindex: true`.
+copiados. O conteúdo PT-PT foi aprovado pela Ana em 24 de agosto de 2026 e
+mantém-se em `draft`, com `approvalPending: false` e `noindex: true`.
 
 Não pertencem a este grupo o endpoint final do formulário, Google Sheets,
 Resend, Turnstile, rate limiting, prevenção de duplicados, retenção de dados,
@@ -90,3 +90,8 @@ em preview PT, não expor links falsos nem conteúdo português em EN e passar
 validação de conteúdo, testes unitários, Playwright relevante, `astro check`,
 `build:local` e `git diff --check`. Nenhuma página muda para `ready` sem revisão
 explícita.
+
+A revisão editorial foi concluída em 24 de agosto de 2026, incluindo o
+formulário visualmente presente mas inativo e os destinos públicos confirmados.
+As páginas mantêm-se em `draft` e `noindex` enquanto o formulário server-side e
+as decisões de privacidade associadas permanecem para fases posteriores.

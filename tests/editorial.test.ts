@@ -430,7 +430,7 @@ describe("editorial validation", () => {
 		expect(config.contacts.profiles).toHaveLength(3);
 		for (const document of [contact, booking]) {
 			expect(document.status).toBe("draft");
-			expect(document.approvalPending).toBe(true);
+			expect(document.approvalPending).toBe(false);
 			expect(document.seo.noindex).toBe(true);
 		}
 
