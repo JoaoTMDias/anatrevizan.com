@@ -10,6 +10,7 @@ import {
 } from "../src/lib/editorial.ts";
 import { islandContextFromParams } from "../src/lib/island-context.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
+import { localizedDocumentFields } from "../tina/collections/common.ts";
 
 const docs = routeKeys.flatMap((routeKey) =>
 	publishedLocales.map((locale) => ({
@@ -37,6 +38,14 @@ const jsonFiles = (directory: string): string[] =>
 	});
 
 describe("editorial validation", () => {
+	it("allows the Tina Home form to keep its canonical empty slug", () => {
+		const slugField = localizedDocumentFields.find(
+			(field) => field.name === "slug",
+		);
+		expect(slugField).toBeDefined();
+		expect(slugField?.required).not.toBe(true);
+	});
+
 	it("accepts complete structural documents", () =>
 		expect(validateEditorialDocuments(docs)).toEqual([]));
 
@@ -165,7 +174,7 @@ describe("editorial validation", () => {
 		).toBe(true);
 		expect(home.status).toBe("draft");
 		expect(about.status).toBe("draft");
-		expect(home.approvalPending && about.approvalPending).toBe(true);
+		expect(home.approvalPending || about.approvalPending).toBe(false);
 		expect(home.seo.noindex && about.seo.noindex).toBe(true);
 		expect(manifest).toContain("33 + 57 strings");
 		expect(manifest).toContain("33 assets hero de zero bytes");

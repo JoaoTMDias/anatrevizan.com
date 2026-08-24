@@ -4,9 +4,9 @@
 	"routeKey": "about",
 	"slug": "sobre",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Dra. Ana Flávia Trevizan",
-	"summary": "Conteúdo importado integralmente da referência Next.js; afirmações profissionais por aprovar.",
+	"summary": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
 	"seo": {
 		"title": "Percurso da Dra. Ana Flávia Trevizan",
 		"description": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",

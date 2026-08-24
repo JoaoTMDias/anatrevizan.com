@@ -4,9 +4,9 @@
 	"routeKey": "home",
 	"slug": "",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Início",
-	"summary": "Conteúdo importado integralmente da referência Next.js; afirmações profissionais por aprovar.",
+	"summary": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
 	"seo": {
 		"title": "Dra. Ana Trevizan — Consultoria Jurídica e Ambiental",
 		"description": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",

@@ -76,7 +76,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["editorial", "slug"],
 						"searchable": true,
 						"uid": false
@@ -1049,7 +1049,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["service", "slug"],
 						"searchable": true,
 						"uid": false
@@ -1317,7 +1317,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["event", "slug"],
 						"searchable": true,
 						"uid": false
@@ -1571,7 +1571,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["talk", "slug"],
 						"searchable": true,
 						"uid": false
@@ -1820,7 +1820,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["training", "slug"],
 						"searchable": true,
 						"uid": false
@@ -2066,7 +2066,7 @@
 						"name": "slug",
 						"label": "Localized slug",
 						"type": "string",
-						"required": true,
+						"description": "Leave empty only for the Home route; route validation requires a slug for every other page.",
 						"namespace": ["mentoring", "slug"],
 						"searchable": true,
 						"uid": false
@@ -5481,11 +5481,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{
@@ -6833,11 +6830,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{
@@ -7456,11 +7450,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{
@@ -8056,11 +8047,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{
@@ -8648,11 +8636,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{
@@ -9231,11 +9216,8 @@
 						"name": { "kind": "Name", "value": "slug" },
 						"arguments": [],
 						"type": {
-							"kind": "NonNullType",
-							"type": {
-								"kind": "NamedType",
-								"name": { "kind": "Name", "value": "String" }
-							}
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
 						}
 					},
 					{

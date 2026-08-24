@@ -37,7 +37,7 @@ export function toEditorialDocument(
 		translationGroup: document.translationGroup,
 		locale: document.locale,
 		routeKey: document.routeKey,
-		slug: document.slug,
+		slug: document.slug ?? "",
 		status,
 		title: document.title,
 		seoTitle: document.seo.title,
