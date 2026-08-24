@@ -206,6 +206,43 @@ export interface SpeakingPageContent {
 	ctaText: string;
 }
 
+export interface ContactPageContent {
+	tag: string;
+	subtitle: string;
+	formCopy: {
+		nameLabel: string;
+		whatsappLabel: string;
+		emailLabel: string;
+		countryLabel: string;
+		subjectLabel: string;
+		subjectPlaceholder: string;
+		consentText: string;
+		privacyPolicyLabel: string;
+		submitLabel: string;
+		successMessage: string;
+		errorMessage: string;
+		countries: string[];
+	};
+	otherMethodsHeading: string;
+	contactMethods: Array<{
+		label: string;
+		value?: string | null;
+		status: "unconfirmed" | "missing" | "placeholder";
+	}>;
+	countriesLabel: string;
+	languagesLabel: string;
+	bookingCta: string;
+}
+
+export interface BookingPageContent {
+	tag: string;
+	subtitle: string;
+	duration: string;
+	validFor: string;
+	timezone: string;
+	timezoneNote: string;
+}
+
 export function hasValidRouteKey(value: {
 	routeKey?: unknown;
 }): value is { routeKey: RouteKey } {
