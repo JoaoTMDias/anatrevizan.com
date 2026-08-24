@@ -12,24 +12,32 @@ const navigation = (config?.navigation ?? []).filter(present).filter((item) => B
 const menus = navigation.filter((item) => item.type === 'menu' && item.children?.length);
 const directLinks = navigation.filter((item) => item.type !== 'menu');
 const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
+const email = config?.contacts?.email;
+const phone = config?.contacts?.phone;
+const profiles = (config?.contacts?.profiles ?? []).filter(present).filter((profile) => Boolean(profile.url));
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 	home: { pt: 'Início', en: 'Home' }, consulting: { pt: 'Consultoria', en: 'Consulting' }, 'immigration-mobility': { pt: 'Migração e mobilidade', en: 'Immigration and mobility' }, legal: { pt: 'Consultoria jurídica', en: 'Legal consulting' }, 'environmental-esg': { pt: 'Ambiente e ESG', en: 'Environmental and ESG' }, 'public-policy': { pt: 'Políticas públicas', en: 'Public policy' }, 'legal-opinions': { pt: 'Pareceres', en: 'Legal opinions' }, academic: { pt: 'Academia', en: 'Academic' }, mentoring: { pt: 'Mentorias', en: 'Mentoring' }, publications: { pt: 'Publicações', en: 'Publications' }, events: { pt: 'Eventos', en: 'Events' }, speaking: { pt: 'Palestras', en: 'Speaking' }, training: { pt: 'Formações', en: 'Training' }, about: { pt: 'Sobre', en: 'About' }, contact: { pt: 'Contacto', en: 'Contact' }, booking: { pt: 'Agendar', en: 'Book a call' }, privacy: { pt: 'Política de privacidade', en: 'Privacy policy' }, terms: { pt: 'Termos de utilização', en: 'Terms of use' }, cookies: { pt: 'Política de cookies', en: 'Cookie policy' },
 };
 ---
-<footer class="border-t py-10">
-	<div class="mx-auto grid max-w-6xl gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
+<footer class="border-t bg-secondary">
+	<div class="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
 		{menus.map((menu) => <nav aria-label={labelFor(menu.label)}>
-			<a href={pathFor(menu.routeKey, locale)} class="font-semibold">{labelFor(menu.label)}</a>
-			<ul class="mt-3 space-y-2 text-sm">{(menu.children ?? []).filter(present).filter(hasRouteKey).map((child) => <li><a href={pathFor(child.routeKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
+			<a href={pathFor(menu.routeKey, locale)} class="font-heading font-semibold text-foreground hover:text-primary">{labelFor(menu.label)}</a>
+			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">{(menu.children ?? []).filter(present).filter(hasRouteKey).map((child) => <li><a class="hover:text-primary hover:underline" href={pathFor(child.routeKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
 		</nav>)}
 		<nav aria-label={locale === 'en' ? 'Institutional' : 'Institucional'}>
-			<p class="font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
-			<ul class="mt-3 space-y-2 text-sm">{directLinks.map((item) => <li><a href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
+			<p class="font-heading font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
+			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">{directLinks.map((item) => <li><a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
 		</nav>
-		<nav aria-label={locale === 'en' ? 'Legal' : 'Informação legal'}>
-			<p class="font-semibold">{locale === 'en' ? 'Legal' : 'Informação legal'}</p>
-			<ul class="mt-3 space-y-2 text-sm">{legalRoutes.map((key) => <li><a href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}</ul>
-		</nav>
+		<div>
+			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact and legal' : 'Contacto e informação legal'}</p>
+			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+				{email && <li><a class="hover:text-primary hover:underline" href={`mailto:${email}`}>{email}</a></li>}
+				{phone && <li><a class="hover:text-primary hover:underline" href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a></li>}
+				{profiles.map((profile) => <li><a class="hover:text-primary hover:underline" href={profile.url ?? undefined} rel="external noreferrer">{labelFor(profile.label)}</a></li>)}
+				{legalRoutes.map((key) => <li><a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}
+			</ul>
+		</div>
 	</div>
-	<div class="mx-auto mt-8 max-w-6xl border-t px-6 pt-6 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div>
+	<div class="bg-primary text-primary-foreground"><div class="site-container py-5 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div></div>
 </footer>
