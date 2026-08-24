@@ -17,6 +17,8 @@
 ## Estratégia de migração
 
 - Transpor integralmente para Astro a estrutura visual e funcional criada na versão Next.js.
+- Importar para o modelo editorial Astro/TinaCMS todo o conteúdo existente na versão Next.js, preservando a sua origem e colocando-o em `draft` com aprovação pendente até revisão.
+- A migração será rastreável e sem omissões silenciosas: conteúdo incompleto, placeholders, destinos em falta, assets vazios e texto português existente nos documentos ingleses serão preservados ou registados explicitamente como pendências, mas nunca publicados como conteúdo válido.
 - Preservar as 19 rotas previstas.
 - Não converter mecanicamente os componentes React.
 - Reimplementar os componentes em Astro, usando JavaScript apenas onde seja necessário.

@@ -15,10 +15,11 @@
 - [x] Modelo TinaCMS localizado para identidade, contactos, navegação, páginas e coleções repetíveis de serviços, eventos, palestras, formações e mentorias, além de CTAs, SEO, legal e media.
 - [x] Traduções modeladas como documentos separados com `translationGroup`, `locale`, `routeKey`, `slug`, `status` e metadata localizada.
 - [x] Conteúdo estrutural PT/EN criado como `draft`, explicitamente por aprovar e `noindex`.
-- [ ] Preview visual validado manualmente dentro do admin TinaCMS em páginas PT-PT e EN.
+- [x] Preview visual validado manualmente no admin TinaCMS para a Home e para uma entidade de Mentoring, em PT-PT e EN; idioma, rota e organização por pasta confirmados.
 - [x] Testes automatizados para pares PT/EN, slugs duplicados, locales inválidos, traduções ausentes e estados editoriais.
 - [x] Validação editorial integrada como precondição de `pnpm build` e `pnpm build:local`.
 - [x] `pnpm build:local` concluído após as alterações finais desta fase.
+- [ ] `pnpm build` validado no Tina Cloud após publicação da branch; localmente, a verificação chega ao serviço e fica bloqueada apenas porque o schema remoto de `main` ainda não inclui o schema desta branch.
 - [ ] Conteúdo PT-PT e EN revisto pela Ana e por revisores adequados; todos os documentos permanecem em draft até essa aprovação.
 
 ## 1. Decisões de produto e arquitetura
