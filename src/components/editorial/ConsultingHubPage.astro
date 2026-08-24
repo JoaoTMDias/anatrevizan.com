@@ -29,7 +29,7 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 				<Button variant="outline" size="sm" type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</Button>
 			</div>
 			<div class="editorial-grid" data-consulting-areas>
-				{hub.areas.map((area) => <Card class="p-6" data-countries={area.countries.join(' ')}>
+				{hub.areas.map((area) => <Card as="article" class="p-6" data-countries={area.countries.join(' ')}>
 					<p class="editorial-eyebrow text-primary">{area.tag}</p>
 					<h3 class="text-xl font-semibold">{area.title}</h3>
 					<p class="text-sm leading-relaxed text-muted-foreground">{area.summary}</p>

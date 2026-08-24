@@ -14,6 +14,7 @@ const emptyState = readFileSync(
 	"src/components/editorial/EmptyState.astro",
 	"utf8",
 );
+const card = readFileSync("src/components/ui/Card.astro", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -42,6 +43,11 @@ describe("Phase 3 shared editorial structures", () => {
 		expect(contactCta).toContain("pathFor('contact', locale)");
 		expect(emptyState).toContain("href && linkLabel");
 		expect(`${contactCta}${emptyState}`).not.toContain('href="#"');
+	});
+
+	it("preserves article semantics for independent editorial cards", () => {
+		expect(card).toContain("as?: 'article' | 'div'");
+		expect(card).toContain("<Tag class=");
 	});
 
 	it("uses fluid heroes and auto-fitting grids for narrow viewports", () => {

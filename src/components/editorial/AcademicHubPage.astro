@@ -23,7 +23,7 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 		<Section>
 			<p class="mb-10 max-w-3xl text-lg leading-relaxed text-muted-foreground">{hub.introText}</p>
 			<div class="editorial-grid">
-				{hub.sections.map((item) => <Card class:list={['p-6', item.highlight && 'border-l-4 border-l-accent']}>
+				{hub.sections.map((item) => <Card as="article" class:list={['p-6', item.highlight && 'border-l-4 border-l-accent']}>
 					<h2 class="text-xl font-semibold">{item.title}</h2>
 					<p class="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
 					<Button class="mt-auto self-start" variant="link" href={pathFor(item.routeKey, locale)}>{item.cta}</Button>

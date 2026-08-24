@@ -29,7 +29,7 @@ const crosslink = service?.crosslinkRouteKey && isRouteKey(service.crosslinkRout
 		</Section>
 		<Section background="bg-secondary">
 			<SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} />
-			<div class="editorial-grid">{service.services.map((item) => <Card class="p-6">
+			<div class="editorial-grid">{service.services.map((item) => <Card as="article" class="p-6">
 					<h3 class="text-lg font-semibold">{item.title}</h3>
 					{item.description && <p class="text-sm leading-relaxed text-muted-foreground">{item.description}</p>}
 					{item.items && <ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">{item.items.map((entry) => <li>{entry}</li>)}</ul>}

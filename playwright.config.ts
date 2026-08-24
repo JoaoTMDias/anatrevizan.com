@@ -8,16 +8,14 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 	reporter: "list",
 	use: {
-		baseURL: "http://127.0.0.1:4321",
+		baseURL: "http://127.0.0.1:4322",
 		trace: "on-first-retry",
 	},
 	webServer: {
-		// The local fallback adapter produces a standalone Node server. Running
-		// that entrypoint keeps the parent process alive for Playwright, unlike
-		// Astro's daemonized preview command in the Codex/IDE environment.
-		command:
-			"pnpm build:preview && HOST=127.0.0.1 PORT=4321 node dist/server/entry.mjs",
-		url: "http://127.0.0.1:4321",
+		// The local fallback adapter produces a standalone Node server. Use the
+		// same launcher developers use after a local build.
+		command: "pnpm build:preview && pnpm preview",
+		url: "http://127.0.0.1:4322",
 		reuseExistingServer: !process.env.CI,
 	},
 	projects: [
