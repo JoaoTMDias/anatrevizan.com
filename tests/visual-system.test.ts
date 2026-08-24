@@ -15,6 +15,10 @@ const emptyState = readFileSync(
 	"utf8",
 );
 const card = readFileSync("src/components/ui/Card.astro", "utf8");
+const consultingService = readFileSync(
+	"src/components/editorial/ConsultingServicePage.astro",
+	"utf8",
+);
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -24,10 +28,46 @@ describe("Phase 3 visual foundation", () => {
 		expect(css).toContain("--accent: oklch(0.45 0.14 140)");
 	});
 
+	it("exposes every 50–950 reference color scale", () => {
+		for (const family of [
+			"primary",
+			"accent",
+			"secondary",
+			"background",
+			"foreground",
+		]) {
+			for (const shade of [
+				50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
+			]) {
+				expect(css).toContain(`--${family}-${shade}:`);
+				expect(css).toContain(`--color-${family}-${shade}:`);
+			}
+		}
+	});
+
 	it("provides constrained containers and explicit user preference rules", () => {
 		expect(css).toContain("max-width: 80rem");
 		expect(css).toContain("@media (prefers-reduced-motion: reduce)");
 		expect(css).toContain("@media (forced-colors: active)");
+	});
+});
+
+describe("Phase 3 consulting visual family", () => {
+	it("reserves the approved accent treatment for Environmental and ESG", () => {
+		expect(consultingService).toContain(
+			"const accent = data.routeKey === 'environmental-esg'",
+		);
+		expect(consultingService).toContain("tone={accent ? 'accent' : 'primary'}");
+		expect(css).toContain(".editorial-hero--accent");
+		expect(css).toContain(".consulting-card--accent");
+	});
+
+	it("provides explicit filter selection and responsive process steps", () => {
+		expect(css).toContain('.consulting-filters [aria-pressed="true"]');
+		expect(css).toContain(".consulting-steps");
+		expect(css).toContain(
+			"grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr))",
+		);
 	});
 });
 
