@@ -6,11 +6,23 @@
 	"status": "draft",
 	"approvalPending": true,
 	"title": "Termos de utilização",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"summary": "Página em construção — o conteúdo desta secção será adicionado em breve.",
 	"seo": {
 		"title": "Termos de utilização — Ana Trevizan",
 		"description": "Descrição editorial por aprovar.",
 		"noindex": true
+	},
+	"termsPage": {
+		"sourceStatus": "A referência Next.js contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+		"reviewRequirements": [
+			"Finalidade informativa do site",
+			"Ausência de aconselhamento jurídico automático",
+			"Propriedade intelectual",
+			"Ligações externas",
+			"Limitação de responsabilidade",
+			"Jurisdição aplicável"
+		],
+		"sections": []
 	},
 	"ctaRefs": []
 }

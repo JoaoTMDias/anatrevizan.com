@@ -12,10 +12,13 @@ import PublicationsPage from '../editorial/PublicationsPage.astro';
 import SpeakingPage from '../editorial/SpeakingPage.astro';
 import ContactPage from '../editorial/ContactPage.astro';
 import BookingPage from '../editorial/BookingPage.astro';
+import PrivacyPage from '../editorial/PrivacyPage.astro';
+import TermsPage from '../editorial/TermsPage.astro';
+import CookiesPage from '../editorial/CookiesPage.astro';
 interface Props { data?: CmsEditorial | null }
 const { data } = Astro.props;
 ---
-{data?.routeKey === 'home' ? <HomePage data={data} /> : data?.routeKey === 'about' ? <AboutPage data={data} /> : data?.routeKey === 'consulting' ? <ConsultingHubPage data={data} /> : data?.consultingService ? <ConsultingServicePage data={data} /> : data?.routeKey === 'academic' ? <AcademicHubPage data={data} /> : data?.academicService ? <AcademicServicePage data={data} /> : data?.routeKey === 'publications' ? <PublicationsPage data={data} /> : data?.routeKey === 'events' ? <EventsPage data={data} /> : data?.routeKey === 'speaking' ? <SpeakingPage data={data} /> : data?.routeKey === 'contact' ? <ContactPage data={data} /> : data?.routeKey === 'booking' ? <BookingPage data={data} /> : data && <article id="main-content" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+{data?.routeKey === 'home' ? <HomePage data={data} /> : data?.routeKey === 'about' ? <AboutPage data={data} /> : data?.routeKey === 'consulting' ? <ConsultingHubPage data={data} /> : data?.consultingService ? <ConsultingServicePage data={data} /> : data?.routeKey === 'academic' ? <AcademicHubPage data={data} /> : data?.academicService ? <AcademicServicePage data={data} /> : data?.routeKey === 'publications' ? <PublicationsPage data={data} /> : data?.routeKey === 'events' ? <EventsPage data={data} /> : data?.routeKey === 'speaking' ? <SpeakingPage data={data} /> : data?.routeKey === 'contact' ? <ContactPage data={data} /> : data?.routeKey === 'booking' ? <BookingPage data={data} /> : data?.routeKey === 'privacy' ? <PrivacyPage data={data} /> : data?.routeKey === 'terms' ? <TermsPage data={data} /> : data?.routeKey === 'cookies' ? <CookiesPage data={data} /> : data && <article id="main-content" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
 	{data.approvalPending && <p role="status" class="mb-6 rounded border border-amber-500 p-3 text-sm">{data.locale === 'en' ? 'Structural content awaiting editorial approval.' : 'Conteúdo estrutural a aguardar aprovação editorial.'}</p>}
 	<h1 data-tina-field={tinaField(data, 'title')}>{data.title}</h1>
 	{data.summary && <p data-tina-field={tinaField(data, 'summary')}>{data.summary}</p>}

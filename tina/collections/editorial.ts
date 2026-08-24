@@ -5,7 +5,6 @@ import {
 	type RouteKey,
 	routeKeys,
 } from "../../src/lib/routing";
-import { localizedDocumentFields } from "./common";
 import {
 	academicHubFields,
 	academicServiceFields,
@@ -13,13 +12,19 @@ import {
 	publicationsPageFields,
 	speakingPageFields,
 } from "./academic-sections";
+import { localizedDocumentFields } from "./common";
+import { bookingPageFields, contactPageFields } from "./contact-sections";
 import {
 	aboutFields,
 	consultingHubFields,
 	consultingServiceFields,
 	homeFields,
 } from "./editorial-sections";
-import { bookingPageFields, contactPageFields } from "./contact-sections";
+import {
+	cookiesPageFields,
+	privacyPageFields,
+	termsPageFields,
+} from "./legal-sections";
 
 export const EditorialCollection: Collection = {
 	name: "editorial",
@@ -66,6 +71,9 @@ export const EditorialCollection: Collection = {
 		...speakingPageFields,
 		...contactPageFields,
 		...bookingPageFields,
+		...privacyPageFields,
+		...termsPageFields,
+		...cookiesPageFields,
 		{ name: "ctaRefs", label: "CTA identifiers", type: "string", list: true },
 		{
 			name: "legal",

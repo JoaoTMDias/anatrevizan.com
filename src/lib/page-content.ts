@@ -244,6 +244,12 @@ export interface BookingPageContent {
 	timezoneNote: string;
 }
 
+export interface LegalPageContent {
+	sourceStatus: string;
+	reviewRequirements: string[];
+	sections?: Array<{ heading: string; paragraphs: string[] }> | null;
+}
+
 export function hasValidRouteKey(value: {
 	routeKey?: unknown;
 }): value is { routeKey: RouteKey } {
