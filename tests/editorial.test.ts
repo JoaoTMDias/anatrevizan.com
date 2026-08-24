@@ -9,6 +9,7 @@ import {
 	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
+import { islandContextFromParams } from "../src/lib/island-context.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
 
 const docs = routeKeys.flatMap((routeKey) =>
@@ -153,6 +154,24 @@ describe("editorial validation", () => {
 		expect(shouldRenderEditorialDocument(draftDoc, true)).toBe(true);
 		expect(shouldRenderEditorialDocument(readyDoc, false)).toBe(true);
 		expect(shouldRenderEditorialDocument(approvedPendingDoc, true)).toBe(false);
+	});
+
+	it("validates Tina island context without falling back on invalid values", () => {
+		expect(
+			islandContextFromParams(
+				new URLSearchParams({ locale: "en", routeKey: "about" }),
+			),
+		).toEqual({ locale: "en", routeKey: "about" });
+		expect(
+			islandContextFromParams(
+				new URLSearchParams({ locale: "pt-BR", routeKey: "home" }),
+			),
+		).toBeNull();
+		expect(
+			islandContextFromParams(
+				new URLSearchParams({ locale: "en", routeKey: "unknown" }),
+			),
+		).toBeNull();
 	});
 
 	it("includes preview drafts in build output but excludes them from production sitemap", () => {

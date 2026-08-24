@@ -1,14 +1,16 @@
 ---
 import type { CmsConfig } from '../lib/data';
-import { pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
+import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
 interface Props { config?: CmsConfig | null; locale?: PublishedLocale; routeKey?: RouteKey; languageAvailable?: boolean }
 const { config, locale = 'pt-PT', routeKey = 'home', languageAvailable = false } = Astro.props;
+type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
+const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> => isRouteKey(item.routeKey);
 const languageField = locale === 'pt-PT' ? 'pt' : 'en';
 const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.routeKey && item.label));
+const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
 const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
 const isCurrentSection = (item: (typeof navigation)[number]) => item.routeKey === routeKey || (item.children ?? []).some((child) => child?.routeKey === routeKey);
-const navigationItems = navigation.map((item) => ({ item, itemRoute: item.routeKey as RouteKey, children: (item.children ?? []).filter(present).filter((child) => Boolean(child.routeKey && child.label)) }));
+const navigationItems = navigation.map((item) => ({ item, itemRoute: item.routeKey, children: (item.children ?? []).filter(present).filter((child) => Boolean(child.label)).filter(hasRouteKey) }));
 ---
 <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-3" href="#main-content">{locale === 'en' ? 'Skip to content' : 'Saltar para o conteúdo'}</a>
 <header class="relative z-30 border-b bg-background">

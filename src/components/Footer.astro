@@ -1,15 +1,17 @@
 ---
 import type { CmsConfig } from '../lib/data';
-import { pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
+import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
 interface Props { config?: CmsConfig | null; locale?: PublishedLocale }
 const { config, locale = 'pt-PT' } = Astro.props;
+type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
+const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> => isRouteKey(item.routeKey);
 const languageField = locale === 'pt-PT' ? 'pt' : 'en';
 const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
 const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.routeKey && item.label));
+const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
 const menus = navigation.filter((item) => item.type === 'menu' && item.children?.length);
 const directLinks = navigation.filter((item) => item.type !== 'menu');
-const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(Boolean) as RouteKey[];
+const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 	home: { pt: 'Início', en: 'Home' }, consulting: { pt: 'Consultoria', en: 'Consulting' }, 'immigration-mobility': { pt: 'Migração e mobilidade', en: 'Immigration and mobility' }, legal: { pt: 'Consultoria jurídica', en: 'Legal consulting' }, 'environmental-esg': { pt: 'Ambiente e ESG', en: 'Environmental and ESG' }, 'public-policy': { pt: 'Políticas públicas', en: 'Public policy' }, 'legal-opinions': { pt: 'Pareceres', en: 'Legal opinions' }, academic: { pt: 'Academia', en: 'Academic' }, mentoring: { pt: 'Mentorias', en: 'Mentoring' }, publications: { pt: 'Publicações', en: 'Publications' }, events: { pt: 'Eventos', en: 'Events' }, speaking: { pt: 'Palestras', en: 'Speaking' }, training: { pt: 'Formações', en: 'Training' }, about: { pt: 'Sobre', en: 'About' }, contact: { pt: 'Contacto', en: 'Contact' }, booking: { pt: 'Agendar', en: 'Book a call' }, privacy: { pt: 'Política de privacidade', en: 'Privacy policy' }, terms: { pt: 'Termos de utilização', en: 'Terms of use' }, cookies: { pt: 'Política de cookies', en: 'Cookie policy' },
 };
@@ -17,12 +19,12 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 <footer class="border-t py-10">
 	<div class="mx-auto grid max-w-6xl gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
 		{menus.map((menu) => <nav aria-label={labelFor(menu.label)}>
-			<a href={pathFor(menu.routeKey as RouteKey, locale)} class="font-semibold">{labelFor(menu.label)}</a>
-			<ul class="mt-3 space-y-2 text-sm">{(menu.children ?? []).filter(present).map((child) => <li><a href={pathFor(child.routeKey as RouteKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
+			<a href={pathFor(menu.routeKey, locale)} class="font-semibold">{labelFor(menu.label)}</a>
+			<ul class="mt-3 space-y-2 text-sm">{(menu.children ?? []).filter(present).filter(hasRouteKey).map((child) => <li><a href={pathFor(child.routeKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
 		</nav>)}
 		<nav aria-label={locale === 'en' ? 'Institutional' : 'Institucional'}>
 			<p class="font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
-			<ul class="mt-3 space-y-2 text-sm">{directLinks.map((item) => <li><a href={pathFor(item.routeKey as RouteKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
+			<ul class="mt-3 space-y-2 text-sm">{directLinks.map((item) => <li><a href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
 		</nav>
 		<nav aria-label={locale === 'en' ? 'Legal' : 'Informação legal'}>
 			<p class="font-semibold">{locale === 'en' ? 'Legal' : 'Informação legal'}</p>
