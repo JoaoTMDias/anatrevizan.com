@@ -63,16 +63,17 @@ PT-PT. Não constituem tradução EN válida. Os documentos ingleses permanecem
 estruturais, draft/noindex e sem fallback português visível. Espanhol não é
 publicado em v1.
 
-## Modelos e templates previstos
+## Modelos e templates implementados
 
 - Hub académico com cinco destinos explícitos.
-- Página de serviço académico para Mentorias e Formações.
-- Repositório estático de Publicações, sem antecipar a integração ORCID.
+- Template de serviço académico partilhado apenas por Mentorias e Formações.
+- Repositório estático de Publicações com 25 registos, sem antecipar a
+  integração ORCID; 23 ligações válidas e dois placeholders não clicáveis.
 - Página de Eventos com estado vazio editorial honesto.
 - Página de Palestras com biografia, temas, conteúdo previsto do kit e CTA de
   contacto, mas sem download ou imagem falsos.
 
-Não será criado page builder, renderer universal ou migração mecânica dos
+Não foi criado page builder, renderer universal ou migração mecânica dos
 componentes Next.js.
 
 ## Critério de conclusão

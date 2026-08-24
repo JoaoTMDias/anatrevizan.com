@@ -211,7 +211,9 @@ describe("editorial validation", () => {
 
 	it("accounts for all 203 Portuguese consulting source strings", () => {
 		const directory = join(process.cwd(), "src/content/editorial/pt-PT");
-		const hub = JSON.parse(readFileSync(join(directory, "consulting.json"), "utf8"));
+		const hub = JSON.parse(
+			readFileSync(join(directory, "consulting.json"), "utf8"),
+		);
 		const serviceNames = [
 			"immigration-mobility",
 			"legal",
@@ -246,7 +248,9 @@ describe("editorial validation", () => {
 			const document = JSON.parse(
 				readFileSync(join(directory, `${name}.json`), "utf8"),
 			);
-			const technicalStrings = document.consultingService.crosslinkRouteKey ? 1 : 0;
+			const technicalStrings = document.consultingService.crosslinkRouteKey
+				? 1
+				: 0;
 			expect(
 				1 + countStrings(document.consultingService) - technicalStrings,
 			).toBe(expectedServiceCounts[index]);
@@ -280,6 +284,90 @@ describe("editorial validation", () => {
 			expect(value.approvalPending).toBe(true);
 			expect(value.consultingHub).toBeUndefined();
 			expect(value.consultingService).toBeUndefined();
+		}
+	});
+
+	it("accounts for the academic page inventory and publication placeholders", () => {
+		const directory = join(process.cwd(), "src/content/editorial/pt-PT");
+		const hub = JSON.parse(
+			readFileSync(join(directory, "academic.json"), "utf8"),
+		);
+		const mentoring = JSON.parse(
+			readFileSync(join(directory, "mentoring.json"), "utf8"),
+		);
+		const training = JSON.parse(
+			readFileSync(join(directory, "training.json"), "utf8"),
+		);
+		const publications = JSON.parse(
+			readFileSync(join(directory, "publications.json"), "utf8"),
+		);
+		const events = JSON.parse(
+			readFileSync(join(directory, "events.json"), "utf8"),
+		);
+		const speaking = JSON.parse(
+			readFileSync(join(directory, "speaking.json"), "utf8"),
+		);
+
+		expect(hub.academicHub.sections).toHaveLength(5);
+		expect(1 + countStrings(mentoring.academicService)).toBe(21);
+		expect(1 + countStrings(training.academicService)).toBe(22);
+		expect(events.eventsPage.entries).toEqual([]);
+		expect(1 + countStrings(events.eventsPage)).toBe(8);
+		expect(1 + countStrings(speaking.speakingPage)).toBe(24);
+		expect(publications.publicationsPage.publications).toHaveLength(25);
+		expect(
+			publications.publicationsPage.publications.filter(
+				(item: { linkStatus: string }) => item.linkStatus === "placeholder",
+			),
+		).toHaveLength(2);
+		expect(
+			publications.publicationsPage.publications.some(
+				(item: { url?: string }) => item.url === "#",
+			),
+		).toBe(false);
+		for (const document of [
+			hub,
+			mentoring,
+			training,
+			publications,
+			events,
+			speaking,
+		]) {
+			expect(document.status).toBe("draft");
+			expect(document.approvalPending).toBe(true);
+			expect(document.seo.noindex).toBe(true);
+		}
+
+		const manifest = readFileSync(
+			join(process.cwd(), "docs/especificacao-editorial-academia.md"),
+			"utf8",
+		);
+		expect(manifest).toContain("106 strings PT-PT");
+		expect(manifest).toContain("25 registos e 136 campos string");
+		expect(manifest).toContain('Dois registos usam `link: "#"`');
+	});
+
+	it("keeps copied Portuguese academic content out of English documents", () => {
+		for (const name of [
+			"academic",
+			"mentoring",
+			"publications",
+			"events",
+			"speaking",
+			"training",
+		]) {
+			const value = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/en/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(value.approvalPending).toBe(true);
+			expect(value.academicHub).toBeUndefined();
+			expect(value.academicService).toBeUndefined();
+			expect(value.publicationsPage).toBeUndefined();
+			expect(value.eventsPage).toBeUndefined();
+			expect(value.speakingPage).toBeUndefined();
 		}
 	});
 
