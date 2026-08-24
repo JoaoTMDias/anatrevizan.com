@@ -1,0 +1,23 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import type { AboutContent } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const about = data.about as AboutContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+---
+<article id="main-content">
+	<DraftNotice locale={locale} />
+	{about ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'about')}><div class="mx-auto max-w-6xl"><p>{about.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg">{about.subtitle}</p></div></header>
+		<section class="mx-auto max-w-4xl space-y-5 px-6 py-16 text-lg">{about.narrative.map((paragraph) => <p>{paragraph}</p>)}</section>
+		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-4xl"><h2 class="text-3xl font-bold">{about.milestonesTitle}</h2><ol class="mt-8 border-l-2 pl-7">{about.milestones.map((item) => <li class="mb-8"><p class="font-semibold">{item.year}</p><h3 class="mt-1 text-lg font-semibold">{item.title}</h3><p class="mt-2">{item.description}</p></li>)}</ol></div></section>
+		<section class="mx-auto max-w-6xl px-6 py-16"><h2 class="text-3xl font-bold">{about.currentWorkTitle}</h2><div class="mt-8 grid gap-6 md:grid-cols-2">{about.currentWork.map((item) => <article class="rounded-lg border p-6"><p class="text-2xl" aria-hidden="true">{item.country}</p><h3 class="mt-3 text-lg font-semibold">{item.title}</h3><p class="mt-2">{item.description}</p></article>)}</div></section>
+		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-6xl"><h2 class="text-3xl font-bold">{about.valuesTitle}</h2><p class="mt-3 max-w-3xl">{about.valuesSubtitle}</p><div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{about.values.map((item) => <article><h3 class="font-semibold">{item.title}</h3><p class="mt-2 text-sm">{item.description}</p></article>)}</div></div></section>
+		<section class="mx-auto max-w-6xl px-6 py-14"><h2 class="text-sm font-semibold uppercase tracking-wider">{about.networksLabel}</h2><ul class="mt-5 flex flex-wrap gap-3">{about.networks.map((network) => <li class="rounded-full border px-4 py-2">{network}</li>)}</ul><a class="mt-7 inline-block font-semibold underline" href={pathFor('speaking', locale)}>{about.speakerKitCta}</a></section>
+		<section class="bg-slate-900 px-6 py-16 text-center text-white"><h2 class="text-3xl font-bold">{about.finalCtaHeading}</h2><p class="mx-auto mt-4 max-w-2xl">{about.finalCtaText}</p><a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>{about.finalCtaLabel}</a></section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>
