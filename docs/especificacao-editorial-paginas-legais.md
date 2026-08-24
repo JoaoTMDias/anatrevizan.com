@@ -74,3 +74,7 @@ Playwright relevante, `astro check`, `build:local` e `git diff --check`.
 
 Nenhuma página muda para `ready`, perde `noindex` ou recebe data/versão/revisor
 sem texto integral e aprovação jurídica qualificada.
+
+A representação estrutural destas lacunas foi confirmada pela Ana em 24 de
+agosto de 2026. A confirmação encerra a migração do placeholder histórico, mas
+não aprova nem substitui a redação e revisão jurídica ainda necessárias.

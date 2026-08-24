@@ -60,6 +60,7 @@
 - [x] Privacidade, Termos e Cookies auditados; sete strings PT-PT distintas e ausência total de corpo legal contabilizadas no manifesto `docs/especificacao-editorial-paginas-legais.md`.
 - [x] Três modelos TinaCMS e três templates Astro específicos implementados, mantendo `draft`, `approvalPending` e `noindex`.
 - [x] Placeholder comum, títulos EN em português e lacunas de privacidade/consentimento registados sem inventar cláusulas ou apresentar requisitos internos como texto legal.
+- [x] Representação estrutural das lacunas nas três páginas confirmada pela Ana em 24 de agosto de 2026; esta confirmação não constitui aprovação jurídica do conteúdo ainda inexistente.
 - [ ] Redação integral e revisão jurídica qualificada das três páginas, incluindo versão, data de entrada em vigor e responsável pela revisão.
 - [ ] Consentimento de cookies e bloqueio de terceiros implementados caso os serviços finais o exijam.
 
