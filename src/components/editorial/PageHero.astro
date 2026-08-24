@@ -9,9 +9,10 @@ interface Props extends Omit<HTMLAttributes<'header'>, 'title'> {
 	tag?: string;
 	locale: PublishedLocale;
 	parent?: { label: string; href: string };
+	tone?: 'accent' | 'primary';
 }
 
-const { title, subtitle, tag, locale, parent, class: className, ...rest } = Astro.props;
+const { title, subtitle, tag, locale, parent, tone = 'primary', class: className, ...rest } = Astro.props;
 const items = [
 	{ label: locale === 'en' ? 'Home' : 'Início', href: pathFor('home', locale) },
 	...(parent ? [parent] : []),
@@ -19,7 +20,7 @@ const items = [
 ];
 ---
 
-<header class:list={['editorial-hero', className]} {...rest}>
+<header class:list={['editorial-hero', tone === 'accent' && 'editorial-hero--accent', className]} {...rest}>
 	<div class="site-container editorial-hero__inner">
 		<Breadcrumbs items={items} />
 		<div class="editorial-hero__content">

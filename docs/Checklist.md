@@ -33,9 +33,13 @@
 ## Estado da fase 3 — sistema visual e componentes partilhados (agosto de 2026)
 
 - [x] Sistema visual da referência Next.js auditado e dividido em cinco grupos verificáveis; manifesto em `docs/auditoria-visual-fase-3.md`.
+- [x] Universo integral de 650 ocorrências visuais registado em `docs/inventario-estilos-nextjs.md`; nenhum estilo pode ser omitido apenas por redundância ou baixa qualidade da referência.
 - [x] Limite inicial confirmado: fundação visual, shell global e primitivos partilhados, sem alterar conteúdo, rotas, modelos ou estados editoriais.
-- [ ] Grupo 1 — fundação visual, header, navegação, footer, botões, cards e notices validado e concluído.
-- [ ] Grupos 2–5 — estruturas comuns, Consultoria, Academia e fecho visual das restantes páginas.
+- [x] Grupo 1 — fundação visual, header, navegação, footer, botões, cards e notices validado e concluído.
+- [x] Grupo 2 — heroes estáticos, breadcrumbs, títulos de secção, grelhas, CTAs e estados vazios partilhados implementados e validados.
+- [x] Grupo 3 — família Consultoria aplicada às seis páginas, incluindo o acento verde reservado a Ambiental e ESG.
+- [ ] Grupo 4 — família Academia e estados visuais de listas e filtros, sem implementar ORCID.
+- [ ] Grupo 5 — institucional, contacto, agendamento, legais e QA visual final das 19 rotas.
 
 ## Segurança do build editorial (agosto de 2026)
 

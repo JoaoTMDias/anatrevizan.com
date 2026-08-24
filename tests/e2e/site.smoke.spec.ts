@@ -80,18 +80,22 @@ test.describe("localized draft pages", () => {
 		await page.keyboard.press("Escape");
 		await expect(trigger).toHaveAttribute("aria-expanded", "false");
 		expect(await page.locator("footer").getAttribute("inert")).toBeNull();
-		expect(await trigger.evaluate((node) => node === document.activeElement)).toBe(
-			true,
-		);
+		expect(
+			await trigger.evaluate((node) => node === document.activeElement),
+		).toBe(true);
 	});
 
 	test("shared shell exposes visible focus and real configured destinations", async ({
 		page,
 	}) => {
 		await page.goto("/sobre");
-		const logo = page.getByRole("link", { name: "Ana Trevizan", exact: true }).first();
+		const logo = page
+			.getByRole("link", { name: "Ana Trevizan", exact: true })
+			.first();
 		await logo.focus();
-		expect(await logo.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
+		expect(
+			await logo.evaluate((node) => getComputedStyle(node).outlineStyle),
+		).not.toBe("none");
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(1);
 	});
@@ -283,6 +287,15 @@ test.describe("localized draft pages", () => {
 		}
 	});
 
+	test("Environmental and ESG alone receives the consulting accent hero", async ({
+		page,
+	}) => {
+		await page.goto("/consultoria/ambiental-e-esg");
+		await expect(page.locator("header.editorial-hero--accent")).toHaveCount(1);
+		await page.goto("/consultoria/juridica");
+		await expect(page.locator("header.editorial-hero--accent")).toHaveCount(0);
+	});
+
 	test("English consulting previews do not expose Portuguese source content", async ({
 		page,
 	}) => {
@@ -441,9 +454,15 @@ test.describe("localized draft pages", () => {
 		await expect(
 			contactContent.locator('a[href="https://wa.me/351926430792"]'),
 		).toBeVisible();
-		await expect(contactContent.getByRole("link", { name: "LinkedIn" })).toBeVisible();
-		await expect(contactContent.getByRole("link", { name: "Instagram" })).toBeVisible();
-		await expect(contactContent.getByRole("link", { name: "ORCID" })).toBeVisible();
+		await expect(
+			contactContent.getByRole("link", { name: "LinkedIn" }),
+		).toBeVisible();
+		await expect(
+			contactContent.getByRole("link", { name: "Instagram" }),
+		).toBeVisible();
+		await expect(
+			contactContent.getByRole("link", { name: "ORCID" }),
+		).toBeVisible();
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		expect(errors).toEqual([]);
 	});
