@@ -1,49 +1,33 @@
 ---
-import { tinaField } from "@tinacms/astro/tina-field";
-import type { CmsConfig, CmsConfigContactLink } from '../lib/data';
-import IconLink from "./IconLink.astro";
-import Starfield from './space/Starfield.astro';
-
-interface Props {
-	config?: CmsConfig | null;
-}
-
-const { config } = Astro.props;
-const seo = config?.seo ?? null;
-const contactLinks = (config?.contactLinks ?? []).filter(
-	(item): item is CmsConfigContactLink => item !== null,
-);
-const today = new Date();
+import type { CmsConfig } from '../lib/data';
+import { pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
+interface Props { config?: CmsConfig | null; locale?: PublishedLocale }
+const { config, locale = 'pt-PT' } = Astro.props;
+const languageField = locale === 'pt-PT' ? 'pt' : 'en';
+const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
+const present = <T,>(value: T | null): value is T => value !== null;
+const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.routeKey && item.label));
+const menus = navigation.filter((item) => item.type === 'menu' && item.children?.length);
+const directLinks = navigation.filter((item) => item.type !== 'menu');
+const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(Boolean) as RouteKey[];
+const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
+	home: { pt: 'Início', en: 'Home' }, consulting: { pt: 'Consultoria', en: 'Consulting' }, 'immigration-mobility': { pt: 'Migração e mobilidade', en: 'Immigration and mobility' }, legal: { pt: 'Consultoria jurídica', en: 'Legal consulting' }, 'environmental-esg': { pt: 'Ambiente e ESG', en: 'Environmental and ESG' }, 'public-policy': { pt: 'Políticas públicas', en: 'Public policy' }, 'legal-opinions': { pt: 'Pareceres', en: 'Legal opinions' }, academic: { pt: 'Academia', en: 'Academic' }, mentoring: { pt: 'Mentorias', en: 'Mentoring' }, publications: { pt: 'Publicações', en: 'Publications' }, events: { pt: 'Eventos', en: 'Events' }, speaking: { pt: 'Palestras', en: 'Speaking' }, training: { pt: 'Formações', en: 'Training' }, about: { pt: 'Sobre', en: 'About' }, contact: { pt: 'Contacto', en: 'Contact' }, booking: { pt: 'Agendar', en: 'Book a call' }, privacy: { pt: 'Política de privacidade', en: 'Privacy policy' }, terms: { pt: 'Termos de utilização', en: 'Terms of use' }, cookies: { pt: 'Política de cookies', en: 'Cookie policy' },
+};
 ---
-<footer class="border-t bg-background py-12 text-center text-sm text-muted-foreground relative overflow-hidden">
-	{config?.footerStarfield !== false && <Starfield count={50} class="text-foreground/15" />}
-	<div class="relative flex flex-col items-center gap-6">
-		{contactLinks.length > 0 && (
-			<div class="flex justify-center gap-4">
-				{contactLinks.map((link) => (
-					<IconLink
-						title={link.title}
-						link={link.link}
-						icon={link.icon}
-						data-tina-field={tinaField(link, "title")}
-					/>
-				))}
-			</div>
-		)}
-		<p>
-			&copy; {today.getFullYear()}
-			<span data-tina-field={seo ? tinaField(seo, "siteOwner") : undefined}>{seo?.siteOwner}</span>. All rights reserved.
-		</p>
-		<a
-			href="https://tina.io"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="group inline-flex items-center gap-2.5 rounded-full border bg-card/60 py-1.5 pl-1.5 pr-4 text-xs font-medium text-muted-foreground shadow-xs transition-colors duration-200 hover:border-primary/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-		>
-			<span class="flex size-6 items-center justify-center rounded-full bg-primary transition-transform duration-300 group-hover:scale-105">
-				<img src="/llama.svg" alt="" aria-hidden="true" class="size-3.5" />
-			</span>
-			<span>Powered by <span class="font-semibold text-foreground">TinaCMS</span></span>
-		</a>
+<footer class="border-t py-10">
+	<div class="mx-auto grid max-w-6xl gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
+		{menus.map((menu) => <nav aria-label={labelFor(menu.label)}>
+			<a href={pathFor(menu.routeKey as RouteKey, locale)} class="font-semibold">{labelFor(menu.label)}</a>
+			<ul class="mt-3 space-y-2 text-sm">{(menu.children ?? []).filter(present).map((child) => <li><a href={pathFor(child.routeKey as RouteKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
+		</nav>)}
+		<nav aria-label={locale === 'en' ? 'Institutional' : 'Institucional'}>
+			<p class="font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
+			<ul class="mt-3 space-y-2 text-sm">{directLinks.map((item) => <li><a href={pathFor(item.routeKey as RouteKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
+		</nav>
+		<nav aria-label={locale === 'en' ? 'Legal' : 'Informação legal'}>
+			<p class="font-semibold">{locale === 'en' ? 'Legal' : 'Informação legal'}</p>
+			<ul class="mt-3 space-y-2 text-sm">{legalRoutes.map((key) => <li><a href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}</ul>
+		</nav>
 	</div>
+	<div class="mx-auto mt-8 max-w-6xl border-t px-6 pt-6 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div>
 </footer>

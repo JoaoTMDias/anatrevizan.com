@@ -1,0 +1,16 @@
+{
+  "translationGroup": "immigration-mobility",
+  "locale": "pt-PT",
+  "routeKey": "immigration-mobility",
+  "slug": "consultoria/migracao-e-mobilidade",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Migração e mobilidade",
+  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+  "seo": {
+    "title": "Migração e mobilidade — Ana Trevizan",
+    "description": "Descrição editorial por aprovar.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

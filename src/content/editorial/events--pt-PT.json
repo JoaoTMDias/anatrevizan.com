@@ -1,0 +1,16 @@
+{
+  "translationGroup": "events",
+  "locale": "pt-PT",
+  "routeKey": "events",
+  "slug": "academia/eventos",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Eventos",
+  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+  "seo": {
+    "title": "Eventos — Ana Trevizan",
+    "description": "Descrição editorial por aprovar.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

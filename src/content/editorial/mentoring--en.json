@@ -1,0 +1,16 @@
+{
+  "translationGroup": "mentoring",
+  "locale": "en",
+  "routeKey": "mentoring",
+  "slug": "academic/mentoring",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Mentoring",
+  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+  "seo": {
+    "title": "Mentoring — Ana Trevizan",
+    "description": "Editorial description awaiting approval.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

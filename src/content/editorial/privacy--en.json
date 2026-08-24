@@ -1,0 +1,16 @@
+{
+  "translationGroup": "privacy",
+  "locale": "en",
+  "routeKey": "privacy",
+  "slug": "privacy-policy",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Privacy policy",
+  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+  "seo": {
+    "title": "Privacy policy — Ana Trevizan",
+    "description": "Editorial description awaiting approval.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

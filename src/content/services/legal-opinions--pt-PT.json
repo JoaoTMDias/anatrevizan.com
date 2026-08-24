@@ -1,0 +1,17 @@
+{
+  "translationGroup": "legal-opinions",
+  "locale": "pt-PT",
+  "slug": "pareceres",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Pareceres e Notas Técnicas",
+  "summary": "REGISTO ESTRUTURAL — por aprovar.",
+  "seo": {
+    "title": "Pareceres e Notas Técnicas",
+    "description": "Registo estrutural em draft.",
+    "noindex": true
+  },
+  "parentRouteKey": "legal-opinions",
+  "jurisdictions": [],
+  "ctaRefs": []
+}

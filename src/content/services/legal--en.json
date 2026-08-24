@@ -1,0 +1,17 @@
+{
+  "translationGroup": "legal",
+  "locale": "en",
+  "slug": "legal",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Legal consulting",
+  "summary": "STRUCTURAL RECORD — awaiting approval.",
+  "seo": {
+    "title": "Legal consulting",
+    "description": "Draft structural record.",
+    "noindex": true
+  },
+  "parentRouteKey": "legal",
+  "jurisdictions": [],
+  "ctaRefs": []
+}

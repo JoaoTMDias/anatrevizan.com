@@ -1,0 +1,16 @@
+{
+  "translationGroup": "publications",
+  "locale": "pt-PT",
+  "routeKey": "publications",
+  "slug": "academia/publicacoes",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Publicações",
+  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+  "seo": {
+    "title": "Publicações — Ana Trevizan",
+    "description": "Descrição editorial por aprovar.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

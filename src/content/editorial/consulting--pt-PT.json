@@ -1,0 +1,16 @@
+{
+  "translationGroup": "consulting",
+  "locale": "pt-PT",
+  "routeKey": "consulting",
+  "slug": "consultoria",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Consultoria",
+  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+  "seo": {
+    "title": "Consultoria — Ana Trevizan",
+    "description": "Descrição editorial por aprovar.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

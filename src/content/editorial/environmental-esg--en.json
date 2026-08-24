@@ -1,0 +1,16 @@
+{
+  "translationGroup": "environmental-esg",
+  "locale": "en",
+  "routeKey": "environmental-esg",
+  "slug": "consulting/environmental-esg",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Environmental and ESG",
+  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+  "seo": {
+    "title": "Environmental and ESG — Ana Trevizan",
+    "description": "Editorial description awaiting approval.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

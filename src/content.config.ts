@@ -4,7 +4,7 @@
  * declare `config` to stop Astro auto-generating it as a Markdown
  * collection: `src/content/config` holds JSON (Tina's global config), so
  * the default Markdown glob finds nothing and warns. Pointing it at JSON
- * silences that. `blog` and `page` keep their Markdown auto-generation.
+ * silences that warning. Runtime pages and entities are loaded via Tina.
  */
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';

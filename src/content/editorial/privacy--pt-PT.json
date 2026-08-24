@@ -1,0 +1,16 @@
+{
+  "translationGroup": "privacy",
+  "locale": "pt-PT",
+  "routeKey": "privacy",
+  "slug": "politica-de-privacidade",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Política de privacidade",
+  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+  "seo": {
+    "title": "Política de privacidade — Ana Trevizan",
+    "description": "Descrição editorial por aprovar.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

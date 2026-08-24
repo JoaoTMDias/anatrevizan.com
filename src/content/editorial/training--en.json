@@ -1,0 +1,16 @@
+{
+  "translationGroup": "training",
+  "locale": "en",
+  "routeKey": "training",
+  "slug": "academic/training",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Training",
+  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+  "seo": {
+    "title": "Training — Ana Trevizan",
+    "description": "Editorial description awaiting approval.",
+    "noindex": true
+  },
+  "ctaRefs": []
+}

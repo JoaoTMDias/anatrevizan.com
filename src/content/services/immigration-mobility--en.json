@@ -1,0 +1,17 @@
+{
+  "translationGroup": "immigration-mobility",
+  "locale": "en",
+  "slug": "immigration-mobility",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Immigration and mobility",
+  "summary": "STRUCTURAL RECORD — awaiting approval.",
+  "seo": {
+    "title": "Immigration and mobility",
+    "description": "Draft structural record.",
+    "noindex": true
+  },
+  "parentRouteKey": "immigration-mobility",
+  "jurisdictions": [],
+  "ctaRefs": []
+}

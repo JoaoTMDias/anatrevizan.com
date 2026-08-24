@@ -1,7 +1,11 @@
 import { defineConfig } from "tinacms";
-import { BlogCollection } from "./collections/blog";
 import { GlobalConfigCollection } from "./collections/global-config";
-import { PageCollection } from "./collections/page";
+import { EditorialCollection } from "./collections/editorial";
+import { ServiceCollection } from "./collections/service";
+import { EventCollection } from "./collections/event";
+import { TalkCollection } from "./collections/talk";
+import { TrainingCollection } from "./collections/training";
+import { MentoringCollection } from "./collections/mentoring";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -33,8 +37,12 @@ export default defineConfig({
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
-      BlogCollection,
-      PageCollection,
+      EditorialCollection,
+      ServiceCollection,
+      EventCollection,
+      TalkCollection,
+      TrainingCollection,
+      MentoringCollection,
       GlobalConfigCollection,
     ],
   },

@@ -1,0 +1,30 @@
+---
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import Base from '../layouts/Base.astro';
+import EditorialBody from './islands/EditorialBody.astro';
+import { getEditorial } from '../lib/data';
+import { isPublishable } from '../lib/editorial';
+import { islands } from '../lib/islands';
+import type { PublishedLocale, RouteKey } from '../lib/routing';
+interface Props { routeKey: RouteKey; locale: PublishedLocale }
+const { routeKey, locale } = Astro.props;
+const relativePath = `${routeKey}--${locale}.json`;
+const result = await getEditorial(relativePath);
+const data = result.data?.editorial;
+if (!data) return new Response('Not found', { status: 404 });
+const otherLocale: PublishedLocale = locale === 'en' ? 'pt-PT' : 'en';
+const other = (await getEditorial(`${routeKey}--${otherLocale}.json`)).data?.editorial;
+const documentValue = (value: NonNullable<typeof data>) => ({ translationGroup: value.translationGroup, locale: value.locale as never, routeKey: value.routeKey as never, slug: value.slug, status: value.status as never, title: value.title, seoTitle: value.seo.title, seoDescription: value.seo.description, approvalPending: value.approvalPending });
+const localEditorialPreview = import.meta.env.DEV || process.env.TINA_PUBLIC_IS_LOCAL === 'true';
+const currentPublishable = isPublishable(documentValue(data));
+if (!currentPublishable && !localEditorialPreview) {
+	return new Response('Not found', { status: 404 });
+}
+const noindex = data.status !== 'ready' || data.approvalPending === true || data.seo.noindex === true;
+const availableLocales: PublishedLocale[] = [];
+if (currentPublishable) availableLocales.push(locale);
+if (currentPublishable && other && isPublishable(documentValue(other))) availableLocales.push(otherLocale);
+---
+<Base title={data.seo.title} description={data.seo.description} image={data.seo.image ?? undefined} {locale} {routeKey} {noindex} {availableLocales}>
+	<TinaIsland name="editorial" wrapper={islands.editorial.wrapper} params={{ relativePath }} primary><EditorialBody {data} /></TinaIsland>
+</Base>

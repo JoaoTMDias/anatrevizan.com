@@ -1,0 +1,15 @@
+{
+  "translationGroup": "structural-sample",
+  "locale": "en",
+  "slug": "structural-record",
+  "status": "draft",
+  "approvalPending": true,
+  "title": "Structural training awaiting approval",
+  "summary": "STRUCTURAL RECORD — awaiting approval.",
+  "seo": {
+    "title": "Structural training awaiting approval",
+    "description": "Draft structural record.",
+    "noindex": true
+  },
+  "parentRouteKey": "training"
+}
