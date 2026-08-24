@@ -3,7 +3,13 @@ import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { ConsultingHubContent } from '../../lib/page-content';
 import { pathFor } from '../../lib/routing';
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+import Section from '../ui/Section.astro';
+import ContactCta from './ContactCta.astro';
 import DraftNotice from './DraftNotice.astro';
+import PageHero from './PageHero.astro';
+import SectionHeading from './SectionHeading.astro';
 
 interface Props { data: CmsEditorial }
 const { data } = Astro.props;
@@ -14,36 +20,26 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
-		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'consultingHub')}>
-			<div class="mx-auto max-w-6xl">
-				<h1 class="text-4xl font-bold md:text-6xl">{data.title}</h1>
-				<p class="mt-5 max-w-3xl text-lg text-slate-200">{hub.subtitle}</p>
+		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} data-tina-field={tinaField(data, 'consultingHub')} />
+		<Section>
+			<SectionHeading title={hub.introHeading} subtitle={hub.introText} />
+			<div class="mb-8 flex flex-wrap gap-2" role="group" aria-label={locale === 'en' ? 'Filter areas by country' : 'Filtrar áreas por país'} data-consulting-filters>
+				<Button variant="outline" size="sm" type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</Button>
+				<Button variant="outline" size="sm" type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</Button>
+				<Button variant="outline" size="sm" type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</Button>
 			</div>
-		</header>
-		<section class="mx-auto max-w-6xl px-6 py-16">
-			<h2 class="text-3xl font-bold">{hub.introHeading}</h2>
-			<p class="mt-4 max-w-3xl">{hub.introText}</p>
-			<div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filtrar áreas por país" data-consulting-filters>
-				<button class="rounded border px-4 py-2" type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</button>
-				<button class="rounded border px-4 py-2" type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</button>
-				<button class="rounded border px-4 py-2" type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</button>
+			<div class="editorial-grid" data-consulting-areas>
+				{hub.areas.map((area) => <Card class="p-6" data-countries={area.countries.join(' ')}>
+					<p class="editorial-eyebrow text-primary">{area.tag}</p>
+					<h3 class="text-xl font-semibold">{area.title}</h3>
+					<p class="text-sm leading-relaxed text-muted-foreground">{area.summary}</p>
+					<Button class="mt-auto self-start" variant="link" href={pathFor(area.routeKey, locale)}>{hub.areaCta}</Button>
+				</Card>)}
 			</div>
-			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-consulting-areas>
-				{hub.areas.map((area) => <article class="rounded-lg border p-5" data-countries={area.countries.join(' ')}>
-					<p class="text-sm">{area.tag}</p>
-					<h3 class="mt-2 text-lg font-semibold">{area.title}</h3>
-					<p class="mt-2 text-sm">{area.summary}</p>
-					<a class="mt-4 inline-block font-semibold underline" href={pathFor(area.routeKey, locale)}>{hub.areaCta}</a>
-				</article>)}
-			</div>
-			<p class="mt-10 border-l-4 border-amber-500 pl-4 text-sm">{hub.note}</p>
-		</section>
-		<section class="bg-slate-900 px-6 py-16 text-center text-white">
-			<h2 class="text-3xl font-bold">{hub.ctaHeading}</h2>
-			<p class="mx-auto mt-4 max-w-2xl">{hub.ctaText}</p>
-			<a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>Agendar primeiro contacto</a>
-		</section>
-	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+		</Section>
+		<aside class="border-y bg-secondary"><div class="site-container py-8"><p class="max-w-3xl text-sm leading-relaxed text-muted-foreground">{hub.note}</p></div></aside>
+		<ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
+	</> : <section class="site-container min-h-[60vh] py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>
 
 <script>

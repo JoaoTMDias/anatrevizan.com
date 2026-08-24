@@ -1,0 +1,18 @@
+---
+import Button from '../ui/Button.astro';
+
+interface Props {
+	heading: string;
+	text?: string;
+	href?: string;
+	linkLabel?: string;
+}
+
+const { heading, text, href, linkLabel } = Astro.props;
+---
+
+<div class="editorial-empty-state" role="status">
+	<h2>{heading}</h2>
+	{text && <p>{text}</p>}
+	{href && linkLabel && <Button href={href} variant="link">{linkLabel}</Button>}
+</div>

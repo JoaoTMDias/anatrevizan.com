@@ -217,6 +217,29 @@ test.describe("localized draft pages", () => {
 		expect(errors).toEqual([]);
 	});
 
+	test("shared editorial hero exposes breadcrumbs and both CTA destinations", async ({
+		page,
+	}) => {
+		await page.goto("/consultoria/juridica");
+		const breadcrumbs = page.getByRole("navigation", { name: "Breadcrumb" });
+		await expect(
+			breadcrumbs.getByRole("link", { name: "Início" }),
+		).toHaveAttribute("href", "/");
+		await expect(
+			breadcrumbs.getByRole("link", { name: "Consultoria" }),
+		).toHaveAttribute("href", "/consultoria");
+		await expect(breadcrumbs.getByText("Consultoria Jurídica")).toHaveAttribute(
+			"aria-current",
+			"page",
+		);
+		await expect(
+			page.getByRole("link", { name: "Agendar primeiro contacto" }),
+		).toHaveAttribute("href", "/agendar");
+		await expect(
+			page.getByRole("link", { name: "Entrar em contacto" }),
+		).toHaveAttribute("href", "/contacto");
+	});
+
 	for (const [route, heading] of [
 		["/consultoria/migracao-e-mobilidade", "Migração e Mobilidade"],
 		["/consultoria/juridica", "Consultoria Jurídica"],

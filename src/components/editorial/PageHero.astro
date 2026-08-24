@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { pathFor, type PublishedLocale } from '../../lib/routing';
+import Breadcrumbs from './Breadcrumbs.astro';
+
+interface Props extends Omit<HTMLAttributes<'header'>, 'title'> {
+	title: string;
+	subtitle?: string;
+	tag?: string;
+	locale: PublishedLocale;
+	parent?: { label: string; href: string };
+}
+
+const { title, subtitle, tag, locale, parent, class: className, ...rest } = Astro.props;
+const items = [
+	{ label: locale === 'en' ? 'Home' : 'Início', href: pathFor('home', locale) },
+	...(parent ? [parent] : []),
+	{ label: title },
+];
+---
+
+<header class:list={['editorial-hero', className]} {...rest}>
+	<div class="site-container editorial-hero__inner">
+		<Breadcrumbs items={items} />
+		<div class="editorial-hero__content">
+			{tag && <p class="editorial-eyebrow">{tag}</p>}
+			<h1>{title}</h1>
+			{subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
+		</div>
+	</div>
+</header>
