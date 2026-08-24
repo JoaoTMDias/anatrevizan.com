@@ -101,6 +101,84 @@ For critical flows, add or update tests for routing, translations, ORCID, forms,
 - Treat privacy policies, cookie policies, terms, and professional claims as content requiring qualified human review.
 - Do not expose secrets in logs, diffs, screenshots, or error messages.
 
+## Migration quality and inherited problems
+
+The Next.js implementation is a visual and functional specification, not an
+implementation standard. Visual fidelity does not imply code fidelity.
+
+When migrating a feature, preserve its approved intent and user experience, but
+reimplement it idiomatically in Astro, accessibly, testably, and with the
+minimum necessary client-side JavaScript.
+
+Do not reproduce known problems from the Next.js implementation, including:
+
+- unnecessarily complex or heavily hydrated components;
+- hardcoded editorial content, metadata, contacts, or identity details;
+- visible language fallbacks that mix Portuguese and English;
+- `href="#"`, links without destinations, or controls without behavior;
+- empty assets or runtime requests used to detect placeholder files;
+- hover-only navigation;
+- menus without keyboard support, semantics, or focus management;
+- media that ignores `prefers-reduced-motion` or `Save-Data`;
+- unvalidated external data, unsafe `any`, or silent integration failures;
+- misleading fallback values for required configuration;
+- globally loaded third-party scripts without a demonstrated need;
+- `mailto:` as the primary form implementation;
+- duplicated constants and contact details;
+- abstractions that do not correspond to a coherent editorial model.
+
+### Decision policy
+
+Fix autonomously without requesting approval when the issue has an established,
+low-risk solution that preserves the approved behavior. Examples include:
+
+- invalid or semantically incorrect HTML;
+- standard accessibility defects;
+- unsafe TypeScript;
+- internal technical duplication;
+- broken or fake links;
+- missing assets;
+- missing validation;
+- build, lint, or test failures;
+- responsiveness defects;
+- unnecessary JavaScript;
+- behavior that contradicts `AGENTS.md` or `docs/decisoes-tecnicas.md`.
+
+Request direction before implementing a solution that would change:
+
+- the approved visual direction;
+- information architecture;
+- the number, name, purpose, or public URL of a page;
+- visible product behavior;
+- professional, legal, academic, or factual content;
+- Ana’s editorial freedom;
+- personal data collected or retained;
+- privacy or consent behavior;
+- external services, recurring costs, or major dependencies;
+- language or localization strategy;
+- an established decision in the project documentation.
+
+When requesting direction:
+
+1. describe the concrete problem and affected pages or files;
+2. provide two or three meaningful options;
+3. recommend one option and briefly explain why;
+4. do not implement the decision until the user responds;
+5. continue with independent work that does not depend on the answer.
+
+If an issue is outside the current phase:
+
+- do not start an unrelated refactor;
+- record it in the handoff with priority, impact, and recommended phase;
+- fix it immediately only when it blocks the current work, risks data loss,
+  exposes secrets, or introduces a material security vulnerability.
+
+Every migration handoff must list:
+
+- inherited problems corrected;
+- decisions requested from the user;
+- identified problems deliberately deferred.
+
 ## Change discipline
 
 - Preserve unrelated changes already present in the working tree.
