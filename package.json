@@ -1,50 +1,60 @@
 {
-  "name": "anatrevizan.com",
-  "type": "module",
-  "version": "0.0.1",
-  "packageManager": "pnpm@11.21.0",
-  "engines": {
-    "node": ">=22.22.0"
-  },
-  "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
-    "build": "pnpm validate:content && tinacms build --content=local -c \"astro build\"",
-    "build:local": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
-    "build:search": "tinacms search-index",
-    "preview": "astro preview",
-    "astro": "astro",
-    "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "validate:content": "node --experimental-strip-types scripts/validate-content.ts"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^14.2.3",
-    "@astrojs/mdx": "^7.0.7",
-    "@astrojs/netlify": "^8.2.3",
-    "@astrojs/node": "^11.1.4",
-    "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/vercel": "^11.0.7",
-    "@fontsource-variable/inter": "^5.3.0",
-    "@iconify-json/tabler": "^1.2.38",
-    "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.3",
-    "@tinacms/astro": "^0.6.1",
-    "astro": "^7.2.4",
-    "astro-icon": "^1.2.0",
-    "clsx": "^2.1.1",
-    "sharp": "^0.35.3",
-    "tailwind-merge": "^3.6.0",
-    "tailwind-variants": "^3.3.1",
-    "tailwindcss": "^4.3.3"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@tinacms/cli": "^2.6.0",
-    "@types/node": "^26.2.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "tinacms": "^3.12.0",
-    "typescript": "^6.0.3",
-    "vite": "^8.2.2"
-  }
+	"name": "anatrevizan.com",
+	"type": "module",
+	"version": "0.0.1",
+	"packageManager": "pnpm@11.21.0",
+	"engines": {
+		"node": ">=22.22.0"
+	},
+	"scripts": {
+		"dev": "tinacms dev -c \"astro dev\"",
+		"build": "pnpm validate:content && tinacms build --content=local -c \"astro build\"",
+		"build:local": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
+		"build:search": "tinacms search-index",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "biome lint .",
+		"format": "biome format --write biome.json package.json vitest.config.ts playwright.config.ts tests",
+		"format:check": "biome format biome.json package.json vitest.config.ts playwright.config.ts tests",
+		"check": "pnpm lint && pnpm format:check && pnpm exec astro check",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui",
+		"validate:content": "node --experimental-strip-types scripts/validate-content.ts"
+	},
+	"dependencies": {
+		"@astrojs/cloudflare": "^14.2.3",
+		"@astrojs/mdx": "^7.0.7",
+		"@astrojs/netlify": "^8.2.3",
+		"@astrojs/node": "^11.1.4",
+		"@astrojs/rss": "^4.0.19",
+		"@astrojs/sitemap": "^3.7.3",
+		"@astrojs/vercel": "^11.0.7",
+		"@fontsource-variable/inter": "^5.3.0",
+		"@iconify-json/tabler": "^1.2.38",
+		"@tailwindcss/typography": "^0.5.20",
+		"@tailwindcss/vite": "^4.3.3",
+		"@tinacms/astro": "^0.6.1",
+		"astro": "^7.2.4",
+		"astro-icon": "^1.2.0",
+		"clsx": "^2.1.1",
+		"sharp": "^0.35.3",
+		"tailwind-merge": "^3.6.0",
+		"tailwind-variants": "^3.3.1",
+		"tailwindcss": "^4.3.3"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.10",
+		"@biomejs/biome": "^2.5.10",
+		"@playwright/test": "^1.62.1",
+		"@tinacms/cli": "^2.6.0",
+		"@types/node": "^26.2.0",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8",
+		"tinacms": "^3.12.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.2.2",
+		"vitest": "^4.1.11"
+	}
 }
