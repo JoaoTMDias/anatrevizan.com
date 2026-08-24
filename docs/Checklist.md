@@ -37,6 +37,12 @@
 - [ ] Grupo 1 — fundação visual, header, navegação, footer, botões, cards e notices validado e concluído.
 - [ ] Grupos 2–5 — estruturas comuns, Consultoria, Academia e fecho visual das restantes páginas.
 
+## Segurança do build editorial (agosto de 2026)
+
+- [x] Builds de preview e produção apresentam um resumo e escrevem um manifesto com documentos e rotas geradas.
+- [x] Builds de produção falham quando não existem documentos publicáveis, a Home PT-PT não está publicável ou falta HTML editorial esperado.
+- [x] Preview editorial mantém os 38 documentos PT-PT/EN disponíveis com `noindex`, sem os incluir no sitemap público.
+
 ### Grupo 2 — Consultoria
 
 - [x] Hub de Consultoria e cinco serviços auditados; 203 strings PT-PT contabilizadas no manifesto `docs/especificacao-editorial-consultoria.md`.
