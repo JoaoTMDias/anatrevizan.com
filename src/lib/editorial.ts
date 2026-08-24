@@ -1,6 +1,7 @@
 import {
 	type EditorialLocale,
 	isEditorialLocale,
+	isPublishedLocale,
 	isRouteKey,
 	type PublishedLocale,
 	pathFor,
@@ -11,6 +12,13 @@ import {
 
 export const editorialStatuses = ["draft", "ready"] as const;
 export type EditorialStatus = (typeof editorialStatuses)[number];
+
+export function isEditorialStatus(value: unknown): value is EditorialStatus {
+	return (
+		typeof value === "string" &&
+		editorialStatuses.includes(value as EditorialStatus)
+	);
+}
 
 export interface EditorialDocument {
 	translationGroup: string;
@@ -78,14 +86,8 @@ export function validateEditorialDocuments(
 		if (!pairs.has(document.translationGroup))
 			pairs.set(document.translationGroup, new Set());
 		pairs.get(document.translationGroup)?.add(document.locale);
-		if (
-			isRouteKey(document.routeKey) &&
-			publishedLocales.includes(document.locale as PublishedLocale)
-		) {
-			const expected = pathFor(
-				document.routeKey,
-				document.locale as PublishedLocale,
-			)
+		if (isRouteKey(document.routeKey) && isPublishedLocale(document.locale)) {
+			const expected = pathFor(document.routeKey, document.locale)
 				.replace(/^\/en\/?/, "/")
 				.replace(/^\//, "");
 			if (document.slug !== expected)
@@ -176,5 +178,5 @@ export function shouldRenderEditorialDocument(
 export function isPublishedDocument(
 	document: EditorialDocument,
 ): document is EditorialDocument & { locale: PublishedLocale } {
-	return publishedLocales.includes(document.locale as PublishedLocale);
+	return isPublishedLocale(document.locale);
 }

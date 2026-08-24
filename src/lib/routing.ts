@@ -78,7 +78,7 @@ export function localeForPath(path: string): PublishedLocale | undefined {
 }
 
 export function routeKeyForPath(path: string): RouteKey | undefined {
-	return routeKeys.find((key) =>
-		Object.values(routeMap[key]).includes(path as never),
+	return routeKeys.find(
+		(key) => routeMap[key]["pt-PT"] === path || routeMap[key].en === path,
 	);
 }

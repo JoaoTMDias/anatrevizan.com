@@ -1,6 +1,7 @@
 import { requestWithMetadata } from "@tinacms/astro/data";
 import client from "../../tina/__generated__/client";
-import type { EditorialDocument } from "./editorial";
+import { type EditorialDocument, isEditorialStatus } from "./editorial";
+import { isEditorialLocale, isRouteKey } from "./routing";
 export const getConfig = () =>
 	requestWithMetadata(client.queries.config({ relativePath: "site.json" }));
 export const getEditorial = (relativePath: string) =>
@@ -17,13 +18,27 @@ export type CmsConfig = Awaited<ReturnType<typeof getConfig>>["data"]["config"];
 export type CmsEditorial = Awaited<
 	ReturnType<typeof getEditorial>
 >["data"]["editorial"];
-export function toEditorialDocument(document: CmsEditorial): EditorialDocument {
+
+export type EditorialListItem = Awaited<
+	ReturnType<typeof listEditorial>
+>[number];
+
+export function toEditorialDocument(
+	document: CmsEditorial | EditorialListItem,
+): EditorialDocument | null {
+	const status = document.status;
+	if (
+		!isEditorialLocale(document.locale) ||
+		!isRouteKey(document.routeKey) ||
+		!isEditorialStatus(status)
+	)
+		return null;
 	return {
 		translationGroup: document.translationGroup,
-		locale: document.locale as EditorialDocument["locale"],
-		routeKey: document.routeKey as EditorialDocument["routeKey"],
+		locale: document.locale,
+		routeKey: document.routeKey,
 		slug: document.slug,
-		status: document.status as EditorialDocument["status"],
+		status,
 		title: document.title,
 		seoTitle: document.seo.title,
 		seoDescription: document.seo.description,

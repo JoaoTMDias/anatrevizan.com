@@ -1,4 +1,11 @@
 ---
 import LocalizedPage from '../components/LocalizedPage.astro';
+import { isEditorialPreviewEnabled } from '../lib/editorial';
+import { resolveEditorialPage } from '../lib/editorial-page';
+
+const result = await resolveEditorialPage('home', 'pt-PT', isEditorialPreviewEnabled());
+if (result.kind === 'missing') {
+	Astro.response.status = 404;
+}
 ---
-<LocalizedPage routeKey="home" locale="pt-PT" />
+{result.kind === 'renderable' && <LocalizedPage page={result.page} />}

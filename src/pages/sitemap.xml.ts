@@ -1,7 +1,11 @@
 import type { APIRoute } from "astro";
-import { isPublishable } from "../lib/editorial";
 import { listEditorial, toEditorialDocument } from "../lib/data";
-import { pathFor, type PublishedLocale } from "../lib/routing";
+import { type EditorialDocument, isPublishable } from "../lib/editorial";
+import {
+	isPublishedLocale,
+	type PublishedLocale,
+	pathFor,
+} from "../lib/routing";
 
 const xml = (value: string) =>
 	value
@@ -15,7 +19,12 @@ export const GET: APIRoute = async ({ site }) => {
 	const origin = site ?? new URL("https://anatrevizan.com");
 	const documents = (await listEditorial())
 		.map(toEditorialDocument)
-		.filter(isPublishable);
+		.filter(
+			(document): document is EditorialDocument & { locale: PublishedLocale } =>
+				document !== null &&
+				isPublishable(document) &&
+				isPublishedLocale(document.locale),
+		);
 	const available = new Set(
 		documents.map((document) => `${document.routeKey}:${document.locale}`),
 	);
@@ -31,7 +40,7 @@ export const GET: APIRoute = async ({ site }) => {
 			const xDefault = available.has(`${document.routeKey}:pt-PT`)
 				? `<xhtml:link rel="alternate" hreflang="x-default" href="${xml(new URL(pathFor(document.routeKey, "pt-PT"), origin).toString())}"/>`
 				: "";
-			return `<url><loc>${xml(new URL(pathFor(document.routeKey, document.locale as PublishedLocale), origin).toString())}</loc>${alternates}${xDefault}</url>`;
+			return `<url><loc>${xml(new URL(pathFor(document.routeKey, document.locale), origin).toString())}</loc>${alternates}${xDefault}</url>`;
 		})
 		.join("");
 	return new Response(
