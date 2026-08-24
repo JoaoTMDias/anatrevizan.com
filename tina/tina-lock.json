@@ -969,6 +969,652 @@
 						"uid": false
 					},
 					{
+						"name": "consultingHub",
+						"label": "Consulting hub sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introHeading",
+								"label": "Introduction heading",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "introHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introText",
+								"label": "Introduction text",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "introText"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "filters",
+								"label": "Country filters",
+								"type": "object",
+								"fields": [
+									{
+										"name": "portugal",
+										"label": "Portugal",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"filters",
+											"portugal"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "brazil",
+										"label": "Brazil",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"filters",
+											"brazil"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "all",
+										"label": "All",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"filters",
+											"all"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "consultingHub", "filters"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "areas",
+								"label": "Consulting areas",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"areas",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "tag",
+										"label": "Tag",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": ["editorial", "consultingHub", "areas", "tag"],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "summary",
+										"label": "Summary",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"areas",
+											"summary"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "routeKey",
+										"label": "Destination",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"areas",
+											"routeKey"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "countries",
+										"label": "Country filters",
+										"type": "string",
+										"list": true,
+										"required": true,
+										"namespace": [
+											"editorial",
+											"consultingHub",
+											"areas",
+											"countries"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "consultingHub", "areas"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "areaCta",
+								"label": "Area CTA",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "areaCta"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "note",
+								"label": "Professional note",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "note"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingHub", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "consultingHub"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "consultingService",
+						"label": "Consulting service sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introHeading",
+								"label": "Introduction heading",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "introHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introParagraphs",
+								"label": "Introduction paragraphs",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"introParagraphs"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "servicesHeading",
+								"label": "Services heading",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"servicesHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "servicesSubtitle",
+								"label": "Services introduction",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"servicesSubtitle"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "services",
+								"label": "Services",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"services",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "description",
+										"label": "Description",
+										"type": "string",
+										"required": false,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"services",
+											"description"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "items",
+										"label": "Items",
+										"type": "string",
+										"list": true,
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"services",
+											"items"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "consultingService", "services"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "stepsHeading",
+								"label": "Steps heading",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "stepsHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "stepsSubtitle",
+								"label": "Steps introduction",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"stepsSubtitle"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "steps",
+								"label": "Steps",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "number",
+										"label": "Number",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"steps",
+											"number"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"steps",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "description",
+										"label": "Description",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"steps",
+											"description"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "consultingService", "steps"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "crosslinkHeading",
+								"label": "Related service heading",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"crosslinkHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "crosslinkText",
+								"label": "Related service text",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"crosslinkText"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "crosslinkRouteKey",
+								"label": "Related service destination",
+								"type": "string",
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"crosslinkRouteKey"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "differentiatorEyebrow",
+								"label": "Differentiator eyebrow",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"differentiatorEyebrow"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "differentiatorHeading",
+								"label": "Differentiator heading",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"differentiatorHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "differentiatorParagraphs",
+								"label": "Differentiator paragraphs",
+								"type": "string",
+								"list": true,
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"differentiatorParagraphs"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "differentiatorCredentials",
+								"label": "Differentiator credentials",
+								"type": "string",
+								"list": true,
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"differentiatorCredentials"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "relatedWorkHeading",
+								"label": "Related work heading",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"relatedWorkHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "relatedWorkSubtitle",
+								"label": "Related work introduction",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"relatedWorkSubtitle"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "relatedPublications",
+								"label": "Static related publications (ORCID deferred)",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"relatedPublications",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "publication",
+										"label": "Publication",
+										"type": "string",
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"relatedPublications",
+											"publication"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "highlight",
+										"label": "Highlight",
+										"type": "string",
+										"required": false,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"consultingService",
+											"relatedPublications",
+											"highlight"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": [
+									"editorial",
+									"consultingService",
+									"relatedPublications"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "note",
+								"label": "Professional note",
+								"type": "string",
+								"required": false,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "note"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"ui": { "component": "textarea" },
+								"namespace": ["editorial", "consultingService", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "consultingService"],
+						"searchable": true,
+						"uid": false
+					},
+					{
 						"name": "ctaRefs",
 						"label": "CTA identifiers",
 						"type": "string",
@@ -5397,6 +6043,653 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [],
 				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialConsultingHubFilters" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "portugal" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "brazil" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "all" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialConsultingHubAreas" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "summary" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialConsultingHub" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubFilters"
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "areas" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialConsultingHubAreas"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "areaCta" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceServices"
+				},
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "items" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialConsultingServiceSteps" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "number" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceRelatedPublications"
+				},
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "publication" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialConsultingService" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialConsultingServiceServices"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "stepsHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "stepsSubtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "steps" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingServiceSteps"
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "crosslinkHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "crosslinkText" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "crosslinkRouteKey" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "differentiatorEyebrow" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "differentiatorHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "differentiatorParagraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "differentiatorCredentials" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkSubtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "relatedPublications" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingServiceRelatedPublications"
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
 				"name": { "kind": "Name", "value": "EditorialLegal" },
 				"fields": [
 					{
@@ -5576,6 +6869,24 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialAbout" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "consultingHub" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialConsultingHub" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "consultingService" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialConsultingService" }
 						}
 					},
 					{
@@ -6414,6 +7725,470 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingHubFiltersFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "portugal" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "brazil" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "all" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingHubAreasFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "summary" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialConsultingHubFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubFiltersFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "areas" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubAreasFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "areaCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceServicesFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "items" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceStepsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "number" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceRelatedPublicationsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publication" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialConsultingServiceFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingServiceServicesFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "stepsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "stepsSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "steps" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingServiceStepsFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkRouteKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorEyebrow" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorParagraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorCredentials" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedPublications" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingServiceRelatedPublicationsFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "DatetimeFilter" },
 				"fields": [
 					{
@@ -6597,6 +8372,28 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialAboutFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consultingHub" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consultingService" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingServiceFilter"
+							}
 						}
 					},
 					{
@@ -12707,6 +14504,500 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingHubFiltersMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "portugal" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "brazil" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "all" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingHubAreasMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "summary" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialConsultingHubMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubFiltersMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "areas" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingHubAreasMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "areaCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceServicesMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "items" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceStepsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "number" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceRelatedPublicationsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publication" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialConsultingServiceMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingServiceServicesMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "stepsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "stepsSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "steps" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingServiceStepsMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "crosslinkRouteKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorEyebrow" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorParagraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "differentiatorCredentials" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedWorkSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "relatedPublications" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialConsultingServiceRelatedPublicationsMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalMutation" },
 				"fields": [
 					{
@@ -12841,6 +15132,28 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialAboutMutation" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consultingHub" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingHubMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consultingService" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialConsultingServiceMutation"
+							}
 						}
 					},
 					{

@@ -158,4 +158,86 @@ test.describe("localized draft pages", () => {
 		).toBe(true);
 		await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 	});
+
+	test("Portuguese consulting hub exposes five localized service destinations", async ({
+		page,
+	}) => {
+		const errors: string[] = [];
+		page.on("console", (message) => {
+			if (message.type() === "error") errors.push(message.text());
+		});
+		await page.goto("/consultoria");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Consultoria",
+		);
+		await expect(page.locator("[data-consulting-areas] > article")).toHaveCount(5);
+		await page.getByRole("button", { name: "Estou em Portugal" }).focus();
+		await page.keyboard.press("Space");
+		await expect(
+			page.getByRole("heading", { name: "Ambiental e ESG" }),
+		).toBeHidden();
+		await page.getByRole("button", { name: "Ver tudo" }).click();
+		await expect(
+			page.getByRole("heading", { name: "Ambiental e ESG" }),
+		).toBeVisible();
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+		expect(errors).toEqual([]);
+	});
+
+	for (const [route, heading] of [
+		["/consultoria/migracao-e-mobilidade", "Migração e Mobilidade"],
+		["/consultoria/juridica", "Consultoria Jurídica"],
+		["/consultoria/ambiental-e-esg", "Consultoria Ambiental e ESG"],
+		["/consultoria/politicas-publicas", "Políticas Públicas e Governança"],
+		["/consultoria/pareceres", "Pareceres e Notas Técnicas"],
+	] as const) {
+		test(`${heading} renders its dedicated consulting service structure`, async ({
+			page,
+		}) => {
+			const errors: string[] = [];
+			page.on("console", (message) => {
+				if (message.type() === "error") errors.push(message.text());
+			});
+			await page.goto(route);
+			await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
+			expect(await page.locator("h1").count()).toBe(1);
+			expect(await page.locator('a[href="#"]').count()).toBe(0);
+			await expect(page.getByText(/ainda por validar e aprovar/)).toBeVisible();
+			expect(errors).toEqual([]);
+		});
+	}
+
+	test("consulting pages reflow without horizontal overflow at 320px", async ({
+		page,
+	}) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		for (const route of ["/consultoria", "/consultoria/ambiental-e-esg"]) {
+			await page.goto(route);
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		}
+	});
+
+	test("English consulting previews do not expose Portuguese source content", async ({
+		page,
+	}) => {
+		for (const route of [
+			"/en/consulting",
+			"/en/consulting/immigration-mobility",
+			"/en/consulting/legal",
+			"/en/consulting/environmental-esg",
+			"/en/consulting/public-policy",
+			"/en/consulting/legal-opinions",
+		]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(/Onde precisa de apoio|Atuação preventiva|O que posso fazer/),
+			).toHaveCount(0);
+		}
+	});
 });

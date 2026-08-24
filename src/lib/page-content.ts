@@ -59,6 +59,58 @@ export interface AboutContent {
 	finalCtaLabel: string;
 }
 
+export interface ConsultingHubContent {
+	subtitle: string;
+	introHeading: string;
+	introText: string;
+	filters: { portugal: string; brazil: string; all: string };
+	areas: Array<{
+		title: string;
+		tag: string;
+		summary: string;
+		routeKey: RouteKey;
+		countries: string[];
+	}>;
+	areaCta: string;
+	note: string;
+	ctaHeading: string;
+	ctaText: string;
+}
+
+export interface ConsultingServiceContent {
+	tag: string;
+	subtitle: string;
+	introHeading: string;
+	introParagraphs: string[];
+	servicesHeading: string;
+	servicesSubtitle?: string | null;
+	services: Array<{
+		title: string;
+		description?: string | null;
+		items?: string[] | null;
+	}>;
+	stepsHeading?: string | null;
+	stepsSubtitle?: string | null;
+	steps?: Array<{ number: string; title: string; description: string }> | null;
+	crosslinkHeading?: string | null;
+	crosslinkText?: string | null;
+	crosslinkRouteKey?: RouteKey | null;
+	differentiatorEyebrow?: string | null;
+	differentiatorHeading?: string | null;
+	differentiatorParagraphs?: string[] | null;
+	differentiatorCredentials?: string[] | null;
+	relatedWorkHeading?: string | null;
+	relatedWorkSubtitle?: string | null;
+	relatedPublications?: Array<{
+		title: string;
+		publication: string;
+		highlight?: string | null;
+	}> | null;
+	note?: string | null;
+	ctaHeading: string;
+	ctaText: string;
+}
+
 export function hasValidRouteKey(value: {
 	routeKey?: unknown;
 }): value is { routeKey: RouteKey } {

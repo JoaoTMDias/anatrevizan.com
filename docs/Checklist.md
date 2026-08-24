@@ -30,6 +30,13 @@
 - [x] Conteúdo profissional e académico PT-PT da Home e Sobre revisto e aprovado pela Ana em 24 de agosto de 2026; as duas páginas permanecem em `draft` e `noindex` até os destinos dependentes estarem prontos.
 - [ ] Grupos 2–5 migrados.
 
+### Grupo 2 — Consultoria
+
+- [x] Hub de Consultoria e cinco serviços auditados; 203 strings PT-PT contabilizadas no manifesto `docs/especificacao-editorial-consultoria.md`.
+- [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex`.
+- [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
+- [x] Conteúdo profissional e jurídico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
+
 ## 1. Decisões de produto e arquitetura
 
 - **P0 — Decidir a fundação técnica final**

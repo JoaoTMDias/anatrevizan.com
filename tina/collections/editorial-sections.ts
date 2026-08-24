@@ -179,3 +179,146 @@ export const aboutFields: TinaField[] = [
 		],
 	},
 ];
+
+const consultingOfferingFields: TinaField[] = [
+	text("title", "Title"),
+	text("description", "Description", false),
+	{
+		name: "items",
+		label: "Items",
+		type: "string",
+		list: true,
+	},
+];
+
+export const consultingHubFields: TinaField[] = [
+	{
+		name: "consultingHub",
+		label: "Consulting hub sections",
+		type: "object",
+		fields: [
+			text("subtitle", "Subtitle"),
+			text("introHeading", "Introduction heading"),
+			text("introText", "Introduction text"),
+			{
+				name: "filters",
+				label: "Country filters",
+				type: "object",
+				fields: [
+					text("portugal", "Portugal"),
+					text("brazil", "Brazil"),
+					text("all", "All"),
+				],
+			},
+			{
+				name: "areas",
+				label: "Consulting areas",
+				type: "object",
+				list: true,
+				required: true,
+				fields: [
+					text("title", "Title"),
+					text("tag", "Tag"),
+					text("summary", "Summary"),
+					{
+						name: "routeKey",
+						label: "Destination",
+						type: "string",
+						required: true,
+					},
+					{
+						name: "countries",
+						label: "Country filters",
+						type: "string",
+						list: true,
+						required: true,
+					},
+				],
+			},
+			text("areaCta", "Area CTA"),
+			text("note", "Professional note"),
+			text("ctaHeading", "CTA heading"),
+			text("ctaText", "CTA text"),
+		],
+	},
+];
+
+export const consultingServiceFields: TinaField[] = [
+	{
+		name: "consultingService",
+		label: "Consulting service sections",
+		type: "object",
+		fields: [
+			text("tag", "Tag"),
+			text("subtitle", "Subtitle"),
+			text("introHeading", "Introduction heading"),
+			{
+				name: "introParagraphs",
+				label: "Introduction paragraphs",
+				type: "string",
+				list: true,
+				required: true,
+			},
+			text("servicesHeading", "Services heading"),
+			text("servicesSubtitle", "Services introduction", false),
+			{
+				name: "services",
+				label: "Services",
+				type: "object",
+				list: true,
+				required: true,
+				fields: consultingOfferingFields,
+			},
+			text("stepsHeading", "Steps heading", false),
+			text("stepsSubtitle", "Steps introduction", false),
+			{
+				name: "steps",
+				label: "Steps",
+				type: "object",
+				list: true,
+				fields: [
+					text("number", "Number"),
+					text("title", "Title"),
+					text("description", "Description"),
+				],
+			},
+			text("crosslinkHeading", "Related service heading", false),
+			text("crosslinkText", "Related service text", false),
+			{
+				name: "crosslinkRouteKey",
+				label: "Related service destination",
+				type: "string",
+			},
+			text("differentiatorEyebrow", "Differentiator eyebrow", false),
+			text("differentiatorHeading", "Differentiator heading", false),
+			{
+				name: "differentiatorParagraphs",
+				label: "Differentiator paragraphs",
+				type: "string",
+				list: true,
+			},
+			{
+				name: "differentiatorCredentials",
+				label: "Differentiator credentials",
+				type: "string",
+				list: true,
+			},
+			text("relatedWorkHeading", "Related work heading", false),
+			text("relatedWorkSubtitle", "Related work introduction", false),
+			{
+				name: "relatedPublications",
+				label: "Static related publications (ORCID deferred)",
+				type: "object",
+				list: true,
+				fields: [
+					text("title", "Title"),
+					text("publication", "Publication"),
+					text("highlight", "Highlight", false),
+				],
+			},
+			text("note", "Professional note", false),
+			text("ctaHeading", "CTA heading"),
+			text("ctaText", "CTA text"),
+		],
+	},
+];

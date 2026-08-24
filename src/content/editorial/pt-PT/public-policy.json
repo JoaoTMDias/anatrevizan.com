@@ -4,13 +4,64 @@
 	"routeKey": "public-policy",
 	"slug": "consultoria/politicas-publicas",
 	"status": "draft",
-	"approvalPending": true,
-	"title": "Políticas públicas",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"approvalPending": false,
+	"title": "Políticas Públicas e Governança",
+	"summary": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
 	"seo": {
-		"title": "Políticas públicas — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Políticas Públicas e Governança · Municípios, ONGs e associações",
+		"description": "Consultoria em políticas públicas e governança ambiental: análise de projetos de lei e apoio técnico a municípios, ONGs, associações e instituições.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"consultingService": {
+		"tag": "🇧🇷 Brasil",
+		"subtitle": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+		"introHeading": "Da norma à implementação",
+		"introParagraphs": [
+			"Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção — está no desenho jurídico e na governança.",
+			"É esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir."
+		],
+		"servicesHeading": "Como posso ajudar",
+		"services": [
+			{
+				"title": "Análise de projetos de lei",
+				"items": [
+					"Análise jurídica e técnica",
+					"Identificação de impactos regulatórios",
+					"Sugestões de aperfeiçoamento legislativo",
+					"Compatibilização com normas nacionais e internacionais"
+				]
+			},
+			{
+				"title": "Consultoria para municípios",
+				"items": [
+					"Elaboração de políticas públicas",
+					"Governança e adaptação climática",
+					"Planos municipais e regulamentação ambiental",
+					"Projetos financiados por organismos nacionais e internacionais"
+				]
+			},
+			{
+				"title": "Consultoria para ONGs",
+				"items": [
+					"Análise normativa e pareceres",
+					"Advocacy e fortalecimento institucional",
+					"Governança",
+					"Projetos de direitos humanos e ambiente"
+				]
+			},
+			{
+				"title": "Associações e instituições",
+				"items": [
+					"Regulamentos internos e governança",
+					"Análise de riscos",
+					"Compliance e sustentabilidade",
+					"Relacionamento com órgãos públicos"
+				]
+			}
+		],
+		"note": "Atuação técnica, consultiva e de assessoria. Não inclui representação em processos judiciais (contencioso).",
+		"ctaHeading": "Precisa de fundamentação técnica para uma decisão pública?",
+		"ctaText": "Marque uma conversa inicial para avaliarmos o âmbito do apoio de que a sua organização precisa."
+	},
+	"ctaRefs": ["booking"]
 }
