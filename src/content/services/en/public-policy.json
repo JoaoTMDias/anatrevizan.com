@@ -1,17 +1,17 @@
 {
-  "translationGroup": "public-policy",
-  "locale": "en",
-  "slug": "public-policy",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Public policy",
-  "summary": "STRUCTURAL RECORD — awaiting approval.",
-  "seo": {
-    "title": "Public policy",
-    "description": "Draft structural record.",
-    "noindex": true
-  },
-  "parentRouteKey": "public-policy",
-  "jurisdictions": [],
-  "ctaRefs": []
+	"translationGroup": "public-policy",
+	"locale": "en",
+	"slug": "public-policy",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Public policy",
+	"summary": "STRUCTURAL RECORD — awaiting approval.",
+	"seo": {
+		"title": "Public policy",
+		"description": "Draft structural record.",
+		"noindex": true
+	},
+	"parentRouteKey": "public-policy",
+	"jurisdictions": [],
+	"ctaRefs": []
 }

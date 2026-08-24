@@ -6,11 +6,11 @@
  * the default Markdown glob finds nothing and warns. Pointing it at JSON
  * silences that warning. Runtime pages and entities are loaded via Tina.
  */
-import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 const config = defineCollection({
-	loader: glob({ pattern: '**/*.json', base: 'src/content/config' }),
+	loader: glob({ pattern: "**/*.json", base: "src/content/config" }),
 });
 
 export const collections = { config };

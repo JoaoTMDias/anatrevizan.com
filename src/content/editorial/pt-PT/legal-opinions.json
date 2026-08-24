@@ -1,16 +1,16 @@
 {
-  "translationGroup": "legal-opinions",
-  "locale": "pt-PT",
-  "routeKey": "legal-opinions",
-  "slug": "consultoria/pareceres",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Pareceres",
-  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
-  "seo": {
-    "title": "Pareceres — Ana Trevizan",
-    "description": "Descrição editorial por aprovar.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "legal-opinions",
+	"locale": "pt-PT",
+	"routeKey": "legal-opinions",
+	"slug": "consultoria/pareceres",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Pareceres",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Pareceres — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

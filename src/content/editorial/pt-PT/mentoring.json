@@ -1,16 +1,16 @@
 {
-  "translationGroup": "mentoring",
-  "locale": "pt-PT",
-  "routeKey": "mentoring",
-  "slug": "academia/mentorias",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Mentorias",
-  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
-  "seo": {
-    "title": "Mentorias — Ana Trevizan",
-    "description": "Descrição editorial por aprovar.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "mentoring",
+	"locale": "pt-PT",
+	"routeKey": "mentoring",
+	"slug": "academia/mentorias",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Mentorias",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Mentorias — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

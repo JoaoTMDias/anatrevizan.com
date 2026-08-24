@@ -1,16 +1,16 @@
 {
-  "translationGroup": "about",
-  "locale": "pt-PT",
-  "routeKey": "about",
-  "slug": "sobre",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Sobre",
-  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
-  "seo": {
-    "title": "Sobre — Ana Trevizan",
-    "description": "Descrição editorial por aprovar.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "about",
+	"locale": "pt-PT",
+	"routeKey": "about",
+	"slug": "sobre",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Sobre",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Sobre — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

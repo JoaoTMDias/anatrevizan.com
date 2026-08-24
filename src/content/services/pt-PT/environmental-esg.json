@@ -1,17 +1,17 @@
 {
-  "translationGroup": "environmental-esg",
-  "locale": "pt-PT",
-  "slug": "ambiental-e-esg",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Ambiental e ESG",
-  "summary": "REGISTO ESTRUTURAL — por aprovar.",
-  "seo": {
-    "title": "Ambiental e ESG",
-    "description": "Registo estrutural em draft.",
-    "noindex": true
-  },
-  "parentRouteKey": "environmental-esg",
-  "jurisdictions": [],
-  "ctaRefs": []
+	"translationGroup": "environmental-esg",
+	"locale": "pt-PT",
+	"slug": "ambiental-e-esg",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Ambiental e ESG",
+	"summary": "REGISTO ESTRUTURAL — por aprovar.",
+	"seo": {
+		"title": "Ambiental e ESG",
+		"description": "Registo estrutural em draft.",
+		"noindex": true
+	},
+	"parentRouteKey": "environmental-esg",
+	"jurisdictions": [],
+	"ctaRefs": []
 }

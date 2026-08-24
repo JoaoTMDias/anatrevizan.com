@@ -1,16 +1,16 @@
 {
-  "translationGroup": "speaking",
-  "locale": "en",
-  "routeKey": "speaking",
-  "slug": "academic/speaking",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Speaking",
-  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
-  "seo": {
-    "title": "Speaking — Ana Trevizan",
-    "description": "Editorial description awaiting approval.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "speaking",
+	"locale": "en",
+	"routeKey": "speaking",
+	"slug": "academic/speaking",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Speaking",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Speaking — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

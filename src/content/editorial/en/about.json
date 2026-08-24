@@ -1,16 +1,16 @@
 {
-  "translationGroup": "about",
-  "locale": "en",
-  "routeKey": "about",
-  "slug": "about",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "About",
-  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
-  "seo": {
-    "title": "About — Ana Trevizan",
-    "description": "Editorial description awaiting approval.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "about",
+	"locale": "en",
+	"routeKey": "about",
+	"slug": "about",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "About",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "About — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

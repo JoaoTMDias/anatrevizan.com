@@ -1,16 +1,16 @@
 {
-  "translationGroup": "public-policy",
-  "locale": "pt-PT",
-  "routeKey": "public-policy",
-  "slug": "consultoria/politicas-publicas",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Políticas públicas",
-  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
-  "seo": {
-    "title": "Políticas públicas — Ana Trevizan",
-    "description": "Descrição editorial por aprovar.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "public-policy",
+	"locale": "pt-PT",
+	"routeKey": "public-policy",
+	"slug": "consultoria/politicas-publicas",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Políticas públicas",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Políticas públicas — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

@@ -1,15 +1,15 @@
 {
-  "translationGroup": "structural-sample",
-  "locale": "pt-PT",
-  "slug": "registo-estrutural",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Evento estrutural por aprovar",
-  "summary": "REGISTO ESTRUTURAL — por aprovar.",
-  "seo": {
-    "title": "Evento estrutural por aprovar",
-    "description": "Registo estrutural em draft.",
-    "noindex": true
-  },
-  "parentRouteKey": "events"
+	"translationGroup": "structural-sample",
+	"locale": "pt-PT",
+	"slug": "registo-estrutural",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Evento estrutural por aprovar",
+	"summary": "REGISTO ESTRUTURAL — por aprovar.",
+	"seo": {
+		"title": "Evento estrutural por aprovar",
+		"description": "Registo estrutural em draft.",
+		"noindex": true
+	},
+	"parentRouteKey": "events"
 }

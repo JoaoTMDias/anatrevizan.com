@@ -1,17 +1,17 @@
 {
-  "translationGroup": "immigration-mobility",
-  "locale": "pt-PT",
-  "slug": "migracao-e-mobilidade",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Migração e Mobilidade",
-  "summary": "REGISTO ESTRUTURAL — por aprovar.",
-  "seo": {
-    "title": "Migração e Mobilidade",
-    "description": "Registo estrutural em draft.",
-    "noindex": true
-  },
-  "parentRouteKey": "immigration-mobility",
-  "jurisdictions": [],
-  "ctaRefs": []
+	"translationGroup": "immigration-mobility",
+	"locale": "pt-PT",
+	"slug": "migracao-e-mobilidade",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Migração e Mobilidade",
+	"summary": "REGISTO ESTRUTURAL — por aprovar.",
+	"seo": {
+		"title": "Migração e Mobilidade",
+		"description": "Registo estrutural em draft.",
+		"noindex": true
+	},
+	"parentRouteKey": "immigration-mobility",
+	"jurisdictions": [],
+	"ctaRefs": []
 }

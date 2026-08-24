@@ -1,16 +1,16 @@
 {
-  "translationGroup": "training",
-  "locale": "pt-PT",
-  "routeKey": "training",
-  "slug": "academia/formacoes",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Formações",
-  "summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
-  "seo": {
-    "title": "Formações — Ana Trevizan",
-    "description": "Descrição editorial por aprovar.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "training",
+	"locale": "pt-PT",
+	"routeKey": "training",
+	"slug": "academia/formacoes",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Formações",
+	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"seo": {
+		"title": "Formações — Ana Trevizan",
+		"description": "Descrição editorial por aprovar.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

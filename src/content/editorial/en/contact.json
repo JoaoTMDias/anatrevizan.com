@@ -1,16 +1,16 @@
 {
-  "translationGroup": "contact",
-  "locale": "en",
-  "routeKey": "contact",
-  "slug": "contact",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Contact",
-  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
-  "seo": {
-    "title": "Contact — Ana Trevizan",
-    "description": "Editorial description awaiting approval.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "contact",
+	"locale": "en",
+	"routeKey": "contact",
+	"slug": "contact",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Contact",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Contact — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@import '@fontsource-variable/inter';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@plugin "@tailwindcss/typography";
 
 /* Drive the dark: variant from the .dark class (toggled by ThemeToggle),
    not the prefers-color-scheme media query. */
@@ -8,8 +8,8 @@
 
 /* Metric-matched Arial fallback so the Inter swap doesn't reflow text (CLS). */
 @font-face {
-	font-family: 'Inter Fallback';
-	src: local('Arial');
+	font-family: "Inter Fallback";
+	src: local("Arial");
 	ascent-override: 90.44%;
 	descent-override: 22.52%;
 	line-gap-override: 0%;
@@ -17,7 +17,7 @@
 }
 
 @theme inline {
-	--font-sans: 'Inter Variable', 'Inter Fallback', system-ui, sans-serif;
+	--font-sans: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
@@ -50,22 +50,22 @@
 :root {
 	--radius: 0.625rem;
 	--background: oklch(0.99 0.004 285);
-	--foreground: oklch(0.20 0.03 285);
+	--foreground: oklch(0.2 0.03 285);
 	--card: oklch(1 0.002 285);
-	--card-foreground: oklch(0.20 0.03 285);
+	--card-foreground: oklch(0.2 0.03 285);
 	--popover: oklch(1 0.002 285);
-	--popover-foreground: oklch(0.20 0.03 285);
+	--popover-foreground: oklch(0.2 0.03 285);
 	--primary: oklch(0.57 0.198 37);
 	--primary-foreground: oklch(0.99 0.005 285);
 	--secondary: oklch(0.96 0.01 285);
-	--secondary-foreground: oklch(0.30 0.04 285);
+	--secondary-foreground: oklch(0.3 0.04 285);
 	--muted: oklch(0.96 0.01 285);
 	--muted-foreground: oklch(0.48 0.03 285);
 	--accent: oklch(0.95 0.02 285);
-	--accent-foreground: oklch(0.30 0.05 285);
+	--accent-foreground: oklch(0.3 0.05 285);
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.90 0.012 285);
-	--input: oklch(0.90 0.012 285);
+	--border: oklch(0.9 0.012 285);
+	--input: oklch(0.9 0.012 285);
 	--ring: oklch(0.57 0.198 37);
 	--chart-1: oklch(0.646 0.222 41.116);
 	--chart-2: oklch(0.6 0.118 184.704);
@@ -81,7 +81,7 @@
 	--card-foreground: oklch(0.95 0.012 285);
 	--popover: oklch(0.21 0.025 285);
 	--popover-foreground: oklch(0.95 0.012 285);
-	--primary: oklch(0.70 0.18 40);
+	--primary: oklch(0.7 0.18 40);
 	--primary-foreground: oklch(0.16 0.02 285);
 	--secondary: oklch(0.26 0.03 285);
 	--secondary-foreground: oklch(0.95 0.012 285);
@@ -89,10 +89,10 @@
 	--muted-foreground: oklch(0.72 0.03 285);
 	--accent: oklch(0.28 0.04 285);
 	--accent-foreground: oklch(0.95 0.012 285);
-	--destructive: oklch(0.70 0.19 22);
+	--destructive: oklch(0.7 0.19 22);
 	--border: oklch(0.95 0.01 285 / 12%);
 	--input: oklch(0.95 0.01 285 / 15%);
-	--ring: oklch(0.70 0.18 40);
+	--ring: oklch(0.7 0.18 40);
 }
 
 @layer base {
@@ -135,9 +135,17 @@
 }
 
 @keyframes twinkle {
-	0%, 100% { opacity: 0.25; }
-	50% { opacity: 0.9; }
+	0%,
+	100% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.9;
+	}
 }
 @media (prefers-reduced-motion: no-preference) {
-	.star-twinkle { animation: twinkle var(--twinkle-dur, 4s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+	.star-twinkle {
+		animation: twinkle var(--twinkle-dur, 4s) ease-in-out infinite;
+		animation-delay: var(--d, 0s);
+	}
 }

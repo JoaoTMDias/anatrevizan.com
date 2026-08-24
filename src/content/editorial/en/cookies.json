@@ -1,16 +1,16 @@
 {
-  "translationGroup": "cookies",
-  "locale": "en",
-  "routeKey": "cookies",
-  "slug": "cookies",
-  "status": "draft",
-  "approvalPending": true,
-  "title": "Cookie policy",
-  "summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
-  "seo": {
-    "title": "Cookie policy — Ana Trevizan",
-    "description": "Editorial description awaiting approval.",
-    "noindex": true
-  },
-  "ctaRefs": []
+	"translationGroup": "cookies",
+	"locale": "en",
+	"routeKey": "cookies",
+	"slug": "cookies",
+	"status": "draft",
+	"approvalPending": true,
+	"title": "Cookie policy",
+	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
+	"seo": {
+		"title": "Cookie policy — Ana Trevizan",
+		"description": "Editorial description awaiting approval.",
+		"noindex": true
+	},
+	"ctaRefs": []
 }

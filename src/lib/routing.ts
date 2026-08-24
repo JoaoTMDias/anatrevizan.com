@@ -1,30 +1,48 @@
-export const publishedLocales = ['pt-PT', 'en'] as const;
-export const editorialLocales = [...publishedLocales, 'es'] as const;
+export const publishedLocales = ["pt-PT", "en"] as const;
+export const editorialLocales = [...publishedLocales, "es"] as const;
 
 export type PublishedLocale = (typeof publishedLocales)[number];
 export type EditorialLocale = (typeof editorialLocales)[number];
 
 export const routeMap = {
-	home: { 'pt-PT': '/', en: '/en' },
-	consulting: { 'pt-PT': '/consultoria', en: '/en/consulting' },
-	'immigration-mobility': { 'pt-PT': '/consultoria/migracao-e-mobilidade', en: '/en/consulting/immigration-mobility' },
-	legal: { 'pt-PT': '/consultoria/juridica', en: '/en/consulting/legal' },
-	'environmental-esg': { 'pt-PT': '/consultoria/ambiental-e-esg', en: '/en/consulting/environmental-esg' },
-	'public-policy': { 'pt-PT': '/consultoria/politicas-publicas', en: '/en/consulting/public-policy' },
-	'legal-opinions': { 'pt-PT': '/consultoria/pareceres', en: '/en/consulting/legal-opinions' },
-	academic: { 'pt-PT': '/academia', en: '/en/academic' },
-	mentoring: { 'pt-PT': '/academia/mentorias', en: '/en/academic/mentoring' },
-	publications: { 'pt-PT': '/academia/publicacoes', en: '/en/academic/publications' },
-	events: { 'pt-PT': '/academia/eventos', en: '/en/academic/events' },
-	speaking: { 'pt-PT': '/academia/palestras', en: '/en/academic/speaking' },
-	training: { 'pt-PT': '/academia/formacoes', en: '/en/academic/training' },
-	about: { 'pt-PT': '/sobre', en: '/en/about' },
-	contact: { 'pt-PT': '/contacto', en: '/en/contact' },
-	booking: { 'pt-PT': '/agendar', en: '/en/book-a-call' },
-	privacy: { 'pt-PT': '/politica-de-privacidade', en: '/en/privacy-policy' },
-	terms: { 'pt-PT': '/termos', en: '/en/terms' },
-	cookies: { 'pt-PT': '/cookies', en: '/en/cookies' },
-} as const satisfies Record<string, Record<PublishedLocale, `/${string}` | '/'>>;
+	home: { "pt-PT": "/", en: "/en" },
+	consulting: { "pt-PT": "/consultoria", en: "/en/consulting" },
+	"immigration-mobility": {
+		"pt-PT": "/consultoria/migracao-e-mobilidade",
+		en: "/en/consulting/immigration-mobility",
+	},
+	legal: { "pt-PT": "/consultoria/juridica", en: "/en/consulting/legal" },
+	"environmental-esg": {
+		"pt-PT": "/consultoria/ambiental-e-esg",
+		en: "/en/consulting/environmental-esg",
+	},
+	"public-policy": {
+		"pt-PT": "/consultoria/politicas-publicas",
+		en: "/en/consulting/public-policy",
+	},
+	"legal-opinions": {
+		"pt-PT": "/consultoria/pareceres",
+		en: "/en/consulting/legal-opinions",
+	},
+	academic: { "pt-PT": "/academia", en: "/en/academic" },
+	mentoring: { "pt-PT": "/academia/mentorias", en: "/en/academic/mentoring" },
+	publications: {
+		"pt-PT": "/academia/publicacoes",
+		en: "/en/academic/publications",
+	},
+	events: { "pt-PT": "/academia/eventos", en: "/en/academic/events" },
+	speaking: { "pt-PT": "/academia/palestras", en: "/en/academic/speaking" },
+	training: { "pt-PT": "/academia/formacoes", en: "/en/academic/training" },
+	about: { "pt-PT": "/sobre", en: "/en/about" },
+	contact: { "pt-PT": "/contacto", en: "/en/contact" },
+	booking: { "pt-PT": "/agendar", en: "/en/book-a-call" },
+	privacy: { "pt-PT": "/politica-de-privacidade", en: "/en/privacy-policy" },
+	terms: { "pt-PT": "/termos", en: "/en/terms" },
+	cookies: { "pt-PT": "/cookies", en: "/en/cookies" },
+} as const satisfies Record<
+	string,
+	Record<PublishedLocale, `/${string}` | "/">
+>;
 
 export type RouteKey = keyof typeof routeMap;
 export const routeKeys = Object.keys(routeMap) as RouteKey[];
@@ -38,7 +56,7 @@ export function isEditorialLocale(value: unknown): value is EditorialLocale {
 }
 
 export function isRouteKey(value: unknown): value is RouteKey {
-	return typeof value === 'string' && Object.hasOwn(routeMap, value);
+	return typeof value === "string" && Object.hasOwn(routeMap, value);
 }
 
 export function pathFor(routeKey: RouteKey, locale: PublishedLocale): string {
@@ -47,18 +65,20 @@ export function pathFor(routeKey: RouteKey, locale: PublishedLocale): string {
 
 export function alternatePath(path: string): string | undefined {
 	for (const localized of Object.values(routeMap)) {
-		if (localized['pt-PT'] === path) return localized.en;
-		if (localized.en === path) return localized['pt-PT'];
+		if (localized["pt-PT"] === path) return localized.en;
+		if (localized.en === path) return localized["pt-PT"];
 	}
 }
 
 export function localeForPath(path: string): PublishedLocale | undefined {
 	for (const localized of Object.values(routeMap)) {
-		if (localized['pt-PT'] === path) return 'pt-PT';
-		if (localized.en === path) return 'en';
+		if (localized["pt-PT"] === path) return "pt-PT";
+		if (localized.en === path) return "en";
 	}
 }
 
 export function routeKeyForPath(path: string): RouteKey | undefined {
-	return routeKeys.find((key) => Object.values(routeMap[key]).includes(path as never));
+	return routeKeys.find((key) =>
+		Object.values(routeMap[key]).includes(path as never),
+	);
 }
