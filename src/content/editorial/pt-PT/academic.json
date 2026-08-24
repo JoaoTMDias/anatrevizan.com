@@ -4,7 +4,7 @@
 	"routeKey": "academic",
 	"slug": "academia",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Academia",
 	"summary": "Uma trajetória rica só tem valor quando se pode ver inteira. Aqui reúno a investigação, o ensino e a comunicação num só lugar.",
 	"seo": {

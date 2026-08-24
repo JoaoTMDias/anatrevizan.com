@@ -4,7 +4,7 @@
 	"routeKey": "training",
 	"slug": "academia/formacoes",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Cursos e Formações",
 	"summary": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
 	"seo": {

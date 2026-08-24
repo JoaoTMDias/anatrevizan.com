@@ -4,7 +4,7 @@
 	"routeKey": "speaking",
 	"slug": "academia/palestras",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Palestras e Convites",
 	"summary": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
 	"seo": {

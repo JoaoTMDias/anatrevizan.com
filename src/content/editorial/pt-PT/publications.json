@@ -4,7 +4,7 @@
 	"routeKey": "publications",
 	"slug": "academia/publicacoes",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Publicações",
 	"summary": "Produção científica em Direito ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
 	"seo": {

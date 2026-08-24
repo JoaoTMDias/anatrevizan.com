@@ -4,7 +4,7 @@
 	"routeKey": "mentoring",
 	"slug": "academia/mentorias",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Mentorias e Apoio Académico",
 	"summary": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
 	"seo": {

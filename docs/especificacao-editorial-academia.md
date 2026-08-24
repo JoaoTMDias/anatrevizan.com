@@ -4,8 +4,9 @@
 
 Este grupo migra o hub Academia e as páginas Mentorias, Publicações, Eventos,
 Palestras e Formações. A referência Next.js define conteúdo e intenção, mas os
-componentes React não são copiados. O conteúdo PT-PT entra em `draft`, com
-`approvalPending: true` e `noindex: true`.
+componentes React não são copiados. O conteúdo PT-PT foi importado em `draft` e
+`noindex: true`; a revisão editorial das seis páginas foi aprovada pela Ana em
+24 de agosto de 2026, pelo que `approvalPending` passou para `false`.
 
 Não pertencem ao grupo a integração ORCID em build, o kit descarregável final,
 assets fotográficos finais, formulário, agendamento, tradução EN ou
@@ -82,3 +83,7 @@ As seis páginas e todas as fontes acima devem estar contabilizadas, renderizar
 em preview PT, não expor o conteúdo português em EN e passar validação de
 conteúdo, testes unitários, Playwright relevante, `astro check`, `build:local`
 e `git diff --check`. Nenhuma página muda para `ready` sem revisão explícita.
+
+A revisão editorial foi concluída em 24 de agosto de 2026. As páginas mantêm-se
+em `draft` e `noindex` porque a publicação e as dependências adiadas — incluindo
+a integração ORCID com dados atuais — não fazem parte deste grupo.

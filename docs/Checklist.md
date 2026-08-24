@@ -40,10 +40,11 @@
 ### Grupo 3 — Academia
 
 - [x] Hub Academia e cinco páginas académicas auditados; 106 strings PT-PT, 12 strings SEO e 25 publicações contabilizados no manifesto `docs/especificacao-editorial-academia.md`.
-- [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex` até revisão explícita.
+- [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos; permanece em `draft` e `noindex` após a revisão explícita.
 - [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
 - [x] Dois links de publicações com `href="#"`, o download falso do kit, a fotografia placeholder e as coleções vazias de eventos e recomendações foram registados sem os publicar como conteúdo válido.
-- [ ] Conteúdo profissional e académico PT-PT das seis páginas revisto e aprovado pela Ana; revisão qualificada adicional mantém-se pendente quando aplicável.
+- [x] Conteúdo profissional e académico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
+- [ ] Integração ORCID em build, validação dos dados atuais e snapshot de fallback implementados numa fase posterior.
 
 ## 1. Decisões de produto e arquitetura
 

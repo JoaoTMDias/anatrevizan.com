@@ -4,7 +4,7 @@
 	"routeKey": "events",
 	"slug": "academia/eventos",
 	"status": "draft",
-	"approvalPending": true,
+	"approvalPending": false,
 	"title": "Eventos e Palestras",
 	"summary": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
 	"seo": {
