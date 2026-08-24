@@ -15,5 +15,5 @@ O seletor de idioma, os alternates e o sitemap só anunciam uma tradução quand
 
 - As páginas usam uma `routeKey` do mapa canónico e o slug localizado correspondente.
 - Entidades repetíveis usam `parentRouteKey` para indicar a página onde serão apresentadas.
-- Os ficheiros são nomeados automaticamente como `<translationGroup>--<locale>.json`.
+- Cada coleção está organizada em diretórios `pt-PT/` e `en/`; o nome do ficheiro é o `translationGroup`, por exemplo `about.json`.
 - `pnpm validate:content` deteta pares ausentes, locales e estados inválidos, slugs duplicados e referências de rota desconhecidas.

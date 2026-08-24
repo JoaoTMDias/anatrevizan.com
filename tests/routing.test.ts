@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { alternatePath, editorialLocales, pathFor, publishedLocales, routeKeys, routeMap } from '../src/lib/routing.ts';
 import { isPublishable, validateEditorialDocuments, type EditorialDocument } from '../src/lib/editorial.ts';
@@ -16,6 +16,10 @@ const docs = routeKeys.flatMap((routeKey) => publishedLocales.map((locale) => ({
 	seoDescription: routeKey,
 	approvalPending: true,
 })));
+const jsonFiles = (directory: string): string[] => readdirSync(directory).flatMap((name) => {
+	const absolute = join(directory, name);
+	return statSync(absolute).isDirectory() ? jsonFiles(absolute) : name.endsWith('.json') ? [absolute] : [];
+});
 
 test('o mapa contém 19 pares PT↔EN únicos e reversíveis', () => {
 	assert.equal(routeKeys.length, 19);
@@ -30,8 +34,8 @@ test('documentos estruturais válidos têm pares completos', () => assert.deepEq
 
 test('os documentos Tina reais respeitam o mapa e as regras editoriais', () => {
 	const directory = join(process.cwd(), 'src/content/editorial');
-	const actual = readdirSync(directory).filter((file) => file.endsWith('.json')).map((file) => {
-		const value = JSON.parse(readFileSync(join(directory, file), 'utf8'));
+	const actual = jsonFiles(directory).map((file) => {
+		const value = JSON.parse(readFileSync(file, 'utf8'));
 		return { ...value, seoTitle: value.seo.title, seoDescription: value.seo.description } as EditorialDocument;
 	});
 	assert.equal(actual.length, 38);

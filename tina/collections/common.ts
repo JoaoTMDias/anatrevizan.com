@@ -1,5 +1,5 @@
 import type { TinaField } from 'tinacms';
-import { routeKeys } from '../../src/lib/routing';
+import { pathFor, routeKeys, type PublishedLocale, type RouteKey } from '../../src/lib/routing';
 
 export const localizedDocumentFields: TinaField[] = [
 	{ name: 'translationGroup', label: 'Translation group', type: 'string', required: true, description: 'Stable identifier shared by all translations of this item.' },
@@ -19,7 +19,11 @@ export const localizedDocumentFields: TinaField[] = [
 
 export const parentRouteField: TinaField = { name: 'parentRouteKey', label: 'Parent page', type: 'string', required: true, options: routeKeys.map((value) => ({ label: value, value })) };
 
-export const entityUi = (folder: string) => ({
-	filename: { readonly: true, slugify: (values: Record<string, string>) => `${values.translationGroup}--${values.locale}` },
-	router: () => `/${folder}`,
+export const entityUi = () => ({
+	filename: { readonly: true, slugify: (values: Record<string, string>) => `${values.translationGroup}` },
+	router: ({ document }: { document: Record<string, unknown> }) => {
+		const locale = document.locale as PublishedLocale;
+		const routeKey = document.parentRouteKey as RouteKey;
+		return locale === 'pt-PT' || locale === 'en' ? pathFor(routeKey, locale) : undefined;
+	},
 });

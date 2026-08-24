@@ -8,12 +8,12 @@ import { islands } from '../lib/islands';
 import type { PublishedLocale, RouteKey } from '../lib/routing';
 interface Props { routeKey: RouteKey; locale: PublishedLocale }
 const { routeKey, locale } = Astro.props;
-const relativePath = `${routeKey}--${locale}.json`;
+const relativePath = `${locale}/${routeKey}.json`;
 const result = await getEditorial(relativePath);
 const data = result.data?.editorial;
 if (!data) return new Response('Not found', { status: 404 });
 const otherLocale: PublishedLocale = locale === 'en' ? 'pt-PT' : 'en';
-const other = (await getEditorial(`${routeKey}--${otherLocale}.json`)).data?.editorial;
+const other = (await getEditorial(`${otherLocale}/${routeKey}.json`)).data?.editorial;
 const documentValue = (value: NonNullable<typeof data>) => ({ translationGroup: value.translationGroup, locale: value.locale as never, routeKey: value.routeKey as never, slug: value.slug, status: value.status as never, title: value.title, seoTitle: value.seo.title, seoDescription: value.seo.description, approvalPending: value.approvalPending });
 const localEditorialPreview = import.meta.env.DEV || process.env.TINA_PUBLIC_IS_LOCAL === 'true';
 const currentPublishable = isPublishable(documentValue(data));

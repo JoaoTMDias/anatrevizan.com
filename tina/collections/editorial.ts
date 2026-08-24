@@ -5,7 +5,7 @@ import { localizedDocumentFields } from './common';
 export const EditorialCollection: Collection = {
 	name: 'editorial', label: 'Localized pages', path: 'src/content/editorial', format: 'json',
 	ui: {
-		filename: { readonly: true, slugify: (values) => `${values.translationGroup}--${values.locale}` },
+		filename: { readonly: true, slugify: (values) => `${values.translationGroup}` },
 		router: ({ document }) => {
 			const locale = document.locale as PublishedLocale;
 			const routeKey = document.routeKey as RouteKey;

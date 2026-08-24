@@ -1,21 +1,31 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { editorialLocales, isRouteKey, publishedLocales } from '../src/lib/routing.ts';
 import { editorialStatuses, validateEditorialDocuments, type EditorialDocument } from '../src/lib/editorial.ts';
 
 const root = process.cwd();
 const readJson = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
-const readCollection = (name: string) => readdirSync(join(root, 'src/content', name)).filter((file) => file.endsWith('.json')).map((file) => ({ file, value: readJson(join(root, 'src/content', name, file)) }));
+const jsonFiles = (directory: string, prefix = ''): string[] => readdirSync(directory).flatMap((name) => {
+	const absolute = join(directory, name);
+	const relative = join(prefix, name);
+	return statSync(absolute).isDirectory() ? jsonFiles(absolute, relative) : name.endsWith('.json') ? [relative] : [];
+});
+const readCollection = (name: string) => {
+	const directory = join(root, 'src/content', name);
+	return jsonFiles(directory).map((file) => ({ file, value: readJson(join(directory, file)) }));
+};
 const errors: string[] = [];
 
 const pages = readCollection('editorial').map(({ file, value }) => ({ file, value: { ...value, seoTitle: value.seo?.title, seoDescription: value.seo?.description } as EditorialDocument }));
 for (const issue of validateEditorialDocuments(pages.map(({ value }) => value))) errors.push(`[pages/${issue.code}] ${issue.message}`);
+for (const { file, value } of pages) if (file.split('/')[0] !== value.locale) errors.push(`[pages/${file}] diretório e locale não correspondem`);
 
 for (const collection of ['services', 'events', 'talks', 'training', 'mentoring']) {
 	const documents = readCollection(collection);
 	const seenSlugs = new Set<string>();
 	const groups = new Map<string, Set<string>>();
 	for (const { file, value } of documents) {
+		if (file.split('/')[0] !== value.locale) errors.push(`[${collection}/${file}] diretório e locale não correspondem`);
 		if (!editorialLocales.includes(value.locale)) errors.push(`[${collection}/${file}] locale inválido: ${value.locale}`);
 		if (!editorialStatuses.includes(value.status)) errors.push(`[${collection}/${file}] estado inválido: ${value.status}`);
 		if (value.status === 'ready' && value.approvalPending) errors.push(`[${collection}/${file}] ready ainda por aprovar`);
