@@ -11,6 +11,13 @@
 
 O seletor de idioma, os alternates e o sitemap só anunciam uma tradução quando ela está `ready` e já não aguarda aprovação. Espanhol pode ser preparado como `es`, mas não é publicado na v1.
 
+## Ambientes e previews editoriais
+
+- `pnpm dev`: ambiente de desenvolvimento local do Astro/TinaCMS, com `import.meta.env.DEV` ativo. Páginas em `draft` podem ser vistas localmente para revisão, mas continuam marcadas com `noindex,nofollow`.
+- `pnpm build:preview`: build local de produção em modo de preview editorial. Usa `EDITORIAL_PREVIEW=true` para gerar documentos `draft` em modo de revisão, sem publicar no sitemap e com meta robots `noindex,nofollow`.
+- `pnpm build:local`: build local equivalente a produção, sem checks do Tina Cloud. Documentos `draft` e `approvalPending` continuam excluídos das páginas publicáveis e do sitemap.
+- `pnpm build`: build de produção com checks do Tina Cloud quando a configuração remota estiver disponível. Só documentos `ready` e aprovados entram na publicação, e o sitemap contém apenas URLs publicáveis.
+
 ## Regras de nomes e rotas
 
 - As páginas usam uma `routeKey` do mapa canónico e o slug localizado correspondente.

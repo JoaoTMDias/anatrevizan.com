@@ -12,8 +12,7 @@ export default defineConfig({
 		trace: "on-first-retry",
 	},
 	webServer: {
-		command:
-			"TINA_PUBLIC_IS_LOCAL=true pnpm build:local && pnpm preview --host 127.0.0.1 --port 4321",
+		command: "pnpm build:preview && pnpm preview --host 127.0.0.1 --port 4321",
 		url: "http://127.0.0.1:4321",
 		reuseExistingServer: !process.env.CI,
 	},

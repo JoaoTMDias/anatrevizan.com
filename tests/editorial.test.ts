@@ -1,9 +1,12 @@
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { execSync } from "node:child_process";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
 	type EditorialDocument,
+	isEditorialPreviewEnabled,
 	isPublishable,
+	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
@@ -114,4 +117,67 @@ describe("editorial validation", () => {
 			]).some((issue) => issue.code === "invalid-status"),
 		).toBe(true);
 	});
+
+	it("separates preview mode from production publication rules", () => {
+		expect(isEditorialPreviewEnabled({ dev: false })).toBe(false);
+		expect(
+			isEditorialPreviewEnabled({ dev: false, editorialPreview: "true" }),
+		).toBe(true);
+		expect(
+			isEditorialPreviewEnabled({ dev: false, editorialPreview: "false" }),
+		).toBe(false);
+		expect(
+			isEditorialPreviewEnabled({ dev: false, editorialPreview: undefined }),
+		).toBe(false);
+		expect(
+			isEditorialPreviewEnabled({ dev: true, editorialPreview: "false" }),
+		).toBe(true);
+
+		const draftDoc = {
+			...docs[0],
+			status: "draft" as const,
+			approvalPending: false,
+		};
+		const readyDoc = {
+			...docs[0],
+			status: "ready" as const,
+			approvalPending: false,
+		};
+		const approvedPendingDoc = {
+			...docs[0],
+			status: "ready" as const,
+			approvalPending: true,
+		};
+
+		expect(shouldRenderEditorialDocument(draftDoc, false)).toBe(false);
+		expect(shouldRenderEditorialDocument(draftDoc, true)).toBe(true);
+		expect(shouldRenderEditorialDocument(readyDoc, false)).toBe(true);
+		expect(shouldRenderEditorialDocument(approvedPendingDoc, true)).toBe(false);
+	});
+
+	it("includes preview drafts in build output but excludes them from production sitemap", () => {
+		execSync("pnpm build:preview", { stdio: "inherit" });
+		const previewHtml = readFileSync(
+			join(process.cwd(), "dist/client/sobre/index.html"),
+			"utf8",
+		);
+		expect(previewHtml).toContain(
+			'meta name="robots" content="noindex,nofollow"',
+		);
+		const previewSitemap = readFileSync(
+			join(process.cwd(), "dist/client/sitemap.xml"),
+			"utf8",
+		);
+		expect(previewSitemap).not.toContain("/sobre");
+
+		execSync("pnpm build:local", { stdio: "inherit" });
+		expect(
+			existsSync(join(process.cwd(), "dist/client/sobre/index.html")),
+		).toBe(false);
+		const productionSitemap = readFileSync(
+			join(process.cwd(), "dist/client/sitemap.xml"),
+			"utf8",
+		);
+		expect(productionSitemap).not.toContain("/sobre");
+	}, 120000);
 });

@@ -1,11 +1,37 @@
 ---
 import LocalizedPage from '../components/LocalizedPage.astro';
+import { listEditorial, toEditorialDocument } from '../lib/data';
+import { isEditorialPreviewEnabled, shouldRenderEditorialDocument } from '../lib/editorial';
 import { routeKeys, routeMap } from '../lib/routing';
-export function getStaticPaths() {
-	return routeKeys.flatMap((routeKey) => [
-		...(routeMap[routeKey]['pt-PT'] === '/' ? [] : [{ params: { slug: routeMap[routeKey]['pt-PT'].slice(1) }, props: { routeKey, locale: 'pt-PT' as const } }]),
-		{ params: { slug: routeMap[routeKey].en.slice(1) }, props: { routeKey, locale: 'en' as const } },
-	]);
+
+export async function getStaticPaths() {
+	const previewEnabled = isEditorialPreviewEnabled();
+	const renderable = new Set(
+		(await listEditorial())
+			.map(toEditorialDocument)
+			.filter((document) => shouldRenderEditorialDocument(document, previewEnabled))
+			.map((document) => `${document.routeKey}:${document.locale}`),
+	);
+
+	return routeKeys.flatMap((routeKey) => {
+		const localizedPaths = [
+			...(routeMap[routeKey]['pt-PT'] === '/'
+				? []
+				: [{
+						params: { slug: routeMap[routeKey]['pt-PT'].slice(1) },
+						props: { routeKey, locale: 'pt-PT' as const },
+					}]),
+			{ params: { slug: routeMap[routeKey].en.slice(1) }, props: { routeKey, locale: 'en' as const } },
+		].filter(({ props }) => {
+			if (!props) return true;
+			return renderable.has(`${props.routeKey}:${props.locale}`);
+		});
+
+		return localizedPaths.map(({ params, props }) => ({
+			params,
+			props,
+		}));
+	});
 }
 const { routeKey, locale } = Astro.props;
 ---
