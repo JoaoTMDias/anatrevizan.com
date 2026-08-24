@@ -1,5 +1,4 @@
-import { execSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
@@ -173,30 +172,4 @@ describe("editorial validation", () => {
 			),
 		).toBeNull();
 	});
-
-	it("includes preview drafts in build output but excludes them from production sitemap", () => {
-		execSync("pnpm build:preview", { stdio: "inherit" });
-		const previewHtml = readFileSync(
-			join(process.cwd(), "dist/client/sobre/index.html"),
-			"utf8",
-		);
-		expect(previewHtml).toContain(
-			'meta name="robots" content="noindex,nofollow"',
-		);
-		const previewSitemap = readFileSync(
-			join(process.cwd(), "dist/client/sitemap.xml"),
-			"utf8",
-		);
-		expect(previewSitemap).not.toContain("/sobre");
-
-		execSync("pnpm build:local", { stdio: "inherit" });
-		expect(
-			existsSync(join(process.cwd(), "dist/client/sobre/index.html")),
-		).toBe(false);
-		const productionSitemap = readFileSync(
-			join(process.cwd(), "dist/client/sitemap.xml"),
-			"utf8",
-		);
-		expect(productionSitemap).not.toContain("/sobre");
-	}, 120000);
 });

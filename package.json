@@ -19,6 +19,7 @@
 		"format:check": "biome format ./src",
 		"check": "pnpm lint && pnpm format:check && pnpm exec astro check",
 		"test": "vitest run",
+		"test:publishing": "pnpm build:preview && node --experimental-strip-types scripts/assert-build-output.ts preview && pnpm build:local && node --experimental-strip-types scripts/assert-build-output.ts production",
 		"test:watch": "vitest",
 		"test:e2e": "playwright test",
 		"test:e2e:ui": "playwright test --ui",
