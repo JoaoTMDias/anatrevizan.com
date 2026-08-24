@@ -111,6 +111,101 @@ export interface ConsultingServiceContent {
 	ctaText: string;
 }
 
+export interface AcademicHubContent {
+	subtitle: string;
+	introText: string;
+	sections: Array<{
+		title: string;
+		description: string;
+		routeKey: RouteKey;
+		cta: string;
+		highlight?: boolean | null;
+	}>;
+	ctaHeading: string;
+	ctaText: string;
+}
+
+export interface AcademicServiceContent {
+	subtitle: string;
+	introHeading: string;
+	introParagraphs: string[];
+	servicesHeading: string;
+	servicesSubtitle?: string | null;
+	services: Array<{ title: string; description: string }>;
+	note: string;
+	ctaHeading: string;
+	ctaText: string;
+}
+
+export interface PublicationsPageContent {
+	tag: string;
+	subtitle: string;
+	introText: string;
+	orcidNote: string;
+	filters: {
+		allYears: string;
+		allTopics: string;
+		allLanguages: string;
+		clear: string;
+		singleResult: string;
+		multipleResults: string;
+		view: string;
+		empty: string;
+	};
+	publications: Array<{
+		sourceId: string;
+		title: string;
+		journal?: string | null;
+		year?: string | null;
+		type?: string | null;
+		doi?: string | null;
+		url?: string | null;
+		language?: string | null;
+		topics?: string[] | null;
+		highlight?: string | null;
+		linkStatus: "valid" | "missing" | "placeholder";
+	}>;
+	ctaHeading: string;
+	ctaText: string;
+}
+
+export interface EventsPageContent {
+	tag: string;
+	subtitle: string;
+	emptyHeading: string;
+	emptyText: string;
+	speakerKitCta: string;
+	entries?: Array<{
+		slug: string;
+		date: string;
+		city: string;
+		country: string;
+		event: string;
+		institution: string;
+		topic?: string | null;
+		role?: string | null;
+		url?: string | null;
+	}> | null;
+	ctaHeading: string;
+	ctaText: string;
+}
+
+export interface SpeakingPageContent {
+	tag: string;
+	subtitle: string;
+	photoPlaceholderLabel: string;
+	bioHeading: string;
+	bioParagraphs: string[];
+	topicsHeading: string;
+	topics: string[];
+	kitHeading: string;
+	kitItems: string[];
+	kitDownloadLabel: string;
+	inviteCta: string;
+	ctaHeading: string;
+	ctaText: string;
+}
+
 export function hasValidRouteKey(value: {
 	routeKey?: unknown;
 }): value is { routeKey: RouteKey } {

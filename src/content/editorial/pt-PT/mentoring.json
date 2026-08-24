@@ -5,12 +5,50 @@
 	"slug": "academia/mentorias",
 	"status": "draft",
 	"approvalPending": true,
-	"title": "Mentorias",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"title": "Mentorias e Apoio Académico",
+	"summary": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
 	"seo": {
-		"title": "Mentorias — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Mentorias e Apoio Académico · Publicar com quem já publicou",
+		"description": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"academicService": {
+		"subtitle": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
+		"introHeading": "Sei onde a escrita costuma travar",
+		"introParagraphs": [
+			"Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.",
+			"Já passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos."
+		],
+		"servicesHeading": "Como posso apoiar",
+		"services": [
+			{
+				"title": "Revisão técnica de artigos",
+				"description": "Revisão de conteúdo jurídico e científico em português, inglês e espanhol."
+			},
+			{
+				"title": "Estratégia de pesquisa",
+				"description": "Definição de foco, questão e desenho metodológico do seu projeto."
+			},
+			{
+				"title": "Estruturação de dissertações",
+				"description": "Organização da tese, do argumento central à arquitetura dos capítulos."
+			},
+			{
+				"title": "Orientação metodológica",
+				"description": "Método adequado à sua pergunta e à sua área."
+			},
+			{
+				"title": "Destravamento da escrita",
+				"description": "Apoio para sair do bloqueio e recuperar o ritmo de produção."
+			},
+			{
+				"title": "Preparação para publicação internacional",
+				"description": "Adequação do artigo às exigências de revistas indexadas."
+			}
+		],
+		"note": "Apoio académico e metodológico. Orçamento sob consulta; o primeiro contacto é feito pela marcação de uma conversa inicial.",
+		"ctaHeading": "Vamos destravar a sua pesquisa?",
+		"ctaText": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo."
+	},
+	"ctaRefs": ["booking"]
 }

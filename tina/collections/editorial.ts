@@ -7,6 +7,13 @@ import {
 } from "../../src/lib/routing";
 import { localizedDocumentFields } from "./common";
 import {
+	academicHubFields,
+	academicServiceFields,
+	eventsPageFields,
+	publicationsPageFields,
+	speakingPageFields,
+} from "./academic-sections";
+import {
 	aboutFields,
 	consultingHubFields,
 	consultingServiceFields,
@@ -51,6 +58,11 @@ export const EditorialCollection: Collection = {
 		...aboutFields,
 		...consultingHubFields,
 		...consultingServiceFields,
+		...academicHubFields,
+		...academicServiceFields,
+		...publicationsPageFields,
+		...eventsPageFields,
+		...speakingPageFields,
 		{ name: "ctaRefs", label: "CTA identifiers", type: "string", list: true },
 		{
 			name: "legal",
