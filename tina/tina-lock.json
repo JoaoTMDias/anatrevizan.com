@@ -1615,6 +1615,941 @@
 						"uid": false
 					},
 					{
+						"name": "academicHub",
+						"label": "Academic hub sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicHub", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introText",
+								"label": "Introduction",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicHub", "introText"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "sections",
+								"label": "Academic areas",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicHub",
+											"sections",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "description",
+										"label": "Description",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicHub",
+											"sections",
+											"description"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "routeKey",
+										"label": "Destination",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicHub",
+											"sections",
+											"routeKey"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "cta",
+										"label": "CTA",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicHub",
+											"sections",
+											"cta"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "highlight",
+										"label": "Highlight",
+										"type": "boolean",
+										"namespace": [
+											"editorial",
+											"academicHub",
+											"sections",
+											"highlight"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "academicHub", "sections"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicHub", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicHub", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "academicHub"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "academicService",
+						"label": "Academic service sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicService", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introHeading",
+								"label": "Introduction heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicService", "introHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introParagraphs",
+								"label": "Introduction paragraphs",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": [
+									"editorial",
+									"academicService",
+									"introParagraphs"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "servicesHeading",
+								"label": "Services heading",
+								"type": "string",
+								"required": true,
+								"namespace": [
+									"editorial",
+									"academicService",
+									"servicesHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "servicesSubtitle",
+								"label": "Services introduction",
+								"type": "string",
+								"required": false,
+								"namespace": [
+									"editorial",
+									"academicService",
+									"servicesSubtitle"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "services",
+								"label": "Services",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicService",
+											"services",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "description",
+										"label": "Description",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"academicService",
+											"services",
+											"description"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "academicService", "services"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "note",
+								"label": "Professional note",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicService", "note"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicService", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "academicService", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "academicService"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "publicationsPage",
+						"label": "Publications page sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "introText",
+								"label": "Introduction",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "introText"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "orcidNote",
+								"label": "ORCID note",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "orcidNote"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "filters",
+								"label": "Filter labels",
+								"type": "object",
+								"fields": [
+									{
+										"name": "allYears",
+										"label": "All years",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"allYears"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "allTopics",
+										"label": "All topics",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"allTopics"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "allLanguages",
+										"label": "All languages",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"allLanguages"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "clear",
+										"label": "Clear filters",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"clear"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "singleResult",
+										"label": "Single result",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"singleResult"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "multipleResults",
+										"label": "Multiple results",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"multipleResults"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "view",
+										"label": "View publication",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"view"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "empty",
+										"label": "Empty state",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"filters",
+											"empty"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "publicationsPage", "filters"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "publications",
+								"label": "Static ORCID snapshot (integration deferred)",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "sourceId",
+										"label": "Source ID",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"sourceId"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"title"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "journal",
+										"label": "Journal",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"journal"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "year",
+										"label": "Year",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"year"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "type",
+										"label": "Type",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"type"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "doi",
+										"label": "DOI",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"doi"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "url",
+										"label": "URL",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"url"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "language",
+										"label": "Language",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"language"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "topics",
+										"label": "Topics",
+										"type": "string",
+										"list": true,
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"topics"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "highlight",
+										"label": "Highlight",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"highlight"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "linkStatus",
+										"label": "Source link status",
+										"type": "string",
+										"options": ["valid", "missing", "placeholder"],
+										"required": true,
+										"namespace": [
+											"editorial",
+											"publicationsPage",
+											"publications",
+											"linkStatus"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "publicationsPage", "publications"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "publicationsPage", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "publicationsPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "eventsPage",
+						"label": "Events page sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "emptyHeading",
+								"label": "Empty-state heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "emptyHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "emptyText",
+								"label": "Empty-state text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "emptyText"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "speakerKitCta",
+								"label": "Speaker kit CTA",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "speakerKitCta"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "entries",
+								"label": "Event entries",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "slug",
+										"label": "Slug",
+										"type": "string",
+										"required": true,
+										"namespace": ["editorial", "eventsPage", "entries", "slug"],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "date",
+										"label": "Date",
+										"type": "datetime",
+										"required": true,
+										"namespace": ["editorial", "eventsPage", "entries", "date"],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "city",
+										"label": "City",
+										"type": "string",
+										"required": true,
+										"namespace": ["editorial", "eventsPage", "entries", "city"],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "country",
+										"label": "Country",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"eventsPage",
+											"entries",
+											"country"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "event",
+										"label": "Event",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"eventsPage",
+											"entries",
+											"event"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "institution",
+										"label": "Institution",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"eventsPage",
+											"entries",
+											"institution"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "topic",
+										"label": "Topic",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"eventsPage",
+											"entries",
+											"topic"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "role",
+										"label": "Role",
+										"type": "string",
+										"required": false,
+										"namespace": ["editorial", "eventsPage", "entries", "role"],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "url",
+										"label": "URL",
+										"type": "string",
+										"required": false,
+										"namespace": ["editorial", "eventsPage", "entries", "url"],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "eventsPage", "entries"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "eventsPage", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "eventsPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "speakingPage",
+						"label": "Speaking page sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "photoPlaceholderLabel",
+								"label": "Photo placeholder label",
+								"type": "string",
+								"required": true,
+								"namespace": [
+									"editorial",
+									"speakingPage",
+									"photoPlaceholderLabel"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "bioHeading",
+								"label": "Biography heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "bioHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "bioParagraphs",
+								"label": "Biography paragraphs",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "bioParagraphs"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "topicsHeading",
+								"label": "Topics heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "topicsHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "topics",
+								"label": "Topics",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "topics"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "kitHeading",
+								"label": "Kit heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "kitHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "kitItems",
+								"label": "Kit contents",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "kitItems"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "kitDownloadLabel",
+								"label": "Future kit download label",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "kitDownloadLabel"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "inviteCta",
+								"label": "Invite CTA",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "inviteCta"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaHeading",
+								"label": "CTA heading",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "ctaHeading"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "ctaText",
+								"label": "CTA text",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "speakingPage", "ctaText"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "speakingPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
 						"name": "ctaRefs",
 						"label": "CTA identifiers",
 						"type": "string",
@@ -6690,6 +7625,1043 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [],
 				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialAcademicHubSections" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "cta" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "Boolean" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialAcademicHub" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialAcademicHubSections"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialAcademicServiceServices" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialAcademicService" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialAcademicServiceServices"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialPublicationsPageFilters" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "allYears" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "allTopics" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "allLanguages" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "clear" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "singleResult" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "multipleResults" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "view" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "empty" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPagePublications"
+				},
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sourceId" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "journal" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "year" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "type" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "doi" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "language" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "linkStatus" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialPublicationsPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "orcidNote" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPageFilters"
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "publications" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialPublicationsPagePublications"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialEventsPageEntries" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "slug" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "date" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "city" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "country" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "event" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "institution" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "topic" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "role" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialEventsPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "emptyHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "emptyText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "speakerKitCta" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "entries" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialEventsPageEntries"
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialSpeakingPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "photoPlaceholderLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "bioHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "bioParagraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "topicsHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "kitHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "kitItems" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "kitDownloadLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "inviteCta" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
 				"name": { "kind": "Name", "value": "EditorialLegal" },
 				"fields": [
 					{
@@ -6887,6 +8859,51 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialConsultingService" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "academicHub" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialAcademicHub" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "academicService" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialAcademicService" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "publicationsPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialPublicationsPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "eventsPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialEventsPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "speakingPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialSpeakingPage" }
 						}
 					},
 					{
@@ -8189,6 +10206,456 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialAcademicHubSectionsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "cta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "BooleanFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialAcademicHubFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialAcademicHubSectionsFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialAcademicServiceServicesFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialAcademicServiceFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialAcademicServiceServicesFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPageFiltersFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allYears" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allTopics" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allLanguages" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "clear" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "singleResult" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "multipleResults" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "view" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "empty" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPagePublicationsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceId" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "journal" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "year" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "type" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "doi" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "language" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "linkStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialPublicationsPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "orcidNote" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPageFiltersFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publications" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPagePublicationsFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "DatetimeFilter" },
 				"fields": [
 					{
@@ -8232,6 +10699,267 @@
 								"kind": "NamedType",
 								"name": { "kind": "Name", "value": "String" }
 							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialEventsPageEntriesFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "slug" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "date" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "DatetimeFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "city" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "country" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "event" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "institution" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topic" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "role" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialEventsPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emptyHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emptyText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "speakerKitCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "entries" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialEventsPageEntriesFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialSpeakingPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "photoPlaceholderLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bioHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bioParagraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topicsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitItems" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitDownloadLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "inviteCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
 						}
 					}
 				]
@@ -8394,6 +11122,52 @@
 								"kind": "Name",
 								"value": "EditorialConsultingServiceFilter"
 							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "academicHub" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialAcademicHubFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "academicService" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialAcademicServiceFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publicationsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPageFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "eventsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialEventsPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "speakingPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialSpeakingPageFilter" }
 						}
 					},
 					{
@@ -14998,6 +17772,750 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialAcademicHubSectionsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "routeKey" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "cta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "Boolean" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialAcademicHubMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialAcademicHubSectionsMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialAcademicServiceServicesMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "description" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialAcademicServiceMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introParagraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "servicesSubtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "services" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialAcademicServiceServicesMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "note" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPageFiltersMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allYears" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allTopics" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "allLanguages" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "clear" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "singleResult" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "multipleResults" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "view" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "empty" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPagePublicationsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceId" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "title" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "journal" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "year" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "type" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "doi" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "language" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "highlight" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "linkStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPublicationsPageMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "introText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "orcidNote" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "filters" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPageFiltersMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publications" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialPublicationsPagePublicationsMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialEventsPageEntriesMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "slug" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "date" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "city" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "country" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "event" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "institution" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topic" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "role" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialEventsPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emptyHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emptyText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "speakerKitCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "entries" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialEventsPageEntriesMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialSpeakingPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "photoPlaceholderLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bioHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bioParagraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topicsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "topics" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitItems" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "kitDownloadLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "inviteCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "ctaText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalMutation" },
 				"fields": [
 					{
@@ -15153,6 +18671,58 @@
 							"name": {
 								"kind": "Name",
 								"value": "EditorialConsultingServiceMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "academicHub" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialAcademicHubMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "academicService" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialAcademicServiceMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "publicationsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPublicationsPageMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "eventsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialEventsPageMutation" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "speakingPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialSpeakingPageMutation"
 							}
 						}
 					},

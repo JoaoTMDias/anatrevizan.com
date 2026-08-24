@@ -4,13 +4,23 @@
 	"routeKey": "events",
 	"slug": "academia/eventos",
 	"status": "draft",
-	"approvalPending": true,
-	"title": "Eventos",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"approvalPending": false,
+	"title": "Eventos e Palestras",
+	"summary": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
 	"seo": {
-		"title": "Eventos — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Eventos e Palestras · Journal desde 2019",
+		"description": "Journal de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"eventsPage": {
+		"tag": "Academia",
+		"subtitle": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
+		"emptyHeading": "Journal em consolidação",
+		"emptyText": "Estou a reunir aqui as participações em conferências, painéis e eventos desde 2019. Enquanto isso, se quiser convidar-me para o seu evento, o kit de palestrante já está disponível.",
+		"speakerKitCta": "Ver kit de palestrante",
+		"entries": [],
+		"ctaHeading": "Quer que este journal cresça com o seu evento?",
+		"ctaText": "Envie os detalhes do convite e retomo o contacto."
+	},
+	"ctaRefs": ["speaking", "booking"]
 }

@@ -170,7 +170,9 @@ test.describe("localized draft pages", () => {
 		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
 			"Consultoria",
 		);
-		await expect(page.locator("[data-consulting-areas] > article")).toHaveCount(5);
+		await expect(page.locator("[data-consulting-areas] > article")).toHaveCount(
+			5,
+		);
 		await page.getByRole("button", { name: "Estou em Portugal" }).focus();
 		await page.keyboard.press("Space");
 		await expect(
@@ -202,7 +204,11 @@ test.describe("localized draft pages", () => {
 			await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
 			expect(await page.locator("h1").count()).toBe(1);
 			expect(await page.locator('a[href="#"]').count()).toBe(0);
-			await expect(page.getByText(/ainda por validar e aprovar/)).toBeVisible();
+			await expect(
+				page.getByText(
+					"Conteúdo aprovado editorialmente; publicação ainda pendente.",
+				),
+			).toBeVisible();
 			expect(errors).toEqual([]);
 		});
 	}
@@ -236,7 +242,118 @@ test.describe("localized draft pages", () => {
 		]) {
 			await page.goto(route);
 			await expect(
-				page.getByText(/Onde precisa de apoio|Atuação preventiva|O que posso fazer/),
+				page.getByText(
+					/Onde precisa de apoio|Atuação preventiva|O que posso fazer/,
+				),
+			).toHaveCount(0);
+		}
+	});
+
+	test("Portuguese academic hub links all five academic areas", async ({
+		page,
+	}) => {
+		await page.goto("/academia");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Academia",
+		);
+		for (const heading of [
+			"Mentorias e Apoio Académico",
+			"Publicações",
+			"Eventos e Palestras",
+			"Palestras e Convites",
+			"Cursos e Formações",
+		])
+			await expect(
+				page.getByRole("heading", { name: heading, exact: true }),
+			).toBeVisible();
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+	});
+
+	for (const [route, heading] of [
+		["/academia/mentorias", "Mentorias e Apoio Académico"],
+		["/academia/formacoes", "Cursos e Formações"],
+		["/academia/publicacoes", "Publicações"],
+		["/academia/eventos", "Eventos e Palestras"],
+		["/academia/palestras", "Palestras e Convites"],
+	] as const) {
+		test(`${heading} renders without fake links or console errors`, async ({
+			page,
+		}) => {
+			const errors: string[] = [];
+			page.on("console", (message) => {
+				if (message.type() === "error") errors.push(message.text());
+			});
+			await page.goto(route);
+			await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
+			expect(await page.locator('a[href="#"]').count()).toBe(0);
+			expect(errors).toEqual([]);
+		});
+	}
+
+	test("publications preserve 25 records without linking inherited placeholders", async ({
+		page,
+	}) => {
+		await page.goto("/academia/publicacoes");
+		await expect(page.locator("[data-publications] > article")).toHaveCount(25);
+		await expect(page.getByText("Ligação não disponível.")).toHaveCount(2);
+		await page.locator('select[name="year"]').selectOption("2026");
+		await expect(page.locator("[data-publication-count]")).toContainText(
+			/publicaç(ão|ões)/,
+		);
+	});
+
+	test("events expose an honest empty state and speaking has no fake download", async ({
+		page,
+	}) => {
+		await page.goto("/academia/eventos");
+		await expect(
+			page.getByRole("heading", { name: "Journal em consolidação" }),
+		).toBeVisible();
+		await page.goto("/academia/palestras");
+		await expect(
+			page.getByText(
+				/Descarregar kit de palestrante: ficheiro ainda não disponível/,
+			),
+		).toBeVisible();
+		expect(
+			await page.getByRole("link", { name: /Descarregar kit/ }).count(),
+		).toBe(0);
+	});
+
+	test("academic pages reflow at 320px", async ({ page }) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		for (const route of [
+			"/academia",
+			"/academia/publicacoes",
+			"/academia/palestras",
+		]) {
+			await page.goto(route);
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		}
+	});
+
+	test("English academic previews never expose copied Portuguese content", async ({
+		page,
+	}) => {
+		for (const route of [
+			"/en/academic",
+			"/en/academic/mentoring",
+			"/en/academic/publications",
+			"/en/academic/events",
+			"/en/academic/speaking",
+			"/en/academic/training",
+		]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(
+					/Uma trajetória rica|Sei onde a escrita|Journal em consolidação/,
+				),
 			).toHaveCount(0);
 		}
 	});

@@ -4,13 +4,52 @@
 	"routeKey": "training",
 	"slug": "academia/formacoes",
 	"status": "draft",
-	"approvalPending": true,
-	"title": "Formações",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"approvalPending": false,
+	"title": "Cursos e Formações",
+	"summary": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
 	"seo": {
-		"title": "Formações — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Cursos e Formações · Direito ambiental, ESG e clima",
+		"description": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito ambiental, ESG, governança climática, compliance e Direito da UE.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"academicService": {
+		"subtitle": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+		"introHeading": "Conhecimento que se usa na segunda-feira",
+		"introParagraphs": [
+			"Dou aulas há mais de uma década — no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.",
+			"Desenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina."
+		],
+		"servicesHeading": "Temas",
+		"servicesSubtitle": "Programas adaptados ao público e aos objetivos de cada instituição.",
+		"services": [
+			{
+				"title": "Direito Ambiental",
+				"description": "Fundamentos e aplicação prática, do licenciamento à litigância climática."
+			},
+			{
+				"title": "ESG e Sustentabilidade",
+				"description": "Diagnóstico, indicadores e governança corporativa."
+			},
+			{
+				"title": "Governança Climática",
+				"description": "Políticas, adaptação e o papel do Direito na transição."
+			},
+			{
+				"title": "Compliance",
+				"description": "Gestão de riscos regulatórios e boas práticas."
+			},
+			{
+				"title": "Direito da União Europeia",
+				"description": "EUDR, CSDDD, CSRD e o alcance da regulação europeia."
+			},
+			{
+				"title": "Direito Migratório e Direitos Humanos",
+				"description": "Mobilidade internacional e dignidade nas cadeias de fornecimento."
+			}
+		],
+		"note": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
+		"ctaHeading": "Quer uma formação para a sua equipa ou instituição?",
+		"ctaText": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público."
+	},
+	"ctaRefs": ["booking"]
 }

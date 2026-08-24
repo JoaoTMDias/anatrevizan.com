@@ -28,7 +28,7 @@
 - [x] Grupo 1: conteúdo PT-PT da Home e Sobre importado integralmente para modelos TinaCMS e templates Astro específicos.
 - [x] Cópias inglesas em português, placeholders, links falsos, assets vazios e integrações futuras foram contabilizados sem os publicar como conteúdo válido.
 - [x] Conteúdo profissional e académico PT-PT da Home e Sobre revisto e aprovado pela Ana em 24 de agosto de 2026; as duas páginas permanecem em `draft` e `noindex` até os destinos dependentes estarem prontos.
-- [ ] Grupos 2–5 migrados.
+- [ ] Grupos 4–5 migrados.
 
 ### Grupo 2 — Consultoria
 
@@ -36,6 +36,15 @@
 - [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex`.
 - [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
 - [x] Conteúdo profissional e jurídico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
+
+### Grupo 3 — Academia
+
+- [x] Hub Academia e cinco páginas académicas auditados; 106 strings PT-PT, 12 strings SEO e 25 publicações contabilizados no manifesto `docs/especificacao-editorial-academia.md`.
+- [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos; permanece em `draft` e `noindex` após a revisão explícita.
+- [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
+- [x] Dois links de publicações com `href="#"`, o download falso do kit, a fotografia placeholder e as coleções vazias de eventos e recomendações foram registados sem os publicar como conteúdo válido.
+- [x] Conteúdo profissional e académico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
+- [ ] Integração ORCID em build, validação dos dados atuais e snapshot de fallback implementados numa fase posterior.
 
 ## 1. Decisões de produto e arquitetura
 
