@@ -13,10 +13,13 @@ O seletor de idioma, os alternates e o sitemap só anunciam uma tradução quand
 
 ## Ambientes e previews editoriais
 
-- `pnpm dev`: ambiente de desenvolvimento local do Astro/TinaCMS, com `import.meta.env.DEV` ativo. Páginas em `draft` podem ser vistas localmente para revisão, mas continuam marcadas com `noindex,nofollow`.
+- `pnpm dev` ou `pnpm dev:preview`: ambiente de desenvolvimento local do Astro/TinaCMS, com `import.meta.env.DEV` ativo. Páginas em `draft` podem ser vistas localmente para revisão, mas continuam marcadas com `noindex,nofollow`.
 - `pnpm build:preview`: build local de produção em modo de preview editorial. Usa `EDITORIAL_PREVIEW=true` para gerar documentos `draft` em modo de revisão, sem publicar no sitemap e com meta robots `noindex,nofollow`.
-- `pnpm build:local`: build local equivalente a produção, sem checks do Tina Cloud. Documentos `draft` e `approvalPending` continuam excluídos das páginas publicáveis e do sitemap.
-- `pnpm build`: build de produção com checks do Tina Cloud quando a configuração remota estiver disponível. Só documentos `ready` e aprovados entram na publicação, e o sitemap contém apenas URLs publicáveis.
+- `pnpm preview:editorial`: cria o build editorial completo e abre o preview local correspondente.
+- `pnpm build:local`: build local equivalente a produção, sem checks do Tina Cloud. Documentos `draft` e `approvalPending` continuam excluídos das páginas publicáveis e do sitemap. O comando falha deliberadamente se não existir nenhum documento publicável, se a Home PT-PT não estiver publicável ou se algum HTML esperado estiver vazio/em falta.
+- `pnpm build`: build de produção com checks do Tina Cloud quando a configuração remota estiver disponível. Aplica as mesmas guardas de publicação do build local.
+
+Cada build escreve `dist/editorial-build-manifest.json` e apresenta um resumo com o modo, documentos publicáveis, drafts excluídos e rotas editoriais geradas. O ficheiro fica fora de `dist/client`, portanto não é publicado como asset do site.
 
 ## Regras de nomes e rotas
 
