@@ -1,0 +1,64 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import type { PublicationsPageContent } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const page = data.publicationsPage as PublicationsPageContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const years = page ? [...new Set(page.publications.flatMap((item) => item.year ? [item.year] : []))].sort().reverse() : [];
+const languages = page ? [...new Set(page.publications.flatMap((item) => item.language ? [item.language] : []))].sort() : [];
+const topics = page ? [...new Set(page.publications.flatMap((item) => item.topics ?? []))].sort() : [];
+---
+<article id="main-content">
+	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
+	{page ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'publicationsPage')}><div class="mx-auto max-w-6xl"><a class="text-sm underline" href={pathFor('academic', locale)}>Academia</a><p class="mt-5">{page.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg text-slate-200">{page.subtitle}</p></div></header>
+		<section class="mx-auto max-w-6xl px-6 py-16"><p class="max-w-3xl text-lg">{page.introText}</p>
+			<form class="mt-8 grid gap-4 sm:grid-cols-3" data-publication-filters>
+				<label>Ano<select class="mt-1 block w-full rounded border p-2" name="year"><option value="">{page.filters.allYears}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></label>
+				<label>Tema<select class="mt-1 block w-full rounded border p-2" name="topic"><option value="">{page.filters.allTopics}</option>{topics.map((topic) => <option value={topic}>{topic}</option>)}</select></label>
+				<label>Idioma<select class="mt-1 block w-full rounded border p-2" name="language"><option value="">{page.filters.allLanguages}</option>{languages.map((language) => <option value={language}>{language}</option>)}</select></label>
+				<button class="justify-self-start font-semibold underline sm:col-span-3" type="reset">{page.filters.clear}</button>
+			</form>
+			<p class="mt-6 text-sm" aria-live="polite" data-publication-count data-single={page.filters.singleResult} data-multiple={page.filters.multipleResults}>{page.publications.length} {page.filters.multipleResults}</p>
+			<div class="mt-8 grid gap-6 md:grid-cols-2" data-publications>{page.publications.map((publication) => <article class="rounded-lg border p-5" data-year={publication.year ?? ''} data-language={publication.language ?? ''} data-topics={(publication.topics ?? []).join('|')}>
+				{publication.highlight && <p class="text-sm font-semibold">{publication.highlight}</p>}
+				<p class="mt-2 text-sm">{[publication.year, publication.language, publication.type].filter(Boolean).join(' · ')}</p>
+				<h2 class="mt-2 text-lg font-semibold">{publication.title}</h2>
+				{publication.journal && <p class="mt-2 text-sm">{publication.journal}</p>}
+				{publication.topics?.length && <ul class="mt-3 flex flex-wrap gap-2" aria-label="Temas">{publication.topics.map((topic) => <li class="rounded-full border px-2 py-1 text-xs">{topic}</li>)}</ul>}
+				{publication.linkStatus === 'valid' && publication.url ? <a class="mt-4 inline-block font-semibold underline" href={publication.url} rel="external">{page.filters.view}</a> : <p class="mt-4 text-sm text-slate-600">Ligação não disponível.</p>}
+			</article>)}</div>
+			<p class="mt-8 hidden" data-publication-empty>{page.filters.empty}</p>
+			<p class="mt-10 border-l-4 border-amber-500 pl-4 text-sm">{page.orcidNote}</p>
+		</section>
+		<section class="bg-slate-900 px-6 py-16 text-center text-white"><h2 class="text-3xl font-bold">{page.ctaHeading}</h2><p class="mx-auto mt-4 max-w-2xl">{page.ctaText}</p><a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('contact', locale)}>Entrar em contacto</a></section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>
+
+<script>
+	const form = document.querySelector<HTMLFormElement>('[data-publication-filters]');
+	const items = [...document.querySelectorAll<HTMLElement>('[data-publications] > article')];
+	const count = document.querySelector<HTMLElement>('[data-publication-count]');
+	const empty = document.querySelector<HTMLElement>('[data-publication-empty]');
+	const apply = () => {
+		if (!form) return;
+		const values = new FormData(form);
+		const year = String(values.get('year') ?? '');
+		const topic = String(values.get('topic') ?? '');
+		const language = String(values.get('language') ?? '');
+		let visible = 0;
+		for (const item of items) {
+			const matches = (!year || item.dataset.year === year) && (!language || item.dataset.language === language) && (!topic || (item.dataset.topics ?? '').split('|').includes(topic));
+			item.hidden = !matches;
+			if (matches) visible++;
+		}
+		if (count) count.textContent = `${visible} ${visible === 1 ? count.dataset.single : count.dataset.multiple}`;
+		if (empty) empty.hidden = visible !== 0;
+	};
+	form?.addEventListener('change', apply);
+	form?.addEventListener('reset', () => setTimeout(apply));
+</script>
