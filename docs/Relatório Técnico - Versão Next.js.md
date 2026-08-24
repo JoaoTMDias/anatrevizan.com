@@ -1,5 +1,10 @@
 # Relatório técnico — versão Next.js
 
+> **Estado do documento:** auditoria histórica da implementação Next.js.
+> A fundação final foi posteriormente definida como Astro + TinaCMS. A versão
+> Next.js permanece como referência visual, funcional e editorial, não como
+> código destinado a produção. Consultar `Decisões técnicas.md`.
+
 ## Resumo executivo
 
 A implementação Next.js está acima do nível de um protótipo descartável: compila, tem TypeScript válido, uma arquitetura reconhecível e várias decisões tecnicamente sensatas. Contudo, ainda não apresenta o acabamento, consistência e validação necessários para produção.

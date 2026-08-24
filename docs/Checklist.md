@@ -1,7 +1,10 @@
 # Checklist para lançamento do anatrevizan.com
 
-> Lista baseada no estado atual da implementação Next.js.  
-> Prioridades: **P0 bloqueia o lançamento**, **P1 importante**, **P2 melhoria recomendada**.
+> Lista originalmente baseada na implementação Next.js e atualizada após as
+> decisões técnicas de agosto de 2026. A versão Next.js permanece como
+> especificação; a implementação final será feita em Astro + TinaCMS.
+>
+> As decisões concluídas estão registadas em `Decisões técnicas.md`.
 
 ## 1. Decisões de produto e arquitetura
 
@@ -614,7 +617,7 @@
     - Inglês.
     - Troca de idioma.
     - Slugs localizados.
-    
+
 - **P1 — Criar testes end-to-end**
     - Homepage → serviço → contacto.
     - Homepage → agendamento.
