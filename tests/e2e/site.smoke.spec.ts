@@ -436,4 +436,57 @@ test.describe("localized draft pages", () => {
 			).toHaveCount(0);
 		}
 	});
+
+	for (const [route, heading] of [
+		["/politica-de-privacidade", "Política de privacidade"],
+		["/termos", "Termos de utilização"],
+		["/cookies", "Política de cookies"],
+	] as const) {
+		test(`${heading} exposes review requirements without invented legal copy`, async ({
+			page,
+		}) => {
+			const errors: string[] = [];
+			page.on("console", (message) => {
+				if (message.type() === "error") errors.push(message.text());
+			});
+			await page.goto(route);
+			await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
+			await expect(
+				page.getByText(/contém apenas um placeholder/),
+			).toBeVisible();
+			await expect(
+				page.getByText(/Lista interna de revisão; não constitui/),
+			).toBeVisible();
+			expect(await page.locator("h1").count()).toBe(1);
+			expect(await page.locator('a[href="#"]').count()).toBe(0);
+			expect(errors).toEqual([]);
+		});
+	}
+
+	test("legal pages reflow at 320px", async ({ page }) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		for (const route of ["/politica-de-privacidade", "/termos", "/cookies"]) {
+			await page.goto(route);
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		}
+	});
+
+	test("English legal previews expose no Portuguese placeholder or requirements", async ({
+		page,
+	}) => {
+		for (const route of ["/en/privacy-policy", "/en/terms", "/en/cookies"]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(
+					/Página em construção|Responsável pelo tratamento|Finalidade informativa|Cookies essenciais/,
+				),
+			).toHaveCount(0);
+		}
+	});
 });

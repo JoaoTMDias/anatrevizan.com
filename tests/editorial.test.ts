@@ -460,6 +460,53 @@ describe("editorial validation", () => {
 		}
 	});
 
+	it("accounts for legal placeholders without inventing legal copy", () => {
+		const documents = [
+			["privacy", "privacyPage", 10],
+			["terms", "termsPage", 6],
+			["cookies", "cookiesPage", 6],
+		] as const;
+		for (const [name, field, requirementCount] of documents) {
+			const document = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/pt-PT/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(document.summary).toBe(
+				"Página em construção — o conteúdo desta secção será adicionado em breve.",
+			);
+			expect(document[field].reviewRequirements).toHaveLength(requirementCount);
+			expect(document[field].sections).toEqual([]);
+			expect(document.status).toBe("draft");
+			expect(document.approvalPending).toBe(true);
+			expect(document.seo.noindex).toBe(true);
+		}
+
+		const manifest = readFileSync(
+			join(process.cwd(), "docs/especificacao-editorial-paginas-legais.md"),
+			"utf8",
+		);
+		expect(manifest).toContain("7 strings PT-PT distintas");
+		expect(manifest).toContain("15 ocorrências renderizadas");
+		expect(manifest).toContain("texto jurídico migrável");
+	});
+
+	it("keeps English legal documents structural and free of Portuguese copy", () => {
+		for (const name of ["privacy", "terms", "cookies"]) {
+			const document = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/en/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(document.approvalPending).toBe(true);
+			expect(document.privacyPage).toBeUndefined();
+			expect(document.termsPage).toBeUndefined();
+			expect(document.cookiesPage).toBeUndefined();
+		}
+	});
+
 	it.each([
 		[
 			"duplicate-slug",

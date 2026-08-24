@@ -51,7 +51,7 @@ requisitos de revisão. Não são texto jurídico nem afirmações publicáveis.
 - Os documentos estruturais EN existentes no Astro permanecem draft/noindex,
   sem corpo legal nem fallback português visível.
 
-## Modelos e templates previstos
+## Modelos e templates implementados
 
 - Modelo específico de Privacidade com secções editáveis e requisitos de
   cobertura, sem conteúdo jurídico predefinido.
