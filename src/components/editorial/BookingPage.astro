@@ -1,0 +1,28 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import { getConfig } from '../../lib/data';
+import { safeCalendlyUrl } from '../../lib/external-url';
+import type { BookingPageContent } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const booking = data.bookingPage as BookingPageContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const config = booking ? (await getConfig()).data.config : null;
+const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
+---
+<article id="main-content">
+	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
+	{booking ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'bookingPage')}><div class="mx-auto max-w-6xl"><p>{booking.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg text-slate-200">{booking.subtitle}</p></div></header>
+		<section class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-3">
+			<div class="lg:col-span-2">
+				<h2 class="text-3xl font-bold">Agendamento online</h2>
+				{calendlyUrl ? <><p class="mt-4">O agendamento abre num serviço externo.</p><a class="mt-7 inline-block rounded bg-teal-700 px-5 py-3 font-semibold text-white" href={calendlyUrl} rel="external noreferrer">Abrir calendário de agendamento</a></> : <div class="mt-5 rounded border border-amber-400 bg-amber-50 p-5"><p>A ligação de agendamento ainda não está configurada.</p><a class="mt-4 inline-block font-semibold underline" href={pathFor('contact', locale)}>Usar a página de contacto</a></div>}
+			</div>
+			<aside class="space-y-5"><section class="rounded border p-6"><h2 class="text-xl font-semibold">{booking.duration}</h2><p class="mt-2">{booking.validFor}</p></section><section class="rounded border p-6"><h2 class="text-xl font-semibold">{booking.timezone}</h2><p class="mt-2">{booking.timezoneNote}</p></section></aside>
+		</section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>
