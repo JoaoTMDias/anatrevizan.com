@@ -1,0 +1,43 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import { getConfig } from '../../lib/data';
+import { safeEmailHref, safeProfileUrl, safeWhatsAppHref } from '../../lib/external-url';
+import type { ContactPageContent } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const contact = data.contactPage as ContactPageContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const config = contact ? (await getConfig()).data.config : null;
+const emailHref = safeEmailHref(config?.contacts?.email);
+const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
+const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
+	const href = safeProfileUrl(profile?.url);
+	const label = locale === 'en' ? profile?.label?.en : profile?.label?.pt;
+	return href && label ? [{ href, label }] : [];
+});
+---
+<article id="main-content">
+	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
+	{contact ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'contactPage')}><div class="mx-auto max-w-6xl"><p>{contact.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg text-slate-200">{contact.subtitle}</p></div></header>
+		<section class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-3">
+			<div class="lg:col-span-2">
+				<h2 class="text-3xl font-bold">Formulário de contacto</h2>
+				<p id="contact-form-status" class="mt-4 rounded border border-amber-400 bg-amber-50 p-4">O formulário encontra-se preparado editorialmente, mas o envio seguro será ativado numa fase posterior.</p>
+				<form class="mt-8" aria-describedby="contact-form-status"><fieldset disabled class="grid gap-5 sm:grid-cols-2">
+					<label class="grid gap-2 font-semibold">{contact.formCopy.nameLabel}<input class="rounded border bg-slate-100 px-4 py-3" name="name" autocomplete="name" /></label>
+					<label class="grid gap-2 font-semibold">{contact.formCopy.whatsappLabel}<input class="rounded border bg-slate-100 px-4 py-3" name="whatsapp" type="tel" autocomplete="tel" /></label>
+					<label class="grid gap-2 font-semibold">{contact.formCopy.emailLabel}<input class="rounded border bg-slate-100 px-4 py-3" name="email" type="email" autocomplete="email" /></label>
+					<label class="grid gap-2 font-semibold">{contact.formCopy.countryLabel}<select class="rounded border bg-slate-100 px-4 py-3" name="country"><option value="">—</option>{contact.formCopy.countries.map((country) => <option value={country}>{country}</option>)}</select></label>
+					<label class="grid gap-2 font-semibold sm:col-span-2">{contact.formCopy.subjectLabel}<textarea class="rounded border bg-slate-100 px-4 py-3" name="subject" rows="6" placeholder={contact.formCopy.subjectPlaceholder}></textarea></label>
+					<label class="flex items-start gap-3 text-sm sm:col-span-2"><input class="mt-1" type="checkbox" name="consent" /> <span>{contact.formCopy.consentText} <a class="underline" href={pathFor('privacy', locale)}>{contact.formCopy.privacyPolicyLabel}</a>.</span></label>
+					<button class="w-fit rounded bg-slate-400 px-5 py-3 font-semibold text-white" type="submit" disabled>{contact.formCopy.submitLabel}</button>
+				</fieldset></form>
+			</div>
+			<aside class="rounded border bg-slate-50 p-6"><h2 class="text-xl font-semibold">{contact.otherMethodsHeading}</h2><ul class="mt-5 space-y-4">{emailHref && <li><a class="font-semibold underline" href={emailHref}>{config?.contacts?.email}</a></li>}{whatsappHref && <li><a class="font-semibold underline" href={whatsappHref} rel="external noreferrer">WhatsApp <span class="block text-sm font-normal">{config?.contacts?.phone}</span></a></li>}{profileLinks.map((profile) => <li><a class="font-semibold underline" href={profile.href} rel="external noreferrer">{profile.label}</a></li>)}</ul><hr class="my-6"/><p>{contact.countriesLabel}</p><p class="mt-2">{contact.languagesLabel}</p><a class="mt-6 inline-block rounded bg-teal-700 px-5 py-3 font-semibold text-white" href={pathFor('booking', locale)}>{contact.bookingCta}</a></aside>
+		</section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>

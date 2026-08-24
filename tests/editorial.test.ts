@@ -8,6 +8,12 @@ import {
 	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
+import {
+	safeCalendlyUrl,
+	safeEmailHref,
+	safeProfileUrl,
+	safeWhatsAppHref,
+} from "../src/lib/external-url.ts";
 import { islandContextFromParams } from "../src/lib/island-context.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
 import { localizedDocumentFields } from "../tina/collections/common.ts";
@@ -50,6 +56,25 @@ const countStrings = (value: unknown): number => {
 };
 
 describe("editorial validation", () => {
+	it("accepts only HTTPS Calendly destinations from editorial configuration", () => {
+		expect(safeCalendlyUrl("https://calendly.com/ana/initial-call")).toBe(
+			"https://calendly.com/ana/initial-call",
+		);
+		expect(safeCalendlyUrl("javascript:alert(1)")).toBeNull();
+		expect(safeCalendlyUrl("https://example.com/calendly")).toBeNull();
+		expect(safeCalendlyUrl("http://calendly.com/ana")).toBeNull();
+		expect(safeCalendlyUrl("not a url")).toBeNull();
+		expect(safeEmailHref("ana@example.com")).toBe("mailto:ana@example.com");
+		expect(safeEmailHref("invalid")).toBeNull();
+		expect(safeWhatsAppHref("+351926430792")).toBe(
+			"https://wa.me/351926430792",
+		);
+		expect(safeWhatsAppHref("926430792")).toBeNull();
+		expect(safeProfileUrl("https://orcid.org/0000-0003-4365-6053")).toBe(
+			"https://orcid.org/0000-0003-4365-6053",
+		);
+		expect(safeProfileUrl("https://example.com/profile")).toBeNull();
+	});
 	it("allows the Tina Home form to keep its canonical empty slug", () => {
 		const slugField = localizedDocumentFields.find(
 			(field) => field.name === "slug",
@@ -368,6 +393,70 @@ describe("editorial validation", () => {
 			expect(value.publicationsPage).toBeUndefined();
 			expect(value.eventsPage).toBeUndefined();
 			expect(value.speakingPage).toBeUndefined();
+		}
+	});
+
+	it("accounts for Contact and Booking content without promoting fake destinations", () => {
+		const contact = JSON.parse(
+			readFileSync(
+				join(process.cwd(), "src/content/editorial/pt-PT/contact.json"),
+				"utf8",
+			),
+		);
+		const booking = JSON.parse(
+			readFileSync(
+				join(process.cwd(), "src/content/editorial/pt-PT/booking.json"),
+				"utf8",
+			),
+		);
+
+		expect(contact.contactPage.formCopy.countries).toHaveLength(5);
+		expect(contact.contactPage.contactMethods).toHaveLength(5);
+		expect(
+			contact.contactPage.contactMethods.map(
+				(method: { status: string }) => method.status,
+			),
+		).toEqual(["valid", "valid", "valid", "valid", "valid"]);
+		expect(JSON.stringify(contact)).not.toContain('"#"');
+		expect(JSON.stringify(booking)).not.toContain("calendly.com");
+		const config = JSON.parse(
+			readFileSync(join(process.cwd(), "src/content/config/site.json"), "utf8"),
+		);
+		expect(config.contacts.email).toBe("af.trevizan@gmail.com");
+		expect(config.contacts.phone).toBe("+351926430792");
+		expect(config.contacts.calendlyUrl).toBe(
+			"https://calendly.com/dratrevizan",
+		);
+		expect(config.contacts.profiles).toHaveLength(3);
+		for (const document of [contact, booking]) {
+			expect(document.status).toBe("draft");
+			expect(document.approvalPending).toBe(false);
+			expect(document.seo.noindex).toBe(true);
+		}
+
+		const manifest = readFileSync(
+			join(
+				process.cwd(),
+				"docs/especificacao-editorial-contacto-agendamento.md",
+			),
+			"utf8",
+		);
+		expect(manifest).toContain("39 ocorrências de strings editoriais PT-PT");
+		expect(manifest).toContain("zero bytes");
+		expect(manifest).toContain("https://calendly.com/dratrevizan");
+	});
+
+	it("keeps incomplete Contact and Booking translations structural", () => {
+		for (const name of ["contact", "booking"]) {
+			const value = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/en/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(value.approvalPending).toBe(true);
+			expect(value.contactPage).toBeUndefined();
+			expect(value.bookingPage).toBeUndefined();
 		}
 	});
 

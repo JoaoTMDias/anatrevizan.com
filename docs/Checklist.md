@@ -46,6 +46,15 @@
 - [x] Conteúdo profissional e académico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
 - [ ] Integração ORCID em build, validação dos dados atuais e snapshot de fallback implementados numa fase posterior.
 
+### Grupo 4 — Contacto e Agendamento
+
+- [x] Contacto e Agendamento auditados; 39 ocorrências de strings PT-PT, contactos originalmente sem destino, fallback Calendly e seis assets vazios contabilizados no manifesto `docs/especificacao-editorial-contacto-agendamento.md`.
+- [x] Conteúdo PT-PT importado para modelos TinaCMS e templates Astro específicos, mantendo `draft`, `approvalPending` e `noindex` até revisão explícita.
+- [x] Formulário `mailto:` e perfis com `href="#"` não foram promovidos; email, WhatsApp, LinkedIn, Instagram, ORCID e Calendly foram posteriormente confirmados e centralizados na configuração global do TinaCMS.
+- [x] A ligação Calendly aceita apenas URLs HTTPS do domínio Calendly; na ausência de configuração, apresenta a rota Contacto como alternativa, sem embed ou script externo.
+- [x] Conteúdo PT-PT das duas páginas, formulário inativo e destinos públicos revistos e aprovados pela Ana em 24 de agosto de 2026.
+- [ ] Formulário server-side, proteção anti-spam, retenção, integrações de entrega e configuração final do Calendly implementados nas fases próprias.
+
 ## 1. Decisões de produto e arquitetura
 
 - **P0 — Decidir a fundação técnica final**

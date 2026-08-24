@@ -4,13 +4,21 @@
 	"routeKey": "booking",
 	"slug": "agendar",
 	"status": "draft",
-	"approvalPending": true,
-	"title": "Agendar",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"approvalPending": false,
+	"title": "Agende uma conversa inicial",
+	"summary": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
 	"seo": {
-		"title": "Agendar — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Agendar uma conversa inicial",
+		"description": "Marque um primeiro contacto com a Dra. Ana Trevizan. Conversa de 15 a 30 minutos, para temas jurídicos e académicos.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"bookingPage": {
+		"tag": "Agendar",
+		"subtitle": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
+		"duration": "15 a 30 minutos",
+		"validFor": "Válido para todos os temas — jurídicos e académicos.",
+		"timezone": "Fuso de Portugal",
+		"timezoneNote": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal."
+	},
+	"ctaRefs": ["contact"]
 }

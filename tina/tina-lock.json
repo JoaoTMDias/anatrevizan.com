@@ -2550,6 +2550,391 @@
 						"uid": false
 					},
 					{
+						"name": "contactPage",
+						"label": "Contact page sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "contactPage", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "contactPage", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "formCopy",
+								"label": "Future contact form copy",
+								"type": "object",
+								"fields": [
+									{
+										"name": "nameLabel",
+										"label": "Name label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"nameLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "whatsappLabel",
+										"label": "WhatsApp label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"whatsappLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "emailLabel",
+										"label": "Email label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"emailLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "countryLabel",
+										"label": "Country label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"countryLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "subjectLabel",
+										"label": "Subject label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"subjectLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "subjectPlaceholder",
+										"label": "Subject placeholder",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"subjectPlaceholder"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "consentText",
+										"label": "Consent text",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"consentText"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "privacyPolicyLabel",
+										"label": "Privacy policy label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"privacyPolicyLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "submitLabel",
+										"label": "Submit label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"submitLabel"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "successMessage",
+										"label": "Success message",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"successMessage"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "errorMessage",
+										"label": "Error message",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"errorMessage"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "countries",
+										"label": "Country options",
+										"type": "string",
+										"list": true,
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"formCopy",
+											"countries"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "contactPage", "formCopy"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "otherMethodsHeading",
+								"label": "Other contact methods heading",
+								"type": "string",
+								"required": true,
+								"namespace": [
+									"editorial",
+									"contactPage",
+									"otherMethodsHeading"
+								],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "contactMethods",
+								"label": "Historical contact methods",
+								"type": "object",
+								"list": true,
+								"required": true,
+								"fields": [
+									{
+										"name": "label",
+										"label": "Label",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"contactMethods",
+											"label"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "value",
+										"label": "Value",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"contactMethods",
+											"value"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "url",
+										"label": "Confirmed destination",
+										"type": "string",
+										"required": false,
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"contactMethods",
+											"url"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "status",
+										"label": "Destination status",
+										"type": "string",
+										"required": true,
+										"options": [
+											"valid",
+											"unconfirmed",
+											"missing",
+											"placeholder"
+										],
+										"namespace": [
+											"editorial",
+											"contactPage",
+											"contactMethods",
+											"status"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "contactPage", "contactMethods"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "countriesLabel",
+								"label": "Countries label",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "contactPage", "countriesLabel"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "languagesLabel",
+								"label": "Languages label",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "contactPage", "languagesLabel"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "bookingCta",
+								"label": "Booking CTA",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "contactPage", "bookingCta"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "contactPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "bookingPage",
+						"label": "Booking page sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "tag",
+								"label": "Tag",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "tag"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "subtitle",
+								"label": "Subtitle",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "subtitle"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "duration",
+								"label": "Duration",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "duration"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "validFor",
+								"label": "Applicable topics",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "validFor"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "timezone",
+								"label": "Timezone",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "timezone"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "timezoneNote",
+								"label": "Timezone note",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "bookingPage", "timezoneNote"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "bookingPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
 						"name": "ctaRefs",
 						"label": "CTA identifiers",
 						"type": "string",
@@ -8662,6 +9047,410 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [],
 				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialContactPageFormCopy" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "nameLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "whatsappLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "emailLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "countryLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subjectLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subjectPlaceholder" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "consentText" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "privacyPolicyLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "submitLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "successMessage" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "errorMessage" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": {
+					"kind": "Name",
+					"value": "EditorialContactPageContactMethods"
+				},
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "label" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "value" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "status" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialContactPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "formCopy" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialContactPageFormCopy"
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "otherMethodsHeading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "contactMethods" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": {
+											"kind": "Name",
+											"value": "EditorialContactPageContactMethods"
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "countriesLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "languagesLabel" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "bookingCta" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialBookingPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "duration" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "validFor" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "timezone" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "timezoneNote" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
 				"name": { "kind": "Name", "value": "EditorialLegal" },
 				"fields": [
 					{
@@ -8904,6 +9693,24 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialSpeakingPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "contactPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialContactPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "bookingPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialBookingPage" }
 						}
 					},
 					{
@@ -10966,6 +11773,282 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialContactPageFormCopyFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "nameLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "whatsappLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emailLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countryLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subjectLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subjectPlaceholder" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consentText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "privacyPolicyLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "submitLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "successMessage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "errorMessage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialContactPageContactMethodsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "label" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "value" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "status" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialContactPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "formCopy" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialContactPageFormCopyFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "otherMethodsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "contactMethods" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialContactPageContactMethodsFilter"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countriesLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "languagesLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bookingCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialBookingPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "duration" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "validFor" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "timezone" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "timezoneNote" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalFilter" },
 				"fields": [
 					{
@@ -11168,6 +12251,22 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialSpeakingPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "contactPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialContactPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bookingPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialBookingPageFilter" }
 						}
 					},
 					{
@@ -18516,6 +19615,288 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialContactPageFormCopyMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "nameLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "whatsappLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "emailLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countryLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subjectLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subjectPlaceholder" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "consentText" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "privacyPolicyLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "submitLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "successMessage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "errorMessage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countries" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialContactPageContactMethodsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "label" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "value" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "url" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "status" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialContactPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "formCopy" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialContactPageFormCopyMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "otherMethodsHeading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "contactMethods" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialContactPageContactMethodsMutation"
+								}
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "countriesLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "languagesLabel" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bookingCta" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialBookingPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "tag" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "subtitle" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "duration" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "validFor" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "timezone" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "timezoneNote" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalMutation" },
 				"fields": [
 					{
@@ -18723,6 +20104,28 @@
 							"name": {
 								"kind": "Name",
 								"value": "EditorialSpeakingPageMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "contactPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialContactPageMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "bookingPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialBookingPageMutation"
 							}
 						}
 					},

@@ -4,13 +4,70 @@
 	"routeKey": "contact",
 	"slug": "contacto",
 	"status": "draft",
-	"approvalPending": true,
-	"title": "Contacto",
-	"summary": "CONTEÚDO ESTRUTURAL — por aprovar pela Ana.",
+	"approvalPending": false,
+	"title": "Vamos falar",
+	"summary": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
 	"seo": {
-		"title": "Contacto — Ana Trevizan",
-		"description": "Descrição editorial por aprovar.",
+		"title": "Contacto",
+		"description": "Fale com a Dra. Ana Trevizan. Consultoria jurídica e ambiental entre Portugal e Brasil, com atendimento em português, inglês e espanhol.",
 		"noindex": true
 	},
-	"ctaRefs": []
+	"contactPage": {
+		"tag": "Contacto",
+		"subtitle": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
+		"formCopy": {
+			"nameLabel": "Nome completo",
+			"whatsappLabel": "WhatsApp",
+			"emailLabel": "E-mail",
+			"countryLabel": "País onde está",
+			"subjectLabel": "Assunto",
+			"subjectPlaceholder": "Conte o que aconteceu e o que procura",
+			"consentText": "Consinto com o tratamento dos meus dados pessoais de acordo com a",
+			"privacyPolicyLabel": "Política de Privacidade",
+			"submitLabel": "Enviar",
+			"successMessage": "Mensagem enviada com sucesso. Entrarei em contacto em breve.",
+			"errorMessage": "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.",
+			"countries": [
+				"Portugal",
+				"Brasil",
+				"Espanha",
+				"Outro país da União Europeia",
+				"Outro"
+			]
+		},
+		"otherMethodsHeading": "Outras formas de contacto",
+		"contactMethods": [
+			{
+				"label": "E-mail",
+				"value": "af.trevizan@gmail.com",
+				"url": "mailto:af.trevizan@gmail.com",
+				"status": "valid"
+			},
+			{
+				"label": "WhatsApp",
+				"value": "+351 926 430 792",
+				"url": "https://wa.me/351926430792",
+				"status": "valid"
+			},
+			{
+				"label": "LinkedIn",
+				"url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/",
+				"status": "valid"
+			},
+			{
+				"label": "Instagram",
+				"url": "https://www.instagram.com/dratrevizan",
+				"status": "valid"
+			},
+			{
+				"label": "ORCID",
+				"url": "https://orcid.org/0000-0003-4365-6053",
+				"status": "valid"
+			}
+		],
+		"countriesLabel": "🇵🇹 Portugal · 🇧🇷 Brasil",
+		"languagesLabel": "Atendimento em PT · EN · ES",
+		"bookingCta": "Prefere agendar uma conversa?"
+	},
+	"ctaRefs": ["booking", "privacy"]
 }

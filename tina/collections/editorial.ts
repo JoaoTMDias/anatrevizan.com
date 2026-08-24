@@ -19,6 +19,7 @@ import {
 	consultingServiceFields,
 	homeFields,
 } from "./editorial-sections";
+import { bookingPageFields, contactPageFields } from "./contact-sections";
 
 export const EditorialCollection: Collection = {
 	name: "editorial",
@@ -63,6 +64,8 @@ export const EditorialCollection: Collection = {
 		...publicationsPageFields,
 		...eventsPageFields,
 		...speakingPageFields,
+		...contactPageFields,
+		...bookingPageFields,
 		{ name: "ctaRefs", label: "CTA identifiers", type: "string", list: true },
 		{
 			name: "legal",

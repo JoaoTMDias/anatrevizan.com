@@ -357,4 +357,83 @@ test.describe("localized draft pages", () => {
 			).toHaveCount(0);
 		}
 	});
+
+	test("Contact renders its inactive form and confirmed contact destinations", async ({
+		page,
+	}) => {
+		const errors: string[] = [];
+		page.on("console", (message) => {
+			if (message.type() === "error") errors.push(message.text());
+		});
+		await page.goto("/contacto");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Vamos falar",
+		);
+		await expect(
+			page.getByRole("heading", { name: "Formulário de contacto" }),
+		).toBeVisible();
+		await expect(page.getByText("af.trevizan@gmail.com")).toBeVisible();
+		await expect(page.locator("form fieldset")).toHaveAttribute("disabled", "");
+		await expect(page.locator('form input[name="name"]')).toBeDisabled();
+		await expect(page.locator("form input")).toHaveCount(4);
+		await expect(page.locator("form textarea")).toHaveCount(1);
+		await expect(page.locator("form select")).toHaveCount(1);
+		await expect(
+			page.locator('a[href="mailto:af.trevizan@gmail.com"]'),
+		).toBeVisible();
+		await expect(
+			page.locator('a[href="https://wa.me/351926430792"]'),
+		).toBeVisible();
+		await expect(page.getByRole("link", { name: "LinkedIn" })).toBeVisible();
+		await expect(page.getByRole("link", { name: "Instagram" })).toBeVisible();
+		await expect(page.getByRole("link", { name: "ORCID" })).toBeVisible();
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+		expect(errors).toEqual([]);
+	});
+
+	test("Booking exposes the confirmed Calendly link without an embed", async ({
+		page,
+	}) => {
+		const errors: string[] = [];
+		page.on("console", (message) => {
+			if (message.type() === "error") errors.push(message.text());
+		});
+		await page.goto("/agendar");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Agende uma conversa inicial",
+		);
+		await expect(
+			page.getByRole("link", { name: "Abrir calendário de agendamento" }),
+		).toHaveAttribute("href", "https://calendly.com/dratrevizan");
+		expect(await page.locator('script[src*="calendly"]').count()).toBe(0);
+		expect(await page.locator('a[href*="calendly.com"]').count()).toBe(1);
+		expect(errors).toEqual([]);
+	});
+
+	test("Contact and Booking reflow at 320px", async ({ page }) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		for (const route of ["/contacto", "/agendar"]) {
+			await page.goto(route);
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		}
+	});
+
+	test("English Contact and Booking previews expose no Portuguese fallback", async ({
+		page,
+	}) => {
+		for (const route of ["/en/contact", "/en/book-a-call"]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(
+					/Vamos falar|Conte-me a sua situação|Agende uma conversa inicial|Fuso de Portugal/,
+				),
+			).toHaveCount(0);
+		}
+	});
 });
