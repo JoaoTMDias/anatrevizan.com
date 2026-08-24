@@ -64,4 +64,98 @@ test.describe("localized draft pages", () => {
 			expect(await menu.getAttribute("open")).toBe(null);
 		}
 	});
+
+	test("Portuguese Home renders the complete dedicated template", async ({
+		page,
+	}) => {
+		await page.goto("/");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			/Transformo complexidade jurídica/,
+		);
+		for (const heading of [
+			"Por que a Dra. Ana Trevizan?",
+			"Áreas de Consultoria",
+			"Credenciais e vínculos",
+			"Marque uma conversa inicial",
+		])
+			await expect(
+				page.getByRole("heading", { name: heading, exact: true }),
+			).toBeVisible();
+		await expect(
+			page.getByRole("heading", { name: "Academia", exact: true }),
+		).toHaveCount(2);
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+		expect(await page.locator("h1").count()).toBe(1);
+	});
+
+	test("Portuguese About renders ordered editorial sections", async ({
+		page,
+	}) => {
+		await page.goto("/sobre");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+			"Dra. Ana Flávia Trevizan",
+		);
+		for (const heading of [
+			"Marcos do percurso",
+			"Onde atuo hoje",
+			"O que orienta o meu trabalho",
+			"Redes e vínculos de investigação",
+			"Falamos?",
+		])
+			await expect(
+				page.getByRole("heading", { name: heading, exact: true }),
+			).toBeVisible();
+		expect(await page.locator("h1").count()).toBe(1);
+		expect(await page.locator('a[href="#"]').count()).toBe(0);
+	});
+
+	test("English previews never expose the copied Portuguese page content", async ({
+		page,
+	}) => {
+		for (const route of ["/en", "/en/about"]) {
+			await page.goto(route);
+			await expect(
+				page.getByText(
+					"This draft has not been translated or approved for publication.",
+				),
+			).toBeVisible();
+			await expect(
+				page.getByText(/Transformo complexidade jurídica|Marcos do percurso/),
+			).toHaveCount(0);
+		}
+	});
+
+	for (const viewport of [
+		{ width: 320, height: 800 },
+		{ width: 1280, height: 800 },
+	]) {
+		test(`Home has no horizontal overflow at ${viewport.width}px`, async ({
+			page,
+		}) => {
+			await page.setViewportSize(viewport);
+			await page.goto("/");
+			expect(
+				await page.evaluate(
+					() =>
+						document.documentElement.scrollWidth <=
+						document.documentElement.clientWidth,
+				),
+			).toBe(true);
+		});
+	}
+
+	test("Home reflows at the 320 CSS px equivalent of 400% zoom", async ({
+		page,
+	}) => {
+		await page.setViewportSize({ width: 320, height: 800 });
+		await page.goto("/");
+		expect(
+			await page.evaluate(
+				() =>
+					document.documentElement.scrollWidth <=
+					document.documentElement.clientWidth,
+			),
+		).toBe(true);
+		await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+	});
 });

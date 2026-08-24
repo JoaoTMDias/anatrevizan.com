@@ -10,6 +10,7 @@ import {
 } from "../src/lib/editorial.ts";
 import { islandContextFromParams } from "../src/lib/island-context.ts";
 import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
+import { localizedDocumentFields } from "../tina/collections/common.ts";
 
 const docs = routeKeys.flatMap((routeKey) =>
 	publishedLocales.map((locale) => ({
@@ -37,6 +38,14 @@ const jsonFiles = (directory: string): string[] =>
 	});
 
 describe("editorial validation", () => {
+	it("allows the Tina Home form to keep its canonical empty slug", () => {
+		const slugField = localizedDocumentFields.find(
+			(field) => field.name === "slug",
+		);
+		expect(slugField).toBeDefined();
+		expect(slugField?.required).not.toBe(true);
+	});
+
 	it("accepts complete structural documents", () =>
 		expect(validateEditorialDocuments(docs)).toEqual([]));
 
@@ -70,6 +79,122 @@ describe("editorial validation", () => {
 		for (const menu of menus)
 			for (const child of menu.children)
 				expect(routeKeys).toContain(child.routeKey);
+	});
+
+	it("accounts for every Home and About source string in the phase 2 manifest", () => {
+		const home = JSON.parse(
+			readFileSync(
+				join(process.cwd(), "src/content/editorial/pt-PT/home.json"),
+				"utf8",
+			),
+		);
+		const about = JSON.parse(
+			readFileSync(
+				join(process.cwd(), "src/content/editorial/pt-PT/about.json"),
+				"utf8",
+			),
+		);
+		const manifest = readFileSync(
+			join(process.cwd(), "docs/especificacao-editorial-home-sobre.md"),
+			"utf8",
+		);
+
+		const homeSourceStrings = [
+			home.home.hero.heading,
+			home.home.hero.subtitle,
+			...home.home.hero.brandWords,
+			...home.home.gateways.flatMap(
+				(item: { eyebrow: string; description: string }) => [
+					item.eyebrow,
+					item.description,
+				],
+			),
+			home.home.differencesTitle,
+			home.home.differencesSubtitle,
+			...home.home.differences.flatMap(
+				(item: { title: string; description: string }) => [
+					item.title,
+					item.description,
+				],
+			),
+			home.home.servicesTitle,
+			home.home.servicesSubtitle,
+			home.home.academicTitle,
+			home.home.academicSubtitle,
+			home.home.credentialsLabel,
+			...home.home.credentials,
+			home.home.finalCtaHeading,
+			home.home.finalCtaText,
+		];
+		const aboutSourceStrings = [
+			about.title,
+			about.about.tag,
+			about.about.subtitle,
+			...about.about.narrative,
+			about.about.milestonesTitle,
+			...about.about.milestones.flatMap(
+				(item: { year: string; title: string; description: string }) => [
+					item.year,
+					item.title,
+					item.description,
+				],
+			),
+			about.about.currentWorkTitle,
+			...about.about.currentWork.flatMap(
+				(item: { title: string; description: string }) => [
+					item.title,
+					item.description,
+				],
+			),
+			about.about.valuesTitle,
+			about.about.valuesSubtitle,
+			...about.about.values.flatMap(
+				(item: { title: string; description: string }) => [
+					item.title,
+					item.description,
+				],
+			),
+			about.about.networksLabel,
+			...about.about.networks,
+			about.about.finalCtaHeading,
+			about.about.finalCtaText,
+		];
+
+		expect(homeSourceStrings).toHaveLength(33);
+		expect(aboutSourceStrings).toHaveLength(57);
+		expect(
+			homeSourceStrings.every(
+				(value) => typeof value === "string" && value.length > 0,
+			),
+		).toBe(true);
+		expect(
+			aboutSourceStrings.every(
+				(value) => typeof value === "string" && value.length > 0,
+			),
+		).toBe(true);
+		expect(home.status).toBe("draft");
+		expect(about.status).toBe("draft");
+		expect(home.approvalPending || about.approvalPending).toBe(false);
+		expect(home.seo.noindex && about.seo.noindex).toBe(true);
+		expect(manifest).toContain("33 + 57 strings");
+		expect(manifest).toContain("33 assets hero de zero bytes");
+		expect(manifest).toContain("tradução inválida");
+	});
+
+	it("keeps invalid English copies out of the migrated page models", () => {
+		for (const name of ["home", "about"]) {
+			const value = JSON.parse(
+				readFileSync(
+					join(process.cwd(), `src/content/editorial/en/${name}.json`),
+					"utf8",
+				),
+			);
+			expect(value.locale).toBe("en");
+			expect(value.status).toBe("draft");
+			expect(value.approvalPending).toBe(true);
+			expect(value.seo.noindex).toBe(true);
+			expect(value[name]).toBeUndefined();
+		}
 	});
 
 	it.each([

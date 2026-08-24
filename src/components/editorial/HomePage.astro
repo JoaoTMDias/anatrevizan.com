@@ -1,0 +1,32 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsEditorial } from '../../lib/data';
+import type { HomeContent } from '../../lib/page-content';
+import { hasValidRouteKey } from '../../lib/page-content';
+import { pathFor } from '../../lib/routing';
+import DraftNotice from './DraftNotice.astro';
+interface Props { data: CmsEditorial }
+const { data } = Astro.props;
+const home = data.home as HomeContent | null | undefined;
+const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const destination = (item: { routeKey?: unknown }) => hasValidRouteKey(item) ? pathFor(item.routeKey, locale) : undefined;
+---
+<article id="main-content">
+	<DraftNotice locale={locale} />
+	{home ? <>
+		<header class="bg-slate-900 px-6 py-20 text-white md:py-28" data-tina-field={tinaField(data, 'home')}>
+			<div class="mx-auto max-w-6xl">
+				<ul class="mb-6 flex flex-wrap gap-2" aria-label={locale === 'en' ? 'Brand values' : 'Valores da marca'}>{home.hero.brandWords.map((word) => <li class="rounded-full border border-white/30 px-3 py-1 text-sm">{word}</li>)}</ul>
+				<h1 class="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">{home.hero.heading}</h1>
+				<p class="mt-6 max-w-2xl text-lg text-slate-200">{home.hero.subtitle}</p>
+				<div class="mt-8 flex flex-wrap gap-4"><a class="rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>{home.hero.primaryCta}</a><a class="rounded border border-white px-5 py-3 font-semibold" href={pathFor('consulting', locale)}>{home.hero.secondaryCta}</a></div>
+			</div>
+		</header>
+		<section class="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2" aria-label={locale === 'en' ? 'Areas' : 'Áreas'}>{home.gateways.map((item) => <article class="rounded-lg border p-6"><p class="text-sm text-slate-600">{item.eyebrow}</p><h2 class="mt-2 text-2xl font-semibold">{item.title}</h2><p class="mt-3">{item.description}</p>{destination(item) && <a class="mt-5 inline-block font-semibold underline" href={destination(item)}>{item.cta}</a>}</article>)}</section>
+		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-6xl"><h2 class="text-3xl font-bold">{home.differencesTitle}</h2><p class="mt-3 max-w-3xl">{home.differencesSubtitle}</p><div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{home.differences.map((item) => <article><h3 class="text-lg font-semibold">{item.title}</h3><p class="mt-2 text-sm">{item.description}</p></article>)}</div></div></section>
+		<section class="mx-auto max-w-6xl px-6 py-16"><h2 class="text-3xl font-bold">{home.servicesTitle}</h2><p class="mt-3 max-w-3xl">{home.servicesSubtitle}</p><div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{home.services.map((item) => <article class="rounded-lg border p-5"><p class="text-sm">{item.tag}</p><h3 class="mt-2 text-lg font-semibold">{item.title}</h3><p class="mt-2 text-sm">{item.description}</p>{destination(item) && <a class="mt-4 inline-block font-semibold underline" href={destination(item)}>{item.cta}</a>}</article>)}</div></section>
+		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-6xl"><h2 class="text-3xl font-bold">{home.academicTitle}</h2><p class="mt-3">{home.academicSubtitle}</p><div class="mt-5 flex flex-wrap gap-4"><a class="font-semibold underline" href={pathFor('publications', locale)}>{home.publicationsCta}</a><a class="font-semibold underline" href={pathFor('speaking', locale)}>{home.speakerKitCta}</a></div><div class="mt-8 grid gap-6 md:grid-cols-3">{home.featuredPublications.map((publication) => <article class="rounded-lg border bg-white p-5">{publication.badge && <p class="text-sm font-semibold">{publication.badge}</p>}<p class="mt-2 text-sm">{publication.year} · {publication.language}</p><h3 class="mt-2 font-semibold">{publication.title}</h3>{publication.publication && <p class="mt-2 text-sm">{publication.publication}</p>}<a class="mt-4 inline-block font-semibold underline" href={publication.url} rel="external">{locale === 'en' ? 'View publication' : 'Ver publicação'}</a></article>)}</div></div></section>
+		<section class="mx-auto max-w-6xl px-6 py-14"><h2 class="text-sm font-semibold uppercase tracking-wider">{home.credentialsLabel}</h2><ul class="mt-5 grid gap-3 md:grid-cols-2">{home.credentials.map((credential) => <li>{credential}</li>)}</ul></section>
+		<section class="bg-slate-900 px-6 py-16 text-center text-white"><h2 class="text-3xl font-bold">{home.finalCtaHeading}</h2><p class="mx-auto mt-4 max-w-2xl">{home.finalCtaText}</p><a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>{home.finalCtaLabel}</a></section>
+	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
+</article>

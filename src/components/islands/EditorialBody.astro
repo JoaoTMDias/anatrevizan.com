@@ -1,10 +1,12 @@
 ---
 import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
+import AboutPage from '../editorial/AboutPage.astro';
+import HomePage from '../editorial/HomePage.astro';
 interface Props { data?: CmsEditorial | null }
 const { data } = Astro.props;
 ---
-{data && <article id="main-content" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+{data?.routeKey === 'home' ? <HomePage data={data} /> : data?.routeKey === 'about' ? <AboutPage data={data} /> : data && <article id="main-content" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
 	{data.approvalPending && <p role="status" class="mb-6 rounded border border-amber-500 p-3 text-sm">{data.locale === 'en' ? 'Structural content awaiting editorial approval.' : 'Conteúdo estrutural a aguardar aprovação editorial.'}</p>}
 	<h1 data-tina-field={tinaField(data, 'title')}>{data.title}</h1>
 	{data.summary && <p data-tina-field={tinaField(data, 'summary')}>{data.summary}</p>}

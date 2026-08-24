@@ -1,11 +1,12 @@
 import type { Collection } from "tinacms";
 import {
-	pathFor,
-	routeKeys,
 	type PublishedLocale,
+	pathFor,
 	type RouteKey,
+	routeKeys,
 } from "../../src/lib/routing";
 import { localizedDocumentFields } from "./common";
+import { aboutFields, homeFields } from "./editorial-sections";
 
 export const EditorialCollection: Collection = {
 	name: "editorial",
@@ -41,6 +42,8 @@ export const EditorialCollection: Collection = {
 			type: "string",
 			ui: { component: "textarea" },
 		},
+		...homeFields,
+		...aboutFields,
 		{ name: "ctaRefs", label: "CTA identifiers", type: "string", list: true },
 		{
 			name: "legal",

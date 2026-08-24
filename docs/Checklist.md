@@ -22,6 +22,14 @@
 - [ ] `pnpm build` validado no Tina Cloud após publicação da branch; localmente, a verificação chega ao serviço e fica bloqueada apenas porque o schema remoto de `main` ainda não inclui o schema desta branch.
 - [ ] Conteúdo PT-PT e EN revisto pela Ana e por revisores adequados; todos os documentos permanecem em draft até essa aprovação.
 
+## Estado da fase 2 — migração editorial por grupos (agosto de 2026)
+
+- [x] As 19 páginas da referência Next.js foram auditadas e divididas em cinco grupos verificáveis; manifesto em `docs/especificacao-editorial-home-sobre.md`.
+- [x] Grupo 1: conteúdo PT-PT da Home e Sobre importado integralmente para modelos TinaCMS e templates Astro específicos.
+- [x] Cópias inglesas em português, placeholders, links falsos, assets vazios e integrações futuras foram contabilizados sem os publicar como conteúdo válido.
+- [x] Conteúdo profissional e académico PT-PT da Home e Sobre revisto e aprovado pela Ana em 24 de agosto de 2026; as duas páginas permanecem em `draft` e `noindex` até os destinos dependentes estarem prontos.
+- [ ] Grupos 2–5 migrados.
+
 ## 1. Decisões de produto e arquitetura
 
 - **P0 — Decidir a fundação técnica final**

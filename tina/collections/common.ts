@@ -25,7 +25,13 @@ export const localizedDocumentFields: TinaField[] = [
 			{ label: "Español (preparação)", value: "es" },
 		],
 	},
-	{ name: "slug", label: "Localized slug", type: "string", required: true },
+	{
+		name: "slug",
+		label: "Localized slug",
+		type: "string",
+		description:
+			"Leave empty only for the Home route; route validation requires a slug for every other page.",
+	},
 	{
 		name: "status",
 		label: "Editorial status",

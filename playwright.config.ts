@@ -12,7 +12,11 @@ export default defineConfig({
 		trace: "on-first-retry",
 	},
 	webServer: {
-		command: "pnpm build:preview && pnpm preview --host 127.0.0.1 --port 4321",
+		// The local fallback adapter produces a standalone Node server. Running
+		// that entrypoint keeps the parent process alive for Playwright, unlike
+		// Astro's daemonized preview command in the Codex/IDE environment.
+		command:
+			"pnpm build:preview && HOST=127.0.0.1 PORT=4321 node dist/server/entry.mjs",
 		url: "http://127.0.0.1:4321",
 		reuseExistingServer: !process.env.CI,
 	},
