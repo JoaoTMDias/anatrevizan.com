@@ -2,6 +2,7 @@
 import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { PublicationsPageContent } from '../../lib/page-content';
+import { getPublications } from '../../lib/publication-content';
 import { sortPublications } from '../../lib/publications';
 import { pathFor } from '../../lib/routing';
 import Button from '../ui/Button.astro';
@@ -14,7 +15,7 @@ interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const page = data.publicationsPage as PublicationsPageContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
-const publications = page ? sortPublications(page.publications) : [];
+const publications = page ? sortPublications(await getPublications()) : [];
 const years = [...new Set(publications.flatMap((item) => item.year ? [item.year] : []))].sort().reverse();
 const languages = [...new Set(publications.flatMap((item) => item.language ? [item.language] : []))].sort();
 const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].sort();
@@ -36,7 +37,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
 				<h2>{publication.title}</h2>
 				{publication.journal && <p>{publication.journal}</p>}
 				{publication.topics?.length && <ul aria-label={locale === 'en' ? 'Topics' : 'Temas'}>{publication.topics.map((topic) => <li>{topic}</li>)}</ul>}</div>
-				{publication.linkStatus === 'valid' && publication.url ? <Button variant="outline" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
+				{publication.url ? <Button variant="outline" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
 			</article>)}</div>
 			<p class="publication-empty hidden" data-publication-empty>{page.filters.empty}</p>
 			<p class="publication-orcid-note">{page.orcidNote}</p>

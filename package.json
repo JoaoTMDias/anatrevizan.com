@@ -9,10 +9,10 @@
 	"scripts": {
 		"dev": "tinacms dev -c \"cross-env ASTRO_DEV_BACKGROUND=0 astro dev\"",
 		"dev:preview": "pnpm dev",
-		"build": "pnpm validate:content && tinacms build --content=local -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts production",
-		"build:local": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts production",
-		"build:local:unchecked": "pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
-		"build:preview": "pnpm validate:content && cross-env EDITORIAL_PREVIEW=true tinacms build --local --skip-cloud-checks -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts preview",
+		"build": "pnpm sync:orcid && pnpm validate:content && tinacms build --content=local -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts production",
+		"build:local": "pnpm sync:orcid && pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts production",
+		"build:local:unchecked": "pnpm sync:orcid && pnpm validate:content && tinacms build --local --skip-cloud-checks -c \"astro build\"",
+		"build:preview": "pnpm sync:orcid && pnpm validate:content && cross-env EDITORIAL_PREVIEW=true tinacms build --local --skip-cloud-checks -c \"astro build\" && node --experimental-strip-types scripts/report-build-output.ts preview",
 		"build:search": "tinacms search-index",
 		"preview": "cross-env HOST=127.0.0.1 PORT=4322 node dist/server/entry.mjs",
 		"preview:editorial": "pnpm build:preview && pnpm preview",
@@ -26,6 +26,10 @@
 		"test:watch": "vitest",
 		"test:e2e": "playwright test",
 		"test:e2e:ui": "playwright test --ui",
+		"sync:orcid": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=build",
+		"sync:orcid:strict": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=strict",
+		"sync:orcid:initial": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=strict --allow-anonymous",
+		"tina:lock": "node --experimental-strip-types scripts/generate-tina-lock.ts",
 		"validate:content": "node --experimental-strip-types scripts/validate-content.ts"
 	},
 	"dependencies": {
@@ -48,7 +52,9 @@
 		"sharp": "^0.35.3",
 		"tailwind-merge": "^3.6.0",
 		"tailwind-variants": "^3.3.1",
-		"tailwindcss": "^4.3.3"
+		"tailwindcss": "^4.3.3",
+		"yaml": "^2.9.0",
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.10",

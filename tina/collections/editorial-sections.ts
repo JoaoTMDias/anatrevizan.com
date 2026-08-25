@@ -89,21 +89,6 @@ export const homeFields: TinaField[] = [
 			text("academicSubtitle", "Academic introduction"),
 			text("publicationsCta", "Publications CTA"),
 			text("speakerKitCta", "Speaker kit CTA"),
-			{
-				name: "featuredPublications",
-				label: "Static featured publications (ORCID deferred)",
-				type: "object",
-				list: true,
-				required: true,
-				fields: [
-					text("title", "Title"),
-					text("publication", "Publication", false),
-					text("year", "Year"),
-					text("language", "Language"),
-					text("badge", "Badge", false),
-					text("url", "URL"),
-				],
-			},
 			text("credentialsLabel", "Credentials label"),
 			{
 				name: "credentials",

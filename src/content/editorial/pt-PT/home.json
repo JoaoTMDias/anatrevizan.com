@@ -99,30 +99,6 @@
 		"academicSubtitle": "Publicações recentes e produção científica com impacto internacional.",
 		"publicationsCta": "Ver repositório completo",
 		"speakerKitCta": "Kit de palestrante",
-		"featuredPublications": [
-			{
-				"title": "Exploring the Brussels Effect",
-				"publication": "Revista de Direito",
-				"year": "2024",
-				"language": "EN",
-				"badge": "Citado pela OCDE",
-				"url": "https://doi.org/10.32361/2024160116014"
-			},
-			{
-				"title": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
-				"publication": "International Journal for the Semiotics of Law - Revue internationale de Sémiotique juridique",
-				"year": "2025",
-				"language": "EN",
-				"url": "https://doi.org/10.1007/s11196-025-10250-7"
-			},
-			{
-				"title": "The European Union’s forest diplomacy: A path toward ostensible environmental sustainability",
-				"publication": "Pensar - Revista de Ciências Jurídicas",
-				"year": "2025",
-				"language": "EN",
-				"url": "https://doi.org/10.5020/2317-2150.2025.16353"
-			}
-		],
 		"credentialsLabel": "Credenciais e vínculos",
 		"credentials": [
 			"Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (2024)",

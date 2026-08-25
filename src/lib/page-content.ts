@@ -25,14 +25,6 @@ export interface HomeContent {
 	academicSubtitle: string;
 	publicationsCta: string;
 	speakerKitCta: string;
-	featuredPublications: Array<{
-		title: string;
-		publication?: string | null;
-		year: string;
-		language: string;
-		badge?: string | null;
-		url: string;
-	}>;
 	credentialsLabel: string;
 	credentials: string[];
 	finalCtaHeading: string;
@@ -152,20 +144,6 @@ export interface PublicationsPageContent {
 		view: string;
 		empty: string;
 	};
-	publications: Array<{
-		sourceId: string;
-		title: string;
-		journal?: string | null;
-		year?: string | null;
-		priority?: number | null;
-		type?: string | null;
-		doi?: string | null;
-		url?: string | null;
-		language?: string | null;
-		topics?: string[] | null;
-		highlight?: string | null;
-		linkStatus: "valid" | "missing" | "placeholder";
-	}>;
 	ctaHeading: string;
 	ctaText: string;
 }

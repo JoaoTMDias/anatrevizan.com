@@ -32,16 +32,11 @@ navegação TinaCMS criada na fase 1 e não são duplicadas nos modelos de pági
 
 ## Publicações e ORCID
 
-- `src/content/publicacoes-orcid.json` contém 25 registos e 136 campos string.
-- Sete valores são vazios e não são promovidos a conteúdo válido.
-- Dois registos usam `link: "#"`: `Environmental Dumping and Sustainable
-  Policies` e `Selo verde e sua importância para o Pantanal`. Serão preservados
-  sem link clicável e marcados como placeholder herdado.
-- `src/content/publicacoesMeta.ts` acrescenta metadados a seis DOI: seis
-  idiomas, 15 etiquetas temáticas e o destaque `Citado pela OCDE`.
-- O snapshot histórico será migrado como conteúdo estático editável neste
-  grupo. A consulta automática ORCID, validação externa e fallback de build
-  permanecem para a fase de integração.
+A fase 4 substituiu o snapshot histórico de 25 registos pela coleção Markdown
+gerada a partir do ORCID. Os metadados bibliográficos vêm exclusivamente do
+ORCID; idioma, temas, destaque e prioridade constituem um overlay editorial
+opcional preservado pelo identificador estável da obra. Obras sem URL HTTPS
+continuam visíveis sem ligação clicável e nunca geram `href="#"`.
 
 ## Eventos, recomendações e placeholders
 
@@ -68,8 +63,7 @@ publicado em v1.
 
 - Hub académico com cinco destinos explícitos.
 - Template de serviço académico partilhado apenas por Mentorias e Formações.
-- Repositório estático de Publicações com 25 registos, sem antecipar a
-  integração ORCID; 23 ligações válidas e dois placeholders não clicáveis.
+- Repositório de Publicações alimentado pela coleção Markdown ORCID partilhada.
 - Página de Eventos com estado vazio editorial honesto.
 - Página de Palestras com biografia, temas, conteúdo previsto do kit e CTA de
   contacto, mas sem download ou imagem falsos.
@@ -85,5 +79,5 @@ conteúdo, testes unitários, Playwright relevante, `astro check`, `build:local`
 e `git diff --check`. Nenhuma página muda para `ready` sem revisão explícita.
 
 A revisão editorial foi concluída em 24 de agosto de 2026. As páginas mantêm-se
-em `draft` e `noindex` porque a publicação e as dependências adiadas — incluindo
-a integração ORCID com dados atuais — não fazem parte deste grupo.
+em `draft` e `noindex`; a integração ORCID foi posteriormente executada na fase
+4 sem alterar o estado editorial das páginas.

@@ -312,8 +312,9 @@ describe("editorial validation", () => {
 		}
 	});
 
-	it("accounts for the academic page inventory and publication placeholders", () => {
+	it("accounts for the academic page inventory and ORCID-backed publications", () => {
 		const directory = join(process.cwd(), "src/content/editorial/pt-PT");
+		const home = JSON.parse(readFileSync(join(directory, "home.json"), "utf8"));
 		const hub = JSON.parse(
 			readFileSync(join(directory, "academic.json"), "utf8"),
 		);
@@ -339,17 +340,14 @@ describe("editorial validation", () => {
 		expect(events.eventsPage.entries).toEqual([]);
 		expect(1 + countStrings(events.eventsPage)).toBe(8);
 		expect(1 + countStrings(speaking.speakingPage)).toBe(24);
-		expect(publications.publicationsPage.publications).toHaveLength(25);
-		expect(
-			publications.publicationsPage.publications.filter(
-				(item: { linkStatus: string }) => item.linkStatus === "placeholder",
-			),
-		).toHaveLength(2);
-		expect(
-			publications.publicationsPage.publications.some(
-				(item: { url?: string }) => item.url === "#",
-			),
-		).toBe(false);
+		expect(publications.publicationsPage.publications).toBeUndefined();
+		expect(home.home.featuredPublications).toBeUndefined();
+		const orcidDirectory = join(process.cwd(), "src/content/publications");
+		const orcidSnapshot = readdirSync(orcidDirectory)
+			.filter((file) => file.endsWith(".md"))
+			.map((file) => readFileSync(join(orcidDirectory, file), "utf8"));
+		expect(orcidSnapshot).toHaveLength(28);
+		expect(orcidSnapshot.filter((source) => /^priority:/m.test(source))).toHaveLength(3);
 		for (const document of [
 			hub,
 			mentoring,
@@ -368,8 +366,8 @@ describe("editorial validation", () => {
 			"utf8",
 		);
 		expect(manifest).toContain("106 strings PT-PT");
-		expect(manifest).toContain("25 registos e 136 campos string");
-		expect(manifest).toContain('Dois registos usam `link: "#"`');
+		expect(manifest).toContain("coleção Markdown");
+		expect(manifest).toContain("gerada a partir do ORCID");
 	});
 
 	it("keeps copied Portuguese academic content out of English documents", () => {

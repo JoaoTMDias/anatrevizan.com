@@ -41,6 +41,16 @@
 - [x] Grupo 4 — família Academia revalidada página a página; prioridade editorial do snapshot modelada e testada, mantendo a sincronização ORCID para uma fase posterior.
 - [x] Grupo 5 — matriz renderizada das 19 rotas concluída sem erros de consola ou overflow Astro; decisões editoriais globais aplicadas e handoff de encerramento executado.
 
+## Estado da fase 4 — sincronização ORCID (agosto de 2026)
+
+- [x] ORCID `0000-0003-4365-6053` estabelecido como fonte de verdade bibliográfica e snapshot inicial de 28 obras públicas validado.
+- [x] Coleção Markdown partilhada criada no Astro e TinaCMS; campos ORCID ocultos e overlay editorial opcional preservado por `sourceId`.
+- [x] Sincronizador TypeScript único implementado em modo build resiliente, modo estrito e execução manual, com validação integral e atualização atómica.
+- [x] Página de Publicações e Home desligadas das cópias JSON e ligadas exclusivamente à coleção, sem expor tipo técnico nem criar ligações falsas.
+- [x] Workflow semanal/manual preparado para abrir ou atualizar uma pull request com contagens, sem commits diretos na branch publicada.
+- [x] Testes unitários, validação editorial 38/38, Tina schema/lock, Astro check, build editorial e 49 testes Playwright concluídos.
+- [ ] Credenciais `ORCID_CLIENT_ID` e `ORCID_CLIENT_SECRET` configuradas nos ambientes Netlify e GitHub antes de ativar a automação remota.
+
 ## Segurança do build editorial (agosto de 2026)
 
 - [x] Builds de preview e produção apresentam um resumo e escrevem um manifesto com documentos e rotas geradas.
@@ -61,7 +71,7 @@
 - [x] Cópias EN idênticas ao português mantidas fora dos modelos renderizados e registadas como tradução inválida.
 - [x] Dois links de publicações com `href="#"`, o download falso do kit, a fotografia placeholder e as coleções vazias de eventos e recomendações foram registados sem os publicar como conteúdo válido.
 - [x] Conteúdo profissional e académico PT-PT das seis páginas revisto e aprovado pela Ana em 24 de agosto de 2026; revisão qualificada adicional mantém-se pendente quando aplicável.
-- [ ] Integração ORCID em build, validação dos dados atuais e snapshot de fallback implementados numa fase posterior.
+- [x] Integração ORCID em build, validação dos dados atuais e snapshot de fallback implementados na fase 4.
 
 ### Grupo 4 — Contacto e Agendamento
 
@@ -437,34 +447,34 @@
 
 ## 8. Publicações e ORCID
 
-- **P0 — Confirmar o ORCID correto**
-- **P0 — Rever todas as publicações importadas**
+- [x] **P0 — Confirmar o ORCID correto**
+- [x] **P0 — Importar e validar tecnicamente todas as publicações públicas atuais**
     - Títulos.
     - Datas.
     - Revista ou publicação.
     - DOI.
     - Links.
     - Tipo de publicação.
-- **P0 — Garantir que nenhuma publicação usa `href="#"`**
-- **P0 — Validar dados ORCID em runtime**
+- [x] **P0 — Garantir que nenhuma publicação usa `href="#"`**
+- [x] **P0 — Validar dados ORCID no sincronizador de build**
     - Criar schema para a resposta externa.
     - Rejeitar estruturas inválidas.
     - Tratar valores inesperados.
-- **P1 — Eliminar `any` do parser**
-- **P1 — Unificar lógica entre runtime e `sync-orcid.mjs`**
-- **P1 — Rever identificação de idioma**
+- [x] **P1 — Eliminar `any` do parser**
+- [x] **P1 — Unificar toda a lógica num único módulo TypeScript**
+- [x] **P1 — Tornar a identificação de idioma um overlay editorial opcional**
     - Definir idioma manualmente no overlay quando necessário.
     - Não depender apenas da heurística do título.
-- **P1 — Registar falhas de sincronização**
+- [x] **P1 — Registar falhas de sincronização**
     - ORCID indisponível.
     - Resposta inválida.
     - Snapshot utilizado.
     - Publicações sem URL.
 - **P1 — Mostrar data de atualização**, se for útil.
-- **P1 — Automatizar atualização do snapshot**
+- [x] **P1 — Automatizar atualização do snapshot**
     - Workflow agendado.
     - Validação antes de commit/deploy.
-- **P1 — Rever filtros**
+- [x] **P1 — Rever filtros**
     - Ano.
     - Tema.
     - Idioma.

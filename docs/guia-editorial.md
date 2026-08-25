@@ -21,6 +21,16 @@ O seletor de idioma, os alternates e o sitemap só anunciam uma tradução quand
 
 Cada build escreve `dist/editorial-build-manifest.json` e apresenta um resumo com o modo, documentos publicáveis, drafts excluídos e rotas editoriais geradas. O ficheiro fica fora de `dist/client`, portanto não é publicado como asset do site.
 
+## Publicações e sincronização ORCID
+
+- A coleção **Publications (ORCID)** mostra apenas os quatro campos editoriais opcionais: idioma, temas, destaque e prioridade. Um campo vazio não aparece no site.
+- Título, revista, ano, tipo, DOI, URL, fonte e `put-code` são sincronizados e não devem ser alterados manualmente. O corpo Markdown permanece vazio.
+- Uma prioridade mais baixa coloca a obra mais cedo na página completa. Na Home, a obra mais recente ocupa sempre a primeira vaga; as duas seguintes respeitam as melhores prioridades disponíveis, sem duplicados.
+- `pnpm sync:orcid` é o modo resiliente usado pelos builds. Sem `ORCID_CLIENT_ID` e `ORCID_CLIENT_SECRET`, mantém o snapshot local e termina com aviso.
+- `pnpm sync:orcid:strict` exige essas credenciais e falha perante indisponibilidade, resposta vazia, dados inválidos ou colisões. É o modo usado pelo workflow semanal e pela execução manual controlada.
+- O workflow `ORCID publication sync` abre ou atualiza uma pull request com adições, alterações, remoções e obras sem URL. O diff deve ser revisto antes do merge, sobretudo quando houver remoções.
+- Durante a migração, o workflow pode ser executado manualmente contra a branch que contém esta configuração. O agendamento semanal só fica ativo quando o ficheiro chegar à branch predefinida do repositório.
+
 ## Regras de nomes e rotas
 
 - As páginas usam uma `routeKey` do mapa canónico e o slug localizado correspondente.
