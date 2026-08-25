@@ -123,6 +123,16 @@ test.describe("localized draft pages", () => {
 		expect(await page.locator("h1").count()).toBe(1);
 	});
 
+	test("Home exposes the migrated institutional visual structures", async ({
+		page,
+	}) => {
+		await page.goto("/");
+		await expect(page.locator(".home-hero")).toBeVisible();
+		await expect(page.locator(".home-gateway")).toHaveCount(2);
+		await expect(page.locator(".home-difference")).toHaveCount(4);
+		await expect(page.locator(".home-publication")).toHaveCount(3);
+	});
+
 	test("Portuguese About renders ordered editorial sections", async ({
 		page,
 	}) => {
@@ -485,6 +495,19 @@ test.describe("localized draft pages", () => {
 		).toBeVisible();
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		expect(errors).toEqual([]);
+	});
+
+	test("institutional and legal pages expose their migrated visual structures", async ({
+		page,
+	}) => {
+		await page.goto("/sobre");
+		await expect(page.locator(".about-timeline")).toBeVisible();
+		await page.goto("/contacto");
+		await expect(page.locator(".contact-layout")).toBeVisible();
+		await page.goto("/agendar");
+		await expect(page.locator(".booking-panel")).toBeVisible();
+		await page.goto("/politica-de-privacidade");
+		await expect(page.locator(".legal-review-notice")).toBeVisible();
 	});
 
 	test("Booking exposes the confirmed Calendly link without an embed", async ({

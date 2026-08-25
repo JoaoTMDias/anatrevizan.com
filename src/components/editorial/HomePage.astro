@@ -4,29 +4,38 @@ import type { CmsEditorial } from '../../lib/data';
 import type { HomeContent } from '../../lib/page-content';
 import { hasValidRouteKey } from '../../lib/page-content';
 import { pathFor } from '../../lib/routing';
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
+import ContactCta from './ContactCta.astro';
 import DraftNotice from './DraftNotice.astro';
+import SectionHeading from './SectionHeading.astro';
 interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const home = data.home as HomeContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const destination = (item: { routeKey?: unknown }) => hasValidRouteKey(item) ? pathFor(item.routeKey, locale) : undefined;
+const brandIcons = ['scale', 'leaf', 'school', 'world'];
+const differenceIcons = ['world', 'microscope', 'language', 'arrows-exchange'];
+const serviceIcons = ['plane-departure', 'scale', 'leaf', 'building-community', 'file-description'];
 ---
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{home ? <>
-		<header class="bg-slate-900 px-6 py-20 text-white md:py-28" data-tina-field={tinaField(data, 'home')}>
-			<div class="mx-auto max-w-6xl">
-				<ul class="mb-6 flex flex-wrap gap-2" aria-label={locale === 'en' ? 'Brand values' : 'Valores da marca'}>{home.hero.brandWords.map((word) => <li class="rounded-full border border-white/30 px-3 py-1 text-sm">{word}</li>)}</ul>
-				<h1 class="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">{home.hero.heading}</h1>
-				<p class="mt-6 max-w-2xl text-lg text-slate-200">{home.hero.subtitle}</p>
-				<div class="mt-8 flex flex-wrap gap-4"><a class="rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>{home.hero.primaryCta}</a><a class="rounded border border-white px-5 py-3 font-semibold" href={pathFor('consulting', locale)}>{home.hero.secondaryCta}</a></div>
+		<header class="home-hero" data-tina-field={tinaField(data, 'home')}>
+			<div class="site-container home-hero__inner">
+				<ul class="home-brand-words" aria-label={locale === 'en' ? 'Brand values' : 'Valores da marca'}>{home.hero.brandWords.map((word, index) => <li><Icon name={brandIcons[index]} />{word}</li>)}</ul>
+				<h1>{home.hero.heading}</h1>
+				<p>{home.hero.subtitle}</p>
+				<div class="home-hero__actions"><Button size="lg" class="home-accent-button" href={pathFor('booking', locale)}>{home.hero.primaryCta}</Button><Button size="lg" variant="outline" class="home-hero__secondary" href={pathFor('consulting', locale)}>{home.hero.secondaryCta}</Button></div>
 			</div>
 		</header>
-		<section class="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2" aria-label={locale === 'en' ? 'Areas' : 'Áreas'}>{home.gateways.map((item) => <article class="rounded-lg border p-6"><p class="text-sm text-slate-600">{item.eyebrow}</p><h2 class="mt-2 text-2xl font-semibold">{item.title}</h2><p class="mt-3">{item.description}</p>{destination(item) && <a class="mt-5 inline-block font-semibold underline" href={destination(item)}>{item.cta}</a>}</article>)}</section>
-		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-6xl"><h2 class="text-3xl font-bold">{home.differencesTitle}</h2><p class="mt-3 max-w-3xl">{home.differencesSubtitle}</p><div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{home.differences.map((item) => <article><h3 class="text-lg font-semibold">{item.title}</h3><p class="mt-2 text-sm">{item.description}</p></article>)}</div></div></section>
-		<section class="mx-auto max-w-6xl px-6 py-16"><h2 class="text-3xl font-bold">{home.servicesTitle}</h2><p class="mt-3 max-w-3xl">{home.servicesSubtitle}</p><div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{home.services.map((item) => <article class="rounded-lg border p-5"><p class="text-sm">{item.tag}</p><h3 class="mt-2 text-lg font-semibold">{item.title}</h3><p class="mt-2 text-sm">{item.description}</p>{destination(item) && <a class="mt-4 inline-block font-semibold underline" href={destination(item)}>{item.cta}</a>}</article>)}</div></section>
-		<section class="bg-slate-50 px-6 py-16"><div class="mx-auto max-w-6xl"><h2 class="text-3xl font-bold">{home.academicTitle}</h2><p class="mt-3">{home.academicSubtitle}</p><div class="mt-5 flex flex-wrap gap-4"><a class="font-semibold underline" href={pathFor('publications', locale)}>{home.publicationsCta}</a><a class="font-semibold underline" href={pathFor('speaking', locale)}>{home.speakerKitCta}</a></div><div class="mt-8 grid gap-6 md:grid-cols-3">{home.featuredPublications.map((publication) => <article class="rounded-lg border bg-white p-5">{publication.badge && <p class="text-sm font-semibold">{publication.badge}</p>}<p class="mt-2 text-sm">{publication.year} · {publication.language}</p><h3 class="mt-2 font-semibold">{publication.title}</h3>{publication.publication && <p class="mt-2 text-sm">{publication.publication}</p>}<a class="mt-4 inline-block font-semibold underline" href={publication.url} rel="external">{locale === 'en' ? 'View publication' : 'Ver publicação'}</a></article>)}</div></div></section>
-		<section class="mx-auto max-w-6xl px-6 py-14"><h2 class="text-sm font-semibold uppercase tracking-wider">{home.credentialsLabel}</h2><ul class="mt-5 grid gap-3 md:grid-cols-2">{home.credentials.map((credential) => <li>{credential}</li>)}</ul></section>
-		<section class="bg-slate-900 px-6 py-16 text-center text-white"><h2 class="text-3xl font-bold">{home.finalCtaHeading}</h2><p class="mx-auto mt-4 max-w-2xl">{home.finalCtaText}</p><a class="mt-7 inline-block rounded bg-teal-600 px-5 py-3 font-semibold" href={pathFor('booking', locale)}>{home.finalCtaLabel}</a></section>
+		<Section><div class="home-gateways" aria-label={locale === 'en' ? 'Areas' : 'Áreas'}>{home.gateways.map((item, index) => destination(item) && <a class:list={['home-gateway', index === 1 && 'home-gateway--accent']} href={destination(item)}><span class="home-gateway__icon"><Icon name={index === 0 ? 'scale' : 'book-2'} /></span><div><h2>{item.title}</h2><p class="home-gateway__eyebrow">{item.eyebrow}</p></div><p class="home-gateway__description">{item.description}</p><span class="home-gateway__cta">{item.cta}<Icon name="arrow-right" /></span></a>)}</div></Section>
+		<Section background="bg-secondary"><SectionHeading title={home.differencesTitle} subtitle={home.differencesSubtitle} centered /><div class="home-differences">{home.differences.map((item, index) => <Card as="article" class="home-difference p-6"><span class="home-difference__icon"><Icon name={differenceIcons[index]} /></span><h3>{item.title}</h3><p>{item.description}</p></Card>)}</div></Section>
+		<Section><SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} centered /><div class="editorial-grid">{home.services.map((item, index) => destination(item) && <a class="home-service-card" href={destination(item)}><span class="home-service-card__heading"><span class="home-service-card__icon"><Icon name={serviceIcons[index]} /></span><span>{item.tag}</span></span><h3>{item.title}</h3><p>{item.description}</p><span class="home-service-card__cta">{item.cta}<Icon name="arrow-right" /></span></a>)}</div></Section>
+		<Section background="bg-secondary"><div class="home-academic-heading"><SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} /><div><Button variant="outline" size="sm" href={pathFor('publications', locale)}>{home.publicationsCta}</Button><Button class="home-accent-button" size="sm" href={pathFor('speaking', locale)}>{home.speakerKitCta}</Button></div></div><div class="home-publications">{home.featuredPublications.map((publication) => <Card as="article" class="home-publication p-6">{publication.badge && <strong>{publication.badge}</strong>}<p>{publication.year} · {publication.language}</p><h3>{publication.title}</h3>{publication.publication && <p>{publication.publication}</p>}<a href={publication.url} rel="external">{locale === 'en' ? 'View publication' : 'Ver publicação'}<Icon name="external-link" /></a></Card>)}</div></Section>
+		<section class="home-credentials"><div class="site-container"><h2>{home.credentialsLabel}</h2><ul>{home.credentials.map((credential) => <li><Icon name="circle-check" />{credential}</li>)}</ul></div></section>
+		<ContactCta heading={home.finalCtaHeading} text={home.finalCtaText} locale={locale} />
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>

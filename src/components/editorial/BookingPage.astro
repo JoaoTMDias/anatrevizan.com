@@ -5,7 +5,13 @@ import { getConfig } from '../../lib/data';
 import { safeCalendlyUrl } from '../../lib/external-url';
 import type { BookingPageContent } from '../../lib/page-content';
 import { pathFor } from '../../lib/routing';
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
 import DraftNotice from './DraftNotice.astro';
+import PageHero from './PageHero.astro';
+import SectionHeading from './SectionHeading.astro';
 interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const booking = data.bookingPage as BookingPageContent | null | undefined;
@@ -16,13 +22,13 @@ const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{booking ? <>
-		<header class="bg-slate-900 px-6 py-20 text-white" data-tina-field={tinaField(data, 'bookingPage')}><div class="mx-auto max-w-6xl"><p>{booking.tag}</p><h1 class="mt-3 text-4xl font-bold md:text-6xl">{data.title}</h1><p class="mt-5 max-w-3xl text-lg text-slate-200">{booking.subtitle}</p></div></header>
-		<section class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-3">
+		<PageHero title={data.title} subtitle={booking.subtitle} tag={booking.tag} locale={locale} data-tina-field={tinaField(data, 'bookingPage')} />
+		<Section class="booking-layout">
 			<div class="lg:col-span-2">
-				<h2 class="text-3xl font-bold">Agendamento online</h2>
-				{calendlyUrl ? <><p class="mt-4">O agendamento abre num serviço externo.</p><a class="mt-7 inline-block rounded bg-teal-700 px-5 py-3 font-semibold text-white" href={calendlyUrl} rel="external noreferrer">Abrir calendário de agendamento</a></> : <div class="mt-5 rounded border border-amber-400 bg-amber-50 p-5"><p>A ligação de agendamento ainda não está configurada.</p><a class="mt-4 inline-block font-semibold underline" href={pathFor('contact', locale)}>Usar a página de contacto</a></div>}
+				<SectionHeading title={locale === 'en' ? 'Online booking' : 'Agendamento online'} />
+				{calendlyUrl ? <div class="booking-panel"><span class="booking-panel__icon"><Icon name="calendar-event" /></span><p>{locale === 'en' ? 'Booking opens in an external service.' : 'O agendamento abre num serviço externo.'}</p><Button size="lg" href={calendlyUrl} rel="external noreferrer">{locale === 'en' ? 'Open booking calendar' : 'Abrir calendário de agendamento'}<Icon name="external-link" /></Button></div> : <div class="booking-panel booking-panel--notice"><span class="booking-panel__icon"><Icon name="calendar-off" /></span><p>{locale === 'en' ? 'The booking link is not yet configured.' : 'A ligação de agendamento ainda não está configurada.'}</p><Button variant="link" href={pathFor('contact', locale)}>{locale === 'en' ? 'Use the contact page' : 'Usar a página de contacto'}</Button></div>}
 			</div>
-			<aside class="space-y-5"><section class="rounded border p-6"><h2 class="text-xl font-semibold">{booking.duration}</h2><p class="mt-2">{booking.validFor}</p></section><section class="rounded border p-6"><h2 class="text-xl font-semibold">{booking.timezone}</h2><p class="mt-2">{booking.timezoneNote}</p></section></aside>
-		</section>
+			<aside class="booking-notes"><Card class="p-6"><div><Icon name="clock" /><h2>{booking.duration}</h2></div><p>{booking.validFor}</p></Card><Card class="p-6"><div><Icon name="world" /><h2>{booking.timezone}</h2></div><p>{booking.timezoneNote}</p></Card></aside>
+		</Section>
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>

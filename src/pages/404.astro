@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro';
 import Button from '../components/ui/Button.astro';
 ---
 <Base title="Página não encontrada" description="A página pedida não existe." locale="pt-PT" routeKey="home" noindex>
-	<section class="flex min-h-[70vh] items-center justify-center px-6 text-center">
-		<div class="flex flex-col items-center">
-			<p class="text-sm font-medium tracking-widest text-primary uppercase">Erro 404</p>
-			<h1 class="mt-2 text-4xl font-semibold tracking-tight lg:text-5xl">Página não encontrada</h1>
+	<section class="not-found-page">
+		<div>
+			<p>404</p>
+			<h1>Página não encontrada</h1>
 			<p class="mx-auto mt-4 max-w-md text-muted-foreground">A página pedida não existe ou mudou de endereço.</p>
 			<Button href="/" class="mt-8">Voltar ao início</Button>
 		</div>
