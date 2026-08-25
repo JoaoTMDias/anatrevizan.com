@@ -26,9 +26,9 @@
 		"test:watch": "vitest",
 		"test:e2e": "playwright test",
 		"test:e2e:ui": "playwright test --ui",
-		"sync:orcid": "node --experimental-strip-types scripts/sync-orcid.ts --mode=build",
-		"sync:orcid:strict": "node --experimental-strip-types scripts/sync-orcid.ts --mode=strict",
-		"sync:orcid:initial": "node --experimental-strip-types scripts/sync-orcid.ts --mode=strict --allow-anonymous",
+		"sync:orcid": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=build",
+		"sync:orcid:strict": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=strict",
+		"sync:orcid:initial": "node --env-file-if-exists=.env --experimental-strip-types scripts/sync-orcid.ts --mode=strict --allow-anonymous",
 		"tina:lock": "node --experimental-strip-types scripts/generate-tina-lock.ts",
 		"validate:content": "node --experimental-strip-types scripts/validate-content.ts"
 	},
