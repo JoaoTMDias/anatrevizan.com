@@ -53,6 +53,10 @@ The default `pnpm build` compiles the CMS against TinaCloud, so it needs your pr
 
 To build without TinaCloud — a purely local/offline build with no auth — run `pnpm build:local` instead, which skips the cloud checks.
 
+### ORCID publication synchronization
+
+Builds attempt to refresh the committed publication snapshot before Tina and Astro run. Configure `ORCID_CLIENT_ID` and `ORCID_CLIENT_SECRET` with credentials for the ORCID Public API to enable that refresh. Without them, or when ORCID is unavailable, the build logs a warning and continues with `src/content/publications`. The strict weekly GitHub workflow requires the same two repository secrets and opens a reviewable pull request rather than committing to the published branch.
+
 ## A note on React
 
 `react` and `react-dom` are both pinned to the same version (`^19.2.7`) in `devDependencies` for the TinaCMS admin UI build only — the site itself ships zero React. The pin keeps the two packages locked in lockstep; without it, pnpm's peer auto-install can pair mismatched `react` / `react-dom` versions and the admin crashes on init (`Cannot read properties of undefined (reading 'ReactCurrentDispatcher')`). This is tracked in [tinacms#6985](https://github.com/tinacms/tinacms/issues/6985); remove the pin once Tina declares `react` / `react-dom` as direct dependencies.

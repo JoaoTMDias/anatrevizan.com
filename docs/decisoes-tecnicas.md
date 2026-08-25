@@ -90,13 +90,15 @@
 
 ## Publicações e ORCID
 
-- O ORCID será a fonte automática das publicações.
-- Os dados serão obtidos durante o build.
-- A resposta externa deverá ser validada.
-- Existirá um snapshot local como fallback.
-- A indisponibilidade do ORCID não deverá remover publicações existentes nem impedir o build.
-- Uma Netlify Scheduled Function executará diariamente um build hook para atualizar as publicações.
-- Publicações sem URL válida não deverão gerar links falsos.
+- O ORCID `0000-0003-4365-6053` é a fonte automática dos metadados bibliográficos.
+- Um único sincronizador TypeScript validado tenta atualizar a coleção Markdown antes de cada build. Sem credenciais ou perante falha externa, o build mantém o snapshot versionado, avisa e continua.
+- A execução estrita semanal e manual decorre no GitHub Actions e abre ou atualiza uma pull request dedicada; nunca faz commit direto na branch publicada.
+- A atualização é integral e atómica: respostas vazias, malformadas ou com colisões não alteram ficheiros. Uma sincronização válida cria, atualiza e remove obras conforme o ORCID.
+- A identidade estável usa DOI normalizado, depois identificador externo do grupo e, por último, `put-code`. Duplicados do mesmo grupo são resolvidos por `display-index` e `put-code`, sem preferência por fornecedor.
+- A coleção aceita todos os tipos públicos devolvidos pelo ORCID. Título, revista, ano, tipo, DOI, URL, fonte e `put-code` são gerados e ocultos no TinaCMS.
+- Idioma, temas, destaque e prioridade são um overlay editorial opcional preservado por `sourceId`.
+- Publicações sem URL HTTPS válida permanecem visíveis, mas não geram ligações falsas.
+- A página completa apresenta prioridades primeiro e depois ano decrescente. A Home apresenta a obra mais recente e as duas melhores prioridades, sem duplicados e com preenchimento cronológico.
 
 ## Formulário de contacto
 
@@ -140,7 +142,7 @@
 5. Rever conteúdo, traduções e enquadramento jurídico com a Ana.
 6. Finalizar identidade e assets.
 7. Implementar formulário, Google Sheets, Resend e proteção anti-spam.
-8. Implementar ORCID, snapshot e atualização diária.
+8. Implementar ORCID, snapshot e atualização semanal por pull request. (Concluído em agosto de 2026.)
 9. Finalizar SEO, acessibilidade, páginas legais, testes e CI.
 10. Fazer QA em deploy preview e obter aprovação final da Ana.
 11. Configurar monitorização, rollback e lançamento.
