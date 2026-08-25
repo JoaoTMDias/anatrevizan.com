@@ -3,6 +3,8 @@ import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { HomeContent } from '../../lib/page-content';
 import { hasValidRouteKey } from '../../lib/page-content';
+import { getPublications } from '../../lib/publication-content';
+import { selectHomePublications } from '../../lib/publications';
 import { pathFor } from '../../lib/routing';
 import Button from '../ui/Button.astro';
 import Card from '../ui/Card.astro';
@@ -19,6 +21,7 @@ const destination = (item: { routeKey?: unknown }) => hasValidRouteKey(item) ? p
 const brandIcons = ['scale', 'leaf', 'school', 'world'];
 const differenceIcons = ['world', 'microscope', 'language', 'arrows-exchange'];
 const serviceIcons = ['plane-departure', 'scale', 'leaf', 'building-community', 'file-description'];
+const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
 ---
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
@@ -34,7 +37,7 @@ const serviceIcons = ['plane-departure', 'scale', 'leaf', 'building-community', 
 		<Section><div class="home-gateways" aria-label={locale === 'en' ? 'Areas' : 'Áreas'}>{home.gateways.map((item, index) => destination(item) && <a class:list={['home-gateway', index === 1 && 'home-gateway--accent']} href={destination(item)}><span class="home-gateway__icon"><Icon name={index === 0 ? 'scale' : 'book-2'} /></span><div><h2>{item.title}</h2><p class="home-gateway__eyebrow">{item.eyebrow}</p></div><p class="home-gateway__description">{item.description}</p><span class="home-gateway__cta">{item.cta}<Icon name="arrow-right" /></span></a>)}</div></Section>
 		<Section background="bg-secondary"><SectionHeading title={home.differencesTitle} subtitle={home.differencesSubtitle} centered /><div class="home-differences">{home.differences.map((item, index) => <Card as="article" class="home-difference p-6 md:p-8"><span class="home-difference__icon"><Icon name={differenceIcons[index]} /></span><h3>{item.title}</h3><p>{item.description}</p></Card>)}</div></Section>
 		<Section><SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} centered /><div class="home-services">{home.services.map((item, index) => destination(item) && <a class="home-service-card" href={destination(item)}><span class="home-service-card__heading"><span class="home-service-card__icon"><Icon name={serviceIcons[index]} /></span><span>{item.tag}</span></span><h3>{item.title}</h3><p>{item.description}</p><span class="home-service-card__cta">{item.cta}<Icon name="arrow-right" /></span></a>)}</div></Section>
-		<Section background="bg-secondary"><div class="home-academic-heading"><SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} /><div><Button variant="outline" size="sm" href={pathFor('publications', locale)}>{home.publicationsCta}</Button><Button variant="accent" size="sm" href={pathFor('speaking', locale)}>{home.speakerKitCta}</Button></div></div><div class="home-publications">{home.featuredPublications.map((publication) => <Card as="article" class="home-publication p-6 md:p-8">{publication.badge && <strong>{publication.badge}</strong>}<p>{publication.year} · {publication.language}</p><h3>{publication.title}</h3>{publication.publication && <p>{publication.publication}</p>}<a href={publication.url} rel="external">{locale === 'en' ? 'View publication' : 'Ver publicação'}<Icon name="external-link" /></a></Card>)}</div></Section>
+		<Section background="bg-secondary"><div class="home-academic-heading"><SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} /><div><Button variant="outline" size="sm" href={pathFor('publications', locale)}>{home.publicationsCta}</Button><Button variant="accent" size="sm" href={pathFor('speaking', locale)}>{home.speakerKitCta}</Button></div></div><div class="home-publications">{featuredPublications.map((publication) => <Card as="article" class="home-publication p-6 md:p-8">{publication.highlight && <strong>{publication.highlight}</strong>}<p>{[publication.year, publication.language].filter(Boolean).join(' · ')}</p><h3>{publication.title}</h3>{publication.journal && <p>{publication.journal}</p>}{publication.url && <a href={publication.url} rel="external">{locale === 'en' ? 'View publication' : 'Ver publicação'}<Icon name="external-link" /></a>}</Card>)}</div></Section>
 		<section class="home-credentials"><div class="site-container"><h2>{home.credentialsLabel}</h2><ul>{home.credentials.map((credential) => <li><Icon name="circle-check" />{credential}</li>)}</ul></div></section>
 		<ContactCta heading={home.finalCtaHeading} text={home.finalCtaText} locale={locale} showContactLink={false} />
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}

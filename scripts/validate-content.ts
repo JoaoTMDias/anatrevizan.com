@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { parse } from "yaml";
 import {
 	type EditorialDocument,
 	editorialStatuses,
@@ -31,6 +32,42 @@ const readCollection = (name: string) => {
 	}));
 };
 const errors: string[] = [];
+
+const publicationDirectory = join(root, "src/content/publications");
+const publicationFiles = readdirSync(publicationDirectory).filter((file) =>
+	file.endsWith(".md"),
+);
+const publicationIds = new Set<string>();
+if (!publicationFiles.length)
+	errors.push("[publications] o snapshot ORCID está vazio");
+for (const file of publicationFiles) {
+	const source = readFileSync(join(publicationDirectory, file), "utf8");
+	const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+	if (!match) {
+		errors.push(`[publications/${file}] frontmatter YAML ausente`);
+		continue;
+	}
+	const value = parse(match[1]) as Record<string, unknown>;
+	for (const field of ["sourceId", "orcidPutCode", "title", "type", "source"])
+		if (value[field] == null || value[field] === "")
+			errors.push(
+				`[publications/${file}] campo ORCID obrigatório ausente: ${field}`,
+			);
+	if (typeof value.sourceId === "string") {
+		if (publicationIds.has(value.sourceId))
+			errors.push(
+				`[publications/${file}] sourceId duplicado: ${value.sourceId}`,
+			);
+		publicationIds.add(value.sourceId);
+	}
+	if (typeof value.url === "string" && !value.url.startsWith("https://"))
+		errors.push(`[publications/${file}] URL não HTTPS: ${value.url}`);
+	if (
+		typeof value.priority === "number" &&
+		(!Number.isInteger(value.priority) || value.priority < 1)
+	)
+		errors.push(`[publications/${file}] prioridade editorial inválida`);
+}
 
 const pages = readCollection("editorial").map(({ file, value }) => ({
 	file,
@@ -108,6 +145,6 @@ if (errors.length) {
 	process.exitCode = 1;
 } else {
 	console.log(
-		`Validação editorial passou: ${pages.length} páginas e modelos repetíveis válidos.`,
+		`Validação editorial passou: ${pages.length} páginas, modelos repetíveis e ${publicationFiles.length} publicações ORCID válidos.`,
 	);
 }

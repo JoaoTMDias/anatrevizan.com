@@ -203,6 +203,11 @@ test.describe("localized draft pages", () => {
 		await expect(page.locator(".home-difference")).toHaveCount(4);
 		await expect(page.locator(".home-service-card")).toHaveCount(5);
 		await expect(page.locator(".home-publication")).toHaveCount(3);
+		await expect(page.locator(".home-publication h3")).toHaveText([
+			"Regulating sustainability: EU trade policy and impact in Latin America",
+			"Exploring the Brussels Effect",
+			"Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+		]);
 		await expect(page.locator(".home-hero")).toHaveCSS("height", "640px");
 		const homeVisuals = await page.evaluate(() => ({
 			heroBackground: getComputedStyle(
@@ -477,11 +482,11 @@ test.describe("localized draft pages", () => {
 		});
 	}
 
-	test("publications preserve 25 records without linking inherited placeholders", async ({
+	test("publications render the complete ORCID collection without fake links", async ({
 		page,
 	}) => {
 		await page.goto("/academia/publicacoes");
-		await expect(page.locator("[data-publications] > article")).toHaveCount(25);
+		await expect(page.locator("[data-publications] > article")).toHaveCount(28);
 		await expect(page.locator(".publication-card h2").nth(0)).toHaveText(
 			"Exploring the Brussels Effect",
 		);
@@ -494,7 +499,8 @@ test.describe("localized draft pages", () => {
 		expect(
 			(await page.locator(".publication-card__meta").allTextContents()).join(" "),
 		).not.toMatch(/journal-article|preprint|report|book-chapter/);
-		await expect(page.getByText("Ligação não disponível.")).toHaveCount(2);
+		await expect(page.getByText("Ligação não disponível.")).toHaveCount(10);
+		expect(await page.locator('.publication-card a[href="#"]').count()).toBe(0);
 		await page.locator('select[name="year"]').selectOption("2026");
 		await expect(page.locator("[data-publication-count]")).toHaveText(
 			/\d+ publicaç(ão|ões)/,
@@ -502,7 +508,7 @@ test.describe("localized draft pages", () => {
 		await page.getByRole("button", { name: "Limpar filtros" }).click();
 		await expect(
 			page.locator("[data-publications] > article:visible"),
-		).toHaveCount(25);
+		).toHaveCount(28);
 	});
 
 	test("academic pages expose the migrated visual structures", async ({
@@ -513,7 +519,7 @@ test.describe("localized draft pages", () => {
 		await page.goto("/academia/mentorias");
 		await expect(page.locator(".academic-service-card")).toHaveCount(6);
 		await page.goto("/academia/publicacoes");
-		await expect(page.locator(".publication-card")).toHaveCount(25);
+		await expect(page.locator(".publication-card")).toHaveCount(28);
 		await page.goto("/academia/eventos");
 		await expect(page.locator(".academic-empty")).toBeVisible();
 		await page.goto("/academia/palestras");
