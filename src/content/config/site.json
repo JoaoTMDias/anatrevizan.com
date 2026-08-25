@@ -1,6 +1,6 @@
 {
 	"identity": {
-		"name": "Ana Trevizan",
+		"name": "Dra. Ana Trevizan",
 		"tagline": {
 			"pt": "Conteúdo editorial por aprovar",
 			"en": "Editorial content awaiting approval"
@@ -23,7 +23,18 @@
 				"label": { "pt": "ORCID", "en": "ORCID" },
 				"url": "https://orcid.org/0000-0003-4365-6053"
 			}
-		]
+		],
+		"regions": [
+			{
+				"flag": "🇵🇹",
+				"label": { "pt": "Portugal", "en": "Portugal" }
+			},
+			{
+				"flag": "🇧🇷",
+				"label": { "pt": "Brasil", "en": "Brazil" }
+			}
+		],
+		"serviceLanguages": ["PT", "EN", "ES"]
 	},
 	"navigation": [
 		{
@@ -155,7 +166,10 @@
 		{
 			"type": "link",
 			"routeKey": "booking",
-			"label": { "pt": "Agendar", "en": "Book a call" },
+			"label": {
+				"pt": "Agendar primeiro contacto",
+				"en": "Book a call"
+			},
 			"emphasis": true
 		}
 	],
@@ -170,6 +184,13 @@
 	},
 	"footer": {
 		"copyright": { "pt": "Ana Trevizan", "en": "Ana Trevizan" },
+		"professionalRegistration": {
+			"pt": "Dra. Ana Flávia Trevizan · OAB nº [reservado]"
+		},
+		"disclaimer": {
+			"pt": "Este site tem caráter meramente informativo e não constitui aconselhamento jurídico."
+		},
+		"rightsReserved": { "pt": "Todos os direitos reservados." },
 		"legalRouteKeys": ["privacy", "terms", "cookies"]
 	}
 }

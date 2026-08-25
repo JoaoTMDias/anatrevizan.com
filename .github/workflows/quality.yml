@@ -5,7 +5,7 @@ on:
   pull_request:
 
 permissions:
-	contents: read
+  contents: read
 
 jobs:
   quality:
@@ -40,11 +40,11 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
+      - name: Build editorial preview
+        run: pnpm build:preview
+
       - name: Check Astro types
         run: pnpm exec astro check
-
-      - name: Build locally
-        run: pnpm build:local
 
       - name: Install Playwright Chromium
         run: pnpm exec playwright install --with-deps chromium

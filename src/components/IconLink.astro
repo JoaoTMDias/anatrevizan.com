@@ -3,18 +3,16 @@ import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'> & {
-	title?: string | null;
-	link?: string | null;
+	title: string;
+	link: string;
 	/** Any Iconify icon name, e.g. "tabler:brand-x". */
-	icon?: string | null;
+	icon: string;
 };
 
 const { title, link, icon, ...rest } = Astro.props;
-const safeTitle = title ?? '';
-const safeLink = link ?? '#';
+const isExternal = /^https?:\/\//i.test(link);
 ---
 
-<a href={safeLink} target="_blank" aria-label={`Go to ${safeTitle}`} {...rest}>
-	<span class="sr-only">{safeTitle}</span>
-	{icon && <Icon name={icon} size={32} />}
+<a href={link} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'external noreferrer' : undefined} aria-label={title} title={title} {...rest}>
+	<Icon name={icon} aria-hidden="true" />
 </a>

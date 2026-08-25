@@ -21,8 +21,8 @@ const valueIcons = ['scale', 'award', 'users-group', 'lock', 'heart-handshake', 
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{about ? <>
 		<PageHero title={data.title} subtitle={about.subtitle} tag={about.tag} locale={locale} data-tina-field={tinaField(data, 'about')} />
-		<Section class="max-w-4xl"><div class="about-narrative">{about.narrative.map((paragraph) => <p>{paragraph}</p>)}</div></Section>
-		<Section background="bg-secondary" class="max-w-4xl"><SectionHeading title={about.milestonesTitle} /><ol class="about-timeline">{about.milestones.map((item) => <li><p>{item.year}</p><h3>{item.title}</h3><p>{item.description}</p></li>)}</ol></Section>
+		<Section><div class="about-narrative max-w-3xl">{about.narrative.map((paragraph) => <p>{paragraph}</p>)}</div></Section>
+		<Section background="bg-secondary"><div class="max-w-3xl"><SectionHeading title={about.milestonesTitle} /><ol class="about-timeline">{about.milestones.map((item) => <li><p>{item.year}</p><h3>{item.title}</h3><p>{item.description}</p></li>)}</ol></div></Section>
 		<Section><SectionHeading title={about.currentWorkTitle} /><div class="about-current-work">{about.currentWork.map((item) => <Card as="article" class="p-6"><p class="text-2xl" aria-hidden="true">{item.country}</p><h3>{item.title}</h3><p>{item.description}</p></Card>)}</div></Section>
 		<Section background="bg-secondary"><SectionHeading title={about.valuesTitle} subtitle={about.valuesSubtitle} /><div class="about-values">{about.values.map((item, index) => <article><span><Icon name={valueIcons[index]} /></span><div><h3>{item.title}</h3><p>{item.description}</p></div></article>)}</div></Section>
 		<Section class="about-networks"><h2>{about.networksLabel}</h2><ul>{about.networks.map((network) => <li>{network}</li>)}</ul><Button class="mt-8" variant="outline" href={pathFor('speaking', locale)}>{about.speakerKitCta}</Button></Section>

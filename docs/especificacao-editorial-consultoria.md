@@ -56,8 +56,9 @@ línguas publicadas em v1.
 
 - Os CTAs de contacto/agendamento ficam identificados editorialmente, mas a
   integração pertence ao Grupo 4/fase posterior.
-- O crosslink entre Migração e Consultoria Jurídica usa a route key existente;
-  não cria URL manual nem `href="#"`.
+- O crosslink de confiança da página Migração segue a referência e aponta para
+  o percurso em Sobre através da route key existente; não cria URL manual nem
+  `href="#"`.
 - As duas publicações da página Ambiental/ESG permanecem conteúdo estático do
   grupo; ORCID continua adiado.
 - Filtros do hub serão apresentados como navegação estática acessível. Não se

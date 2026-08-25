@@ -23,7 +23,7 @@ const icons = data.routeKey === 'training'
 	{service ? <>
 		<PageHero title={data.title} subtitle={service.subtitle} locale={locale} parent={{ label: 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'academicService')} />
 		<Section class="max-w-4xl"><SectionHeading title={service.introHeading} /><div class="space-y-5 text-lg leading-relaxed text-muted-foreground">{service.introParagraphs.map((paragraph) => <p>{paragraph}</p>)}</div></Section>
-		<Section background="bg-secondary"><SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} /><div class="editorial-grid">{service.services.map((item, index) => <Card as="article" class="academic-service-card p-6"><span class="academic-icon" aria-hidden="true"><Icon name={icons[index]} /></span><h3>{item.title}</h3><p>{item.description}</p></Card>)}</div></Section>
+		<Section background="bg-secondary"><SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} /><div class="editorial-grid">{service.services.map((item, index) => <Card as="article" class="academic-service-card p-6 md:p-8"><span class="academic-icon" aria-hidden="true"><Icon name={icons[index]} /></span><h3>{item.title}</h3><p>{item.description}</p></Card>)}</div></Section>
 		<aside class="border-y"><div class="site-container py-8"><p class="max-w-3xl text-sm leading-relaxed text-muted-foreground">{service.note}</p></div></aside>
 		<ContactCta heading={service.ctaHeading} text={service.ctaText} locale={locale} />
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}

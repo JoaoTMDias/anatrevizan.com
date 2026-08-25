@@ -1,112 +1,81 @@
-# Fase 3 — auditoria visual e grupos de implementação
+# Auditoria visual da fase 3
 
-> Auditoria da referência Next.js concluída em 24 de agosto de 2026. A
-> referência define a direção visual, não a arquitetura da implementação.
+Estado: concluída. A matriz das 19 rotas, os componentes globais e as diferenças deliberadamente adiadas foram validados no encerramento da fase 3.
 
-## Limite da fase
+## Método
 
-A fase 3 transpõe o sistema visual e os componentes partilhados para Astro e
-Tailwind CSS 4. Não altera as 19 rotas, o modelo editorial, o conteúdo, os
-estados de publicação ou a estratégia PT-PT/EN. Também não inclui formulário e
-integrações, ORCID, texto legal final, traduções incompletas, analytics,
-consentimento ou media ainda não aprovada.
+- comparação renderizada entre a referência Next.js (`/pt-pt`) e o Astro;
+- viewport desktop de 1270 × 900 CSS px e viewport mobile de 320 × 900 CSS px;
+- captura de página completa, medição de altura, header, footer e overflow;
+- verificação separada dos estados abertos da navegação desktop e mobile;
+- diferenças editoriais ou funcionais deliberadas registadas separadamente das diferenças visuais.
 
-## Auditoria da referência Next.js
+## Problemas globais confirmados
 
-### Tokens, tipografia e cor
+- Os binários Inter e Playfair Display não eram os mesmos da referência, alterando métricas e quebras de linha.
+- `text-wrap: balance` tinha sido aplicado globalmente aos títulos, embora não exista na referência.
+- Classes personalizadas dos CTAs perdiam para as variantes Tailwind do componente `Button`.
+- O footer colocava as ligações legais na coluna de contacto em vez da coluna institucional.
+- O dropdown desktop tinha uma linha adicional, largura de 400 px e etiquetas em maiúsculas; a referência usa 320 px e não tem essa linha.
+- O drawer mobile tinha altura zero porque `backdrop-filter` alterava o bloco de referência do elemento fixo.
+- Faltava a barra CTA fixa em mobile.
+- Os filtros de Consultoria eram botões `outline` independentes em vez de um controlo segmentado.
+- O estado vazio de Eventos perdeu o ícone e o botão verde da referência.
+- Contacto e Agendamento não tinham testes geométricos das duas colunas.
+- O drawer mobile não apresentava identidade nem um controlo explícito para fechar.
+- Os cartões de Publicações usavam botões menores, entrelinha e margens diferentes da referência.
 
-- Títulos em Playfair Display e corpo/interface em Inter, ambos com `swap`.
-- Cor primária vinho, construída como escala OKLCH em torno de `#722f37`.
-- Verde como acento editorial, sobretudo para Ambiente e ESG, e não como uma
-  segunda marca concorrente.
-- Superfícies quentes branco/creme e texto cinzento quase neutro.
-- A referência tem escalas de 50–950, mas os componentes usam sobretudo
-  vinho 500–800, verde 100/400–600, fundo 50–300 e texto 500–900.
-- O creme `#fff3dc` e o verde profundo `#12261a` aparecem nos heroes. Ficam
-  reservados ao grupo de media/heroes, pois os assets ainda não estão aprovados.
+## Última matriz renderizada
 
-### Espaçamento, contentores e forma
+Executada sobre o build de preview atualizado, nas 19 rotas, a 1270 px e 320 px:
 
-- Contentor global máximo de 1280 px, com 24 px laterais em mobile e 40 px a
-  partir de tablet.
-- Secções usam normalmente 64–80 px verticais; grelhas usam intervalos de 24 px.
-- Botões usam 24 px horizontais e 12 px verticais; alvos devem manter pelo menos
-  44 px de altura.
-- Raios contidos: 6–8 px em botões, menus e cartões; pills apenas para tags.
-- Cartões usam borda clara, superfície creme, padding de 24–32 px e sombra
-  discreta. Menus flutuantes usam sombra mais marcada.
+- 76 navegações (Next e Astro) sem erros de consola;
+- nenhuma das 38 renderizações Astro apresenta overflow horizontal;
+- a referência Next mantém overflow próprio a 320 px em Contacto (348 px) e Agendamento (344 px), problema que não foi reproduzido;
+- Home: 4071/4118 px em desktop e 7682/7686 px em mobile (Next/Astro);
+- Publicações: 6421/6319 px em desktop; a soma dos 25 cartões é 4114/4016 px após a correção tipográfica;
+- as diferenças grandes restantes em Contacto, Agendamento e páginas legais correspondem aos limites funcionais/editoriais documentados abaixo.
 
-### Header e navegação
+## Matriz das 19 rotas
 
-- Header fixo com 64 px em mobile e 80 px em desktop, assinatura tipográfica à
-  esquerda, duas áreas com submenus, links institucionais, idioma e CTA.
-- A versão de referência abre menus por hover/click mas não expõe corretamente
-  o estado, não fecha todos os fluxos com Escape, não gere o foco do drawer e
-  não impede interação com o fundo.
-- A implementação Astro deve manter HTML estático e um script mínimo: estado
-  expandido, fecho exterior/Escape, foco devolvido, contenção de foco e fundo
-  inerte no drawer.
-- A barra CTA fixa inferior da referência é omitida: pode tapar conteúdo e o
-  CTA continua disponível no menu e nas secções editoriais.
+| Rota Astro | Família | Estado da comparação | Diferenças ainda admitidas ou por rever |
+| --- | --- | --- | --- |
+| `/` | Home | validada em desktop e mobile | identidade, CTAs globais e barra legal do footer alinhados com a decisão aprovada |
+| `/consultoria` | Consultoria hub | validada em desktop e mobile | sem diferença estrutural pendente |
+| `/consultoria/migracao-e-mobilidade` | Serviço | validada visualmente | cross-link “Conhecer o percurso” alinhado com a referência por decisão do utilizador |
+| `/consultoria/juridica` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/consultoria/ambiental-e-esg` | Serviço | validada após correção dedicada | media estática aprovada para a migração; vídeo copiado mas não ativado |
+| `/consultoria/politicas-publicas` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/consultoria/pareceres` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/academia` | Academia hub | validada em desktop e mobile | sem diferença estrutural pendente |
+| `/academia/mentorias` | Serviço académico | validada em desktop e mobile | conteúdo e estado editorial preservados |
+| `/academia/publicacoes` | Publicações | validada em desktop e mobile | prioridade editorial do snapshot modelada; sincronização ORCID adiada |
+| `/academia/eventos` | Eventos | validada após correção do estado vazio | estado vazio honesto preservado |
+| `/academia/palestras` | Palestras | validada em desktop e mobile | kit/media final não aprovado não é publicado |
+| `/academia/formacoes` | Formação | validada em desktop e mobile | conteúdo e estado editorial preservados |
+| `/sobre` | Institucional | validada em desktop e mobile | identidade e credenciais não são inventadas nem reescritas |
+| `/contacto` | Contacto | composição e responsividade validadas | aviso e campos desativados mantidos porque o envio funcional está fora desta fase |
+| `/agendar` | Agendamento | composição e responsividade validadas | link externo Calendly substitui deliberadamente o embed da referência |
+| `/politica-de-privacidade` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |
+| `/termos` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |
+| `/cookies` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |
 
-### Footer
+## Critério para encerrar uma linha
 
-- Quatro colunas em desktop, duas em tablet e uma em mobile.
-- Fundo creme suave, títulos em Playfair, links pequenos e discretos, seguido
-  por uma barra vinho escura.
-- Contactos e perfis devem vir exclusivamente da configuração TinaCMS; nenhum
-  destino provisório ou `href="#"` pode ser recriado.
+Uma rota só pode passar de “recaptura pendente” para validada depois de:
 
-### Primitivos e estados
+1. nova captura desktop e mobile feita sobre o build atualizado;
+2. inspeção do header, conteúdo principal, CTA e footer;
+3. ausência de overflow, erros de consola e assets em falta;
+4. teste de teclado e foco nos controlos existentes;
+5. registo explícito de qualquer diferença editorial ou funcional inevitável.
 
-- Botão primário vinho, botão outline vinho, variantes de baixo destaque e
-  links sublinhados. Estados hover não podem ser a única indicação.
-- Cards, tags, filtros e notices partilham raio, borda, tipografia e ritmo.
-- O notice editorial existente mantém texto e semântica; esta fase só o alinha
-  visualmente com a fundação.
-- Todo o foco visível usa um anel de alto contraste com offset. Em forced colors
-  usa a cor de texto do sistema.
+## Encerramento
 
-### Responsividade, movimento e dados
+Problemas herdados corrigidos: identidade e CTAs globais divergentes, rodapé incompleto, ligações sociais com destino falso, contactos sem apresentação acessível, ordenação visual de publicações não determinística e exposição do tipo técnico nos cartões.
 
-- Breakpoints dominantes: 640, 768 e 1024 px; layouts passam de uma para duas e
-  três/quatro colunas progressivamente.
-- O contentor usa padding fluido para garantir reflow a 320 px e a largura CSS
-  equivalente a zoom de 400%.
-- Transições globais são neutralizadas com `prefers-reduced-motion: reduce`.
-- A referência ativa vídeo após interações genéricas, faz `HEAD` no cliente e
-  carrega um shader por CDN. Esses comportamentos não serão migrados. O grupo
-  de media terá imagem estática por defeito e só poderá carregar vídeo aprovado
-  quando movimento reduzido e `navigator.connection.saveData` o permitirem.
+Decisões aprovadas e aplicadas: identidade “Dra. Ana Trevizan”, etiquetas dos CTAs, três blocos editoriais inferiores do rodapé, regiões e idiomas editáveis, prioridade numérica opcional para publicações, ocultação do seletor EN e preservação do tipo técnico apenas nos dados.
 
-## Divisão verificável da fase 3
+Problemas deliberadamente adiados: sincronização ORCID remota, formulário funcional e respetivas integrações, traduções inglesas incompletas, texto legal definitivo, consentimento/analytics e media ainda não aprovada. A ausência de lógica específica de `Save-Data` nesta fase é intencional: nenhuma experiência migrada ativa vídeo ou outro media pesado; o vídeo copiado permanece inativo.
 
-1. **Fundação e shell global (este conjunto):** tokens, fontes, contentor,
-   foco/movimento, header, menus, footer, botões, cards e notices.
-2. **Estruturas editoriais comuns:** heroes estáticos, breadcrumbs, títulos de
-   secção, grelhas, CTAs e estados vazios; sem media final.
-3. **Família Consultoria:** aplicar as estruturas às seis páginas e validar o
-   acento verde onde já está aprovado pela direção visual.
-4. **Família Academia:** aplicar as estruturas às seis páginas, incluindo os
-   estados visuais de listas e filtros sem implementar ORCID.
-5. **Institucional e fecho visual:** Home, Sobre, Contacto, Agendamento e páginas
-   legais; QA cruzado das 19 rotas e inventário de media pendente.
-
-Cada grupo deve passar `astro check`, testes unitários relevantes, Playwright,
-build local e `git diff --check`, além de verificação manual proporcional.
-
-## Problemas herdados corrigidos neste conjunto
-
-- tokens provisórios do starter não correspondiam à referência aprovada;
-- fonte de títulos ausente;
-- navegação móvel sem contenção/devolução de foco ou fundo inerte;
-- estados expandidos não refletidos explicitamente em `aria-expanded`;
-- contactos ainda não apareciam no footer partilhado;
-- não existia uma regra global de movimento reduzido ou forced-colors.
-
-## Decisões e diferimentos
-
-Não é necessária uma nova decisão de produto para este conjunto: a direção já
-está estabelecida. Identidade final, favicon, OG, fotografias, vídeos, shader,
-CTA móvel persistente e acento visual específico dos templates ficam diferidos
-para os grupos próprios e dependem dos assets/aprovações correspondentes.
+O lock do Tina foi regenerado e formatado. Além dos campos deste encerramento, o diff incorpora as definições das três páginas legais que já existiam no schema mas ainda não tinham sido refletidas no lock versionado; não contém truncamento nem alterações não semânticas.

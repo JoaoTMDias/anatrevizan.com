@@ -2,6 +2,7 @@
 import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { PublicationsPageContent } from '../../lib/page-content';
+import { sortPublications } from '../../lib/publications';
 import { pathFor } from '../../lib/routing';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
@@ -13,9 +14,10 @@ interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const page = data.publicationsPage as PublicationsPageContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
-const years = page ? [...new Set(page.publications.flatMap((item) => item.year ? [item.year] : []))].sort().reverse() : [];
-const languages = page ? [...new Set(page.publications.flatMap((item) => item.language ? [item.language] : []))].sort() : [];
-const topics = page ? [...new Set(page.publications.flatMap((item) => item.topics ?? []))].sort() : [];
+const publications = page ? sortPublications(page.publications) : [];
+const years = [...new Set(publications.flatMap((item) => item.year ? [item.year] : []))].sort().reverse();
+const languages = [...new Set(publications.flatMap((item) => item.language ? [item.language] : []))].sort();
+const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].sort();
 ---
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
@@ -27,14 +29,14 @@ const topics = page ? [...new Set(page.publications.flatMap((item) => item.topic
 				<label><span class="sr-only">{page.filters.allTopics}</span><select name="topic" aria-label={page.filters.allTopics}><option value="">{page.filters.allTopics}</option>{topics.map((topic) => <option value={topic}>{topic}</option>)}</select></label>
 				<label><span class="sr-only">{page.filters.allLanguages}</span><select name="language" aria-label={page.filters.allLanguages}><option value="">{page.filters.allLanguages}</option>{languages.map((language) => <option value={language}>{language}</option>)}</select></label>
 				<button type="reset"><Icon name="x" />{page.filters.clear}</button>
-				<p aria-live="polite" data-publication-count data-single={page.filters.singleResult} data-multiple={page.filters.multipleResults}>{page.publications.length} {page.filters.multipleResults}</p>
+				<p aria-live="polite" data-publication-count data-single={page.filters.singleResult} data-multiple={page.filters.multipleResults}>{publications.length} {page.filters.multipleResults}</p>
 			</form>
-			<div class="publication-list" data-publications>{page.publications.map((publication) => <article class="publication-card" data-year={publication.year ?? ''} data-language={publication.language ?? ''} data-topics={(publication.topics ?? []).join('|')}>
-				<div class="publication-card__content"><div class="publication-card__meta">{publication.year && <span>{publication.year}</span>}{publication.language && <span>{publication.language}</span>}{publication.type && <span>{publication.type}</span>}{publication.highlight && <strong><Icon name="award" />{publication.highlight}</strong>}</div>
+			<div class="publication-list" data-publications>{publications.map((publication) => <article class="publication-card" data-year={publication.year ?? ''} data-language={publication.language ?? ''} data-topics={(publication.topics ?? []).join('|')}>
+				<div class="publication-card__content"><div class="publication-card__meta">{publication.year && <span>{publication.year}</span>}{publication.language && <span>{publication.language}</span>}{publication.highlight && <strong><Icon name="award" />{publication.highlight}</strong>}</div>
 				<h2>{publication.title}</h2>
 				{publication.journal && <p>{publication.journal}</p>}
 				{publication.topics?.length && <ul aria-label={locale === 'en' ? 'Topics' : 'Temas'}>{publication.topics.map((topic) => <li>{topic}</li>)}</ul>}</div>
-				{publication.linkStatus === 'valid' && publication.url ? <Button variant="outline" size="sm" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
+				{publication.linkStatus === 'valid' && publication.url ? <Button variant="outline" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
 			</article>)}</div>
 			<p class="publication-empty hidden" data-publication-empty>{page.filters.empty}</p>
 			<p class="publication-orcid-note">{page.orcidNote}</p>

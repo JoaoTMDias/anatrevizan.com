@@ -74,10 +74,10 @@
 		],
 		"crosslinkHeading": "Porquê confiar esta etapa a mim",
 		"crosslinkText": "Advogada inscrita na OAB desde 2013, doutorada e residente em Portugal, com uma trajetória construída entre os dois países. Conheça o percurso que sustenta este acompanhamento.",
-		"crosslinkRouteKey": "legal",
+		"crosslinkRouteKey": "about",
 		"note": "Atuação preventiva, consultiva e de apoio administrativo, orientada para a regularização e a integração jurídica. Não inclui representação em processos judiciais.",
 		"ctaHeading": "Vamos organizar a sua mudança para Portugal",
 		"ctaText": "Marque uma conversa inicial. Conte-me em que ponto está e traçamos juntos os próximos passos."
 	},
-	"ctaRefs": ["legal", "booking"]
+	"ctaRefs": ["about", "booking"]
 }
