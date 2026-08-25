@@ -34,7 +34,7 @@ const topics = page ? [...new Set(page.publications.flatMap((item) => item.topic
 				<h2>{publication.title}</h2>
 				{publication.journal && <p>{publication.journal}</p>}
 				{publication.topics?.length && <ul aria-label={locale === 'en' ? 'Topics' : 'Temas'}>{publication.topics.map((topic) => <li>{topic}</li>)}</ul>}</div>
-				{publication.linkStatus === 'valid' && publication.url ? <Button variant="outline" size="sm" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
+				{publication.linkStatus === 'valid' && publication.url ? <Button variant="outline" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
 			</article>)}</div>
 			<p class="publication-empty hidden" data-publication-empty>{page.filters.empty}</p>
 			<p class="publication-orcid-note">{page.orcidNote}</p>

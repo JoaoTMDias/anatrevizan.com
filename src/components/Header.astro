@@ -43,7 +43,11 @@ const bookingItem = navigation.find((item) => item.routeKey === 'booking');
 		<details class="mobile-nav lg:hidden">
 			<summary aria-expanded="false" class="mobile-nav__trigger cursor-pointer list-none rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden"><span class="sr-only">Menu</span><span class="mobile-nav__open" aria-hidden="true">☰</span><span class="mobile-nav__close" aria-hidden="true">×</span></summary>
 			<div class="fixed inset-0 z-40 bg-foreground/40" data-mobile-layer>
-			<div class="ml-auto h-full w-80 max-w-[85vw] overflow-y-auto bg-background p-5 pt-20 shadow-xl" role="dialog" aria-modal="true" aria-label={locale === 'en' ? 'Main menu' : 'Menu principal'} data-mobile-panel>
+			<div class="ml-auto h-full w-80 max-w-[85vw] overflow-y-auto bg-background p-5 shadow-xl" role="dialog" aria-modal="true" aria-label={locale === 'en' ? 'Main menu' : 'Menu principal'} data-mobile-panel>
+				<div class="mb-8 flex items-center justify-between gap-4">
+					<a href={pathFor('home', locale)} class="font-heading text-xl font-bold text-primary">{config?.identity?.name ?? 'Ana Trevizan'}</a>
+					<button type="button" class="flex size-11 items-center justify-center rounded-md text-2xl leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={locale === 'en' ? 'Close menu' : 'Fechar menu'} data-mobile-close>×</button>
+				</div>
 				<ul class="space-y-1">{navigationItems.map(({ item, itemRoute, children }) => <li>
 					{item.type === 'menu' && children.length > 0 ? <details class="mobile-section">
 						<summary aria-expanded="false" class="cursor-pointer list-none rounded-md px-3 py-3 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">{labelFor(item.label)} <span aria-hidden="true">⌄</span></summary>
@@ -67,7 +71,9 @@ const bookingItem = navigation.find((item) => item.routeKey === 'booking');
 		for (const menu of menus()) if (menu !== opened) menu.open = false;
 	}, true);
 	const mobile = document.querySelector<HTMLDetailsElement>('details.mobile-nav');
+	const mobileClose = mobile?.querySelector<HTMLElement>('[data-mobile-close]');
 	let mobileTrigger: HTMLElement | null = null;
+	mobileClose?.addEventListener('click', () => { if (mobile) mobile.open = false; });
 	mobile?.addEventListener('toggle', () => {
 		updateExpanded(mobile);
 		const main = document.querySelector<HTMLElement>('main, #main-content');

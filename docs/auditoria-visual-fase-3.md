@@ -22,27 +22,40 @@ Estado: em curso. Este documento não certifica ainda a conclusão da fase 3.
 - Os filtros de Consultoria eram botões `outline` independentes em vez de um controlo segmentado.
 - O estado vazio de Eventos perdeu o ícone e o botão verde da referência.
 - Contacto e Agendamento não tinham testes geométricos das duas colunas.
+- O drawer mobile não apresentava identidade nem um controlo explícito para fechar.
+- Os cartões de Publicações usavam botões menores, entrelinha e margens diferentes da referência.
+
+## Última matriz renderizada
+
+Executada sobre o build de preview atualizado, nas 19 rotas, a 1270 px e 320 px:
+
+- 76 navegações (Next e Astro) sem erros de consola;
+- nenhuma das 38 renderizações Astro apresenta overflow horizontal;
+- a referência Next mantém overflow próprio a 320 px em Contacto (348 px) e Agendamento (344 px), problema que não foi reproduzido;
+- Home: 4071/4118 px em desktop e 7682/7686 px em mobile (Next/Astro);
+- Publicações: 6421/6319 px em desktop; a soma dos 25 cartões é 4114/4016 px após a correção tipográfica;
+- as diferenças grandes restantes em Contacto, Agendamento e páginas legais correspondem aos limites funcionais/editoriais documentados abaixo.
 
 ## Matriz das 19 rotas
 
 | Rota Astro | Família | Estado da comparação | Diferenças ainda admitidas ou por rever |
 | --- | --- | --- | --- |
-| `/` | Home | correções aplicadas; recaptura pendente | identidade/CTA do header e barra legal do footer dependem de conteúdo aprovado |
-| `/consultoria` | Consultoria hub | correções aplicadas; recaptura pendente | filtros, cartões e dropdown a revalidar após build |
-| `/consultoria/migracao-e-mobilidade` | Serviço | correções aplicadas; recaptura pendente | destino/rótulo do cross-link editorial difere da referência |
-| `/consultoria/juridica` | Serviço | recaptura pendente | media da referência é um ficheiro vazio; usa fallback estático |
-| `/consultoria/ambiental-e-esg` | Serviço | recaptura pendente | media estática aprovada para a migração; vídeo ainda não ativado |
-| `/consultoria/politicas-publicas` | Serviço | recaptura pendente | media da referência é um ficheiro vazio; usa fallback estático |
-| `/consultoria/pareceres` | Serviço | recaptura pendente | media da referência é um ficheiro vazio; usa fallback estático |
-| `/academia` | Academia hub | recaptura pendente | CTA/footer afetados pelas correções globais |
-| `/academia/mentorias` | Serviço académico | recaptura pendente | conteúdo e estado editorial preservados |
-| `/academia/publicacoes` | Publicações | recaptura pendente | registos e ordem do snapshot editorial preservados; sincronização ORCID adiada |
-| `/academia/eventos` | Eventos | correções aplicadas; recaptura pendente | estado vazio honesto preservado |
-| `/academia/palestras` | Palestras | recaptura pendente | kit/media final não aprovado não é publicado |
-| `/academia/formacoes` | Formação | recaptura pendente | conteúdo e estado editorial preservados |
-| `/sobre` | Institucional | recaptura pendente | identidade e credenciais não são inventadas nem reescritas |
-| `/contacto` | Contacto | composição desktop corrigida | aviso e campos desativados mantidos porque o envio funcional está fora desta fase |
-| `/agendar` | Agendamento | composição desktop corrigida | link externo Calendly substitui deliberadamente o embed da referência |
+| `/` | Home | validada em desktop e mobile | identidade/CTA do header e barra legal do footer dependem de conteúdo aprovado |
+| `/consultoria` | Consultoria hub | validada em desktop e mobile | sem diferença estrutural pendente |
+| `/consultoria/migracao-e-mobilidade` | Serviço | validada visualmente | cross-link “Conhecer o percurso” alinhado com a referência por decisão do utilizador |
+| `/consultoria/juridica` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/consultoria/ambiental-e-esg` | Serviço | validada após correção dedicada | media estática aprovada para a migração; vídeo copiado mas não ativado |
+| `/consultoria/politicas-publicas` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/consultoria/pareceres` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
+| `/academia` | Academia hub | validada em desktop e mobile | sem diferença estrutural pendente |
+| `/academia/mentorias` | Serviço académico | validada em desktop e mobile | conteúdo e estado editorial preservados |
+| `/academia/publicacoes` | Publicações | estilo e responsividade validados | ordem de destaque do Next não está modelada no snapshot Astro; sincronização ORCID adiada |
+| `/academia/eventos` | Eventos | validada após correção do estado vazio | estado vazio honesto preservado |
+| `/academia/palestras` | Palestras | validada em desktop e mobile | kit/media final não aprovado não é publicado |
+| `/academia/formacoes` | Formação | validada em desktop e mobile | conteúdo e estado editorial preservados |
+| `/sobre` | Institucional | validada em desktop e mobile | identidade e credenciais não são inventadas nem reescritas |
+| `/contacto` | Contacto | composição e responsividade validadas | aviso e campos desativados mantidos porque o envio funcional está fora desta fase |
+| `/agendar` | Agendamento | composição e responsividade validadas | link externo Calendly substitui deliberadamente o embed da referência |
 | `/politica-de-privacidade` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |
 | `/termos` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |
 | `/cookies` | Legal | diferença editorial deliberada | referência contém apenas placeholder; texto final exige revisão jurídica |

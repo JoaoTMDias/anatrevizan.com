@@ -35,11 +35,11 @@
 - [x] Sistema visual da referência Next.js auditado e dividido em cinco grupos verificáveis; manifesto em `docs/auditoria-visual-fase-3.md`.
 - [x] Universo integral de 650 ocorrências visuais registado em `docs/inventario-estilos-nextjs.md`; nenhum estilo pode ser omitido apenas por redundância ou baixa qualidade da referência.
 - [x] Limite inicial confirmado: fundação visual, shell global e primitivos partilhados, sem alterar conteúdo, rotas, modelos ou estados editoriais.
-- [ ] Grupo 1 — implementação presente, mas validação visual reaberta após serem detetadas divergências relevantes no header e nos componentes partilhados.
-- [ ] Grupo 2 — implementação presente, mas heroes, grelhas, CTAs e ritmos devem ser comparados novamente com a referência renderizada.
-- [ ] Grupo 3 — família Consultoria implementada, com fidelidade visual das seis páginas ainda por confirmar página a página.
-- [ ] Grupo 4 — família Academia implementada, com fidelidade visual das páginas e estados ainda por confirmar página a página; ORCID permanece fora deste grupo.
-- [ ] Grupo 5 — QA visual das 19 rotas reaberto; a Home já revelou media não aplicada e dimensões divergentes apesar de os testes estruturais passarem.
+- [x] Grupo 1 — fontes, tokens, header, dropdowns, drawer mobile, footer, botões, foco e preferências do utilizador corrigidos e revalidados no browser.
+- [x] Grupo 2 — heroes, grelhas, CTAs e ritmos comparados novamente com a referência renderizada em desktop e mobile.
+- [x] Grupo 3 — família Consultoria revalidada página a página; o cross-link editorial de Migração requer uma decisão de conteúdo, sem impedir a validação visual.
+- [x] Grupo 4 — família Academia revalidada página a página; ordenação editorial das publicações e sincronização ORCID permanecem fora do âmbito visual.
+- [ ] Grupo 5 — matriz renderizada das 19 rotas concluída sem erros de consola ou overflow Astro; falta resolver/registar as decisões editoriais finais e executar o handoff de encerramento.
 
 ## Segurança do build editorial (agosto de 2026)
 

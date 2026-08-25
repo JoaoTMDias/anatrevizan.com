@@ -114,12 +114,21 @@ test.describe("localized draft pages", () => {
 		await expect(trigger).toHaveAttribute("aria-expanded", "true");
 		const dialog = menu.getByRole("dialog");
 		await expect(dialog).toBeVisible();
+		await expect(
+			dialog.getByRole("link", { name: "Ana Trevizan", exact: true }),
+		).toBeVisible();
+		const close = dialog.getByRole("button", { name: "Fechar menu" });
+		await expect(close).toBeVisible();
 		const layerBox = await menu.locator("[data-mobile-layer]").boundingBox();
 		const panelBox = await dialog.boundingBox();
 		expect(layerBox).toEqual({ x: 0, y: 0, width: 320, height: 800 });
 		expect(panelBox?.width).toBe(272);
 		expect(panelBox?.height).toBe(800);
 		expect(await page.locator("footer").getAttribute("inert")).not.toBeNull();
+		await close.click();
+		await expect(trigger).toHaveAttribute("aria-expanded", "false");
+		await trigger.focus();
+		await page.keyboard.press("Enter");
 		await page.keyboard.press("Escape");
 		await expect(trigger).toHaveAttribute("aria-expanded", "false");
 		expect(await page.locator("footer").getAttribute("inert")).toBeNull();
@@ -342,6 +351,15 @@ test.describe("localized draft pages", () => {
 			expect(errors).toEqual([]);
 		});
 	}
+
+	test("immigration trust cross-link follows the approved Next reference", async ({
+		page,
+	}) => {
+		await page.goto("/consultoria/migracao-e-mobilidade");
+		await expect(
+			page.getByRole("link", { name: "Conhecer o percurso" }),
+		).toHaveAttribute("href", "/sobre");
+	});
 
 	test("consulting pages reflow without horizontal overflow at 320px", async ({
 		page,

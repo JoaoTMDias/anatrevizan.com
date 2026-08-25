@@ -33,7 +33,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 			</ul>
 		</nav>
 		<div>
-			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact and legal' : 'Contacto e informação legal'}</p>
+			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact' : 'Contacto'}</p>
 			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
 				{email && <li><a class="hover:text-primary hover:underline" href={`mailto:${email}`}>{email}</a></li>}
 				{phone && <li><a class="hover:text-primary hover:underline" href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a></li>}
