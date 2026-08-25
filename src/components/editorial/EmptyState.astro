@@ -1,5 +1,6 @@
 ---
 import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
 
 interface Props {
 	heading: string;
@@ -12,7 +13,8 @@ const { heading, text, href, linkLabel } = Astro.props;
 ---
 
 <div class="editorial-empty-state" role="status">
+	<span class="editorial-empty-state__icon" aria-hidden="true"><Icon name="calendar-event" /></span>
 	<h2>{heading}</h2>
 	{text && <p>{text}</p>}
-	{href && linkLabel && <Button href={href} variant="link">{linkLabel}</Button>}
+	{href && linkLabel && <Button href={href} variant="accent">{linkLabel}</Button>}
 </div>

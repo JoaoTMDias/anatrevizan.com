@@ -10,7 +10,7 @@ const labelFor = (value: { pt: string; en: string } | null | undefined) => value
 const present = <T,>(value: T | null): value is T => value !== null;
 const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
 const menus = navigation.filter((item) => item.type === 'menu' && item.children?.length);
-const directLinks = navigation.filter((item) => item.type !== 'menu');
+const directLinks = navigation.filter((item) => item.type !== 'menu' && item.routeKey !== 'contact');
 const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
 const email = config?.contacts?.email;
 const phone = config?.contacts?.phone;
@@ -27,7 +27,10 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 		</nav>)}
 		<nav aria-label={locale === 'en' ? 'Institutional' : 'Institucional'}>
 			<p class="font-heading font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
-			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">{directLinks.map((item) => <li><a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}</ul>
+			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+				{directLinks.map((item) => <li><a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}
+				{legalRoutes.map((key) => <li><a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}
+			</ul>
 		</nav>
 		<div>
 			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact and legal' : 'Contacto e informação legal'}</p>
@@ -35,9 +38,8 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 				{email && <li><a class="hover:text-primary hover:underline" href={`mailto:${email}`}>{email}</a></li>}
 				{phone && <li><a class="hover:text-primary hover:underline" href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a></li>}
 				{profiles.map((profile) => <li><a class="hover:text-primary hover:underline" href={profile.url ?? undefined} rel="external noreferrer">{labelFor(profile.label)}</a></li>)}
-				{legalRoutes.map((key) => <li><a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}
 			</ul>
 		</div>
 	</div>
-	<div class="bg-primary text-primary-foreground"><div class="site-container py-5 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div></div>
+	<div class="bg-primary-800 text-primary-foreground"><div class="site-container py-5 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div></div>
 </footer>

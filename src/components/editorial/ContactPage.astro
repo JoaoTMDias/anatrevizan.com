@@ -29,7 +29,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
 	{contact ? <>
 		<PageHero title={data.title} subtitle={contact.subtitle} tag={contact.tag} locale={locale} data-tina-field={tinaField(data, 'contactPage')} />
 		<Section class="contact-layout">
-			<div class="lg:col-span-2">
+			<div>
 				<SectionHeading title={locale === 'en' ? 'Contact form' : 'Formulário de contacto'} />
 				<p id="contact-form-status" class="contact-form-notice"><Icon name="info-circle" />{locale === 'en' ? 'The form is editorially prepared, but secure submission will be activated in a later phase.' : 'O formulário encontra-se preparado editorialmente, mas o envio seguro será ativado numa fase posterior.'}</p>
 				<form class="contact-form" aria-describedby="contact-form-status"><fieldset disabled>

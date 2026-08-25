@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const css = readFileSync("src/styles/global.css", "utf8");
@@ -42,13 +42,20 @@ const booking = readFileSync(
 );
 const baseHead = readFileSync("src/components/BaseHead.astro", "utf8");
 const socialImage = readFileSync("public/og-default.svg", "utf8");
+const header = readFileSync("src/components/Header.astro", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
-		expect(css).toContain('@import "@fontsource-variable/playfair-display"');
+		expect(css).toContain('url("/fonts/inter-variable.woff2")');
+		expect(css).toContain('url("/fonts/playfair-display-variable.woff2")');
+		expect(statSync("public/fonts/inter-variable.woff2").size).toBe(48_432);
+		expect(statSync("public/fonts/playfair-display-variable.woff2").size).toBe(
+			38_460,
+		);
 		expect(css).toContain("--font-heading:");
 		expect(css).toContain("--primary: oklch(0.4 0.13 18)");
 		expect(css).toContain("--accent: oklch(0.45 0.14 140)");
+		expect(css).not.toContain("text-wrap: balance");
 	});
 
 	it("exposes every 50–950 reference color scale", () => {
@@ -73,6 +80,30 @@ describe("Phase 3 visual foundation", () => {
 		expect(css).toContain("@media (prefers-reduced-motion: reduce)");
 		expect(css).toContain("@media (forced-colors: active)");
 	});
+
+	it("uses a readable dedicated desktop navigation dropdown", () => {
+		expect(header).toContain("nav-dropdown__item");
+		expect(header).not.toContain("nav-dropdown__hub");
+		expect(css).toContain('.nav-dropdown__item[aria-current="page"]');
+		expect(css).toContain(
+			"background: color-mix(in oklab, var(--primary) 9%, var(--background))",
+		);
+	});
+
+	it("renders the approved Home hero artwork and reference grid proportions", () => {
+		expect(css).toContain('url("/hero-home.webp") center / cover no-repeat');
+		expect(css).toContain(".home-services");
+		expect(css).toContain("grid-template-columns: repeat(3, minmax(0, 1fr))");
+	});
+
+	it("matches the reference dimensions and media for internal heroes", () => {
+		expect(css).toContain("height: 42.5rem");
+		expect(css).toContain("height: 35rem");
+		expect(css).toContain(
+			"var(--hero-image) var(--hero-position) / cover no-repeat",
+		);
+		expect(css).toContain("grid-template-columns: repeat(3, minmax(0, 1fr))");
+	});
 });
 
 describe("Phase 3 consulting visual family", () => {
@@ -81,8 +112,10 @@ describe("Phase 3 consulting visual family", () => {
 			"const accent = data.routeKey === 'environmental-esg'",
 		);
 		expect(consultingService).toContain("tone={accent ? 'accent' : 'primary'}");
+		expect(consultingService).toContain(
+			"media={accent ? '/hero-ambiental.webp' : undefined}",
+		);
 		expect(css).toContain(".editorial-hero--accent");
-		expect(css).toContain(".consulting-card--accent");
 	});
 
 	it("provides explicit filter selection and responsive process steps", () => {
@@ -117,7 +150,7 @@ describe("Phase 3 academic visual family", () => {
 });
 
 describe("Phase 3 institutional visual family", () => {
-	it("migrates the complete Home presentation without unapproved media", () => {
+	it("migrates the complete Home presentation with the approved static media", () => {
 		expect(home).toContain("home-hero");
 		expect(home).toContain("home-gateways");
 		expect(home).toContain("home-differences");
@@ -159,10 +192,10 @@ describe("Phase 3 shared editorial structures", () => {
 		expect(card).toContain("<Tag class=");
 	});
 
-	it("uses fluid heroes and auto-fitting grids for narrow viewports", () => {
-		expect(css).toContain("min-height: clamp(24rem, 58vw, 35rem)");
-		expect(css).toContain(
-			"grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr))",
-		);
+	it("uses the reference hero heights and explicit responsive grids", () => {
+		expect(css).toContain("height: 35rem");
+		expect(css).toContain("height: 42.5rem");
+		expect(css).toContain("grid-template-columns: repeat(3, minmax(0, 1fr))");
+		expect(css).toContain("grid-template-columns: repeat(2, minmax(0, 1fr))");
 	});
 });

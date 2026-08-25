@@ -21,7 +21,7 @@ const icons = ['school', 'books', 'calendar-event', 'microphone-2', 'presentatio
 	{hub ? <>
 		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} data-tina-field={tinaField(data, 'academicHub')} />
 		<Section>
-			<p class="mb-10 max-w-3xl text-lg leading-relaxed text-muted-foreground">{hub.introText}</p>
+			<p class="mb-12 max-w-3xl leading-relaxed text-muted-foreground">{hub.introText}</p>
 			<div class="editorial-grid">
 				{hub.sections.map((item, index) => <a class:list={['academic-hub-card', item.highlight && 'academic-hub-card--highlight']} href={pathFor(item.routeKey, locale)}>
 					<span class="academic-icon" aria-hidden="true"><Icon name={icons[index]} /></span>

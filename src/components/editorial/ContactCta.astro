@@ -6,9 +6,10 @@ interface Props {
 	heading: string;
 	text: string;
 	locale: PublishedLocale;
+	showContactLink?: boolean;
 }
 
-const { heading, text, locale } = Astro.props;
+const { heading, text, locale, showContactLink = true } = Astro.props;
 ---
 
 <section class="editorial-cta" aria-labelledby="editorial-cta-heading">
@@ -16,12 +17,12 @@ const { heading, text, locale } = Astro.props;
 		<h2 id="editorial-cta-heading">{heading}</h2>
 		<p>{text}</p>
 		<div class="editorial-cta__actions">
-			<Button href={pathFor('booking', locale)} size="lg">
+			<Button href={pathFor('booking', locale)} variant="accent" size="lg">
 				{locale === 'en' ? 'Schedule a first conversation' : 'Agendar primeiro contacto'}
 			</Button>
-			<Button href={pathFor('contact', locale)} variant="outline" size="lg" class="editorial-cta__secondary">
+			{showContactLink && <Button href={pathFor('contact', locale)} variant="outlineInverse" size="lg">
 				{locale === 'en' ? 'Contact me' : 'Entrar em contacto'}
-			</Button>
+			</Button>}
 		</div>
 	</div>
 </section>

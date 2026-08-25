@@ -35,11 +35,11 @@
 - [x] Sistema visual da referência Next.js auditado e dividido em cinco grupos verificáveis; manifesto em `docs/auditoria-visual-fase-3.md`.
 - [x] Universo integral de 650 ocorrências visuais registado em `docs/inventario-estilos-nextjs.md`; nenhum estilo pode ser omitido apenas por redundância ou baixa qualidade da referência.
 - [x] Limite inicial confirmado: fundação visual, shell global e primitivos partilhados, sem alterar conteúdo, rotas, modelos ou estados editoriais.
-- [x] Grupo 1 — fundação visual, header, navegação, footer, botões, cards e notices validado e concluído.
-- [x] Grupo 2 — heroes estáticos, breadcrumbs, títulos de secção, grelhas, CTAs e estados vazios partilhados implementados e validados.
-- [x] Grupo 3 — família Consultoria aplicada às seis páginas, incluindo o acento verde reservado a Ambiental e ESG.
-- [x] Grupo 4 — família Academia e estados visuais de listas e filtros implementados e validados, sem implementar ORCID.
-- [x] Grupo 5 — institucional, contacto, agendamento, legais, 404/OG e QA visual final das 19 rotas concluídos.
+- [ ] Grupo 1 — implementação presente, mas validação visual reaberta após serem detetadas divergências relevantes no header e nos componentes partilhados.
+- [ ] Grupo 2 — implementação presente, mas heroes, grelhas, CTAs e ritmos devem ser comparados novamente com a referência renderizada.
+- [ ] Grupo 3 — família Consultoria implementada, com fidelidade visual das seis páginas ainda por confirmar página a página.
+- [ ] Grupo 4 — família Academia implementada, com fidelidade visual das páginas e estados ainda por confirmar página a página; ORCID permanece fora deste grupo.
+- [ ] Grupo 5 — QA visual das 19 rotas reaberto; a Home já revelou media não aplicada e dimensões divergentes apesar de os testes estruturais passarem.
 
 ## Segurança do build editorial (agosto de 2026)
 

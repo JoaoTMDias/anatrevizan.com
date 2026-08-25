@@ -3,8 +3,8 @@ import { tinaField } from '@tinacms/astro/tina-field';
 import type { CmsEditorial } from '../../lib/data';
 import type { ConsultingHubContent } from '../../lib/page-content';
 import { pathFor } from '../../lib/routing';
-import Button from '../ui/Button.astro';
 import Card from '../ui/Card.astro';
+import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import ContactCta from './ContactCta.astro';
 import DraftNotice from './DraftNotice.astro';
@@ -15,25 +15,26 @@ interface Props { data: CmsEditorial }
 const { data } = Astro.props;
 const hub = data.consultingHub as ConsultingHubContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const areaIcons = ['plane-departure', 'file-description', 'leaf', 'building-community', 'file-text'];
 ---
 
 <article id="main-content">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
-		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} data-tina-field={tinaField(data, 'consultingHub')} />
+		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} media="/hero-consultoria.webp" focalPoint="top" data-tina-field={tinaField(data, 'consultingHub')} />
 		<Section>
 			<SectionHeading title={hub.introHeading} subtitle={hub.introText} />
 			<div class="consulting-filters" role="group" aria-label={locale === 'en' ? 'Filter areas by country' : 'Filtrar áreas por país'} data-consulting-filters>
-				<Button variant="outline" size="sm" type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</Button>
-				<Button variant="outline" size="sm" type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</Button>
-				<Button variant="outline" size="sm" type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</Button>
+				<button type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</button>
+				<button type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</button>
+				<button type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</button>
 			</div>
 			<div class="editorial-grid" data-consulting-areas>
-				{hub.areas.map((area) => <Card as="article" class:list={['consulting-card p-6', area.routeKey === 'environmental-esg' && 'consulting-card--accent']} data-countries={area.countries.join(' ')}>
-					<p class="editorial-eyebrow consulting-card__tag">{area.tag}</p>
-					<h3 class="text-xl font-semibold">{area.title}</h3>
+				{hub.areas.map((area, index) => <Card as="article" class:list={['consulting-card gap-0 p-6 md:p-8', area.routeKey === 'environmental-esg' && 'consulting-card--accent']} data-countries={area.countries.join(' ')}>
+					<div class="consulting-card__heading"><span class="consulting-card__icon" aria-hidden="true"><Icon name={areaIcons[index]} /></span><p class="consulting-card__tag">{area.tag}</p></div>
+					<h3 class="text-lg font-semibold">{area.title}</h3>
 					<p class="text-sm leading-relaxed text-muted-foreground">{area.summary}</p>
-					<Button class="mt-auto self-start" variant="link" href={pathFor(area.routeKey, locale)}>{hub.areaCta}</Button>
+					<a class="consulting-card__cta" href={pathFor(area.routeKey, locale)}>{hub.areaCta}<Icon name="arrow-right" /></a>
 				</Card>)}
 			</div>
 		</Section>

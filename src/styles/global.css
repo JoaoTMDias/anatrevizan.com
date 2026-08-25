@@ -1,7 +1,21 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/playfair-display";
 @plugin "@tailwindcss/typography";
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/inter-variable.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 400 900;
+	font-display: swap;
+	src: url("/fonts/playfair-display-variable.woff2") format("woff2");
+}
 
 /* Metric-matched Arial fallback so the Inter swap doesn't reflow text (CLS). */
 @font-face {
@@ -14,8 +28,8 @@
 }
 
 @theme inline {
-	--font-sans: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
-	--font-heading: "Playfair Display Variable", Georgia, serif;
+	--font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+	--font-heading: "Playfair Display", Georgia, serif;
 	--font-body: var(--font-sans);
 	--font-label: var(--font-sans);
 	--color-primary-50: oklch(var(--primary-50));
@@ -203,7 +217,6 @@
 	h5,
 	h6 {
 		font-family: var(--font-heading);
-		text-wrap: balance;
 	}
 	a {
 		text-underline-offset: 0.2em;
@@ -224,6 +237,21 @@
 	body {
 		padding-top: 5rem;
 	}
+	.home-hero {
+		height: 40rem;
+	}
+	.editorial-hero {
+		height: 42.5rem;
+	}
+	.editorial-hero__inner {
+		padding-top: 7rem;
+	}
+	.academic-hub-card {
+		padding: 2rem;
+	}
+	.publication-card {
+		padding: 2rem;
+	}
 }
 
 @layer components {
@@ -242,27 +270,149 @@
 	.site-link:hover {
 		text-decoration-thickness: 0.14em;
 	}
-	.editorial-hero {
-		background: linear-gradient(
-			120deg,
-			color-mix(in oklab, var(--primary) 92%, black),
-			var(--primary)
-		);
+	.nav-menu__trigger {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		padding: 0.5rem 0.75rem;
+		border-radius: var(--radius-md);
+		color: color-mix(in oklab, var(--foreground) 82%, transparent);
+		font-weight: 500;
+		list-style: none;
+		cursor: pointer;
+	}
+	.nav-menu__trigger::-webkit-details-marker {
+		display: none;
+	}
+	.nav-menu__trigger:hover,
+	.nav-menu[data-current="true"] > .nav-menu__trigger,
+	.nav-menu[open] > .nav-menu__trigger {
+		background: color-mix(in oklab, var(--primary) 7%, var(--background));
+		color: var(--primary);
+	}
+	.nav-dropdown {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		z-index: 40;
+		width: min(20rem, calc(100vw - 3rem));
+		margin-top: 0.5rem;
+		padding: 0.5rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		background: var(--background);
+		box-shadow: 0 1rem 2.5rem oklch(0.2 0.03 18 / 0.16);
+	}
+	.nav-dropdown__item {
+		display: grid;
+		gap: 0.1875rem;
+		padding: 0.75rem 0.875rem;
+		border-left: 3px solid transparent;
+		border-radius: var(--radius-md);
+		color: var(--foreground);
+		text-decoration: none;
+		transition:
+			background-color 150ms,
+			border-color 150ms;
+	}
+	.nav-dropdown__item:hover,
+	.nav-dropdown__item:focus-visible {
+		background: color-mix(in oklab, var(--primary) 7%, var(--background));
+		border-left-color: color-mix(in oklab, var(--primary) 38%, transparent);
+	}
+	.nav-dropdown__item[aria-current="page"] {
+		background: color-mix(in oklab, var(--primary) 9%, var(--background));
+		border-left-color: var(--primary);
+	}
+	.nav-dropdown__item--highlight[aria-current="page"] {
+		background: color-mix(in oklab, var(--accent) 12%, var(--background));
+		border-left-color: var(--accent);
+	}
+	.nav-dropdown__item--highlight:not([aria-current="page"]) {
+		border-left-color: color-mix(in oklab, var(--accent) 55%, transparent);
+	}
+	.nav-dropdown__tag {
+		color: var(--primary);
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: normal;
+		line-height: 1.2;
+	}
+	.nav-dropdown__item[aria-current="page"] .nav-dropdown__tag {
+		color: var(--primary);
+	}
+	.nav-dropdown__item--highlight[aria-current="page"] .nav-dropdown__tag {
+		color: color-mix(in oklab, var(--accent) 78%, black);
+	}
+	.nav-dropdown__title {
+		font-size: 0.9375rem;
+		font-weight: 650;
+		line-height: 1.25;
+	}
+	.nav-dropdown__description {
+		color: var(--muted-foreground);
+		font-size: 0.75rem;
+		line-height: 1.35;
+	}
+	.mobile-nav__trigger {
+		display: grid;
+		width: 2.5rem;
+		height: 2.5rem;
+		place-items: center;
+		font-size: 1.5rem;
+		line-height: 1;
+	}
+	.mobile-nav__close,
+	.mobile-nav[open] .mobile-nav__open {
+		display: none;
+	}
+	.mobile-nav[open] .mobile-nav__close {
+		display: inline;
+	}
+	.mobile-cta-bar {
+		position: fixed;
+		inset-inline: 0;
+		bottom: 0;
+		z-index: 40;
+		margin: 0.75rem;
+		min-height: 2.75rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--radius-md);
+		background: var(--primary);
 		color: var(--primary-foreground);
-		min-height: clamp(24rem, 58vw, 35rem);
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-align: center;
+		text-decoration: none;
+	}
+	.editorial-hero {
+		height: 35rem;
+		background: #12261a;
+		color: #fff3dc;
+		text-shadow:
+			0 1px 2px rgb(8 20 10 / 60%),
+			0 2px 16px rgb(8 20 10 / 40%);
 	}
 	.editorial-hero__inner {
 		display: flex;
-		min-height: inherit;
+		height: 100%;
 		flex-direction: column;
-		padding-block: clamp(2rem, 5vw, 4rem);
+		padding-top: 6rem;
+		padding-bottom: 2rem;
 	}
 	.editorial-hero--accent {
-		background: linear-gradient(
-			120deg,
-			color-mix(in oklab, var(--accent) 78%, black),
-			color-mix(in oklab, var(--accent) 88%, var(--foreground))
-		);
+		background: #12261a;
+	}
+	.editorial-hero--media {
+		background:
+			linear-gradient(
+				to bottom,
+				rgb(18 38 26 / 55%) 0%,
+				rgb(18 38 26 / 30%) 40%,
+				rgb(12 26 16 / 75%) 100%
+			),
+			var(--hero-image) var(--hero-position) / cover no-repeat,
+			#12261a;
 	}
 	.editorial-hero__content {
 		display: flex;
@@ -270,18 +420,18 @@
 		flex: 1;
 		flex-direction: column;
 		justify-content: center;
-		padding-block: 3rem;
+		padding-block: 2rem;
 	}
 	.editorial-hero h1 {
-		font-size: clamp(2.5rem, 7vw, 4rem);
+		font-size: clamp(2.25rem, 7vw, 3.75rem);
 		font-weight: 700;
 		letter-spacing: -0.025em;
 		line-height: 1.05;
 	}
 	.editorial-hero__subtitle {
-		max-width: 40rem;
+		max-width: 36rem;
 		margin-top: 1.5rem;
-		color: color-mix(in oklab, var(--primary-foreground) 82%, transparent);
+		color: rgb(255 243 220 / 90%);
 		font-size: clamp(1rem, 2vw, 1.125rem);
 		line-height: 1.7;
 	}
@@ -305,20 +455,25 @@
 		text-decoration: underline;
 	}
 	.editorial-eyebrow {
-		margin-bottom: 1rem;
+		align-self: flex-start;
+		margin-bottom: 1.5rem;
+		padding: 0.375rem 1rem;
+		border: 1px solid rgb(255 243 220 / 50%);
+		border-radius: 999px;
+		background: rgb(18 38 26 / 30%);
 		font-size: 0.75rem;
-		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
+		backdrop-filter: blur(0.5rem);
+		text-shadow: none;
 	}
 	.editorial-section-heading {
 		max-width: 44rem;
 		margin-bottom: 2rem;
 	}
 	.editorial-section-heading h2,
-	.editorial-empty-state h2,
 	.editorial-cta h2 {
-		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-size: clamp(1.875rem, 4vw, 2.25rem);
 		font-weight: 700;
 		line-height: 1.15;
 	}
@@ -331,20 +486,38 @@
 	.editorial-grid {
 		display: grid;
 		gap: 1.5rem;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.editorial-empty-state {
 		max-width: 40rem;
 		margin-inline: auto;
-		padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+		padding: 3.5rem 2.5rem;
 		text-align: center;
+	}
+	.editorial-empty-state__icon {
+		display: grid;
+		width: 3.5rem;
+		height: 3.5rem;
+		margin: 0 auto 1.5rem;
+		place-items: center;
+		border-radius: 999px;
+		background: var(--secondary);
+		color: var(--accent);
+	}
+	.editorial-empty-state__icon svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	.editorial-empty-state h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
 	}
 	.editorial-empty-state p {
 		margin: 1rem auto 1.5rem;
 		color: var(--muted-foreground);
 	}
 	.editorial-cta {
-		background: color-mix(in oklab, var(--primary) 82%, black);
+		background: oklch(var(--primary-800));
 		color: var(--primary-foreground);
 		padding-block: clamp(4rem, 8vw, 5rem);
 	}
@@ -360,10 +533,6 @@
 		justify-content: center;
 		gap: 0.75rem;
 	}
-	.editorial-cta__secondary {
-		border-color: var(--primary-foreground);
-		color: var(--primary-foreground);
-	}
 	.consulting-filters {
 		display: inline-flex;
 		flex-wrap: wrap;
@@ -374,22 +543,84 @@
 		border-radius: var(--radius-lg);
 		background: var(--secondary);
 	}
+	.consulting-filters button {
+		min-height: 2.25rem;
+		padding: 0.5rem 1rem;
+		border: 0;
+		border-radius: var(--radius-md);
+		background: transparent;
+		color: var(--muted-foreground);
+		font-size: 0.875rem;
+		cursor: pointer;
+		transition:
+			color 150ms,
+			background-color 150ms;
+	}
+	.consulting-filters button:hover {
+		color: var(--primary);
+	}
 	.consulting-filters [aria-pressed="true"] {
-		border-color: var(--primary);
 		background: var(--primary);
 		color: var(--primary-foreground);
 	}
 	.consulting-card {
-		border-top: 3px solid color-mix(in oklab, var(--primary) 72%, var(--border));
+		transition:
+			border-color 200ms,
+			box-shadow 200ms;
 	}
-	.consulting-card--accent {
-		border-top-color: var(--accent);
+	.consulting-card:hover {
+		border-color: color-mix(in oklab, var(--primary) 38%, var(--border));
+		box-shadow: var(--shadow-md);
+	}
+	.consulting-card__heading {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+	.consulting-card__icon {
+		display: grid;
+		width: 2.5rem;
+		height: 2.5rem;
+		flex: none;
+		place-items: center;
+		border-radius: var(--radius-lg);
+		background: color-mix(in oklab, var(--primary) 13%, var(--background));
+		color: var(--primary);
+	}
+	.consulting-card__icon svg {
+		width: 1.125rem;
+		height: 1.125rem;
 	}
 	.consulting-card__tag {
 		color: var(--primary);
+		font-size: 0.75rem;
+		font-weight: 600;
 	}
-	.consulting-card--accent .consulting-card__tag {
-		color: var(--accent);
+	.consulting-card__cta {
+		display: inline-flex;
+		align-items: center;
+		align-self: flex-start;
+		gap: 0.25rem;
+		margin-top: 1rem;
+		color: var(--primary);
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.consulting-card__cta svg {
+		width: 1rem;
+		height: 1rem;
+		transition: transform 200ms;
+	}
+	.consulting-card__cta:hover svg {
+		transform: translateX(0.25rem);
+	}
+	.consulting-card h3 + p {
+		margin-top: 0.5rem;
+	}
+	.consulting-card__items {
+		margin-top: 0.75rem;
 	}
 	.consulting-steps {
 		display: grid;
@@ -423,6 +654,27 @@
 		font-size: 0.875rem;
 		line-height: 1.6;
 	}
+	.consulting-service--immigration-mobility .consulting-step__number {
+		display: block;
+		width: auto;
+		height: auto;
+		margin-bottom: 0.5rem;
+		background: transparent;
+		color: color-mix(in oklab, var(--primary) 28%, var(--background));
+		font-family: var(--font-heading);
+		font-size: 2.25rem;
+		line-height: 1;
+	}
+	.consulting-crosslink {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: 2rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		background: var(--card);
+	}
 	.academic-icon {
 		display: grid;
 		width: 2.75rem;
@@ -439,7 +691,6 @@
 	}
 	.academic-hub-card {
 		display: flex;
-		min-height: 17rem;
 		flex-direction: column;
 		gap: 1rem;
 		padding: 1.5rem;
@@ -743,24 +994,22 @@
 	.home-hero {
 		position: relative;
 		display: flex;
-		min-height: clamp(32.5rem, 58vw, 40rem);
+		height: 32.5rem;
 		align-items: center;
 		overflow: hidden;
 		background:
 			linear-gradient(
 				180deg,
-				oklch(0.2 0.07 18 / 0.5),
-				oklch(0.2 0.07 18 / 0.82)
+				oklch(0.2 0.03 18 / 0.5),
+				oklch(0.2 0.03 18 / 0.35) 50%,
+				oklch(0.2 0.03 18 / 0.55)
 			),
-			linear-gradient(
-				135deg,
-				var(--primary),
-				color-mix(in oklab, var(--primary) 68%, black)
-			);
+			url("/hero-home.webp") center / cover no-repeat,
+			var(--primary);
 		color: var(--primary-foreground);
 	}
 	.home-hero__inner {
-		padding-block: clamp(4rem, 10vw, 7rem);
+		padding-block: 2rem;
 	}
 	.home-brand-words {
 		display: flex;
@@ -785,10 +1034,10 @@
 		height: 0.875rem;
 	}
 	.home-hero h1 {
-		max-width: 52rem;
+		max-width: 48rem;
 		font-size: clamp(2rem, 6vw, 3.75rem);
 		font-weight: 700;
-		line-height: 1.1;
+		line-height: 1;
 	}
 	.home-hero h1 + p {
 		max-width: 36rem;
@@ -803,22 +1052,16 @@
 		gap: 1rem;
 		margin-top: 2rem;
 	}
-	.home-accent-button {
-		background: var(--accent);
-		color: var(--accent-foreground);
-	}
-	.home-accent-button:hover {
-		background: color-mix(in oklab, var(--accent) 88%, black);
-	}
-	.home-hero__secondary {
-		border-color: var(--primary-foreground);
-		color: var(--primary-foreground);
-	}
 	.home-gateways,
 	.about-current-work {
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.home-services {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.home-gateway {
 		display: grid;
@@ -930,7 +1173,7 @@
 	}
 	.home-service-card {
 		display: flex;
-		min-height: 16rem;
+		min-height: 15rem;
 		flex-direction: column;
 		gap: 0.75rem;
 		padding: 1.5rem;
@@ -951,6 +1194,15 @@
 	}
 	.home-service-card > p {
 		flex: 1;
+	}
+	@media (min-width: 48rem) {
+		.home-gateways {
+			gap: 2.5rem;
+		}
+		.home-gateway,
+		.home-service-card {
+			padding: 2rem;
+		}
 	}
 	.home-academic-heading {
 		display: flex;
@@ -1384,7 +1636,19 @@
 	}
 }
 
+@media (max-width: 63.999rem) {
+	.editorial-grid,
+	.home-differences,
+	.home-services {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
 @media (max-width: 47.999rem) {
+	.consulting-crosslink {
+		align-items: flex-start;
+		flex-direction: column;
+	}
 	.publication-filters,
 	.publication-filters label,
 	.publication-filters select {
@@ -1406,6 +1670,8 @@
 	.home-gateways,
 	.home-differences,
 	.home-publications,
+	.home-services,
+	.editorial-grid,
 	.about-current-work,
 	.about-values {
 		grid-template-columns: 1fr;

@@ -34,18 +34,18 @@ para omitir a aparência correspondente.
 | Escalas primary, accent, secondary, background e foreground 50–950 | Migrado | `src/styles/global.css` |
 | Inter, Playfair Display e alias de label | Migrado | `src/styles/global.css` |
 | Contentor, botões, títulos, subtítulos e cartões base | Migrado | `src/styles/global.css`, `src/components/ui/` |
-| Header desktop/mobile, dropdowns e estados ativos | Migrado e validado | `src/components/Header.astro` |
-| Footer responsivo e barra inferior | Migrado e validado | `src/components/Footer.astro` |
-| Hero interno, breadcrumb, tag e overlay estático | Migrado sem media final | `src/components/editorial/PageHero.astro` |
+| Header desktop/mobile, dropdowns e estados ativos | Implementado; validação visual reaberta | `src/components/Header.astro` |
+| Footer responsivo e barra inferior | Implementado; validação visual reaberta | `src/components/Footer.astro` |
+| Hero interno, breadcrumb, tag e overlay estático | Implementado; media e proporções em rever | `src/components/editorial/PageHero.astro` |
 | Hero líquido Ambiental/ESG | Aparência estática migrada; shader e media diferidos | `PageHero.astro`, `global.css` |
 | CTA partilhado | Migrado | `src/components/editorial/ContactCta.astro` |
-| Hub e cinco serviços de Consultoria | Migrado e validado | `ConsultingHubPage.astro`, `ConsultingServicePage.astro` |
-| Hub e páginas da Academia | Migrado e validado no grupo 4 | `src/components/editorial/Academic*.astro` e páginas dedicadas |
-| Home e Sobre | Migrado e validado no grupo 5 | `HomePage.astro`, `AboutPage.astro` |
-| Contacto e formulário visual | Migrado e validado; sem submissão funcional | `ContactPage.astro` |
-| Agendamento e Calendly visual | Migrado e validado; sem embed | `BookingPage.astro` |
-| Legais e placeholders | Migrado e validado como estado de revisão | componentes legais e estados vazios |
-| Página 404 e OG visual | Migrado e validado com placeholder tipográfico | `src/pages/404.astro`, `BaseHead.astro`, `public/og-default.svg` |
+| Hub e cinco serviços de Consultoria | Implementado; comparação visual pendente | `ConsultingHubPage.astro`, `ConsultingServicePage.astro` |
+| Hub e páginas da Academia | Implementado; comparação visual pendente | `src/components/editorial/Academic*.astro` e páginas dedicadas |
+| Home e Sobre | Home em correção; Sobre por rever | `HomePage.astro`, `AboutPage.astro` |
+| Contacto e formulário visual | Implementado; comparação visual pendente; sem submissão funcional | `ContactPage.astro` |
+| Agendamento e Calendly visual | Implementado; comparação visual pendente; sem embed | `BookingPage.astro` |
+| Legais e placeholders | Implementado como estado de revisão; comparação visual pendente | componentes legais e estados vazios |
+| Página 404 e OG visual | Implementado; comparação visual pendente | `src/pages/404.astro`, `BaseHead.astro`, `public/og-default.svg` |
 
 ## Elementos deliberadamente não copiados como implementação
 
@@ -58,3 +58,7 @@ para omitir a aparência correspondente.
 
 A aparência estática associada a estes elementos continua dentro da cobertura;
 apenas os mecanismos problemáticos ficam excluídos.
+
+Os ficheiros media da referência estão auditados separadamente em
+`docs/inventario-assets-nextjs.md`. Os cinco assets válidos foram preservados
+em `public/`; os 40 placeholders de 0 bytes não foram copiados.
