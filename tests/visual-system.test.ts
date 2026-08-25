@@ -31,6 +31,17 @@ const speaking = readFileSync(
 	"src/components/editorial/SpeakingPage.astro",
 	"utf8",
 );
+const home = readFileSync("src/components/editorial/HomePage.astro", "utf8");
+const contact = readFileSync(
+	"src/components/editorial/ContactPage.astro",
+	"utf8",
+);
+const booking = readFileSync(
+	"src/components/editorial/BookingPage.astro",
+	"utf8",
+);
+const baseHead = readFileSync("src/components/BaseHead.astro", "utf8");
+const socialImage = readFileSync("public/og-default.svg", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -102,6 +113,30 @@ describe("Phase 3 academic visual family", () => {
 		expect(speaking).toContain("speaking-kit-notice");
 		expect(speaking).toContain("speaking-topic");
 		expect(speaking).not.toContain('href="#"');
+	});
+});
+
+describe("Phase 3 institutional visual family", () => {
+	it("migrates the complete Home presentation without unapproved media", () => {
+		expect(home).toContain("home-hero");
+		expect(home).toContain("home-gateways");
+		expect(home).toContain("home-differences");
+		expect(home).toContain("home-publications");
+		expect(home).not.toContain("<video");
+	});
+
+	it("keeps contact and booking presentation safe and non-embedded", () => {
+		expect(contact).toContain("contact-form-notice");
+		expect(contact).toContain("<fieldset disabled>");
+		expect(booking).toContain("booking-panel");
+		expect(booking).not.toContain("<iframe");
+	});
+
+	it("provides the approved typographic social-image placeholder", () => {
+		expect(baseHead).toContain("/og-default.svg");
+		expect(baseHead).toContain('name="twitter:card"');
+		expect(socialImage).toContain('width="1200" height="630"');
+		expect(socialImage).toContain("Dra. Ana Trevizan");
 	});
 });
 

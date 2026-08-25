@@ -39,7 +39,7 @@
 - [x] Grupo 2 — heroes estáticos, breadcrumbs, títulos de secção, grelhas, CTAs e estados vazios partilhados implementados e validados.
 - [x] Grupo 3 — família Consultoria aplicada às seis páginas, incluindo o acento verde reservado a Ambiental e ESG.
 - [x] Grupo 4 — família Academia e estados visuais de listas e filtros implementados e validados, sem implementar ORCID.
-- [ ] Grupo 5 — institucional, contacto, agendamento, legais e QA visual final das 19 rotas.
+- [x] Grupo 5 — institucional, contacto, agendamento, legais, 404/OG e QA visual final das 19 rotas concluídos.
 
 ## Segurança do build editorial (agosto de 2026)
 
