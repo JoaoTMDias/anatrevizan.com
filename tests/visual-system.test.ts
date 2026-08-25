@@ -43,6 +43,8 @@ const booking = readFileSync(
 const baseHead = readFileSync("src/components/BaseHead.astro", "utf8");
 const socialImage = readFileSync("public/og-default.svg", "utf8");
 const header = readFileSync("src/components/Header.astro", "utf8");
+const footer = readFileSync("src/components/Footer.astro", "utf8");
+const iconLink = readFileSync("src/components/IconLink.astro", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -185,6 +187,16 @@ describe("Phase 3 shared editorial structures", () => {
 		expect(contactCta).toContain("pathFor('contact', locale)");
 		expect(emptyState).toContain("href && linkLabel");
 		expect(`${contactCta}${emptyState}`).not.toContain('href="#"');
+		expect(contactCta).toContain("Falar sobre o meu caso");
+	});
+
+	it("renders editable footer identity and valid accessible profile links", () => {
+		expect(footer).toContain("professionalRegistration");
+		expect(footer).toContain("serviceLanguages");
+		expect(footer).toContain("<IconLink");
+		expect(iconLink).toContain("title: string");
+		expect(iconLink).toContain("link: string");
+		expect(iconLink).not.toContain("?? '#'");
 	});
 
 	it("preserves article semantics for independent editorial cards", () => {

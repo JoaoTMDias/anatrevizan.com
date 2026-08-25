@@ -16,7 +16,7 @@ const bookingItem = navigation.find((item) => item.routeKey === 'booking');
 <a class="sr-only focus:fixed focus:left-4 focus:top-3 focus:z-[70] focus:block focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg" href="#main-content">{locale === 'en' ? 'Skip to content' : 'Saltar para o conteúdo'}</a>
 <header class="fixed inset-x-0 top-0 z-50 h-16 border-b border-border/80 bg-background shadow-sm md:h-20">
 	<nav aria-label={locale === 'en' ? 'Main navigation' : 'Navegação principal'} class="site-container flex h-full items-center justify-between gap-4">
-		<a href={pathFor('home', locale)} class="shrink-0 font-heading text-xl font-bold text-primary md:text-2xl" aria-current={routeKey === 'home' ? 'page' : undefined}>{config?.identity?.name ?? 'Ana Trevizan'}</a>
+		<a href={pathFor('home', locale)} class="shrink-0 font-heading text-xl font-bold text-primary md:text-2xl" aria-current={routeKey === 'home' ? 'page' : undefined}>{config?.identity?.name ?? 'Dra. Ana Trevizan'}</a>
 		<ul class="hidden items-center justify-end gap-1 text-sm lg:flex">
 			{navigationItems.map(({ item, itemRoute, children }) => <li class="relative">
 					{item.type === 'menu' && children.length > 0 ? (
@@ -45,7 +45,7 @@ const bookingItem = navigation.find((item) => item.routeKey === 'booking');
 			<div class="fixed inset-0 z-40 bg-foreground/40" data-mobile-layer>
 			<div class="ml-auto h-full w-80 max-w-[85vw] overflow-y-auto bg-background p-5 shadow-xl" role="dialog" aria-modal="true" aria-label={locale === 'en' ? 'Main menu' : 'Menu principal'} data-mobile-panel>
 				<div class="mb-8 flex items-center justify-between gap-4">
-					<a href={pathFor('home', locale)} class="font-heading text-xl font-bold text-primary">{config?.identity?.name ?? 'Ana Trevizan'}</a>
+					<a href={pathFor('home', locale)} class="font-heading text-xl font-bold text-primary">{config?.identity?.name ?? 'Dra. Ana Trevizan'}</a>
 					<button type="button" class="flex size-11 items-center justify-center rounded-md text-2xl leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={locale === 'en' ? 'Close menu' : 'Fechar menu'} data-mobile-close>×</button>
 				</div>
 				<ul class="space-y-1">{navigationItems.map(({ item, itemRoute, children }) => <li>
@@ -59,7 +59,7 @@ const bookingItem = navigation.find((item) => item.routeKey === 'booking');
 		</details>
 	</nav>
 </header>
-<a class="mobile-cta-bar lg:hidden" href={pathFor('booking', locale)}>{bookingItem ? labelFor(bookingItem.label) : (locale === 'en' ? 'Book a call' : 'Agendar')}</a>
+<a class="mobile-cta-bar lg:hidden" href={pathFor('booking', locale)}>{bookingItem ? labelFor(bookingItem.label) : (locale === 'en' ? 'Book a call' : 'Agendar primeiro contacto')}</a>
 <script>
 	const menus = () => [...document.querySelectorAll<HTMLDetailsElement>('details.nav-menu')];
 	const updateExpanded = (details: HTMLDetailsElement) => details.querySelector<HTMLElement>(':scope > summary')?.setAttribute('aria-expanded', String(details.open));

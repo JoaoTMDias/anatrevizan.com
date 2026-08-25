@@ -2935,6 +2935,219 @@
 						"uid": false
 					},
 					{
+						"name": "privacyPage",
+						"label": "Privacy policy sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "sourceStatus",
+								"label": "Historical source status",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "privacyPage", "sourceStatus"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "reviewRequirements",
+								"label": "Required qualified-review coverage",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "privacyPage", "reviewRequirements"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "sections",
+								"label": "Qualified legal copy sections",
+								"description": "Leave empty until reviewed legal copy is available.",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "heading",
+										"label": "Heading",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"privacyPage",
+											"sections",
+											"heading"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "paragraphs",
+										"label": "Paragraphs",
+										"type": "string",
+										"list": true,
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"privacyPage",
+											"sections",
+											"paragraphs"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "privacyPage", "sections"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "privacyPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "termsPage",
+						"label": "Terms of use sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "sourceStatus",
+								"label": "Historical source status",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "termsPage", "sourceStatus"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "reviewRequirements",
+								"label": "Required qualified-review coverage",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "termsPage", "reviewRequirements"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "sections",
+								"label": "Qualified legal copy sections",
+								"description": "Leave empty until reviewed legal copy is available.",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "heading",
+										"label": "Heading",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"termsPage",
+											"sections",
+											"heading"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "paragraphs",
+										"label": "Paragraphs",
+										"type": "string",
+										"list": true,
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"termsPage",
+											"sections",
+											"paragraphs"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "termsPage", "sections"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "termsPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
+						"name": "cookiesPage",
+						"label": "Cookie policy sections",
+						"type": "object",
+						"fields": [
+							{
+								"name": "sourceStatus",
+								"label": "Historical source status",
+								"type": "string",
+								"required": true,
+								"namespace": ["editorial", "cookiesPage", "sourceStatus"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "reviewRequirements",
+								"label": "Required qualified-review coverage",
+								"type": "string",
+								"list": true,
+								"required": true,
+								"namespace": ["editorial", "cookiesPage", "reviewRequirements"],
+								"searchable": true,
+								"uid": false
+							},
+							{
+								"name": "sections",
+								"label": "Qualified legal copy sections",
+								"description": "Leave empty until reviewed legal copy is available.",
+								"type": "object",
+								"list": true,
+								"fields": [
+									{
+										"name": "heading",
+										"label": "Heading",
+										"type": "string",
+										"required": true,
+										"namespace": [
+											"editorial",
+											"cookiesPage",
+											"sections",
+											"heading"
+										],
+										"searchable": true,
+										"uid": false
+									},
+									{
+										"name": "paragraphs",
+										"label": "Paragraphs",
+										"type": "string",
+										"list": true,
+										"required": true,
+										"ui": { "component": "textarea" },
+										"namespace": [
+											"editorial",
+											"cookiesPage",
+											"sections",
+											"paragraphs"
+										],
+										"searchable": true,
+										"uid": false
+									}
+								],
+								"namespace": ["editorial", "cookiesPage", "sections"],
+								"searchable": true,
+								"uid": false
+							}
+						],
+						"namespace": ["editorial", "cookiesPage"],
+						"searchable": true,
+						"uid": false
+					},
+					{
 						"name": "ctaRefs",
 						"label": "CTA identifiers",
 						"type": "string",
@@ -9451,6 +9664,279 @@
 				"kind": "ObjectTypeDefinition",
 				"interfaces": [],
 				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialPrivacyPageSections" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialPrivacyPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialPrivacyPageSections"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialTermsPageSections" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialTermsPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialTermsPageSections"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialCookiesPageSections" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
+				"name": { "kind": "Name", "value": "EditorialCookiesPage" },
+				"fields": [
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"arguments": [],
+						"type": {
+							"kind": "NonNullType",
+							"type": {
+								"kind": "ListType",
+								"type": {
+									"kind": "NonNullType",
+									"type": {
+										"kind": "NamedType",
+										"name": { "kind": "Name", "value": "String" }
+									}
+								}
+							}
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"arguments": [],
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialCookiesPageSections"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "ObjectTypeDefinition",
+				"interfaces": [],
+				"directives": [],
 				"name": { "kind": "Name", "value": "EditorialLegal" },
 				"fields": [
 					{
@@ -9711,6 +10197,33 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialBookingPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "privacyPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialPrivacyPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "termsPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialTermsPage" }
+						}
+					},
+					{
+						"kind": "FieldDefinition",
+						"name": { "kind": "Name", "value": "cookiesPage" },
+						"arguments": [],
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialCookiesPage" }
 						}
 					},
 					{
@@ -12049,6 +12562,177 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPrivacyPageSectionsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialPrivacyPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPrivacyPageSectionsFilter"
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialTermsPageSectionsFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialTermsPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialTermsPageSectionsFilter"
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialCookiesPageSectionsFilter"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialCookiesPageFilter" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "StringFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialCookiesPageSectionsFilter"
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalFilter" },
 				"fields": [
 					{
@@ -12267,6 +12951,30 @@
 						"type": {
 							"kind": "NamedType",
 							"name": { "kind": "Name", "value": "EditorialBookingPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "privacyPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialPrivacyPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "termsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialTermsPageFilter" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "cookiesPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialCookiesPageFilter" }
 						}
 					},
 					{
@@ -19897,6 +20605,207 @@
 			},
 			{
 				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialPrivacyPageSectionsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialPrivacyPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialPrivacyPageSectionsMutation"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialTermsPageSectionsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialTermsPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialTermsPageSectionsMutation"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": {
+					"kind": "Name",
+					"value": "EditorialCookiesPageSectionsMutation"
+				},
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "heading" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "paragraphs" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
+				"name": { "kind": "Name", "value": "EditorialCookiesPageMutation" },
+				"fields": [
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sourceStatus" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "String" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "reviewRequirements" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": { "kind": "Name", "value": "String" }
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "sections" },
+						"type": {
+							"kind": "ListType",
+							"type": {
+								"kind": "NamedType",
+								"name": {
+									"kind": "Name",
+									"value": "EditorialCookiesPageSectionsMutation"
+								}
+							}
+						}
+					}
+				]
+			},
+			{
+				"kind": "InputObjectTypeDefinition",
 				"name": { "kind": "Name", "value": "EditorialLegalMutation" },
 				"fields": [
 					{
@@ -20126,6 +21035,36 @@
 							"name": {
 								"kind": "Name",
 								"value": "EditorialBookingPageMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "privacyPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialPrivacyPageMutation"
+							}
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "termsPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": { "kind": "Name", "value": "EditorialTermsPageMutation" }
+						}
+					},
+					{
+						"kind": "InputValueDefinition",
+						"name": { "kind": "Name", "value": "cookiesPage" },
+						"type": {
+							"kind": "NamedType",
+							"name": {
+								"kind": "Name",
+								"value": "EditorialCookiesPageMutation"
 							}
 						}
 					},

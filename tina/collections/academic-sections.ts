@@ -113,6 +113,12 @@ export const publicationsPageFields: TinaField[] = [
 					text("title", "Title"),
 					text("journal", "Journal", false),
 					text("year", "Year", false),
+					{
+						name: "priority",
+						label: "Editorial priority",
+						type: "number",
+						description: "Lower values appear first; items without priority are ordered by year.",
+					},
 					text("type", "Type", false),
 					text("doi", "DOI", false),
 					text("url", "URL", false),

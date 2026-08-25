@@ -115,8 +115,11 @@ test.describe("localized draft pages", () => {
 		const dialog = menu.getByRole("dialog");
 		await expect(dialog).toBeVisible();
 		await expect(
-			dialog.getByRole("link", { name: "Ana Trevizan", exact: true }),
+			dialog.getByRole("link", { name: "Dra. Ana Trevizan", exact: true }),
 		).toBeVisible();
+		await expect(
+			dialog.getByRole("link", { name: "Agendar primeiro contacto" }),
+		).toHaveAttribute("href", "/agendar");
 		const close = dialog.getByRole("button", { name: "Fechar menu" });
 		await expect(close).toBeVisible();
 		const layerBox = await menu.locator("[data-mobile-layer]").boundingBox();
@@ -142,7 +145,7 @@ test.describe("localized draft pages", () => {
 	}) => {
 		await page.goto("/sobre");
 		const logo = page
-			.getByRole("link", { name: "Ana Trevizan", exact: true })
+			.getByRole("link", { name: "Dra. Ana Trevizan", exact: true })
 			.first();
 		await logo.focus();
 		expect(
@@ -150,6 +153,22 @@ test.describe("localized draft pages", () => {
 		).not.toBe("none");
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(1);
+		await expect(page.locator('footer a[href^="https://wa.me/"]')).toHaveCount(1);
+		for (const profile of ["LinkedIn", "Instagram", "ORCID"])
+			await expect(
+				page.locator("footer").getByRole("link", { name: profile, exact: true }),
+			).toBeVisible();
+		await expect(page.locator("footer")).toContainText("🇵🇹 Portugal · 🇧🇷 Brasil");
+		await expect(page.locator("footer")).toContainText("Idiomas: PT · EN · ES");
+		await expect(page.locator(".footer-legal")).toContainText(
+			"Dra. Ana Flávia Trevizan · OAB nº [reservado]",
+		);
+		await expect(page.locator(".footer-legal")).toContainText(
+			"Este site tem caráter meramente informativo e não constitui aconselhamento jurídico.",
+		);
+		await expect(page.locator(".footer-legal")).toContainText(
+			"Todos os direitos reservados.",
+		);
 	});
 
 	test("Portuguese Home renders the complete dedicated template", async ({
@@ -268,6 +287,15 @@ test.describe("localized draft pages", () => {
 		await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 	});
 
+	test("reduced motion disables non-essential transitions", async ({ page }) => {
+		await page.emulateMedia({ reducedMotion: "reduce" });
+		await page.goto("/");
+		const duration = await page.locator("a").first().evaluate(
+			(element) => getComputedStyle(element).transitionDuration,
+		);
+		expect(Number.parseFloat(duration)).toBeLessThanOrEqual(0.00001);
+	});
+
 	test("Portuguese consulting hub exposes five localized service destinations", async ({
 		page,
 	}) => {
@@ -318,10 +346,12 @@ test.describe("localized draft pages", () => {
 			"page",
 		);
 		await expect(
-			page.getByRole("link", { name: "Agendar primeiro contacto" }),
+			page.locator(".editorial-cta").getByRole("link", {
+				name: "Agendar primeiro contacto",
+			}),
 		).toHaveAttribute("href", "/agendar");
 		await expect(
-			page.getByRole("link", { name: "Entrar em contacto" }),
+			page.getByRole("link", { name: "Falar sobre o meu caso" }),
 		).toHaveAttribute("href", "/contacto");
 	});
 
@@ -452,6 +482,18 @@ test.describe("localized draft pages", () => {
 	}) => {
 		await page.goto("/academia/publicacoes");
 		await expect(page.locator("[data-publications] > article")).toHaveCount(25);
+		await expect(page.locator(".publication-card h2").nth(0)).toHaveText(
+			"Exploring the Brussels Effect",
+		);
+		await expect(page.locator(".publication-card h2").nth(1)).toHaveText(
+			"Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+		);
+		await expect(page.locator(".publication-card h2").nth(2)).toHaveText(
+			"The European Union’s forest diplomacy: A path toward ostensible environmental sustainability",
+		);
+		expect(
+			(await page.locator(".publication-card__meta").allTextContents()).join(" "),
+		).not.toMatch(/journal-article|preprint|report|book-chapter/);
 		await expect(page.getByText("Ligação não disponível.")).toHaveCount(2);
 		await page.locator('select[name="year"]').selectOption("2026");
 		await expect(page.locator("[data-publication-count]")).toHaveText(

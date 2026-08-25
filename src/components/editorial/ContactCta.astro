@@ -21,7 +21,7 @@ const { heading, text, locale, showContactLink = true } = Astro.props;
 				{locale === 'en' ? 'Schedule a first conversation' : 'Agendar primeiro contacto'}
 			</Button>
 			{showContactLink && <Button href={pathFor('contact', locale)} variant="outlineInverse" size="lg">
-				{locale === 'en' ? 'Contact me' : 'Entrar em contacto'}
+				{locale === 'en' ? 'Contact me' : 'Falar sobre o meu caso'}
 			</Button>}
 		</div>
 	</div>

@@ -157,6 +157,7 @@ export interface PublicationsPageContent {
 		title: string;
 		journal?: string | null;
 		year?: string | null;
+		priority?: number | null;
 		type?: string | null;
 		doi?: string | null;
 		url?: string | null;

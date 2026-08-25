@@ -1,6 +1,6 @@
 # Auditoria visual da fase 3
 
-Estado: em curso. Este documento não certifica ainda a conclusão da fase 3.
+Estado: concluída. A matriz das 19 rotas, os componentes globais e as diferenças deliberadamente adiadas foram validados no encerramento da fase 3.
 
 ## Método
 
@@ -40,7 +40,7 @@ Executada sobre o build de preview atualizado, nas 19 rotas, a 1270 px e 320 px:
 
 | Rota Astro | Família | Estado da comparação | Diferenças ainda admitidas ou por rever |
 | --- | --- | --- | --- |
-| `/` | Home | validada em desktop e mobile | identidade/CTA do header e barra legal do footer dependem de conteúdo aprovado |
+| `/` | Home | validada em desktop e mobile | identidade, CTAs globais e barra legal do footer alinhados com a decisão aprovada |
 | `/consultoria` | Consultoria hub | validada em desktop e mobile | sem diferença estrutural pendente |
 | `/consultoria/migracao-e-mobilidade` | Serviço | validada visualmente | cross-link “Conhecer o percurso” alinhado com a referência por decisão do utilizador |
 | `/consultoria/juridica` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
@@ -49,7 +49,7 @@ Executada sobre o build de preview atualizado, nas 19 rotas, a 1270 px e 320 px:
 | `/consultoria/pareceres` | Serviço | validada em desktop e mobile | media da referência é um ficheiro vazio; usa fallback estático |
 | `/academia` | Academia hub | validada em desktop e mobile | sem diferença estrutural pendente |
 | `/academia/mentorias` | Serviço académico | validada em desktop e mobile | conteúdo e estado editorial preservados |
-| `/academia/publicacoes` | Publicações | estilo e responsividade validados | ordem de destaque do Next não está modelada no snapshot Astro; sincronização ORCID adiada |
+| `/academia/publicacoes` | Publicações | validada em desktop e mobile | prioridade editorial do snapshot modelada; sincronização ORCID adiada |
 | `/academia/eventos` | Eventos | validada após correção do estado vazio | estado vazio honesto preservado |
 | `/academia/palestras` | Palestras | validada em desktop e mobile | kit/media final não aprovado não é publicado |
 | `/academia/formacoes` | Formação | validada em desktop e mobile | conteúdo e estado editorial preservados |
@@ -69,3 +69,13 @@ Uma rota só pode passar de “recaptura pendente” para validada depois de:
 3. ausência de overflow, erros de consola e assets em falta;
 4. teste de teclado e foco nos controlos existentes;
 5. registo explícito de qualquer diferença editorial ou funcional inevitável.
+
+## Encerramento
+
+Problemas herdados corrigidos: identidade e CTAs globais divergentes, rodapé incompleto, ligações sociais com destino falso, contactos sem apresentação acessível, ordenação visual de publicações não determinística e exposição do tipo técnico nos cartões.
+
+Decisões aprovadas e aplicadas: identidade “Dra. Ana Trevizan”, etiquetas dos CTAs, três blocos editoriais inferiores do rodapé, regiões e idiomas editáveis, prioridade numérica opcional para publicações, ocultação do seletor EN e preservação do tipo técnico apenas nos dados.
+
+Problemas deliberadamente adiados: sincronização ORCID remota, formulário funcional e respetivas integrações, traduções inglesas incompletas, texto legal definitivo, consentimento/analytics e media ainda não aprovada. A ausência de lógica específica de `Save-Data` nesta fase é intencional: nenhuma experiência migrada ativa vídeo ou outro media pesado; o vídeo copiado permanece inativo.
+
+O lock do Tina foi regenerado e formatado. Além dos campos deste encerramento, o diff incorpora as definições das três páginas legais que já existiam no schema mas ainda não tinham sido refletidas no lock versionado; não contém truncamento nem alterações não semânticas.

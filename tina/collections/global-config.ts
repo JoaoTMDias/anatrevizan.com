@@ -15,6 +15,16 @@ const localizedText = (name: string, label: string) => ({
 	],
 });
 
+const optionalLocalizedText = (name: string, label: string) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		{ name: "pt", label: "Português (Portugal)", type: "string" as const },
+		{ name: "en", label: "English", type: "string" as const },
+	],
+});
+
 export const GlobalConfigCollection: Collection = {
 	name: "config",
 	label: "Global settings",
@@ -61,6 +71,22 @@ export const GlobalConfigCollection: Collection = {
 						localizedText("label", "Localized label"),
 						{ name: "url", label: "URL", type: "string", required: true },
 					],
+				},
+				{
+					name: "regions",
+					label: "Service regions",
+					type: "object",
+					list: true,
+					fields: [
+						{ name: "flag", label: "Flag", type: "string", required: true },
+						localizedText("label", "Localized region name"),
+					],
+				},
+				{
+					name: "serviceLanguages",
+					label: "Service languages",
+					type: "string",
+					list: true,
 				},
 			],
 		},
@@ -167,6 +193,12 @@ export const GlobalConfigCollection: Collection = {
 			type: "object",
 			fields: [
 				localizedText("copyright", "Copyright label"),
+				optionalLocalizedText(
+					"professionalRegistration",
+					"Professional identification",
+				),
+				optionalLocalizedText("disclaimer", "Informational disclaimer"),
+				optionalLocalizedText("rightsReserved", "Rights reserved text"),
 				{
 					name: "legalRouteKeys",
 					label: "Legal route keys",

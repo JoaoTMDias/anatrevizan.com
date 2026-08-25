@@ -1,6 +1,8 @@
 ---
 import type { CmsConfig } from '../lib/data';
 import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
+import IconLink from './IconLink.astro';
+import Icon from './ui/Icon.astro';
 interface Props { config?: CmsConfig | null; locale?: PublishedLocale }
 const { config, locale = 'pt-PT' } = Astro.props;
 type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
@@ -15,6 +17,18 @@ const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
 const email = config?.contacts?.email;
 const phone = config?.contacts?.phone;
 const profiles = (config?.contacts?.profiles ?? []).filter(present).filter((profile) => Boolean(profile.url));
+const regions = (config?.contacts?.regions ?? []).filter(present);
+const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter((language): language is string => Boolean(language));
+const professionalRegistration = config?.footer?.professionalRegistration?.[languageField];
+const disclaimer = config?.footer?.disclaimer?.[languageField];
+const rightsReserved = config?.footer?.rightsReserved?.[languageField];
+const whatsappUrl = phone ? `https://wa.me/${phone.replace(/\D/g, '')}` : null;
+const profileIcon = (label: string, url: string) => {
+	const value = `${label} ${url}`.toLowerCase();
+	if (value.includes('linkedin')) return 'tabler:brand-linkedin';
+	if (value.includes('instagram')) return 'tabler:brand-instagram';
+	return 'tabler:external-link';
+};
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 	home: { pt: 'Início', en: 'Home' }, consulting: { pt: 'Consultoria', en: 'Consulting' }, 'immigration-mobility': { pt: 'Migração e mobilidade', en: 'Immigration and mobility' }, legal: { pt: 'Consultoria jurídica', en: 'Legal consulting' }, 'environmental-esg': { pt: 'Ambiente e ESG', en: 'Environmental and ESG' }, 'public-policy': { pt: 'Políticas públicas', en: 'Public policy' }, 'legal-opinions': { pt: 'Pareceres', en: 'Legal opinions' }, academic: { pt: 'Academia', en: 'Academic' }, mentoring: { pt: 'Mentorias', en: 'Mentoring' }, publications: { pt: 'Publicações', en: 'Publications' }, events: { pt: 'Eventos', en: 'Events' }, speaking: { pt: 'Palestras', en: 'Speaking' }, training: { pt: 'Formações', en: 'Training' }, about: { pt: 'Sobre', en: 'About' }, contact: { pt: 'Contacto', en: 'Contact' }, booking: { pt: 'Agendar', en: 'Book a call' }, privacy: { pt: 'Política de privacidade', en: 'Privacy policy' }, terms: { pt: 'Termos de utilização', en: 'Terms of use' }, cookies: { pt: 'Política de cookies', en: 'Cookie policy' },
 };
@@ -32,14 +46,27 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
 				{legalRoutes.map((key) => <li><a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}
 			</ul>
 		</nav>
-		<div>
+		<div class="footer-contact">
 			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact' : 'Contacto'}</p>
-			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
-				{email && <li><a class="hover:text-primary hover:underline" href={`mailto:${email}`}>{email}</a></li>}
-				{phone && <li><a class="hover:text-primary hover:underline" href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a></li>}
-				{profiles.map((profile) => <li><a class="hover:text-primary hover:underline" href={profile.url ?? undefined} rel="external noreferrer">{labelFor(profile.label)}</a></li>)}
+			<ul class="footer-contact__details mt-4 space-y-2.5 text-sm text-muted-foreground">
+				{email && <li><a href={`mailto:${email}`}><Icon name="mail" /> <span>{email}</span></a></li>}
+				{phone && whatsappUrl && <li><a href={whatsappUrl} target="_blank" rel="external noreferrer"><Icon name="brand-whatsapp" /> <span>{phone}</span></a></li>}
 			</ul>
+			{profiles.length > 0 && <div class="footer-contact__profiles">{profiles.map((profile) => {
+				const title = labelFor(profile.label);
+				const link = profile.url ?? '';
+				return <IconLink title={title} link={link} icon={profileIcon(title, link)} />;
+			})}</div>}
+			{regions.length > 0 && <p class="footer-contact__regions">{regions.map((region) => `${region.flag} ${labelFor(region.label)}`).join(' · ')}</p>}
+			{serviceLanguages.length > 0 && <p class="footer-contact__languages">{locale === 'en' ? 'Languages' : 'Idiomas'}: {serviceLanguages.join(' · ')}</p>}
 		</div>
 	</div>
-	<div class="bg-primary-800 text-primary-foreground"><div class="site-container py-5 text-sm"><p>© {new Date().getFullYear()} {config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p></div></div>
+	<div class="footer-legal bg-primary-800 text-primary-foreground">
+		<div class="site-container footer-legal__inner">
+			<p class="footer-legal__brand">{config?.identity?.name ?? 'Dra. Ana Trevizan'}</p>
+			{professionalRegistration && <p>{professionalRegistration}</p>}
+			{disclaimer && <p>{disclaimer}</p>}
+			<p>© {new Date().getFullYear()} {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p>
+		</div>
+	</div>
 </footer>
