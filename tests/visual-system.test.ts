@@ -43,6 +43,7 @@ const booking = readFileSync(
 const baseHead = readFileSync("src/components/BaseHead.astro", "utf8");
 const socialImage = readFileSync("public/og-default.svg", "utf8");
 const header = readFileSync("src/components/Header.astro", "utf8");
+const headerMenu = readFileSync("src/components/HeaderMenu.tsx", "utf8");
 const footer = readFileSync("src/components/Footer.astro", "utf8");
 const iconLink = readFileSync("src/components/IconLink.astro", "utf8");
 
@@ -84,8 +85,10 @@ describe("Phase 3 visual foundation", () => {
 	});
 
 	it("uses a readable dedicated desktop navigation dropdown", () => {
-		expect(header).toContain("nav-dropdown__item");
-		expect(header).not.toContain("nav-dropdown__hub");
+		expect(header).toContain("<HeaderMenu");
+		expect(header).toContain("client:load");
+		expect(headerMenu).toContain("nav-dropdown__item");
+		expect(headerMenu).not.toContain("nav-dropdown__hub");
 		expect(css).toContain('.nav-dropdown__item[aria-current="page"]');
 		expect(css).toContain(
 			"background: color-mix(in oklab, var(--primary) 9%, var(--background))",

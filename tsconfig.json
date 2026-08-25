@@ -9,6 +9,11 @@
 		"tina/config.ts"
 	],
 	"compilerOptions": {
-		"strictNullChecks": true
+		"strictNullChecks": true,
+		"ignoreDeprecations": "6.0",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
 	}
 }

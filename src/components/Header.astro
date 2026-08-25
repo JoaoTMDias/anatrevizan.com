@@ -1,117 +1,90 @@
 ---
-import type { CmsConfig } from '../lib/data';
-import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
-interface Props { config?: CmsConfig | null; locale?: PublishedLocale; routeKey?: RouteKey; languageAvailable?: boolean }
-const { config, locale = 'pt-PT', routeKey = 'home', languageAvailable = false } = Astro.props;
+import HeaderMenu from "./HeaderMenu";
+import type { CmsConfig } from "../lib/data";
+import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+interface Props {
+  config?: CmsConfig | null;
+  locale?: PublishedLocale;
+  routeKey?: RouteKey;
+  languageAvailable?: boolean;
+}
+const { config, locale = "pt-PT", routeKey = "home", languageAvailable = false } = Astro.props;
 type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
-const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> => isRouteKey(item.routeKey);
-const languageField = locale === 'pt-PT' ? 'pt' : 'en';
+const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> =>
+  isRouteKey(item.routeKey);
+const languageField = locale === "pt-PT" ? "pt" : "en";
 const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
-const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
-const isCurrentSection = (item: (typeof navigation)[number]) => item.routeKey === routeKey || (item.children ?? []).some((child) => child?.routeKey === routeKey);
-const navigationItems = navigation.map((item) => ({ item, itemRoute: item.routeKey, children: (item.children ?? []).filter(present).filter((child) => Boolean(child.label)).filter(hasRouteKey) }));
-const bookingItem = navigation.find((item) => item.routeKey === 'booking');
+const navigation = (config?.navigation ?? [])
+  .filter(present)
+  .filter((item) => Boolean(item.label))
+  .filter(hasRouteKey);
+const labelFor = (value: { pt: string; en: string } | null | undefined) =>
+  value?.[languageField] ?? "";
+const isCurrentSection = (item: (typeof navigation)[number]) =>
+  item.routeKey === routeKey || (item.children ?? []).some((child) => child?.routeKey === routeKey);
+const navigationItems = navigation.map((item) => ({
+  item,
+  itemRoute: item.routeKey,
+  children: (item.children ?? [])
+    .filter(present)
+    .filter((child) => Boolean(child.label))
+    .filter(hasRouteKey),
+}));
+const bookingItem = navigation.find((item) => item.routeKey === "booking");
+const desktopItems = navigationItems.map(({ item, itemRoute, children }) => ({
+  type: item.type,
+  label: labelFor(item.label),
+  href: pathFor(itemRoute, locale),
+  emphasis: item.emphasis ?? false,
+  isCurrent: itemRoute === routeKey,
+  isCurrentSection: isCurrentSection(item),
+  children: children.map((child) => ({
+    label: labelFor(child.label),
+    description: child.description ? labelFor(child.description) : undefined,
+    tag: child.tag ? labelFor(child.tag) : undefined,
+    highlight: child.highlight ?? false,
+    href: pathFor(child.routeKey, locale),
+    isCurrent: child.routeKey === routeKey,
+  })),
+}));
+const alternateLocale = locale === "en" ? "pt-PT" : "en";
+const languageLink = languageAvailable
+  ? {
+      label: locale === "en" ? "PT" : "EN",
+      mobileLabel: locale === "en" ? "Português" : "English",
+      accessibleLabel: locale === "en" ? "Mudar para português" : "Switch to English",
+      href: pathFor(routeKey, alternateLocale),
+      lang: alternateLocale,
+      hreflang: alternateLocale,
+    }
+  : undefined;
 ---
-<a class="sr-only focus:fixed focus:left-4 focus:top-3 focus:z-[70] focus:block focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg" href="#main-content">{locale === 'en' ? 'Skip to content' : 'Saltar para o conteúdo'}</a>
-<header class="fixed inset-x-0 top-0 z-50 h-16 border-b border-border/80 bg-background shadow-sm md:h-20">
-	<nav aria-label={locale === 'en' ? 'Main navigation' : 'Navegação principal'} class="site-container flex h-full items-center justify-between gap-4">
-		<a href={pathFor('home', locale)} class="shrink-0 font-heading text-xl font-bold text-primary md:text-2xl" aria-current={routeKey === 'home' ? 'page' : undefined}>{config?.identity?.name ?? 'Dra. Ana Trevizan'}</a>
-		<ul class="hidden items-center justify-end gap-1 text-sm lg:flex">
-			{navigationItems.map(({ item, itemRoute, children }) => <li class="relative">
-					{item.type === 'menu' && children.length > 0 ? (
-						<details class="nav-menu group" data-current={isCurrentSection(item) ? 'true' : undefined}>
-							<summary aria-expanded="false" class="nav-menu__trigger">
-								{labelFor(item.label)} <span aria-hidden="true" class="inline-block transition-transform group-open:rotate-180">⌄</span>
-							</summary>
-							<div class="nav-dropdown">
-								<ul>{children.map((child) => <li>
-									<a href={pathFor(child.routeKey as RouteKey, locale)} class:list={["nav-dropdown__item", child.highlight && "nav-dropdown__item--highlight"]} aria-current={child.routeKey === routeKey ? 'page' : undefined}>
-										{child.tag && <span class="nav-dropdown__tag">{labelFor(child.tag)}</span>}
-										<span class="nav-dropdown__title">{labelFor(child.label)}</span>
-										{child.description && <span class="nav-dropdown__description">{labelFor(child.description)}</span>}
-									</a>
-								</li>)}</ul>
-							</div>
-						</details>
-					) : (
-						<a href={pathFor(itemRoute, locale)} class:list={["block rounded-md px-3 py-2 font-medium text-foreground/80 hover:bg-muted hover:text-primary", item.emphasis && "ml-2 bg-primary px-5 text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground"]} aria-current={itemRoute === routeKey ? 'page' : undefined}>{labelFor(item.label)}</a>
-					)}
-				</li>)}
-			{languageAvailable && <li><a class="block rounded px-3 py-2 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={pathFor(routeKey, locale === 'en' ? 'pt-PT' : 'en')} lang={locale === 'en' ? 'pt-PT' : 'en'} hreflang={locale === 'en' ? 'pt-PT' : 'en'} aria-label={locale === 'en' ? 'Mudar para português' : 'Switch to English'}>{locale === 'en' ? 'PT' : 'EN'}</a></li>}
-		</ul>
-		<details class="mobile-nav lg:hidden">
-			<summary aria-expanded="false" class="mobile-nav__trigger cursor-pointer list-none rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden"><span class="sr-only">Menu</span><span class="mobile-nav__open" aria-hidden="true">☰</span><span class="mobile-nav__close" aria-hidden="true">×</span></summary>
-			<div class="fixed inset-0 z-40 bg-foreground/40" data-mobile-layer>
-			<div class="ml-auto h-full w-80 max-w-[85vw] overflow-y-auto bg-background p-5 shadow-xl" role="dialog" aria-modal="true" aria-label={locale === 'en' ? 'Main menu' : 'Menu principal'} data-mobile-panel>
-				<div class="mb-8 flex items-center justify-between gap-4">
-					<a href={pathFor('home', locale)} class="font-heading text-xl font-bold text-primary">{config?.identity?.name ?? 'Dra. Ana Trevizan'}</a>
-					<button type="button" class="flex size-11 items-center justify-center rounded-md text-2xl leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={locale === 'en' ? 'Close menu' : 'Fechar menu'} data-mobile-close>×</button>
-				</div>
-				<ul class="space-y-1">{navigationItems.map(({ item, itemRoute, children }) => <li>
-					{item.type === 'menu' && children.length > 0 ? <details class="mobile-section">
-						<summary aria-expanded="false" class="cursor-pointer list-none rounded-md px-3 py-3 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">{labelFor(item.label)} <span aria-hidden="true">⌄</span></summary>
-						<ul class="ml-3 border-l pl-3">{children.map((child) => <li><a class="block rounded-md px-3 py-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={pathFor(child.routeKey as RouteKey, locale)} aria-current={child.routeKey === routeKey ? 'page' : undefined}><span class="block font-medium">{labelFor(child.label)}</span>{child.description && <span class="block text-xs text-muted-foreground">{labelFor(child.description)}</span>}</a></li>)}</ul>
-					</details> : <a class:list={["block rounded-md px-3 py-3 font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", item.emphasis && "bg-primary text-primary-foreground hover:bg-primary/90"]} href={pathFor(itemRoute, locale)} aria-current={itemRoute === routeKey ? 'page' : undefined}>{labelFor(item.label)}</a>}
-				</li>)}</ul>
-				{languageAvailable && <a class="mt-2 block rounded border-t px-3 py-3" href={pathFor(routeKey, locale === 'en' ? 'pt-PT' : 'en')} lang={locale === 'en' ? 'pt-PT' : 'en'} hreflang={locale === 'en' ? 'pt-PT' : 'en'}>{locale === 'en' ? 'Português' : 'English'}</a>}
-			</div></div>
-		</details>
-	</nav>
+
+<a
+  class="sr-only focus:fixed focus:left-4 focus:top-3 focus:z-[70] focus:block focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg"
+  href="#main-content">{locale === "en" ? "Skip to content" : "Saltar para o conteúdo"}</a
+>
+<header
+  class="fixed inset-x-0 top-0 z-50 h-16 border-b border-border/80 bg-background shadow-sm md:h-20"
+>
+  <nav
+    aria-label={locale === "en" ? "Main navigation" : "Navegação principal"}
+    class="site-container flex h-full items-center justify-between gap-4"
+  >
+    <a
+      href={pathFor("home", locale)}
+      class="shrink-0 font-heading text-xl font-bold text-primary md:text-2xl"
+      aria-current={routeKey === "home" ? "page" : undefined}
+      >{config?.identity?.name ?? "Dra. Ana Trevizan"}</a
+    >
+    <HeaderMenu
+      client:load
+      items={desktopItems}
+      languageLink={languageLink}
+      brand={config?.identity?.name ?? "Dra. Ana Trevizan"}
+      homeHref={pathFor("home", locale)}
+      menuLabel={locale === "en" ? "Main menu" : "Menu principal"}
+      closeLabel={locale === "en" ? "Close menu" : "Fechar menu"}
+    />
+  </nav>
 </header>
-<a class="mobile-cta-bar lg:hidden" href={pathFor('booking', locale)}>{bookingItem ? labelFor(bookingItem.label) : (locale === 'en' ? 'Book a call' : 'Agendar primeiro contacto')}</a>
-<script>
-	const menus = () => [...document.querySelectorAll<HTMLDetailsElement>('details.nav-menu')];
-	const updateExpanded = (details: HTMLDetailsElement) => details.querySelector<HTMLElement>(':scope > summary')?.setAttribute('aria-expanded', String(details.open));
-	document.addEventListener('toggle', (event) => {
-		const opened = event.target;
-		if (!(opened instanceof HTMLDetailsElement)) return;
-		updateExpanded(opened);
-		if (!opened.open || !opened.matches('.nav-menu')) return;
-		for (const menu of menus()) if (menu !== opened) menu.open = false;
-	}, true);
-	const mobile = document.querySelector<HTMLDetailsElement>('details.mobile-nav');
-	const mobileClose = mobile?.querySelector<HTMLElement>('[data-mobile-close]');
-	let mobileTrigger: HTMLElement | null = null;
-	mobileClose?.addEventListener('click', () => { if (mobile) mobile.open = false; });
-	mobile?.addEventListener('toggle', () => {
-		updateExpanded(mobile);
-		const main = document.querySelector<HTMLElement>('main, #main-content');
-		const footer = document.querySelector<HTMLElement>('footer');
-		if (mobile.open) {
-			mobileTrigger = mobile.querySelector<HTMLElement>(':scope > summary');
-			document.body.style.overflow = 'hidden';
-			main?.setAttribute('inert', ''); footer?.setAttribute('inert', '');
-			queueMicrotask(() => mobile.querySelector<HTMLElement>('[data-mobile-panel] a, [data-mobile-panel] summary')?.focus());
-		} else {
-			document.body.style.overflow = '';
-			main?.removeAttribute('inert'); footer?.removeAttribute('inert');
-			mobileTrigger?.focus();
-		}
-	});
-	document.addEventListener('keydown', (event) => {
-		if (event.key !== 'Escape') return;
-		for (const menu of menus()) {
-			if (!menu.open) continue;
-			menu.open = false;
-			menu.querySelector<HTMLElement>('summary')?.focus();
-		}
-		if (mobile?.open) {
-			mobile.open = false;
-			mobile.querySelector<HTMLElement>(':scope > summary')?.focus();
-		}
-	});
-	document.addEventListener('keydown', (event) => {
-		if (event.key !== 'Tab' || !mobile?.open) return;
-		const focusable = [...mobile.querySelectorAll<HTMLElement>('[data-mobile-panel] a, [data-mobile-panel] summary')].filter((item) => !item.hasAttribute('disabled'));
-		if (!focusable.length) return;
-		const first = focusable[0]; const last = focusable[focusable.length - 1];
-		if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-		else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-	});
-	document.addEventListener('click', (event) => {
-		if (!(event.target instanceof Node)) return;
-		for (const menu of menus()) if (menu.open && !menu.contains(event.target)) menu.open = false;
-		if (mobile?.open && event.target instanceof Element && event.target.matches('[data-mobile-layer]')) mobile.open = false;
-	});
-</script>

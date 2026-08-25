@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import react from "@astrojs/react";
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
 import tina from '@tinacms/astro/integration';
@@ -56,7 +57,7 @@ export default defineConfig({
 	output: 'static',
 	adapter: await getAdapter(),
 	redirects: { '/home': '/' },
-	integrations: [mdx(), icon(), tina()],
+	integrations: [mdx(), icon(), react(), tina()],
 	build: {
 		// Inline the (~10 KiB) bundled CSS into a <style> in <head> instead of a
 		// separate render-blocking <link>. Astro's default ('auto') only inlines

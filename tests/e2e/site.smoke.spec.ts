@@ -68,16 +68,21 @@ test.describe("localized draft pages", () => {
 	}) => {
 		await page.goto("/sobre");
 		for (const label of ["Consultoria", "Academia"]) {
-			const menu = page.locator("details.nav-menu").filter({ hasText: label });
-			const summary = menu.locator("summary");
-			await summary.focus();
+			const trigger = page.getByRole("button", { name: label, exact: true });
+			await trigger.focus();
 			expect(
-				await summary.evaluate((element) => document.activeElement === element),
+				await trigger.evaluate((element) => document.activeElement === element),
 			).toBe(true);
 			await page.keyboard.press("Enter");
-			await expect(menu.locator("a").first()).toBeVisible();
+			await expect(trigger).toHaveAttribute("aria-expanded", "true");
+			await expect(
+				page.locator(".nav-dropdown:visible a").first(),
+			).toBeVisible();
 			await page.keyboard.press("Escape");
-			expect(await menu.getAttribute("open")).toBe(null);
+			await expect(trigger).toHaveAttribute("aria-expanded", "false");
+			expect(
+				await trigger.evaluate((element) => document.activeElement === element),
+			).toBe(true);
 		}
 	});
 
@@ -85,11 +90,10 @@ test.describe("localized draft pages", () => {
 		page,
 	}) => {
 		await page.goto("/consultoria/migracao-e-mobilidade");
-		const menu = page.locator("details.nav-menu").filter({
-			hasText: "Consultoria",
-		});
-		await menu.locator("summary").click();
-		const dropdown = menu.locator(".nav-dropdown");
+		await page
+			.getByRole("button", { name: "Consultoria", exact: true })
+			.click();
+		const dropdown = page.locator(".nav-dropdown:visible");
 		await expect(dropdown).toBeVisible();
 		await expect(dropdown).toHaveCSS("width", "320px");
 		const current = dropdown.locator('[aria-current="page"]');
@@ -107,12 +111,11 @@ test.describe("localized draft pages", () => {
 	}) => {
 		await page.setViewportSize({ width: 320, height: 800 });
 		await page.goto("/sobre");
-		const menu = page.locator("details.mobile-nav");
-		const trigger = menu.locator(":scope > summary");
+		const trigger = page.getByRole("button", { name: "Menu principal" });
 		await trigger.focus();
-		await page.keyboard.press("Enter");
+		await trigger.click();
 		await expect(trigger).toHaveAttribute("aria-expanded", "true");
-		const dialog = menu.getByRole("dialog");
+		const dialog = page.getByRole("dialog", { name: "Menu principal" });
 		await expect(dialog).toBeVisible();
 		await expect(
 			dialog.getByRole("link", { name: "Dra. Ana Trevizan", exact: true }),
@@ -122,19 +125,19 @@ test.describe("localized draft pages", () => {
 		).toHaveAttribute("href", "/agendar");
 		const close = dialog.getByRole("button", { name: "Fechar menu" });
 		await expect(close).toBeVisible();
-		const layerBox = await menu.locator("[data-mobile-layer]").boundingBox();
+		const layerBox = await page
+			.locator('[data-slot="sheet-overlay"]')
+			.boundingBox();
 		const panelBox = await dialog.boundingBox();
 		expect(layerBox).toEqual({ x: 0, y: 0, width: 320, height: 800 });
 		expect(panelBox?.width).toBe(272);
 		expect(panelBox?.height).toBe(800);
-		expect(await page.locator("footer").getAttribute("inert")).not.toBeNull();
 		await close.click();
 		await expect(trigger).toHaveAttribute("aria-expanded", "false");
 		await trigger.focus();
 		await page.keyboard.press("Enter");
 		await page.keyboard.press("Escape");
 		await expect(trigger).toHaveAttribute("aria-expanded", "false");
-		expect(await page.locator("footer").getAttribute("inert")).toBeNull();
 		expect(
 			await trigger.evaluate((node) => node === document.activeElement),
 		).toBe(true);
@@ -153,12 +156,18 @@ test.describe("localized draft pages", () => {
 		).not.toBe("none");
 		expect(await page.locator('a[href="#"]').count()).toBe(0);
 		await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(1);
-		await expect(page.locator('footer a[href^="https://wa.me/"]')).toHaveCount(1);
+		await expect(page.locator('footer a[href^="https://wa.me/"]')).toHaveCount(
+			1,
+		);
 		for (const profile of ["LinkedIn", "Instagram", "ORCID"])
 			await expect(
-				page.locator("footer").getByRole("link", { name: profile, exact: true }),
+				page
+					.locator("footer")
+					.getByRole("link", { name: profile, exact: true }),
 			).toBeVisible();
-		await expect(page.locator("footer")).toContainText("🇵🇹 Portugal · 🇧🇷 Brasil");
+		await expect(page.locator("footer")).toContainText(
+			"🇵🇹 Portugal · 🇧🇷 Brasil",
+		);
 		await expect(page.locator("footer")).toContainText("Idiomas: PT · EN · ES");
 		await expect(page.locator(".footer-legal")).toContainText(
 			"Dra. Ana Flávia Trevizan · OAB nº [reservado]",
@@ -292,12 +301,15 @@ test.describe("localized draft pages", () => {
 		await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 	});
 
-	test("reduced motion disables non-essential transitions", async ({ page }) => {
+	test("reduced motion disables non-essential transitions", async ({
+		page,
+	}) => {
 		await page.emulateMedia({ reducedMotion: "reduce" });
 		await page.goto("/");
-		const duration = await page.locator("a").first().evaluate(
-			(element) => getComputedStyle(element).transitionDuration,
-		);
+		const duration = await page
+			.locator("a")
+			.first()
+			.evaluate((element) => getComputedStyle(element).transitionDuration);
 		expect(Number.parseFloat(duration)).toBeLessThanOrEqual(0.00001);
 	});
 
@@ -497,7 +509,9 @@ test.describe("localized draft pages", () => {
 			"The European Union’s forest diplomacy: A path toward ostensible environmental sustainability",
 		);
 		expect(
-			(await page.locator(".publication-card__meta").allTextContents()).join(" "),
+			(await page.locator(".publication-card__meta").allTextContents()).join(
+				" ",
+			),
 		).not.toMatch(/journal-article|preprint|report|book-chapter/);
 		await expect(page.getByText("Ligação não disponível.")).toHaveCount(10);
 		expect(await page.locator('.publication-card a[href="#"]').count()).toBe(0);
