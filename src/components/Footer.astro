@@ -1,72 +1,184 @@
 ---
-import type { CmsConfig } from '../lib/data';
-import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from '../lib/routing';
-import IconLink from './IconLink.astro';
-import Icon from './ui/Icon.astro';
-interface Props { config?: CmsConfig | null; locale?: PublishedLocale }
-const { config, locale = 'pt-PT' } = Astro.props;
+import type { CmsConfig } from "../lib/data";
+import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+import IconLink from "./IconLink.astro";
+import Icon from "./ui/Icon.astro";
+interface Props {
+  config?: CmsConfig | null;
+  locale?: PublishedLocale;
+}
+const { config, locale = "pt-PT" } = Astro.props;
 type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
-const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> => isRouteKey(item.routeKey);
-const languageField = locale === 'pt-PT' ? 'pt' : 'en';
-const labelFor = (value: { pt: string; en: string } | null | undefined) => value?.[languageField] ?? '';
+const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> =>
+  isRouteKey(item.routeKey);
+const languageField = locale === "pt-PT" ? "pt" : "en";
+const labelFor = (value: { pt: string; en: string } | null | undefined) =>
+  value?.[languageField] ?? "";
 const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? []).filter(present).filter((item) => Boolean(item.label)).filter(hasRouteKey);
-const menus = navigation.filter((item) => item.type === 'menu' && item.children?.length);
-const directLinks = navigation.filter((item) => item.type !== 'menu' && item.routeKey !== 'contact');
+const navigation = (config?.navigation ?? [])
+  .filter(present)
+  .filter((item) => Boolean(item.label))
+  .filter(hasRouteKey);
+const menus = navigation.filter((item) => item.type === "menu" && item.children?.length);
+const directLinks = navigation.filter(
+  (item) => item.type !== "menu" && item.routeKey !== "contact"
+);
 const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
 const email = config?.contacts?.email;
 const phone = config?.contacts?.phone;
-const profiles = (config?.contacts?.profiles ?? []).filter(present).filter((profile) => Boolean(profile.url));
+const profiles = (config?.contacts?.profiles ?? [])
+  .filter(present)
+  .filter((profile) => Boolean(profile.url));
 const regions = (config?.contacts?.regions ?? []).filter(present);
-const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter((language): language is string => Boolean(language));
+const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter(
+  (language): language is string => Boolean(language)
+);
 const professionalRegistration = config?.footer?.professionalRegistration?.[languageField];
 const disclaimer = config?.footer?.disclaimer?.[languageField];
 const rightsReserved = config?.footer?.rightsReserved?.[languageField];
-const whatsappUrl = phone ? `https://wa.me/${phone.replace(/\D/g, '')}` : null;
+const whatsappUrl = phone ? `https://wa.me/${phone.replace(/\D/g, "")}` : null;
 const profileIcon = (label: string, url: string) => {
-	const value = `${label} ${url}`.toLowerCase();
-	if (value.includes('linkedin')) return 'tabler:brand-linkedin';
-	if (value.includes('instagram')) return 'tabler:brand-instagram';
-	return 'tabler:external-link';
+  const value = `${label} ${url}`.toLowerCase();
+  if (value.includes("linkedin")) return "tabler:brand-linkedin";
+  if (value.includes("instagram")) return "tabler:brand-instagram";
+  return "tabler:external-link";
 };
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
-	home: { pt: 'Início', en: 'Home' }, consulting: { pt: 'Consultoria', en: 'Consulting' }, 'immigration-mobility': { pt: 'Migração e mobilidade', en: 'Immigration and mobility' }, legal: { pt: 'Consultoria jurídica', en: 'Legal consulting' }, 'environmental-esg': { pt: 'Ambiente e ESG', en: 'Environmental and ESG' }, 'public-policy': { pt: 'Políticas públicas', en: 'Public policy' }, 'legal-opinions': { pt: 'Pareceres', en: 'Legal opinions' }, academic: { pt: 'Academia', en: 'Academic' }, mentoring: { pt: 'Mentorias', en: 'Mentoring' }, publications: { pt: 'Publicações', en: 'Publications' }, events: { pt: 'Eventos', en: 'Events' }, speaking: { pt: 'Palestras', en: 'Speaking' }, training: { pt: 'Formações', en: 'Training' }, about: { pt: 'Sobre', en: 'About' }, contact: { pt: 'Contacto', en: 'Contact' }, booking: { pt: 'Agendar', en: 'Book a call' }, privacy: { pt: 'Política de privacidade', en: 'Privacy policy' }, terms: { pt: 'Termos de utilização', en: 'Terms of use' }, cookies: { pt: 'Política de cookies', en: 'Cookie policy' },
+  home: { pt: "Início", en: "Home" },
+  consulting: { pt: "Consultoria", en: "Consulting" },
+  "immigration-mobility": { pt: "Migração e mobilidade", en: "Immigration and mobility" },
+  legal: { pt: "Consultoria jurídica", en: "Legal consulting" },
+  "environmental-esg": { pt: "Ambiente e ESG", en: "Environmental and ESG" },
+  "public-policy": { pt: "Políticas públicas", en: "Public policy" },
+  "legal-opinions": { pt: "Pareceres", en: "Legal opinions" },
+  academic: { pt: "Academia", en: "Academic" },
+  mentoring: { pt: "Mentorias", en: "Mentoring" },
+  publications: { pt: "Publicações", en: "Publications" },
+  events: { pt: "Eventos", en: "Events" },
+  speaking: { pt: "Palestras", en: "Speaking" },
+  training: { pt: "Formações", en: "Training" },
+  about: { pt: "Sobre", en: "About" },
+  contact: { pt: "Contacto", en: "Contact" },
+  booking: { pt: "Agendar", en: "Book a call" },
+  privacy: { pt: "Política de privacidade", en: "Privacy policy" },
+  terms: { pt: "Termos de utilização", en: "Terms of use" },
+  cookies: { pt: "Política de cookies", en: "Cookie policy" },
 };
 ---
+
 <footer class="border-t bg-secondary">
-	<div class="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-		{menus.map((menu) => <nav aria-label={labelFor(menu.label)}>
-			<a href={pathFor(menu.routeKey, locale)} class="font-heading font-semibold text-foreground hover:text-primary">{labelFor(menu.label)}</a>
-			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">{(menu.children ?? []).filter(present).filter(hasRouteKey).map((child) => <li><a class="hover:text-primary hover:underline" href={pathFor(child.routeKey, locale)}>{labelFor(child.label)}</a></li>)}</ul>
-		</nav>)}
-		<nav aria-label={locale === 'en' ? 'Institutional' : 'Institucional'}>
-			<p class="font-heading font-semibold">{locale === 'en' ? 'Institutional' : 'Institucional'}</p>
-			<ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
-				{directLinks.map((item) => <li><a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>{labelFor(item.label)}</a></li>)}
-				{legalRoutes.map((key) => <li><a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>{legalLabels[key][languageField]}</a></li>)}
-			</ul>
-		</nav>
-		<div class="footer-contact">
-			<p class="font-heading font-semibold">{locale === 'en' ? 'Contact' : 'Contacto'}</p>
-			<ul class="footer-contact__details mt-4 space-y-2.5 text-sm text-muted-foreground">
-				{email && <li><a href={`mailto:${email}`}><Icon name="mail" /> <span>{email}</span></a></li>}
-				{phone && whatsappUrl && <li><a href={whatsappUrl} target="_blank" rel="external noreferrer"><Icon name="brand-whatsapp" /> <span>{phone}</span></a></li>}
-			</ul>
-			{profiles.length > 0 && <div class="footer-contact__profiles">{profiles.map((profile) => {
-				const title = labelFor(profile.label);
-				const link = profile.url ?? '';
-				return <IconLink title={title} link={link} icon={profileIcon(title, link)} />;
-			})}</div>}
-			{regions.length > 0 && <p class="footer-contact__regions">{regions.map((region) => `${region.flag} ${labelFor(region.label)}`).join(' · ')}</p>}
-			{serviceLanguages.length > 0 && <p class="footer-contact__languages">{locale === 'en' ? 'Languages' : 'Idiomas'}: {serviceLanguages.join(' · ')}</p>}
-		</div>
-	</div>
-	<div class="footer-legal bg-primary-800 text-primary-foreground">
-		<div class="site-container footer-legal__inner">
-			<p class="footer-legal__brand">{config?.identity?.name ?? 'Dra. Ana Trevizan'}</p>
-			{professionalRegistration && <p>{professionalRegistration}</p>}
-			{disclaimer && <p>{disclaimer}</p>}
-			<p>© {new Date().getFullYear()} {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? config?.identity?.name}</p>
-		</div>
-	</div>
+  <div class="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      menus.map((menu) => (
+        <nav aria-label={labelFor(menu.label)}>
+          <a
+            href={pathFor(menu.routeKey, locale)}
+            class="font-heading font-semibold text-foreground hover:text-primary"
+          >
+            {labelFor(menu.label)}
+          </a>
+          <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+            {(menu.children ?? [])
+              .filter(present)
+              .filter(hasRouteKey)
+              .map((child) => (
+                <li>
+                  <a
+                    class="hover:text-primary hover:underline"
+                    href={pathFor(child.routeKey, locale)}
+                  >
+                    {labelFor(child.label)}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </nav>
+      ))
+    }
+    <nav aria-label={locale === "en" ? "Institutional" : "Institucional"}>
+      <p class="font-heading font-semibold">
+        {locale === "en" ? "Institutional" : "Institucional"}
+      </p>
+      <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+        {
+          directLinks.map((item) => (
+            <li>
+              <a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>
+                {labelFor(item.label)}
+              </a>
+            </li>
+          ))
+        }
+        {
+          legalRoutes.map((key) => (
+            <li>
+              <a class="hover:text-primary hover:underline" href={pathFor(key, locale)}>
+                {legalLabels[key][languageField]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="footer-contact">
+      <p class="font-heading font-semibold">{locale === "en" ? "Contact" : "Contacto"}</p>
+      <ul class="footer-contact__details mt-4 space-y-2.5 text-sm text-muted-foreground">
+        {
+          email && (
+            <li>
+              <a href={`mailto:${email}`}>
+                <Icon name="mail" /> <span>{email}</span>
+              </a>
+            </li>
+          )
+        }
+        {
+          phone && whatsappUrl && (
+            <li>
+              <a href={whatsappUrl} target="_blank" rel="external noreferrer">
+                <Icon name="brand-whatsapp" /> <span>{phone}</span>
+              </a>
+            </li>
+          )
+        }
+      </ul>
+      {
+        profiles.length > 0 && (
+          <div class="footer-contact__profiles">
+            {profiles.map((profile) => {
+              const title = labelFor(profile.label);
+              const link = profile.url ?? "";
+              return <IconLink title={title} link={link} icon={profileIcon(title, link)} />;
+            })}
+          </div>
+        )
+      }
+      {
+        regions.length > 0 && (
+          <p class="footer-contact__regions">
+            {regions.map((region) => `${region.flag} ${labelFor(region.label)}`).join(" · ")}
+          </p>
+        )
+      }
+      {
+        serviceLanguages.length > 0 && (
+          <p class="footer-contact__languages">
+            {locale === "en" ? "Languages" : "Idiomas"}: {serviceLanguages.join(" · ")}
+          </p>
+        )
+      }
+    </div>
+  </div>
+  <div class="footer-legal bg-secondary text-muted-foreground">
+    <div class="site-container footer-legal__inner">
+      <p class="footer-legal__brand">{config?.identity?.name ?? "Dra. Ana Trevizan"}</p>
+      {professionalRegistration && <p>{professionalRegistration}</p>}
+      {disclaimer && <p>{disclaimer}</p>}
+      <p>
+        © {new Date().getFullYear()}
+        &nbsp;
+        {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? config?.identity?.name}
+      </p>
+    </div>
+  </div>
 </footer>
