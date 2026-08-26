@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test, type Page } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 
 const expectNoContrastViolations = async (page: Page) => {
 	const results = await new AxeBuilder({ page })
@@ -18,9 +18,11 @@ test.describe("color theme", () => {
 		await expect(toggle).toHaveCount(1);
 		await expect(page.locator("footer [data-theme-toggle]")).toHaveCount(0);
 		expect((await toggleLabel.boundingBox())?.width).toBeGreaterThan(1);
-		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
+		await expect(toggle).toHaveAccessibleName("Tema escuro");
 
-		const booking = page.getByRole("link", { name: /Agendar contacto/ }).first();
+		const booking = page
+			.getByRole("link", { name: /Agendar contacto/ })
+			.first();
 		const desktopBookingBox = await booking.boundingBox();
 		const desktopToggleBox = await toggle.boundingBox();
 		expect(desktopToggleBox?.x).toBeGreaterThan(
@@ -30,7 +32,7 @@ test.describe("color theme", () => {
 		await page.setViewportSize({ width: 320, height: 720 });
 		const menu = page.getByRole("button", { name: "Menu principal" });
 		expect((await toggleLabel.boundingBox())?.width).toBeLessThanOrEqual(1);
-		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
+		await expect(toggle).toHaveAccessibleName("Tema escuro");
 		const mobileToggleBox = await toggle.boundingBox();
 		const menuBox = await menu.boundingBox();
 		expect(mobileToggleBox?.x).toBeLessThan(menuBox?.x ?? 0);
@@ -53,13 +55,13 @@ test.describe("color theme", () => {
 		await page.emulateMedia({ colorScheme: "light" });
 		await page.goto("/");
 		const toggle = page.locator("[data-theme-toggle]");
-		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
+		await expect(toggle).toHaveAccessibleName("Tema escuro");
 
 		await toggle.focus();
 		await page.keyboard.press("Enter");
 		await expect(page.locator("html")).toHaveClass(/dark/);
 		await expect(toggle).toHaveAttribute("aria-pressed", "true");
-		await expect(toggle).toHaveAccessibleName("Usar tema claro");
+		await expect(toggle).toHaveAccessibleName("Tema claro");
 		expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
 			"dark",
 		);
@@ -67,7 +69,7 @@ test.describe("color theme", () => {
 		await page.reload();
 		await expect(page.locator("html")).toHaveClass(/dark/);
 		await expect(
-			page.getByRole("button", { name: "Usar tema claro" }),
+			page.getByRole("button", { name: "Tema claro" }),
 		).toHaveAttribute("aria-pressed", "true");
 	});
 
@@ -96,5 +98,26 @@ test.describe("color theme", () => {
 			await page.goto(path);
 			await expectNoContrastViolations(page);
 		}
+	});
+
+	test("dark theme separates neutral actions, copper accents, and wine surfaces", async ({
+		page,
+	}) => {
+		await page.emulateMedia({ colorScheme: "dark" });
+		await page.goto("/");
+
+		await expect(
+			page.getByRole("link", { name: /Agendar contacto/ }).first(),
+		).toHaveCSS("background-color", "rgb(244, 237, 225)");
+		await expect(page.locator(".home-hero__actions a").first()).toHaveCSS(
+			"background-color",
+			"rgb(216, 160, 122)",
+		);
+
+		await page.goto("/consultoria/ambiental-e-esg");
+		await expect(
+			page.locator(".consulting-differentiator__credentials"),
+		).toHaveCSS("background-color", "rgb(74, 21, 25)");
+		await expectNoContrastViolations(page);
 	});
 });
