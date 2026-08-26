@@ -35,7 +35,7 @@ importers:
       '@base-ui/react':
         specifier: ^1.7.0
         version: 1.7.0(@date-fns/tz@1.5.0)(@types/react@19.2.18)(date-fns@4.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@fontsource-variable/inter':
+      '@fontsource-variable/cabin':
         specifier: ^5.3.0
         version: 5.3.0
       '@fontsource-variable/playfair-display':
@@ -1288,8 +1288,8 @@ packages:
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
 
-  '@fontsource-variable/inter@5.3.0':
-    resolution: {integrity: sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==}
+  '@fontsource-variable/cabin@5.3.0':
+    resolution: {integrity: sha512-VDe9LHdI/XrmYDPCgBVkY+9ZLxAZFrTD3KhpJ/I0y3Ug9uCMDiNr0uKRaI7l1s1InANj1xH/Nsc7mOjkFJfK9w==}
 
   '@fontsource-variable/playfair-display@5.3.0':
     resolution: {integrity: sha512-IHdzTvE8eGIXHteZql7KXoqdc3Gfm+Zs1u4XlSC3MeplkwviT3sx/P6gI0tLwg/xIYLF4ZJYveZ5V+bl9cnDwA==}
@@ -10989,7 +10989,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@fontsource-variable/inter@5.3.0': {}
+  '@fontsource-variable/cabin@5.3.0': {}
 
   '@fontsource-variable/playfair-display@5.3.0': {}
 

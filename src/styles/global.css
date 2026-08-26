@@ -1,17 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "@fontsource-variable/cabin/wght.css";
 
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
-
-@font-face {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 100 900;
-	font-display: swap;
-	src: url("/fonts/inter-variable.woff2") format("woff2");
-}
 
 @font-face {
 	font-family: "Playfair Display";
@@ -21,18 +14,8 @@
 	src: url("/fonts/playfair-display-variable.woff2") format("woff2");
 }
 
-/* Metric-matched Arial fallback so the Inter swap doesn't reflow text (CLS). */
-@font-face {
-	font-family: "Inter Fallback";
-	src: local("Arial");
-	ascent-override: 90.44%;
-	descent-override: 22.52%;
-	line-gap-override: 0%;
-	size-adjust: 107.12%;
-}
-
 @theme inline {
-	--font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+	--font-sans: "Cabin Variable", system-ui, sans-serif;
 	--font-heading: "Playfair Display", Georgia, serif;
 	--font-body: var(--font-sans);
 	--font-label: var(--font-sans);

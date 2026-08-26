@@ -49,9 +49,11 @@ const iconLink = readFileSync("src/components/IconLink.astro", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
-		expect(css).toContain('url("/fonts/inter-variable.woff2")');
+		expect(css).toContain('@import "@fontsource-variable/cabin/wght.css"');
 		expect(css).toContain('url("/fonts/playfair-display-variable.woff2")');
-		expect(statSync("public/fonts/inter-variable.woff2").size).toBe(48_432);
+		expect(css).toContain(
+			'--font-sans: "Cabin Variable", system-ui, sans-serif',
+		);
 		expect(statSync("public/fonts/playfair-display-variable.woff2").size).toBe(
 			38_460,
 		);
