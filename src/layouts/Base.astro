@@ -10,7 +10,19 @@ interface Props { title: string; description: string; locale: PublishedLocale; r
 const props = Astro.props;
 const config = props.config ?? null;
 ---
-<!doctype html><html lang={props.locale === 'en' ? 'en' : 'pt-PT'}><head><BaseHead {...props} canonicalOrigin={config?.seo?.siteUrl} /></head><body>
+<!doctype html><html lang={props.locale === 'en' ? 'en' : 'pt-PT'}><head>
+	<script is:inline>
+		(() => {
+			let savedTheme = null;
+			try {
+				savedTheme = localStorage.getItem('theme');
+			} catch {}
+			const isDark = savedTheme === 'dark' || (savedTheme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+			document.documentElement.classList.toggle('dark', isDark);
+		})();
+	</script>
+	<BaseHead {...props} canonicalOrigin={config?.seo?.siteUrl} />
+</head><body>
 	<TinaIsland name="global" wrapper={islands.global.wrapper} params={{ locale: props.locale, routeKey: props.routeKey }}><Header config={config} locale={props.locale} routeKey={props.routeKey} languageAvailable={props.availableLocales?.includes(props.locale === 'en' ? 'pt-PT' : 'en')} /></TinaIsland>
 	<slot />
 	<TinaIsland name="global-footer" wrapper={islands['global-footer'].wrapper} params={{ locale: props.locale, routeKey: props.routeKey }}><Footer config={config} locale={props.locale} /></TinaIsland>

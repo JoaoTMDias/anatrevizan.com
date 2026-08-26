@@ -24,6 +24,11 @@
 		"tag": "Portugal e Brasil",
 		"subtitle": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
 		"introHeading": "Uma opinião que sustenta a decisão",
+		"introImage": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true
+		},
 		"introParagraphs": [
 			"Um parecer bem construído não é um documento formal a mais. É o que dá segurança a uma decisão difícil, protege quem a toma e resiste a escrutínio depois.",
 			"Cada parecer que entrego é fundamentado em legislação aplicável, doutrina, jurisprudência quando pertinente e literatura científica — com a clareza necessária para orientar quem decide."

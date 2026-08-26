@@ -1,81 +1,91 @@
 {
-	"translationGroup": "legal",
-	"locale": "pt-PT",
-	"routeKey": "legal",
-	"slug": "consultoria/juridica",
-	"status": "draft",
-	"approvalPending": false,
-	"media": {
-		"foreground": {
-			"image": "/hero-placeholder.webp",
-			"alt": "",
-			"decorative": true,
-			"aspectRatio": "square"
-		}
-	},
-	"title": "Consultoria Jurídica",
-	"summary": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
-	"seo": {
-		"title": "Consultoria Jurídica em Portugal · Civil, Trabalho e Administrativo",
-		"description": "Consultoria jurídica preventiva em Portugal: Direito Civil, do Trabalho, Administrativo e Urbanístico, análise contratual e estratégia jurídica.",
-		"noindex": true
-	},
-	"consultingService": {
-		"tag": "Portugal",
-		"subtitle": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
-		"introHeading": "Decidir bem começa por entender",
-		"introParagraphs": [
-			"A maioria dos conflitos jurídicos podia ter sido evitada com uma leitura atenta no momento certo — antes de assinar, antes de agir, antes do prazo apertar.",
-			"É aí que trabalho: na análise, na estratégia e na prevenção. Traduzo a legislação em orientações práticas, para que cada decisão seja informada e cada documento o proteja em vez de o expor."
-		],
-		"servicesHeading": "Áreas de atuação",
-		"servicesSubtitle": "Consultoria preventiva e estratégica, na fase extrajudicial.",
-		"services": [
-			{
-				"title": "Direito Civil",
-				"items": [
-					"Análise e revisão contratual",
-					"Responsabilidade civil",
-					"Direitos do consumidor",
-					"Negociação extrajudicial"
-				]
-			},
-			{
-				"title": "Direito do Trabalho",
-				"items": [
-					"Contratos de trabalho",
-					"Mobilidade internacional",
-					"Compliance trabalhista",
-					"Direitos e deveres das partes"
-				]
-			},
-			{
-				"title": "Direito Administrativo",
-				"items": [
-					"Interpretação de procedimentos",
-					"Preparação de requerimentos",
-					"Acompanhamento perante órgãos públicos"
-				]
-			},
-			{
-				"title": "Direito Urbanístico",
-				"items": [
-					"Análise de viabilidade jurídica",
-					"Licenciamento",
-					"Interpretação da legislação urbanística"
-				]
-			},
-			{
-				"title": "Análise contratual",
-				"description": "Análise técnica de contratos nacionais e internacionais: riscos, cláusulas críticas e oportunidades de melhoria antes da assinatura."
-			},
-			{
-				"title": "Estratégia jurídica",
-				"description": "Planeamento preventivo, organização documental e prevenção de litígios para uma tomada de decisão segura."
-			}
-		],
-		"ctaHeading": "Tem uma decisão jurídica pela frente?",
-		"ctaText": "Antes de assinar ou agir, marque uma conversa inicial e avalie os riscos com clareza."
-	},
-	"ctaRefs": ["booking"]
+  "translationGroup": "legal",
+  "locale": "pt-PT",
+  "routeKey": "legal",
+  "slug": "consultoria/juridica",
+  "status": "draft",
+  "approvalPending": false,
+  "title": "Consultoria Jurídica",
+  "summary": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
+  "seo": {
+    "title": "Consultoria Jurídica em Portugal · Civil, Trabalho e Administrativo",
+    "description": "Consultoria jurídica preventiva em Portugal: Direito Civil, do Trabalho, Administrativo e Urbanístico, análise contratual e estratégia jurídica.",
+    "noindex": true
+  },
+  "media": {
+    "background": {
+      "image": ""
+    },
+    "foreground": {
+      "image": "/hero-consultoria.webp",
+      "alt": "Uma vista de cima de uma mesa, onde está uma pequena estátua de Têmis, a Dama da Justiça.",
+      "decorative": false,
+      "aspectRatio": "square"
+    }
+  },
+  "consultingService": {
+    "tag": "Portugal",
+    "subtitle": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
+    "introHeading": "Decidir bem começa por entender",
+    "introImage": {
+      "image": "/consultoria-juridica-intro.webp",
+      "alt": "Ana a segurar um livro sobre alterações climáticas.",
+      "decorative": false
+    },
+    "introParagraphs": [
+      "A maioria dos conflitos jurídicos podia ter sido evitada com uma leitura atenta no momento certo — antes de assinar, antes de agir, antes do prazo apertar.",
+      "É aí que trabalho: na análise, na estratégia e na prevenção. Traduzo a legislação em orientações práticas, para que cada decisão seja informada e cada documento o proteja em vez de o expor."
+    ],
+    "servicesHeading": "Áreas de atuação",
+    "servicesSubtitle": "Consultoria preventiva e estratégica, na fase extrajudicial.",
+    "services": [
+      {
+        "title": "Direito Civil",
+        "items": [
+          "Análise e revisão contratual",
+          "Responsabilidade civil",
+          "Direitos do consumidor",
+          "Negociação extrajudicial"
+        ]
+      },
+      {
+        "title": "Direito do Trabalho",
+        "items": [
+          "Contratos de trabalho",
+          "Mobilidade internacional",
+          "Compliance trabalhista",
+          "Direitos e deveres das partes"
+        ]
+      },
+      {
+        "title": "Direito Administrativo",
+        "items": [
+          "Interpretação de procedimentos",
+          "Preparação de requerimentos",
+          "Acompanhamento perante órgãos públicos"
+        ]
+      },
+      {
+        "title": "Direito Urbanístico",
+        "items": [
+          "Análise de viabilidade jurídica",
+          "Licenciamento",
+          "Interpretação da legislação urbanística"
+        ]
+      },
+      {
+        "title": "Análise contratual",
+        "description": "Análise técnica de contratos nacionais e internacionais: riscos, cláusulas críticas e oportunidades de melhoria antes da assinatura."
+      },
+      {
+        "title": "Estratégia jurídica",
+        "description": "Planeamento preventivo, organização documental e prevenção de litígios para uma tomada de decisão segura."
+      }
+    ],
+    "ctaHeading": "Tem uma decisão jurídica pela frente?",
+    "ctaText": "Antes de assinar ou agir, marque uma conversa inicial e avalie os riscos com clareza."
+  },
+  "ctaRefs": [
+    "booking"
+  ]
 }

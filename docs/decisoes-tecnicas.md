@@ -143,6 +143,14 @@
   - respeitar `prefers-reduced-motion`;
   - respeitar preferências de poupança de dados.
 
+## Tema de cor
+
+- O lançamento inclui temas claro e escuro, com uma paleta escura quente derivada da identidade vinho e terracota.
+- Sem escolha guardada, o site segue `prefers-color-scheme`; uma escolha explícita é persistida localmente como `light` ou `dark` e tem precedência.
+- O tema é aplicado antes da primeira pintura, sem hidratação global, e pode ser alterado através de um botão acessível no final do footer.
+- WCAG AA é bloqueante: texto normal mantém pelo menos 4.5:1 e componentes essenciais pelo menos 3:1. AAA, 7:1 para texto normal, é o objetivo e é obrigatório para o texto principal e secundário sobre o fundo base.
+- A preferência de tema é funcional, não editorial, e não é configurável no TinaCMS.
+
 ## Ordem de execução atualizada
 
 1. Auditar e limpar o novo starter, preservando o build válido como baseline.

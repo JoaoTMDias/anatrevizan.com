@@ -43,9 +43,67 @@
 	}
 }
 
+@layer components {
+	.header-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.theme-toggle {
+		display: inline-flex;
+		min-height: 2.75rem;
+		width: fit-content;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		border: 1px solid var(--input);
+		border-radius: 999px;
+		background: var(--background);
+		color: var(--foreground);
+		padding: 0.625rem 0.875rem;
+		font: inherit;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.theme-toggle--compact {
+		width: 2.75rem;
+		padding: 0;
+	}
+
+	.theme-toggle:hover {
+		background: var(--accent);
+		color: var(--accent-foreground);
+	}
+
+	.theme-toggle svg {
+		width: 1.125rem;
+		height: 1.125rem;
+		flex: none;
+	}
+
+	.theme-toggle__sun,
+	.dark .theme-toggle__moon {
+		display: none;
+	}
+
+	.dark .theme-toggle__sun {
+		display: block;
+	}
+
+	@media (min-width: 64rem) {
+		.theme-toggle--compact {
+			width: fit-content;
+			margin-left: 0.25rem;
+			padding: 0.625rem 0.875rem;
+		}
+	}
+}
+
 @media (min-width: 48rem) {
 	.home-hero {
-		height: 40rem;
+		min-height: 40rem;
 	}
 	.editorial-hero {
 		min-height: 42.5rem;

@@ -3,6 +3,7 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { HomeContent } from "../../lib/page-content";
 import { hasValidRouteKey } from "../../lib/page-content";
+import { heroAspectRatio, heroFocalPoint } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
 import { pathFor } from "../../lib/routing";
@@ -25,6 +26,10 @@ const brandIcons = ["scale", "leaf", "school", "world"];
 const differenceIcons = ["world", "microscope", "language", "arrows-exchange"];
 const serviceIcons = ["plane-departure", "scale", "leaf", "building-community", "file-description"];
 const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
+const foreground = data.media?.foreground?.image ? data.media.foreground : null;
+const foregroundRatio = heroAspectRatio(foreground?.aspectRatio);
+const backgroundImage = data.media?.background?.image;
+const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
 ---
 
 <div id="main-content" tabindex="-1">
@@ -32,30 +37,60 @@ const featuredPublications = home ? selectHomePublications(await getPublications
   {
     home ? (
       <>
-        <header class="home-hero" data-tina-field={tinaField(data, "home")}>
+        <header
+          class="home-hero"
+          style={backgroundImage
+            ? `--home-hero-image: url("${backgroundImage}"); --home-hero-position: center ${backgroundPosition};`
+            : undefined}
+          data-tina-field={tinaField(data, "home")}
+        >
           <div class="site-container home-hero__inner">
-            <ul
-              class="home-brand-words"
-              aria-label={locale === "en" ? "Brand values" : "Valores da marca"}
-            >
-              {home.hero.brandWords.map((word, index) => (
-                <li>
-                  <Icon name={brandIcons[index]} />
-                  {word}
-                </li>
-              ))}
-            </ul>
-            <h1>{home.hero.heading}</h1>
-            <p>{home.hero.subtitle}</p>
-            <div class="home-hero__actions">
-              <>
-                <Button size="lg" variant="accent" href={pathFor("booking", locale)}>
-                  {home.hero.primaryCta}
-                </Button>
-                <Button size="lg" variant="outlineInverse" href={pathFor("consulting", locale)}>
-                  {home.hero.secondaryCta}
-                </Button>
-              </>
+            <div class="home-hero__layout">
+              <div class="home-hero__copy">
+                <ul
+                  class="home-brand-words"
+                  aria-label={locale === "en" ? "Brand values" : "Valores da marca"}
+                >
+                  {home.hero.brandWords.map((word, index) => (
+                    <li>
+                      <Icon name={brandIcons[index]} />
+                      {word}
+                    </li>
+                  ))}
+                </ul>
+                <h1>{home.hero.heading}</h1>
+                <p>{home.hero.subtitle}</p>
+                <div class="home-hero__actions">
+                  <Button size="lg" variant="accent" href={pathFor("booking", locale)}>
+                    {home.hero.primaryCta}
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outlineInverse"
+                    href={pathFor("consulting", locale)}
+                  >
+                    {home.hero.secondaryCta}
+                  </Button>
+                </div>
+              </div>
+              {foreground && (
+                <figure
+                  class:list={[
+                    "editorial-hero__foreground home-hero__foreground",
+                    `editorial-hero__foreground--${foregroundRatio}`,
+                  ]}
+                  data-tina-field={tinaField(data, "media")}
+                >
+                  <img
+                    src={foreground.image ?? undefined}
+                    alt={foreground.decorative ? "" : foreground.alt?.trim() ?? ""}
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    sizes="(min-width: 1024px) min(36vw, 28rem), calc(100vw - 2.5rem)"
+                  />
+                </figure>
+              )}
             </div>
           </div>
         </header>
@@ -150,7 +185,7 @@ const featuredPublications = home ? selectHomePublications(await getPublications
                 <p class="text-xs text-muted-foreground">
                   {[publication.year, publication.language].filter(Boolean).join(" · ")}
                 </p>
-                <h3 class="font-heading font-semibold text-foreground-900 leading-snug">
+                <h3 class="font-heading font-semibold text-card-foreground leading-snug">
                   {publication.title}
                 </h3>
                 {publication.journal && (
@@ -159,7 +194,7 @@ const featuredPublications = home ? selectHomePublications(await getPublications
                 {publication.url && (
                   <a
                     href={publication.url}
-                    class="inline-flex items-center gap-1 text-base font-medium text-accent-500 hover:text-accent-600"
+                    class="inline-flex items-center gap-1 text-base font-medium text-accent hover:underline"
                     target="_blank"
                     rel="external noopener noreferrer"
                   >
@@ -176,7 +211,7 @@ const featuredPublications = home ? selectHomePublications(await getPublications
             <h2 class="text-xs text-muted-foreground text-center uppercase tracking-widest">
               {home.credentialsLabel}
             </h2>
-            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-base text-foreground-700 text-center max-w-4xl mx-auto leading-relaxed">
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-base text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
               {home.credentials.map((credential) => (
                 <li>
                   <Icon name="circle-check" />

@@ -14,12 +14,12 @@
   },
   "media": {
     "background": {
-      "image": "/hero-ambiental.webp",
+      "image": "",
       "focalPoint": "center"
     },
     "foreground": {
-      "image": "/cover_consultoria-ambiental-e-esg.webp",
-      "alt": "Ana Flávia segurando um livro sobre consultoria ambiental e olhando para a câmera.",
+      "image": "/consultoria-ambiental-esg-hero.webp",
+      "alt": "Uma foto da floresta tropical",
       "decorative": false,
       "aspectRatio": "square"
     }
@@ -28,6 +28,11 @@
     "tag": "Brasil · União Europeia",
     "subtitle": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
     "introHeading": "Quando a norma europeia muda a sua operação",
+    "introImage": {
+      "image": "/consultoria-juridica-intro.webp",
+      "alt": "Ana Flávia sentada, a segurar um livro sobre alterações climáticas",
+      "decorative": true
+    },
     "introParagraphs": [
       "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia — mesmo a partir do Brasil. Um produtor que exporta madeira, um frigorífico, uma trading de commodities: todos passam a responder por aquilo que acontece na sua cadeia.",
       "O risco raramente está na falta de vontade de cumprir. Está na distância entre o texto de um regulamento europeu e a realidade de uma operação no terreno. É essa distância que trabalho para encurtar — com análise jurídica clara, fundamentada e aplicável."

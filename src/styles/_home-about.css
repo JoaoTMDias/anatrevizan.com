@@ -2,7 +2,7 @@
 	.home-hero {
 		position: relative;
 		display: flex;
-		height: 32.5rem;
+		min-height: 32.5rem;
 		align-items: center;
 		overflow: hidden;
 		background:
@@ -12,12 +12,26 @@
 				rgb(74 21 25 / 42%) 50%,
 				rgb(20 6 7 / 68%)
 			),
-			url("/hero-home.webp") center / cover no-repeat,
+			var(--home-hero-image, none) var(--home-hero-position, center) / cover
+			no-repeat,
 			var(--primary);
-		color: var(--primary-foreground);
+		color: var(--inverse-foreground);
 	}
 	.home-hero__inner {
 		padding-block: 2rem;
+	}
+	.home-hero__layout {
+		display: grid;
+		width: 100%;
+		align-items: center;
+		gap: clamp(2rem, 5vw, 4rem);
+	}
+	.home-hero__copy {
+		min-width: 0;
+	}
+	.home-hero__foreground {
+		width: min(100%, 28rem);
+		justify-self: center;
 	}
 	.home-brand-words {
 		display: flex;
@@ -59,6 +73,16 @@
 		flex-wrap: wrap;
 		gap: 1rem;
 		margin-top: 2rem;
+	}
+	@media (min-width: 64rem) {
+		.home-hero__layout {
+			grid-template-columns: minmax(0, 2fr) minmax(18rem, 2fr);
+		}
+		.home-hero__foreground {
+			justify-self: end;
+			width: 100%;
+			height: 100%;
+		}
 	}
 	.home-gateways,
 	.about-current-work {

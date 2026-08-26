@@ -3,7 +3,7 @@
   "locale": "pt-PT",
   "routeKey": "immigration-mobility",
   "slug": "consultoria/migracao-e-mobilidade",
-  "status": "draft",
+  "status": "ready",
   "approvalPending": false,
   "title": "Migração e Mobilidade",
   "summary": "Mudar de país é uma das decisões mais importantes da sua vida. Não devia ter de a enfrentar sozinho, nem à mercê da burocracia.",
@@ -13,9 +13,12 @@
     "noindex": true
   },
   "media": {
+    "background": {
+      "image": ""
+    },
     "foreground": {
-      "image": "/cover_migracao-e-mobilidade.webp",
-      "alt": "Ana Flávia a segurar dois passaportes na mão. Um de Portugal e outro do Brasil.",
+      "image": "/migracao-e-mobilidade-cover.webp",
+      "alt": "Fotografia de um avião a aterrar.",
       "decorative": false,
       "aspectRatio": "square"
     }
@@ -24,6 +27,11 @@
     "tag": "Portugal",
     "subtitle": "Mudar de país é uma das decisões mais importantes da sua vida. Não devia ter de a enfrentar sozinho, nem à mercê da burocracia.",
     "introHeading": "Entendo o que está em jogo",
+    "introImage": {
+      "image": "/migracao-e-mobilidade-intro.webp",
+      "alt": "Ana Flávia a segurar dois passaportes na mão. Um de Portugal e outro do Brasil.",
+      "decorative": false
+    },
     "introParagraphs": [
       "Vistos, NIF, Segurança Social, número de utente, reconhecimento do diploma. Cada sigla esconde um processo, um prazo e o receio de dar um passo em falso que atrase tudo o resto.",
       "Vivo em Portugal e conheço o outro lado — o de quem chega. Ofereço orientação jurídica clara e um acompanhamento próximo, para que cada etapa da sua mudança seja uma decisão informada e segura, e não um salto no escuro."

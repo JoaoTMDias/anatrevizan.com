@@ -1,3 +1,36 @@
+/* Public class exposed by @jtmdias/react-a11y-tools/SkipLinks. */
+.css-skip-links__item {
+	position: fixed;
+	top: 0.75rem;
+	left: 1rem;
+	z-index: 70;
+	display: inline-flex;
+	min-height: 2.75rem;
+	align-items: center;
+	justify-content: center;
+	padding-inline: 1rem;
+	border-radius: var(--radius-md);
+	background: var(--background);
+	box-shadow: var(--shadow-lg);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.css-skip-links__item:not(:focus) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within {
 		scroll-behavior: auto;

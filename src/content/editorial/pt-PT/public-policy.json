@@ -24,6 +24,11 @@
 		"tag": "Brasil",
 		"subtitle": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
 		"introHeading": "Da norma à implementação",
+		"introImage": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true
+		},
 		"introParagraphs": [
 			"Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção — está no desenho jurídico e na governança.",
 			"É esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir."

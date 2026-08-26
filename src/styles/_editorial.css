@@ -6,7 +6,10 @@
 		position: relative;
 		isolation: isolate;
 		min-height: 35rem;
-		background: var(--brand-burgundy);
+		background: linear-gradient(
+			var(--color-primary-800),
+			var(--brand-burgundy)
+		);
 		color: #ffffff;
 		text-shadow: var(--hero-text-shadow);
 	}
@@ -63,9 +66,20 @@
 		background: color-mix(in oklab, var(--brand-burgundy) 82%, black);
 		box-shadow: 0 1.5rem 3rem rgb(20 6 7 / 28%);
 		text-shadow: none;
-		transform: rotate(2deg);
+		transform: rotate(1deg);
 		transform-origin: center;
 	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.editorial-hero__foreground {
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+
+	.editorial-hero__foreground:hover {
+		transform: rotate(0deg);
+	}
+
 	.editorial-hero__foreground--square {
 		aspect-ratio: 1;
 	}
@@ -98,10 +112,12 @@
 	@media (min-width: 64rem) {
 		.editorial-hero--with-foreground .editorial-hero__content {
 			max-width: none;
-			grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
+			grid-template-columns: minmax(0, 2fr) minmax(18rem, 2fr);
 		}
 		.editorial-hero__foreground {
 			justify-self: end;
+			width: 100%;
+			height: 100%;
 		}
 	}
 	.editorial-hero h1 {
@@ -205,13 +221,13 @@
 	}
 	.editorial-cta {
 		background: var(--brand-burgundy);
-		color: var(--primary-foreground);
+		color: var(--inverse-foreground);
 		padding-block: clamp(4rem, 8vw, 5rem);
 	}
 	.editorial-cta p {
 		max-width: 40rem;
 		margin: 1rem auto 2rem;
-		color: color-mix(in oklab, var(--primary-foreground) 75%, transparent);
+		color: var(--inverse-muted-foreground);
 		line-height: 1.7;
 	}
 	.editorial-cta__actions {

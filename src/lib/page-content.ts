@@ -73,6 +73,11 @@ export interface ConsultingServiceContent {
 	tag: string;
 	subtitle: string;
 	introHeading: string;
+	introImage?: {
+		image?: string | null;
+		alt?: string | null;
+		decorative?: boolean | null;
+	} | null;
 	introParagraphs: string[];
 	servicesHeading: string;
 	servicesSubtitle?: string | null;

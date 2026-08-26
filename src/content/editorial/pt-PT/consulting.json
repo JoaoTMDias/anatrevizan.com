@@ -1,79 +1,92 @@
 {
-	"translationGroup": "consulting",
-	"locale": "pt-PT",
-	"routeKey": "consulting",
-	"slug": "consultoria",
-	"status": "draft",
-	"approvalPending": false,
-	"media": {
-		"background": {
-			"image": "/hero-consultoria.webp",
-			"focalPoint": "top"
-		},
-		"foreground": {
-			"image": "/hero-placeholder.webp",
-			"alt": "",
-			"decorative": true,
-			"aspectRatio": "square"
-		}
-	},
-	"title": "Consultoria",
-	"summary": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
-	"seo": {
-		"title": "Consultoria Jurídica e Ambiental · Portugal e Brasil",
-		"description": "Consultoria jurídica e ambiental entre Portugal e Brasil: migração, Direito civil, ESG, EUDR, políticas públicas e pareceres. Atuação preventiva e consultiva.",
-		"noindex": true
-	},
-	"consultingHub": {
-		"subtitle": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
-		"introHeading": "Onde precisa de apoio?",
-		"introText": "Alguns serviços aplicam-se a Portugal (migração, Direito civil), outros ao Brasil (ambiental, ESG, políticas públicas). Há ainda o que atravessa os dois — como a regulação europeia aplicada a operações brasileiras. Filtre pela sua situação.",
-		"filters": {
-			"portugal": "Estou em Portugal",
-			"brazil": "Estou no Brasil",
-			"all": "Ver tudo"
-		},
-		"areas": [
-			{
-				"title": "Migração e Mobilidade",
-				"tag": "Portugal",
-				"summary": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
-				"routeKey": "immigration-mobility",
-				"countries": ["pt"]
-			},
-			{
-				"title": "Consultoria Jurídica",
-				"tag": "Portugal",
-				"summary": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
-				"routeKey": "legal",
-				"countries": ["pt"]
-			},
-			{
-				"title": "Ambiental e ESG",
-				"tag": "Brasil · União Europeia",
-				"summary": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
-				"routeKey": "environmental-esg",
-				"countries": ["br"]
-			},
-			{
-				"title": "Políticas Públicas e Governança",
-				"tag": "Brasil",
-				"summary": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
-				"routeKey": "public-policy",
-				"countries": ["br"]
-			},
-			{
-				"title": "Pareceres e Notas Técnicas",
-				"tag": "Portugal e Brasil",
-				"summary": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
-				"routeKey": "legal-opinions",
-				"countries": ["pt", "br"]
-			}
-		],
-		"areaCta": "Saber mais",
-		"note": "Atuação preventiva, consultiva e extrajudicial. Não inclui representação em processos judiciais (contencioso). Atendimento em português, inglês e espanhol.",
-		"ctaHeading": "Não tem a certeza de qual área se aplica ao seu caso?",
-		"ctaText": "Descreva a sua situação numa conversa inicial e indico o melhor caminho."
-	},
-	"ctaRefs": ["booking"]
+  "translationGroup": "consulting",
+  "locale": "pt-PT",
+  "routeKey": "consulting",
+  "slug": "consultoria",
+  "status": "draft",
+  "approvalPending": false,
+  "title": "Consultoria",
+  "summary": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
+  "seo": {
+    "title": "Consultoria Jurídica e Ambiental · Portugal e Brasil",
+    "description": "Consultoria jurídica e ambiental entre Portugal e Brasil: migração, Direito civil, ESG, EUDR, políticas públicas e pareceres. Atuação preventiva e consultiva.",
+    "noindex": true
+  },
+  "media": {
+    "background": {
+      "image": "",
+      "focalPoint": "top"
+    },
+    "foreground": {
+      "image": "/hero-placeholder.webp",
+      "alt": "",
+      "decorative": true,
+      "aspectRatio": "square"
+    }
+  },
+  "consultingHub": {
+    "subtitle": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
+    "introHeading": "Onde precisa de apoio?",
+    "introText": "Alguns serviços aplicam-se a Portugal (migração, Direito civil), outros ao Brasil (ambiental, ESG, políticas públicas). Há ainda o que atravessa os dois — como a regulação europeia aplicada a operações brasileiras. Filtre pela sua situação.",
+    "filters": {
+      "portugal": "Estou em Portugal",
+      "brazil": "Estou no Brasil",
+      "all": "Ver tudo"
+    },
+    "areas": [
+      {
+        "title": "Migração e Mobilidade",
+        "tag": "Portugal",
+        "summary": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
+        "routeKey": "immigration-mobility",
+        "countries": [
+          "pt"
+        ]
+      },
+      {
+        "title": "Consultoria Jurídica",
+        "tag": "Portugal",
+        "summary": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
+        "routeKey": "legal",
+        "countries": [
+          "pt"
+        ]
+      },
+      {
+        "title": "Ambiental e ESG",
+        "tag": "Brasil · União Europeia",
+        "summary": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
+        "routeKey": "environmental-esg",
+        "countries": [
+          "br"
+        ]
+      },
+      {
+        "title": "Políticas Públicas e Governança",
+        "tag": "Brasil",
+        "summary": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
+        "routeKey": "public-policy",
+        "countries": [
+          "br"
+        ]
+      },
+      {
+        "title": "Pareceres e Notas Técnicas",
+        "tag": "Portugal e Brasil",
+        "summary": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
+        "routeKey": "legal-opinions",
+        "countries": [
+          "pt",
+          "br"
+        ]
+      }
+    ],
+    "areaCta": "Saber mais",
+    "note": "Atuação preventiva, consultiva e extrajudicial. Não inclui representação em processos judiciais (contencioso). Atendimento em português, inglês e espanhol.",
+    "ctaHeading": "Não tem a certeza de qual área se aplica ao seu caso?",
+    "ctaText": "Descreva a sua situação numa conversa inicial e indico o melhor caminho."
+  },
+  "ctaRefs": [
+    "booking"
+  ]
 }

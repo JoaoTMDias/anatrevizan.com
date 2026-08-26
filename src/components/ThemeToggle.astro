@@ -1,24 +1,60 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { PublishedLocale } from '../lib/routing';
+
+interface Props {
+	locale?: PublishedLocale;
+	compact?: boolean;
+}
+
+const { locale = 'pt-PT', compact = false } = Astro.props;
+const darkLabel = locale === 'en' ? 'Use dark theme' : 'Usar tema escuro';
+const lightLabel = locale === 'en' ? 'Use light theme' : 'Usar tema claro';
 ---
 <button
 	data-theme-toggle
+	data-dark-label={darkLabel}
+	data-light-label={lightLabel}
 	type="button"
-	aria-label="Toggle color theme"
-	class="inline-flex size-11 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
+	aria-label={darkLabel}
+	aria-pressed="false"
+	class:list={["theme-toggle", compact && "theme-toggle--compact"]}
 >
-	<Icon name="tabler:sun" class="hidden size-5 dark:block" />
-	<Icon name="tabler:moon" class="block size-5 dark:hidden" />
+	<Icon name="tabler:sun" class="theme-toggle__sun" />
+	<Icon name="tabler:moon" class="theme-toggle__moon" />
+	<span class:list={[compact && "sr-only lg:not-sr-only"]} data-theme-toggle-label>{darkLabel}</span>
 </button>
 <script is:inline>
-	// Delegate from document so the handler survives DOM swaps from
-	// Astro's ClientRouter and Tina's visual-editor re-renders.
+	const syncThemeToggle = () => {
+		const isDark = document.documentElement.classList.contains('dark');
+		document.querySelectorAll('[data-theme-toggle]').forEach((toggle) => {
+			const label = isDark ? toggle.dataset.lightLabel : toggle.dataset.darkLabel;
+			toggle.setAttribute('aria-pressed', String(isDark));
+			toggle.setAttribute('aria-label', label);
+			const visibleLabel = toggle.querySelector('[data-theme-toggle-label]');
+			if (visibleLabel) visibleLabel.textContent = label;
+		});
+	};
+
+	syncThemeToggle();
 	if (!window.__themeToggleBound) {
 		window.__themeToggleBound = true;
 		document.addEventListener('click', (e) => {
-			if (!e.target.closest('[data-theme-toggle]')) return;
+			if (!(e.target instanceof Element) || !e.target.closest('[data-theme-toggle]')) return;
 			const isDark = document.documentElement.classList.toggle('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			try {
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			} catch {}
+			syncThemeToggle();
+		});
+		matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+			let hasSavedTheme = false;
+			try {
+				hasSavedTheme = localStorage.getItem('theme') !== null;
+			} catch {}
+			if (hasSavedTheme) return;
+			document.documentElement.classList.toggle('dark', event.matches);
+			syncThemeToggle();
 		});
 	}
 </script>

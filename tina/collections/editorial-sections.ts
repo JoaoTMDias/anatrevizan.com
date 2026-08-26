@@ -238,6 +238,23 @@ export const consultingServiceFields: TinaField[] = [
 			text("subtitle", "Subtitle"),
 			text("introHeading", "Introduction heading"),
 			{
+				name: "introImage",
+				label: "Introduction image",
+				type: "object",
+				fields: [
+					{ name: "image", label: "Image", type: "image" },
+					text("alt", "Alternative text", false),
+					{
+						name: "decorative",
+						label: "Decorative image",
+						type: "boolean",
+						description:
+							"Decorative images use an empty alt attribute. Otherwise, alternative text is required.",
+						ui: { defaultValue: false },
+					},
+				],
+			},
+			{
 				name: "introParagraphs",
 				label: "Introduction paragraphs",
 				type: "string",

@@ -51,18 +51,14 @@ interface LanguageLink {
 }
 
 interface HeaderMenuProps {
-	brand: string;
 	closeLabel: string;
-	homeHref: string;
 	items: HeaderMenuItem[];
 	languageLink?: LanguageLink;
 	menuLabel: string;
 }
 
 export default function HeaderMenu({
-	brand,
 	closeLabel,
-	homeHref,
 	items,
 	languageLink,
 	menuLabel,
@@ -89,7 +85,7 @@ export default function HeaderMenu({
 													<NavigationMenuLink
 														href={child.href}
 														className={cn(
-															"nav-dropdown__item grid! items-stretch! gap-[0.1875rem]!",
+															"nav-dropdown__item grid! items-stretch! gap-[0.1875rem]! rounded-none!",
 															child.highlight &&
 																"nav-dropdown__item--highlight",
 														)}
@@ -148,7 +144,7 @@ export default function HeaderMenu({
 
 			<Sheet>
 				<SheetTrigger
-					className="grid size-11 cursor-pointer place-items-center rounded-full text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+					className="header-menu-toggle grid size-11 cursor-pointer place-items-center rounded-full text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 					aria-label={menuLabel}
 				>
 					<MenuIcon className="size-6" aria-hidden="true" />

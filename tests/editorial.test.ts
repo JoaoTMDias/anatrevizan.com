@@ -90,7 +90,7 @@ describe("editorial validation", () => {
 		expect(validateEditorialDocuments(actual)).toEqual([]);
 	});
 
-	it("configures a temporary side image for every localized PageHero", () => {
+	it("configures an accessible side image for every localized PageHero", () => {
 		const pageHeroRoutes = new Set([
 			"about",
 			"academic",
@@ -113,11 +113,22 @@ describe("editorial validation", () => {
 		)) {
 			const document = JSON.parse(readFileSync(file, "utf8"));
 			if (!pageHeroRoutes.has(document.routeKey)) continue;
-			expect(document.media?.foreground).toMatchObject({
-				image: HERO_PLACEHOLDER_PATH,
-				decorative: true,
-				aspectRatio: "square",
-			});
+			const foreground = document.media?.foreground;
+			expect(foreground?.image).toBeTruthy();
+			expect(["square", "landscape"]).toContain(foreground?.aspectRatio);
+			if (!foreground?.decorative) expect(foreground?.alt?.trim()).toBeTruthy();
+		}
+	});
+
+	it("configures an introduction image for every consulting service page", () => {
+		for (const file of jsonFiles(
+			join(process.cwd(), "src/content/editorial"),
+		)) {
+			const document = JSON.parse(readFileSync(file, "utf8"));
+			if (!document.consultingService) continue;
+			const image = document.consultingService.introImage;
+			expect(image?.image).toBeTruthy();
+			if (!image?.decorative) expect(image?.alt?.trim()).toBeTruthy();
 		}
 	});
 
