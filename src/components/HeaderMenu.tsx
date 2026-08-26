@@ -117,7 +117,7 @@ export default function HeaderMenu({
 										navigationMenuTriggerStyle(),
 										"text-foreground/80 hover:text-primary",
 										item.emphasis &&
-											"ml-2 rounded-full bg-primary px-5 text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground active:bg-primary active:text-primary-foreground",
+											"ml-2 rounded-full bg-action-primary px-5 text-action-primary-foreground shadow-sm hover:bg-action-primary/90 hover:text-action-primary-foreground focus:bg-action-primary focus:text-action-primary-foreground active:bg-action-primary active:text-action-primary-foreground",
 									)}
 									aria-current={item.isCurrent ? "page" : undefined}
 								>
@@ -206,7 +206,7 @@ export default function HeaderMenu({
 										className={cn(
 											"block rounded-md px-3 py-3 font-medium hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
 											item.emphasis &&
-												"rounded-full bg-primary px-5 text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground active:bg-primary active:text-primary-foreground",
+												"rounded-full bg-action-primary px-5 text-action-primary-foreground hover:bg-action-primary/90 hover:text-action-primary-foreground focus:bg-action-primary focus:text-action-primary-foreground active:bg-action-primary active:text-action-primary-foreground",
 										)}
 										aria-current={item.isCurrent ? "page" : undefined}
 									>
