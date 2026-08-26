@@ -84,7 +84,6 @@
 	.contact-methods {
 		align-self: start;
 		padding: 1.5rem;
-		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
 		background: var(--secondary);
 	}

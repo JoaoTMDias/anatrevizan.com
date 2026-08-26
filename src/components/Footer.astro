@@ -29,7 +29,6 @@ const phone = config?.contacts?.phone;
 const profiles = (config?.contacts?.profiles ?? [])
   .filter(present)
   .filter((profile) => Boolean(profile.url));
-const regions = (config?.contacts?.regions ?? []).filter(present);
 const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter(
   (language): language is string => Boolean(language)
 );
@@ -151,13 +150,6 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
               return <IconLink title={title} link={link} icon={profileIcon(title, link)} />;
             })}
           </div>
-        )
-      }
-      {
-        regions.length > 0 && (
-          <p class="footer-contact__regions">
-            {regions.map((region) => `${region.flag} ${labelFor(region.label)}`).join(" · ")}
-          </p>
         )
       }
       {

@@ -132,10 +132,8 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
       </>
     ) : (
       <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
-        <>
-          <h1>{data.title}</h1>
-          <p class="mt-4">{data.summary}</p>
-        </>
+        <h1>{data.title}</h1>
+        <p class="mt-4">{data.summary}</p>
       </section>
     )
   }

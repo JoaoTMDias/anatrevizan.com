@@ -13,9 +13,9 @@ const locale = data.locale === "en" ? "en" : "pt-PT";
 
 <div id="main-content" tabindex="-1">
   <DraftNotice locale={locale} approvalPending={data.approvalPending} />
-  <header class="legal-header">
+  <div class="legal-header">
     <div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p></div>
-  </header>
+  </div>
   {
     page && (
       <div class="legal-content site-container" data-tina-field={tinaField(data, "termsPage")}>
