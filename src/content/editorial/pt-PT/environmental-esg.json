@@ -95,6 +95,11 @@
     ],
     "differentiatorEyebrow": "O que me distingue",
     "differentiatorHeading": "Não falo do EUDR de fora. Fui à Amazónia estudá-lo.",
+    "differentiatorImage": {
+      "image": "/ambiental-esg-amazonia.webp",
+      "alt": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta.",
+      "decorative": false
+    },
     "differentiatorParagraphs": [
       "O meu doutoramento na NOVA Lisboa investigou o «Efeito Bruxelas» sobre a política florestal brasileira. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam — ou tropeçam — na prática.",
       "É a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta cada parecer e cada recomendação que entrego."

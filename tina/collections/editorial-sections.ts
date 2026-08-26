@@ -294,6 +294,23 @@ export const consultingServiceFields: TinaField[] = [
 			text("differentiatorEyebrow", "Differentiator eyebrow", false),
 			text("differentiatorHeading", "Differentiator heading", false),
 			{
+				name: "differentiatorImage",
+				label: "Differentiator image",
+				type: "object",
+				fields: [
+					{ name: "image", label: "Image", type: "image" },
+					text("alt", "Alternative text", false),
+					{
+						name: "decorative",
+						label: "Decorative image",
+						type: "boolean",
+						description:
+							"Decorative images use an empty alt attribute. Otherwise, alternative text is required.",
+						ui: { defaultValue: false },
+					},
+				],
+			},
+			{
 				name: "differentiatorParagraphs",
 				label: "Differentiator paragraphs",
 				type: "string",

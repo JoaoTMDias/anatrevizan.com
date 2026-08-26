@@ -23,6 +23,44 @@
 	.consulting-intro__copy {
 		min-width: 0;
 	}
+	.consulting-differentiator__media {
+		overflow: hidden;
+		margin: 0;
+		border-radius: var(--radius-xl);
+		background: var(--muted);
+		aspect-ratio: 4 / 3;
+	}
+	.consulting-differentiator__media img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.consulting-differentiator--standard {
+		max-width: 56rem;
+	}
+	.consulting-differentiator--standard .consulting-differentiator__media {
+		margin-bottom: 1.75rem;
+	}
+	.consulting-differentiator--accent {
+		display: grid;
+		gap: clamp(2rem, 5vw, 4rem);
+		align-items: start;
+	}
+	.consulting-differentiator--accent .consulting-differentiator__column {
+		display: flex;
+		min-width: 0;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.consulting-differentiator--accent .consulting-differentiator__heading {
+		margin-bottom: 0;
+	}
+	@media (min-width: 48rem) {
+		.consulting-differentiator--accent {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
 	@media (min-width: 64rem) {
 		.consulting-intro:not(.consulting-intro--text-only) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));

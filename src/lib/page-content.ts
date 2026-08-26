@@ -94,6 +94,11 @@ export interface ConsultingServiceContent {
 	crosslinkRouteKey?: RouteKey | null;
 	differentiatorEyebrow?: string | null;
 	differentiatorHeading?: string | null;
+	differentiatorImage?: {
+		image?: string | null;
+		alt?: string | null;
+		decorative?: boolean | null;
+	} | null;
 	differentiatorParagraphs?: string[] | null;
 	differentiatorCredentials?: string[] | null;
 	relatedWorkHeading?: string | null;

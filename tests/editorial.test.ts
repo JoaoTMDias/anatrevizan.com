@@ -132,6 +132,17 @@ describe("editorial validation", () => {
 		}
 	});
 
+	it("configures accessible optional differentiator images", () => {
+		for (const file of jsonFiles(
+			join(process.cwd(), "src/content/editorial"),
+		)) {
+			const document = JSON.parse(readFileSync(file, "utf8"));
+			const image = document.consultingService?.differentiatorImage;
+			if (!image?.image) continue;
+			if (!image.decorative) expect(image.alt?.trim()).toBeTruthy();
+		}
+	});
+
 	it("validates hero media accessibility and publication safety", () => {
 		expect(heroAspectRatio(undefined)).toBe("square");
 		expect(heroAspectRatio("landscape")).toBe("landscape");

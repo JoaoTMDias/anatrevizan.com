@@ -135,44 +135,72 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
         )}
         {service.differentiatorHeading && (
           <Section>
-            <div class:list={[accent && "grid items-center gap-10 md:grid-cols-2"]}>
-              <div class:list={[!accent && "max-w-4xl"]}>
+            <div
+              class:list={[
+                "consulting-differentiator",
+                accent
+                  ? "consulting-differentiator--accent"
+                  : "consulting-differentiator--standard",
+              ]}
+            >
+              <div class="consulting-differentiator__column">
                 <SectionHeading
                   title={service.differentiatorHeading}
                   eyebrow={service.differentiatorEyebrow}
+                  class={accent ? "consulting-differentiator__heading" : undefined}
                 />
-                <div class="space-y-5 leading-relaxed text-muted-foreground">
+                {service.differentiatorImage?.image && (
+                  <figure
+                    class="consulting-differentiator__media"
+                    data-tina-field={tinaField(data, "consultingService")}
+                  >
+                    <img
+                      src={service.differentiatorImage.image}
+                      alt={
+                        service.differentiatorImage.decorative
+                          ? ""
+                          : service.differentiatorImage.alt?.trim() ?? ""
+                      }
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
+                  </figure>
+                )}
+              </div>
+              <div class="consulting-differentiator__column">
+                <div class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground">
                   {service.differentiatorParagraphs?.map((paragraph) => (
                     <p>{paragraph}</p>
                   ))}
                 </div>
+                {service.differentiatorCredentials?.length && (
+                  <ul
+                    class:list={
+                      accent
+                        ? "consulting-differentiator__credentials space-y-4 rounded-lg bg-primary p-8 text-primary-foreground"
+                        : "mt-7 grid gap-3 sm:grid-cols-2"
+                    }
+                  >
+                    {service.differentiatorCredentials.map((credential) => (
+                      <li
+                        class:list={
+                          accent
+                            ? "flex gap-3 text-base leading-relaxed"
+                            : "rounded-md border bg-card p-4 text-base"
+                        }
+                      >
+                        {accent && (
+                          <span class="mt-0.5 text-white" aria-hidden="true">
+                            <Icon name="award" />
+                          </span>
+                        )}
+                        <span>{credential}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              {service.differentiatorCredentials?.length && (
-                <ul
-                  class:list={
-                    accent
-                      ? "space-y-4 rounded-lg bg-primary p-8 text-primary-foreground"
-                      : "mt-7 grid gap-3 sm:grid-cols-2"
-                  }
-                >
-                  {service.differentiatorCredentials.map((credential) => (
-                    <li
-                      class:list={
-                        accent
-                          ? "flex gap-3 text-base leading-relaxed"
-                          : "rounded-md border bg-card p-4 text-base"
-                      }
-                    >
-                      {accent && (
-                        <span class="mt-0.5 text-white" aria-hidden="true">
-                          <Icon name="award" />
-                        </span>
-                      )}
-                      <span>{credential}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </div>
           </Section>
         )}
