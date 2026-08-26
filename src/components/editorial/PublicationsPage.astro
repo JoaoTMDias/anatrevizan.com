@@ -1,71 +1,182 @@
 ---
-import { tinaField } from '@tinacms/astro/tina-field';
-import type { CmsEditorial } from '../../lib/data';
-import type { PublicationsPageContent } from '../../lib/page-content';
-import { getPublications } from '../../lib/publication-content';
-import { sortPublications } from '../../lib/publications';
-import { pathFor } from '../../lib/routing';
-import Button from '../ui/Button.astro';
-import Icon from '../ui/Icon.astro';
-import Section from '../ui/Section.astro';
-import ContactCta from './ContactCta.astro';
-import DraftNotice from './DraftNotice.astro';
-import PageHero from './PageHero.astro';
-interface Props { data: CmsEditorial }
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { PublicationsPageContent } from "../../lib/page-content";
+import { getPublications } from "../../lib/publication-content";
+import { sortPublications } from "../../lib/publications";
+import { pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import DraftNotice from "./DraftNotice.astro";
+import PageHero from "./PageHero.astro";
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const page = data.publicationsPage as PublicationsPageContent | null | undefined;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const locale = data.locale === "en" ? "en" : "pt-PT";
 const publications = page ? sortPublications(await getPublications()) : [];
-const years = [...new Set(publications.flatMap((item) => item.year ? [item.year] : []))].sort().reverse();
-const languages = [...new Set(publications.flatMap((item) => item.language ? [item.language] : []))].sort();
+const years = [...new Set(publications.flatMap((item) => (item.year ? [item.year] : [])))]
+  .sort()
+  .reverse();
+const languages = [
+  ...new Set(publications.flatMap((item) => (item.language ? [item.language] : []))),
+].sort();
 const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].sort();
 ---
-<article id="main-content" tabindex="-1">
-	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
-	{page ? <>
-		<PageHero title={data.title} subtitle={page.subtitle} tag={page.tag} locale={locale} heroMedia={data.media} parent={{ label: locale === 'en' ? 'Academic' : 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'publicationsPage')} />
-		<Section><p class="max-w-3xl text-lg leading-relaxed text-muted-foreground">{page.introText}</p>
-			<form class="publication-filters" data-publication-filters>
-				<label><span class="sr-only">{page.filters.allYears}</span><select name="year" aria-label={page.filters.allYears}><option value="">{page.filters.allYears}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></label>
-				<label><span class="sr-only">{page.filters.allTopics}</span><select name="topic" aria-label={page.filters.allTopics}><option value="">{page.filters.allTopics}</option>{topics.map((topic) => <option value={topic}>{topic}</option>)}</select></label>
-				<label><span class="sr-only">{page.filters.allLanguages}</span><select name="language" aria-label={page.filters.allLanguages}><option value="">{page.filters.allLanguages}</option>{languages.map((language) => <option value={language}>{language}</option>)}</select></label>
-				<button type="reset"><Icon name="x" />{page.filters.clear}</button>
-				<p aria-live="polite" data-publication-count data-single={page.filters.singleResult} data-multiple={page.filters.multipleResults}>{publications.length} {page.filters.multipleResults}</p>
-			</form>
-			<div class="publication-list" data-publications>{publications.map((publication) => <article class="publication-card" data-year={publication.year ?? ''} data-language={publication.language ?? ''} data-topics={(publication.topics ?? []).join('|')}>
-				<div class="publication-card__content"><div class="publication-card__meta">{publication.year && <span>{publication.year}</span>}{publication.language && <span>{publication.language}</span>}{publication.highlight && <strong><Icon name="award" />{publication.highlight}</strong>}</div>
-				<h2>{publication.title}</h2>
-				{publication.journal && <p>{publication.journal}</p>}
-				{publication.topics?.length && <ul aria-label={locale === 'en' ? 'Topics' : 'Temas'}>{publication.topics.map((topic) => <li>{topic}</li>)}</ul>}</div>
-				{publication.url ? <Button variant="outline" href={publication.url} rel="external">{page.filters.view}<Icon name="external-link" /></Button> : <p class="publication-card__unavailable">{locale === 'en' ? 'Link unavailable.' : 'Ligação não disponível.'}</p>}
-			</article>)}</div>
-			<p class="publication-empty hidden" data-publication-empty>{page.filters.empty}</p>
-			<p class="publication-orcid-note">{page.orcidNote}</p>
-		</Section>
-		<ContactCta heading={page.ctaHeading} text={page.ctaText} locale={locale} />
-	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
-</article>
+
+<div id="main-content" tabindex="-1">
+  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
+  {
+    page ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={page.subtitle}
+          tag={page.tag}
+          locale={locale}
+          heroMedia={data.media}
+          parent={{
+            label: locale === "en" ? "Academic" : "Academia",
+            href: pathFor("academic", locale),
+          }}
+          data-tina-field={tinaField(data, "publicationsPage")}
+        />
+        <Section>
+          <p class="max-w-3xl text-lg leading-relaxed text-muted-foreground">{page.introText}</p>
+          <form class="publication-filters" data-publication-filters>
+            <label>
+              <>
+                <span class="sr-only">{page.filters.allYears}</span>
+                <select name="year" aria-label={page.filters.allYears}>
+                  <option value="">{page.filters.allYears}</option>
+                  {years.map((year) => (
+                    <option value={year}>{year}</option>
+                  ))}
+                </select>
+              </>
+            </label>
+            <label>
+              <>
+                <span class="sr-only">{page.filters.allTopics}</span>
+                <select name="topic" aria-label={page.filters.allTopics}>
+                  <option value="">{page.filters.allTopics}</option>
+                  {topics.map((topic) => (
+                    <option value={topic}>{topic}</option>
+                  ))}
+                </select>
+              </>
+            </label>
+            <label>
+              <>
+                <span class="sr-only">{page.filters.allLanguages}</span>
+                <select name="language" aria-label={page.filters.allLanguages}>
+                  <option value="">{page.filters.allLanguages}</option>
+                  {languages.map((language) => (
+                    <option value={language}>{language}</option>
+                  ))}
+                </select>
+              </>
+            </label>
+            <button type="reset">
+              <Icon name="x" />
+              {page.filters.clear}
+            </button>
+            <p
+              aria-live="polite"
+              data-publication-count
+              data-single={page.filters.singleResult}
+              data-multiple={page.filters.multipleResults}
+            >
+              {publications.length} {page.filters.multipleResults}
+            </p>
+          </form>
+          <div class="publication-list" data-publications>
+            {publications.map((publication) => (
+              <article
+                class="publication-card"
+                data-year={publication.year ?? ""}
+                data-language={publication.language ?? ""}
+                data-topics={(publication.topics ?? []).join("|")}
+              >
+                <div class="publication-card__content">
+                  <div class="publication-card__meta">
+                    {publication.year && <span>{publication.year}</span>}
+                    {publication.language && <span>{publication.language}</span>}
+                    {publication.highlight && (
+                      <strong>
+                        <Icon name="award" />
+                        {publication.highlight}
+                      </strong>
+                    )}
+                  </div>
+                  <h2>{publication.title}</h2>
+                  {publication.journal && <p>{publication.journal}</p>}
+                  {publication.topics?.length && (
+                    <ul aria-label={locale === "en" ? "Topics" : "Temas"}>
+                      {publication.topics.map((topic) => (
+                        <li>{topic}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                {publication.url ? (
+                  <Button variant="outline" href={publication.url} rel="external">
+                    {page.filters.view}
+                    <Icon name="external-link" />
+                  </Button>
+                ) : (
+                  <p class="publication-card__unavailable">
+                    {locale === "en" ? "Link unavailable." : "Ligação não disponível."}
+                  </p>
+                )}
+              </article>
+            ))}
+          </div>
+          <p class="publication-empty hidden" data-publication-empty>
+            {page.filters.empty}
+          </p>
+          <p class="publication-orcid-note">{page.orcidNote}</p>
+        </Section>
+        <ContactCta heading={page.ctaHeading} text={page.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>
 
 <script>
-	const form = document.querySelector<HTMLFormElement>('[data-publication-filters]');
-	const items = [...document.querySelectorAll<HTMLElement>('[data-publications] > article')];
-	const count = document.querySelector<HTMLElement>('[data-publication-count]');
-	const empty = document.querySelector<HTMLElement>('[data-publication-empty]');
-	const apply = () => {
-		if (!form) return;
-		const values = new FormData(form);
-		const year = String(values.get('year') ?? '');
-		const topic = String(values.get('topic') ?? '');
-		const language = String(values.get('language') ?? '');
-		let visible = 0;
-		for (const item of items) {
-			const matches = (!year || item.dataset.year === year) && (!language || item.dataset.language === language) && (!topic || (item.dataset.topics ?? '').split('|').includes(topic));
-			item.hidden = !matches;
-			if (matches) visible++;
-		}
-		if (count) count.textContent = `${visible} ${visible === 1 ? count.dataset.single : count.dataset.multiple}`;
-		if (empty) empty.hidden = visible !== 0;
-	};
-	form?.addEventListener('change', apply);
-	form?.addEventListener('reset', () => setTimeout(apply));
+  const form = document.querySelector<HTMLFormElement>("[data-publication-filters]");
+  const items = [...document.querySelectorAll<HTMLElement>("[data-publications] > article")];
+  const count = document.querySelector<HTMLElement>("[data-publication-count]");
+  const empty = document.querySelector<HTMLElement>("[data-publication-empty]");
+  const apply = () => {
+    if (!form) return;
+    const values = new FormData(form);
+    const year = String(values.get("year") ?? "");
+    const topic = String(values.get("topic") ?? "");
+    const language = String(values.get("language") ?? "");
+    let visible = 0;
+    for (const item of items) {
+      const matches =
+        (!year || item.dataset.year === year) &&
+        (!language || item.dataset.language === language) &&
+        (!topic || (item.dataset.topics ?? "").split("|").includes(topic));
+      item.hidden = !matches;
+      if (matches) visible++;
+    }
+    if (count)
+      count.textContent = `${visible} ${visible === 1 ? count.dataset.single : count.dataset.multiple}`;
+    if (empty) empty.hidden = visible !== 0;
+  };
+  form?.addEventListener("change", apply);
+  form?.addEventListener("reset", () => setTimeout(apply));
 </script>

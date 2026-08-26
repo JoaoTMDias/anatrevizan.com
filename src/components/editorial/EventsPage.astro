@@ -1,23 +1,80 @@
 ---
-import { tinaField } from '@tinacms/astro/tina-field';
-import type { CmsEditorial } from '../../lib/data';
-import type { EventsPageContent } from '../../lib/page-content';
-import { pathFor } from '../../lib/routing';
-import Section from '../ui/Section.astro';
-import ContactCta from './ContactCta.astro';
-import DraftNotice from './DraftNotice.astro';
-import EmptyState from './EmptyState.astro';
-import PageHero from './PageHero.astro';
-interface Props { data: CmsEditorial }
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { EventsPageContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import DraftNotice from "./DraftNotice.astro";
+import EmptyState from "./EmptyState.astro";
+import PageHero from "./PageHero.astro";
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const events = data.eventsPage as EventsPageContent | null | undefined;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const locale = data.locale === "en" ? "en" : "pt-PT";
 ---
-<article id="main-content" tabindex="-1">
-	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
-	{events ? <>
-		<PageHero title={data.title} subtitle={events.subtitle} tag={events.tag} locale={locale} heroMedia={data.media} parent={{ label: 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'eventsPage')} />
-		<Section class="max-w-5xl">{events.entries?.length ? <ol class="academic-timeline">{events.entries.map((entry) => <li><article><p class="academic-timeline__meta">{entry.date} · {entry.city}, {entry.country}</p><h2>{entry.event}</h2><p>{entry.institution}</p>{entry.url && <a class="site-link mt-3 inline-block" href={entry.url} target="_blank" rel="external noopener noreferrer">{locale === 'en' ? 'View event' : 'Ver evento'}</a>}</article></li>)}</ol> : <div class="academic-empty"><EmptyState heading={events.emptyHeading} text={events.emptyText} href={pathFor('speaking', locale)} linkLabel={events.speakerKitCta} /></div>}</Section>
-		<ContactCta heading={events.ctaHeading} text={events.ctaText} locale={locale} />
-	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
-</article>
+
+<div id="main-content" tabindex="-1">
+  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
+  {
+    events ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={events.subtitle}
+          tag={events.tag}
+          locale={locale}
+          heroMedia={data.media}
+          parent={{ label: "Academia", href: pathFor("academic", locale) }}
+          data-tina-field={tinaField(data, "eventsPage")}
+        />
+        <Section class="max-w-5xl">
+          {events.entries?.length ? (
+            <ol class="academic-timeline">
+              {events.entries.map((entry) => (
+                <li>
+                  <article>
+                    <p class="academic-timeline__meta">
+                      {entry.date} · {entry.city}, {entry.country}
+                    </p>
+                    <h2>{entry.event}</h2>
+                    <p>{entry.institution}</p>
+                    {entry.url && (
+                      <a
+                        class="site-link mt-3 inline-block"
+                        href={entry.url}
+                        target="_blank"
+                        rel="external noopener noreferrer"
+                      >
+                        {locale === "en" ? "View event" : "Ver evento"}
+                      </a>
+                    )}
+                  </article>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <div class="academic-empty">
+              <EmptyState
+                heading={events.emptyHeading}
+                text={events.emptyText}
+                href={pathFor("speaking", locale)}
+                linkLabel={events.speakerKitCta}
+              />
+            </div>
+          )}
+        </Section>
+        <ContactCta heading={events.ctaHeading} text={events.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

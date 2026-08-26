@@ -36,8 +36,7 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
   <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     home ? (
-      <>
-        <header
+        <div
           class="home-hero"
           style={backgroundImage
             ? `--home-hero-image: url("${backgroundImage}"); --home-hero-position: center ${backgroundPosition};`
@@ -93,7 +92,7 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
               )}
             </div>
           </div>
-        </header>
+        </div>
         <Section background="home-gateways-section" class="home-gateways-shell">
           <nav
             class="home-gateways"
@@ -233,7 +232,6 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
           locale={locale}
           showContactLink={false}
         />
-      </>
     ) : (
       <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
         <>

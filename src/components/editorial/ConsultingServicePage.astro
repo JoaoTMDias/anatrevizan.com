@@ -34,7 +34,7 @@ const accent = data.routeKey === "environmental-esg";
 const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award"];
 ---
 
-<article
+<div
   id="main-content"
   tabindex="-1"
   class:list={["consulting-service", `consulting-service--${data.routeKey}`]}
@@ -58,7 +58,12 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
           data-tina-field={tinaField(data, "consultingService")}
         />
         <Section>
-          <div class:list={["consulting-intro", !service.introImage?.image && "consulting-intro--text-only"]}>
+          <div
+            class:list={[
+              "consulting-intro",
+              !service.introImage?.image && "consulting-intro--text-only",
+            ]}
+          >
             {service.introImage?.image && (
               <figure
                 class="consulting-intro__media"
@@ -66,7 +71,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
               >
                 <img
                   src={service.introImage.image}
-                  alt={service.introImage.decorative ? "" : service.introImage.alt?.trim() ?? ""}
+                  alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -159,7 +164,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                       alt={
                         service.differentiatorImage.decorative
                           ? ""
-                          : service.differentiatorImage.alt?.trim() ?? ""
+                          : (service.differentiatorImage.alt?.trim() ?? "")
                       }
                       loading="lazy"
                       decoding="async"
@@ -178,7 +183,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                   <ul
                     class:list={
                       accent
-                        ? "consulting-differentiator__credentials space-y-4 rounded-lg bg-primary p-8 text-primary-foreground"
+                        ? "consulting-differentiator__credentials space-y-4 rounded-lg bg-brand-surface p-8 text-brand-surface-foreground"
                         : "mt-7 grid gap-3 sm:grid-cols-2"
                     }
                   >
@@ -268,4 +273,4 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
       </section>
     )
   }
-</article>
+</div>

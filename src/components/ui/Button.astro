@@ -8,12 +8,14 @@ const button = tv({
   base: "inline-flex min-h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
   variants: {
     variant: {
-      default: "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90",
-      accent: "bg-accent text-accent-foreground shadow-sm hover:bg-accent/90",
+      default:
+        "bg-action-primary text-action-primary-foreground shadow-sm hover:bg-action-primary/90",
+      accent:
+        "bg-action-accent text-action-accent-foreground shadow-sm hover:bg-action-accent/90",
       accentBlack: "bg-black text-white shadow-sm hover:bg-black/90",
       destructive: "bg-destructive text-white shadow-xs hover:bg-destructive/90",
       outline:
-        "backdrop-blur border-2 border-primary bg-white/10 text-primary hover:bg-primary hover:text-primary-foreground",
+		"backdrop-blur border-2 border-action-primary bg-white/10 text-action-primary hover:bg-action-primary hover:text-action-primary-foreground",
       outlineBlack:
 		"backdrop-blur border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background",
       outlineInverse:

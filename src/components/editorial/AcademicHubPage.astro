@@ -1,36 +1,65 @@
 ---
-import { tinaField } from '@tinacms/astro/tina-field';
-import type { CmsEditorial } from '../../lib/data';
-import type { AcademicHubContent } from '../../lib/page-content';
-import { pathFor } from '../../lib/routing';
-import Icon from '../ui/Icon.astro';
-import Section from '../ui/Section.astro';
-import ContactCta from './ContactCta.astro';
-import DraftNotice from './DraftNotice.astro';
-import PageHero from './PageHero.astro';
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { AcademicHubContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import DraftNotice from "./DraftNotice.astro";
+import PageHero from "./PageHero.astro";
 
-interface Props { data: CmsEditorial }
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const hub = data.academicHub as AcademicHubContent | null | undefined;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
-const icons = ['school', 'books', 'calendar-event', 'microphone-2', 'presentation'];
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const icons = ["school", "books", "calendar-event", "microphone-2", "presentation"];
 ---
 
-<article id="main-content" tabindex="-1">
-	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
-	{hub ? <>
-		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'academicHub')} />
-		<Section>
-			<p class="mb-12 max-w-3xl leading-relaxed text-muted-foreground">{hub.introText}</p>
-			<div class="editorial-grid">
-				{hub.sections.map((item, index) => <a class:list={['academic-hub-card', item.highlight && 'academic-hub-card--highlight']} href={pathFor(item.routeKey, locale)}>
-					<span class="academic-icon" aria-hidden="true"><Icon name={icons[index]} /></span>
-					<h2>{item.title}</h2>
-					<p>{item.description}</p>
-					<span class="academic-hub-card__cta">{item.cta}<Icon name="arrow-right" /></span>
-				</a>)}
-			</div>
-		</Section>
-		<ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
-	</> : <section class="site-container min-h-[60vh] py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
-</article>
+<div id="main-content" tabindex="-1">
+  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
+  {
+    hub ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={hub.subtitle}
+          locale={locale}
+          heroMedia={data.media}
+          data-tina-field={tinaField(data, "academicHub")}
+        />
+        <Section>
+          <p class="mb-12 max-w-3xl leading-relaxed text-muted-foreground">{hub.introText}</p>
+          <div class="editorial-grid">
+            {hub.sections.map((item, index) => (
+              <a
+                class:list={["academic-hub-card", item.highlight && "academic-hub-card--highlight"]}
+                href={pathFor(item.routeKey, locale)}
+              >
+                <span class="academic-icon" aria-hidden="true">
+                  <Icon name={icons[index]} />
+                </span>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                <span class="academic-hub-card__cta">
+                  {item.cta}
+                  <Icon name="arrow-right" />
+                </span>
+              </a>
+            ))}
+          </div>
+        </Section>
+        <ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="site-container min-h-[60vh] py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

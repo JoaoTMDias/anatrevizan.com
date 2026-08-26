@@ -1,58 +1,118 @@
 ---
-import { tinaField } from '@tinacms/astro/tina-field';
-import type { CmsEditorial } from '../../lib/data';
-import type { ConsultingHubContent } from '../../lib/page-content';
-import { pathFor } from '../../lib/routing';
-import Card from '../ui/Card.astro';
-import Icon from '../ui/Icon.astro';
-import Section from '../ui/Section.astro';
-import ContactCta from './ContactCta.astro';
-import DraftNotice from './DraftNotice.astro';
-import PageHero from './PageHero.astro';
-import SectionHeading from './SectionHeading.astro';
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { ConsultingHubContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Card from "../ui/Card.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import DraftNotice from "./DraftNotice.astro";
+import PageHero from "./PageHero.astro";
+import SectionHeading from "./SectionHeading.astro";
 
-interface Props { data: CmsEditorial }
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const hub = data.consultingHub as ConsultingHubContent | null | undefined;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
-const areaIcons = ['plane-departure', 'file-description', 'leaf', 'building-community', 'file-text'];
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const areaIcons = [
+  "plane-departure",
+  "file-description",
+  "leaf",
+  "building-community",
+  "file-text",
+];
 ---
 
-<article id="main-content" tabindex="-1">
-	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
-	{hub ? <>
-		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'consultingHub')} />
-		<Section>
-			<SectionHeading title={hub.introHeading} subtitle={hub.introText} />
-			<div class="consulting-filters" role="group" aria-label={locale === 'en' ? 'Filter areas by country' : 'Filtrar áreas por país'} data-consulting-filters>
-				<button type="button" data-filter="pt" aria-pressed="false">{hub.filters.portugal}</button>
-				<button type="button" data-filter="br" aria-pressed="false">{hub.filters.brazil}</button>
-				<button type="button" data-filter="all" aria-pressed="true">{hub.filters.all}</button>
-			</div>
-			<div class="editorial-grid" data-consulting-areas>
-				{hub.areas.map((area, index) => <Card as="article" class:list={['consulting-card gap-0 p-6 md:p-8', area.routeKey === 'environmental-esg' && 'consulting-card--accent']} data-countries={area.countries.join(' ')}>
-					<div class="consulting-card__heading"><span class="consulting-card__icon" aria-hidden="true"><Icon name={areaIcons[index]} /></span><p class="consulting-card__tag">{area.tag}</p></div>
-					<h3 class="text-lg font-semibold">{area.title}</h3>
-					<p class="text-base leading-relaxed text-muted-foreground">{area.summary}</p>
-					<a class="consulting-card__cta" href={pathFor(area.routeKey, locale)}>{hub.areaCta}<Icon name="arrow-right" /></a>
-				</Card>)}
-			</div>
-		</Section>
-		<aside class="border-y bg-secondary"><div class="site-container py-8"><p class="max-w-3xl text-base leading-relaxed text-muted-foreground">{hub.note}</p></div></aside>
-		<ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
-	</> : <section class="site-container min-h-[60vh] py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
-</article>
+<div id="main-content" tabindex="-1">
+  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
+  {
+    hub ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={hub.subtitle}
+          locale={locale}
+          heroMedia={data.media}
+          data-tina-field={tinaField(data, "consultingHub")}
+        />
+        <Section>
+          <SectionHeading title={hub.introHeading} subtitle={hub.introText} />
+          <div
+            class="consulting-filters"
+            role="group"
+            aria-label={locale === "en" ? "Filter areas by country" : "Filtrar áreas por país"}
+            data-consulting-filters
+          >
+            <button type="button" data-filter="pt" aria-pressed="false">
+              {hub.filters.portugal}
+            </button>
+            <button type="button" data-filter="br" aria-pressed="false">
+              {hub.filters.brazil}
+            </button>
+            <button type="button" data-filter="all" aria-pressed="true">
+              {hub.filters.all}
+            </button>
+          </div>
+          <div class="editorial-grid" data-consulting-areas>
+            {hub.areas.map((area, index) => (
+              <Card
+                as="article"
+                class:list={[
+                  "consulting-card gap-0 p-6 md:p-8",
+                  area.routeKey === "environmental-esg" && "consulting-card--accent",
+                ]}
+                data-countries={area.countries.join(" ")}
+              >
+                <div class="consulting-card__heading">
+                  <span class="consulting-card__icon" aria-hidden="true">
+                    <Icon name={areaIcons[index]} />
+                  </span>
+                  <p class="consulting-card__tag">{area.tag}</p>
+                </div>
+                <h3 class="text-lg font-semibold">{area.title}</h3>
+                <p class="text-base leading-relaxed text-muted-foreground">{area.summary}</p>
+                <a class="consulting-card__cta" href={pathFor(area.routeKey, locale)}>
+                  {hub.areaCta}
+                  <Icon name="arrow-right" />
+                </a>
+              </Card>
+            ))}
+          </div>
+        </Section>
+        <aside class="border-y bg-secondary">
+          <div class="site-container py-8">
+            <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">{hub.note}</p>
+          </div>
+        </aside>
+        <ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="site-container min-h-[60vh] py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>
 
 <script>
-	const filters = document.querySelector('[data-consulting-filters]');
-	const areas = document.querySelectorAll<HTMLElement>('[data-consulting-areas] > [data-countries]');
-	filters?.addEventListener('click', (event) => {
-		const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button[data-filter]');
-		if (!button) return;
-		const filter = button.dataset.filter;
-		for (const candidate of filters.querySelectorAll('button[data-filter]'))
-			candidate.setAttribute('aria-pressed', String(candidate === button));
-		for (const area of areas)
-			area.hidden = filter !== 'all' && !(area.dataset.countries ?? '').split(' ').includes(filter ?? '');
-	});
+  const filters = document.querySelector("[data-consulting-filters]");
+  const areas = document.querySelectorAll<HTMLElement>(
+    "[data-consulting-areas] > [data-countries]"
+  );
+  filters?.addEventListener("click", (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>("button[data-filter]");
+    if (!button) return;
+    const filter = button.dataset.filter;
+    for (const candidate of filters.querySelectorAll("button[data-filter]"))
+      candidate.setAttribute("aria-pressed", String(candidate === button));
+    for (const area of areas)
+      area.hidden =
+        filter !== "all" && !(area.dataset.countries ?? "").split(" ").includes(filter ?? "");
+  });
 </script>

@@ -1,15 +1,46 @@
 ---
-import { tinaField } from '@tinacms/astro/tina-field';
-import type { CmsEditorial } from '../../lib/data';
-import type { LegalPageContent } from '../../lib/page-content';
-import DraftNotice from './DraftNotice.astro';
-interface Props { data: CmsEditorial }
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { LegalPageContent } from "../../lib/page-content";
+import DraftNotice from "./DraftNotice.astro";
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const page = data.privacyPage as LegalPageContent | null | undefined;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const locale = data.locale === "en" ? "en" : "pt-PT";
 ---
-<article id="main-content" tabindex="-1">
-	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
-	<header class="legal-header"><div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p></div></header>
-	{page && <div class="legal-content site-container" data-tina-field={tinaField(data, 'privacyPage')}><p class="legal-review-notice">{page.sourceStatus}</p><section><h2>Cobertura necessária antes da publicação</h2><p>Lista interna de revisão; não constitui uma política de privacidade.</p><ul>{page.reviewRequirements.map((item) => <li>{item}</li>)}</ul></section>{page.sections?.map((section) => <section><h2>{section.heading}</h2><div>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div></section>)}</div>}
-</article>
+
+<div id="main-content" tabindex="-1">
+  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
+  <header class="legal-header">
+    <div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p></div>
+  </header>
+  {
+    page && (
+      <div class="legal-content site-container" data-tina-field={tinaField(data, "privacyPage")}>
+        <section>
+          <>
+            <h2>Cobertura necessária antes da publicação</h2>
+            <p>Lista interna de revisão; não constitui uma política de privacidade.</p>
+            <ul>
+              {page.reviewRequirements.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </>
+        </section>
+        {page.sections?.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            <div>
+              {section.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    )
+  }
+</div>
