@@ -24,35 +24,35 @@
 		"areas": [
 			{
 				"title": "Migração e Mobilidade",
-				"tag": "🇵🇹 Portugal",
+				"tag": "Portugal",
 				"summary": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
 				"routeKey": "immigration-mobility",
 				"countries": ["pt"]
 			},
 			{
 				"title": "Consultoria Jurídica",
-				"tag": "🇵🇹 Portugal",
+				"tag": "Portugal",
 				"summary": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
 				"routeKey": "legal",
 				"countries": ["pt"]
 			},
 			{
 				"title": "Ambiental e ESG",
-				"tag": "🇧🇷🇪🇺 Brasil · União Europeia",
+				"tag": "Brasil · União Europeia",
 				"summary": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
 				"routeKey": "environmental-esg",
 				"countries": ["br"]
 			},
 			{
 				"title": "Políticas Públicas e Governança",
-				"tag": "🇧🇷 Brasil",
+				"tag": "Brasil",
 				"summary": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
 				"routeKey": "public-policy",
 				"countries": ["br"]
 			},
 			{
 				"title": "Pareceres e Notas Técnicas",
-				"tag": "🇵🇹🇧🇷 Portugal e Brasil",
+				"tag": "Portugal e Brasil",
 				"summary": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
 				"routeKey": "legal-opinions",
 				"countries": ["pt", "br"]

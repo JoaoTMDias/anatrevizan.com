@@ -26,11 +26,11 @@
 		],
 		"regions": [
 			{
-				"flag": "🇵🇹",
+				"flag": "",
 				"label": { "pt": "Portugal", "en": "Portugal" }
 			},
 			{
-				"flag": "🇧🇷",
+				"flag": "",
 				"label": { "pt": "Brasil", "en": "Brazil" }
 			}
 		],
@@ -52,7 +52,7 @@
 						"pt": "Vistos, residência e integração jurídica em Portugal",
 						"en": "Navigation description awaiting approval."
 					},
-					"tag": { "pt": "🇵🇹 Portugal", "en": "English tag awaiting approval" }
+					"tag": { "pt": "Portugal", "en": "English tag awaiting approval" }
 				},
 				{
 					"routeKey": "legal",
@@ -61,7 +61,7 @@
 						"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico",
 						"en": "Navigation description awaiting approval."
 					},
-					"tag": { "pt": "🇵🇹 Portugal", "en": "English tag awaiting approval" }
+					"tag": { "pt": "Portugal", "en": "English tag awaiting approval" }
 				},
 				{
 					"routeKey": "environmental-esg",
@@ -71,7 +71,7 @@
 						"en": "Navigation description awaiting approval."
 					},
 					"tag": {
-						"pt": "🇧🇷🇪🇺 Brasil · União Europeia",
+						"pt": "Brasil · União Europeia",
 						"en": "English tag awaiting approval"
 					}
 				},
@@ -85,7 +85,7 @@
 						"pt": "Análise legislativa e consultoria para municípios e ONGs",
 						"en": "Navigation description awaiting approval."
 					},
-					"tag": { "pt": "🇧🇷 Brasil", "en": "English tag awaiting approval" }
+					"tag": { "pt": "Brasil", "en": "English tag awaiting approval" }
 				},
 				{
 					"routeKey": "legal-opinions",
@@ -98,7 +98,7 @@
 						"en": "Navigation description awaiting approval."
 					},
 					"tag": {
-						"pt": "🇵🇹🇧🇷 Portugal e Brasil",
+						"pt": "Portugal e Brasil",
 						"en": "English tag awaiting approval"
 					}
 				}
