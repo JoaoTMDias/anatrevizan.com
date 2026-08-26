@@ -1,7 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/cabin/wght.css";
+@import "@fontsource/fira-sans/400.css";
+@import "@fontsource/fira-sans/400-italic.css";
+@import "@fontsource/fira-sans/500.css";
+@import "@fontsource/fira-sans/600.css";
+@import "@fontsource/fira-sans/700.css";
+@import "@fontsource/fira-sans/700-italic.css";
 
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
@@ -15,7 +20,7 @@
 }
 
 @theme inline {
-	--font-sans: "Cabin Variable", system-ui, sans-serif;
+	--font-sans: "Fira Sans", system-ui, sans-serif;
 	--font-heading: "Playfair Display", Georgia, serif;
 	--font-body: var(--font-sans);
 	--font-label: var(--font-sans);
@@ -1754,6 +1759,13 @@
 .footer-legal__brand {
 	font-family: var(--font-heading);
 	font-weight: 700;
+	width: auto;
+	height: 3rem;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 @media (max-width: 63.999rem) {

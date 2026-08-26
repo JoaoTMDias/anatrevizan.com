@@ -185,10 +185,10 @@
 	"footer": {
 		"copyright": { "pt": "Ana Trevizan", "en": "Ana Trevizan" },
 		"professionalRegistration": {
-			"pt": "Dra. Ana Flávia Trevizan · OAB nº [reservado]"
+			"pt": "OAB nº [reservado]"
 		},
 		"disclaimer": {
-			"pt": "Este site tem caráter meramente informativo e não constitui aconselhamento jurídico."
+			"pt": "Desenvolvido por João Dias"
 		},
 		"rightsReserved": { "pt": "Todos os direitos reservados." },
 		"legalRouteKeys": ["privacy", "terms", "cookies"]

@@ -32,7 +32,7 @@ para omitir a aparência correspondente.
 | Área da referência | Estado | Destino Astro |
 | --- | --- | --- |
 | Escalas primary, accent, secondary, background e foreground 50–950 | Migrado | `src/styles/global.css` |
-| Cabin, Playfair Display e alias de label | Migrado | `src/styles/global.css` |
+| Fira Sans, Playfair Display e alias de label | Migrado | `src/styles/global.css` |
 | Contentor, botões, títulos, subtítulos e cartões base | Migrado | `src/styles/global.css`, `src/components/ui/` |
 | Header desktop/mobile, dropdowns e estados ativos | Implementado; validação visual reaberta | `src/components/Header.astro` |
 | Footer responsivo e barra inferior | Implementado; validação visual reaberta | `src/components/Footer.astro` |

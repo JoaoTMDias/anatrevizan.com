@@ -49,11 +49,10 @@ const iconLink = readFileSync("src/components/IconLink.astro", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
-		expect(css).toContain('@import "@fontsource-variable/cabin/wght.css"');
+		expect(css).toContain('@import "@fontsource/fira-sans/400.css"');
+		expect(css).toContain('@import "@fontsource/fira-sans/700.css"');
 		expect(css).toContain('url("/fonts/playfair-display-variable.woff2")');
-		expect(css).toContain(
-			'--font-sans: "Cabin Variable", system-ui, sans-serif',
-		);
+		expect(css).toContain('--font-sans: "Fira Sans", system-ui, sans-serif');
 		expect(statSync("public/fonts/playfair-display-variable.woff2").size).toBe(
 			38_460,
 		);
