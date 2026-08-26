@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const externalBaseUrl = process.env.PLAYWRIGHT_BASE_URL;
+const baseURL = externalBaseUrl ?? "http://127.0.0.1:4322";
+
 export default defineConfig({
 	testDir: "./tests/e2e",
 	fullyParallel: true,
@@ -8,16 +11,18 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 	reporter: "list",
 	use: {
-		baseURL: "http://127.0.0.1:4322",
+		baseURL,
 		trace: "on-first-retry",
 	},
-	webServer: {
-		// The local fallback adapter produces a standalone Node server. Use the
-		// same launcher developers use after a local build.
-		command: "pnpm build:preview && pnpm preview",
-		url: "http://127.0.0.1:4322",
-		reuseExistingServer: !process.env.CI,
-	},
+	webServer: externalBaseUrl
+		? undefined
+		: {
+				// The local fallback adapter produces a standalone Node server. Use the
+				// same launcher developers use after a local build.
+				command: "pnpm build:preview && pnpm preview",
+				url: baseURL,
+				reuseExistingServer: !process.env.CI,
+			},
 	projects: [
 		{
 			name: "chromium",

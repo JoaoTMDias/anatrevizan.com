@@ -18,7 +18,7 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const config = booking ? (await getConfig()).data.config : null;
 const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{booking ? <>
 		<PageHero title={data.title} subtitle={booking.subtitle} tag={booking.tag} locale={locale} data-tina-field={tinaField(data, 'bookingPage')} />

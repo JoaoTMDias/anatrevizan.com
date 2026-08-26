@@ -18,7 +18,7 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const areaIcons = ['plane-departure', 'file-description', 'leaf', 'building-community', 'file-text'];
 ---
 
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
 		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} media="/hero-consultoria.webp" focalPoint="top" data-tina-field={tinaField(data, 'consultingHub')} />
@@ -33,12 +33,12 @@ const areaIcons = ['plane-departure', 'file-description', 'leaf', 'building-comm
 				{hub.areas.map((area, index) => <Card as="article" class:list={['consulting-card gap-0 p-6 md:p-8', area.routeKey === 'environmental-esg' && 'consulting-card--accent']} data-countries={area.countries.join(' ')}>
 					<div class="consulting-card__heading"><span class="consulting-card__icon" aria-hidden="true"><Icon name={areaIcons[index]} /></span><p class="consulting-card__tag">{area.tag}</p></div>
 					<h3 class="text-lg font-semibold">{area.title}</h3>
-					<p class="text-sm leading-relaxed text-muted-foreground">{area.summary}</p>
+					<p class="text-base leading-relaxed text-muted-foreground">{area.summary}</p>
 					<a class="consulting-card__cta" href={pathFor(area.routeKey, locale)}>{hub.areaCta}<Icon name="arrow-right" /></a>
 				</Card>)}
 			</div>
 		</Section>
-		<aside class="border-y bg-secondary"><div class="site-container py-8"><p class="max-w-3xl text-sm leading-relaxed text-muted-foreground">{hub.note}</p></div></aside>
+		<aside class="border-y bg-secondary"><div class="site-container py-8"><p class="max-w-3xl text-base leading-relaxed text-muted-foreground">{hub.note}</p></div></aside>
 		<ContactCta heading={hub.ctaHeading} text={hub.ctaText} locale={locale} />
 	</> : <section class="site-container min-h-[60vh] py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>

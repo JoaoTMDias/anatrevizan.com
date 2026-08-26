@@ -60,12 +60,12 @@
 		"currentWorkTitle": "Onde atuo hoje",
 		"currentWork": [
 			{
-				"country": "🇵🇹",
+				"country": "",
 				"title": "Em Portugal",
 				"description": "Investigadora colaboradora do CEJEIA, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica."
 			},
 			{
-				"country": "🇧🇷",
+				"country": "",
 				"title": "No Brasil",
 				"description": "Mantenho a atuação em Direito ambiental, governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas."
 			}

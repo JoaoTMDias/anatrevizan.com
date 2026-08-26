@@ -77,7 +77,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
           >
             {labelFor(menu.label)}
           </a>
-          <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+          <ul class="mt-4 space-y-2.5 text-base text-muted-foreground">
             {(menu.children ?? [])
               .filter(present)
               .filter(hasRouteKey)
@@ -99,7 +99,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
       <p class="font-heading font-semibold">
         {locale === "en" ? "Institutional" : "Institucional"}
       </p>
-      <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+      <ul class="mt-4 space-y-2.5 text-base text-muted-foreground">
         {
           directLinks.map((item) => (
             <li>
@@ -122,7 +122,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
     </nav>
     <div class="footer-contact">
       <p class="font-heading font-semibold">{locale === "en" ? "Contact" : "Contacto"}</p>
-      <ul class="footer-contact__details mt-4 space-y-2.5 text-sm text-muted-foreground">
+      <ul class="footer-contact__details mt-4 space-y-2.5 text-base text-muted-foreground">
         {
           email && (
             <li>

@@ -20,7 +20,7 @@ const years = [...new Set(publications.flatMap((item) => item.year ? [item.year]
 const languages = [...new Set(publications.flatMap((item) => item.language ? [item.language] : []))].sort();
 const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].sort();
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{page ? <>
 		<PageHero title={data.title} subtitle={page.subtitle} tag={page.tag} locale={locale} parent={{ label: locale === 'en' ? 'Academic' : 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'publicationsPage')} />

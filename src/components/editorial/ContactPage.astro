@@ -24,7 +24,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
 	return href && label ? [{ href, label }] : [];
 });
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{contact ? <>
 		<PageHero title={data.title} subtitle={contact.subtitle} tag={contact.tag} locale={locale} data-tina-field={tinaField(data, 'contactPage')} />

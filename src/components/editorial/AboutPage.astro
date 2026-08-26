@@ -17,7 +17,7 @@ const about = data.about as AboutContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const valueIcons = ['scale', 'award', 'users-group', 'lock', 'heart-handshake', 'leaf'];
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{about ? <>
 		<PageHero title={data.title} subtitle={about.subtitle} tag={about.tag} locale={locale} data-tina-field={tinaField(data, 'about')} />
