@@ -14,11 +14,15 @@
 	},
 	"home": {
 		"hero": {
-			"heading": "Transformo complexidade jurídica em decisões seguras, por meio de uma consultoria técnica, estratégica e genuinamente humana.",
-			"subtitle": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
-			"brandWords": ["Técnica", "Estratégica", "Humana", "Ética", "Inclusiva"],
-			"primaryCta": "Agendar primeiro contacto",
-			"secondaryCta": "Áreas de atuação"
+			"heading": "Decisões seguras para cenários jurídicos e ambientais complexos.",
+			"subtitle": "Consultoria técnica, estratégica e de base científica para pessoas e empresas navegarem com clareza nos mercados luso-brasileiros.",
+			"brandWords": [
+				"Portugal e Brasil",
+				"Direito Ambiental",
+				"Rigor Científico"
+			],
+			"primaryCta": "Agendar Consulta",
+			"secondaryCta": "Conhecer Áreas de Atuação"
 		},
 		"gateways": [
 			{

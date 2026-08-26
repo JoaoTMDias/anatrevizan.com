@@ -197,7 +197,7 @@ describe("editorial validation", () => {
 			about.about.finalCtaText,
 		];
 
-		expect(homeSourceStrings).toHaveLength(33);
+		expect(homeSourceStrings).toHaveLength(31);
 		expect(aboutSourceStrings).toHaveLength(57);
 		expect(
 			homeSourceStrings.every(
