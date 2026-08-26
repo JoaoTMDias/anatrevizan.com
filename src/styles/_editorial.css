@@ -1,13 +1,18 @@
 @layer components {
 	.editorial-hero {
+		--hero-overlay-color: rgb(20 6 7 / 70%);
+		--hero-text-shadow:
+			0 1px 2px rgb(20 6 7 / 70%), 0 2px 12px rgb(20 6 7 / 45%);
+		position: relative;
+		isolation: isolate;
 		min-height: 35rem;
 		background: var(--brand-burgundy);
 		color: #ffffff;
-		text-shadow:
-			0 1px 2px rgb(20 6 7 / 60%),
-			0 2px 16px rgb(20 6 7 / 40%);
+		text-shadow: var(--hero-text-shadow);
 	}
 	.editorial-hero__inner {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		height: 100%;
 		flex-direction: column;
@@ -18,15 +23,22 @@
 		background: var(--brand-burgundy);
 	}
 	.editorial-hero--media {
-		background:
-			linear-gradient(
-				to bottom,
-				rgb(74 21 25 / 62%) 0%,
-				rgb(74 21 25 / 42%) 40%,
-				rgb(20 6 7 / 82%) 100%
-			),
-			var(--hero-image) var(--hero-position) / cover no-repeat,
-			var(--brand-burgundy);
+		background-color: var(--brand-burgundy);
+		background-image: var(--hero-image);
+		background-position: var(--hero-position);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.editorial-hero__overlay {
+		position: absolute;
+		z-index: 0;
+		inset: 0;
+		display: none;
+		background: var(--hero-overlay-color);
+		pointer-events: none;
+	}
+	.editorial-hero--media .editorial-hero__overlay {
+		display: block;
 	}
 	.editorial-hero__content {
 		display: grid;
@@ -101,12 +113,12 @@
 	.editorial-hero__subtitle {
 		max-width: 36rem;
 		margin-top: 1.5rem;
-		color: rgb(255 255 255 / 92%);
+		color: #ffffff;
 		font-size: clamp(1rem, 2vw, 1.125rem);
 		line-height: 1.7;
 	}
 	.editorial-breadcrumbs {
-		color: color-mix(in oklab, currentColor 78%, transparent);
+		color: #ffffff;
 		font-size: 0.75rem;
 	}
 	.editorial-breadcrumbs ol {
@@ -119,10 +131,13 @@
 	}
 	.editorial-breadcrumbs li {
 		display: flex;
+		min-width: 0;
 		gap: 0.4rem;
 	}
 	.editorial-breadcrumbs a {
+		color: inherit;
 		text-decoration: underline;
+		text-underline-offset: 0.18em;
 	}
 	.editorial-eyebrow {
 		display: inline-flex;
