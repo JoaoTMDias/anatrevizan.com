@@ -3,6 +3,11 @@ import { expect, test } from "@playwright/test";
 import { routeMap } from "../../src/lib/routing";
 
 test.describe("accessibility and responsive behavior", () => {
+	test("ready editorial pages do not display the draft notice", async ({ page }) => {
+		await page.goto("/consultoria/migracao-e-mobilidade");
+		await expect(page.getByRole("status")).toHaveCount(0);
+	});
+
 	test("primary CTAs keep axe-compliant contrast and 44px targets across interaction states", async ({
 		page,
 	}) => {
