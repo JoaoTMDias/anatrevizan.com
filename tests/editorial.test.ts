@@ -9,6 +9,11 @@ import {
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
 import {
+	HERO_PLACEHOLDER_PATH,
+	heroAspectRatio,
+	validateHeroMedia,
+} from "../src/lib/hero-media.ts";
+import {
 	safeCalendlyUrl,
 	safeEmailHref,
 	safeProfileUrl,
@@ -83,6 +88,72 @@ describe("editorial validation", () => {
 		);
 		expect(actual).toHaveLength(routeKeys.length * publishedLocales.length);
 		expect(validateEditorialDocuments(actual)).toEqual([]);
+	});
+
+	it("configures a temporary side image for every localized PageHero", () => {
+		const pageHeroRoutes = new Set([
+			"about",
+			"academic",
+			"booking",
+			"consulting",
+			"contact",
+			"environmental-esg",
+			"events",
+			"immigration-mobility",
+			"legal",
+			"legal-opinions",
+			"mentoring",
+			"public-policy",
+			"publications",
+			"speaking",
+			"training",
+		]);
+		for (const file of jsonFiles(
+			join(process.cwd(), "src/content/editorial"),
+		)) {
+			const document = JSON.parse(readFileSync(file, "utf8"));
+			if (!pageHeroRoutes.has(document.routeKey)) continue;
+			expect(document.media?.foreground).toMatchObject({
+				image: HERO_PLACEHOLDER_PATH,
+				decorative: true,
+				aspectRatio: "square",
+			});
+		}
+	});
+
+	it("validates hero media accessibility and publication safety", () => {
+		expect(heroAspectRatio(undefined)).toBe("square");
+		expect(heroAspectRatio("landscape")).toBe("landscape");
+		expect(
+			validateHeroMedia(
+				{ foreground: { image: "/portrait.webp", aspectRatio: "portrait" } },
+				false,
+			).map((issue) => issue.code),
+		).toEqual(["invalid-hero-aspect-ratio", "missing-hero-alt"]);
+		expect(
+			validateHeroMedia(
+				{
+					foreground: {
+						image: HERO_PLACEHOLDER_PATH,
+						decorative: true,
+						aspectRatio: "square",
+					},
+				},
+				true,
+			).map((issue) => issue.code),
+		).toEqual(["published-hero-placeholder"]);
+		expect(
+			validateHeroMedia(
+				{
+					foreground: {
+						image: "/portrait.webp",
+						alt: "Retrato editorial de Ana Trevizan",
+						aspectRatio: "landscape",
+					},
+				},
+				true,
+			),
+		).toEqual([]);
 	});
 
 	it("does not expose localized payloads for pending English translations", () => {

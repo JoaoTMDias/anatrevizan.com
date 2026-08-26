@@ -49,7 +49,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
           tag={service.tag}
           locale={locale}
           tone={accent ? "accent" : "primary"}
-          media={accent ? "/hero-ambiental.webp" : undefined}
+          heroMedia={data.media}
           showActions={accent}
           parent={{
             label: locale === "en" ? "Consulting" : "Consultoria",

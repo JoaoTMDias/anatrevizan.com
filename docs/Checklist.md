@@ -40,6 +40,7 @@
 - [x] Grupo 3 — família Consultoria revalidada página a página; o cross-link editorial de Migração requer uma decisão de conteúdo, sem impedir a validação visual.
 - [x] Grupo 4 — família Academia revalidada página a página; prioridade editorial do snapshot modelada e testada, mantendo a sincronização ORCID para uma fase posterior.
 - [x] Grupo 5 — matriz renderizada das 19 rotas concluída sem erros de consola ou overflow Astro; decisões editoriais globais aplicadas e handoff de encerramento executado.
+- [x] Heroes editoriais preparados no TinaCMS com fundo e imagem lateral independentes, proporção 1:1/4:3, alt validado e layout responsivo empilhado/duas colunas; placeholder temporário bloqueado em publicação.
 
 ## Estado da fase 4 — sincronização ORCID (agosto de 2026)
 

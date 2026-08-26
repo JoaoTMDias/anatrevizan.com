@@ -5,6 +5,18 @@
 	"slug": "consultoria",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"background": {
+			"image": "/hero-consultoria.webp",
+			"focalPoint": "top"
+		},
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Consultoria",
 	"summary": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
 	"seo": {

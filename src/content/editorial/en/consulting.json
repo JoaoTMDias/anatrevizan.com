@@ -5,6 +5,18 @@
 	"slug": "consulting",
 	"status": "draft",
 	"approvalPending": true,
+	"media": {
+		"background": {
+			"image": "/hero-consultoria.webp",
+			"focalPoint": "top"
+		},
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Consulting",
 	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
 	"seo": {

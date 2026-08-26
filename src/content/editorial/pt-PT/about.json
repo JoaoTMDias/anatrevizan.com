@@ -5,6 +5,14 @@
 	"slug": "sobre",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Dra. Ana Flávia Trevizan",
 	"summary": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
 	"seo": {

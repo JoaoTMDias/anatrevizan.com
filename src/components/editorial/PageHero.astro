@@ -1,5 +1,10 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import {
+  heroAspectRatio,
+  heroFocalPoint,
+  type HeroMedia,
+} from "../../lib/hero-media";
 import { pathFor, type PublishedLocale } from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
@@ -11,8 +16,7 @@ interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   locale: PublishedLocale;
   parent?: { label: string; href: string };
   tone?: "accent" | "primary";
-  media?: string;
-  focalPoint?: "center" | "top" | "bottom";
+  heroMedia?: HeroMedia | null;
   showActions?: boolean;
 }
 
@@ -23,12 +27,15 @@ const {
   locale,
   parent,
   tone = "primary",
-  media,
-  focalPoint = "center",
+  heroMedia,
   showActions = false,
   class: className,
   ...rest
 } = Astro.props;
+const backgroundImage = heroMedia?.background?.image;
+const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
+const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
+const foregroundRatio = heroAspectRatio(foreground?.aspectRatio);
 const items = [
   { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
   ...(parent ? [parent] : []),
@@ -40,30 +47,52 @@ const items = [
   class:list={[
     "editorial-hero",
     tone === "accent" && "editorial-hero--accent",
-    media && "editorial-hero--media",
+    backgroundImage && "editorial-hero--media",
+    foreground && "editorial-hero--with-foreground",
     className,
   ]}
-  style={media
-    ? `--hero-image: url("${media}"); --hero-position: center ${focalPoint};`
+  style={backgroundImage
+    ? `--hero-image: url("${backgroundImage}"); --hero-position: center ${backgroundPosition};`
     : undefined}
   {...rest}
 >
   <div class="site-container editorial-hero__inner">
     <Breadcrumbs items={items} />
     <div class="editorial-hero__content">
-      {tag && <p class="editorial-eyebrow">{tag}</p>}
-      <h1>{title}</h1>
-      {subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
+      <div class="editorial-hero__copy">
+        {tag && <p class="editorial-eyebrow">{tag}</p>}
+        <h1>{title}</h1>
+        {subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
+        {
+          showActions && (
+            <div class="mt-8 flex flex-wrap gap-4">
+              <Button variant="accent" href={pathFor("booking", locale)}>
+                {locale === "en" ? "Book an initial call" : "Agendar contacto"}
+              </Button>
+              <Button variant="outlineInverse" href={pathFor("contact", locale)}>
+                {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
+              </Button>
+            </div>
+          )
+        }
+      </div>
       {
-        showActions && (
-          <div class="mt-8 flex flex-wrap gap-4">
-            <Button variant="accent" href={pathFor("booking", locale)}>
-              {locale === "en" ? "Book an initial call" : "Agendar contacto"}
-            </Button>
-            <Button variant="outlineInverse" href={pathFor("contact", locale)}>
-              {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
-            </Button>
-          </div>
+        foreground && (
+          <figure
+            class:list={[
+              "editorial-hero__foreground",
+              `editorial-hero__foreground--${foregroundRatio}`,
+            ]}
+          >
+            <img
+              src={foreground.image ?? undefined}
+              alt={foreground.decorative ? "" : foreground.alt?.trim() ?? ""}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              sizes="(min-width: 1024px) min(40vw, 32rem), calc(100vw - 2.5rem)"
+            />
+          </figure>
         )
       }
     </div>

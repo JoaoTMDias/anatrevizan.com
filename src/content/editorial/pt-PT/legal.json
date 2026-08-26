@@ -5,6 +5,14 @@
 	"slug": "consultoria/juridica",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Consultoria Jurídica",
 	"summary": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
 	"seo": {

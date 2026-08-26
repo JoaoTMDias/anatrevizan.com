@@ -5,6 +5,14 @@
 	"slug": "academia/formacoes",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Cursos e Formações",
 	"summary": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
 	"seo": {

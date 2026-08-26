@@ -21,7 +21,7 @@ const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 <article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{booking ? <>
-		<PageHero title={data.title} subtitle={booking.subtitle} tag={booking.tag} locale={locale} data-tina-field={tinaField(data, 'bookingPage')} />
+		<PageHero title={data.title} subtitle={booking.subtitle} tag={booking.tag} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'bookingPage')} />
 		<Section class="booking-layout">
 			<div>
 				{calendlyUrl ? <div class="booking-panel"><span class="booking-panel__icon"><Icon name="calendar-event" /></span><p>{locale === 'en' ? 'Booking opens in an external service.' : 'O agendamento abre num serviço externo.'}</p><Button size="lg" href={calendlyUrl} rel="external noreferrer">{locale === 'en' ? 'Open booking calendar' : 'Abrir calendário de agendamento'}<Icon name="external-link" /></Button></div> : <div class="booking-panel booking-panel--notice"><span class="booking-panel__icon"><Icon name="calendar-off" /></span><p>{locale === 'en' ? 'The booking link is not yet configured.' : 'A ligação de agendamento ainda não está configurada.'}</p><Button variant="link" href={pathFor('contact', locale)}>{locale === 'en' ? 'Use the contact page' : 'Usar a página de contacto'}</Button></div>}

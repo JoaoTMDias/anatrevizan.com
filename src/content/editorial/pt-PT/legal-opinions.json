@@ -5,6 +5,14 @@
 	"slug": "consultoria/pareceres",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Pareceres e Notas Técnicas",
 	"summary": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
 	"seo": {

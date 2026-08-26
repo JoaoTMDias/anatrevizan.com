@@ -48,7 +48,7 @@
 		height: 40rem;
 	}
 	.editorial-hero {
-		height: 42.5rem;
+		min-height: 42.5rem;
 	}
 	.editorial-hero__inner {
 		padding-top: 7rem;

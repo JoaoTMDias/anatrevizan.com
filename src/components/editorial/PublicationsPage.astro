@@ -23,7 +23,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
 <article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{page ? <>
-		<PageHero title={data.title} subtitle={page.subtitle} tag={page.tag} locale={locale} parent={{ label: locale === 'en' ? 'Academic' : 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'publicationsPage')} />
+		<PageHero title={data.title} subtitle={page.subtitle} tag={page.tag} locale={locale} heroMedia={data.media} parent={{ label: locale === 'en' ? 'Academic' : 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'publicationsPage')} />
 		<Section><p class="max-w-3xl text-lg leading-relaxed text-muted-foreground">{page.introText}</p>
 			<form class="publication-filters" data-publication-filters>
 				<label><span class="sr-only">{page.filters.allYears}</span><select name="year" aria-label={page.filters.allYears}><option value="">{page.filters.allYears}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></label>

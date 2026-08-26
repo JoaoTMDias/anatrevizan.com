@@ -27,7 +27,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
 <article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{contact ? <>
-		<PageHero title={data.title} subtitle={contact.subtitle} tag={contact.tag} locale={locale} data-tina-field={tinaField(data, 'contactPage')} />
+		<PageHero title={data.title} subtitle={contact.subtitle} tag={contact.tag} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'contactPage')} />
 		<Section class="contact-layout">
 			<div>
 				<SectionHeading title={locale === 'en' ? 'Contact form' : 'Formulário de contacto'} />

@@ -5,6 +5,18 @@
 	"slug": "consulting/environmental-esg",
 	"status": "draft",
 	"approvalPending": true,
+	"media": {
+		"background": {
+			"image": "/hero-ambiental.webp",
+			"focalPoint": "center"
+		},
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Environmental and ESG",
 	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
 	"seo": {

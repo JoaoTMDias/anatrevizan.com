@@ -5,6 +5,14 @@
 	"slug": "academia/publicacoes",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Publicações",
 	"summary": "Produção científica em Direito ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
 	"seo": {

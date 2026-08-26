@@ -19,7 +19,7 @@ const icons = ['school', 'books', 'calendar-event', 'microphone-2', 'presentatio
 <article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
-		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} data-tina-field={tinaField(data, 'academicHub')} />
+		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'academicHub')} />
 		<Section>
 			<p class="mb-12 max-w-3xl leading-relaxed text-muted-foreground">{hub.introText}</p>
 			<div class="editorial-grid">

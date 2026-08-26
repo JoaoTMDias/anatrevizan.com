@@ -5,6 +5,14 @@
 	"slug": "academia/eventos",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Eventos e Palestras",
 	"summary": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
 	"seo": {

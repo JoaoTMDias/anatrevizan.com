@@ -5,6 +5,14 @@
 	"slug": "contacto",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Vamos falar",
 	"summary": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
 	"seo": {

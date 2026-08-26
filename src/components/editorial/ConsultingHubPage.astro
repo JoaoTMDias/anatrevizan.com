@@ -21,7 +21,7 @@ const areaIcons = ['plane-departure', 'file-description', 'leaf', 'building-comm
 <article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
-		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} media="/hero-consultoria.webp" focalPoint="top" data-tina-field={tinaField(data, 'consultingHub')} />
+		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} heroMedia={data.media} data-tina-field={tinaField(data, 'consultingHub')} />
 		<Section>
 			<SectionHeading title={hub.introHeading} subtitle={hub.introText} />
 			<div class="consulting-filters" role="group" aria-label={locale === 'en' ? 'Filter areas by country' : 'Filtrar áreas por país'} data-consulting-filters>

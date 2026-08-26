@@ -5,6 +5,14 @@
 	"slug": "agendar",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Agende uma conversa inicial",
 	"summary": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
 	"seo": {

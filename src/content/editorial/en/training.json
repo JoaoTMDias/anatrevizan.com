@@ -5,6 +5,14 @@
 	"slug": "academic/training",
 	"status": "draft",
 	"approvalPending": true,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Training",
 	"summary": "STRUCTURAL CONTENT — awaiting Ana’s approval.",
 	"seo": {

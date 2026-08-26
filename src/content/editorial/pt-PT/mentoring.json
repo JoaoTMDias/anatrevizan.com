@@ -5,6 +5,14 @@
 	"slug": "academia/mentorias",
 	"status": "draft",
 	"approvalPending": false,
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": "",
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
 	"title": "Mentorias e Apoio Académico",
 	"summary": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
 	"seo": {

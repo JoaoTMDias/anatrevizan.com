@@ -9,6 +9,7 @@ import {
 	type RouteKey,
 	routeKeys,
 } from "./routing.ts";
+import { type HeroMedia, validateHeroMedia } from "./hero-media.ts";
 
 export const editorialStatuses = ["draft", "ready"] as const;
 export type EditorialStatus = (typeof editorialStatuses)[number];
@@ -30,6 +31,7 @@ export interface EditorialDocument {
 	seoTitle: string;
 	seoDescription: string;
 	approvalPending?: boolean;
+	media?: HeroMedia | null;
 }
 
 export interface EditorialIssue {
@@ -40,7 +42,11 @@ export interface EditorialIssue {
 		| "duplicate-slug"
 		| "missing-translation"
 		| "route-slug-mismatch"
-		| "unapproved-ready";
+		| "unapproved-ready"
+		| "invalid-hero-aspect-ratio"
+		| "invalid-hero-focal-point"
+		| "missing-hero-alt"
+		| "published-hero-placeholder";
 	message: string;
 }
 
@@ -75,6 +81,14 @@ export function validateEditorialDocuments(
 			issues.push({
 				code: "unapproved-ready",
 				message: `${document.translationGroup} está ready mas aguarda aprovação`,
+			});
+		for (const issue of validateHeroMedia(
+			document.media,
+			document.status === "ready" && !document.approvalPending,
+		))
+			issues.push({
+				code: issue.code,
+				message: `${document.translationGroup}/${document.locale}: ${issue.message}`,
 			});
 		const slugKey = `${document.locale}:${document.slug}`;
 		if (slugs.has(slugKey))

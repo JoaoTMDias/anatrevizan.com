@@ -131,6 +131,9 @@
 
 - A utilização de vídeo será seletiva.
 - Imagens estáticas otimizadas serão o comportamento padrão.
+- Os heroes editoriais partilhados permitem configurar separadamente no TinaCMS uma imagem de fundo e uma imagem lateral, incluindo ponto focal, proporção, finalidade decorativa e texto alternativo localizado.
+- A imagem lateral é empilhada depois do texto abaixo de 1024 px e apresentada numa grelha de duas colunas a partir desse breakpoint, sem JavaScript e sem altura fixa.
+- Assets temporários são permitidos apenas em documentos `draft`; a validação editorial impede a publicação do placeholder identificado pelo projeto.
 - Um vídeo só será ativado quando:
   - acrescentar valor editorial;
   - existir em versão final;
