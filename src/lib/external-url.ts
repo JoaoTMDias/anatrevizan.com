@@ -1,3 +1,7 @@
+export function isExternalHref(value: string | null | undefined): boolean {
+	return typeof value === "string" && /^(?:https?:)?\/\//i.test(value.trim());
+}
+
 export function safeCalendlyUrl(value: unknown): string | null {
 	if (typeof value !== "string" || value.trim() === "") return null;
 	try {

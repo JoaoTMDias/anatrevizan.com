@@ -135,7 +135,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
         {
           phone && whatsappUrl && (
             <li>
-              <a href={whatsappUrl} target="_blank" rel="external noreferrer">
+              <a href={whatsappUrl} target="_blank" rel="external noopener noreferrer">
                 <Icon name="brand-whatsapp" /> <span>{phone}</span>
               </a>
             </li>

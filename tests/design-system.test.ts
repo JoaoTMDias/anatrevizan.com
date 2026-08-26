@@ -1,7 +1,10 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
-const css = readFileSync("src/styles/global.css", "utf8");
+const css = readdirSync("src/styles")
+	.filter((file) => file.endsWith(".css"))
+	.map((file) => readFileSync(`src/styles/${file}`, "utf8"))
+	.join("\n");
 
 describe("design-system guardrails", () => {
 	it("ships the approved local fonts", () => {

@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
+import { isExternalHref } from '../lib/external-url';
 
 type Props = HTMLAttributes<'a'> & {
 	title: string;
@@ -9,10 +10,14 @@ type Props = HTMLAttributes<'a'> & {
 	icon: string;
 };
 
-const { title, link, icon, ...rest } = Astro.props;
-const isExternal = /^https?:\/\//i.test(link);
+const { title, link, icon, target, rel, ...rest } = Astro.props;
+const isExternal = isExternalHref(link);
+const linkTarget = isExternal ? '_blank' : target;
+const linkRel = isExternal
+	? [...new Set(`${rel ?? ''} external noopener noreferrer`.trim().split(/\s+/))].join(' ')
+	: rel;
 ---
 
-<a href={link} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'external noreferrer' : undefined} aria-label={title} title={title} {...rest}>
+<a href={link} target={linkTarget} rel={linkRel} aria-label={title} title={title} {...rest}>
 	<Icon name={icon} aria-hidden="true" />
 </a>

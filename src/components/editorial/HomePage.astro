@@ -161,7 +161,7 @@ const featuredPublications = home ? selectHomePublications(await getPublications
                     href={publication.url}
                     class="inline-flex items-center gap-1 text-base font-medium text-accent-500 hover:text-accent-600"
                     target="_blank"
-                    rel="external"
+                    rel="external noopener noreferrer"
                   >
                     {locale === "en" ? "View publication" : "Ver publicação"}
                     <Icon name="external-link" />

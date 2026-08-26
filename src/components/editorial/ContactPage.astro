@@ -42,7 +42,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
 					<button type="submit" disabled>{contact.formCopy.submitLabel}</button>
 				</fieldset></form>
 			</div>
-			<aside class="contact-methods"><h2>{contact.otherMethodsHeading}</h2><ul>{emailHref && <li><Icon name="mail" /><a href={emailHref}>{config?.contacts?.email}</a></li>}{whatsappHref && <li><Icon name="brand-whatsapp" /><a href={whatsappHref} rel="external noreferrer">WhatsApp <span>{config?.contacts?.phone}</span></a></li>}{profileLinks.map((profile) => <li><Icon name="external-link" /><a href={profile.href} rel="external noreferrer">{profile.label}</a></li>)}</ul><hr/><p>{contact.countriesLabel}</p><p>{contact.languagesLabel}</p><Button class="mt-6 w-full" href={pathFor('booking', locale)}>{contact.bookingCta}</Button></aside>
+			<aside class="contact-methods"><h2>{contact.otherMethodsHeading}</h2><ul>{emailHref && <li><Icon name="mail" /><a href={emailHref}>{config?.contacts?.email}</a></li>}{whatsappHref && <li><Icon name="brand-whatsapp" /><a href={whatsappHref} target="_blank" rel="external noopener noreferrer">WhatsApp <span>{config?.contacts?.phone}</span></a></li>}{profileLinks.map((profile) => <li><Icon name="external-link" /><a href={profile.href} target="_blank" rel="external noopener noreferrer">{profile.label}</a></li>)}</ul><hr/><p>{contact.countriesLabel}</p><p>{contact.languagesLabel}</p><Button class="mt-6 w-full" href={pathFor('booking', locale)}>{contact.bookingCta}</Button></aside>
 		</Section>
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>

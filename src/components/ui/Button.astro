@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "../../lib/cn";
+import { isExternalHref } from "../../lib/external-url";
 
 const button = tv({
   base: "inline-flex min-h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
@@ -37,13 +38,24 @@ type Props = VariantProps<typeof button> &
     href?: string | null;
   };
 
-const { variant, size, href, class: className, ...rest } = Astro.props;
+const { variant, size, href, class: className, target, rel, ...rest } = Astro.props;
 const classes = cn(button({ variant, size }), className);
+const external = isExternalHref(href);
+const linkTarget = external ? "_blank" : target;
+const linkRel = external
+  ? [...new Set(`${rel ?? ""} external noopener noreferrer`.trim().split(/\s+/))].join(" ")
+  : rel;
 ---
 
 {
   href ? (
-    <a href={href} class={classes} {...(rest as HTMLAttributes<"a">)}>
+    <a
+      href={href}
+      class={classes}
+      target={linkTarget}
+      rel={linkRel}
+      {...(rest as HTMLAttributes<"a">)}
+    >
       <slot />
     </a>
   ) : (
