@@ -1,3 +1,29 @@
+.site-footer {
+	--footer-background: #140607;
+	--footer-foreground: #fffaf4;
+	--footer-muted: #f4ede1;
+	--footer-accent: #f6b38e;
+	--footer-border: #80666b;
+	background: var(--footer-background);
+	border-color: var(--footer-border);
+	color: var(--footer-foreground);
+}
+
+.site-footer a {
+	color: var(--footer-muted);
+}
+
+.site-footer > div:first-child > nav > a,
+.site-footer > div:first-child > nav > p,
+.site-footer .footer-contact > p {
+	color: var(--footer-foreground);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+	color: var(--footer-accent);
+}
+
 .footer-contact__details a {
 	display: inline-flex;
 	align-items: center;
@@ -11,7 +37,6 @@
 }
 
 .footer-contact__details a:hover {
-	color: var(--primary);
 	text-decoration: underline;
 }
 
@@ -28,12 +53,11 @@
 	width: 2.75rem;
 	height: 2.75rem;
 	border-radius: 999px;
-	color: var(--muted-foreground);
+	color: var(--footer-muted);
 }
 
 .footer-contact__profiles a:hover {
-	background: var(--muted);
-	color: var(--primary);
+	background: #4a1519;
 }
 
 .footer-contact__profiles svg {
@@ -45,7 +69,7 @@
 .footer-contact__languages {
 	margin-top: 0.65rem;
 	font-size: 0.75rem;
-	color: var(--muted-foreground);
+	color: var(--footer-muted);
 }
 
 .footer-legal__inner {
@@ -57,6 +81,11 @@
 	padding-bottom: 1.25rem;
 	font-size: 0.75rem;
 	line-height: 1.5;
+}
+
+.footer-legal {
+	background: var(--footer-background);
+	color: var(--footer-muted);
 }
 
 .footer-legal__brand {
