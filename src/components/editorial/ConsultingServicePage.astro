@@ -53,7 +53,7 @@ const serviceIcons = ['route', 'id', 'files', 'credit-card', 'briefcase', 'award
 					<SectionHeading title={service.differentiatorHeading} eyebrow={service.differentiatorEyebrow} />
 					<div class="space-y-5 leading-relaxed text-muted-foreground">{service.differentiatorParagraphs?.map((paragraph) => <p>{paragraph}</p>)}</div>
 				</div>
-				{service.differentiatorCredentials?.length && <ul class:list={accent ? 'space-y-4 rounded-lg bg-primary-800 p-8 text-primary-foreground' : 'mt-7 grid gap-3 sm:grid-cols-2'}>{service.differentiatorCredentials.map((credential) => <li class:list={accent ? 'flex gap-3 text-sm leading-relaxed' : 'rounded-md border bg-card p-4 text-sm'}>{accent && <span class="mt-0.5 text-accent" aria-hidden="true"><Icon name="award" /></span>}<span>{credential}</span></li>)}</ul>}
+				{service.differentiatorCredentials?.length && <ul class:list={accent ? 'space-y-4 rounded-lg bg-primary p-8 text-primary-foreground' : 'mt-7 grid gap-3 sm:grid-cols-2'}>{service.differentiatorCredentials.map((credential) => <li class:list={accent ? 'flex gap-3 text-sm leading-relaxed' : 'rounded-md border bg-card p-4 text-sm'}>{accent && <span class="mt-0.5 text-white" aria-hidden="true"><Icon name="award" /></span>}<span>{credential}</span></li>)}</ul>}
 			</div>
 		</Section>}
 		{service.relatedWorkHeading && <Section background="bg-secondary">
