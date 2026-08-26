@@ -61,7 +61,7 @@
 		width: min(100%, 32rem);
 		margin: 0;
 		justify-self: center;
-		border: 1px solid rgb(255 255 255 / 24%);
+		border: none;
 		border-radius: var(--radius-xl);
 		background: color-mix(in oklab, var(--brand-burgundy) 82%, black);
 		box-shadow: 0 1.5rem 3rem rgb(20 6 7 / 28%);
