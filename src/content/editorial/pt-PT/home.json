@@ -14,7 +14,7 @@
   },
   "media": {
     "background": {
-      "image": "/hero-homepage-background.webp",
+      "image": "",
       "focalPoint": "center"
     },
     "foreground": {

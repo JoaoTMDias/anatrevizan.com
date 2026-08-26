@@ -17,10 +17,10 @@
       "image": ""
     },
     "foreground": {
-      "image": "/migracao-e-mobilidade-cover.webp",
-      "alt": "Fotografia de um avião a aterrar.",
+      "image": "/migracao-e-mobilidade-hero.webp",
+      "alt": "Uma vvista de topo, onde se vê uma bússola em cima de uma agenda e um papel com o carimbo \"Visa\".",
       "decorative": false,
-      "aspectRatio": "square"
+      "aspectRatio": "landscape"
     }
   },
   "consultingService": {
