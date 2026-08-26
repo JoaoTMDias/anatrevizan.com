@@ -39,8 +39,8 @@ const serviceIcons = ['route', 'id', 'files', 'credit-card', 'briefcase', 'award
 			<div class="editorial-grid">{service.services.map((item, index) => <Card as="article" class:list={['consulting-card gap-0 p-6 md:p-8', accent && 'consulting-card--accent']}>
 					<span class="consulting-card__icon mb-4" aria-hidden="true"><Icon name={serviceIcons[index % serviceIcons.length]} /></span>
 					<h3 class="text-lg font-semibold">{item.title}</h3>
-					{item.description && <p class="text-sm leading-relaxed text-muted-foreground">{item.description}</p>}
-					{item.items && <ul class="consulting-card__items list-disc space-y-2 pl-5 text-sm text-muted-foreground">{item.items.map((entry) => <li>{entry}</li>)}</ul>}
+					{item.description && <p class="text-base leading-relaxed text-muted-foreground">{item.description}</p>}
+					{item.items && <ul class="consulting-card__items list-disc space-y-2 pl-5 text-base text-muted-foreground">{item.items.map((entry) => <li>{entry}</li>)}</ul>}
 				</Card>)}</div>
 		</Section>
 		{service.steps?.length && service.stepsHeading && <Section>
@@ -53,15 +53,15 @@ const serviceIcons = ['route', 'id', 'files', 'credit-card', 'briefcase', 'award
 					<SectionHeading title={service.differentiatorHeading} eyebrow={service.differentiatorEyebrow} />
 					<div class="space-y-5 leading-relaxed text-muted-foreground">{service.differentiatorParagraphs?.map((paragraph) => <p>{paragraph}</p>)}</div>
 				</div>
-				{service.differentiatorCredentials?.length && <ul class:list={accent ? 'space-y-4 rounded-lg bg-primary p-8 text-primary-foreground' : 'mt-7 grid gap-3 sm:grid-cols-2'}>{service.differentiatorCredentials.map((credential) => <li class:list={accent ? 'flex gap-3 text-sm leading-relaxed' : 'rounded-md border bg-card p-4 text-sm'}>{accent && <span class="mt-0.5 text-white" aria-hidden="true"><Icon name="award" /></span>}<span>{credential}</span></li>)}</ul>}
+				{service.differentiatorCredentials?.length && <ul class:list={accent ? 'space-y-4 rounded-lg bg-primary p-8 text-primary-foreground' : 'mt-7 grid gap-3 sm:grid-cols-2'}>{service.differentiatorCredentials.map((credential) => <li class:list={accent ? 'flex gap-3 text-base leading-relaxed' : 'rounded-md border bg-card p-4 text-base'}>{accent && <span class="mt-0.5 text-white" aria-hidden="true"><Icon name="award" /></span>}<span>{credential}</span></li>)}</ul>}
 			</div>
 		</Section>}
 		{service.relatedWorkHeading && <Section background="bg-secondary">
 			<div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end"><SectionHeading title={service.relatedWorkHeading} subtitle={service.relatedWorkSubtitle} class="mb-0" />{accent && <Button variant="outline" href={pathFor('publications', locale)}>{locale === 'en' ? 'View all publications' : 'Ver todas as publicações'}</Button>}</div>
-			<div class="grid gap-6 md:grid-cols-2">{service.relatedPublications?.map((publication) => <Card as="article" class="p-6 md:p-8">{publication.highlight && <p class="editorial-eyebrow text-primary">{publication.highlight}</p>}<h3 class="text-lg font-semibold">{publication.title}</h3><p class="text-sm text-muted-foreground">{publication.publication}</p></Card>)}</div>
+			<div class="grid gap-6 md:grid-cols-2">{service.relatedPublications?.map((publication) => <Card as="article" class="p-6 md:p-8">{publication.highlight && <p class="editorial-eyebrow text-primary">{publication.highlight}</p>}<h3 class="text-lg font-semibold">{publication.title}</h3><p class="text-base text-muted-foreground">{publication.publication}</p></Card>)}</div>
 		</Section>}
 		{service.crosslinkHeading && crosslink && <aside class="border-y bg-secondary"><div class="site-container py-16"><div class="consulting-crosslink"><div><h2 class="text-xl font-semibold">{service.crosslinkHeading}</h2><p class="mt-3 max-w-2xl text-muted-foreground">{service.crosslinkText}</p></div><Button variant="outline" href={crosslink}>{crosslinkLabel}</Button></div></div></aside>}
-		{service.note && <aside class="border-b"><div class="site-container max-w-4xl py-8"><p class="border-l-4 border-primary pl-4 text-sm leading-relaxed text-muted-foreground">{service.note}</p></div></aside>}
+		{service.note && <aside class="border-b"><div class="site-container max-w-4xl py-8"><p class="border-l-4 border-primary pl-4 text-base leading-relaxed text-muted-foreground">{service.note}</p></div></aside>}
 		<ContactCta heading={service.ctaHeading} text={service.ctaText} locale={locale} />
 	</> : <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20"><h1>{data.title}</h1><p class="mt-4">{data.summary}</p></section>}
 </article>

@@ -121,7 +121,7 @@ export default function HeaderMenu({
 										navigationMenuTriggerStyle(),
 										"text-foreground/80 hover:text-primary",
 										item.emphasis &&
-											"ml-2 bg-primary px-5 text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground",
+											"ml-2 rounded-full bg-primary px-5 text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground active:bg-primary active:text-primary-foreground",
 									)}
 									aria-current={item.isCurrent ? "page" : undefined}
 								>
@@ -148,7 +148,7 @@ export default function HeaderMenu({
 
 			<Sheet>
 				<SheetTrigger
-					className="grid size-10 cursor-pointer place-items-center rounded-md text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+					className="grid size-11 cursor-pointer place-items-center rounded-full text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 					aria-label={menuLabel}
 				>
 					<MenuIcon className="size-6" aria-hidden="true" />
@@ -161,7 +161,7 @@ export default function HeaderMenu({
 					<SheetTitle className="sr-only">{menuLabel}</SheetTitle>
 					<div className="mb-8 flex items-center justify-between gap-4">
 						<SheetClose
-							className="grid size-11 cursor-pointer place-items-center rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+							className="grid size-11 cursor-pointer place-items-center rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 							aria-label={closeLabel}
 						>
 							<XIcon className="size-6" aria-hidden="true" />
@@ -210,7 +210,7 @@ export default function HeaderMenu({
 										className={cn(
 											"block rounded-md px-3 py-3 font-medium hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
 											item.emphasis &&
-												"bg-primary text-primary-foreground hover:bg-primary/90",
+												"rounded-full bg-primary px-5 text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground active:bg-primary active:text-primary-foreground",
 										)}
 										aria-current={item.isCurrent ? "page" : undefined}
 									>

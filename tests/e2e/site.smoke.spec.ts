@@ -58,8 +58,17 @@ test.describe("localized draft pages", () => {
 		await expect(heroHeading).toHaveCSS("line-height", "60px");
 		await expect(page.locator(".home-hero__actions a").first()).toHaveCSS(
 			"background-color",
-			"oklch(0.45 0.14 140)",
+			"rgb(155, 44, 52)",
 		);
+		const primaryCta = page.locator(".home-hero__actions a").first();
+		await expect(primaryCta).toHaveCSS("font-size", "16px");
+		const primaryCtaBox = await primaryCta.boundingBox();
+		expect(primaryCtaBox?.height).toBeGreaterThanOrEqual(44);
+		expect(
+			await primaryCta.evaluate((element) =>
+				Number.parseFloat(getComputedStyle(element).borderRadius),
+			),
+		).toBeGreaterThanOrEqual((primaryCtaBox?.height ?? 0) / 2);
 		await expect(page.locator(".editorial-cta a")).toHaveCount(1);
 	});
 
@@ -329,8 +338,11 @@ test.describe("localized draft pages", () => {
 		);
 		await expect(page.getByRole("button", { name: "Ver tudo" })).toHaveCSS(
 			"background-color",
-			"oklch(0.4 0.13 18)",
+			"rgb(74, 21, 25)",
 		);
+		const allFilter = page.getByRole("button", { name: "Ver tudo" });
+		await expect(allFilter).toHaveCSS("font-size", "16px");
+		expect((await allFilter.boundingBox())?.height).toBeGreaterThanOrEqual(44);
 		await expect(
 			page.getByRole("button", { name: "Estou em Portugal" }),
 		).toHaveCSS("border-top-width", "0px");

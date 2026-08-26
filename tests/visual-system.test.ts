@@ -46,6 +46,8 @@ const header = readFileSync("src/components/Header.astro", "utf8");
 const headerMenu = readFileSync("src/components/HeaderMenu.tsx", "utf8");
 const footer = readFileSync("src/components/Footer.astro", "utf8");
 const iconLink = readFileSync("src/components/IconLink.astro", "utf8");
+const astroButton = readFileSync("src/components/ui/Button.astro", "utf8");
+const reactButton = readFileSync("src/components/ui/button.tsx", "utf8");
 
 describe("Phase 3 visual foundation", () => {
 	it("defines the approved typography and core palette", () => {
@@ -57,8 +59,8 @@ describe("Phase 3 visual foundation", () => {
 			38_460,
 		);
 		expect(css).toContain("--font-heading:");
-		expect(css).toContain("--primary: oklch(0.4 0.13 18)");
-		expect(css).toContain("--accent: oklch(0.45 0.14 140)");
+		expect(css).toContain("--primary: var(--brand-burgundy)");
+		expect(css).toContain("--accent: var(--brand-wine)");
 		expect(css).not.toContain("text-wrap: balance");
 	});
 
@@ -85,6 +87,17 @@ describe("Phase 3 visual foundation", () => {
 		expect(css).toContain("@media (forced-colors: active)");
 	});
 
+	it("uses capsule buttons with readable labels and 44px minimum targets", () => {
+		for (const button of [astroButton, reactButton]) {
+			expect(button).toContain("rounded-full");
+			expect(button).toContain("text-base");
+			expect(button).toContain("min-h-11");
+		}
+		expect(reactButton).toContain('icon: "size-11"');
+		expect(css).toContain(".consulting-filters button");
+		expect(css).toContain("border-radius: 999px");
+	});
+
 	it("uses a readable dedicated desktop navigation dropdown", () => {
 		expect(header).toContain("<HeaderMenu");
 		expect(header).toContain("client:load");
@@ -93,6 +106,12 @@ describe("Phase 3 visual foundation", () => {
 		expect(css).toContain('.nav-dropdown__item[aria-current="page"]');
 		expect(css).toContain(
 			"background: color-mix(in oklab, var(--primary) 9%, var(--background))",
+		);
+	});
+
+	it("keeps the emphasized header CTA legible while focused or pressed", () => {
+		expect(headerMenu).toContain(
+			"focus:bg-primary focus:text-primary-foreground active:bg-primary active:text-primary-foreground",
 		);
 	});
 

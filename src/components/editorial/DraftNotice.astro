@@ -2,7 +2,7 @@
 interface Props { locale: string; approvalPending?: boolean }
 const { locale, approvalPending = true } = Astro.props;
 ---
-<p role="status" class="border-b border-amber-300 bg-amber-50 px-6 py-3 text-center text-sm leading-relaxed text-amber-950">
+<p role="status" class="border-b border-amber-300 bg-amber-50 px-6 py-3 text-center text-base leading-relaxed text-amber-950">
 	{locale === 'en'
 		? 'This draft has not been translated or approved for publication.'
 		: approvalPending
