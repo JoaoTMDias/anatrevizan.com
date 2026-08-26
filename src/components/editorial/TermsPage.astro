@@ -8,7 +8,7 @@ const { data } = Astro.props;
 const page = data.termsPage as LegalPageContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	<header class="legal-header"><div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p></div></header>
 	{page && <div class="legal-content site-container" data-tina-field={tinaField(data, 'termsPage')}><p class="legal-review-notice">{page.sourceStatus}</p><section><h2>Cobertura necessária antes da publicação</h2><p>Lista interna de revisão; não constitui termos de utilização.</p><ul>{page.reviewRequirements.map((item) => <li>{item}</li>)}</ul></section>{page.sections?.map((section) => <section><h2>{section.heading}</h2><div>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div></section>)}</div>}

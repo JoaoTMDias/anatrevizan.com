@@ -16,7 +16,7 @@ const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const icons = ['school', 'books', 'calendar-event', 'microphone-2', 'presentation'];
 ---
 
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{hub ? <>
 		<PageHero title={data.title} subtitle={hub.subtitle} locale={locale} data-tina-field={tinaField(data, 'academicHub')} />

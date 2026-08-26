@@ -17,7 +17,7 @@ const speaking = data.speakingPage as SpeakingPageContent | null | undefined;
 const locale = data.locale === 'en' ? 'en' : 'pt-PT';
 const kitIcons = ['user', 'photo', 'list-check'];
 ---
-<article id="main-content">
+<article id="main-content" tabindex="-1">
 	<DraftNotice locale={locale} approvalPending={data.approvalPending} />
 	{speaking ? <>
 		<PageHero title={data.title} subtitle={speaking.subtitle} tag={speaking.tag} locale={locale} parent={{ label: locale === 'en' ? 'Academic' : 'Academia', href: pathFor('academic', locale) }} data-tina-field={tinaField(data, 'speakingPage')} />
