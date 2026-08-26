@@ -1,60 +1,60 @@
 ---
-import { Icon } from 'astro-icon/components';
-import type { PublishedLocale } from '../lib/routing';
+import { Icon } from "astro-icon/components";
+import type { PublishedLocale } from "../lib/routing";
 
 interface Props {
-	locale?: PublishedLocale;
-	compact?: boolean;
+  locale?: PublishedLocale;
+  compact?: boolean;
 }
 
-const { locale = 'pt-PT', compact = false } = Astro.props;
-const darkLabel = locale === 'en' ? 'Use dark theme' : 'Usar tema escuro';
-const lightLabel = locale === 'en' ? 'Use light theme' : 'Usar tema claro';
+const { locale = "pt-PT", compact = false } = Astro.props;
+const darkLabel = locale === "en" ? "Use dark theme" : "Usar tema escuro";
+const lightLabel = locale === "en" ? "Use light theme" : "Usar tema claro";
 ---
+
 <button
-	data-theme-toggle
-	data-dark-label={darkLabel}
-	data-light-label={lightLabel}
-	type="button"
-	aria-label={darkLabel}
-	aria-pressed="false"
-	class:list={["theme-toggle", compact && "theme-toggle--compact"]}
+  data-theme-toggle
+  data-dark-label={darkLabel}
+  data-light-label={lightLabel}
+  type="button"
+  aria-label={darkLabel}
+  aria-pressed="false"
+  class:list={["theme-toggle", compact && "theme-toggle--compact"]}
 >
-	<Icon name="tabler:sun" class="theme-toggle__sun" />
-	<Icon name="tabler:moon" class="theme-toggle__moon" />
-	<span class:list={[compact && "sr-only lg:not-sr-only"]} data-theme-toggle-label>{darkLabel}</span>
+  <Icon name="tabler:sun" class="theme-toggle__sun" />
+  <Icon name="tabler:moon" class="theme-toggle__moon" />
 </button>
 <script is:inline>
-	const syncThemeToggle = () => {
-		const isDark = document.documentElement.classList.contains('dark');
-		document.querySelectorAll('[data-theme-toggle]').forEach((toggle) => {
-			const label = isDark ? toggle.dataset.lightLabel : toggle.dataset.darkLabel;
-			toggle.setAttribute('aria-pressed', String(isDark));
-			toggle.setAttribute('aria-label', label);
-			const visibleLabel = toggle.querySelector('[data-theme-toggle-label]');
-			if (visibleLabel) visibleLabel.textContent = label;
-		});
-	};
+  const syncThemeToggle = () => {
+    const isDark = document.documentElement.classList.contains("dark");
+    document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+      const label = isDark ? toggle.dataset.lightLabel : toggle.dataset.darkLabel;
+      toggle.setAttribute("aria-pressed", String(isDark));
+      toggle.setAttribute("aria-label", label);
+      const visibleLabel = toggle.querySelector("[data-theme-toggle-label]");
+      if (visibleLabel) visibleLabel.textContent = label;
+    });
+  };
 
-	syncThemeToggle();
-	if (!window.__themeToggleBound) {
-		window.__themeToggleBound = true;
-		document.addEventListener('click', (e) => {
-			if (!(e.target instanceof Element) || !e.target.closest('[data-theme-toggle]')) return;
-			const isDark = document.documentElement.classList.toggle('dark');
-			try {
-				localStorage.setItem('theme', isDark ? 'dark' : 'light');
-			} catch {}
-			syncThemeToggle();
-		});
-		matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-			let hasSavedTheme = false;
-			try {
-				hasSavedTheme = localStorage.getItem('theme') !== null;
-			} catch {}
-			if (hasSavedTheme) return;
-			document.documentElement.classList.toggle('dark', event.matches);
-			syncThemeToggle();
-		});
-	}
+  syncThemeToggle();
+  if (!window.__themeToggleBound) {
+    window.__themeToggleBound = true;
+    document.addEventListener("click", (e) => {
+      if (!(e.target instanceof Element) || !e.target.closest("[data-theme-toggle]")) return;
+      const isDark = document.documentElement.classList.toggle("dark");
+      try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      } catch {}
+      syncThemeToggle();
+    });
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+      let hasSavedTheme = false;
+      try {
+        hasSavedTheme = localStorage.getItem("theme") !== null;
+      } catch {}
+      if (hasSavedTheme) return;
+      document.documentElement.classList.toggle("dark", event.matches);
+      syncThemeToggle();
+    });
+  }
 </script>
