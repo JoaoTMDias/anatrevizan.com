@@ -84,7 +84,16 @@
 			height: 100%;
 		}
 	}
-	.home-gateways,
+	.home-gateways-section {
+		background: var(--brand-ink);
+	}
+	.home-gateways-shell {
+		padding-block: 0;
+	}
+	.home-gateways {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 	.about-current-work {
 		display: grid;
 		gap: 1.5rem;
@@ -96,28 +105,46 @@
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.home-gateway {
+		position: relative;
 		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 1rem;
-		padding: 1.5rem;
-		border: 1px solid var(--border);
-		border-radius: var(--radius-lg);
-		background: var(--card);
-		box-shadow: var(--shadow-sm);
-		color: var(--card-foreground);
+		min-height: 24rem;
+		grid-template-rows: auto 1fr auto;
+		gap: 2rem;
+		padding: clamp(2rem, 5vw, 4rem);
+		background: transparent;
+		color: #fffaf4;
 		text-decoration: none;
 		transition:
-			border-color 200ms,
-			box-shadow 200ms;
+			background-color 200ms ease-out,
+			color 200ms ease-out;
 	}
-	.home-gateway:hover {
-		border-color: color-mix(in oklab, var(--primary) 40%, var(--border));
-		box-shadow: var(--shadow-md);
+	.home-gateway + .home-gateway {
+		border-left: 1px solid #80666b;
 	}
-	.home-gateway--accent:hover {
-		border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+	.home-gateway:hover,
+	.home-gateway:focus-visible {
+		background: #2b1c20;
 	}
-	.home-gateway__icon,
+	.home-gateway:focus-visible {
+		z-index: 1;
+		outline: 3px solid #ffffff;
+		outline-offset: -3px;
+	}
+	.home-gateway__icon {
+		position: absolute;
+		top: clamp(1.5rem, 4vw, 3rem);
+		right: clamp(1.5rem, 4vw, 3rem);
+		display: grid;
+		width: clamp(5rem, 9vw, 8rem);
+		height: clamp(5rem, 9vw, 8rem);
+		place-items: center;
+		color: #f0a4aa;
+		opacity: 0.16;
+		pointer-events: none;
+	}
+	.home-gateway--accent .home-gateway__icon {
+		color: #eda087;
+	}
 	.home-service-card__icon,
 	.home-difference__icon,
 	.about-values article > span {
@@ -130,11 +157,10 @@
 		background: color-mix(in oklab, var(--primary) 13%, var(--background));
 		color: var(--primary);
 	}
-	.home-gateway--accent .home-gateway__icon {
-		background: color-mix(in oklab, var(--accent) 15%, var(--background));
-		color: var(--accent);
+	.home-gateway__icon svg {
+		width: 100%;
+		height: 100%;
 	}
-	.home-gateway__icon svg,
 	.home-service-card__icon svg,
 	.home-difference__icon svg,
 	.about-values article > span svg {
@@ -142,19 +168,28 @@
 		height: 1.25rem;
 	}
 	.home-gateway h2 {
-		font-size: 1.5rem;
-		font-weight: 600;
+		position: relative;
+		max-width: calc(100% - 5rem);
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 700;
+		line-height: 1.05;
 	}
 	.home-gateway__eyebrow {
-		color: var(--muted-foreground);
-		font-size: 0.75rem;
-	}
-	.home-gateway__description,
-	.home-gateway__cta {
-		grid-column: 1 / -1;
+		position: relative;
+		max-width: calc(100% - 5rem);
+		margin-top: 0.625rem;
+		color: #d9c8c3;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.5;
+		text-transform: uppercase;
 	}
 	.home-gateway__description {
-		color: var(--muted-foreground);
+		position: relative;
+		max-width: 34rem;
+		align-self: center;
+		color: #d9c8c3;
 		font-size: 1rem;
 		line-height: 1.65;
 	}
@@ -163,18 +198,28 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.25rem;
-		color: var(--primary);
 		font-size: 1rem;
 		font-weight: 600;
 	}
+	.home-gateway__cta {
+		width: fit-content;
+		color: #f0a4aa;
+	}
 	.home-gateway--accent .home-gateway__cta {
-		color: var(--accent);
+		color: #eda087;
 	}
 	.home-gateway__cta svg,
 	.home-service-card__cta svg,
 	.home-publication a svg {
 		width: 1rem;
 		height: 1rem;
+	}
+	.home-gateway__cta svg {
+		transition: transform 200ms ease-out;
+	}
+	.home-gateway:hover .home-gateway__cta svg,
+	.home-gateway:focus-visible .home-gateway__cta svg {
+		transform: translateX(0.35rem);
 	}
 	.home-differences {
 		display: grid;
@@ -228,12 +273,14 @@
 		flex: 1;
 	}
 	@media (min-width: 48rem) {
-		.home-gateways {
-			gap: 2.5rem;
-		}
-		.home-gateway,
 		.home-service-card {
 			padding: 2rem;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.home-gateway,
+		.home-gateway__cta svg {
+			transition: none;
 		}
 	}
 	.home-academic-heading {

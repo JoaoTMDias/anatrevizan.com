@@ -59,6 +59,18 @@
 	.home-academic-heading > div {
 		margin-top: -1rem;
 	}
+	.home-gateway {
+		min-height: 21rem;
+	}
+	.home-gateway__icon {
+		width: 4rem;
+		height: 4rem;
+		opacity: 0.12;
+	}
+	.home-gateway + .home-gateway {
+		border-top: 1px solid #80666b;
+		border-left: 0;
+	}
 	.speaking-photo {
 		max-width: 22rem;
 	}

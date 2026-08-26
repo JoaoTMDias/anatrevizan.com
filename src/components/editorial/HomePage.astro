@@ -94,8 +94,11 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
             </div>
           </div>
         </header>
-        <Section>
-          <div class="home-gateways" aria-label={locale === "en" ? "Areas" : "Áreas"}>
+        <Section background="home-gateways-section" class="home-gateways-shell">
+          <nav
+            class="home-gateways"
+            aria-label={locale === "en" ? "Areas" : "Áreas"}
+          >
             {home.gateways.map(
               (item, index) =>
                 destination(item) && (
@@ -104,7 +107,10 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
                     href={destination(item)}
                   >
                     <span class="home-gateway__icon">
-                      <Icon name={index === 0 ? "scale" : "book-2"} />
+                      <Icon
+                        name={index === 0 ? "scale" : "book-2"}
+                        class="home-gateway__icon-mark"
+                      />
                     </span>
                     <div>
                       <h2>{item.title}</h2>
@@ -118,7 +124,7 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
                   </a>
                 )
             )}
-          </div>
+          </nav>
         </Section>
         <Section background="bg-secondary">
           <>
