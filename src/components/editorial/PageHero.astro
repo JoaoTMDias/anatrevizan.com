@@ -1,44 +1,71 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { pathFor, type PublishedLocale } from '../../lib/routing';
-import Button from '../ui/Button.astro';
-import Breadcrumbs from './Breadcrumbs.astro';
+import type { HTMLAttributes } from "astro/types";
+import { pathFor, type PublishedLocale } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
 
-interface Props extends Omit<HTMLAttributes<'header'>, 'title'> {
-	title: string;
-	subtitle?: string;
-	tag?: string;
-	locale: PublishedLocale;
-	parent?: { label: string; href: string };
-	tone?: 'accent' | 'primary';
-	media?: string;
-	focalPoint?: 'center' | 'top' | 'bottom';
-	showActions?: boolean;
+interface Props extends Omit<HTMLAttributes<"header">, "title"> {
+  title: string;
+  subtitle?: string;
+  tag?: string;
+  locale: PublishedLocale;
+  parent?: { label: string; href: string };
+  tone?: "accent" | "primary";
+  media?: string;
+  focalPoint?: "center" | "top" | "bottom";
+  showActions?: boolean;
 }
 
-const { title, subtitle, tag, locale, parent, tone = 'primary', media, focalPoint = 'center', showActions = false, class: className, ...rest } = Astro.props;
+const {
+  title,
+  subtitle,
+  tag,
+  locale,
+  parent,
+  tone = "primary",
+  media,
+  focalPoint = "center",
+  showActions = false,
+  class: className,
+  ...rest
+} = Astro.props;
 const items = [
-	{ label: locale === 'en' ? 'Home' : 'Início', href: pathFor('home', locale) },
-	...(parent ? [parent] : []),
-	{ label: title },
+  { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
+  ...(parent ? [parent] : []),
+  { label: title },
 ];
 ---
 
 <header
-	class:list={['editorial-hero', tone === 'accent' && 'editorial-hero--accent', media && 'editorial-hero--media', className]}
-	style={media ? `--hero-image: url("${media}"); --hero-position: center ${focalPoint};` : undefined}
-	{...rest}
+  class:list={[
+    "editorial-hero",
+    tone === "accent" && "editorial-hero--accent",
+    media && "editorial-hero--media",
+    className,
+  ]}
+  style={media
+    ? `--hero-image: url("${media}"); --hero-position: center ${focalPoint};`
+    : undefined}
+  {...rest}
 >
-	<div class="site-container editorial-hero__inner">
-		<Breadcrumbs items={items} />
-		<div class="editorial-hero__content">
-			{tag && <p class="editorial-eyebrow">{tag}</p>}
-			<h1>{title}</h1>
-			{subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
-			{showActions && <div class="mt-8 flex flex-wrap gap-4">
-				<Button variant="accent" href={pathFor('booking', locale)}>{locale === 'en' ? 'Book an initial call' : 'Agendar primeiro contacto'}</Button>
-				<Button variant="outlineInverse" href={pathFor('contact', locale)}>{locale === 'en' ? 'Discuss my case' : 'Falar sobre o meu caso'}</Button>
-			</div>}
-		</div>
-	</div>
+  <div class="site-container editorial-hero__inner">
+    <Breadcrumbs items={items} />
+    <div class="editorial-hero__content">
+      {tag && <p class="editorial-eyebrow">{tag}</p>}
+      <h1>{title}</h1>
+      {subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
+      {
+        showActions && (
+          <div class="mt-8 flex flex-wrap gap-4">
+            <Button variant="accent" href={pathFor("booking", locale)}>
+              {locale === "en" ? "Book an initial call" : "Agendar contacto"}
+            </Button>
+            <Button variant="outlineInverse" href={pathFor("contact", locale)}>
+              {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
+            </Button>
+          </div>
+        )
+      }
+    </div>
+  </div>
 </header>

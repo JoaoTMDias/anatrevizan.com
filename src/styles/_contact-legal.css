@@ -1,0 +1,268 @@
+@layer components {
+	.contact-layout,
+	.booking-layout {
+		display: grid;
+		gap: 2.5rem;
+		grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+	}
+	.contact-form-notice {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.625rem;
+		padding: 1rem;
+		border: 1px solid color-mix(in oklab, var(--accent) 42%, var(--border));
+		border-radius: var(--radius-md);
+		background: color-mix(in oklab, var(--accent) 7%, var(--background));
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+	.contact-form-notice svg {
+		width: 1.25rem;
+		height: 1.25rem;
+		flex: none;
+		color: var(--accent);
+	}
+	.contact-form {
+		margin-top: 2rem;
+	}
+	.contact-form fieldset {
+		display: grid;
+		gap: 1.25rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.contact-form label:not(.contact-form__consent) {
+		display: grid;
+		gap: 0.5rem;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.contact-form input,
+	.contact-form select,
+	.contact-form textarea {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		background: var(--secondary);
+		color: var(--foreground);
+		font-size: 1rem;
+	}
+	.contact-form :disabled {
+		cursor: not-allowed;
+		opacity: 0.78;
+	}
+	.contact-form__wide,
+	.contact-form__consent,
+	.contact-form button {
+		grid-column: 1 / -1;
+	}
+	.contact-form__consent {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	.contact-form__consent input {
+		width: auto;
+		margin-top: 0.2rem;
+	}
+	.contact-form__consent a {
+		color: var(--primary);
+		text-decoration: underline;
+	}
+	.contact-form button {
+		min-height: 2.75rem;
+		width: fit-content;
+		padding-inline: 1.5rem;
+		border-radius: 999px;
+		background: var(--muted-foreground);
+		color: var(--background);
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.contact-methods {
+		align-self: start;
+		padding: 1.5rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		background: var(--secondary);
+	}
+	.contact-methods h2,
+	.booking-notes h2 {
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+	.contact-methods ul {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.25rem;
+		list-style: none;
+	}
+	.contact-methods li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		font-size: 1rem;
+	}
+	.contact-methods li > svg {
+		width: 1.125rem;
+		height: 1.125rem;
+		flex: none;
+		color: var(--primary);
+	}
+	.contact-methods a {
+		overflow-wrap: anywhere;
+		color: var(--foreground);
+	}
+	.contact-methods a:hover {
+		color: var(--primary);
+	}
+	.contact-methods a span {
+		display: block;
+		color: var(--muted-foreground);
+	}
+	.contact-methods hr {
+		margin-block: 1.25rem;
+		border-color: var(--border);
+	}
+	.contact-methods > p {
+		margin-top: 0.5rem;
+		color: var(--muted-foreground);
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	.booking-panel {
+		display: flex;
+		min-height: 20rem;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: clamp(2rem, 6vw, 4rem);
+		border: 1px dashed var(--border);
+		border-radius: var(--radius-lg);
+		background: var(--secondary);
+		text-align: center;
+	}
+	.booking-panel__icon {
+		display: grid;
+		width: 4rem;
+		height: 4rem;
+		place-items: center;
+		border-radius: 999px;
+		background: color-mix(in oklab, var(--primary) 13%, var(--background));
+		color: var(--primary);
+	}
+	.booking-panel__icon svg {
+		width: 1.75rem;
+		height: 1.75rem;
+	}
+	.booking-panel > p {
+		color: var(--muted-foreground);
+		line-height: 1.6;
+	}
+	.booking-panel--notice .booking-panel__icon {
+		background: color-mix(in oklab, var(--accent) 14%, var(--background));
+		color: var(--accent);
+	}
+	.booking-notes {
+		display: grid;
+		align-self: start;
+		gap: 1.25rem;
+	}
+	.booking-notes article {
+		gap: 0.75rem;
+	}
+	.booking-notes article > div {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+	.booking-notes svg {
+		width: 1.25rem;
+		height: 1.25rem;
+		color: var(--primary);
+	}
+	.booking-notes p {
+		color: var(--muted-foreground);
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+	.legal-header {
+		padding-block: clamp(3.5rem, 8vw, 5rem);
+		border-bottom: 1px solid var(--border);
+		background: var(--secondary);
+	}
+	.legal-header .site-container,
+	.legal-content {
+		max-width: 56rem;
+	}
+	.legal-header h1 {
+		font-size: clamp(2.25rem, 6vw, 3rem);
+		font-weight: 700;
+		line-height: 1.1;
+	}
+	.legal-header p {
+		max-width: 42rem;
+		margin-top: 1.25rem;
+		color: var(--muted-foreground);
+		line-height: 1.7;
+	}
+	.legal-content {
+		padding-block: clamp(3rem, 7vw, 4rem);
+	}
+	.legal-review-notice {
+		padding: 1.25rem;
+		border: 1px solid color-mix(in oklab, var(--accent) 42%, var(--border));
+		border-left: 4px solid var(--accent);
+		border-radius: var(--radius-md);
+		background: color-mix(in oklab, var(--accent) 7%, var(--background));
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+	.legal-content section {
+		margin-top: 2.5rem;
+	}
+	.legal-content h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+	.legal-content section > p,
+	.legal-content section > div {
+		margin-top: 0.75rem;
+		color: var(--muted-foreground);
+		line-height: 1.7;
+	}
+	.legal-content section > div {
+		display: grid;
+		gap: 1rem;
+	}
+	.legal-content ul {
+		display: grid;
+		gap: 0.5rem;
+		margin-top: 1.25rem;
+		padding-left: 1.25rem;
+		color: var(--muted-foreground);
+	}
+	.not-found-page {
+		display: grid;
+		min-height: 70vh;
+		padding: 1.5rem;
+		place-items: center;
+		background: var(--background);
+		text-align: center;
+	}
+	.not-found-page > div > p:first-child {
+		color: color-mix(in oklab, var(--primary) 40%, var(--background));
+		font-family: var(--font-heading);
+		font-size: clamp(4rem, 14vw, 6rem);
+		font-weight: 700;
+		line-height: 1;
+	}
+	.not-found-page h1 {
+		margin-top: 1rem;
+		font-size: clamp(1.5rem, 5vw, 2rem);
+		font-weight: 600;
+	}
+}

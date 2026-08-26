@@ -1,0 +1,65 @@
+@media (max-width: 63.999rem) {
+	.editorial-grid,
+	.home-differences,
+	.home-services {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 47.999rem) {
+	.consulting-crosslink {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.publication-filters,
+	.publication-filters label,
+	.publication-filters select {
+		width: 100%;
+	}
+	.publication-filters > p {
+		width: auto;
+		margin-left: 0;
+	}
+	.publication-card {
+		flex-direction: column;
+	}
+	.publication-card__unavailable {
+		max-width: none;
+		text-align: left;
+	}
+	.speaking-bio,
+	.speaking-kit-grid,
+	.home-gateways,
+	.home-differences,
+	.home-publications,
+	.home-services,
+	.editorial-grid,
+	.about-current-work,
+	.about-values {
+		grid-template-columns: 1fr;
+	}
+	.contact-layout,
+	.booking-layout,
+	.contact-form fieldset {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.contact-layout > *,
+	.booking-layout > * {
+		min-width: 0;
+	}
+	.booking-panel a {
+		max-width: 100%;
+		white-space: normal;
+		text-align: center;
+	}
+	.home-academic-heading {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.home-academic-heading > div {
+		margin-top: -1rem;
+	}
+	.speaking-photo {
+		max-width: 22rem;
+	}
+}

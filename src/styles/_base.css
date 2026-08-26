@@ -1,0 +1,62 @@
+@layer base {
+	* {
+		border-color: var(--border);
+		@apply border-border outline-ring/50;
+	}
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-sans);
+		margin: 0;
+		min-width: 20rem;
+		@apply bg-background text-foreground;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-heading);
+	}
+	a {
+		text-underline-offset: 0.2em;
+	}
+	:focus-visible {
+		outline: 3px solid var(--ring);
+		outline-offset: 3px;
+	}
+	.home-hero :focus-visible,
+	.editorial-hero :focus-visible,
+	.editorial-cta :focus-visible,
+	.bg-primary :focus-visible {
+		outline-color: #ffffff;
+	}
+	::selection {
+		background: color-mix(in oklab, var(--primary) 22%, transparent);
+	}
+	.bg-default {
+		background-color: var(--background);
+	}
+	html {
+		@apply font-sans;
+	}
+}
+
+@media (min-width: 48rem) {
+	.home-hero {
+		height: 40rem;
+	}
+	.editorial-hero {
+		height: 42.5rem;
+	}
+	.editorial-hero__inner {
+		padding-top: 7rem;
+	}
+	.academic-hub-card {
+		padding: 2rem;
+	}
+	.publication-card {
+		padding: 2rem;
+	}
+}

@@ -18,7 +18,7 @@ ativação de terceiros pertencem a trabalho posterior com revisão qualificada.
 | `_interface.json > legal` | `Política de Privacidade`, `Termos de Utilização`, `Política de Cookies` | 3 títulos | Preservados como títulos das rotas |
 | `_interface.json > common.inicio` | `Início` | Interface partilhada | Já preservado na navegação Astro |
 | `_interface.json > common.em_construcao` | `Página em construção — o conteúdo desta secção será adicionado em breve.` | Placeholder explícito | Contabilizado, mas não promovido a texto legal |
-| `_interface.json > cta` | `Agendar primeiro contacto`, `Falar sobre o meu caso` | 2 CTAs partilhados | Destinos existentes; não constituem conteúdo legal |
+| `_interface.json > cta` | `Agendar contacto`, `Falar sobre o meu caso` | 2 CTAs partilhados | Destinos existentes; não constituem conteúdo legal |
 | Três `page.tsx` | Sem metadata própria ou texto adicional | Estrutura | Substituída por templates Astro estáticos |
 
 Total: **7 strings PT-PT distintas** e **15 ocorrências renderizadas** nas três

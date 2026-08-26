@@ -32,7 +32,7 @@ Todos os 15 ficheiros de mensagens ingleses têm contagens e conteúdo iguais ao
 | Home `publicacoes-orcid.json` + `publicacoesMeta.ts` | Os três destaques selecionados pelo código Next.js e o selo “Citado pela OCDE” | Snapshot estático editorial; integração e sincronização ORCID adiadas |
 | Home `messages/en/home.json` | 33 strings, todas iguais a PT | Preservado no repositório-fonte e contabilizado como tradução inválida; documento EN continua estrutural, sem fallback visível |
 | Sobre `messages/pt-pt/sobre.json` | Hero, 2 parágrafos, 7 marcos, 2 áreas de atuação, 6 valores, 8 redes e CTA | Migrado integralmente para campos estruturados TinaCMS; PT aprovado, mantido draft/noindex por dependências |
-| Sobre `_interface.json` | CTAs “Ver kit de palestrante” e “Agendar primeiro contacto” | Migrado para o documento Sobre |
+| Sobre `_interface.json` | CTAs “Ver kit de palestrante” e “Agendar contacto” | Migrado para o documento Sobre |
 | Sobre `messages/en/sobre.json` | 57 strings, todas iguais a PT | Preservado no repositório-fonte e contabilizado como tradução inválida; documento EN continua estrutural, sem fallback visível |
 
 ## Pendências e conteúdo não publicável

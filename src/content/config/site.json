@@ -167,7 +167,7 @@
 			"type": "link",
 			"routeKey": "booking",
 			"label": {
-				"pt": "Agendar primeiro contacto",
+				"pt": "Agendar contacto",
 				"en": "Book a call"
 			},
 			"emphasis": true

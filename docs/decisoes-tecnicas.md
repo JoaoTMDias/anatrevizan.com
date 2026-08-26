@@ -14,6 +14,13 @@
 - A versão Next.js não será promovida a produção.
 - A versão Next.js será utilizada como especificação visual, funcional, editorial e de arquitetura de informação.
 
+## Organização dos estilos
+
+- O Tailwind CSS 4 permanece responsável pelo processamento do CSS global.
+- `src/styles/global.css` é o único entry point global e agrega partials CSS nativos por responsabilidade através de `@import` em build time.
+- Os partials permanecem na mesma pasta, usam o prefixo `_` e não são carregados individualmente pelo browser.
+- Sass não é usado em conjunto com Tailwind CSS 4, evitando um segundo pré-processador incompatível com o fluxo recomendado pelo Tailwind.
+
 ## Estratégia de migração
 
 - Transpor integralmente para Astro a estrutura visual e funcional criada na versão Next.js.
