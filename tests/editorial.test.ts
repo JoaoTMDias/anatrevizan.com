@@ -90,8 +90,12 @@ describe("modelo editorial bilingue", () => {
 	it("aceita uma tradução parcial sem invalidar o documento PT", () => {
 		const home = pages.find((page) => page.routeKey === "home");
 		expect(home).toBeDefined();
-		expect(isLocaleComplete(home, "pt-PT")).toBe(true);
-		expect(isLocaleComplete(home, "en")).toBe(false);
+		const partiallyTranslatedHome = structuredClone(home) as typeof home & {
+			title: { pt: string; en: string };
+		};
+		partiallyTranslatedHome.title.en = "";
+		expect(isLocaleComplete(partiallyTranslatedHome, "pt-PT")).toBe(true);
+		expect(isLocaleComplete(partiallyTranslatedHome, "en")).toBe(false);
 	});
 
 	it("avisa sem bloquear quando a tradução inglesa está incompleta", () => {
@@ -126,7 +130,14 @@ describe("modelo editorial bilingue", () => {
 	it("bloqueia regressões de traduções inglesas já publicadas", () => {
 		const home = pages.find((page) => page.routeKey === "home");
 		expect(home).toBeDefined();
-		expect(validateEditorialDocuments(pages, ["home"])).toContainEqual({
+		const regressedHome = structuredClone(home) as typeof home & {
+			title: { pt: string; en: string };
+		};
+		regressedHome.title.en = "";
+		const regressedPages = pages.map((page) =>
+			page.routeKey === "home" ? regressedHome : page,
+		);
+		expect(validateEditorialDocuments(regressedPages, ["home"])).toContainEqual({
 			code: "published-english-regression",
 			message: "home: uma tradução inglesa já publicada ficou incompleta",
 		});

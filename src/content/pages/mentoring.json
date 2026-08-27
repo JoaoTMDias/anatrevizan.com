@@ -3,20 +3,20 @@
 	"routeKey": "mentoring",
 	"title": {
 		"pt": "Mentorias e Apoio Académico",
-		"en": "Mentoring"
+		"en": "Mentorship and Academic Support"
 	},
 	"summary": {
 		"pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
-		"en": ""
+		"en": "Unlocking a thesis, structuring research, publishing internationally. Guided by someone who has walked the path — from master's to Ph.D., across three languages."
 	},
 	"seo": {
 		"title": {
 			"pt": "Mentorias e Apoio Académico · Publicar com quem já publicou",
-			"en": "Mentoring — Ana Trevizan"
+			"en": "Mentorship and Academic Support · Publish with Proven Experience — Ana Trevizan"
 		},
 		"description": {
 			"pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
-			"en": ""
+			"en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation."
 		},
 		"noindex": true
 	},
@@ -24,8 +24,8 @@
 		"foreground": {
 			"image": "/mentorias-e-apoio-academico-hero.webp",
 			"alt": {
-				"pt": "Close-up da Ana a tomar notas em papel",
-				"en": ""
+				"pt": "Close-up da Ana a tomar notas em papel.",
+				"en": "Close-up of Ana taking notes on paper."
 			},
 			"decorative": false
 		}
@@ -33,93 +33,93 @@
 	"academicService": {
 		"subtitle": {
 			"pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
-			"en": ""
+			"en": "Unlocking a thesis, structuring research, publishing internationally. Guided by someone who has walked the path — from master's to Ph.D., across three languages."
 		},
 		"introHeading": {
 			"pt": "Sei onde a escrita costuma travar",
-			"en": ""
+			"en": "I know where writing usually gets stuck"
 		},
 		"introParagraphs": {
 			"pt": "Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.\n\nJá passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos.",
-			"en": ""
+			"en": "A thesis doesn't stall due to lack of effort. It stalls over an incomplete structure, an argument that won't move forward, or an article rejected without a clear explanation.\n\nHaving navigated these hurdles myself, I help you overcome them through rigorous technical review, clear methodology, and hands-on experience publishing in and reviewing for international journals."
 		},
 		"servicesHeading": {
 			"pt": "Como posso apoiar",
-			"en": ""
+			"en": "How I can support you"
 		},
 		"services": [
 			{
 				"title": {
 					"pt": "Revisão técnica de artigos",
-					"en": ""
+					"en": "Technical Paper Review"
 				},
 				"description": {
 					"pt": "Revisão de conteúdo jurídico e científico em português, inglês e espanhol.",
-					"en": ""
+					"en": "Review of legal and scientific content in Portuguese, English, and Spanish."
 				}
 			},
 			{
 				"title": {
 					"pt": "Estratégia de pesquisa",
-					"en": ""
+					"en": "Research Strategy"
 				},
 				"description": {
 					"pt": "Definição de foco, questão e desenho metodológico do seu projeto.",
-					"en": ""
+					"en": "Defining project scope, research questions, and methodological design."
 				}
 			},
 			{
 				"title": {
 					"pt": "Estruturação de dissertações",
-					"en": ""
+					"en": "Dissertation & Thesis Structuring"
 				},
 				"description": {
 					"pt": "Organização da tese, do argumento central à arquitetura dos capítulos.",
-					"en": ""
+					"en": "Structuring the dissertation, from core arguments to chapter architecture."
 				}
 			},
 			{
 				"title": {
 					"pt": "Orientação metodológica",
-					"en": ""
+					"en": "Methodological Guidance"
 				},
 				"description": {
 					"pt": "Método adequado à sua pergunta e à sua área.",
-					"en": ""
+					"en": "Tailoring methodologies to your specific research question and domain."
 				}
 			},
 			{
 				"title": {
 					"pt": "Destravamento da escrita",
-					"en": ""
+					"en": "Overcoming Writer's Block"
 				},
 				"description": {
 					"pt": "Apoio para sair do bloqueio e recuperar o ritmo de produção.",
-					"en": ""
+					"en": "Targeted support to overcome blocks and regain writing momentum."
 				}
 			},
 			{
 				"title": {
 					"pt": "Preparação para publicação internacional",
-					"en": ""
+					"en": "International Publishing Preparation"
 				},
 				"description": {
 					"pt": "Adequação do artigo às exigências de revistas indexadas.",
-					"en": ""
+					"en": "Aligning manuscripts with the standards of indexed journals."
 				}
 			}
 		],
 		"note": {
 			"pt": "Apoio académico e metodológico. Orçamento sob consulta; o primeiro contacto é feito pela marcação de uma conversa inicial.",
-			"en": ""
+			"en": "Academic and methodological support. Quotes available upon request; initial contact is made by booking an introductory call."
 		},
 		"ctaHeading": {
 			"pt": "Vamos destravar a sua pesquisa?",
-			"en": ""
+			"en": "Ready to advance your research?"
 		},
 		"ctaText": {
 			"pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
-			"en": ""
+			"en": "Schedule an initial call and share where you currently stand with your thesis or paper."
 		}
 	}
 }

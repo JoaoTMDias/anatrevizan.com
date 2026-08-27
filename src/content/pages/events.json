@@ -13,52 +13,52 @@
 	},
 	"title": {
 		"pt": "Eventos e Palestras",
-		"en": "Events"
+		"en": "Events & Speaking Engagements"
 	},
 	"summary": {
 		"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-		"en": ""
+		"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
 	},
 	"seo": {
 		"title": {
-			"pt": "Eventos e Palestras · Journal desde 2019",
-			"en": "Events — Ana Trevizan"
+			"pt": "Eventos e Palestras · Diário desde 2019",
+			"en": "Events & Speaking Engagements · Journal since 2019 — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Journal de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
-			"en": ""
+			"pt": "Diário de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
+			"en": "Journal of conference participations, panels, and academic/institutional speaking engagements by Dr. Ana Trevizan since 2019."
 		},
 		"noindex": true
 	},
 	"eventsPage": {
 		"tag": {
 			"pt": "Academia",
-			"en": ""
+			"en": "Academia"
 		},
 		"subtitle": {
 			"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-			"en": ""
+			"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
 		},
 		"emptyHeading": {
-			"pt": "Journal em consolidação",
-			"en": ""
+			"pt": "Diário em consolidação",
+			"en": "Journal under compilation"
 		},
 		"emptyText": {
-			"pt": "Estou a reunir aqui as participações em conferências, painéis e eventos desde 2019. Enquanto isso, se quiser convidar-me para o seu evento, o kit de palestrante já está disponível.",
-			"en": ""
+			"pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019. Entretanto, se me quiser convidar para o seu evento, o kit de palestrante já está disponível.",
+			"en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019. In the meantime, if you would like to invite me to speak at your event, my speaker kit is already available."
 		},
 		"speakerKitCta": {
 			"pt": "Ver kit de palestrante",
-			"en": ""
+			"en": "View Speaker Kit"
 		},
 		"entries": [],
 		"ctaHeading": {
-			"pt": "Quer que este journal cresça com o seu evento?",
-			"en": ""
+			"pt": "Quer que este diário cresça com o seu evento?",
+			"en": "Would you like this journal to grow with your event?"
 		},
 		"ctaText": {
-			"pt": "Envie os detalhes do convite e retomo o contacto.",
-			"en": ""
+			"pt": "Envie os detalhes do convite e entrarei em contacto.",
+			"en": "Send over the details of your invitation and I will get back to you."
 		}
 	}
 }

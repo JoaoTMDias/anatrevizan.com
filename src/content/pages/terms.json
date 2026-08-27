@@ -7,7 +7,7 @@
 	},
 	"summary": {
 		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
-		"en": ""
+		"en": "Page under construction — content for this section will be added soon."
 	},
 	"seo": {
 		"title": {
@@ -16,39 +16,39 @@
 		},
 		"description": {
 			"pt": "Descrição editorial por aprovar.",
-			"en": ""
+			"en": "Editorial description pending approval."
 		},
 		"noindex": true
 	},
 	"termsPage": {
 		"sourceStatus": {
 			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
-			"en": ""
+			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
 		},
 		"reviewRequirements": [
 			{
 				"pt": "Finalidade informativa do site",
-				"en": ""
+				"en": "Informational purpose of the website"
 			},
 			{
 				"pt": "Ausência de aconselhamento jurídico automático",
-				"en": ""
+				"en": "No automatic legal advice"
 			},
 			{
 				"pt": "Propriedade intelectual",
-				"en": ""
+				"en": "Intellectual property"
 			},
 			{
 				"pt": "Ligações externas",
-				"en": ""
+				"en": "External links"
 			},
 			{
 				"pt": "Limitação de responsabilidade",
-				"en": ""
+				"en": "Limitation of liability"
 			},
 			{
 				"pt": "Jurisdição aplicável",
-				"en": ""
+				"en": "Applicable jurisdiction"
 			}
 		],
 		"sections": []

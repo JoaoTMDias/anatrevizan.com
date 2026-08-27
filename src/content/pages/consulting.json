@@ -7,16 +7,16 @@
 	},
 	"summary": {
 		"pt": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
-		"en": ""
+		"en": "Legal and environmental guidance across Portugal and Brazil. Each service specifies where it applies — start by selecting your location."
 	},
 	"seo": {
 		"title": {
 			"pt": "Consultoria Jurídica e Ambiental · Portugal e Brasil",
-			"en": "Consulting — Ana Trevizan"
+			"en": "Legal and Environmental Consulting · Portugal & Brazil — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil: migração, Direito civil, ESG, EUDR, políticas públicas e pareceres. Atuação preventiva e consultiva.",
-			"en": ""
+			"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil: migração, Direito Civil, ESG, EUDR, políticas públicas e pareceres. Atuação preventiva e consultiva.",
+			"en": "Legal and environmental consulting across Portugal and Brazil: immigration, civil law, ESG, EUDR, public policy, and legal opinions. Advisory and preventive practice."
 		},
 		"noindex": true
 	},
@@ -37,136 +37,136 @@
 	"consultingHub": {
 		"subtitle": {
 			"pt": "Orientação jurídica e ambiental entre Portugal e Brasil. Cada serviço indica o país onde se aplica — comece por dizer onde está.",
-			"en": ""
+			"en": "Legal and environmental guidance across Portugal and Brazil. Each service specifies where it applies — start by selecting your location."
 		},
 		"introHeading": {
 			"pt": "Onde precisa de apoio?",
-			"en": ""
+			"en": "Where do you need support?"
 		},
 		"introText": {
-			"pt": "Alguns serviços aplicam-se a Portugal (migração, Direito civil), outros ao Brasil (ambiental, ESG, políticas públicas). Há ainda o que atravessa os dois — como a regulação europeia aplicada a operações brasileiras. Filtre pela sua situação.",
-			"en": ""
+			"pt": "Alguns serviços aplicam-se a Portugal (migração, Direito Civil), outros ao Brasil (ambiental, ESG, políticas públicas). Há ainda o que atravessa os dois — como a regulação europeia aplicada a operações brasileiras. Filtre pela sua situação.",
+			"en": "Some services apply to Portugal (immigration, civil law), others to Brazil (environmental law, ESG, public policy). Others bridge both — such as European regulations applied to Brazilian operations. Filter by your situation."
 		},
 		"filters": {
 			"portugal": {
 				"pt": "Estou em Portugal",
-				"en": ""
+				"en": "I am in Portugal"
 			},
 			"brazil": {
 				"pt": "Estou no Brasil",
-				"en": ""
+				"en": "I am in Brazil"
 			},
 			"all": {
 				"pt": "Ver tudo",
-				"en": ""
+				"en": "View all"
 			}
 		},
 		"areas": [
 			{
 				"tag": {
 					"pt": "Portugal",
-					"en": ""
+					"en": "Portugal"
 				},
 				"summary": {
 					"pt": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
-					"en": ""
+					"en": "Relocation planning to Portugal, visas, residency, NIF, Social Security, and legal integration."
 				},
 				"routeKey": "immigration-mobility",
 				"countries": [
 					{
 						"pt": "pt",
-						"en": ""
+						"en": "pt"
 					}
 				]
 			},
 			{
 				"tag": {
 					"pt": "Portugal",
-					"en": ""
+					"en": "Portugal"
 				},
 				"summary": {
 					"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
-					"en": ""
+					"en": "Civil, Labor, Administrative, and Planning Law. Contract analysis and preventive strategy."
 				},
 				"routeKey": "legal",
 				"countries": [
 					{
 						"pt": "pt",
-						"en": ""
+						"en": "pt"
 					}
 				]
 			},
 			{
 				"tag": {
 					"pt": "Brasil · União Europeia",
-					"en": ""
+					"en": "Brazil · European Union"
 				},
 				"summary": {
 					"pt": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
-					"en": ""
+					"en": "ESG assessment, compliance, EUDR, due diligence, and alignment with European Union regulations."
 				},
 				"routeKey": "environmental-esg",
 				"countries": [
 					{
 						"pt": "br",
-						"en": ""
+						"en": "br"
 					}
 				]
 			},
 			{
 				"tag": {
 					"pt": "Brasil",
-					"en": ""
+					"en": "Brazil"
 				},
 				"summary": {
 					"pt": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
-					"en": ""
+					"en": "Legislative analysis and consulting for municipalities, NGOs, associations, and public institutions."
 				},
 				"routeKey": "public-policy",
 				"countries": [
 					{
 						"pt": "br",
-						"en": ""
+						"en": "br"
 					}
 				]
 			},
 			{
 				"tag": {
 					"pt": "Portugal e Brasil",
-					"en": ""
+					"en": "Portugal and Brazil"
 				},
 				"summary": {
 					"pt": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
-					"en": ""
+					"en": "Legal opinions backed by legislation, legal doctrine, case law, and academic research."
 				},
 				"routeKey": "legal-opinions",
 				"countries": [
 					{
 						"pt": "pt",
-						"en": ""
+						"en": "pt"
 					},
 					{
 						"pt": "br",
-						"en": ""
+						"en": "br"
 					}
 				]
 			}
 		],
 		"areaCta": {
 			"pt": "Saber mais",
-			"en": ""
+			"en": "Learn more"
 		},
 		"note": {
 			"pt": "Atuação preventiva, consultiva e extrajudicial. Não inclui representação em processos judiciais (contencioso). Atendimento em português, inglês e espanhol.",
-			"en": ""
+			"en": "Advisory, preventive, and out-of-court practice. Does not include litigation or court representation. Consultations available in Portuguese, English, and Spanish."
 		},
 		"ctaHeading": {
 			"pt": "Não tem a certeza de qual área se aplica ao seu caso?",
-			"en": ""
+			"en": "Not sure which area applies to your case?"
 		},
 		"ctaText": {
 			"pt": "Descreva a sua situação numa conversa inicial e indico o melhor caminho.",
-			"en": ""
+			"en": "Describe your situation in an initial call and I will guide you toward the best path."
 		}
 	}
 }

@@ -13,101 +13,101 @@
 	},
 	"title": {
 		"pt": "Academia",
-		"en": "Academic"
+		"en": "Academia"
 	},
 	"summary": {
 		"pt": "Uma trajetória rica só tem valor quando se pode ver inteira. Aqui reúno a investigação, o ensino e a comunicação num só lugar.",
-		"en": ""
+		"en": "A rich career is only meaningful when seen as a whole. Here, I bring together research, teaching, and science communication in one place."
 	},
 	"seo": {
 		"title": {
 			"pt": "Academia · Mentorias, publicações e palestras",
-			"en": "Academic — Ana Trevizan"
+			"en": "Academia · Mentorship, Publications, and Speaking — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Hub académico da Dra. Ana Trevizan: mentorias e apoio académico, repositório de publicações, journal de eventos, kit de palestrante e formações.",
-			"en": ""
+			"pt": "Hub académico da Dra. Ana Trevizan: mentorias e apoio académico, repositório de publicações, diário de eventos, kit de palestrante e formações.",
+			"en": "Academic Hub of Dr. Ana Trevizan: academic mentorship, repository of publications, event journal, speaker kit, and training programs."
 		},
 		"noindex": true
 	},
 	"academicHub": {
 		"subtitle": {
 			"pt": "Uma trajetória rica só tem valor quando se pode ver inteira. Aqui reúno a investigação, o ensino e a comunicação num só lugar.",
-			"en": ""
+			"en": "A rich career is only meaningful when seen as a whole. Here, I bring together research, teaching, and science communication in one place."
 		},
 		"introText": {
 			"pt": "Produção dispersa entre ORCID, Scholar, Lattes e PDFs não conta a história toda — e faz perder tempo a quem procura, incluindo a mim. Esta é a porta de entrada para quem quer verificar autoridade real num tema, convidar-me para um evento ou destravar a sua pesquisa.",
-			"en": ""
+			"en": "Work scattered across ORCID, Scholar, Lattes, and PDFs doesn't tell the full story — and wastes time for anyone searching, including myself. This is the gateway for those looking to verify subject-matter expertise, invite me to an event, or advance their research."
 		},
 		"sections": [
 			{
 				"description": {
 					"pt": "Revisão técnica, orientação metodológica e preparação para publicação internacional (PT/EN/ES).",
-					"en": ""
+					"en": "Technical review, methodological guidance, and preparation for international publishing (PT/EN/ES)."
 				},
 				"routeKey": "mentoring",
 				"cta": {
 					"pt": "Aceder",
-					"en": ""
+					"en": "Explore"
 				},
 				"highlight": false
 			},
 			{
 				"description": {
 					"pt": "Repositório de artigos e capítulos, com filtros por ano, tema e idioma.",
-					"en": ""
+					"en": "Repository of journal articles and book chapters, searchable by year, topic, and language."
 				},
 				"routeKey": "publications",
 				"cta": {
 					"pt": "Aceder",
-					"en": ""
+					"en": "Explore"
 				},
 				"highlight": true
 			},
 			{
 				"description": {
-					"pt": "Journal de participações em conferências e eventos, desde 2019.",
-					"en": ""
+					"pt": "Diário de participações em conferências e eventos, desde 2019.",
+					"en": "Journal of conference and event speaking engagements since 2019."
 				},
 				"routeKey": "events",
 				"cta": {
 					"pt": "Aceder",
-					"en": ""
+					"en": "Explore"
 				},
 				"highlight": false
 			},
 			{
 				"description": {
-					"pt": "Kit de palestrante: biografia, temas e o que precisa para me convidar.",
-					"en": ""
+					"pt": "Kit de palestrante: biografia, temas e tudo o que precisa para me convidar.",
+					"en": "Speaker Kit: biography, speaking topics, and key details for event invitations."
 				},
 				"routeKey": "speaking",
 				"cta": {
 					"pt": "Aceder",
-					"en": ""
+					"en": "Explore"
 				},
 				"highlight": true
 			},
 			{
 				"description": {
 					"pt": "Cursos e workshops para universidades, empresas, municípios e organizações.",
-					"en": ""
+					"en": "Courses and workshops tailored for universities, corporations, municipalities, and organizations."
 				},
 				"routeKey": "training",
 				"cta": {
 					"pt": "Aceder",
-					"en": ""
+					"en": "Explore"
 				},
 				"highlight": false
 			}
 		],
 		"ctaHeading": {
 			"pt": "Uma mentoria, um convite, uma colaboração?",
-			"en": ""
+			"en": "Looking for mentorship, a speaker, or a research collaboration?"
 		},
 		"ctaText": {
 			"pt": "Seja para destravar uma tese ou convidar-me para falar, o primeiro passo é uma conversa.",
-			"en": ""
+			"en": "Whether to advance your thesis or invite me to speak, the first step is a conversation."
 		}
 	}
 }

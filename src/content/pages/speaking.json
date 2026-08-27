@@ -13,115 +13,115 @@
 	},
 	"title": {
 		"pt": "Palestras e Convites",
-		"en": "Speaking"
+		"en": "Speaking & Keynotes"
 	},
 	"summary": {
 		"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
-		"en": ""
+		"en": "Keynotes on the EUDR delivered through firsthand field research — not secondhand accounts. Verify subject-matter authority in two minutes and send an invitation."
 	},
 	"seo": {
 		"title": {
 			"pt": "Palestras e Convites · Kit de palestrante",
-			"en": "Speaking — Ana Trevizan"
+			"en": "Speaking & Keynotes · Speaker Kit — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Convide a Dra. Ana Trevizan para palestrar sobre EUDR, Direito ambiental, ESG, clima e migração. Biografia, temas e kit de palestrante.",
-			"en": ""
+			"pt": "Convide a Dra. Ana Trevizan para palestrar sobre EUDR, Direito Ambiental, ESG, clima e migração. Biografia, temas e kit de palestrante.",
+			"en": "Invite Dr. Ana Trevizan to speak on the EUDR, Environmental Law, ESG, climate governance, and migration. Speaker biography, topics, and downloadable speaker kit."
 		},
 		"noindex": true
 	},
 	"speakingPage": {
 		"tag": {
 			"pt": "Academia",
-			"en": ""
+			"en": "Academia"
 		},
 		"subtitle": {
 			"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
-			"en": ""
+			"en": "Keynotes on the EUDR delivered through firsthand field research — not secondhand accounts. Verify subject-matter authority in two minutes and send an invitation."
 		},
 		"photoPlaceholderLabel": {
 			"pt": "Foto em alta resolução",
-			"en": ""
+			"en": "High-resolution photo"
 		},
 		"bioHeading": {
 			"pt": "Quem sobe ao palco",
-			"en": ""
+			"en": "About the Speaker"
 		},
 		"bioParagraphs": {
 			"pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada inscrita na OAB desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.\n\nFalo em português, inglês e espanhol, para plateias académicas, corporativas e institucionais — sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.",
-			"en": ""
+			"en": "Holding a Ph.D. in Climate Change and Sustainable Development Policies from NOVA University Lisbon, serves as an SPF Early Career Fellow at the Rights Lab (University of Nottingham), and is admitted to the OAB (2013). Her empirical research led her into the field in the Amazon, examining the 'Brussels Effect' and the EUDR where they unfold on the ground.\n\nShe delivers keynotes in Portuguese, English, and Spanish to academic, corporate, and policy audiences — consistently focusing on making complex issues clear without compromising scientific rigor."
 		},
 		"topicsHeading": {
 			"pt": "Temas que ministro",
-			"en": ""
+			"en": "Speaking Topics"
 		},
 		"topics": [
 			{
 				"pt": "EUDR e cadeias florestais",
-				"en": ""
+				"en": "EUDR and Forest Supply Chains"
 			},
 			{
 				"pt": "Direito Ambiental",
-				"en": ""
+				"en": "Environmental Law"
 			},
 			{
 				"pt": "ESG e Sustentabilidade",
-				"en": ""
+				"en": "ESG and Sustainability"
 			},
 			{
 				"pt": "Governança Climática",
-				"en": ""
+				"en": "Climate Governance"
 			},
 			{
 				"pt": "Compliance",
-				"en": ""
+				"en": "Compliance"
 			},
 			{
 				"pt": "Direito da União Europeia",
-				"en": ""
+				"en": "European Union Law"
 			},
 			{
 				"pt": "Direito Migratório",
-				"en": ""
+				"en": "Immigration Law"
 			},
 			{
 				"pt": "Direitos Humanos",
-				"en": ""
+				"en": "Human Rights"
 			}
 		],
 		"kitHeading": {
 			"pt": "O que encontra no kit",
-			"en": ""
+			"en": "What's in the kit"
 		},
 		"kitItems": [
 			{
 				"pt": "Biografia curta e completa",
-				"en": ""
+				"en": "Short and full biographies"
 			},
 			{
 				"pt": "Foto em alta resolução",
-				"en": ""
+				"en": "High-resolution headshots"
 			},
 			{
 				"pt": "Lista de temas e formatos",
-				"en": ""
+				"en": "Overview of speaking topics and presentation formats"
 			}
 		],
 		"kitDownloadLabel": {
 			"pt": "Descarregar kit de palestrante",
-			"en": ""
+			"en": "Download Speaker Kit"
 		},
 		"inviteCta": {
 			"pt": "Convidar para palestrar",
-			"en": ""
+			"en": "Invite to Speak"
 		},
 		"ctaHeading": {
 			"pt": "Tem um evento à vista?",
-			"en": ""
+			"en": "Planning an upcoming event?"
 		},
 		"ctaText": {
 			"pt": "Envie os detalhes — data, tema e formato — e retomo o contacto para combinarmos.",
-			"en": ""
+			"en": "Send over the event details — date, topic, and format — and I will get back to you to coordinate."
 		}
 	}
 }

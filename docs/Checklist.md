@@ -2,8 +2,8 @@
 
 ## Conteúdo e revisão
 
-- [ ] Ana rever os 19 documentos no `/admin`, incluindo ordem das listas, CTAs e media.
-- [ ] Completar e rever humanamente todos os campos EN antes de publicar as rotas inglesas.
+- [x] Ana rever os 19 documentos no `/admin`, incluindo ordem das listas, CTAs e media.
+- [x] Completar e rever humanamente todos os campos EN antes de publicar as rotas inglesas.
 - [ ] Obter revisão qualificada das afirmações profissionais e dos serviços.
 - [ ] Redigir e rever juridicamente Privacidade, Termos e Cookies, incluindo datas de entrada em vigor.
 - [ ] Substituir imagens temporárias e confirmar licenças e textos alternativos PT/EN.

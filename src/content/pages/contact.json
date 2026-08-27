@@ -7,7 +7,7 @@
 	},
 	"summary": {
 		"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-		"en": ""
+		"en": "Tell me about your situation and what you are looking for. I read every message and reply personally."
 	},
 	"seo": {
 		"title": {
@@ -16,7 +16,7 @@
 		},
 		"description": {
 			"pt": "Fale com a Dra. Ana Trevizan. Consultoria jurídica e ambiental entre Portugal e Brasil, com atendimento em português, inglês e espanhol.",
-			"en": ""
+			"en": "Get in touch with Dr. Ana Trevizan. Legal and environmental consulting across Portugal and Brazil, available in Portuguese, English, and Spanish."
 		},
 		"noindex": true
 	},
@@ -24,8 +24,8 @@
 		"foreground": {
 			"image": "/contact-hero.webp",
 			"alt": {
-				"pt": "Telefone iPhone com o ícone da aplicação do Whatsapp",
-				"en": ""
+				"pt": "Telefone iPhone com o ícone da aplicação do WhatsApp.",
+				"en": "iPhone displaying the WhatsApp application icon."
 			},
 			"decorative": false
 		}
@@ -33,27 +33,27 @@
 	"contactPage": {
 		"tag": {
 			"pt": "Contacto",
-			"en": ""
+			"en": "Contact"
 		},
 		"subtitle": {
 			"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-			"en": ""
+			"en": "Tell me about your situation and what you are looking for. I read every message and reply personally."
 		},
 		"otherMethodsHeading": {
 			"pt": "Outras formas de contacto",
-			"en": ""
+			"en": "Other ways to connect"
 		},
 		"countriesLabel": {
 			"pt": "Portugal · Brasil",
-			"en": ""
+			"en": "Portugal · Brazil"
 		},
 		"languagesLabel": {
 			"pt": "Atendimento em PT · EN · ES",
-			"en": ""
+			"en": "Available in PT · EN · ES"
 		},
 		"bookingCta": {
 			"pt": "Prefere agendar uma conversa?",
-			"en": ""
+			"en": "Prefer to schedule a call?"
 		}
 	}
 }

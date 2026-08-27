@@ -7,16 +7,16 @@
 	},
 	"summary": {
 		"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
-		"en": ""
+		"en": "Complimentary 15-to-30-minute initial call, scheduled in Portugal time."
 	},
 	"seo": {
 		"title": {
 			"pt": "Agendar uma conversa inicial",
-			"en": "Book a call — Ana Trevizan"
+			"en": "Book an Initial Call — Ana Trevizan"
 		},
 		"description": {
 			"pt": "Marque um primeiro contacto com a Dra. Ana Trevizan. Conversa de 15 a 30 minutos, para temas jurídicos e académicos.",
-			"en": ""
+			"en": "Schedule an initial call with Dr. Ana Trevizan. A 15-to-30-minute consultation covering legal and academic matters."
 		},
 		"noindex": true
 	},
@@ -25,7 +25,7 @@
 			"image": "/agendar-hero.webp",
 			"alt": {
 				"pt": "Close-up de uma agenda.",
-				"en": ""
+				"en": "Close-up shot of a planner."
 			},
 			"decorative": false
 		}
@@ -33,27 +33,27 @@
 	"bookingPage": {
 		"tag": {
 			"pt": "Agendar",
-			"en": ""
+			"en": "Schedule"
 		},
 		"subtitle": {
 			"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
-			"en": ""
+			"en": "Complimentary 15-to-30-minute initial call, scheduled in Portugal time."
 		},
 		"duration": {
 			"pt": "15 a 30 minutos",
-			"en": ""
+			"en": "15 to 30 minutes"
 		},
 		"validFor": {
 			"pt": "Válido para todos os temas — jurídicos e académicos.",
-			"en": ""
+			"en": "Applies to all inquiries — both legal and academic."
 		},
 		"timezone": {
 			"pt": "Fuso de Portugal",
-			"en": ""
+			"en": "Portugal Time Zone"
 		},
 		"timezoneNote": {
 			"pt": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
-			"en": ""
+			"en": "Note: Local time in Brazil will be a few hours behind Portugal time."
 		}
 	}
 }

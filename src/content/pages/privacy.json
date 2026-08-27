@@ -7,7 +7,7 @@
 	},
 	"summary": {
 		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
-		"en": ""
+		"en": "Page under construction — content for this section will be added soon."
 	},
 	"seo": {
 		"title": {
@@ -16,55 +16,55 @@
 		},
 		"description": {
 			"pt": "Descrição editorial por aprovar.",
-			"en": ""
+			"en": "Editorial description pending approval."
 		},
 		"noindex": true
 	},
 	"privacyPage": {
 		"sourceStatus": {
 			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
-			"en": ""
+			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
 		},
 		"reviewRequirements": [
 			{
 				"pt": "Responsável pelo tratamento",
-				"en": ""
+				"en": "Data controller"
 			},
 			{
 				"pt": "Dados recolhidos",
-				"en": ""
+				"en": "Data collected"
 			},
 			{
 				"pt": "Finalidades e base legal",
-				"en": ""
+				"en": "Purposes and legal basis"
 			},
 			{
 				"pt": "Retenção",
-				"en": ""
+				"en": "Data retention"
 			},
 			{
 				"pt": "Destinatários e transferências internacionais",
-				"en": ""
+				"en": "Recipients and international transfers"
 			},
 			{
 				"pt": "Direitos do titular e contacto",
-				"en": ""
+				"en": "Data subject rights and contact info"
 			},
 			{
 				"pt": "Formulário",
-				"en": ""
+				"en": "Contact form"
 			},
 			{
 				"pt": "Calendly",
-				"en": ""
+				"en": "Calendly"
 			},
 			{
 				"pt": "Hosting",
-				"en": ""
+				"en": "Web hosting"
 			},
 			{
 				"pt": "Analytics, se utilizado",
-				"en": ""
+				"en": "Analytics, if applicable"
 			}
 		],
 		"sections": []

@@ -7,7 +7,7 @@
 	},
 	"summary": {
 		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
-		"en": ""
+		"en": "Page under construction — content for this section will be added soon."
 	},
 	"seo": {
 		"title": {
@@ -16,39 +16,39 @@
 		},
 		"description": {
 			"pt": "Descrição editorial por aprovar.",
-			"en": ""
+			"en": "Editorial description pending approval."
 		},
 		"noindex": true
 	},
 	"cookiesPage": {
 		"sourceStatus": {
 			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
-			"en": ""
+			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
 		},
 		"reviewRequirements": [
 			{
 				"pt": "Cookies essenciais",
-				"en": ""
+				"en": "Essential cookies"
 			},
 			{
 				"pt": "Calendly",
-				"en": ""
+				"en": "Calendly"
 			},
 			{
 				"pt": "Analytics, se utilizado",
-				"en": ""
+				"en": "Analytics, if applicable"
 			},
 			{
 				"pt": "Redes sociais",
-				"en": ""
+				"en": "Social media"
 			},
 			{
 				"pt": "Fornecedores, finalidades e duração",
-				"en": ""
+				"en": "Providers, purposes, and duration"
 			},
 			{
 				"pt": "Consentimento, retirada e alteração",
-				"en": ""
+				"en": "Consent, withdrawal, and management"
 			}
 		],
 		"sections": []
