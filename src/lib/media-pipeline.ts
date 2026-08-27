@@ -1,4 +1,10 @@
-import { mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
+import {
+	copyFile,
+	mkdir,
+	readdir,
+	readFile,
+	writeFile,
+} from "node:fs/promises";
 import { extname, join, relative } from "node:path";
 import sharp from "sharp";
 
@@ -8,6 +14,14 @@ export const responsiveWidths = [480, 960, 1440] as const;
 
 export function isRasterMedia(path: string): boolean {
 	return rasterExtensions.has(extname(path).toLowerCase());
+}
+
+export function isDownloadMedia(path: string): boolean {
+	return allowedDownloads.has(extname(path).toLowerCase());
+}
+
+export function isRenderableImage(path: string): boolean {
+	return isRasterMedia(path) || extname(path).toLowerCase() === ".svg";
 }
 
 export function responsiveVariant(path: string, width: number): string {
@@ -40,10 +54,18 @@ export function responsiveCssImage(
 
 export function sanitizeSvg(source: string): string {
 	return source
-		.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
-		.replace(/\son\w+\s*=\s*(?:"[^"]*"|'[^']*')/gi, "")
+		.replace(/<!doctype\b(?:[^>]|\[[\s\S]*?\])*>/gi, "")
 		.replace(
-			/\s(?:href|xlink:href)\s*=\s*(["'])\s*(?:javascript:|data:text\/html)[\s\S]*?\1/gi,
+			/<(?:script|foreignObject|iframe|object|embed|style|link|meta)\b[^>]*>[\s\S]*?<\/(?:script|foreignObject|iframe|object|embed|style|link|meta)\s*>/gi,
+			"",
+		)
+		.replace(
+			/<\/?(?:script|foreignObject|iframe|object|embed|style|link|meta)\b[^>]*\/?>/gi,
+			"",
+		)
+		.replace(/\s(?:on[\w:-]+|style)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+		.replace(
+			/\s(?:href|xlink:href|src)\s*=\s*(?:(["'])\s*(?:javascript:|vbscript:|data:text\/html)[\s\S]*?\1|(?:javascript:|vbscript:|data:text\/html)[^\s>]*)/gi,
 			"",
 		);
 }
@@ -92,11 +114,9 @@ export async function buildMediaVariants(
 					.toFile(target);
 			}
 		}
-		if (
-			!rasterExtensions.has(extension) &&
-			extension !== ".svg" &&
-			allowedDownloads.has(extension)
-		)
-			await stat(source);
+		if (allowedDownloads.has(extension)) {
+			await mkdir(join(destination, ".."), { recursive: true });
+			await copyFile(source, destination);
+		}
 	}
 }

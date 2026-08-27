@@ -2,9 +2,10 @@
 import type { HTMLAttributes } from "astro/types";
 import { heroAspectRatioForRoute, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
 import { pathFor, type PublishedLocale, type RouteKey } from "../../lib/routing";
-import { responsiveCssImage, responsiveSrcSet } from "../../lib/media-pipeline";
+import { responsiveCssImage } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
+import EditorialImage from "./EditorialImage.astro";
 
 interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   title: string;
@@ -35,6 +36,9 @@ const backgroundImage = heroMedia?.background?.image;
 const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
 const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
 const foregroundRatio = heroAspectRatioForRoute(routeKey);
+const foregroundDimensions = foregroundRatio === "landscape"
+  ? { width: 960, height: 720 }
+  : { width: 960, height: 960 };
 const items = [
   { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
   ...(parent ? [parent] : []),
@@ -84,10 +88,11 @@ const items = [
               `editorial-hero__foreground--${foregroundRatio}`,
             ]}
           >
-            <img
-              src={foreground.image ?? undefined}
-              srcset={responsiveSrcSet(foreground.image)}
+            <EditorialImage
+              src={foreground.image!}
               alt={foreground.decorative ? "" : (foreground.alt?.trim() ?? "")}
+              width={foregroundDimensions.width}
+              height={foregroundDimensions.height}
               loading="eager"
               fetchpriority="high"
               decoding="async"

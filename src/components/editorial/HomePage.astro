@@ -7,12 +7,13 @@ import { heroAspectRatioForRoute, heroFocalPoint } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
 import { pathFor } from "../../lib/routing";
-import { responsiveCssImage, responsiveSrcSet } from "../../lib/media-pipeline";
+import { responsiveCssImage } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import EditorialImage from "./EditorialImage.astro";
 import SectionHeading from "./SectionHeading.astro";
 interface Props {
   data: CmsEditorial;
@@ -79,10 +80,11 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
                   ]}
                   data-tina-field={tinaField(data, "media")}
                 >
-                  <img
-                    src={foreground.image ?? undefined}
-                    srcset={responsiveSrcSet(foreground.image)}
+                  <EditorialImage
+                    src={foreground.image!}
                     alt={foreground.decorative ? "" : foreground.alt?.trim() ?? ""}
+                    width={960}
+                    height={720}
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
