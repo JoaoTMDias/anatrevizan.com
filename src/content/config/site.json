@@ -182,8 +182,8 @@
       }
     },
     "about": {
-      "pt": "Sobre",
-      "en": "About"
+      "pt": "Sobre mim",
+      "en": "About me"
     },
     "contact": {
       "pt": "Contacto",
@@ -228,13 +228,14 @@
   ],
   "seo": {
     "defaultTitle": {
-      "pt": "Ana Trevizan",
-      "en": "Ana Trevizan"
+      "pt": "Dr. Ana Trevizan, PhD",
+      "en": "Dr. Ana Trevizan, PhD"
     },
     "defaultDescription": {
-      "pt": "Conteúdo editorial por aprovar.",
-      "en": "Editorial content awaiting approval."
-    }
+      "pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
+      "en": "Scientific-based legal and environmental consulting between Portugal and Brazil."
+    },
+    "defaultImage": "/og-default.svg"
   },
   "footer": {
     "copyright": {

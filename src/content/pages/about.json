@@ -39,7 +39,7 @@
     },
     "narrative": {
       "pt": "A minha trajetória sempre foi guiada por uma inquietação: perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nCedo compreendi que aplicar a lei, por si só, nem sempre basta. É preciso entender as instituições, as políticas públicas e os mecanismos que tornam certas normas efetivas — e outras, letra morta. Foi essa pergunta que me levou da advocacia à investigação, da administração pública à docência, e do Brasil a Portugal.\n",
-      "en": ""
+      "en": "My career has always been driven by a single question: how can the law protect those in vulnerable situations and contribute to a more just society?\n\nEarly on, I realized that applying the law is not always enough. It is essential to understand the institutions, public policies, and mechanisms that make certain regulations effective — and leave others as dead letters. It was this search for answers that led me from legal practice to research, from public administration to academia, and from Brazil to Portugal.\n"
     },
     "milestonesTitle": {
       "pt": "Marcos do percurso",
@@ -50,11 +50,11 @@
         "year": "2013",
         "title": {
           "pt": "Inscrição na OAB e início da advocacia",
-          "en": ""
+          "en": "Admission to the Brazilian Bar Association (OAB) and start of legal practice"
         },
         "description": {
           "pt": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil.",
-          "en": ""
+          "en": "Passed the Bar Examination while still in law school. Began practicing in Civil Law and Civil Procedure."
         }
       },
       {
@@ -126,7 +126,7 @@
     ],
     "currentWorkTitle": {
       "pt": "Onde atuo hoje",
-      "en": ""
+      "en": "Where I practice today"
     },
     "currentWork": [
       {
@@ -136,11 +136,11 @@
         },
         "title": {
           "pt": "Em Portugal",
-          "en": ""
+          "en": "In Portugal"
         },
         "description": {
           "pt": "Investigadora colaboradora do CEJEIA, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica.",
-          "en": ""
+          "en": "As an associate researcher at CEJEIA, I specialize in Civil Law and Immigration Law, advising individuals and businesses on international mobility and legal status regularization."
         }
       },
       {
@@ -150,41 +150,41 @@
         },
         "title": {
           "pt": "No Brasil",
-          "en": ""
+          "en": "In Brazil"
         },
         "description": {
           "pt": "Mantenho a atuação em Direito ambiental, governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
-          "en": ""
+          "en": "I continue to advise on Environmental Law, Climate Governance, Compliance, ESG, and Sustainability, providing legal opinions, reports, and projects for public and private organizations."
         }
       }
     ],
     "valuesTitle": {
       "pt": "O que orienta o meu trabalho",
-      "en": ""
+      "en": "My Core Values"
     },
     "valuesSubtitle": {
       "pt": "Acredito que o Direito deve ser um instrumento de transformação — e um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
-      "en": ""
+      "en": "I believe that law should be a tool for transformation — grounded in a close, personal approach where every client is truly heard and understood."
     },
     "values": [
       {
         "title": {
           "pt": "Ética e integridade",
-          "en": ""
+          "en": "Ethics and Integrity"
         },
         "description": {
           "pt": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos.",
-          "en": ""
+          "en": "Accountability, confidentiality, and commitment to legal principles."
         }
       },
       {
         "title": {
           "pt": "Excelência técnica",
-          "en": ""
+          "en": "Technical Excellence"
         },
         "description": {
           "pt": "Soluções fundamentadas e atualização profissional permanente.",
-          "en": ""
+          "en": "Well-founded solutions and ongoing professional development"
         }
       },
       {
@@ -230,7 +230,7 @@
     ],
     "networksLabel": {
       "pt": "Redes e vínculos de investigação",
-      "en": ""
+      "en": "Research Networks and Academic Affiliations"
     },
     "networks": [
       {
@@ -268,19 +268,19 @@
     ],
     "speakerKitCta": {
       "pt": "Ver kit de palestrante",
-      "en": ""
+      "en": "Speaker Kit"
     },
     "finalCtaHeading": {
       "pt": "Falamos?",
-      "en": ""
+      "en": "Get in touch"
     },
     "finalCtaText": {
       "pt": "Seja para consultoria, uma mentoria ou um convite para palestrar, o primeiro passo é uma conversa.",
-      "en": ""
+      "en": "Whether for consulting, mentoring, or a speaking engagement, the first step is a conversation."
     },
     "finalCtaLabel": {
-      "pt": "Agendar primeiro contacto",
-      "en": ""
+      "pt": "Agendar contacto",
+      "en": "Schedule a call"
     }
   },
   "_template": "about"
