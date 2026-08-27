@@ -1,11 +1,11 @@
 import type { CmsConfig, CmsEditorial, EditorialListItem } from "./data";
 import {
-	deriveLinkedPageTitles,
 	getConfig,
 	listEditorial,
 	localizeEditorial,
 	toEditorialDocument,
 } from "./data";
+import { deriveLinkedPageTitles } from "./linked-page-titles";
 import {
 	type EditorialDocument,
 	isEditorialPreviewEnabled,

@@ -52,31 +52,6 @@ export function localizeEditorial(
 	return localized;
 }
 
-export function deriveLinkedPageTitles(
-	document: CmsEditorial,
-	documents: EditorialListItem[],
-	locale: PublishedLocale,
-): CmsEditorial {
-	const titles = new Map(
-		documents.flatMap((candidate) => {
-			if (!isRouteKey(candidate.routeKey)) return [];
-			const localized = localizeEditorial(candidate, locale);
-			return [[candidate.routeKey, localized.title] as const];
-		}),
-	);
-	const walk = (value: unknown): unknown => {
-		if (Array.isArray(value)) return value.map(walk);
-		if (!value || typeof value !== "object") return value;
-		const record = Object.fromEntries(
-			Object.entries(value).map(([key, child]) => [key, walk(child)]),
-		);
-		if (isRouteKey(record.routeKey) && titles.has(record.routeKey))
-			record.title = titles.get(record.routeKey);
-		return record;
-	};
-	return walk(document) as CmsEditorial;
-}
-
 export function toEditorialDocument(
 	document: RawCmsEditorial | EditorialListItem,
 	locale: PublishedLocale,

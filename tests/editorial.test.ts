@@ -17,7 +17,7 @@ import { EditorialCollection } from "../tina/collections/editorial.ts";
 import { GlobalConfigCollection } from "../tina/collections/global-config.ts";
 import { contactPageFields } from "../tina/collections/contact-sections.ts";
 import { contactFormCopy } from "../src/lib/contact-form-i18n.ts";
-import { deriveLinkedPageTitles } from "../src/lib/data.ts";
+import { deriveLinkedPageTitles } from "../src/lib/linked-page-titles.ts";
 import { navigationItems } from "../src/lib/navigation.ts";
 import { heroAspectRatioForRoute } from "../src/lib/hero-media.ts";
 import { incompleteEnglishWarning } from "../tina/editorial-warning.ts";
