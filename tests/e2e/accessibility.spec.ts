@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { routeMap } from "../../src/lib/routing";
+import { publishedRoutes } from "./editorial-routes";
 
 test.describe("accessibility and responsive behavior", () => {
 	test("ready editorial pages do not display the draft notice", async ({
@@ -55,15 +55,13 @@ test.describe("accessibility and responsive behavior", () => {
 			page,
 		}) => {
 			await page.setViewportSize({ width, height: 900 });
-			for (const localized of Object.values(routeMap)) {
-				for (const path of Object.values(localized)) {
-					await page.goto(path);
-					expect(
-						await page.evaluate(
-							() => document.documentElement.scrollWidth <= window.innerWidth,
-						),
-					).toBe(true);
-				}
+			for (const { path } of publishedRoutes) {
+				await page.goto(path);
+				expect(
+					await page.evaluate(
+						() => document.documentElement.scrollWidth <= window.innerWidth,
+					),
+				).toBe(true);
 			}
 		});
 	}

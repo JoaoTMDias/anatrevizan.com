@@ -42,8 +42,12 @@ for (const { file, value } of pages) {
 		);
 	const walk = (node: unknown, path = "") => {
 		if (isLocalizedValue(node)) return;
-		if (Array.isArray(node))
-			return node.forEach((child, index) => walk(child, `${path}[${index}]`));
+		if (Array.isArray(node)) {
+			node.forEach((child, index) => {
+				walk(child, `${path}[${index}]`);
+			});
+			return;
+		}
 		if (!node || typeof node !== "object") return;
 		const record = node as Record<string, unknown>;
 		if (

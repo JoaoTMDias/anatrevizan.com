@@ -1,13 +1,11 @@
 import { expect, test } from "@playwright/test";
-import { routeMap } from "../../src/lib/routing";
-
-const routes = Object.values(routeMap).flatMap((localized) => [
-	{ locale: "pt-PT", path: localized["pt-PT"] },
-	{ locale: "en", path: localized.en },
-]);
+import {
+	publishedRoutes,
+	unpublishedEnglishRoutes,
+} from "./editorial-routes";
 
 test.describe("editorial routes", () => {
-	for (const route of routes) {
+	for (const route of publishedRoutes) {
 		test(`${route.locale} ${route.path || "/"} renders safely`, async ({
 			page,
 		}) => {
@@ -29,4 +27,11 @@ test.describe("editorial routes", () => {
 			expect(consoleErrors).toEqual([]);
 		});
 	}
+
+	test("incomplete English translations stay out of the public build", async ({
+		request,
+	}) => {
+		for (const path of unpublishedEnglishRoutes)
+			expect((await request.get(path)).status()).toBe(404);
+	});
 });
