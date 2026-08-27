@@ -18,8 +18,11 @@ export default defineConfig({
 		? undefined
 		: {
 				// The local fallback adapter produces a standalone Node server. Use the
-				// same launcher developers use after a local build.
-				command: "pnpm build:preview && pnpm preview",
+				// same launcher developers use after a local build. CI has already built
+				// the preview in the preceding workflow step.
+				command: process.env.CI
+					? "pnpm preview"
+					: "pnpm build:preview && pnpm preview",
 				url: baseURL,
 				reuseExistingServer: !process.env.CI,
 			},
