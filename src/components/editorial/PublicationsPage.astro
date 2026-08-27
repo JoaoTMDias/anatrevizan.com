@@ -35,6 +35,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
           subtitle={page.subtitle}
           tag={page.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           parent={{
             label: locale === "en" ? "Academic" : "Academia",

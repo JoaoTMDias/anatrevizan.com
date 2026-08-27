@@ -30,8 +30,7 @@
 				"pt": "Uma vvista de topo, onde se vê uma bússola em cima de uma agenda e um papel com o carimbo \"Visa\".",
 				"en": ""
 			},
-			"decorative": false,
-			"aspectRatio": "landscape"
+			"decorative": false
 		}
 	},
 	"consultingService": {

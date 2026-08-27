@@ -11,7 +11,7 @@ const localizedText = (name: string, label: string) => ({
 			type: "string" as const,
 			required: true,
 		},
-		{ name: "en", label: "English", type: "string" as const, required: true },
+		{ name: "en", label: "Inglês", type: "string" as const, required: true },
 	],
 });
 
@@ -21,7 +21,7 @@ const optionalLocalizedText = (name: string, label: string) => ({
 	type: "object" as const,
 	fields: [
 		{ name: "pt", label: "Português (Portugal)", type: "string" as const },
-		{ name: "en", label: "English", type: "string" as const },
+		{ name: "en", label: "Inglês", type: "string" as const },
 	],
 });
 
@@ -38,7 +38,7 @@ const navigationEntry = (name: string, label: string, withTag = false) => ({
 
 export const GlobalConfigCollection: Collection = {
 	name: "config",
-	label: "Global settings",
+	label: "Configuração global",
 	path: "src/content/config",
 	format: "json",
 	ui: { global: true },
@@ -145,18 +145,22 @@ export const GlobalConfigCollection: Collection = {
 		},
 		{
 			name: "seo",
-			label: "Site-wide SEO",
+			label: "SEO global",
 			type: "object",
 			required: true,
 			fields: [
 				localizedText("defaultTitle", "Default title"),
 				localizedText("defaultDescription", "Default description"),
-				{ name: "defaultImage", label: "Default social image", type: "image" },
+				{
+					name: "defaultImage",
+					label: "Imagem social predefinida",
+					type: "image",
+				},
 			],
 		},
 		{
 			name: "footer",
-			label: "Footer and legal navigation",
+			label: "Rodapé e navegação legal",
 			type: "object",
 			fields: [
 				localizedText("copyright", "Copyright label"),

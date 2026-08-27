@@ -20,6 +20,7 @@ import {
 	privacyPageFields,
 	termsPageFields,
 } from "./legal-sections";
+import { incompleteEnglishWarning } from "../editorial-warning";
 
 const textAndSeoFields: TinaField[] = [
 	{
@@ -70,12 +71,6 @@ const mediaField: TinaField = {
 				{ name: "image", label: "Ficheiro", type: "image" },
 				localizedText("alt", "Texto alternativo"),
 				{ name: "decorative", label: "Decorativa", type: "boolean" },
-				{
-					name: "aspectRatio",
-					label: "Proporção técnica",
-					type: "string",
-					ui: { component: "hidden" },
-				},
 			],
 		},
 	],
@@ -109,6 +104,11 @@ export const EditorialCollection: Collection = {
 		allowedActions: { create: false, delete: false },
 		filename: { readonly: true },
 		router: ({ document }) => pathFor(document.routeKey as RouteKey, "pt-PT"),
+		beforeSubmit: async ({ cms, values }) => {
+			const warning = incompleteEnglishWarning(values);
+			if (warning) cms.alerts.warn(warning, 0);
+			return values;
+		},
 	},
 	templates: [
 		{ name: "home", label: "Início", fields: pageFields(homeFields) },

@@ -26,15 +26,15 @@ export const contactPageFields: TinaField[] = [
 export const bookingPageFields: TinaField[] = [
 	{
 		name: "bookingPage",
-		label: "Booking page sections",
+		label: "Conteúdo da página de agendamento",
 		type: "object",
 		fields: [
-			text("tag", "Tag"),
-			text("subtitle", "Subtitle"),
-			text("duration", "Duration"),
-			text("validFor", "Applicable topics"),
-			text("timezone", "Timezone"),
-			text("timezoneNote", "Timezone note"),
+			text("tag", "Etiqueta do hero"),
+			text("subtitle", "Introdução"),
+			text("duration", "Duração"),
+			text("validFor", "Temas aplicáveis"),
+			text("timezone", "Fuso horário"),
+			text("timezoneNote", "Nota sobre o fuso horário"),
 		],
 	},
 ];

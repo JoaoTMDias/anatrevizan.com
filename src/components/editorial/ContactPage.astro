@@ -41,6 +41,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
           subtitle={contact.subtitle}
           tag={contact.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           data-tina-field={tinaField(data, "contactPage")}
         />

@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { heroAspectRatio, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
-import { pathFor, type PublishedLocale } from "../../lib/routing";
+import { heroAspectRatioForRoute, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
+import { pathFor, type PublishedLocale, type RouteKey } from "../../lib/routing";
 import { responsiveCssImage, responsiveSrcSet } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
@@ -11,6 +11,7 @@ interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   subtitle?: string;
   tag?: string;
   locale: PublishedLocale;
+  routeKey: RouteKey;
   parent?: { label: string; href: string };
   tone?: "accent" | "primary";
   heroMedia?: HeroMedia | null;
@@ -22,6 +23,7 @@ const {
   subtitle,
   tag,
   locale,
+  routeKey,
   parent,
   tone = "primary",
   heroMedia,
@@ -32,7 +34,7 @@ const {
 const backgroundImage = heroMedia?.background?.image;
 const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
 const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
-const foregroundRatio = heroAspectRatio(foreground?.aspectRatio);
+const foregroundRatio = heroAspectRatioForRoute(routeKey);
 const items = [
   { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
   ...(parent ? [parent] : []),

@@ -19,6 +19,8 @@ import { contactPageFields } from "../tina/collections/contact-sections.ts";
 import { contactFormCopy } from "../src/lib/contact-form-i18n.ts";
 import { deriveLinkedPageTitles } from "../src/lib/data.ts";
 import { navigationItems } from "../src/lib/navigation.ts";
+import { heroAspectRatioForRoute } from "../src/lib/hero-media.ts";
+import { incompleteEnglishWarning } from "../tina/editorial-warning.ts";
 
 const directory = join(process.cwd(), "src/content/pages");
 const pages = readdirSync(directory)
@@ -90,6 +92,21 @@ describe("modelo editorial bilingue", () => {
 		expect(isLocaleComplete(home, "en")).toBe(false);
 	});
 
+	it("avisa sem bloquear quando a tradução inglesa está incompleta", () => {
+		expect(
+			incompleteEnglishWarning({
+				title: { pt: "Título", en: "" },
+				summary: { pt: "Resumo", en: "Summary" },
+			}),
+		).toBe(
+			"A tradução inglesa está incompleta (1 campo por preencher). A página será guardada, mas a versão EN não será publicada até ficar completa.",
+		);
+		expect(
+			incompleteEnglishWarning({ title: { pt: "Título", en: "Title" } }),
+		).toBeNull();
+		expect(EditorialCollection.ui?.beforeSubmit).toBeTypeOf("function");
+	});
+
 	it("só permite preview de inglês incompleto em desenvolvimento local", () => {
 		const incomplete = {
 			routeKey: "home" as const,
@@ -120,7 +137,7 @@ describe("modelo editorial bilingue", () => {
 				locale: "pt-PT",
 				title: "Início",
 				seo: { title: "Início", description: "" },
-				cards: [{ routeKey: "about", title: "Cópia antiga" }],
+				cards: [{ routeKey: "about" }],
 				_sys: { relativePath: "home.json" },
 			} as never,
 			[
@@ -133,6 +150,24 @@ describe("modelo editorial bilingue", () => {
 			"pt-PT",
 		) as unknown as { cards: Array<{ title: string }> };
 		expect(linked.cards[0].title).toBe("Sobre");
+	});
+
+	it("mantém proporções de hero no layout e fora do conteúdo", () => {
+		expect(heroAspectRatioForRoute("contact")).toBe("landscape");
+		expect(heroAspectRatioForRoute("about")).toBe("square");
+		for (const page of pages)
+			expect(
+				(page as unknown as { media?: { foreground?: unknown } }).media
+					?.foreground ?? {},
+			).not.toHaveProperty("aspectRatio");
+		const home = pages.find((page) => page.routeKey === "home") as never as {
+			home: {
+				gateways: Array<Record<string, unknown>>;
+				services: Array<Record<string, unknown>>;
+			};
+		};
+		for (const card of [...home.home.gateways, ...home.home.services])
+			expect(card).not.toHaveProperty("title");
 	});
 
 	it("não expõe estrutura de navegação, identidade ou CTAs globais", () => {

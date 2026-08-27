@@ -24,6 +24,7 @@ const locale = data.locale === "en" ? "en" : "pt-PT";
           subtitle={events.subtitle}
           tag={events.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           parent={{ label: "Academia", href: pathFor("academic", locale) }}
           data-tina-field={tinaField(data, "eventsPage")}

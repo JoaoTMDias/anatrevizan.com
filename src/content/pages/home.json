@@ -29,8 +29,7 @@
         "pt": "Dra. Ana Flávia Trevizan, sentada num banco alto, a sorrir.",
         "en": "Dr Ana Flávia Trevizan, sitting on a bench, smilling."
       },
-      "decorative": false,
-      "aspectRatio": "landscape"
+      "decorative": false
     }
   },
   "home": {
@@ -68,10 +67,6 @@
     },
     "gateways": [
       {
-        "title": {
-          "pt": "Consultoria",
-          "en": ""
-        },
         "eyebrow": {
           "pt": "Advogada ↔ Cliente",
           "en": ""
@@ -87,10 +82,6 @@
         "routeKey": "consulting"
       },
       {
-        "title": {
-          "pt": "Academia",
-          "en": ""
-        },
         "eyebrow": {
           "pt": "Mentorias · Publicações · Palestras",
           "en": ""
@@ -166,10 +157,6 @@
     },
     "services": [
       {
-        "title": {
-          "pt": "Migração e Mobilidade",
-          "en": ""
-        },
         "tag": {
           "pt": "Portugal",
           "en": ""
@@ -185,10 +172,6 @@
         "routeKey": "immigration-mobility"
       },
       {
-        "title": {
-          "pt": "Consultoria Jurídica",
-          "en": ""
-        },
         "tag": {
           "pt": "Portugal",
           "en": ""
@@ -204,10 +187,6 @@
         "routeKey": "legal"
       },
       {
-        "title": {
-          "pt": "Ambiental e ESG",
-          "en": ""
-        },
         "tag": {
           "pt": "Brasil · União Europeia",
           "en": ""
@@ -223,10 +202,6 @@
         "routeKey": "environmental-esg"
       },
       {
-        "title": {
-          "pt": "Políticas Públicas e Governança",
-          "en": ""
-        },
         "tag": {
           "pt": "Brasil",
           "en": ""
@@ -242,10 +217,6 @@
         "routeKey": "public-policy"
       },
       {
-        "title": {
-          "pt": "Pareceres e Notas Técnicas",
-          "en": ""
-        },
         "tag": {
           "pt": "Portugal e Brasil",
           "en": ""

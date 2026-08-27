@@ -4,7 +4,7 @@ import { isLocaleComplete, localizeValue } from "./bilingual";
 import type { EditorialDocument } from "./editorial";
 import { gitLastModified } from "./git-dates";
 import type { HeroMedia } from "./hero-media";
-import { isRouteKey, type PublishedLocale } from "./routing";
+import { isRouteKey, type PublishedLocale, type RouteKey } from "./routing";
 
 export const getConfig = () =>
 	requestWithMetadata(client.queries.config({ relativePath: "site.json" }));
@@ -23,7 +23,7 @@ export type RawCmsEditorial = Awaited<
 	ReturnType<typeof getEditorial>
 >["data"]["editorial"];
 export interface CmsEditorial extends Record<string, unknown> {
-	routeKey: string;
+	routeKey: RouteKey;
 	locale: PublishedLocale;
 	title: string;
 	summary?: string | null;
@@ -70,8 +70,8 @@ export function deriveLinkedPageTitles(
 		const record = Object.fromEntries(
 			Object.entries(value).map(([key, child]) => [key, walk(child)]),
 		);
-		if (isRouteKey(record.routeKey) && typeof record.title === "string")
-			record.title = titles.get(record.routeKey) ?? record.title;
+		if (isRouteKey(record.routeKey) && titles.has(record.routeKey))
+			record.title = titles.get(record.routeKey);
 		return record;
 	};
 	return walk(document) as CmsEditorial;

@@ -8,8 +8,7 @@
 				"pt": "",
 				"en": ""
 			},
-			"decorative": true,
-			"aspectRatio": "square"
+			"decorative": true
 		}
 	},
 	"title": {
@@ -42,10 +41,6 @@
 		},
 		"sections": [
 			{
-				"title": {
-					"pt": "Mentorias e Apoio Académico",
-					"en": ""
-				},
 				"description": {
 					"pt": "Revisão técnica, orientação metodológica e preparação para publicação internacional (PT/EN/ES).",
 					"en": ""
@@ -58,10 +53,6 @@
 				"highlight": false
 			},
 			{
-				"title": {
-					"pt": "Publicações",
-					"en": ""
-				},
 				"description": {
 					"pt": "Repositório de artigos e capítulos, com filtros por ano, tema e idioma.",
 					"en": ""
@@ -74,10 +65,6 @@
 				"highlight": true
 			},
 			{
-				"title": {
-					"pt": "Eventos e Palestras",
-					"en": ""
-				},
 				"description": {
 					"pt": "Journal de participações em conferências e eventos, desde 2019.",
 					"en": ""
@@ -90,10 +77,6 @@
 				"highlight": false
 			},
 			{
-				"title": {
-					"pt": "Palestras e Convites",
-					"en": ""
-				},
 				"description": {
 					"pt": "Kit de palestrante: biografia, temas e o que precisa para me convidar.",
 					"en": ""
@@ -106,10 +89,6 @@
 				"highlight": true
 			},
 			{
-				"title": {
-					"pt": "Cursos e Formações",
-					"en": ""
-				},
 				"description": {
 					"pt": "Cursos e workshops para universidades, empresas, municípios e organizações.",
 					"en": ""

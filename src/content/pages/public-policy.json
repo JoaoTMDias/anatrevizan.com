@@ -27,8 +27,7 @@
 				"pt": "Parlamento Europeu",
 				"en": ""
 			},
-			"decorative": false,
-			"aspectRatio": "landscape"
+			"decorative": false
 		}
 	},
 	"consultingService": {

@@ -1,3 +1,5 @@
+import type { RouteKey } from "./routing";
+
 export const HERO_PLACEHOLDER_PATH = "/hero-placeholder.webp";
 
 export const heroAspectRatios = ["square", "landscape"] as const;
@@ -15,14 +17,12 @@ export interface HeroMedia {
 		image?: string | null;
 		alt?: string | null;
 		decorative?: boolean | null;
-		aspectRatio?: string | null;
 	} | null;
 	video?: string | null;
 	poster?: string | null;
 }
 
 export type HeroMediaIssueCode =
-	| "invalid-hero-aspect-ratio"
 	| "invalid-hero-focal-point"
 	| "missing-hero-alt"
 	| "published-hero-placeholder";
@@ -50,15 +50,6 @@ export function validateHeroMedia(
 		});
 
 	if (
-		foreground?.aspectRatio &&
-		!heroAspectRatios.includes(foreground.aspectRatio as HeroAspectRatio)
-	)
-		issues.push({
-			code: "invalid-hero-aspect-ratio",
-			message: `Proporção de hero inválida: ${foreground.aspectRatio}`,
-		});
-
-	if (
 		foreground?.image &&
 		!foreground.decorative &&
 		!foreground.alt?.trim().length
@@ -77,12 +68,17 @@ export function validateHeroMedia(
 	return issues;
 }
 
-export function heroAspectRatio(
-	value: string | null | undefined,
-): HeroAspectRatio {
-	return heroAspectRatios.includes(value as HeroAspectRatio)
-		? (value as HeroAspectRatio)
-		: "square";
+const landscapeHeroRoutes = new Set<RouteKey>([
+	"home",
+	"immigration-mobility",
+	"public-policy",
+	"mentoring",
+	"contact",
+	"booking",
+]);
+
+export function heroAspectRatioForRoute(routeKey: RouteKey): HeroAspectRatio {
+	return landscapeHeroRoutes.has(routeKey) ? "landscape" : "square";
 }
 
 export function heroFocalPoint(

@@ -10,7 +10,7 @@ const hiddenString = (name: string, label: string, required = false) => ({
 
 export const PublicationCollection: Collection = {
 	name: "publication",
-	label: "Publications (ORCID)",
+	label: "Publicações (ORCID)",
 	path: "src/content/publications",
 	format: "md",
 	ui: {
@@ -35,14 +35,14 @@ export const PublicationCollection: Collection = {
 		hiddenString("source", "ORCID source", true),
 		{
 			name: "language",
-			label: "Language",
+			label: "Idioma",
 			type: "string",
 			description:
 				"Optional editorial metadata. It is only displayed when filled in.",
 		},
 		{
 			name: "topics",
-			label: "Topics",
+			label: "Temas",
 			type: "string",
 			list: true,
 			description:
@@ -50,13 +50,14 @@ export const PublicationCollection: Collection = {
 		},
 		{
 			name: "highlight",
-			label: "Highlight",
+			label: "Destaque",
 			type: "string",
-			description: "Optional badge text. Leave empty to hide it.",
+			description:
+				"Texto opcional do selo. Deixar vazio para não o apresentar.",
 		},
 		{
 			name: "priority",
-			label: "Editorial priority",
+			label: "Prioridade editorial",
 			type: "number",
 			description:
 				"Optional. Lower numbers appear first on the full publications page.",

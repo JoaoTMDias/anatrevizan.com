@@ -13,22 +13,22 @@ const legalDocument = (name: string, label: string): TinaField => ({
 	label,
 	type: "object",
 	fields: [
-		text("sourceStatus", "Historical source status"),
+		text("sourceStatus", "Estado da fonte histórica"),
 		{
 			name: "reviewRequirements",
-			label: "Required qualified-review coverage",
+			label: "Âmbito da revisão qualificada necessária",
 			type: "string",
 			list: true,
 			required: true,
 		},
 		{
 			name: "sections",
-			label: "Qualified legal copy sections",
-			description: "Leave empty until reviewed legal copy is available.",
+			label: "Secções de texto jurídico revisto",
+			description: "Deixar vazio até existir texto jurídico revisto.",
 			type: "object",
 			list: true,
 			fields: [
-				text("heading", "Heading"),
+				text("heading", "Título"),
 				richText("paragraphs", "Conteúdo legal"),
 			],
 		},

@@ -30,8 +30,7 @@
 				"pt": "Uma vista de cima de uma mesa, onde está uma pequena estátua de Têmis, a Dama da Justiça.",
 				"en": ""
 			},
-			"decorative": false,
-			"aspectRatio": "square"
+			"decorative": false
 		}
 	},
 	"consultingService": {

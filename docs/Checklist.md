@@ -11,7 +11,7 @@
 ## Funcionalidade
 
 - [ ] Configurar credenciais ORCID no Netlify e GitHub e ativar sincronização remota.
-- [ ] Acrescentar aviso não bloqueante no admin para traduções parciais.
+- [x] Acrescentar aviso não bloqueante no admin para traduções parciais.
 - [ ] Confirmar preview PT online e restringir preview EN incompleto ao ambiente local.
 
 ## QA e lançamento

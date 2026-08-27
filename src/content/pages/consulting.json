@@ -31,8 +31,7 @@
 				"pt": "",
 				"en": ""
 			},
-			"decorative": true,
-			"aspectRatio": "square"
+			"decorative": true
 		}
 	},
 	"consultingHub": {
@@ -64,10 +63,6 @@
 		},
 		"areas": [
 			{
-				"title": {
-					"pt": "Migração e Mobilidade",
-					"en": ""
-				},
 				"tag": {
 					"pt": "Portugal",
 					"en": ""
@@ -85,10 +80,6 @@
 				]
 			},
 			{
-				"title": {
-					"pt": "Consultoria Jurídica",
-					"en": ""
-				},
 				"tag": {
 					"pt": "Portugal",
 					"en": ""
@@ -106,10 +97,6 @@
 				]
 			},
 			{
-				"title": {
-					"pt": "Ambiental e ESG",
-					"en": ""
-				},
 				"tag": {
 					"pt": "Brasil · União Europeia",
 					"en": ""
@@ -127,10 +114,6 @@
 				]
 			},
 			{
-				"title": {
-					"pt": "Políticas Públicas e Governança",
-					"en": ""
-				},
 				"tag": {
 					"pt": "Brasil",
 					"en": ""
@@ -148,10 +131,6 @@
 				]
 			},
 			{
-				"title": {
-					"pt": "Pareceres e Notas Técnicas",
-					"en": ""
-				},
 				"tag": {
 					"pt": "Portugal e Brasil",
 					"en": ""

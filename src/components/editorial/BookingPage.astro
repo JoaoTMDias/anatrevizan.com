@@ -29,6 +29,7 @@ const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
           subtitle={booking.subtitle}
           tag={booking.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           data-tina-field={tinaField(data, "bookingPage")}
         />

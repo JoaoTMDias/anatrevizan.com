@@ -3,7 +3,7 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { HomeContent } from "../../lib/page-content";
 import { hasValidRouteKey } from "../../lib/page-content";
-import { heroAspectRatio, heroFocalPoint } from "../../lib/hero-media";
+import { heroAspectRatioForRoute, heroFocalPoint } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
 import { pathFor } from "../../lib/routing";
@@ -27,7 +27,7 @@ const differenceIcons = ["world", "microscope", "language", "arrows-exchange"];
 const serviceIcons = ["plane-departure", "scale", "leaf", "building-community", "file-description"];
 const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
 const foreground = data.media?.foreground?.image ? data.media.foreground : null;
-const foregroundRatio = heroAspectRatio(foreground?.aspectRatio);
+const foregroundRatio = heroAspectRatioForRoute("home");
 const backgroundImage = data.media?.background?.image;
 const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
 ---

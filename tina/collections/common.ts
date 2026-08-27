@@ -19,16 +19,30 @@ export const localizedText = (
 			type: component === "rich-text" ? "rich-text" : "string",
 			required,
 			...(component === "rich-text"
-				? { overrides: { toolbar: ["heading", "link", "ul", "ol", "bold", "italic"], headingLevels: ["h2", "h3", "h4"] } }
-				: component === "textarea" ? { ui: { component: "textarea" } } : {}),
+				? {
+						overrides: {
+							toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+							headingLevels: ["h2", "h3", "h4"],
+						},
+					}
+				: component === "textarea"
+					? { ui: { component: "textarea" } }
+					: {}),
 		},
 		{
 			name: "en",
-			label: "English",
+			label: "Inglês",
 			type: component === "rich-text" ? "rich-text" : "string",
 			...(component === "rich-text"
-				? { overrides: { toolbar: ["heading", "link", "ul", "ol", "bold", "italic"], headingLevels: ["h2", "h3", "h4"] } }
-				: component === "textarea" ? { ui: { component: "textarea" } } : {}),
+				? {
+						overrides: {
+							toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+							headingLevels: ["h2", "h3", "h4"],
+						},
+					}
+				: component === "textarea"
+					? { ui: { component: "textarea" } }
+					: {}),
 		},
 	],
 });
@@ -42,7 +56,6 @@ const sharedStringNames = new Set([
 	"url",
 	"externalUrl",
 	"focalPoint",
-	"aspectRatio",
 	"status",
 	"number",
 	"slug",
