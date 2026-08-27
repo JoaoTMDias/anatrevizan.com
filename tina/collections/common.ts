@@ -1,164 +1,167 @@
 import type { TinaField } from "tinacms";
-import {
-	pathFor,
-	routeKeys,
-	type PublishedLocale,
-	type RouteKey,
-} from "../../src/lib/routing";
 
-export const localizedDocumentFields: TinaField[] = [
-	{
-		name: "translationGroup",
-		label: "Translation group",
-		type: "string",
-		required: true,
-		description: "Stable identifier shared by all translations of this item.",
-	},
-	{
-		name: "locale",
-		label: "Language",
-		type: "string",
-		required: true,
-		options: [
-			{ label: "Português (Portugal)", value: "pt-PT" },
-			{ label: "English", value: "en" },
-			{ label: "Español (preparação)", value: "es" },
-		],
-	},
-	{
-		name: "slug",
-		label: "Localized slug",
-		type: "string",
-		description:
-			"Leave empty only for the Home route; route validation requires a slug for every other page.",
-	},
-	{
-		name: "status",
-		label: "Editorial status",
-		type: "string",
-		required: true,
-		options: [
-			{ label: "Draft", value: "draft" },
-			{ label: "Ready", value: "ready" },
-		],
-	},
-	{
-		name: "approvalPending",
-		label: "Awaiting approval",
-		type: "boolean",
-		required: true,
-	},
-	{
-		name: "title",
-		label: "Localized title",
-		type: "string",
-		isTitle: true,
-		required: true,
-	},
-	{
-		name: "summary",
-		label: "Localized summary",
-		type: "string",
-		ui: { component: "textarea" },
-	},
-	{
-		name: "seo",
-		label: "Localized SEO",
-		type: "object",
-		required: true,
-		fields: [
-			{ name: "title", label: "Meta title", type: "string", required: true },
-			{
-				name: "description",
-				label: "Meta description",
-				type: "string",
-				required: true,
-				ui: { component: "textarea" },
-			},
-			{ name: "image", label: "Social image", type: "image" },
-			{ name: "noindex", label: "Prevent indexing", type: "boolean" },
-		],
-	},
-	{
-		name: "media",
-		label: "Hero images and media",
-		type: "object",
-		fields: [
-			{
-				name: "background",
-				label: "Hero background",
-				type: "object",
-				fields: [
-					{ name: "image", label: "Background image", type: "image" },
-					{
-						name: "focalPoint",
-						label: "Vertical focal point",
-						type: "string",
-						options: [
-							{ label: "Top", value: "top" },
-							{ label: "Center", value: "center" },
-							{ label: "Bottom", value: "bottom" },
-						],
-						ui: { defaultValue: "center" },
-					},
-				],
-			},
-			{
-				name: "foreground",
-				label: "Hero side image",
-				type: "object",
-				fields: [
-					{ name: "image", label: "Side image", type: "image" },
-					{
-						name: "alt",
-						label: "Localized alternative text",
-						type: "string",
-						ui: { component: "textarea" },
-					},
-					{
-						name: "decorative",
-						label: "Decorative image",
-						type: "boolean",
-						description:
-							"Decorative images use an empty alt attribute. Otherwise, alternative text is required.",
-						ui: { defaultValue: false },
-					},
-					{
-						name: "aspectRatio",
-						label: "Aspect ratio",
-						type: "string",
-						options: [
-							{ label: "Square (1:1)", value: "square" },
-							{ label: "Landscape (4:3)", value: "landscape" },
-						],
-						ui: { defaultValue: "square" },
-					},
-				],
-			},
-			{ name: "video", label: "Optional final video", type: "image" },
-			{ name: "poster", label: "Video poster/fallback", type: "image" },
-		],
-	},
+export const localizedText = (
+	name: string,
+	label: string,
+	required = false,
+	component?: "textarea" | "rich-text",
+): TinaField => ({
+	name,
+	label,
+	type: "object",
+	required,
+	description:
+		"Preencher primeiro PT-PT e depois EN. Traduções parciais podem ser guardadas; EN só é publicado quando estiver completo.",
+	fields: [
+		{
+			name: "pt",
+			label: "Português (Portugal)",
+			type: component === "rich-text" ? "rich-text" : "string",
+			required,
+			...(component === "rich-text"
+				? {
+						overrides: {
+							toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+							headingLevels: ["h2", "h3", "h4"],
+						},
+					}
+				: component === "textarea"
+					? { ui: { component: "textarea" } }
+					: {}),
+		},
+		{
+			name: "en",
+			label: "Inglês",
+			type: component === "rich-text" ? "rich-text" : "string",
+			...(component === "rich-text"
+				? {
+						overrides: {
+							toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+							headingLevels: ["h2", "h3", "h4"],
+						},
+					}
+				: component === "textarea"
+					? { ui: { component: "textarea" } }
+					: {}),
+		},
+	],
+});
+
+const sharedStringNames = new Set([
+	"routeKey",
+	"crosslinkRouteKey",
+	"image",
+	"video",
+	"poster",
+	"url",
+	"externalUrl",
+	"focalPoint",
+	"status",
+	"number",
+	"slug",
+	"date",
+	"year",
+]);
+
+const listLabelKeys = [
+	"pt",
+	"en",
+	"title",
+	"label",
+	"heading",
+	"name",
+	"question",
+	"year",
+	"country",
+	"tag",
+	"eyebrow",
+	"date",
+	"description",
+	"routeKey",
+	"url",
 ];
 
-export const parentRouteField: TinaField = {
-	name: "parentRouteKey",
-	label: "Parent page",
-	type: "string",
-	required: true,
-	options: routeKeys.map((value) => ({ label: value, value })),
-};
+function displayText(value: unknown): string | undefined {
+	if (typeof value === "string" && value.trim()) return value.trim();
+	if (!value || typeof value !== "object" || Array.isArray(value)) return;
+	const localized = value as Record<string, unknown>;
+	return displayText(localized.pt) ?? displayText(localized.en);
+}
 
-export const entityUi = () => ({
-	filename: {
-		readonly: true,
-		slugify: (values: Record<string, string>) => `${values.translationGroup}`,
-	},
-	router: ({ document }: { document: Record<string, unknown> }) => {
-		const locale = document.locale as PublishedLocale;
-		const routeKey = document.parentRouteKey as RouteKey;
-		return locale === "pt-PT" || locale === "en"
-			? pathFor(routeKey, locale)
-			: undefined;
-	},
+export function editorialListItemLabel(
+	item: Record<string, unknown>,
+	fallback: string,
+): string {
+	for (const key of listLabelKeys) {
+		const label = displayText(item[key]);
+		if (label) return label;
+	}
+	return fallback;
+}
+
+export function bilingualFields(fields: TinaField[]): TinaField[] {
+	return fields.map((field) => {
+		if (field.type === "object" && "fields" in field && field.fields) {
+			const localized = {
+				...field,
+				fields: bilingualFields(field.fields as TinaField[]),
+			};
+			if (!field.list) return localized;
+			return {
+				...localized,
+				ui: {
+					...field.ui,
+					itemProps: (item: Record<string, unknown>) => ({
+						label: editorialListItemLabel(
+							item,
+							`${field.label ?? "Item"}`,
+						),
+					}),
+				},
+			};
+		}
+		if (field.type === "string" && !sharedStringNames.has(field.name)) {
+			const component =
+				field.ui && "component" in field.ui
+					? field.ui.component === "textarea"
+						? "textarea"
+						: field.ui.component === "rich-text"
+							? "rich-text"
+							: undefined
+					: undefined;
+			const localized = localizedText(
+				field.name,
+				field.label ?? field.name,
+				Boolean(field.required),
+				component,
+			);
+			return field.list
+				? {
+						...localized,
+						list: true,
+						ui: {
+							itemProps: (item: Record<string, unknown>) => ({
+								label: editorialListItemLabel(
+									item,
+									`${field.label ?? "Item"}`,
+								),
+							}),
+						},
+					}
+				: localized;
+		}
+		return field;
+	});
+}
+
+export const richText = (
+	name: string,
+	label: string,
+	required = true,
+): TinaField => ({
+	name,
+	label,
+	type: "string",
+	required,
+	ui: { component: "rich-text" },
 });

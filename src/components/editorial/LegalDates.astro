@@ -1,0 +1,26 @@
+---
+import type { PublishedLocale } from "../../lib/routing";
+
+interface Props {
+  locale: PublishedLocale;
+  effectiveDate?: string | null;
+  lastModified?: string;
+}
+
+const { locale, effectiveDate, lastModified } = Astro.props;
+const formatter = new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "pt-PT", {
+  dateStyle: "long",
+});
+const format = (value?: string | null) => value && !Number.isNaN(Date.parse(value))
+  ? formatter.format(new Date(value))
+  : null;
+const effective = format(effectiveDate);
+const modified = format(lastModified);
+---
+
+{(effective || modified) && (
+  <dl class="legal-dates">
+    {effective && <><dt>{locale === "en" ? "Effective date" : "Entrada em vigor"}</dt><dd>{effective}</dd></>}
+    {modified && <><dt>{locale === "en" ? "Last updated" : "Última alteração"}</dt><dd>{modified}</dd></>}
+  </dl>
+)}

@@ -8,9 +8,10 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
+import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 
 interface Props {
   data: CmsEditorial;
@@ -39,7 +40,6 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
   tabindex="-1"
   class:list={["consulting-service", `consulting-service--${data.routeKey}`]}
 >
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     service ? (
       <>
@@ -48,6 +48,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
           subtitle={service.subtitle}
           tag={service.tag}
           locale={locale}
+          routeKey={data.routeKey}
           tone={accent ? "accent" : "primary"}
           heroMedia={data.media}
           showActions={accent}
@@ -69,9 +70,11 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                 class="consulting-intro__media"
                 data-tina-field={tinaField(data, "consultingService")}
               >
-                <img
+                <EditorialImage
                   src={service.introImage.image}
                   alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
+                  width={960}
+                  height={720}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -80,11 +83,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
             )}
             <div class="consulting-intro__copy">
               <SectionHeading title={service.introHeading} />
-              <div class="space-y-5 text-lg leading-relaxed text-muted-foreground">
-                {service.introParagraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))}
-              </div>
+              <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
             </div>
           </div>
         </Section>
@@ -159,13 +158,15 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                     class="consulting-differentiator__media"
                     data-tina-field={tinaField(data, "consultingService")}
                   >
-                    <img
+                    <EditorialImage
                       src={service.differentiatorImage.image}
                       alt={
                         service.differentiatorImage.decorative
                           ? ""
                           : (service.differentiatorImage.alt?.trim() ?? "")
                       }
+                      width={960}
+                      height={720}
                       loading="lazy"
                       decoding="async"
                       sizes="(min-width: 768px) 50vw, 100vw"
@@ -174,11 +175,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                 )}
               </div>
               <div class="consulting-differentiator__column">
-                <div class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground">
-                  {service.differentiatorParagraphs?.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </div>
+                <RichText content={service.differentiatorParagraphs} class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground" />
                 {service.differentiatorCredentials?.length && (
                   <ul
                     class:list={

@@ -1,12 +1,7 @@
 import { defineConfig } from "tinacms";
 import { EditorialCollection } from "./collections/editorial";
-import { EventCollection } from "./collections/event";
 import { GlobalConfigCollection } from "./collections/global-config";
-import { MentoringCollection } from "./collections/mentoring";
 import { PublicationCollection } from "./collections/publication";
-import { ServiceCollection } from "./collections/service";
-import { TalkCollection } from "./collections/talk";
-import { TrainingCollection } from "./collections/training";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -39,11 +34,6 @@ export default defineConfig({
 	schema: {
 		collections: [
 			EditorialCollection,
-			ServiceCollection,
-			EventCollection,
-			TalkCollection,
-			TrainingCollection,
-			MentoringCollection,
 			PublicationCollection,
 			GlobalConfigCollection,
 		],

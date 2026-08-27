@@ -1,0 +1,129 @@
+{
+	"_template": "academicService",
+	"routeKey": "training",
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": {
+				"pt": "",
+				"en": ""
+			},
+			"decorative": true
+		}
+	},
+	"title": {
+		"pt": "Cursos e Formações",
+		"en": "Training & Courses"
+	},
+	"summary": {
+		"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+		"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
+	},
+	"seo": {
+		"title": {
+			"pt": "Cursos e Formações · Direito Ambiental, ESG e Clima",
+			"en": "Training & Courses · Environmental Law, ESG, and Climate — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito Ambiental, ESG, governança climática, compliance e Direito da UE.",
+			"en": "Courses, workshops, and training programs for universities, corporations, municipalities, and organizations in Environmental Law, ESG, climate governance, compliance, and EU Law."
+		},
+		"noindex": true
+	},
+	"academicService": {
+		"subtitle": {
+			"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+			"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
+		},
+		"introHeading": {
+			"pt": "Conhecimento que se usa na segunda-feira",
+			"en": "Knowledge you can apply on Monday"
+		},
+		"introParagraphs": {
+			"pt": "Dou aulas há mais de uma década — no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.\n\nDesenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina.",
+			"en": "I have been teaching for over a decade — in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programs for universities, corporations, municipalities, and organizations, combining research rigor with pedagogical clarity."
+		},
+		"servicesHeading": {
+			"pt": "Temas",
+			"en": "Topics"
+		},
+		"servicesSubtitle": {
+			"pt": "Programas adaptados ao público e aos objetivos de cada instituição.",
+			"en": "Programs tailored to the audience and goals of each institution."
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Direito Ambiental",
+					"en": "Environmental Law"
+				},
+				"description": {
+					"pt": "Fundamentos e aplicação prática, do licenciamento à litigância climática.",
+					"en": "Fundamentals and practical application, from licensing to climate litigation."
+				}
+			},
+			{
+				"title": {
+					"pt": "ESG e Sustentabilidade",
+					"en": "ESG and Sustainability"
+				},
+				"description": {
+					"pt": "Diagnóstico, indicadores e governança corporativa.",
+					"en": "Assessment, metrics, and corporate governance."
+				}
+			},
+			{
+				"title": {
+					"pt": "Governança Climática",
+					"en": "Climate Governance"
+				},
+				"description": {
+					"pt": "Políticas, adaptação e o papel do Direito na transição.",
+					"en": "Policies, adaptation, and the role of law in the green transition."
+				}
+			},
+			{
+				"title": {
+					"pt": "Compliance",
+					"en": "Compliance"
+				},
+				"description": {
+					"pt": "Gestão de riscos regulatórios e boas práticas.",
+					"en": "Regulatory risk management and best practices."
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito da União Europeia",
+					"en": "European Union Law"
+				},
+				"description": {
+					"pt": "EUDR, CSDDD, CSRD e o alcance da regulação europeia.",
+					"en": "EUDR, CSDDD, CSRD, and the reach of European regulation."
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito Migratório e Direitos Humanos",
+					"en": "Immigration Law and Human Rights"
+				},
+				"description": {
+					"pt": "Mobilidade internacional e dignidade nas cadeias de fornecimento.",
+					"en": "International mobility and human dignity in supply chains."
+				}
+			}
+		],
+		"note": {
+			"pt": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
+			"en": "Courses, workshops, and training programs by invitation. Curricula and formats defined in collaboration with each institution."
+		},
+		"ctaHeading": {
+			"pt": "Quer uma formação para a sua equipa ou instituição?",
+			"en": "Looking for a training program for your team or institution?"
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
+			"en": "Schedule an initial call and we will design a program tailored to your audience."
+		}
+	}
+}

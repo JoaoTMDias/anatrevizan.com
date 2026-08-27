@@ -8,9 +8,9 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -21,7 +21,6 @@ const kitIcons = ["user", "photo", "list-check"];
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     speaking ? (
       <>
@@ -30,6 +29,7 @@ const kitIcons = ["user", "photo", "list-check"];
           subtitle={speaking.subtitle}
           tag={speaking.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           parent={{
             label: locale === "en" ? "Academic" : "Academia",
@@ -49,11 +49,7 @@ const kitIcons = ["user", "photo", "list-check"];
               <div>
                 <>
                   <SectionHeading title={speaking.bioHeading} />
-                  <div class="speaking-bio__text">
-                    {speaking.bioParagraphs.map((paragraph) => (
-                      <p>{paragraph}</p>
-                    ))}
-                  </div>
+                  <RichText content={speaking.bioParagraphs} class="speaking-bio__text" />
                   <p class="speaking-kit-notice">
                     <Icon name="info-circle" />
                     {speaking.kitDownloadLabel}:{" "}

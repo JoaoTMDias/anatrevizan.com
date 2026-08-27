@@ -9,16 +9,14 @@ const expectNoContrastViolations = async (page: Page) => {
 };
 
 test.describe("color theme", () => {
-	test("places the theme control beside the desktop CTA and before the mobile menu", async ({
+	test("places the theme control beside the desktop CTA and mobile menu", async ({
 		page,
 	}) => {
 		await page.goto("/");
 		const toggle = page.locator("header [data-theme-toggle]");
-		const toggleLabel = toggle.locator("[data-theme-toggle-label]");
 		await expect(toggle).toHaveCount(1);
 		await expect(page.locator("footer [data-theme-toggle]")).toHaveCount(0);
-		expect((await toggleLabel.boundingBox())?.width).toBeGreaterThan(1);
-		await expect(toggle).toHaveAccessibleName("Tema escuro");
+		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
 
 		const booking = page
 			.getByRole("link", { name: /Agendar contacto/ })
@@ -31,21 +29,22 @@ test.describe("color theme", () => {
 
 		await page.setViewportSize({ width: 320, height: 720 });
 		const menu = page.getByRole("button", { name: "Menu principal" });
-		expect((await toggleLabel.boundingBox())?.width).toBeLessThanOrEqual(1);
-		await expect(toggle).toHaveAccessibleName("Tema escuro");
+		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
 		const mobileToggleBox = await toggle.boundingBox();
 		const menuBox = await menu.boundingBox();
-		expect(mobileToggleBox?.x).toBeLessThan(menuBox?.x ?? 0);
+		expect(mobileToggleBox?.x).toBeGreaterThan(
+			menuBox ? menuBox.x + menuBox.width : 0,
+		);
 	});
 
 	test("follows the operating-system preference when no choice is saved", async ({
 		page,
 	}) => {
 		await page.emulateMedia({ colorScheme: "dark" });
-		await page.goto("/en");
+		await page.goto("/");
 
 		await expect(page.locator("html")).toHaveClass(/dark/);
-		const toggle = page.getByRole("button", { name: "Use light theme" });
+		const toggle = page.getByRole("button", { name: "Usar tema claro" });
 		await expect(toggle).toHaveAttribute("aria-pressed", "true");
 	});
 
@@ -55,13 +54,13 @@ test.describe("color theme", () => {
 		await page.emulateMedia({ colorScheme: "light" });
 		await page.goto("/");
 		const toggle = page.locator("[data-theme-toggle]");
-		await expect(toggle).toHaveAccessibleName("Tema escuro");
+		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
 
 		await toggle.focus();
 		await page.keyboard.press("Enter");
 		await expect(page.locator("html")).toHaveClass(/dark/);
 		await expect(toggle).toHaveAttribute("aria-pressed", "true");
-		await expect(toggle).toHaveAccessibleName("Tema claro");
+		await expect(toggle).toHaveAccessibleName("Usar tema claro");
 		expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
 			"dark",
 		);
@@ -69,7 +68,7 @@ test.describe("color theme", () => {
 		await page.reload();
 		await expect(page.locator("html")).toHaveClass(/dark/);
 		await expect(
-			page.getByRole("button", { name: "Tema claro" }),
+			page.getByRole("button", { name: "Usar tema claro" }),
 		).toHaveAttribute("aria-pressed", "true");
 	});
 

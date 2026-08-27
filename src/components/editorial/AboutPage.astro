@@ -8,9 +8,9 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -21,7 +21,6 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     about ? (
       <>
@@ -30,15 +29,12 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
           subtitle={about.subtitle}
           tag={about.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           data-tina-field={tinaField(data, "about")}
         />
         <Section>
-          <div class="about-narrative max-w-3xl">
-            {about.narrative.map((paragraph) => (
-              <p>{paragraph}</p>
-            ))}
-          </div>
+          <RichText content={about.narrative} class="about-narrative max-w-3xl" />
         </Section>
         <Section background="bg-secondary">
           <div class="max-w-3xl">

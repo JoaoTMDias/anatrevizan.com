@@ -9,7 +9,6 @@ import Button from "../ui/Button.astro";
 import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 interface Props {
   data: CmsEditorial;
@@ -22,7 +21,6 @@ const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     booking ? (
       <>
@@ -31,6 +29,7 @@ const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
           subtitle={booking.subtitle}
           tag={booking.tag}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           data-tina-field={tinaField(data, "bookingPage")}
         />

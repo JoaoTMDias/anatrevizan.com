@@ -1,0 +1,185 @@
+{
+	"_template": "consultingService",
+	"routeKey": "public-policy",
+	"title": {
+		"pt": "Políticas Públicas e Governança",
+		"en": "Public Policy and Governance"
+	},
+	"summary": {
+		"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+		"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
+	},
+	"seo": {
+		"title": {
+			"pt": "Políticas Públicas e Governança · Municípios, ONGs e associações",
+			"en": "Public Policy and Governance · Municipalities, NGOs, and Associations — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Consultoria em políticas públicas e governança ambiental: análise de projetos de lei e apoio técnico a municípios, ONGs, associações e instituições.",
+			"en": "Public policy and environmental governance consulting: legislative draft analysis and technical support for municipalities, NGOs, associations, and public institutions."
+		},
+		"noindex": true
+	},
+	"media": {
+		"foreground": {
+			"image": "/politicas-publicas-hero.webp",
+			"alt": {
+				"pt": "Parlamento Europeu.",
+				"en": "European Parliament building."
+			},
+			"decorative": false
+		}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Brasil e Portugal",
+			"en": "Brazil and Portugal"
+		},
+		"subtitle": {
+			"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+			"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
+		},
+		"introHeading": {
+			"pt": "Da norma à implementação",
+			"en": "From regulation to implementation"
+		},
+		"introImage": {
+			"image": "/politicas-publicas-e-governanca-intro.webp",
+			"alt": {
+				"pt": "Ana Flávia na Amazónia.",
+				"en": "Ana Flávia in the Amazon."
+			},
+			"decorative": false
+		},
+		"introParagraphs": {
+			"pt": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção — está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
+			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent — it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organizations, and institutions seeking solid technical backing to decide and act."
+		},
+		"servicesHeading": {
+			"pt": "Como posso ajudar",
+			"en": "How I can help"
+		},
+		"servicesSubtitle": {
+			"pt": "Apoio técnico e consultoria estratégica em políticas públicas e governança.",
+			"en": "Technical support and strategic advisory in public policy and governance."
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Análise de projetos de lei",
+					"en": "Legislative Draft Analysis"
+				},
+				"items": [
+					{
+						"pt": "Análise jurídica e técnica",
+						"en": "Legal and technical analysis"
+					},
+					{
+						"pt": "Identificação de impactos regulatórios",
+						"en": "Regulatory impact identification"
+					},
+					{
+						"pt": "Sugestões de aperfeiçoamento legislativo",
+						"en": "Recommendations for legislative enhancement"
+					},
+					{
+						"pt": "Compatibilização com normas nacionais e internacionais",
+						"en": "Alignment with national and international standards"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Consultoria para municípios",
+					"en": "Consulting for Municipalities"
+				},
+				"items": [
+					{
+						"pt": "Elaboração de políticas públicas",
+						"en": "Public policy drafting"
+					},
+					{
+						"pt": "Governança e adaptação climática",
+						"en": "Governance and climate adaptation"
+					},
+					{
+						"pt": "Planos municipais e regulamentação ambiental",
+						"en": "Municipal plans and environmental regulations"
+					},
+					{
+						"pt": "Projetos financiados por organismos nacionais e internacionais",
+						"en": "Projects funded by national and international institutions"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Consultoria para ONGs",
+					"en": "Consulting for NGOs"
+				},
+				"items": [
+					{
+						"pt": "Análise normativa e pareceres",
+						"en": "Regulatory analysis and legal opinions"
+					},
+					{
+						"pt": "Advocacy e fortalecimento institucional",
+						"en": "Advocacy and institutional strengthening"
+					},
+					{
+						"pt": "Governança",
+						"en": "Governance"
+					},
+					{
+						"pt": "Projetos de direitos humanos e ambiente",
+						"en": "Human rights and environmental projects"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Associações e instituições",
+					"en": "Associations & Institutions"
+				},
+				"items": [
+					{
+						"pt": "Regulamentos internos e governança",
+						"en": "Internal regulations and governance"
+					},
+					{
+						"pt": "Análise de riscos",
+						"en": "Risk assessment"
+					},
+					{
+						"pt": "Compliance e sustentabilidade",
+						"en": "Compliance and sustainability"
+					},
+					{
+						"pt": "Relacionamento com órgãos públicos",
+						"en": "Liaison with public authorities"
+					}
+				]
+			}
+		],
+		"stepsHeading": {
+			"pt": "",
+			"en": ""
+		},
+		"stepsSubtitle": {
+			"pt": "",
+			"en": ""
+		},
+		"note": {
+			"pt": "Atuação técnica, consultiva e de assessoria. Não inclui representação em processos judiciais (contencioso).",
+			"en": "Technical advisory and consulting practice. Does not include litigation or court representation."
+		},
+		"ctaHeading": {
+			"pt": "Precisa de fundamentação técnica para uma decisão pública?",
+			"en": "Do you need technical backing for a public decision?"
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial para avaliarmos o âmbito do apoio de que a sua organização precisa.",
+			"en": "Schedule an initial call to evaluate the scope of support your organization requires."
+		}
+	}
+}

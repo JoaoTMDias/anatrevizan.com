@@ -1,15 +1,18 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { heroAspectRatio, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
-import { pathFor, type PublishedLocale } from "../../lib/routing";
+import { heroAspectRatioForRoute, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
+import { pathFor, type PublishedLocale, type RouteKey } from "../../lib/routing";
+import { responsiveCssImage } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
+import EditorialImage from "./EditorialImage.astro";
 
 interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   title: string;
   subtitle?: string;
   tag?: string;
   locale: PublishedLocale;
+  routeKey: RouteKey;
   parent?: { label: string; href: string };
   tone?: "accent" | "primary";
   heroMedia?: HeroMedia | null;
@@ -21,6 +24,7 @@ const {
   subtitle,
   tag,
   locale,
+  routeKey,
   parent,
   tone = "primary",
   heroMedia,
@@ -31,7 +35,10 @@ const {
 const backgroundImage = heroMedia?.background?.image;
 const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
 const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
-const foregroundRatio = heroAspectRatio(foreground?.aspectRatio);
+const foregroundRatio = heroAspectRatioForRoute(routeKey);
+const foregroundDimensions = foregroundRatio === "landscape"
+  ? { width: 960, height: 720 }
+  : { width: 960, height: 960 };
 const items = [
   { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
   ...(parent ? [parent] : []),
@@ -48,7 +55,7 @@ const items = [
     className,
   ]}
   style={backgroundImage
-    ? `--hero-image: url("${backgroundImage}"); --hero-position: center ${backgroundPosition};`
+    ? `--hero-image: ${responsiveCssImage(backgroundImage)}; --hero-position: center ${backgroundPosition};`
     : undefined}
   {...rest}
 >
@@ -81,9 +88,11 @@ const items = [
               `editorial-hero__foreground--${foregroundRatio}`,
             ]}
           >
-            <img
-              src={foreground.image ?? undefined}
+            <EditorialImage
+              src={foreground.image!}
               alt={foreground.decorative ? "" : (foreground.alt?.trim() ?? "")}
+              width={foregroundDimensions.width}
+              height={foregroundDimensions.height}
               loading="eager"
               fetchpriority="high"
               decoding="async"

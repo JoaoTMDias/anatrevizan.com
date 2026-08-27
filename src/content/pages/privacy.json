@@ -1,0 +1,72 @@
+{
+	"_template": "privacy",
+	"routeKey": "privacy",
+	"title": {
+		"pt": "Política de privacidade",
+		"en": "Privacy policy"
+	},
+	"summary": {
+		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
+		"en": "Page under construction — content for this section will be added soon."
+	},
+	"seo": {
+		"title": {
+			"pt": "Política de privacidade — Ana Trevizan",
+			"en": "Privacy policy — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Descrição editorial por aprovar.",
+			"en": "Editorial description pending approval."
+		},
+		"noindex": true
+	},
+	"privacyPage": {
+		"sourceStatus": {
+			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
+		},
+		"reviewRequirements": [
+			{
+				"pt": "Responsável pelo tratamento",
+				"en": "Data controller"
+			},
+			{
+				"pt": "Dados recolhidos",
+				"en": "Data collected"
+			},
+			{
+				"pt": "Finalidades e base legal",
+				"en": "Purposes and legal basis"
+			},
+			{
+				"pt": "Retenção",
+				"en": "Data retention"
+			},
+			{
+				"pt": "Destinatários e transferências internacionais",
+				"en": "Recipients and international transfers"
+			},
+			{
+				"pt": "Direitos do titular e contacto",
+				"en": "Data subject rights and contact info"
+			},
+			{
+				"pt": "Formulário",
+				"en": "Contact form"
+			},
+			{
+				"pt": "Calendly",
+				"en": "Calendly"
+			},
+			{
+				"pt": "Hosting",
+				"en": "Web hosting"
+			},
+			{
+				"pt": "Analytics, se utilizado",
+				"en": "Analytics, if applicable"
+			}
+		],
+		"sections": []
+	}
+}

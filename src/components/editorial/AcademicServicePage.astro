@@ -7,9 +7,9 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -23,7 +23,6 @@ const icons =
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     service ? (
       <>
@@ -31,6 +30,7 @@ const icons =
           title={data.title}
           subtitle={service.subtitle}
           locale={locale}
+          routeKey={data.routeKey}
           heroMedia={data.media}
           parent={{ label: "Academia", href: pathFor("academic", locale) }}
           data-tina-field={tinaField(data, "academicService")}
@@ -38,11 +38,7 @@ const icons =
         <Section class="max-w-4xl">
           <>
             <SectionHeading title={service.introHeading} />
-            <div class="space-y-5 text-lg leading-relaxed text-muted-foreground">
-              {service.introParagraphs.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </div>
+            <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
           </>
         </Section>
         <Section background="bg-secondary">

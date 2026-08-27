@@ -74,6 +74,18 @@
 	--tw-prose-td-borders: var(--border);
 }
 
+.rich-text a {
+	color: var(--primary);
+	font-weight: 600;
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.2em;
+}
+
+.rich-text a:hover {
+	text-decoration-thickness: 0.16em;
+}
+
 @keyframes twinkle {
 	0%,
 	100% {

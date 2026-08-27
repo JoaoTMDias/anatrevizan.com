@@ -1,0 +1,207 @@
+{
+	"_template": "consultingService",
+	"routeKey": "immigration-mobility",
+	"title": {
+		"pt": "Migração e Mobilidade",
+		"en": "Immigration and Mobility"
+	},
+	"summary": {
+		"pt": "Mudar de país é uma das decisões mais importantes da sua vida. Não devia ter de a enfrentar sozinho, nem à mercê da burocracia.",
+		"en": "Relocating to another country is one of the most important decisions of your life. You shouldn't have to face it alone, nor at the mercy of bureaucracy."
+	},
+	"seo": {
+		"title": {
+			"pt": "Migração e Mobilidade · Mudar para Portugal com segurança jurídica",
+			"en": "Immigration and Mobility · Relocate to Portugal with Legal Certainty — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Apoio jurídico para mudar para Portugal: vistos, autorização de residência, NIF, Segurança Social, número de utente e reconhecimento de diplomas (DGES).",
+			"en": "Legal support for relocating to Portugal: visas, residency permits, NIF, Social Security, healthcare registration, and academic degree recognition (DGES)."
+		},
+		"noindex": true
+	},
+	"media": {
+		"background": {
+			"image": ""
+		},
+		"foreground": {
+			"image": "/migracao-e-mobilidade-hero.webp",
+			"alt": {
+				"pt": "Uma vista superior com uma bússola em cima de uma agenda e um documento com o carimbo «Visa».",
+				"en": "Top-down view of a compass resting on a planner next to a paper stamped 'Visa'."
+			},
+			"decorative": false
+		}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Portugal",
+			"en": "Portugal"
+		},
+		"subtitle": {
+			"pt": "Mudar de país é uma das decisões mais importantes da sua vida. Não devia ter de a enfrentar sozinho, nem à mercê da burocracia.",
+			"en": "Relocating to another country is one of the most important decisions of your life. You shouldn't have to face it alone, nor at the mercy of bureaucracy."
+		},
+		"introHeading": {
+			"pt": "Entendo o que está em jogo",
+			"en": "I understand what is at stake"
+		},
+		"introImage": {
+			"image": "/migracao-e-mobilidade-intro.webp",
+			"alt": {
+				"pt": "Ana Flávia a segurar dois passaportes na mão: um de Portugal e outro do Brasil.",
+				"en": "Ana Flávia holding two passports in her hand: one from Portugal and one from Brazil."
+			},
+			"decorative": false
+		},
+		"introParagraphs": {
+			"pt": "Vistos, NIF, Segurança Social, número de utente, reconhecimento do diploma. Cada sigla esconde um processo, um prazo e o receio de dar um passo em falso que atrase tudo o resto.\n\nVivo em Portugal e conheço o outro lado — o de quem chega. Ofereço orientação jurídica clara e um acompanhamento próximo, para que cada etapa da sua mudança seja uma decisão informada e segura, e não um salto no escuro.",
+			"en": "Visas, NIF, Social Security, healthcare registration, degree recognition. Behind every acronym lies a procedure, a deadline, and the fear of making a misstep that delays everything else.\n\nLiving in Portugal, I know the newcomer's perspective firsthand. I provide clear legal guidance and close support, ensuring every step of your relocation is an informed, secure decision rather than a leap into the unknown."
+		},
+		"servicesHeading": {
+			"pt": "Como posso ajudar",
+			"en": "How I can help"
+		},
+		"servicesSubtitle": {
+			"pt": "Da preparação da mudança à integração jurídica em Portugal.",
+			"en": "From relocation planning to legal integration in Portugal."
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Planeamento da mudança",
+					"en": "Relocation Planning"
+				},
+				"description": {
+					"pt": "Estratégia migratória à medida da sua situação, com o caminho, os documentos e os prazos claros desde o início.",
+					"en": "A tailored immigration strategy designed for your specific situation, outlining the route, required documents, and timelines clearly from day one."
+				}
+			},
+			{
+				"title": {
+					"pt": "Vistos e residência",
+					"en": "Visas and Residency"
+				},
+				"description": {
+					"pt": "Orientação sobre os tipos de visto e de autorização de residência adequados ao seu perfil e objetivos.",
+					"en": "Guidance on selecting the appropriate visa and residency permit options aligned with your profile and goals."
+				}
+			},
+			{
+				"title": {
+					"pt": "Preparação documental",
+					"en": "Document Preparation"
+				},
+				"description": {
+					"pt": "Organização e revisão da documentação exigida, para evitar atrasos e pedidos de correção.",
+					"en": "Organization and thorough review of required paperwork to prevent delays and requests for correction."
+				}
+			},
+			{
+				"title": {
+					"pt": "NIF, Segurança Social e número de utente",
+					"en": "NIF, Social Security, and Healthcare Registration"
+				},
+				"description": {
+					"pt": "Apoio na obtenção dos registos essenciais para viver, trabalhar e aceder aos serviços em Portugal.",
+					"en": "Assistance with obtaining essential registrations needed to live, work, and access public services in Portugal."
+				}
+			},
+			{
+				"title": {
+					"pt": "Abertura de atividade",
+					"en": "Business & Self-Employment Registration"
+				},
+				"description": {
+					"pt": "Orientação para quem vem trabalhar ou empreender e precisa de se organizar juridicamente.",
+					"en": "Legal guidance for individuals moving to Portugal to work independently or start a business."
+				}
+			},
+			{
+				"title": {
+					"pt": "Reconhecimento de diplomas (DGES)",
+					"en": "Degree Recognition (DGES)"
+				},
+				"description": {
+					"pt": "Acompanhamento do reconhecimento das suas qualificações académicas junto da DGES.",
+					"en": "Assistance throughout the official degree recognition process with DGES."
+				}
+			}
+		],
+		"stepsHeading": {
+			"pt": "Como trabalhamos juntos",
+			"en": "How we work together"
+		},
+		"stepsSubtitle": {
+			"pt": "Um percurso pensado para tirar peso dos seus ombros, um passo de cada vez.",
+			"en": "A step-by-step process designed to take the burden off your shoulders."
+		},
+		"steps": [
+			{
+				"number": "01",
+				"title": {
+					"pt": "Conversa inicial",
+					"en": "Initial Conversation"
+				},
+				"description": {
+					"pt": "Ouço a sua situação e os seus objetivos, sem pressa e sem juridiquês.",
+					"en": "I listen carefully to your situation and goals, without rushing or using legal jargon."
+				}
+			},
+			{
+				"number": "02",
+				"title": {
+					"pt": "Plano claro",
+					"en": "Clear Roadmap"
+				},
+				"description": {
+					"pt": "Mapeamos juntos o caminho: que documentos, que ordem, que prazos.",
+					"en": "Together, we map out the path: required documents, sequence, and estimated timelines."
+				}
+			},
+			{
+				"number": "03",
+				"title": {
+					"pt": "Acompanhamento",
+					"en": "Guided Support"
+				},
+				"description": {
+					"pt": "Sigo consigo cada etapa perante os órgãos públicos portugueses.",
+					"en": "I accompany you through each stage before public authorities in Portugal."
+				}
+			},
+			{
+				"number": "04",
+				"title": {
+					"pt": "Integração",
+					"en": "Integration"
+				},
+				"description": {
+					"pt": "Apoio na sua regularização e integração jurídica já em Portugal.",
+					"en": "Support with your legal status regularization and integration upon arrival in Portugal."
+				}
+			}
+		],
+		"crosslinkHeading": {
+			"pt": "Porquê confiar esta etapa a mim",
+			"en": "Why entrust this step to me"
+		},
+		"crosslinkText": {
+			"pt": "Advogada inscrita na OAB desde 2013, doutorada e residente em Portugal, com uma trajetória construída entre os dois países. Conheça o percurso que sustenta este acompanhamento.",
+			"en": "Admitted to the OAB since 2013, holding a Ph.D. and residing in Portugal, with a career built across both countries. Learn more about the background behind this service."
+		},
+		"crosslinkRouteKey": "about",
+		"note": {
+			"pt": "Atuação preventiva, consultiva e de apoio administrativo, orientada para a regularização e a integração jurídica. Não inclui representação em processos judiciais.",
+			"en": "Advisory, preventive, and administrative support practice focused on legal status regularization and integration. Does not include litigation or court representation."
+		},
+		"ctaHeading": {
+			"pt": "Vamos organizar a sua mudança para Portugal",
+			"en": "Let's organize your relocation to Portugal"
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial. Conte-me em que ponto está e traçamos juntos os próximos passos.",
+			"en": "Schedule an initial call. Share where you currently stand and we will plan the next steps together."
+		}
+	}
+}

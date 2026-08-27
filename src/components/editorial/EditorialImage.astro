@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+import {
+  isRenderableImage,
+  responsiveSrcSet,
+  responsiveWidths,
+} from "../../lib/media-pipeline";
+
+interface Props extends Omit<HTMLAttributes<"img">, "src" | "width" | "height"> {
+  src: string | ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes,
+  loading = "lazy",
+  decoding = "async",
+  ...rest
+} = Astro.props;
+const publicPath = typeof src === "string" ? src : null;
+
+if (publicPath && !isRenderableImage(publicPath))
+  throw new Error(`O ficheiro não é uma imagem renderizável: ${publicPath}`);
+if (publicPath && (!width || !height))
+  throw new Error(`Imagens editoriais em public exigem width e height: ${publicPath}`);
+---
+
+{
+  publicPath ? (
+    <img
+      src={publicPath}
+      srcset={responsiveSrcSet(publicPath)}
+      alt={alt}
+      width={width}
+      height={height}
+      sizes={sizes}
+      loading={loading}
+      decoding={decoding}
+      {...rest}
+    />
+  ) : (
+    <Image
+      src={src as ImageMetadata}
+      alt={alt}
+      widths={[...responsiveWidths]}
+      sizes={sizes}
+      loading={loading}
+      decoding={decoding}
+      {...rest}
+    />
+  )
+}

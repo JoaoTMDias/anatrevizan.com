@@ -11,10 +11,14 @@ import { pathToFileURL } from "node:url";
 import {
 	type EditorialDocument,
 	isPublishable,
-	isPublishedDocument,
 	shouldRenderEditorialDocument,
 } from "../src/lib/editorial.ts";
-import { type PublishedLocale, pathFor } from "../src/lib/routing.ts";
+import { isLocaleComplete, localizeValue } from "../src/lib/bilingual.ts";
+import {
+	publishedLocales,
+	type PublishedLocale,
+	pathFor,
+} from "../src/lib/routing.ts";
 
 export type BuildReportMode = "preview" | "production";
 
@@ -23,19 +27,21 @@ export function createEditorialBuildReport(
 	mode: BuildReportMode,
 	allowEmptyProduction = false,
 ) {
-	const contentDirectory = join(root, "src/content/editorial");
+	const contentDirectory = join(root, "src/content/pages");
 	const outputDirectory = join(root, "dist/client");
 	const sourceFiles = readdirSync(contentDirectory, { recursive: true }).filter(
 		(file): file is string =>
 			typeof file === "string" && file.endsWith(".json"),
 	);
-	const documents = sourceFiles.map(
-		(file) =>
-			JSON.parse(
-				readFileSync(join(contentDirectory, file), "utf8"),
-			) as EditorialDocument,
+	const documents = sourceFiles.map((file) =>
+		JSON.parse(readFileSync(join(contentDirectory, file), "utf8")),
 	);
-	const localizedDocuments = documents.filter(isPublishedDocument);
+	const localizedDocuments = documents.flatMap((document) =>
+		publishedLocales.flatMap((locale) => {
+			const localized = localizeValue(document, locale) as { title?: string; summary?: string; seo?: { title?: string; description?: string } };
+			return [{ routeKey: document.routeKey, locale, title: localized.title ?? "", seoTitle: localized.seo?.title || localized.title || "", seoDescription: localized.seo?.description || localized.summary || "", complete: isLocaleComplete(document, locale) } as EditorialDocument];
+		}),
+	);
 	const publishable = localizedDocuments.filter(isPublishable);
 	const expected = localizedDocuments.filter((document) =>
 		shouldRenderEditorialDocument(document, mode === "preview"),

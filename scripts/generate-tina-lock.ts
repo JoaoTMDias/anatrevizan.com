@@ -22,7 +22,7 @@ if (
 
 await writeFile(
 	resolve("tina/tina-lock.json"),
-	`${JSON.stringify(lock, null, "\t")}\n`,
+	`${JSON.stringify(lock)}\n`,
 	"utf8",
 );
 console.log(

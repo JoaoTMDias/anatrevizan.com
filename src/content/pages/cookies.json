@@ -1,0 +1,56 @@
+{
+	"_template": "cookies",
+	"routeKey": "cookies",
+	"title": {
+		"pt": "Política de cookies",
+		"en": "Cookie policy"
+	},
+	"summary": {
+		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
+		"en": "Page under construction — content for this section will be added soon."
+	},
+	"seo": {
+		"title": {
+			"pt": "Política de cookies — Ana Trevizan",
+			"en": "Cookie policy — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Descrição editorial por aprovar.",
+			"en": "Editorial description pending approval."
+		},
+		"noindex": true
+	},
+	"cookiesPage": {
+		"sourceStatus": {
+			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
+		},
+		"reviewRequirements": [
+			{
+				"pt": "Cookies essenciais",
+				"en": "Essential cookies"
+			},
+			{
+				"pt": "Calendly",
+				"en": "Calendly"
+			},
+			{
+				"pt": "Analytics, se utilizado",
+				"en": "Analytics, if applicable"
+			},
+			{
+				"pt": "Redes sociais",
+				"en": "Social media"
+			},
+			{
+				"pt": "Fornecedores, finalidades e duração",
+				"en": "Providers, purposes, and duration"
+			},
+			{
+				"pt": "Consentimento, retirada e alteração",
+				"en": "Consent, withdrawal, and management"
+			}
+		],
+		"sections": []
+	}
+}

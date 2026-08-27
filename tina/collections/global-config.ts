@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { editorialListItemLabel } from "./common";
 
 const localizedText = (name: string, label: string) => ({
 	name,
@@ -11,7 +12,7 @@ const localizedText = (name: string, label: string) => ({
 			type: "string" as const,
 			required: true,
 		},
-		{ name: "en", label: "English", type: "string" as const, required: true },
+		{ name: "en", label: "Inglês", type: "string" as const, required: true },
 	],
 });
 
@@ -21,70 +22,75 @@ const optionalLocalizedText = (name: string, label: string) => ({
 	type: "object" as const,
 	fields: [
 		{ name: "pt", label: "Português (Portugal)", type: "string" as const },
-		{ name: "en", label: "English", type: "string" as const },
+		{ name: "en", label: "Inglês", type: "string" as const },
+	],
+});
+
+const navigationEntry = (name: string, label: string, withTag = false) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		localizedText("label", "Nome no menu"),
+		localizedText("description", "Descrição curta"),
+		...(withTag ? [localizedText("tag", "Etiqueta opcional")] : []),
 	],
 });
 
 export const GlobalConfigCollection: Collection = {
 	name: "config",
-	label: "Global settings",
+	label: "Configuração global",
 	path: "src/content/config",
 	format: "json",
 	ui: { global: true },
 	fields: [
 		{
-			name: "identity",
-			label: "Identity",
-			type: "object",
-			required: true,
-			fields: [
-				{ name: "name", label: "Public name", type: "string", required: true },
-				{
-					name: "legalName",
-					label: "Legal name (only after approval)",
-					type: "string",
-				},
-				{ name: "logo", label: "Logo", type: "image" },
-				{ name: "portrait", label: "Portrait", type: "image" },
-				localizedText("tagline", "Localized tagline"),
-			],
-		},
-		{
 			name: "contacts",
-			label: "Contacts and profiles",
+			label: "Contactos, perfis e atendimento",
 			type: "object",
 			fields: [
-				{ name: "email", label: "Professional email", type: "string" },
-				{ name: "phone", label: "Phone/WhatsApp", type: "string" },
+				{ name: "email", label: "E-mail profissional", type: "string" },
+				{ name: "phone", label: "Telefone/WhatsApp", type: "string" },
 				{
 					name: "calendlyUrl",
-					label: "Calendly external URL",
+					label: "Endereço externo do Calendly",
 					type: "string",
-					description: "External link only; no embed in v1.",
+					description:
+						"Usar apenas um endereço HTTPS. O Calendly não é incorporado no site.",
 				},
 				{
 					name: "profiles",
-					label: "Professional profiles",
+					label: "Perfis profissionais",
 					type: "object",
 					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Perfil profissional"),
+						}),
+					},
 					fields: [
-						localizedText("label", "Localized label"),
+						localizedText("label", "Nome apresentado"),
 						{ name: "url", label: "URL", type: "string", required: true },
 					],
 				},
 				{
 					name: "regions",
-					label: "Service regions",
+					label: "Regiões de atendimento",
 					type: "object",
 					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Região"),
+						}),
+					},
 					fields: [
 						{ name: "flag", label: "Flag", type: "string", required: true },
-						localizedText("label", "Localized region name"),
+						localizedText("label", "Nome da região"),
 					],
 				},
 				{
 					name: "serviceLanguages",
-					label: "Service languages",
+					label: "Idiomas de atendimento",
 					type: "string",
 					list: true,
 				},
@@ -92,119 +98,89 @@ export const GlobalConfigCollection: Collection = {
 		},
 		{
 			name: "navigation",
-			label: "Header and footer navigation",
+			label: "Textos da navegação",
+			type: "object",
+			fields: [
+				{
+					name: "consulting",
+					label: "Menu Consultoria",
+					type: "object",
+					fields: [
+						localizedText("label", "Nome do menu"),
+						navigationEntry(
+							"immigrationMobility",
+							"Migração e Mobilidade",
+							true,
+						),
+						navigationEntry("legal", "Consultoria Jurídica", true),
+						navigationEntry("environmentalEsg", "Ambiental e ESG", true),
+						navigationEntry(
+							"publicPolicy",
+							"Políticas Públicas e Governança",
+							true,
+						),
+						navigationEntry(
+							"legalOpinions",
+							"Pareceres e Notas Técnicas",
+							true,
+						),
+					],
+				},
+				{
+					name: "academic",
+					label: "Menu Academia",
+					type: "object",
+					fields: [
+						localizedText("label", "Nome do menu"),
+						navigationEntry("mentoring", "Mentorias e Apoio Académico"),
+						navigationEntry("publications", "Publicações"),
+						navigationEntry("events", "Eventos e Palestras"),
+						navigationEntry("speaking", "Palestras e Convites"),
+						navigationEntry("training", "Cursos e Formações"),
+					],
+				},
+				localizedText("about", "Sobre"),
+				localizedText("contact", "Contacto"),
+				localizedText("booking", "Agendar contacto"),
+			],
+		},
+		{
+			name: "requestTypes",
+			label: "Tipos de pedido do formulário",
 			type: "object",
 			list: true,
 			ui: {
-				itemProps: (item) => ({
-					label: item.label?.pt ?? item.routeKey ?? "Navigation item",
-				}),
+				itemProps: (item) => ({ label: item.label?.pt ?? "Tipo de pedido" }),
 			},
-			fields: [
-				{
-					name: "type",
-					label: "Item type",
-					type: "string",
-					required: true,
-					options: [
-						{ label: "Direct link", value: "link" },
-						{ label: "Menu with children", value: "menu" },
-					],
-				},
-				{
-					name: "routeKey",
-					label: "Canonical landing route",
-					type: "string",
-					required: true,
-					description: "For a menu, this is its hub/landing page.",
-				},
-				localizedText("label", "Localized label"),
-				{
-					name: "emphasis",
-					label: "Display as primary action",
-					type: "boolean",
-				},
-				{
-					name: "children",
-					label: "Ordered menu entries",
-					type: "object",
-					list: true,
-					ui: {
-						itemProps: (item) => ({
-							label: item.label?.pt ?? item.routeKey ?? "Menu entry",
-						}),
-					},
-					fields: [
-						{
-							name: "routeKey",
-							label: "Canonical route",
-							type: "string",
-							required: true,
-						},
-						localizedText("label", "Localized title"),
-						localizedText("description", "Localized short description"),
-						localizedText("tag", "Localized optional tag"),
-						{
-							name: "highlight",
-							label: "Highlight this entry",
-							type: "boolean",
-						},
-					],
-				},
-			],
-		},
-		{
-			name: "ctas",
-			label: "Reusable CTAs",
-			type: "object",
-			list: true,
-			fields: [
-				{
-					name: "id",
-					label: "Stable identifier",
-					type: "string",
-					required: true,
-				},
-				localizedText("label", "Localized label"),
-				{ name: "routeKey", label: "Internal route key", type: "string" },
-				{ name: "externalUrl", label: "External URL", type: "string" },
-			],
+			fields: [localizedText("label", "Nome apresentado")],
 		},
 		{
 			name: "seo",
-			label: "Site-wide SEO",
+			label: "SEO global",
 			type: "object",
 			required: true,
 			fields: [
+				localizedText("defaultTitle", "Título predefinido"),
+				localizedText("defaultDescription", "Descrição predefinida"),
 				{
-					name: "siteUrl",
-					label: "Canonical production URL",
-					type: "string",
-					required: true,
+					name: "defaultImage",
+					label: "Imagem social predefinida",
+					type: "image",
 				},
-				localizedText("defaultTitle", "Default title"),
-				localizedText("defaultDescription", "Default description"),
-				{ name: "defaultImage", label: "Default social image", type: "image" },
 			],
 		},
 		{
 			name: "footer",
-			label: "Footer and legal navigation",
+			label: "Rodapé e navegação legal",
 			type: "object",
 			fields: [
-				localizedText("copyright", "Copyright label"),
+				localizedText("copyright", "Texto de copyright"),
 				optionalLocalizedText(
 					"professionalRegistration",
-					"Professional identification",
+					"Identificação profissional",
 				),
-				optionalLocalizedText("disclaimer", "Informational disclaimer"),
-				optionalLocalizedText("rightsReserved", "Rights reserved text"),
-				{
-					name: "legalRouteKeys",
-					label: "Legal route keys",
-					type: "string",
-					list: true,
-				},
+				optionalLocalizedText("disclaimer", "Aviso informativo"),
+				optionalLocalizedText("rightsReserved", "Texto de direitos reservados"),
 			],
 		},
 	],

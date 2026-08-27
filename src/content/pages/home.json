@@ -1,0 +1,291 @@
+{
+	"routeKey": "home",
+	"title": {
+		"pt": "Início",
+		"en": "Home"
+	},
+	"summary": {
+		"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
+		"en": "Scientific-based legal and environmental consulting across Portugal and Brazil."
+	},
+	"seo": {
+		"title": {
+			"pt": "Dra. Ana Trevizan — Consultoria Jurídica e Ambiental",
+			"en": "Dr. Ana Trevizan — Legal and Environmental Consulting"
+		},
+		"description": {
+			"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
+			"en": "Scientific-based legal and environmental consulting across Portugal and Brazil."
+		}
+	},
+	"media": {
+		"background": {
+			"image": "",
+			"focalPoint": "center"
+		},
+		"foreground": {
+			"image": "/cover_homepage.webp",
+			"alt": {
+				"pt": "Dra. Ana Flávia Trevizan, sentada num banco alto, a sorrir.",
+				"en": "Dr. Ana Flávia Trevizan, sitting on a high stool, smiling."
+			},
+			"decorative": false
+		}
+	},
+	"home": {
+		"hero": {
+			"heading": {
+				"pt": "Decisões seguras para cenários jurídicos e ambientais complexos.",
+				"en": "Confident decisions for complex legal and environmental scenarios."
+			},
+			"subtitle": {
+				"pt": "Consultoria técnica, estratégica e de base científica para pessoas e empresas navegarem com clareza nos mercados luso-brasileiros.",
+				"en": "Technical, strategic, and research-backed consulting for individuals and businesses navigating Portuguese and Brazilian frameworks with clarity."
+			},
+			"brandWords": [
+				{
+					"pt": "Portugal e Brasil",
+					"en": "Portugal and Brazil"
+				},
+				{
+					"pt": "Direito Ambiental",
+					"en": "Environmental Law"
+				},
+				{
+					"pt": "Rigor Científico",
+					"en": "Scientific Rigor"
+				}
+			],
+			"primaryCta": {
+				"pt": "Agendar Consulta",
+				"en": "Book a Consultation"
+			},
+			"secondaryCta": {
+				"pt": "Conhecer Áreas de Atuação",
+				"en": "Explore Practice Areas"
+			}
+		},
+		"gateways": [
+			{
+				"eyebrow": {
+					"pt": "Advogada ↔ Cliente",
+					"en": "Counsel ↔ Client"
+				},
+				"description": {
+					"pt": "Consultoria jurídica e ambiental preventiva, consultiva e extrajudicial, com atuação focada em decisões seguras e fundamentadas.",
+					"en": "Preventive, advisory, and out-of-court legal and environmental consulting, focused on sound and well-founded decision-making."
+				},
+				"cta": {
+					"pt": "Ver áreas de atuação",
+					"en": "View practice areas"
+				},
+				"routeKey": "consulting"
+			},
+			{
+				"eyebrow": {
+					"pt": "Mentorias · Publicações · Palestras",
+					"en": "Mentorship · Publications · Speaking"
+				},
+				"description": {
+					"pt": "Hub académico que reúne mentorias, publicações científicas, eventos, palestras e cursos — da pesquisa à comunicação.",
+					"en": "Academic hub bringing together mentorship, scientific publications, events, speaking engagements, and courses — from research to communication."
+				},
+				"cta": {
+					"pt": "Explorar Academia",
+					"en": "Explore Academia"
+				},
+				"routeKey": "academic"
+			}
+		],
+		"differencesTitle": {
+			"pt": "Por que a Dra. Ana Trevizan?",
+			"en": "Why Dr. Ana Trevizan?"
+		},
+		"differencesSubtitle": {
+			"pt": "Uma ponte real entre dois países, três idiomas e mundos que raramente se encontram.",
+			"en": "A genuine bridge across two countries, three languages, and disciplines that rarely intersect."
+		},
+		"differences": [
+			{
+				"title": {
+					"pt": "Binacional real",
+					"en": "Truly Binational"
+				},
+				"description": {
+					"pt": "OAB desde 2013 + doutoramento e residência em Portugal. Vivência e atuação efetiva nos dois países.",
+					"en": "Admitted to the OAB since 2013, alongside a Ph.D. and residency in Portugal. Active professional practice in both countries."
+				}
+			},
+			{
+				"title": {
+					"pt": "Trilíngue",
+					"en": "Trilingual"
+				},
+				"description": {
+					"pt": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas.",
+					"en": "Consultations in Portuguese, English, and Spanish. Published work and keynotes across all three languages."
+				}
+			},
+			{
+				"title": {
+					"pt": "Ponte ciência–Direito",
+					"en": "Science–Law Bridge"
+				},
+				"description": {
+					"pt": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática.",
+					"en": "Ph.D. from NOVA University Lisbon, empirical field research in the Amazon on the EUDR. Academic rigor applied to practice."
+				}
+			},
+			{
+				"title": {
+					"pt": "Sábio + Cuidador",
+					"en": "Analytical + Client-Centered"
+				},
+				"description": {
+					"pt": "Rigor técnico aliado a uma escuta individualizada e atenta. Clareza sem juridiquês.",
+					"en": "Technical rigor paired with attentive, personalized counsel. Clarity without legal jargon."
+				}
+			}
+		],
+		"servicesTitle": {
+			"pt": "Áreas de Consultoria",
+			"en": "Consulting Services"
+		},
+		"servicesSubtitle": {
+			"pt": "Atuação preventiva, consultiva e extrajudicial. Cinco áreas com foco em decisões seguras e fundamentadas.",
+			"en": "Preventive, advisory, and out-of-court practice. Five key areas designed for sound, well-founded decisions."
+		},
+		"services": [
+			{
+				"tag": {
+					"pt": "Portugal",
+					"en": "Portugal"
+				},
+				"description": {
+					"pt": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
+					"en": "Relocation planning to Portugal, visas, residency, NIF, Social Security, and legal integration."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "immigration-mobility"
+			},
+			{
+				"tag": {
+					"pt": "Portugal",
+					"en": "Portugal"
+				},
+				"description": {
+					"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
+					"en": "Civil, Labor, Administrative, and Planning Law. Contract analysis and preventive strategy."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "legal"
+			},
+			{
+				"tag": {
+					"pt": "Brasil · União Europeia",
+					"en": "Brazil · European Union"
+				},
+				"description": {
+					"pt": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
+					"en": "ESG assessment, compliance, EUDR, due diligence, and alignment with European Union regulations."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "environmental-esg"
+			},
+			{
+				"tag": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"description": {
+					"pt": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
+					"en": "Legislative analysis and consulting for municipalities, NGOs, associations, and public institutions."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "public-policy"
+			},
+			{
+				"tag": {
+					"pt": "Portugal e Brasil",
+					"en": "Portugal and Brazil"
+				},
+				"description": {
+					"pt": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
+					"en": "Legal opinions backed by legislation, legal doctrine, case law, and academic research."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "legal-opinions"
+			}
+		],
+		"academicTitle": {
+			"pt": "Academia",
+			"en": "Academia"
+		},
+		"academicSubtitle": {
+			"pt": "Publicações recentes e produção científica com impacto internacional.",
+			"en": "Recent publications and scientific research with international impact."
+		},
+		"publicationsCta": {
+			"pt": "Ver repositório completo",
+			"en": "View full repository"
+		},
+		"speakerKitCta": {
+			"pt": "Kit de palestrante",
+			"en": "Speaker Kit"
+		},
+		"credentialsLabel": {
+			"pt": "Credenciais e vínculos",
+			"en": "Credentials & Affiliations"
+		},
+		"credentials": [
+			{
+				"pt": "Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (2024)",
+				"en": "Ph.D. in Climate Change and Sustainable Development Policies — NOVA University Lisbon (2024)"
+			},
+			{
+				"pt": "SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)",
+				"en": "SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)"
+			},
+			{
+				"pt": "Mestrado em Direito Agroambiental — UFMT, reconhecido pela U. Lisboa (2020)",
+				"en": "Master’s Degree in Agro-Environmental Law — UFMT, recognized by the University of Lisbon (2020)"
+			},
+			{
+				"pt": "Docência em inglês — LUNEX, Luxemburgo",
+				"en": "Teaching in English — LUNEX, Luxembourg"
+			},
+			{
+				"pt": "Formadora certificada em Portugal (2026)",
+				"en": "Certified Trainer in Portugal (2026)"
+			}
+		],
+		"finalCtaHeading": {
+			"pt": "Marque uma conversa inicial",
+			"en": "Schedule an initial call"
+		},
+		"finalCtaText": {
+			"pt": "Um primeiro passo para transformar a complexidade jurídica em decisões seguras. Atendimento em português, inglês e espanhol.",
+			"en": "The first step toward turning legal complexity into confident decisions. Consultations available in Portuguese, English, and Spanish."
+		},
+		"finalCtaLabel": {
+			"pt": "Agendar primeiro contacto",
+			"en": "Schedule an initial call"
+		}
+	},
+	"_template": "home"
+}

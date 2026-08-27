@@ -1,0 +1,188 @@
+{
+	"_template": "consultingService",
+	"routeKey": "legal",
+	"title": {
+		"pt": "Consultoria Jurídica",
+		"en": "Legal Consulting"
+	},
+	"summary": {
+		"pt": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
+		"en": "Legal certainty before a problem arises, not after. Clear guidance to help you decide with confidence in Portugal."
+	},
+	"seo": {
+		"title": {
+			"pt": "Consultoria Jurídica em Portugal · Civil, Trabalho e Administrativo",
+			"en": "Legal Consulting in Portugal · Civil, Labor, and Administrative Law — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Consultoria jurídica preventiva em Portugal: Direito Civil, do Trabalho, Administrativo e Urbanístico, análise contratual e estratégia jurídica.",
+			"en": "Preventive legal consulting in Portugal: Civil, Labor, Administrative, and Planning Law, contract review, and legal strategy."
+		},
+		"noindex": true
+	},
+	"media": {
+		"background": {
+			"image": ""
+		},
+		"foreground": {
+			"image": "/hero-consultoria.webp",
+			"alt": {
+				"pt": "Uma vista superior de uma mesa, onde está uma pequena estátua de Têmis, a Senhora da Justiça.",
+				"en": "Top-down view of a desk featuring a small statue of Themis, Lady Justice."
+			},
+			"decorative": false
+		}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Portugal",
+			"en": "Portugal"
+		},
+		"subtitle": {
+			"pt": "Segurança jurídica antes do problema, não depois. Orientação clara para decidir com confiança em Portugal.",
+			"en": "Legal certainty before a problem arises, not after. Clear guidance to help you decide with confidence in Portugal."
+		},
+		"introHeading": {
+			"pt": "Decidir bem começa por entender",
+			"en": "Sound decisions begin with understanding"
+		},
+		"introImage": {
+			"image": "/consultoria-juridica-intro.webp",
+			"alt": {
+				"pt": "Ana Flávia a segurar um livro sobre alterações climáticas.",
+				"en": "Ana Flávia holding a book on climate change."
+			},
+			"decorative": false
+		},
+		"introParagraphs": {
+			"pt": "A maioria dos conflitos jurídicos podia ter sido evitada com uma leitura atenta no momento certo — antes de assinar, antes de agir, antes do prazo apertar.\n\nÉ aí que trabalho: na análise, na estratégia e na prevenção. Traduzo a legislação em orientações práticas, para que cada decisão seja informada e cada documento o proteja em vez de o expor.",
+			"en": "Most legal disputes could have been avoided with a careful review at the right moment — before signing, before acting, before deadlines become critical.\n\nThat is where I focus: analysis, strategy, and prevention. I translate legislation into practical guidance, ensuring that every decision is informed and every document protects you rather than exposes you to risk."
+		},
+		"servicesHeading": {
+			"pt": "Áreas de atuação",
+			"en": "Practice Areas"
+		},
+		"servicesSubtitle": {
+			"pt": "Consultoria preventiva e estratégica, na fase extrajudicial.",
+			"en": "Preventive and strategic legal consulting at the out-of-court stage."
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Direito Civil",
+					"en": "Civil Law"
+				},
+				"items": [
+					{
+						"pt": "Análise e revisão contratual",
+						"en": "Contract analysis and review"
+					},
+					{
+						"pt": "Responsabilidade civil",
+						"en": "Civil liability"
+					},
+					{
+						"pt": "Direitos do consumidor",
+						"en": "Consumer rights"
+					},
+					{
+						"pt": "Negociação extrajudicial",
+						"en": "Out-of-court negotiation"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Direito do Trabalho",
+					"en": "Labor Law"
+				},
+				"items": [
+					{
+						"pt": "Contratos de trabalho",
+						"en": "Employment contracts"
+					},
+					{
+						"pt": "Mobilidade internacional",
+						"en": "International mobility"
+					},
+					{
+						"pt": "Compliance trabalhista",
+						"en": "Labor compliance"
+					},
+					{
+						"pt": "Direitos e deveres das partes",
+						"en": "Rights and duties of the parties"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Direito Administrativo",
+					"en": "Administrative Law"
+				},
+				"items": [
+					{
+						"pt": "Interpretação de procedimentos",
+						"en": "Interpretation of administrative procedures"
+					},
+					{
+						"pt": "Preparação de requerimentos",
+						"en": "Preparation of formal requests"
+					},
+					{
+						"pt": "Acompanhamento perante órgãos públicos",
+						"en": "Representation before public bodies"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Direito Urbanístico",
+					"en": "Planning & Urban Law"
+				},
+				"items": [
+					{
+						"pt": "Análise de viabilidade jurídica",
+						"en": "Legal feasibility analysis"
+					},
+					{
+						"pt": "Licenciamento",
+						"en": "Licensing procedures"
+					},
+					{
+						"pt": "Interpretação da legislação urbanística",
+						"en": "Interpretation of planning regulations"
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Análise contratual",
+					"en": "Contract Analysis"
+				},
+				"description": {
+					"pt": "Análise técnica de contratos nacionais e internacionais: riscos, cláusulas críticas e oportunidades de melhoria antes da assinatura.",
+					"en": "Technical review of domestic and international contracts: mapping risks, critical clauses, and areas for improvement prior to execution."
+				}
+			},
+			{
+				"title": {
+					"pt": "Estratégia jurídica",
+					"en": "Legal Strategy"
+				},
+				"description": {
+					"pt": "Planeamento preventivo, organização documental e prevenção de litígios para uma tomada de decisão segura.",
+					"en": "Preventive planning, document organization, and dispute avoidance to support secure decision-making."
+				}
+			}
+		],
+		"ctaHeading": {
+			"pt": "Tem uma decisão jurídica pela frente?",
+			"en": "Facing a legal decision?"
+		},
+		"ctaText": {
+			"pt": "Antes de assinar ou agir, marque uma conversa inicial e avalie os riscos com clareza.",
+			"en": "Before signing or taking action, schedule an initial call to assess risks with clarity."
+		}
+	}
+}

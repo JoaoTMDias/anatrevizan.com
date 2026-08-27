@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import { pathFor, routeMap, type PublishedLocale, type RouteKey } from '../lib/routing';
-interface Props { title: string; description: string; locale: PublishedLocale; routeKey: RouteKey; image?: string; noindex?: boolean; canonicalOrigin?: string; availableLocales?: PublishedLocale[] }
-const { title, description, locale, routeKey, image = '/og-default.svg', noindex = false, canonicalOrigin, availableLocales = [] } = Astro.props;
+interface Props { title: string; description: string; locale: PublishedLocale; routeKey: RouteKey; image?: string; noindex?: boolean; canonicalOrigin?: string; availableLocales?: PublishedLocale[]; lastModified?: string }
+const { title, description, locale, routeKey, image = '/og-default.svg', noindex = false, canonicalOrigin, availableLocales = [], lastModified } = Astro.props;
 const origin = new URL(canonicalOrigin ?? Astro.site ?? 'https://anatrevizan.com');
 const canonical = new URL(pathFor(routeKey, locale), origin);
 const pt = new URL(routeMap[routeKey]['pt-PT'], origin);
@@ -18,4 +18,5 @@ const en = new URL(routeMap[routeKey].en, origin);
 {noindex && <meta name="robots" content="noindex,nofollow" />}
 <meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'pt_PT'} /><meta property="og:title" content={title} /><meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, origin)} /><meta property="og:image:alt" content="Dra. Ana Trevizan — Consultoria jurídica e ambiental" />
+{lastModified && <meta property="article:modified_time" content={lastModified} />}
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={new URL(image, origin)} />

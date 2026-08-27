@@ -1,166 +1,37 @@
 # Decisões técnicas — anatrevizan.com
 
-> Estado consolidado após a análise da versão Next.js e a atualização da fundação Astro/TinaCMS.
-> Atualizado em agosto de 2026.
+Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 
-## Fundação técnica
+## Arquitetura
 
-- A implementação final será construída em **Astro + TinaCMS**.
-- O projeto oficial permanece no repositório `anatrevizan.com`.
-- O site continuará alojado no **Netlify**.
-- O boilerplate antigo foi substituído pelo starter oficial atual do TinaCMS.
-- A fundação atual utiliza Astro 7, TinaCMS 3, `@tinacms/astro` e `pnpm`.
-- O starter atualizado concluiu o build local com sucesso.
-- A versão Next.js não será promovida a produção.
-- A versão Next.js será utilizada como especificação visual, funcional, editorial e de arquitetura de informação.
+- Astro é a única fonte visual, funcional e editorial. Stack: Astro 7, TinaCMS 3, TypeScript, Tailwind CSS 4 e pnpm; deploy Netlify.
+- As 19 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados.
+- A estrutura visual e as secções pertencem ao código; não existe criação de páginas ou alteração de URLs no CMS.
 
-## Organização dos estilos
+## Conteúdo bilingue
 
-- O Tailwind CSS 4 permanece responsável pelo processamento do CSS global.
-- `src/styles/global.css` é o único entry point global e agrega partials CSS nativos por responsabilidade através de `@import` em build time.
-- Os partials permanecem na mesma pasta, usam o prefixo `_` e não são carregados individualmente pelo browser.
-- Sass não é usado em conjunto com Tailwind CSS 4, evitando um segundo pré-processador incompatível com o fluxo recomendado pelo Tailwind.
+- `src/content/pages` contém 19 JSON: um documento por página, PT e EN na mesma estrutura.
+- Listas, media e destinos são partilhados. Folhas localizadas usam `{ pt, en }`, apresentadas consecutivamente no Tina.
+- PT é a fonte aprovada. EN é tradução humana, sem fallback. Traduções parciais podem ser guardadas; só ficam públicas quando todos os campos localizados usados têm EN.
+- Hero e resumo servem de default SEO; overrides são opcionais. CTAs pertencem à página. Ligações internas usam destinos semânticos.
+- Tina expõe apenas Páginas, configuração global simplificada, Publicações ORCID e Media. ORCID só permite editar idioma, temas, destaque e prioridade.
 
-## Estratégia de migração
+## Media e datas
 
-- Transpor integralmente para Astro a estrutura visual e funcional criada na versão Next.js.
-- Importar para o modelo editorial Astro/TinaCMS todo o conteúdo existente na versão Next.js, preservando a sua origem e colocando-o em `draft` com aprovação pendente até revisão.
-- A migração será rastreável e sem omissões silenciosas: conteúdo incompleto, placeholders, destinos em falta, assets vazios e texto português existente nos documentos ingleses serão preservados ou registados explicitamente como pendências, mas nunca publicados como conteúdo válido.
-- Preservar as 19 rotas previstas.
-- Não converter mecanicamente os componentes React.
-- Reimplementar os componentes em Astro, usando JavaScript apenas onde seja necessário.
-- Corrigir durante a transposição:
-  - acessibilidade;
-  - SEO;
-  - internacionalização;
-  - links provisórios;
-  - formulários;
-  - assets vazios;
-  - dependências runtime desnecessárias;
-  - comportamentos incompatíveis com movimento reduzido ou poupança de dados.
+- Formatos: JPG, PNG, WebP, AVIF, SVG, PDF, MP3 e MP4. PDF/MP3/MP4 são apenas downloads.
+- Originais permanecem no Git. O pipeline Astro/Sharp cria variantes em `_media`; SVG é sanitizado no output. Netlify Image CDN não é usado para garantir paridade local.
+- Imagens são opcionais e exigem alt PT/EN quando não decorativas. O editor controla o ponto focal; proporções ficam no layout.
+- Apenas páginas legais têm data editorial de entrada em vigor. A última alteração é derivada do Git e alimenta páginas legais, SEO e sitemap.
 
-## Gestão de conteúdo
+## Configuração e publicação
 
-- A Ana deverá ficar autónoma na edição do conteúdo.
-- Todo o conteúdo editorial será gerido no TinaCMS:
-  - páginas;
-  - navegação;
-  - serviços;
-  - eventos;
-  - palestras;
-  - formações;
-  - mentorias;
-  - imagens;
-  - CTAs;
-  - contactos;
-  - SEO;
-  - textos legais.
-- Layouts, componentes, validações e integrações permanecem em código.
-- O editor terá preview visual.
-- O conteúdo será guardado no GitHub e cada publicação desencadeará um deploy Netlify.
+- Edição local grava ficheiros. Tina Cloud grava diretamente em `main`; Git fornece histórico/rollback e Netlify publica commits.
+- Preview PT é online. EN incompleto é apenas preview local. Preview não usa edição por clique.
+- Identidade, domínio canónico, routing, labels funcionais, erros, validação e integrações permanecem em código.
+- Contactos, perfis, regiões, idiomas, tipos de pedido, labels da navegação, rodapé e SEO global são editoriais.
 
-## Idiomas
+## Integrações e qualidade
 
-- Os idiomas de lançamento serão **PT-PT e inglês**.
-- O lançamento aguardará pela tradução e revisão integral do inglês.
-- Não haverá fallback visível de português dentro das páginas inglesas.
-- Português será o idioma principal e não terá prefixo:
-  - `/sobre`
-  - `/consultoria`
-- Inglês utilizará `/en` e slugs localizados:
-  - `/en/about`
-  - `/en/consulting`
-- Espanhol ficará preparado no modelo editorial, mas não será publicado na v1.
-- PT-BR não fará parte da primeira versão.
-
-## Âmbito da primeira versão
-
-- Manter a estrutura completa criada na versão Next.js.
-- Preservar as 19 rotas previstas, sujeitas a:
-  - conteúdo final;
-  - revisão linguística;
-  - validação das afirmações profissionais;
-  - enquadramento jurídico;
-  - assets finais;
-  - aprovação da Ana.
-- A primeira versão será um site público, sem:
-  - contas;
-  - pagamentos;
-  - área reservada.
-
-## Calendly
-
-- O Calendly será apresentado como uma ligação externa.
-- Não haverá embed ou script Calendly dentro do site na v1.
-- A URL será configurável através do TinaCMS.
-- O formulário de contacto será apresentado como alternativa.
-
-## Publicações e ORCID
-
-- O ORCID `0000-0003-4365-6053` é a fonte automática dos metadados bibliográficos.
-- Um único sincronizador TypeScript validado tenta atualizar a coleção Markdown antes de cada build. Sem credenciais ou perante falha externa, o build mantém o snapshot versionado, avisa e continua.
-- A execução estrita semanal e manual decorre no GitHub Actions e abre ou atualiza uma pull request dedicada; nunca faz commit direto na branch publicada.
-- A atualização é integral e atómica: respostas vazias, malformadas ou com colisões não alteram ficheiros. Uma sincronização válida cria, atualiza e remove obras conforme o ORCID.
-- A identidade estável usa DOI normalizado, depois identificador externo do grupo e, por último, `put-code`. Duplicados do mesmo grupo são resolvidos por `display-index` e `put-code`, sem preferência por fornecedor.
-- A coleção aceita todos os tipos públicos devolvidos pelo ORCID. Título, revista, ano, tipo, DOI, URL, fonte e `put-code` são gerados e ocultos no TinaCMS.
-- Idioma, temas, destaque e prioridade são um overlay editorial opcional preservado por `sourceId`.
-- Publicações sem URL HTTPS válida permanecem visíveis, mas não geram ligações falsas.
-- A página completa apresenta prioridades primeiro e depois ano decrescente. A Home apresenta a obra mais recente e as duas melhores prioridades, sem duplicados e com preenchimento cronológico.
-
-## Formulário de contacto
-
-- O formulário será processado por um endpoint server-side em Astro/Netlify.
-- Os dados serão gravados através da Google Sheets API.
-- A Ana receberá uma notificação através do Resend.
-- A proteção anti-spam utilizará:
-  - Cloudflare Turnstile;
-  - honeypot;
-  - validação server-side;
-  - limites de tamanho;
-  - prevenção de submissões duplicadas.
-- Campos obrigatórios:
-  - nome;
-  - email;
-  - tipo de pedido;
-  - mensagem;
-  - consentimento.
-- Telefone/WhatsApp e país/jurisdição serão opcionais.
-- Credenciais Google, Resend, Tina e Netlify serão guardadas exclusivamente como variáveis de ambiente.
-
-## Media dos heroes
-
-- A utilização de vídeo será seletiva.
-- Imagens estáticas otimizadas serão o comportamento padrão.
-- Os heroes editoriais partilhados permitem configurar separadamente no TinaCMS uma imagem de fundo e uma imagem lateral, incluindo ponto focal, proporção, finalidade decorativa e texto alternativo localizado.
-- A imagem lateral é empilhada depois do texto abaixo de 1024 px e apresentada numa grelha de duas colunas a partir desse breakpoint, sem JavaScript e sem altura fixa.
-- Assets temporários são permitidos apenas em documentos `draft`; a validação editorial impede a publicação do placeholder identificado pelo projeto.
-- Um vídeo só será ativado quando:
-  - acrescentar valor editorial;
-  - existir em versão final;
-  - tiver licença confirmada;
-  - estiver comprimido;
-  - possuir fallback estático;
-  - respeitar `prefers-reduced-motion`;
-  - respeitar preferências de poupança de dados.
-
-## Tema de cor
-
-- O lançamento inclui temas claro e escuro, com uma paleta escura quente derivada da identidade vinho e terracota.
-- Sem escolha guardada, o site segue `prefers-color-scheme`; uma escolha explícita é persistida localmente como `light` ou `dark` e tem precedência.
-- O tema é aplicado antes da primeira pintura, sem hidratação global, e pode ser alterado através de um botão acessível no final do footer.
-- WCAG AA é bloqueante: texto normal mantém pelo menos 4.5:1 e componentes essenciais pelo menos 3:1. AAA, 7:1 para texto normal, é o objetivo e é obrigatório para o texto principal e secundário sobre o fundo base.
-- A preferência de tema é funcional, não editorial, e não é configurável no TinaCMS.
-
-## Ordem de execução atualizada
-
-1. Auditar e limpar o novo starter, preservando o build válido como baseline.
-2. Definir os modelos editoriais localizados no TinaCMS e o mapa das 19 rotas PT/EN.
-3. Transpor o sistema visual e os componentes partilhados da versão Next.js.
-4. Transpor as 19 rotas e ligá-las ao TinaCMS.
-5. Rever conteúdo, traduções e enquadramento jurídico com a Ana.
-6. Finalizar identidade e assets.
-7. Implementar formulário, Google Sheets, Resend e proteção anti-spam.
-8. Implementar ORCID, snapshot e atualização semanal por pull request. (Concluído em agosto de 2026.)
-9. Finalizar SEO, acessibilidade, páginas legais, testes e CI.
-10. Fazer QA em deploy preview e obter aprovação final da Ana.
-11. Configurar monitorização, rollback e lançamento.
+- ORCID sincroniza em build com validação e snapshot resiliente. Calendly é link HTTPS sem embed.
+- Os textos funcionais e a validação do formulário pertencem ao código; os tipos de pedido permanecem editáveis na configuração global.
+- Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.

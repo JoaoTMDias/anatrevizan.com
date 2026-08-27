@@ -2,7 +2,8 @@
 import HeaderMenu from "./HeaderMenu";
 import { SkipLinks } from "@jtmdias/react-a11y-tools";
 import type { CmsConfig } from "../lib/data";
-import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+import { navigationItems } from "../lib/navigation";
+import { pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
 import LogoHeader from "./LogoHeader.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 interface Props {
@@ -12,39 +13,26 @@ interface Props {
   languageAvailable?: boolean;
 }
 const { config, locale = "pt-PT", routeKey = "home", languageAvailable = false } = Astro.props;
-type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
-const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> =>
-  isRouteKey(item.routeKey);
-const languageField = locale === "pt-PT" ? "pt" : "en";
 const isEnglish = locale === "en";
-const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? [])
-  .filter(present)
-  .filter((item) => item.label)
-  .filter(hasRouteKey);
-const labelFor = (value: { pt: string; en: string } | null | undefined) =>
-  value?.[languageField] ?? "";
+const navigation = navigationItems(config?.navigation, locale);
 const isCurrentSection = (item: (typeof navigation)[number]) =>
-  item.routeKey === routeKey || (item.children ?? []).some((child) => child?.routeKey === routeKey);
-const navigationItems = navigation.map((item) => ({
+  item.routeKey === routeKey || (item.children ?? []).some((child) => child.routeKey === routeKey);
+const renderedNavigation = navigation.map((item) => ({
   item,
   itemRoute: item.routeKey,
-  children: (item.children ?? [])
-    .filter(present)
-    .filter((child) => child.label)
-    .filter(hasRouteKey),
+  children: item.children ?? [],
 }));
-const desktopItems = navigationItems.map(({ item, itemRoute, children }) => ({
+const desktopItems = renderedNavigation.map(({ item, itemRoute, children }) => ({
   type: item.type,
-  label: labelFor(item.label),
+  label: item.label,
   href: pathFor(itemRoute, locale),
   emphasis: item.emphasis ?? false,
   isCurrent: itemRoute === routeKey,
   isCurrentSection: isCurrentSection(item),
   children: children.map((child) => ({
-    label: labelFor(child.label),
-    description: child.description ? labelFor(child.description) : undefined,
-    tag: child.tag ? labelFor(child.tag) : undefined,
+    label: child.label,
+    description: child.description,
+    tag: child.tag,
     highlight: child.highlight ?? false,
     href: pathFor(child.routeKey, locale),
     isCurrent: child.routeKey === routeKey,
