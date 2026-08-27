@@ -1,8 +1,8 @@
 {
   "routeKey": "about",
   "title": {
-    "pt": "Dr. Ana, PhD",
-    "en": "Dr. Ana, PhD"
+    "pt": "Sobre mim",
+    "en": "About me"
   },
   "summary": {
     "pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
@@ -30,8 +30,8 @@
   },
   "about": {
     "tag": {
-      "pt": "Sobre mim",
-      "en": "About me"
+      "pt": "Dra. Ana, PhD",
+      "en": "Dr. Ana, PhD"
     },
     "subtitle": {
       "pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas — e entre dois países.",
