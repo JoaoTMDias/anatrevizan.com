@@ -1,6 +1,7 @@
 ---
 import type { CmsConfig } from "../lib/data";
-import { isRouteKey, pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+import { navigationItems } from "../lib/navigation";
+import { pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
 import IconLink from "./IconLink.astro";
 import Icon from "./ui/Icon.astro";
 interface Props {
@@ -8,17 +9,11 @@ interface Props {
   locale?: PublishedLocale;
 }
 const { config, locale = "pt-PT" } = Astro.props;
-type RouteKeyItem<T extends { routeKey: string }> = T & { routeKey: RouteKey };
-const hasRouteKey = <T extends { routeKey: string }>(item: T): item is RouteKeyItem<T> =>
-  isRouteKey(item.routeKey);
 const languageField = locale === "pt-PT" ? "pt" : "en";
 const labelFor = (value: { pt: string; en: string } | null | undefined) =>
   value?.[languageField] ?? "";
 const present = <T,>(value: T | null): value is T => value !== null;
-const navigation = (config?.navigation ?? [])
-  .filter(present)
-  .filter((item) => Boolean(item.label))
-  .filter(hasRouteKey);
+const navigation = navigationItems(config?.navigation, locale);
 const menus = navigation.filter((item) => item.type === "menu" && item.children?.length);
 const directLinks = navigation.filter(
   (item) => item.type !== "menu" && item.routeKey !== "contact"
@@ -69,24 +64,21 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
   <div class="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
     {
       menus.map((menu) => (
-        <nav aria-label={labelFor(menu.label)}>
+        <nav aria-label={menu.label}>
           <a
             href={pathFor(menu.routeKey, locale)}
             class="font-heading font-semibold text-foreground hover:text-primary"
           >
-            {labelFor(menu.label)}
+            {menu.label}
           </a>
           <ul class="mt-4 space-y-2.5 text-base text-muted-foreground">
-            {(menu.children ?? [])
-              .filter(present)
-              .filter(hasRouteKey)
-              .map((child) => (
+            {(menu.children ?? []).map((child) => (
                 <li>
                   <a
                     class="hover:text-primary hover:underline"
                     href={pathFor(child.routeKey, locale)}
                   >
-                    {labelFor(child.label)}
+                    {child.label}
                   </a>
                 </li>
               ))}
@@ -103,7 +95,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
           directLinks.map((item) => (
             <li>
               <a class="hover:text-primary hover:underline" href={pathFor(item.routeKey, locale)}>
-                {labelFor(item.label)}
+                {item.label}
               </a>
             </li>
           ))

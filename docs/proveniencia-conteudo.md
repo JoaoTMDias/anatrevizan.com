@@ -15,11 +15,10 @@ O conteúdo PT das páginas Home, Sobre, Consultoria, Academia, Contacto e Agend
 - Tradução e revisão integral de EN nas 19 páginas e configuração global.
 - Texto e revisão jurídica das três páginas legais, com datas de entrada em vigor.
 - Fotografia profissional, kit de palestrante e restantes assets finais/licenças.
-- Formulário server-side e política final de privacidade, consentimento e retenção.
+- Política final de privacidade, consentimento e retenção do formulário.
 - Confirmação final de descrições profissionais, âmbito geográfico e serviços.
 
 ## Problemas herdados ainda abertos
 
-- Alguns campos históricos de contacto permanecem nos payloads das páginas embora a renderização use a configuração global; devem ser eliminados após comparação editorial final.
-- O aviso visual específico do Tina para tradução parcial e o registo que impede regressão de uma tradução anteriormente publicada requerem uma extensão de validação dedicada.
-- A data da última alteração ainda precisa de ser ligada ao Git, metadata e sitemap.
+- O aviso visual específico do Tina para tradução parcial ainda requer uma extensão de interface dedicada.
+- O registo inicial de traduções EN já publicadas está vazio porque nenhuma das rotas inglesas atuais está completa; deve ser atualizado quando a primeira tradução for aprovada e publicada.

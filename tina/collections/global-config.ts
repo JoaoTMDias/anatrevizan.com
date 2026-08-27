@@ -25,6 +25,17 @@ const optionalLocalizedText = (name: string, label: string) => ({
 	],
 });
 
+const navigationEntry = (name: string, label: string, withTag = false) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		localizedText("label", "Nome no menu"),
+		localizedText("description", "Descrição curta"),
+		...(withTag ? [localizedText("tag", "Etiqueta opcional")] : []),
+	],
+});
+
 export const GlobalConfigCollection: Collection = {
 	name: "config",
 	label: "Global settings",
@@ -76,70 +87,50 @@ export const GlobalConfigCollection: Collection = {
 		},
 		{
 			name: "navigation",
-			label: "Labels da navegação",
+			label: "Textos da navegação",
 			type: "object",
-			list: true,
-			ui: {
-				itemProps: (item) => ({
-					label: item.label?.pt ?? item.routeKey ?? "Navigation item",
-				}),
-			},
 			fields: [
 				{
-					name: "type",
-					label: "Item type",
-					type: "string",
-					required: true,
-					ui: { component: "hidden" },
-					options: [
-						{ label: "Direct link", value: "link" },
-						{ label: "Menu with children", value: "menu" },
-					],
-				},
-				{
-					name: "routeKey",
-					label: "Canonical landing route",
-					type: "string",
-					required: true,
-					ui: { component: "hidden" },
-					description: "For a menu, this is its hub/landing page.",
-				},
-				localizedText("label", "Localized label"),
-				{
-					name: "emphasis",
-					label: "Display as primary action",
-					type: "boolean",
-					ui: { component: "hidden" },
-				},
-				{
-					name: "children",
-					label: "Labels do submenu",
+					name: "consulting",
+					label: "Menu Consultoria",
 					type: "object",
-					list: true,
-					ui: {
-						itemProps: (item) => ({
-							label: item.label?.pt ?? item.routeKey ?? "Menu entry",
-						}),
-					},
 					fields: [
-						{
-							name: "routeKey",
-							label: "Canonical route",
-							type: "string",
-							required: true,
-							ui: { component: "hidden" },
-						},
-						localizedText("label", "Localized title"),
-						localizedText("description", "Localized short description"),
-						localizedText("tag", "Localized optional tag"),
-						{
-							name: "highlight",
-							label: "Highlight this entry",
-							type: "boolean",
-							ui: { component: "hidden" },
-						},
+						localizedText("label", "Nome do menu"),
+						navigationEntry(
+							"immigrationMobility",
+							"Migração e Mobilidade",
+							true,
+						),
+						navigationEntry("legal", "Consultoria Jurídica", true),
+						navigationEntry("environmentalEsg", "Ambiental e ESG", true),
+						navigationEntry(
+							"publicPolicy",
+							"Políticas Públicas e Governança",
+							true,
+						),
+						navigationEntry(
+							"legalOpinions",
+							"Pareceres e Notas Técnicas",
+							true,
+						),
 					],
 				},
+				{
+					name: "academic",
+					label: "Menu Academia",
+					type: "object",
+					fields: [
+						localizedText("label", "Nome do menu"),
+						navigationEntry("mentoring", "Mentorias e Apoio Académico"),
+						navigationEntry("publications", "Publicações"),
+						navigationEntry("events", "Eventos e Palestras"),
+						navigationEntry("speaking", "Palestras e Convites"),
+						navigationEntry("training", "Cursos e Formações"),
+					],
+				},
+				localizedText("about", "Sobre"),
+				localizedText("contact", "Contacto"),
+				localizedText("booking", "Agendar contacto"),
 			],
 		},
 		{

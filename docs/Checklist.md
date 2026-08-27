@@ -10,11 +10,8 @@
 
 ## Funcionalidade
 
-- [ ] Implementar formulário server-side, Google Sheets, Resend, Turnstile, limites, retenção e deduplicação.
-- [ ] Tornar os tipos de pedido configuráveis no modelo global.
 - [ ] Configurar credenciais ORCID no Netlify e GitHub e ativar sincronização remota.
-- [ ] Derivar última alteração do Git e expô-la nas páginas legais, metadata e `lastmod` do sitemap.
-- [ ] Acrescentar aviso não bloqueante no admin para traduções parciais e bloqueio explícito de regressão de EN já publicado.
+- [ ] Acrescentar aviso não bloqueante no admin para traduções parciais.
 - [ ] Confirmar preview PT online e restringir preview EN incompleto ao ambiente local.
 
 ## QA e lançamento

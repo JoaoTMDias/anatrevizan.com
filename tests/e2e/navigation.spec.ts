@@ -31,7 +31,7 @@ test.describe("site navigation", () => {
 		const dialog = page.getByRole("dialog", { name: "Menu principal" });
 		await expect(dialog).toBeVisible();
 		await expect(
-			dialog.getByRole("link", { name: "Agendar primeiro contacto" }),
+			dialog.getByRole("link", { name: /Agendar (?:primeiro )?contacto/ }),
 		).toHaveAttribute("href", "/agendar");
 
 		await page.keyboard.press("Escape");

@@ -21,7 +21,7 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 - Formatos: JPG, PNG, WebP, AVIF, SVG, PDF, MP3 e MP4. PDF/MP3/MP4 são apenas downloads.
 - Originais permanecem no Git. O pipeline Astro/Sharp cria variantes em `_media`; SVG é sanitizado no output. Netlify Image CDN não é usado para garantir paridade local.
 - Imagens são opcionais e exigem alt PT/EN quando não decorativas. O editor controla o ponto focal; proporções ficam no layout.
-- Apenas páginas legais têm data editorial de entrada em vigor. A última alteração é derivada do Git e deve alimentar páginas legais, SEO e sitemap.
+- Apenas páginas legais têm data editorial de entrada em vigor. A última alteração é derivada do Git e alimenta páginas legais, SEO e sitemap.
 
 ## Configuração e publicação
 
@@ -33,5 +33,5 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 ## Integrações e qualidade
 
 - ORCID sincroniza em build com validação e snapshot resiliente. Calendly é link HTTPS sem embed.
-- O formulário previsto é server-side com Google Sheets, Resend, Turnstile, honeypot, limites e deduplicação.
+- Os textos funcionais e a validação do formulário pertencem ao código; os tipos de pedido permanecem editáveis na configuração global.
 - Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.

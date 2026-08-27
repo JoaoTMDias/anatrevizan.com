@@ -18,6 +18,7 @@ import { GlobalConfigCollection } from "../tina/collections/global-config.ts";
 import { contactPageFields } from "../tina/collections/contact-sections.ts";
 import { contactFormCopy } from "../src/lib/contact-form-i18n.ts";
 import { deriveLinkedPageTitles } from "../src/lib/data.ts";
+import { navigationItems } from "../src/lib/navigation.ts";
 
 const directory = join(process.cwd(), "src/content/pages");
 const pages = readdirSync(directory)
@@ -147,13 +148,46 @@ describe("modelo editorial bilingue", () => {
 		const navigation = field("navigation");
 		if (!navigation || navigation.type !== "object")
 			throw new Error("navigation ausente");
-		for (const name of ["type", "routeKey", "emphasis"])
-			expect(
-				navigation.fields?.find((item) => item.name === name)?.ui,
-			).toMatchObject({
-				component: "hidden",
-			});
+		expect(navigation.list).not.toBe(true);
+		expect(navigation.fields?.map((item) => item.name)).toEqual([
+			"consulting",
+			"academic",
+			"about",
+			"contact",
+			"booking",
+		]);
+		expect(JSON.stringify(navigation)).not.toMatch(
+			/routeKey|emphasis|highlight/,
+		);
 		expect(field("requestTypes")).toBeDefined();
+	});
+
+	it("deriva estrutura, destinos e destaques da navegação no código", () => {
+		const navigation = navigationItems(
+			{
+				consulting: { label: { pt: "Consultoria", en: "Consulting" } },
+				academic: {
+					label: { pt: "Academia", en: "Academic" },
+					publications: { label: { pt: "Publicações", en: "Publications" } },
+				},
+				about: { pt: "Sobre", en: "About" },
+				contact: { pt: "Contacto", en: "Contact" },
+				booking: { pt: "Agendar", en: "Book" },
+			} as never,
+			"pt-PT",
+		);
+		expect(navigation.map((item) => item.routeKey)).toEqual([
+			"consulting",
+			"academic",
+			"about",
+			"contact",
+			"booking",
+		]);
+		expect(navigation.at(-1)?.emphasis).toBe(true);
+		expect(
+			navigation[1].children?.find((item) => item.routeKey === "publications")
+				?.highlight,
+		).toBe(true);
 	});
 
 	it("mantém os textos funcionais do formulário em código", () => {
