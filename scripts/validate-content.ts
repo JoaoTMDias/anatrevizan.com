@@ -1,6 +1,9 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
+import publishedEnglishRoutes from "../src/content/published-en.json" with {
+	type: "json",
+};
 import {
 	isLocalizedValue,
 	missingLocalizedPaths,
@@ -9,6 +12,7 @@ import {
 	type BilingualEditorialDocument,
 	validateEditorialDocuments,
 } from "../src/lib/editorial.ts";
+import { isRouteKey, type RouteKey } from "../src/lib/routing.ts";
 
 const root = process.cwd();
 const errors: string[] = [];
@@ -21,7 +25,15 @@ const pages = readdirSync(directory)
 			readFileSync(join(directory, file), "utf8"),
 		) as BilingualEditorialDocument,
 	}));
-for (const issue of validateEditorialDocuments(pages.map(({ value }) => value)))
+const invalidPublishedRoutes = publishedEnglishRoutes.filter(
+	(route) => !isRouteKey(route),
+);
+for (const route of invalidPublishedRoutes)
+	errors.push(`[pages/published-en] rota inválida: ${route}`);
+for (const issue of validateEditorialDocuments(
+	pages.map(({ value }) => value),
+	publishedEnglishRoutes.filter(isRouteKey) as RouteKey[],
+))
 	errors.push(`[pages/${issue.code}] ${issue.message}`);
 for (const { file, value } of pages) {
 	if (`${value.routeKey}.json` !== file)
@@ -33,6 +45,23 @@ for (const { file, value } of pages) {
 		if (Array.isArray(node))
 			return node.forEach((child, index) => walk(child, `${path}[${index}]`));
 		if (!node || typeof node !== "object") return;
+		const record = node as Record<string, unknown>;
+		if (
+			typeof record.image === "string" &&
+			record.image.trim() !== "" &&
+			"decorative" in record &&
+			record.decorative !== true
+		) {
+			const alt = record.alt;
+			if (
+				!isLocalizedValue(alt) ||
+				typeof alt.pt !== "string" ||
+				alt.pt.trim() === ""
+			)
+				errors.push(
+					`[pages/${file}] imagem não decorativa sem alt PT-PT em ${path}`,
+				);
+		}
 		for (const [key, child] of Object.entries(node)) {
 			const childPath = path ? `${path}.${key}` : key;
 			if (

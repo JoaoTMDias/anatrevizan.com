@@ -1,136 +1,130 @@
 {
-  "_template": "academicService",
-  "routeKey": "training",
-  "media": {
-    "foreground": {
-      "image": "/hero-placeholder.webp",
-      "alt": {
-        "pt": "",
-        "en": ""
-      },
-      "decorative": true,
-      "aspectRatio": "square"
-    }
-  },
-  "title": {
-    "pt": "Cursos e Formações",
-    "en": "Training"
-  },
-  "summary": {
-    "pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Cursos e Formações · Direito ambiental, ESG e clima",
-      "en": "Training — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito ambiental, ESG, governança climática, compliance e Direito da UE.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "academicService": {
-    "subtitle": {
-      "pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
-      "en": ""
-    },
-    "introHeading": {
-      "pt": "Conhecimento que se usa na segunda-feira",
-      "en": ""
-    },
-    "introParagraphs": [
-      {
-        "pt": "Dou aulas há mais de uma década — no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.",
-        "en": ""
-      },
-      {
-        "pt": "Desenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina.",
-        "en": ""
-      }
-    ],
-    "servicesHeading": {
-      "pt": "Temas",
-      "en": ""
-    },
-    "servicesSubtitle": {
-      "pt": "Programas adaptados ao público e aos objetivos de cada instituição.",
-      "en": ""
-    },
-    "services": [
-      {
-        "title": {
-          "pt": "Direito Ambiental",
-          "en": ""
-        },
-        "description": {
-          "pt": "Fundamentos e aplicação prática, do licenciamento à litigância climática.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "ESG e Sustentabilidade",
-          "en": ""
-        },
-        "description": {
-          "pt": "Diagnóstico, indicadores e governança corporativa.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Governança Climática",
-          "en": ""
-        },
-        "description": {
-          "pt": "Políticas, adaptação e o papel do Direito na transição.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Compliance",
-          "en": ""
-        },
-        "description": {
-          "pt": "Gestão de riscos regulatórios e boas práticas.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Direito da União Europeia",
-          "en": ""
-        },
-        "description": {
-          "pt": "EUDR, CSDDD, CSRD e o alcance da regulação europeia.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Direito Migratório e Direitos Humanos",
-          "en": ""
-        },
-        "description": {
-          "pt": "Mobilidade internacional e dignidade nas cadeias de fornecimento.",
-          "en": ""
-        }
-      }
-    ],
-    "note": {
-      "pt": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
-      "en": ""
-    },
-    "ctaHeading": {
-      "pt": "Quer uma formação para a sua equipa ou instituição?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
-      "en": ""
-    }
-  }
+	"_template": "academicService",
+	"routeKey": "training",
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": {
+				"pt": "",
+				"en": ""
+			},
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
+	"title": {
+		"pt": "Cursos e Formações",
+		"en": "Training"
+	},
+	"summary": {
+		"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Cursos e Formações · Direito ambiental, ESG e clima",
+			"en": "Training — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito ambiental, ESG, governança climática, compliance e Direito da UE.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"academicService": {
+		"subtitle": {
+			"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+			"en": ""
+		},
+		"introHeading": {
+			"pt": "Conhecimento que se usa na segunda-feira",
+			"en": ""
+		},
+		"introParagraphs": {
+			"pt": "Dou aulas há mais de uma década — no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.\n\nDesenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina.",
+			"en": ""
+		},
+		"servicesHeading": {
+			"pt": "Temas",
+			"en": ""
+		},
+		"servicesSubtitle": {
+			"pt": "Programas adaptados ao público e aos objetivos de cada instituição.",
+			"en": ""
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Direito Ambiental",
+					"en": ""
+				},
+				"description": {
+					"pt": "Fundamentos e aplicação prática, do licenciamento à litigância climática.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "ESG e Sustentabilidade",
+					"en": ""
+				},
+				"description": {
+					"pt": "Diagnóstico, indicadores e governança corporativa.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Governança Climática",
+					"en": ""
+				},
+				"description": {
+					"pt": "Políticas, adaptação e o papel do Direito na transição.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Compliance",
+					"en": ""
+				},
+				"description": {
+					"pt": "Gestão de riscos regulatórios e boas práticas.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito da União Europeia",
+					"en": ""
+				},
+				"description": {
+					"pt": "EUDR, CSDDD, CSRD e o alcance da regulação europeia.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito Migratório e Direitos Humanos",
+					"en": ""
+				},
+				"description": {
+					"pt": "Mobilidade internacional e dignidade nas cadeias de fornecimento.",
+					"en": ""
+				}
+			}
+		],
+		"note": {
+			"pt": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
+			"en": ""
+		},
+		"ctaHeading": {
+			"pt": "Quer uma formação para a sua equipa ou instituição?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
+			"en": ""
+		}
+	}
 }

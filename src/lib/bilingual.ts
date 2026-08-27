@@ -41,10 +41,8 @@ export function missingLocalizedPaths(
 	if (isLocalizedValue(value)) {
 		const localized = locale === "pt-PT" ? value.pt : value.en;
 		return locale === "en" &&
-			typeof value.pt === "string" &&
-			value.pt.trim() !== "" &&
-			typeof localized === "string" &&
-			localized.trim() === ""
+			hasLocalizedContent(value.pt) &&
+			!hasLocalizedContent(localized)
 			? [prefix]
 			: [];
 	}
@@ -57,6 +55,15 @@ export function missingLocalizedPaths(
 			missingLocalizedPaths(child, locale, prefix ? `${prefix}.${key}` : key),
 		);
 	return [];
+}
+
+export function hasLocalizedContent(value: unknown): boolean {
+	if (typeof value === "string") return value.trim() !== "";
+	if (Array.isArray(value)) return value.some(hasLocalizedContent);
+	if (!value || typeof value !== "object") return false;
+	const record = value as Record<string, unknown>;
+	if (record.type === "text") return hasLocalizedContent(record.text);
+	return "children" in record && hasLocalizedContent(record.children);
 }
 
 export function isLocaleComplete(

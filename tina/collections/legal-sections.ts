@@ -1,4 +1,5 @@
 import type { TinaField } from "tinacms";
+import { richText } from "./common";
 
 const text = (name: string, label: string, required = true): TinaField => ({
 	name,
@@ -28,14 +29,7 @@ const legalDocument = (name: string, label: string): TinaField => ({
 			list: true,
 			fields: [
 				text("heading", "Heading"),
-				{
-					name: "paragraphs",
-					label: "Paragraphs",
-					type: "string",
-					list: true,
-					required: true,
-					ui: { component: "textarea" },
-				},
+				richText("paragraphs", "Conteúdo legal"),
 			],
 		},
 	],

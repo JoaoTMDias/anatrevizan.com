@@ -23,7 +23,7 @@ const menus = navigation.filter((item) => item.type === "menu" && item.children?
 const directLinks = navigation.filter(
   (item) => item.type !== "menu" && item.routeKey !== "contact"
 );
-const legalRoutes = (config?.footer?.legalRouteKeys ?? []).filter(isRouteKey);
+const legalRoutes: RouteKey[] = ["privacy", "terms", "cookies"];
 const email = config?.contacts?.email;
 const phone = config?.contacts?.phone;
 const profiles = (config?.contacts?.profiles ?? [])
@@ -200,7 +200,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
       <p>
         © {new Date().getFullYear()}
         &nbsp;
-        {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? config?.identity?.name}
+        {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? "Ana Trevizan"}
       </p>
     </div>
   </div>

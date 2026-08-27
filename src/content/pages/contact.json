@@ -1,178 +1,60 @@
 {
-  "_template": "contact",
-  "routeKey": "contact",
-  "title": {
-    "pt": "Vamos falar",
-    "en": "Contact"
-  },
-  "summary": {
-    "pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Contacto",
-      "en": "Contact — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Fale com a Dra. Ana Trevizan. Consultoria jurídica e ambiental entre Portugal e Brasil, com atendimento em português, inglês e espanhol.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "media": {
-    "foreground": {
-      "image": "/contact-hero.webp",
-      "alt": {
-        "pt": "Telefone iPhone com o ícone da aplicação do Whatsapp",
-        "en": ""
-      },
-      "decorative": false,
-      "aspectRatio": "landscape"
-    }
-  },
-  "contactPage": {
-    "tag": {
-      "pt": "Contacto",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-      "en": ""
-    },
-    "formCopy": {
-      "nameLabel": {
-        "pt": "Nome completo",
-        "en": ""
-      },
-      "whatsappLabel": {
-        "pt": "WhatsApp",
-        "en": ""
-      },
-      "emailLabel": {
-        "pt": "E-mail",
-        "en": ""
-      },
-      "countryLabel": {
-        "pt": "País onde está",
-        "en": ""
-      },
-      "subjectLabel": {
-        "pt": "Assunto",
-        "en": ""
-      },
-      "subjectPlaceholder": {
-        "pt": "Conte o que aconteceu e o que procura",
-        "en": ""
-      },
-      "consentText": {
-        "pt": "Consinto com o tratamento dos meus dados pessoais de acordo com a",
-        "en": ""
-      },
-      "privacyPolicyLabel": {
-        "pt": "Política de Privacidade",
-        "en": ""
-      },
-      "submitLabel": {
-        "pt": "Enviar",
-        "en": ""
-      },
-      "successMessage": {
-        "pt": "Mensagem enviada com sucesso. Entrarei em contacto em breve.",
-        "en": ""
-      },
-      "errorMessage": {
-        "pt": "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.",
-        "en": ""
-      },
-      "countries": [
-        {
-          "pt": "Portugal",
-          "en": ""
-        },
-        {
-          "pt": "Brasil",
-          "en": ""
-        },
-        {
-          "pt": "Espanha",
-          "en": ""
-        },
-        {
-          "pt": "Outro país da União Europeia",
-          "en": ""
-        },
-        {
-          "pt": "Outro",
-          "en": ""
-        }
-      ]
-    },
-    "otherMethodsHeading": {
-      "pt": "Outras formas de contacto",
-      "en": ""
-    },
-    "contactMethods": [
-      {
-        "label": {
-          "pt": "E-mail",
-          "en": ""
-        },
-        "value": {
-          "pt": "af.trevizan@gmail.com",
-          "en": ""
-        },
-        "url": "mailto:af.trevizan@gmail.com",
-        "status": "valid"
-      },
-      {
-        "label": {
-          "pt": "WhatsApp",
-          "en": ""
-        },
-        "value": {
-          "pt": "+351 926 430 792",
-          "en": ""
-        },
-        "url": "https://wa.me/351926430792",
-        "status": "valid"
-      },
-      {
-        "label": {
-          "pt": "LinkedIn",
-          "en": ""
-        },
-        "url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/",
-        "status": "valid"
-      },
-      {
-        "label": {
-          "pt": "Instagram",
-          "en": ""
-        },
-        "url": "https://www.instagram.com/dratrevizan",
-        "status": "valid"
-      },
-      {
-        "label": {
-          "pt": "ORCID",
-          "en": ""
-        },
-        "url": "https://orcid.org/0000-0003-4365-6053",
-        "status": "valid"
-      }
-    ],
-    "countriesLabel": {
-      "pt": "Portugal · Brasil",
-      "en": ""
-    },
-    "languagesLabel": {
-      "pt": "Atendimento em PT · EN · ES",
-      "en": ""
-    },
-    "bookingCta": {
-      "pt": "Prefere agendar uma conversa?",
-      "en": ""
-    }
-  }
+	"_template": "contact",
+	"routeKey": "contact",
+	"title": {
+		"pt": "Vamos falar",
+		"en": "Contact"
+	},
+	"summary": {
+		"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Contacto",
+			"en": "Contact — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Fale com a Dra. Ana Trevizan. Consultoria jurídica e ambiental entre Portugal e Brasil, com atendimento em português, inglês e espanhol.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"media": {
+		"foreground": {
+			"image": "/contact-hero.webp",
+			"alt": {
+				"pt": "Telefone iPhone com o ícone da aplicação do Whatsapp",
+				"en": ""
+			},
+			"decorative": false,
+			"aspectRatio": "landscape"
+		}
+	},
+	"contactPage": {
+		"tag": {
+			"pt": "Contacto",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
+			"en": ""
+		},
+		"otherMethodsHeading": {
+			"pt": "Outras formas de contacto",
+			"en": ""
+		},
+		"countriesLabel": {
+			"pt": "Portugal · Brasil",
+			"en": ""
+		},
+		"languagesLabel": {
+			"pt": "Atendimento em PT · EN · ES",
+			"en": ""
+		},
+		"bookingCta": {
+			"pt": "Prefere agendar uma conversa?",
+			"en": ""
+		}
+	}
 }

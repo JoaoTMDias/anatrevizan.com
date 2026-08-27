@@ -1,299 +1,287 @@
 {
-  "_template": "consultingService",
-  "routeKey": "environmental-esg",
-  "title": {
-    "pt": "Consultoria Ambiental e ESG",
-    "en": "Environmental and ESG"
-  },
-  "summary": {
-    "pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Consultoria Ambiental e ESG · EUDR, CSDDD e CSRD",
-      "en": "Environmental and ESG — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Consultoria em Direito ambiental, ESG e compliance para empresas expostas à regulação europeia — EUDR, CSDDD e CSRD — com base em pesquisa de campo sobre cadeias florestais.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "media": {
-    "background": {
-      "image": "",
-      "focalPoint": "center"
-    },
-    "foreground": {
-      "image": "/consultoria-ambiental-esg-hero.webp",
-      "alt": {
-        "pt": "Uma foto da floresta tropical",
-        "en": ""
-      },
-      "decorative": false,
-      "aspectRatio": "square"
-    }
-  },
-  "consultingService": {
-    "tag": {
-      "pt": "Brasil · União Europeia",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
-      "en": ""
-    },
-    "introHeading": {
-      "pt": "Quando a norma europeia muda a sua operação",
-      "en": ""
-    },
-    "introImage": {
-      "image": "/consultoria-juridica-intro.webp",
-      "alt": {
-        "pt": "Ana Flávia sentada, a segurar um livro sobre alterações climáticas",
-        "en": ""
-      },
-      "decorative": true
-    },
-    "introParagraphs": [
-      {
-        "pt": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia — mesmo a partir do Brasil. Um produtor que exporta madeira, um frigorífico, uma trading de commodities: todos passam a responder por aquilo que acontece na sua cadeia.",
-        "en": ""
-      },
-      {
-        "pt": "O risco raramente está na falta de vontade de cumprir. Está na distância entre o texto de um regulamento europeu e a realidade de uma operação no terreno. É essa distância que trabalho para encurtar — com análise jurídica clara, fundamentada e aplicável.",
-        "en": ""
-      }
-    ],
-    "servicesHeading": {
-      "pt": "Como posso ajudar",
-      "en": ""
-    },
-    "servicesSubtitle": {
-      "pt": "Da avaliação de risco à adequação regulatória, na interface entre Direito, sustentabilidade e governança.",
-      "en": ""
-    },
-    "services": [
-      {
-        "title": {
-          "pt": "ESG e relatórios de sustentabilidade",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Diagnóstico ESG e definição de indicadores",
-            "en": ""
-          },
-          {
-            "pt": "Relatórios de sustentabilidade",
-            "en": ""
-          },
-          {
-            "pt": "Governança corporativa e análise regulatória",
-            "en": ""
-          },
-          {
-            "pt": "Apoio à implementação de boas práticas",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Compliance ambiental e EUDR",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Compliance ambiental e ESG",
-            "en": ""
-          },
-          {
-            "pt": "EUDR — Regulamento Europeu de Produtos Livres de Desflorestação",
-            "en": ""
-          },
-          {
-            "pt": "Análise de cadeias produtivas e de fornecedores",
-            "en": ""
-          },
-          {
-            "pt": "Gestão de riscos regulatórios",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Due diligence ambiental e laboral",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Conformidade com a legislação brasileira e europeia",
-            "en": ""
-          },
-          {
-            "pt": "Riscos de trabalho forçado e infantil nas cadeias de fornecimento",
-            "en": ""
-          },
-          {
-            "pt": "Avaliação de fornecedores e de impactos",
-            "en": ""
-          },
-          {
-            "pt": "Apoio à implementação de políticas de direitos humanos",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Regulação da União Europeia",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "EUDR (desflorestação)",
-            "en": ""
-          },
-          {
-            "pt": "CSDDD (dever de diligência)",
-            "en": ""
-          },
-          {
-            "pt": "CSRD (relato de sustentabilidade)",
-            "en": ""
-          },
-          {
-            "pt": "Adequação e fortalecimento da governança",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Mudanças climáticas e governança",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Governança e adaptação climática",
-            "en": ""
-          },
-          {
-            "pt": "Políticas públicas e planeamento territorial",
-            "en": ""
-          },
-          {
-            "pt": "Estratégias para municípios e regiões",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Avaliação de riscos e relatórios técnicos",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Riscos climáticos, regulatórios e ambientais",
-            "en": ""
-          },
-          {
-            "pt": "Análise de vulnerabilidades e de impactos de novas normas",
-            "en": ""
-          },
-          {
-            "pt": "Pareceres, notas técnicas e estudos ambientais",
-            "en": ""
-          }
-        ]
-      }
-    ],
-    "differentiatorEyebrow": {
-      "pt": "O que me distingue",
-      "en": ""
-    },
-    "differentiatorHeading": {
-      "pt": "Não falo do EUDR de fora. Fui à Amazónia estudá-lo.",
-      "en": ""
-    },
-    "differentiatorImage": {
-      "image": "/ambiental-esg-amazonia.webp",
-      "alt": {
-        "pt": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta.",
-        "en": ""
-      },
-      "decorative": false
-    },
-    "differentiatorParagraphs": [
-      {
-        "pt": "O meu doutoramento na NOVA Lisboa investigou o «Efeito Bruxelas» sobre a política florestal brasileira. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam — ou tropeçam — na prática.",
-        "en": ""
-      },
-      {
-        "pt": "É a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta cada parecer e cada recomendação que entrego.",
-        "en": ""
-      }
-    ],
-    "differentiatorCredentials": [
-      {
-        "pt": "Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (bolseira FCT)",
-        "en": ""
-      },
-      {
-        "pt": "SPF Early Career Fellow — Rights Lab, University of Nottingham, em cadeias globais de fornecimento",
-        "en": ""
-      },
-      {
-        "pt": "Assessora Especial na Secretaria de Meio Ambiente de Mato Grosso (SEMA-MT) — políticas ambientais por dentro",
-        "en": ""
-      }
-    ],
-    "relatedWorkHeading": {
-      "pt": "Trabalho relacionado",
-      "en": ""
-    },
-    "relatedWorkSubtitle": {
-      "pt": "A autoridade nesta área não é uma afirmação — está publicada e é verificável.",
-      "en": ""
-    },
-    "relatedPublications": [
-      {
-        "title": {
-          "pt": "Exploring the Brussels Effect",
-          "en": ""
-        },
-        "publication": {
-          "pt": "Revista de Direito (2024)",
-          "en": ""
-        },
-        "highlight": "Citado pela OCDE"
-      },
-      {
-        "title": {
-          "pt": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
-          "en": ""
-        },
-        "publication": {
-          "pt": "International Journal for the Semiotics of Law (2025)",
-          "en": ""
-        }
-      }
-    ],
-    "note": {
-      "pt": "Atuação preventiva, consultiva e extrajudicial, orientada para a conformidade e a gestão de risco. Não inclui representação em processos judiciais.",
-      "en": ""
-    },
-    "ctaHeading": {
-      "pt": "A sua cadeia está preparada para a regulação europeia?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Marque uma conversa inicial para mapearmos, sem compromisso, onde estão os seus riscos e por onde começar.",
-      "en": ""
-    }
-  }
+	"_template": "consultingService",
+	"routeKey": "environmental-esg",
+	"title": {
+		"pt": "Consultoria Ambiental e ESG",
+		"en": "Environmental and ESG"
+	},
+	"summary": {
+		"pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Consultoria Ambiental e ESG · EUDR, CSDDD e CSRD",
+			"en": "Environmental and ESG — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Consultoria em Direito ambiental, ESG e compliance para empresas expostas à regulação europeia — EUDR, CSDDD e CSRD — com base em pesquisa de campo sobre cadeias florestais.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"media": {
+		"background": {
+			"image": "",
+			"focalPoint": "center"
+		},
+		"foreground": {
+			"image": "/consultoria-ambiental-esg-hero.webp",
+			"alt": {
+				"pt": "Uma foto da floresta tropical",
+				"en": ""
+			},
+			"decorative": false,
+			"aspectRatio": "square"
+		}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Brasil · União Europeia",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
+			"en": ""
+		},
+		"introHeading": {
+			"pt": "Quando a norma europeia muda a sua operação",
+			"en": ""
+		},
+		"introImage": {
+			"image": "/consultoria-juridica-intro.webp",
+			"alt": {
+				"pt": "Ana Flávia sentada, a segurar um livro sobre alterações climáticas",
+				"en": ""
+			},
+			"decorative": true
+		},
+		"introParagraphs": {
+			"pt": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia — mesmo a partir do Brasil. Um produtor que exporta madeira, um frigorífico, uma trading de commodities: todos passam a responder por aquilo que acontece na sua cadeia.\n\nO risco raramente está na falta de vontade de cumprir. Está na distância entre o texto de um regulamento europeu e a realidade de uma operação no terreno. É essa distância que trabalho para encurtar — com análise jurídica clara, fundamentada e aplicável.",
+			"en": ""
+		},
+		"servicesHeading": {
+			"pt": "Como posso ajudar",
+			"en": ""
+		},
+		"servicesSubtitle": {
+			"pt": "Da avaliação de risco à adequação regulatória, na interface entre Direito, sustentabilidade e governança.",
+			"en": ""
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "ESG e relatórios de sustentabilidade",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Diagnóstico ESG e definição de indicadores",
+						"en": ""
+					},
+					{
+						"pt": "Relatórios de sustentabilidade",
+						"en": ""
+					},
+					{
+						"pt": "Governança corporativa e análise regulatória",
+						"en": ""
+					},
+					{
+						"pt": "Apoio à implementação de boas práticas",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Compliance ambiental e EUDR",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Compliance ambiental e ESG",
+						"en": ""
+					},
+					{
+						"pt": "EUDR — Regulamento Europeu de Produtos Livres de Desflorestação",
+						"en": ""
+					},
+					{
+						"pt": "Análise de cadeias produtivas e de fornecedores",
+						"en": ""
+					},
+					{
+						"pt": "Gestão de riscos regulatórios",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Due diligence ambiental e laboral",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Conformidade com a legislação brasileira e europeia",
+						"en": ""
+					},
+					{
+						"pt": "Riscos de trabalho forçado e infantil nas cadeias de fornecimento",
+						"en": ""
+					},
+					{
+						"pt": "Avaliação de fornecedores e de impactos",
+						"en": ""
+					},
+					{
+						"pt": "Apoio à implementação de políticas de direitos humanos",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Regulação da União Europeia",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "EUDR (desflorestação)",
+						"en": ""
+					},
+					{
+						"pt": "CSDDD (dever de diligência)",
+						"en": ""
+					},
+					{
+						"pt": "CSRD (relato de sustentabilidade)",
+						"en": ""
+					},
+					{
+						"pt": "Adequação e fortalecimento da governança",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Mudanças climáticas e governança",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Governança e adaptação climática",
+						"en": ""
+					},
+					{
+						"pt": "Políticas públicas e planeamento territorial",
+						"en": ""
+					},
+					{
+						"pt": "Estratégias para municípios e regiões",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Avaliação de riscos e relatórios técnicos",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Riscos climáticos, regulatórios e ambientais",
+						"en": ""
+					},
+					{
+						"pt": "Análise de vulnerabilidades e de impactos de novas normas",
+						"en": ""
+					},
+					{
+						"pt": "Pareceres, notas técnicas e estudos ambientais",
+						"en": ""
+					}
+				]
+			}
+		],
+		"differentiatorEyebrow": {
+			"pt": "O que me distingue",
+			"en": ""
+		},
+		"differentiatorHeading": {
+			"pt": "Não falo do EUDR de fora. Fui à Amazónia estudá-lo.",
+			"en": ""
+		},
+		"differentiatorImage": {
+			"image": "/ambiental-esg-amazonia.webp",
+			"alt": {
+				"pt": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta.",
+				"en": ""
+			},
+			"decorative": false
+		},
+		"differentiatorParagraphs": {
+			"pt": "O meu doutoramento na NOVA Lisboa investigou o «Efeito Bruxelas» sobre a política florestal brasileira. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam — ou tropeçam — na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta cada parecer e cada recomendação que entrego.",
+			"en": ""
+		},
+		"differentiatorCredentials": [
+			{
+				"pt": "Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (bolseira FCT)",
+				"en": ""
+			},
+			{
+				"pt": "SPF Early Career Fellow — Rights Lab, University of Nottingham, em cadeias globais de fornecimento",
+				"en": ""
+			},
+			{
+				"pt": "Assessora Especial na Secretaria de Meio Ambiente de Mato Grosso (SEMA-MT) — políticas ambientais por dentro",
+				"en": ""
+			}
+		],
+		"relatedWorkHeading": {
+			"pt": "Trabalho relacionado",
+			"en": ""
+		},
+		"relatedWorkSubtitle": {
+			"pt": "A autoridade nesta área não é uma afirmação — está publicada e é verificável.",
+			"en": ""
+		},
+		"relatedPublications": [
+			{
+				"title": {
+					"pt": "Exploring the Brussels Effect",
+					"en": ""
+				},
+				"publication": {
+					"pt": "Revista de Direito (2024)",
+					"en": ""
+				},
+				"highlight": "Citado pela OCDE"
+			},
+			{
+				"title": {
+					"pt": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+					"en": ""
+				},
+				"publication": {
+					"pt": "International Journal for the Semiotics of Law (2025)",
+					"en": ""
+				}
+			}
+		],
+		"note": {
+			"pt": "Atuação preventiva, consultiva e extrajudicial, orientada para a conformidade e a gestão de risco. Não inclui representação em processos judiciais.",
+			"en": ""
+		},
+		"ctaHeading": {
+			"pt": "A sua cadeia está preparada para a regulação europeia?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial para mapearmos, sem compromisso, onde estão os seus riscos e por onde começar.",
+			"en": ""
+		}
+	}
 }

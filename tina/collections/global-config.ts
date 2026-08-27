@@ -33,38 +33,22 @@ export const GlobalConfigCollection: Collection = {
 	ui: { global: true },
 	fields: [
 		{
-			name: "identity",
-			label: "Identity",
-			type: "object",
-			required: true,
-			fields: [
-				{ name: "name", label: "Public name", type: "string", required: true },
-				{
-					name: "legalName",
-					label: "Legal name (only after approval)",
-					type: "string",
-				},
-				{ name: "logo", label: "Logo", type: "image" },
-				{ name: "portrait", label: "Portrait", type: "image" },
-				localizedText("tagline", "Localized tagline"),
-			],
-		},
-		{
 			name: "contacts",
-			label: "Contacts and profiles",
+			label: "Contactos, perfis e atendimento",
 			type: "object",
 			fields: [
-				{ name: "email", label: "Professional email", type: "string" },
-				{ name: "phone", label: "Phone/WhatsApp", type: "string" },
+				{ name: "email", label: "E-mail profissional", type: "string" },
+				{ name: "phone", label: "Telefone/WhatsApp", type: "string" },
 				{
 					name: "calendlyUrl",
-					label: "Calendly external URL",
+					label: "Endereço externo do Calendly",
 					type: "string",
-					description: "External link only; no embed in v1.",
+					description:
+						"Usar apenas um endereço HTTPS. O Calendly não é incorporado no site.",
 				},
 				{
 					name: "profiles",
-					label: "Professional profiles",
+					label: "Perfis profissionais",
 					type: "object",
 					list: true,
 					fields: [
@@ -74,7 +58,7 @@ export const GlobalConfigCollection: Collection = {
 				},
 				{
 					name: "regions",
-					label: "Service regions",
+					label: "Regiões de atendimento",
 					type: "object",
 					list: true,
 					fields: [
@@ -84,7 +68,7 @@ export const GlobalConfigCollection: Collection = {
 				},
 				{
 					name: "serviceLanguages",
-					label: "Service languages",
+					label: "Idiomas de atendimento",
 					type: "string",
 					list: true,
 				},
@@ -92,7 +76,7 @@ export const GlobalConfigCollection: Collection = {
 		},
 		{
 			name: "navigation",
-			label: "Header and footer navigation",
+			label: "Labels da navegação",
 			type: "object",
 			list: true,
 			ui: {
@@ -106,6 +90,7 @@ export const GlobalConfigCollection: Collection = {
 					label: "Item type",
 					type: "string",
 					required: true,
+					ui: { component: "hidden" },
 					options: [
 						{ label: "Direct link", value: "link" },
 						{ label: "Menu with children", value: "menu" },
@@ -116,6 +101,7 @@ export const GlobalConfigCollection: Collection = {
 					label: "Canonical landing route",
 					type: "string",
 					required: true,
+					ui: { component: "hidden" },
 					description: "For a menu, this is its hub/landing page.",
 				},
 				localizedText("label", "Localized label"),
@@ -123,10 +109,11 @@ export const GlobalConfigCollection: Collection = {
 					name: "emphasis",
 					label: "Display as primary action",
 					type: "boolean",
+					ui: { component: "hidden" },
 				},
 				{
 					name: "children",
-					label: "Ordered menu entries",
+					label: "Labels do submenu",
 					type: "object",
 					list: true,
 					ui: {
@@ -140,6 +127,7 @@ export const GlobalConfigCollection: Collection = {
 							label: "Canonical route",
 							type: "string",
 							required: true,
+							ui: { component: "hidden" },
 						},
 						localizedText("label", "Localized title"),
 						localizedText("description", "Localized short description"),
@@ -148,27 +136,21 @@ export const GlobalConfigCollection: Collection = {
 							name: "highlight",
 							label: "Highlight this entry",
 							type: "boolean",
+							ui: { component: "hidden" },
 						},
 					],
 				},
 			],
 		},
 		{
-			name: "ctas",
-			label: "Reusable CTAs",
+			name: "requestTypes",
+			label: "Tipos de pedido do formulário",
 			type: "object",
 			list: true,
-			fields: [
-				{
-					name: "id",
-					label: "Stable identifier",
-					type: "string",
-					required: true,
-				},
-				localizedText("label", "Localized label"),
-				{ name: "routeKey", label: "Internal route key", type: "string" },
-				{ name: "externalUrl", label: "External URL", type: "string" },
-			],
+			ui: {
+				itemProps: (item) => ({ label: item.label?.pt ?? "Tipo de pedido" }),
+			},
+			fields: [localizedText("label", "Nome apresentado")],
 		},
 		{
 			name: "seo",
@@ -176,12 +158,6 @@ export const GlobalConfigCollection: Collection = {
 			type: "object",
 			required: true,
 			fields: [
-				{
-					name: "siteUrl",
-					label: "Canonical production URL",
-					type: "string",
-					required: true,
-				},
 				localizedText("defaultTitle", "Default title"),
 				localizedText("defaultDescription", "Default description"),
 				{ name: "defaultImage", label: "Default social image", type: "image" },
@@ -199,12 +175,6 @@ export const GlobalConfigCollection: Collection = {
 				),
 				optionalLocalizedText("disclaimer", "Informational disclaimer"),
 				optionalLocalizedText("rightsReserved", "Rights reserved text"),
-				{
-					name: "legalRouteKeys",
-					label: "Legal route keys",
-					type: "string",
-					list: true,
-				},
 			],
 		},
 	],

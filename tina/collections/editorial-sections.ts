@@ -1,4 +1,5 @@
 import type { TinaField } from "tinacms";
+import { richText } from "./common";
 
 const text = (name: string, label: string, required = true): TinaField => ({
 	name,
@@ -6,6 +7,11 @@ const text = (name: string, label: string, required = true): TinaField => ({
 	type: "string",
 	required,
 	ui: { component: "textarea" },
+});
+
+const derivedTitle = (): TinaField => ({
+	...text("title", "Título derivado da página de destino"),
+	ui: { component: "hidden" },
 });
 
 const cardList = (name: string, label: string): TinaField => ({
@@ -49,7 +55,7 @@ export const homeFields: TinaField[] = [
 				list: true,
 				required: true,
 				fields: [
-					text("title", "Title"),
+					derivedTitle(),
 					text("eyebrow", "Eyebrow"),
 					text("description", "Description"),
 					text("cta", "CTA"),
@@ -73,7 +79,7 @@ export const homeFields: TinaField[] = [
 				list: true,
 				required: true,
 				fields: [
-					text("title", "Title"),
+					derivedTitle(),
 					text("tag", "Tag"),
 					text("description", "Description"),
 					text("cta", "CTA"),
@@ -112,14 +118,7 @@ export const aboutFields: TinaField[] = [
 		fields: [
 			text("tag", "Hero tag"),
 			text("subtitle", "Hero subtitle"),
-			{
-				name: "narrative",
-				label: "Narrative paragraphs",
-				type: "string",
-				list: true,
-				required: true,
-				ui: { component: "textarea" },
-			},
+			richText("narrative", "Narrativa"),
 			text("milestonesTitle", "Milestones heading"),
 			{
 				name: "milestones",
@@ -202,7 +201,7 @@ export const consultingHubFields: TinaField[] = [
 				list: true,
 				required: true,
 				fields: [
-					text("title", "Title"),
+					derivedTitle(),
 					text("tag", "Tag"),
 					text("summary", "Summary"),
 					{
@@ -254,13 +253,7 @@ export const consultingServiceFields: TinaField[] = [
 					},
 				],
 			},
-			{
-				name: "introParagraphs",
-				label: "Introduction paragraphs",
-				type: "string",
-				list: true,
-				required: true,
-			},
+			richText("introParagraphs", "Texto de introdução"),
 			text("servicesHeading", "Services heading"),
 			text("servicesSubtitle", "Services introduction", false),
 			{
@@ -310,12 +303,7 @@ export const consultingServiceFields: TinaField[] = [
 					},
 				],
 			},
-			{
-				name: "differentiatorParagraphs",
-				label: "Differentiator paragraphs",
-				type: "string",
-				list: true,
-			},
+			richText("differentiatorParagraphs", "Texto diferenciador", false),
 			{
 				name: "differentiatorCredentials",
 				label: "Differentiator credentials",

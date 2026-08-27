@@ -1,11 +1,4 @@
 {
-	"identity": {
-		"name": "Dra. Ana Trevizan",
-		"tagline": {
-			"pt": "Conteúdo editorial por aprovar",
-			"en": "Editorial content awaiting approval"
-		}
-	},
 	"contacts": {
 		"email": "af.trevizan@gmail.com",
 		"phone": "+351926430792",
@@ -173,9 +166,24 @@
 			"emphasis": true
 		}
 	],
-	"ctas": [],
+	"requestTypes": [
+		{ "label": { "pt": "Consulta jurídica", "en": "Legal consultation" } },
+		{
+			"label": {
+				"pt": "Consultoria ambiental e ESG",
+				"en": "Environmental and ESG consulting"
+			}
+		},
+		{
+			"label": {
+				"pt": "Mentoria ou apoio académico",
+				"en": "Mentoring or academic support"
+			}
+		},
+		{ "label": { "pt": "Palestra ou formação", "en": "Speaking or training" } },
+		{ "label": { "pt": "Outro pedido", "en": "Other request" } }
+	],
 	"seo": {
-		"siteUrl": "https://anatrevizan.com",
 		"defaultTitle": { "pt": "Ana Trevizan", "en": "Ana Trevizan" },
 		"defaultDescription": {
 			"pt": "Conteúdo editorial por aprovar.",
@@ -190,7 +198,6 @@
 		"disclaimer": {
 			"pt": "Desenvolvido por João Dias"
 		},
-		"rightsReserved": { "pt": "Todos os direitos reservados." },
-		"legalRouteKeys": ["privacy", "terms", "cookies"]
+		"rightsReserved": { "pt": "Todos os direitos reservados." }
 	}
 }

@@ -4,6 +4,39 @@ import sharp from "sharp";
 
 const rasterExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const allowedDownloads = new Set([".pdf", ".mp3", ".mp4"]);
+export const responsiveWidths = [480, 960, 1440] as const;
+
+export function isRasterMedia(path: string): boolean {
+	return rasterExtensions.has(extname(path).toLowerCase());
+}
+
+export function responsiveVariant(path: string, width: number): string {
+	const normalized = path.startsWith("/") ? path : `/${path}`;
+	return `/_media${normalized.replace(/\.[^.]+$/, `-${width}.webp`)}`;
+}
+
+export function responsiveSrcSet(
+	path: string | null | undefined,
+): string | undefined {
+	return path && isRasterMedia(path)
+		? responsiveWidths
+				.map((width) => `${responsiveVariant(path, width)} ${width}w`)
+				.join(", ")
+		: undefined;
+}
+
+export function responsiveCssImage(
+	path: string | null | undefined,
+): string | undefined {
+	if (!path) return undefined;
+	if (!isRasterMedia(path)) return `url("${path}")`;
+	return `image-set(${responsiveWidths
+		.map(
+			(width, index) =>
+				`url("${responsiveVariant(path, width)}") ${index + 1}x`,
+		)
+		.join(", ")})`;
+}
 
 export function sanitizeSvg(source: string): string {
 	return source
@@ -40,12 +73,11 @@ export async function buildMediaVariants(
 			relative(publicDirectory, source),
 		);
 		if (extension === ".svg")
+			await mkdir(join(destination, ".."), { recursive: true });
+		if (extension === ".svg")
 			await writeFile(destination, sanitizeSvg(await readFile(source, "utf8")));
 		if (rasterExtensions.has(extension)) {
-			const metadata = await sharp(source).metadata();
-			for (const width of [480, 960, 1440].filter(
-				(candidate) => !metadata.width || candidate < metadata.width,
-			)) {
+			for (const width of responsiveWidths) {
 				const target = join(
 					generated,
 					relative(publicDirectory, source).replace(

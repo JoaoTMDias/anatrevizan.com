@@ -1,19 +1,20 @@
 import type { CmsConfig, CmsEditorial, EditorialListItem } from "./data";
 import {
+	deriveLinkedPageTitles,
 	getConfig,
 	listEditorial,
 	localizeEditorial,
 	toEditorialDocument,
 } from "./data";
 import {
+	type EditorialDocument,
 	isEditorialPreviewEnabled,
 	isPublishable,
 	shouldRenderEditorialDocument,
-	type EditorialDocument,
 } from "./editorial";
 import {
-	publishedLocales,
 	type PublishedLocale,
+	publishedLocales,
 	type RouteKey,
 } from "./routing";
 
@@ -35,6 +36,7 @@ const index = () => (indexPromise ??= listEditorial());
 
 function view(
 	raw: EditorialListItem,
+	documents: EditorialListItem[],
 	locale: PublishedLocale,
 	preview: boolean,
 	config: CmsConfig | null,
@@ -46,7 +48,11 @@ function view(
 	return {
 		kind: "renderable",
 		page: {
-			data: localizeEditorial(raw, locale),
+			data: deriveLinkedPageTitles(
+				localizeEditorial(raw, locale),
+				documents,
+				locale,
+			),
 			document,
 			locale,
 			relativePath: raw._sys.relativePath,
@@ -69,7 +75,7 @@ export async function resolveEditorialPage(
 	const [documents, configResult] = await Promise.all([index(), getConfig()]);
 	const raw = documents.find((candidate) => candidate.routeKey === routeKey);
 	return raw
-		? view(raw, locale, preview, configResult.data?.config ?? null)
+		? view(raw, documents, locale, preview, configResult.data?.config ?? null)
 		: { kind: "missing", reason: "missing" };
 }
 
@@ -82,6 +88,7 @@ export async function resolveEditorialPages(
 		for (const locale of publishedLocales) {
 			const result = view(
 				raw,
+				documents,
 				locale,
 				preview,
 				configResult.data?.config ?? null,

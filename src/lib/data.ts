@@ -2,8 +2,9 @@ import { requestWithMetadata } from "@tinacms/astro/data";
 import client from "../../tina/__generated__/client";
 import { isLocaleComplete, localizeValue } from "./bilingual";
 import type { EditorialDocument } from "./editorial";
-import { isRouteKey, type PublishedLocale } from "./routing";
+import { gitLastModified } from "./git-dates";
 import type { HeroMedia } from "./hero-media";
+import { isRouteKey, type PublishedLocale } from "./routing";
 
 export const getConfig = () =>
 	requestWithMetadata(client.queries.config({ relativePath: "site.json" }));
@@ -28,6 +29,7 @@ export interface CmsEditorial extends Record<string, unknown> {
 	summary?: string | null;
 	seo: { title: string; description: string; image?: string | null };
 	media?: HeroMedia | null;
+	lastModified?: string;
 	_sys: RawCmsEditorial["_sys"];
 }
 export type EditorialListItem = Awaited<
@@ -38,10 +40,41 @@ export function localizeEditorial(
 	document: RawCmsEditorial | EditorialListItem,
 	locale: PublishedLocale,
 ): CmsEditorial {
-	return {
+	const localized = {
 		...(localizeValue(document, locale) as object),
 		locale,
 	} as CmsEditorial;
+	const relativePath = document._sys?.relativePath;
+	if (relativePath)
+		localized.lastModified = gitLastModified(
+			`src/content/pages/${relativePath}`,
+		);
+	return localized;
+}
+
+export function deriveLinkedPageTitles(
+	document: CmsEditorial,
+	documents: EditorialListItem[],
+	locale: PublishedLocale,
+): CmsEditorial {
+	const titles = new Map(
+		documents.flatMap((candidate) => {
+			if (!isRouteKey(candidate.routeKey)) return [];
+			const localized = localizeEditorial(candidate, locale);
+			return [[candidate.routeKey, localized.title] as const];
+		}),
+	);
+	const walk = (value: unknown): unknown => {
+		if (Array.isArray(value)) return value.map(walk);
+		if (!value || typeof value !== "object") return value;
+		const record = Object.fromEntries(
+			Object.entries(value).map(([key, child]) => [key, walk(child)]),
+		);
+		if (isRouteKey(record.routeKey) && typeof record.title === "string")
+			record.title = titles.get(record.routeKey) ?? record.title;
+		return record;
+	};
+	return walk(document) as CmsEditorial;
 }
 
 export function toEditorialDocument(
@@ -53,6 +86,7 @@ export function toEditorialDocument(
 		title?: string;
 		summary?: string;
 		seo?: { title?: string; description?: string };
+		lastModified?: string;
 	};
 	return {
 		routeKey: document.routeKey,
@@ -60,6 +94,7 @@ export function toEditorialDocument(
 		title: localized.title ?? "",
 		seoTitle: localized.seo?.title || localized.title || "",
 		seoDescription: localized.seo?.description || localized.summary || "",
+		lastModified: localized.lastModified,
 		complete: isLocaleComplete(document, locale),
 	};
 }

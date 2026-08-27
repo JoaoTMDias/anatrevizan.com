@@ -1,132 +1,126 @@
 {
-  "_template": "academicService",
-  "routeKey": "mentoring",
-  "title": {
-    "pt": "Mentorias e Apoio Académico",
-    "en": "Mentoring"
-  },
-  "summary": {
-    "pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Mentorias e Apoio Académico · Publicar com quem já publicou",
-      "en": "Mentoring — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "media": {
-    "foreground": {
-      "image": "/mentorias-e-apoio-academico-hero.webp",
-      "alt": {
-        "pt": "Close-up da Ana a tomar notas em papel",
-        "en": ""
-      },
-      "decorative": false,
-      "aspectRatio": "landscape"
-    }
-  },
-  "academicService": {
-    "subtitle": {
-      "pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
-      "en": ""
-    },
-    "introHeading": {
-      "pt": "Sei onde a escrita costuma travar",
-      "en": ""
-    },
-    "introParagraphs": [
-      {
-        "pt": "Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.",
-        "en": ""
-      },
-      {
-        "pt": "Já passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos.",
-        "en": ""
-      }
-    ],
-    "servicesHeading": {
-      "pt": "Como posso apoiar",
-      "en": ""
-    },
-    "services": [
-      {
-        "title": {
-          "pt": "Revisão técnica de artigos",
-          "en": ""
-        },
-        "description": {
-          "pt": "Revisão de conteúdo jurídico e científico em português, inglês e espanhol.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Estratégia de pesquisa",
-          "en": ""
-        },
-        "description": {
-          "pt": "Definição de foco, questão e desenho metodológico do seu projeto.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Estruturação de dissertações",
-          "en": ""
-        },
-        "description": {
-          "pt": "Organização da tese, do argumento central à arquitetura dos capítulos.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Orientação metodológica",
-          "en": ""
-        },
-        "description": {
-          "pt": "Método adequado à sua pergunta e à sua área.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Destravamento da escrita",
-          "en": ""
-        },
-        "description": {
-          "pt": "Apoio para sair do bloqueio e recuperar o ritmo de produção.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Preparação para publicação internacional",
-          "en": ""
-        },
-        "description": {
-          "pt": "Adequação do artigo às exigências de revistas indexadas.",
-          "en": ""
-        }
-      }
-    ],
-    "note": {
-      "pt": "Apoio académico e metodológico. Orçamento sob consulta; o primeiro contacto é feito pela marcação de uma conversa inicial.",
-      "en": ""
-    },
-    "ctaHeading": {
-      "pt": "Vamos destravar a sua pesquisa?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
-      "en": ""
-    }
-  }
+	"_template": "academicService",
+	"routeKey": "mentoring",
+	"title": {
+		"pt": "Mentorias e Apoio Académico",
+		"en": "Mentoring"
+	},
+	"summary": {
+		"pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Mentorias e Apoio Académico · Publicar com quem já publicou",
+			"en": "Mentoring — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"media": {
+		"foreground": {
+			"image": "/mentorias-e-apoio-academico-hero.webp",
+			"alt": {
+				"pt": "Close-up da Ana a tomar notas em papel",
+				"en": ""
+			},
+			"decorative": false,
+			"aspectRatio": "landscape"
+		}
+	},
+	"academicService": {
+		"subtitle": {
+			"pt": "Destravar uma tese, estruturar uma pesquisa, publicar lá fora. Com quem já percorreu esse caminho — do mestrado ao doutoramento, em três idiomas.",
+			"en": ""
+		},
+		"introHeading": {
+			"pt": "Sei onde a escrita costuma travar",
+			"en": ""
+		},
+		"introParagraphs": {
+			"pt": "Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.\n\nJá passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos.",
+			"en": ""
+		},
+		"servicesHeading": {
+			"pt": "Como posso apoiar",
+			"en": ""
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Revisão técnica de artigos",
+					"en": ""
+				},
+				"description": {
+					"pt": "Revisão de conteúdo jurídico e científico em português, inglês e espanhol.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Estratégia de pesquisa",
+					"en": ""
+				},
+				"description": {
+					"pt": "Definição de foco, questão e desenho metodológico do seu projeto.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Estruturação de dissertações",
+					"en": ""
+				},
+				"description": {
+					"pt": "Organização da tese, do argumento central à arquitetura dos capítulos.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Orientação metodológica",
+					"en": ""
+				},
+				"description": {
+					"pt": "Método adequado à sua pergunta e à sua área.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Destravamento da escrita",
+					"en": ""
+				},
+				"description": {
+					"pt": "Apoio para sair do bloqueio e recuperar o ritmo de produção.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Preparação para publicação internacional",
+					"en": ""
+				},
+				"description": {
+					"pt": "Adequação do artigo às exigências de revistas indexadas.",
+					"en": ""
+				}
+			}
+		],
+		"note": {
+			"pt": "Apoio académico e metodológico. Orçamento sob consulta; o primeiro contacto é feito pela marcação de uma conversa inicial.",
+			"en": ""
+		},
+		"ctaHeading": {
+			"pt": "Vamos destravar a sua pesquisa?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
+			"en": ""
+		}
+	}
 }

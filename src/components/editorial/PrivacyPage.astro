@@ -2,16 +2,19 @@
 import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { LegalPageContent } from "../../lib/page-content";
+import LegalDates from "./LegalDates.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
 const { data } = Astro.props;
 const page = data.privacyPage as LegalPageContent | null | undefined;
+const effectiveDate = (data.legal as { effectiveDate?: string | null } | null)?.effectiveDate;
 ---
 
 <div id="main-content" tabindex="-1">
   <div class="legal-header">
-    <div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p></div>
+    <div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p><LegalDates locale={data.locale} effectiveDate={effectiveDate} lastModified={data.lastModified} /></div>
   </div>
   {
     page && (
@@ -30,11 +33,7 @@ const page = data.privacyPage as LegalPageContent | null | undefined;
         {page.sections?.map((section) => (
           <section>
             <h2>{section.heading}</h2>
-            <div>
-              {section.paragraphs.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </div>
+            <RichText content={section.paragraphs} />
           </section>
         ))}
       </div>

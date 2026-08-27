@@ -1,192 +1,186 @@
 {
-  "_template": "consultingService",
-  "routeKey": "public-policy",
-  "title": {
-    "pt": "Políticas Públicas e Governança",
-    "en": "Public policy"
-  },
-  "summary": {
-    "pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Políticas Públicas e Governança · Municípios, ONGs e associações",
-      "en": "Public policy — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Consultoria em políticas públicas e governança ambiental: análise de projetos de lei e apoio técnico a municípios, ONGs, associações e instituições.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "media": {
-    "foreground": {
-      "image": "/politicas-publicas-hero.webp",
-      "alt": {
-        "pt": "Parlamento Europeu",
-        "en": ""
-      },
-      "decorative": false,
-      "aspectRatio": "landscape"
-    }
-  },
-  "consultingService": {
-    "tag": {
-      "pt": "Brasil e Portugal",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
-      "en": ""
-    },
-    "introHeading": {
-      "pt": "Da norma à implementação",
-      "en": ""
-    },
-    "introImage": {
-      "image": "/politicas-publicas-e-governanca-intro.webp",
-      "alt": {
-        "pt": "Ana Flávia na Amazónia",
-        "en": ""
-      },
-      "decorative": false
-    },
-    "introParagraphs": [
-      {
-        "pt": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção — está no desenho jurídico e na governança.",
-        "en": ""
-      },
-      {
-        "pt": "É esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
-        "en": ""
-      }
-    ],
-    "servicesHeading": {
-      "pt": "Como posso ajudar",
-      "en": ""
-    },
-    "servicesSubtitle": {
-      "pt": "",
-      "en": ""
-    },
-    "services": [
-      {
-        "title": {
-          "pt": "Análise de projetos de lei",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Análise jurídica e técnica",
-            "en": ""
-          },
-          {
-            "pt": "Identificação de impactos regulatórios",
-            "en": ""
-          },
-          {
-            "pt": "Sugestões de aperfeiçoamento legislativo",
-            "en": ""
-          },
-          {
-            "pt": "Compatibilização com normas nacionais e internacionais",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Consultoria para municípios",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Elaboração de políticas públicas",
-            "en": ""
-          },
-          {
-            "pt": "Governança e adaptação climática",
-            "en": ""
-          },
-          {
-            "pt": "Planos municipais e regulamentação ambiental",
-            "en": ""
-          },
-          {
-            "pt": "Projetos financiados por organismos nacionais e internacionais",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Consultoria para ONGs",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Análise normativa e pareceres",
-            "en": ""
-          },
-          {
-            "pt": "Advocacy e fortalecimento institucional",
-            "en": ""
-          },
-          {
-            "pt": "Governança",
-            "en": ""
-          },
-          {
-            "pt": "Projetos de direitos humanos e ambiente",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Associações e instituições",
-          "en": ""
-        },
-        "items": [
-          {
-            "pt": "Regulamentos internos e governança",
-            "en": ""
-          },
-          {
-            "pt": "Análise de riscos",
-            "en": ""
-          },
-          {
-            "pt": "Compliance e sustentabilidade",
-            "en": ""
-          },
-          {
-            "pt": "Relacionamento com órgãos públicos",
-            "en": ""
-          }
-        ]
-      }
-    ],
-    "stepsHeading": {
-      "pt": "",
-      "en": ""
-    },
-    "stepsSubtitle": {
-      "pt": "",
-      "en": ""
-    },
-    "note": {
-      "pt": "Atuação técnica, consultiva e de assessoria. Não inclui representação em processos judiciais (contencioso).",
-      "en": ""
-    },
-    "ctaHeading": {
-      "pt": "Precisa de fundamentação técnica para uma decisão pública?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Marque uma conversa inicial para avaliarmos o âmbito do apoio de que a sua organização precisa.",
-      "en": ""
-    }
-  }
+	"_template": "consultingService",
+	"routeKey": "public-policy",
+	"title": {
+		"pt": "Políticas Públicas e Governança",
+		"en": "Public policy"
+	},
+	"summary": {
+		"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Políticas Públicas e Governança · Municípios, ONGs e associações",
+			"en": "Public policy — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Consultoria em políticas públicas e governança ambiental: análise de projetos de lei e apoio técnico a municípios, ONGs, associações e instituições.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"media": {
+		"foreground": {
+			"image": "/politicas-publicas-hero.webp",
+			"alt": {
+				"pt": "Parlamento Europeu",
+				"en": ""
+			},
+			"decorative": false,
+			"aspectRatio": "landscape"
+		}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Brasil e Portugal",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+			"en": ""
+		},
+		"introHeading": {
+			"pt": "Da norma à implementação",
+			"en": ""
+		},
+		"introImage": {
+			"image": "/politicas-publicas-e-governanca-intro.webp",
+			"alt": {
+				"pt": "Ana Flávia na Amazónia",
+				"en": ""
+			},
+			"decorative": false
+		},
+		"introParagraphs": {
+			"pt": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção — está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
+			"en": ""
+		},
+		"servicesHeading": {
+			"pt": "Como posso ajudar",
+			"en": ""
+		},
+		"servicesSubtitle": {
+			"pt": "",
+			"en": ""
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Análise de projetos de lei",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Análise jurídica e técnica",
+						"en": ""
+					},
+					{
+						"pt": "Identificação de impactos regulatórios",
+						"en": ""
+					},
+					{
+						"pt": "Sugestões de aperfeiçoamento legislativo",
+						"en": ""
+					},
+					{
+						"pt": "Compatibilização com normas nacionais e internacionais",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Consultoria para municípios",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Elaboração de políticas públicas",
+						"en": ""
+					},
+					{
+						"pt": "Governança e adaptação climática",
+						"en": ""
+					},
+					{
+						"pt": "Planos municipais e regulamentação ambiental",
+						"en": ""
+					},
+					{
+						"pt": "Projetos financiados por organismos nacionais e internacionais",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Consultoria para ONGs",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Análise normativa e pareceres",
+						"en": ""
+					},
+					{
+						"pt": "Advocacy e fortalecimento institucional",
+						"en": ""
+					},
+					{
+						"pt": "Governança",
+						"en": ""
+					},
+					{
+						"pt": "Projetos de direitos humanos e ambiente",
+						"en": ""
+					}
+				]
+			},
+			{
+				"title": {
+					"pt": "Associações e instituições",
+					"en": ""
+				},
+				"items": [
+					{
+						"pt": "Regulamentos internos e governança",
+						"en": ""
+					},
+					{
+						"pt": "Análise de riscos",
+						"en": ""
+					},
+					{
+						"pt": "Compliance e sustentabilidade",
+						"en": ""
+					},
+					{
+						"pt": "Relacionamento com órgãos públicos",
+						"en": ""
+					}
+				]
+			}
+		],
+		"stepsHeading": {
+			"pt": "",
+			"en": ""
+		},
+		"stepsSubtitle": {
+			"pt": "",
+			"en": ""
+		},
+		"note": {
+			"pt": "Atuação técnica, consultiva e de assessoria. Não inclui representação em processos judiciais (contencioso).",
+			"en": ""
+		},
+		"ctaHeading": {
+			"pt": "Precisa de fundamentação técnica para uma decisão pública?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Marque uma conversa inicial para avaliarmos o âmbito do apoio de que a sua organização precisa.",
+			"en": ""
+		}
+	}
 }

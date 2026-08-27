@@ -1,134 +1,128 @@
 {
-  "_template": "speaking",
-  "routeKey": "speaking",
-  "media": {
-    "foreground": {
-      "image": "/hero-placeholder.webp",
-      "alt": {
-        "pt": "",
-        "en": ""
-      },
-      "decorative": true,
-      "aspectRatio": "square"
-    }
-  },
-  "title": {
-    "pt": "Palestras e Convites",
-    "en": "Speaking"
-  },
-  "summary": {
-    "pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Palestras e Convites · Kit de palestrante",
-      "en": "Speaking — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Convide a Dra. Ana Trevizan para palestrar sobre EUDR, Direito ambiental, ESG, clima e migração. Biografia, temas e kit de palestrante.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "speakingPage": {
-    "tag": {
-      "pt": "Academia",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
-      "en": ""
-    },
-    "photoPlaceholderLabel": {
-      "pt": "Foto em alta resolução",
-      "en": ""
-    },
-    "bioHeading": {
-      "pt": "Quem sobe ao palco",
-      "en": ""
-    },
-    "bioParagraphs": [
-      {
-        "pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada inscrita na OAB desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.",
-        "en": ""
-      },
-      {
-        "pt": "Falo em português, inglês e espanhol, para plateias académicas, corporativas e institucionais — sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.",
-        "en": ""
-      }
-    ],
-    "topicsHeading": {
-      "pt": "Temas que ministro",
-      "en": ""
-    },
-    "topics": [
-      {
-        "pt": "EUDR e cadeias florestais",
-        "en": ""
-      },
-      {
-        "pt": "Direito Ambiental",
-        "en": ""
-      },
-      {
-        "pt": "ESG e Sustentabilidade",
-        "en": ""
-      },
-      {
-        "pt": "Governança Climática",
-        "en": ""
-      },
-      {
-        "pt": "Compliance",
-        "en": ""
-      },
-      {
-        "pt": "Direito da União Europeia",
-        "en": ""
-      },
-      {
-        "pt": "Direito Migratório",
-        "en": ""
-      },
-      {
-        "pt": "Direitos Humanos",
-        "en": ""
-      }
-    ],
-    "kitHeading": {
-      "pt": "O que encontra no kit",
-      "en": ""
-    },
-    "kitItems": [
-      {
-        "pt": "Biografia curta e completa",
-        "en": ""
-      },
-      {
-        "pt": "Foto em alta resolução",
-        "en": ""
-      },
-      {
-        "pt": "Lista de temas e formatos",
-        "en": ""
-      }
-    ],
-    "kitDownloadLabel": {
-      "pt": "Descarregar kit de palestrante",
-      "en": ""
-    },
-    "inviteCta": {
-      "pt": "Convidar para palestrar",
-      "en": ""
-    },
-    "ctaHeading": {
-      "pt": "Tem um evento à vista?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Envie os detalhes — data, tema e formato — e retomo o contacto para combinarmos.",
-      "en": ""
-    }
-  }
+	"_template": "speaking",
+	"routeKey": "speaking",
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": {
+				"pt": "",
+				"en": ""
+			},
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
+	"title": {
+		"pt": "Palestras e Convites",
+		"en": "Speaking"
+	},
+	"summary": {
+		"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Palestras e Convites · Kit de palestrante",
+			"en": "Speaking — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Convide a Dra. Ana Trevizan para palestrar sobre EUDR, Direito ambiental, ESG, clima e migração. Biografia, temas e kit de palestrante.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"speakingPage": {
+		"tag": {
+			"pt": "Academia",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
+			"en": ""
+		},
+		"photoPlaceholderLabel": {
+			"pt": "Foto em alta resolução",
+			"en": ""
+		},
+		"bioHeading": {
+			"pt": "Quem sobe ao palco",
+			"en": ""
+		},
+		"bioParagraphs": {
+			"pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada inscrita na OAB desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.\n\nFalo em português, inglês e espanhol, para plateias académicas, corporativas e institucionais — sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.",
+			"en": ""
+		},
+		"topicsHeading": {
+			"pt": "Temas que ministro",
+			"en": ""
+		},
+		"topics": [
+			{
+				"pt": "EUDR e cadeias florestais",
+				"en": ""
+			},
+			{
+				"pt": "Direito Ambiental",
+				"en": ""
+			},
+			{
+				"pt": "ESG e Sustentabilidade",
+				"en": ""
+			},
+			{
+				"pt": "Governança Climática",
+				"en": ""
+			},
+			{
+				"pt": "Compliance",
+				"en": ""
+			},
+			{
+				"pt": "Direito da União Europeia",
+				"en": ""
+			},
+			{
+				"pt": "Direito Migratório",
+				"en": ""
+			},
+			{
+				"pt": "Direitos Humanos",
+				"en": ""
+			}
+		],
+		"kitHeading": {
+			"pt": "O que encontra no kit",
+			"en": ""
+		},
+		"kitItems": [
+			{
+				"pt": "Biografia curta e completa",
+				"en": ""
+			},
+			{
+				"pt": "Foto em alta resolução",
+				"en": ""
+			},
+			{
+				"pt": "Lista de temas e formatos",
+				"en": ""
+			}
+		],
+		"kitDownloadLabel": {
+			"pt": "Descarregar kit de palestrante",
+			"en": ""
+		},
+		"inviteCta": {
+			"pt": "Convidar para palestrar",
+			"en": ""
+		},
+		"ctaHeading": {
+			"pt": "Tem um evento à vista?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Envie os detalhes — data, tema e formato — e retomo o contacto para combinarmos.",
+			"en": ""
+		}
+	}
 }

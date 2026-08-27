@@ -10,6 +10,7 @@ import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -47,11 +48,7 @@ const kitIcons = ["user", "photo", "list-check"];
               <div>
                 <>
                   <SectionHeading title={speaking.bioHeading} />
-                  <div class="speaking-bio__text">
-                    {speaking.bioParagraphs.map((paragraph) => (
-                      <p>{paragraph}</p>
-                    ))}
-                  </div>
+                  <RichText content={speaking.bioParagraphs} class="speaking-bio__text" />
                   <p class="speaking-kit-notice">
                     <Icon name="info-circle" />
                     {speaking.kitDownloadLabel}:{" "}

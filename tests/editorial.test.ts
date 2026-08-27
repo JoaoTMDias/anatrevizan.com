@@ -7,11 +7,17 @@ import {
 	missingLocalizedPaths,
 } from "../src/lib/bilingual.ts";
 import {
+	isLocalIncompleteEnglishPreviewEnabled,
+	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
 	type BilingualEditorialDocument,
 } from "../src/lib/editorial.ts";
 import { routeKeys } from "../src/lib/routing.ts";
 import { EditorialCollection } from "../tina/collections/editorial.ts";
+import { GlobalConfigCollection } from "../tina/collections/global-config.ts";
+import { contactPageFields } from "../tina/collections/contact-sections.ts";
+import { contactFormCopy } from "../src/lib/contact-form-i18n.ts";
+import { deriveLinkedPageTitles } from "../src/lib/data.ts";
 
 const directory = join(process.cwd(), "src/content/pages");
 const pages = readdirSync(directory)
@@ -81,5 +87,135 @@ describe("modelo editorial bilingue", () => {
 		expect(home).toBeDefined();
 		expect(isLocaleComplete(home, "pt-PT")).toBe(true);
 		expect(isLocaleComplete(home, "en")).toBe(false);
+	});
+
+	it("só permite preview de inglês incompleto em desenvolvimento local", () => {
+		const incomplete = {
+			routeKey: "home" as const,
+			locale: "en" as const,
+			title: "",
+			seoTitle: "",
+			seoDescription: "",
+			complete: false,
+		};
+		expect(shouldRenderEditorialDocument(incomplete, true, false)).toBe(false);
+		expect(shouldRenderEditorialDocument(incomplete, true, true)).toBe(true);
+		expect(isLocalIncompleteEnglishPreviewEnabled({ dev: false })).toBe(false);
+	});
+
+	it("bloqueia regressões de traduções inglesas já publicadas", () => {
+		const home = pages.find((page) => page.routeKey === "home");
+		expect(home).toBeDefined();
+		expect(validateEditorialDocuments(pages, ["home"])).toContainEqual({
+			code: "published-english-regression",
+			message: "home: uma tradução inglesa já publicada ficou incompleta",
+		});
+	});
+
+	it("deriva títulos de cartões a partir da página de destino", () => {
+		const linked = deriveLinkedPageTitles(
+			{
+				routeKey: "home",
+				locale: "pt-PT",
+				title: "Início",
+				seo: { title: "Início", description: "" },
+				cards: [{ routeKey: "about", title: "Cópia antiga" }],
+				_sys: { relativePath: "home.json" },
+			} as never,
+			[
+				{
+					routeKey: "about",
+					title: { pt: "Sobre", en: "About" },
+					_sys: { relativePath: "about.json" },
+				} as never,
+			],
+			"pt-PT",
+		) as unknown as { cards: Array<{ title: string }> };
+		expect(linked.cards[0].title).toBe("Sobre");
+	});
+
+	it("não expõe estrutura de navegação, identidade ou CTAs globais", () => {
+		const field = (name: string) =>
+			GlobalConfigCollection.fields?.find(
+				(candidate) => candidate.name === name,
+			);
+		expect(field("identity")).toBeUndefined();
+		expect(field("ctas")).toBeUndefined();
+		const seo = field("seo");
+		if (!seo || seo.type !== "object") throw new Error("seo ausente");
+		expect(seo.fields?.find((item) => item.name === "siteUrl")).toBeUndefined();
+		const navigation = field("navigation");
+		if (!navigation || navigation.type !== "object")
+			throw new Error("navigation ausente");
+		for (const name of ["type", "routeKey", "emphasis"])
+			expect(
+				navigation.fields?.find((item) => item.name === name)?.ui,
+			).toMatchObject({
+				component: "hidden",
+			});
+		expect(field("requestTypes")).toBeDefined();
+	});
+
+	it("mantém os textos funcionais do formulário em código", () => {
+		const contact = contactPageFields[0];
+		if (contact.type !== "object") throw new Error("contactPage ausente");
+		expect(
+			contact.fields?.find((field) => field.name === "formCopy"),
+		).toBeUndefined();
+		expect(
+			contact.fields?.find((field) => field.name === "contactMethods"),
+		).toBeUndefined();
+		expect(contactFormCopy("pt-PT").submitLabel).toBe("Enviar");
+		expect(contactFormCopy("en").submitLabel).toBe("Send");
+	});
+
+	it("limita o rich text editorial ao conjunto aprovado", () => {
+		const about = EditorialCollection.templates?.find(
+			(template) => template.name === "about",
+		);
+		const aboutSection = about?.fields.find((field) => field.name === "about");
+		if (!aboutSection || aboutSection.type !== "object")
+			throw new Error("about ausente");
+		const narrative = aboutSection.fields?.find(
+			(field) => field.name === "narrative",
+		);
+		if (!narrative || narrative.type !== "object")
+			throw new Error("narrative ausente");
+		for (const locale of narrative.fields ?? []) {
+			expect(locale.type).toBe("rich-text");
+			if (locale.type !== "rich-text") continue;
+			expect(locale.overrides).toEqual({
+				toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+				headingLevels: ["h2", "h3", "h4"],
+			});
+		}
+	});
+
+	it("considera rich text EN vazio uma tradução incompleta", () => {
+		const value = {
+			body: {
+				pt: {
+					type: "root",
+					children: [
+						{ type: "p", children: [{ type: "text", text: "Texto" }] },
+					],
+				},
+				en: { type: "root", children: [] },
+			},
+		};
+		expect(missingLocalizedPaths(value, "en")).toEqual(["body"]);
+		expect(isLocaleComplete(value, "en")).toBe(false);
+	});
+
+	it("persiste rich text em Markdown, não na árvore interna do editor", () => {
+		const containsStoredRoot = (value: unknown): boolean => {
+			if (Array.isArray(value)) return value.some(containsStoredRoot);
+			if (!value || typeof value !== "object") return false;
+			const record = value as Record<string, unknown>;
+			if (record.type === "root" && Array.isArray(record.children)) return true;
+			return Object.values(record).some(containsStoredRoot);
+		};
+
+		for (const page of pages) expect(containsStoredRoot(page)).toBe(false);
 	});
 });

@@ -1,0 +1,13 @@
+---
+import TinaMarkdown from "@tinacms/astro/TinaMarkdown.astro";
+import type { TinaRichTextContent } from "@tinacms/astro";
+
+interface Props {
+  content?: TinaRichTextContent;
+  class?: string;
+}
+
+const { content, class: className } = Astro.props;
+---
+
+{content && <div class={className}><TinaMarkdown content={content} /></div>}

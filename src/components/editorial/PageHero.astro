@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 import { heroAspectRatio, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
 import { pathFor, type PublishedLocale } from "../../lib/routing";
+import { responsiveCssImage, responsiveSrcSet } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 
@@ -48,7 +49,7 @@ const items = [
     className,
   ]}
   style={backgroundImage
-    ? `--hero-image: url("${backgroundImage}"); --hero-position: center ${backgroundPosition};`
+    ? `--hero-image: ${responsiveCssImage(backgroundImage)}; --hero-position: center ${backgroundPosition};`
     : undefined}
   {...rest}
 >
@@ -83,6 +84,7 @@ const items = [
           >
             <img
               src={foreground.image ?? undefined}
+              srcset={responsiveSrcSet(foreground.image)}
               alt={foreground.decorative ? "" : (foreground.alt?.trim() ?? "")}
               loading="eager"
               fetchpriority="high"

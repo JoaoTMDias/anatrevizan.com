@@ -1,10 +1,16 @@
 import type { TinaField } from "tinacms";
+import { richText } from "./common";
 
 const text = (name: string, label: string, required = true): TinaField => ({
 	name,
 	label,
 	type: "string",
 	required,
+});
+
+const derivedTitle = (): TinaField => ({
+	...text("title", "Título derivado da página de destino"),
+	ui: { component: "hidden" },
 });
 
 const stringList = (
@@ -34,7 +40,7 @@ export const academicHubFields: TinaField[] = [
 				list: true,
 				required: true,
 				fields: [
-					text("title", "Title"),
+					derivedTitle(),
 					text("description", "Description"),
 					text("routeKey", "Destination"),
 					text("cta", "CTA"),
@@ -59,7 +65,7 @@ export const academicServiceFields: TinaField[] = [
 		fields: [
 			text("subtitle", "Subtitle"),
 			text("introHeading", "Introduction heading"),
-			stringList("introParagraphs", "Introduction paragraphs"),
+			richText("introParagraphs", "Texto de introdução"),
 			text("servicesHeading", "Services heading"),
 			text("servicesSubtitle", "Services introduction", false),
 			{
@@ -152,7 +158,7 @@ export const speakingPageFields: TinaField[] = [
 			text("subtitle", "Subtitle"),
 			text("photoPlaceholderLabel", "Photo placeholder label"),
 			text("bioHeading", "Biography heading"),
-			stringList("bioParagraphs", "Biography paragraphs"),
+			richText("bioParagraphs", "Biografia"),
 			text("topicsHeading", "Topics heading"),
 			stringList("topics", "Topics"),
 			text("kitHeading", "Kit heading"),

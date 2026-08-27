@@ -12,6 +12,7 @@ export interface EditorialDocument {
 	title: string;
 	seoTitle: string;
 	seoDescription: string;
+	lastModified?: string;
 	complete: boolean;
 }
 
@@ -23,12 +24,14 @@ export interface EditorialIssue {
 		| "invalid-route"
 		| "duplicate-route"
 		| "missing-page"
-		| "incomplete-portuguese";
+		| "incomplete-portuguese"
+		| "published-english-regression";
 	message: string;
 }
 
 export function validateEditorialDocuments(
 	documents: readonly BilingualEditorialDocument[],
+	publishedEnglishRoutes: readonly RouteKey[] = [],
 ): EditorialIssue[] {
 	const issues: EditorialIssue[] = [];
 	const seen = new Set<RouteKey>();
@@ -50,6 +53,14 @@ export function validateEditorialDocuments(
 			issues.push({
 				code: "incomplete-portuguese",
 				message: `${document.routeKey}: ${missingLocalizedPaths(document, "pt-PT").join(", ")}`,
+			});
+		if (
+			publishedEnglishRoutes.includes(document.routeKey) &&
+			!isLocaleComplete(document, "en")
+		)
+			issues.push({
+				code: "published-english-regression",
+				message: `${document.routeKey}: uma tradução inglesa já publicada ficou incompleta`,
 			});
 	}
 	for (const routeKey of routeKeys)
@@ -83,9 +94,22 @@ export function isPublishable(document: EditorialDocument): boolean {
 export function isPublishedDocument(document: EditorialDocument): boolean {
 	return document.complete;
 }
+export function isLocalIncompleteEnglishPreviewEnabled(
+	env: { dev?: boolean } = {},
+): boolean {
+	return (
+		env.dev ??
+		(typeof import.meta !== "undefined" && "env" in import.meta
+			? Boolean((import.meta as { env?: { DEV?: boolean } }).env?.DEV)
+			: false)
+	);
+}
 export function shouldRenderEditorialDocument(
 	document: EditorialDocument,
 	preview = isEditorialPreviewEnabled(),
+	localIncompleteEnglishPreview = isLocalIncompleteEnglishPreviewEnabled(),
 ): boolean {
-	return document.complete || preview;
+	if (document.complete) return true;
+	if (document.locale === "en") return preview && localIncompleteEnglishPreview;
+	return preview;
 }

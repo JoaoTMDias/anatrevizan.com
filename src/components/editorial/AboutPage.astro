@@ -10,6 +10,7 @@ import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -32,11 +33,7 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
           data-tina-field={tinaField(data, "about")}
         />
         <Section>
-          <div class="about-narrative max-w-3xl">
-            {about.narrative.map((paragraph) => (
-              <p>{paragraph}</p>
-            ))}
-          </div>
+          <RichText content={about.narrative} class="about-narrative max-w-3xl" />
         </Section>
         <Section background="bg-secondary">
           <div class="max-w-3xl">

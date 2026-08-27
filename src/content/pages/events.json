@@ -1,65 +1,65 @@
 {
-  "_template": "events",
-  "routeKey": "events",
-  "media": {
-    "foreground": {
-      "image": "/hero-placeholder.webp",
-      "alt": {
-        "pt": "",
-        "en": ""
-      },
-      "decorative": true,
-      "aspectRatio": "square"
-    }
-  },
-  "title": {
-    "pt": "Eventos e Palestras",
-    "en": "Events"
-  },
-  "summary": {
-    "pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Eventos e Palestras · Journal desde 2019",
-      "en": "Events — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Journal de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "eventsPage": {
-    "tag": {
-      "pt": "Academia",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-      "en": ""
-    },
-    "emptyHeading": {
-      "pt": "Journal em consolidação",
-      "en": ""
-    },
-    "emptyText": {
-      "pt": "Estou a reunir aqui as participações em conferências, painéis e eventos desde 2019. Enquanto isso, se quiser convidar-me para o seu evento, o kit de palestrante já está disponível.",
-      "en": ""
-    },
-    "speakerKitCta": {
-      "pt": "Ver kit de palestrante",
-      "en": ""
-    },
-    "entries": [],
-    "ctaHeading": {
-      "pt": "Quer que este journal cresça com o seu evento?",
-      "en": ""
-    },
-    "ctaText": {
-      "pt": "Envie os detalhes do convite e retomo o contacto.",
-      "en": ""
-    }
-  }
+	"_template": "events",
+	"routeKey": "events",
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": {
+				"pt": "",
+				"en": ""
+			},
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
+	"title": {
+		"pt": "Eventos e Palestras",
+		"en": "Events"
+	},
+	"summary": {
+		"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Eventos e Palestras · Journal desde 2019",
+			"en": "Events — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Journal de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"eventsPage": {
+		"tag": {
+			"pt": "Academia",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
+			"en": ""
+		},
+		"emptyHeading": {
+			"pt": "Journal em consolidação",
+			"en": ""
+		},
+		"emptyText": {
+			"pt": "Estou a reunir aqui as participações em conferências, painéis e eventos desde 2019. Enquanto isso, se quiser convidar-me para o seu evento, o kit de palestrante já está disponível.",
+			"en": ""
+		},
+		"speakerKitCta": {
+			"pt": "Ver kit de palestrante",
+			"en": ""
+		},
+		"entries": [],
+		"ctaHeading": {
+			"pt": "Quer que este journal cresça com o seu evento?",
+			"en": ""
+		},
+		"ctaText": {
+			"pt": "Envie os detalhes do convite e retomo o contacto.",
+			"en": ""
+		}
+	}
 }

@@ -18,11 +18,17 @@ export const localizedText = (
 			label: "Português (Portugal)",
 			type: component === "rich-text" ? "rich-text" : "string",
 			required,
+			...(component === "rich-text"
+				? { overrides: { toolbar: ["heading", "link", "ul", "ol", "bold", "italic"], headingLevels: ["h2", "h3", "h4"] } }
+				: component === "textarea" ? { ui: { component: "textarea" } } : {}),
 		},
 		{
 			name: "en",
 			label: "English",
 			type: component === "rich-text" ? "rich-text" : "string",
+			...(component === "rich-text"
+				? { overrides: { toolbar: ["heading", "link", "ul", "ol", "bold", "italic"], headingLevels: ["h2", "h3", "h4"] } }
+				: component === "textarea" ? { ui: { component: "textarea" } } : {}),
 		},
 	],
 });
@@ -50,8 +56,12 @@ export function bilingualFields(fields: TinaField[]): TinaField[] {
 			return { ...field, fields: bilingualFields(field.fields as TinaField[]) };
 		if (field.type === "string" && !sharedStringNames.has(field.name)) {
 			const component =
-				field.ui && "component" in field.ui && field.ui.component === "textarea"
-					? "textarea"
+				field.ui && "component" in field.ui
+					? field.ui.component === "textarea"
+						? "textarea"
+						: field.ui.component === "rich-text"
+							? "rich-text"
+							: undefined
 					: undefined;
 			const localized = localizedText(
 				field.name,
@@ -64,3 +74,15 @@ export function bilingualFields(fields: TinaField[]): TinaField[] {
 		return field;
 	});
 }
+
+export const richText = (
+	name: string,
+	label: string,
+	required = true,
+): TinaField => ({
+	name,
+	label,
+	type: "string",
+	required,
+	ui: { component: "rich-text" },
+});

@@ -7,12 +7,41 @@ import tina from '@tinacms/astro/integration';
 import { tinaAdminDevRedirect } from '@tinacms/astro/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { buildMediaVariants } from './src/lib/media-pipeline.ts';
+import { extname, join, normalize } from 'node:path';
+import { readFile } from 'node:fs/promises';
 
 /** @type {import('astro').AstroIntegration} */
 const editorialMedia = {
 	name: 'editorial-media-pipeline',
 	hooks: {
 		'astro:build:done': async ({ dir }) => buildMediaVariants(new URL('./public', import.meta.url).pathname, dir.pathname),
+		'astro:server:setup': async ({ server }) => {
+			const publicDirectory = new URL('./public', import.meta.url).pathname;
+			const generated = new URL('./.astro/editorial-media/', import.meta.url).pathname;
+			await buildMediaVariants(publicDirectory, generated);
+			server.middlewares.use(async (request, response, next) => {
+				const pathname = decodeURIComponent(new URL(request.url ?? '/', 'http://localhost').pathname);
+				const generatedPath = pathname.startsWith('/_media/')
+					? join(generated, pathname)
+					: extname(pathname).toLowerCase() === '.svg'
+						? join(generated, pathname)
+						: undefined;
+				if (!generatedPath || !normalize(generatedPath).startsWith(normalize(generated))) return next();
+				try {
+					response.setHeader('Content-Type', pathname.endsWith('.svg') ? 'image/svg+xml' : 'image/webp');
+					response.end(await readFile(generatedPath));
+				} catch {
+					next();
+				}
+			});
+			/** @type {ReturnType<typeof setTimeout> | undefined} */
+			let rebuilding;
+			server.watcher.on('change', (path) => {
+				if (!path.startsWith(publicDirectory)) return;
+				if (rebuilding) clearTimeout(rebuilding);
+				rebuilding = setTimeout(() => void buildMediaVariants(publicDirectory, generated), 100);
+			});
+		},
 	},
 };
 

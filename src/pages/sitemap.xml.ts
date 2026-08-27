@@ -40,7 +40,10 @@ export const GET: APIRoute = async ({ site }) => {
 			const xDefault = available.has(`${document.routeKey}:pt-PT`)
 				? `<xhtml:link rel="alternate" hreflang="x-default" href="${xml(new URL(pathFor(document.routeKey, "pt-PT"), origin).toString())}"/>`
 				: "";
-			return `<url><loc>${xml(new URL(pathFor(document.routeKey, document.locale), origin).toString())}</loc>${alternates}${xDefault}</url>`;
+			const lastmod = document.lastModified
+				? `<lastmod>${xml(document.lastModified)}</lastmod>`
+				: "";
+			return `<url><loc>${xml(new URL(pathFor(document.routeKey, document.locale), origin).toString())}</loc>${lastmod}${alternates}${xDefault}</url>`;
 		})
 		.join("");
 	return new Response(

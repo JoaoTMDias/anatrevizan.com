@@ -1,60 +1,60 @@
 {
-  "_template": "booking",
-  "routeKey": "booking",
-  "title": {
-    "pt": "Agende uma conversa",
-    "en": "Book a call"
-  },
-  "summary": {
-    "pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Agendar uma conversa inicial",
-      "en": "Book a call — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Marque um primeiro contacto com a Dra. Ana Trevizan. Conversa de 15 a 30 minutos, para temas jurídicos e académicos.",
-      "en": ""
-    },
-    "noindex": true
-  },
-  "media": {
-    "foreground": {
-      "image": "/agendar-hero.webp",
-      "alt": {
-        "pt": "Close-up de uma agenda.",
-        "en": ""
-      },
-      "decorative": false,
-      "aspectRatio": "landscape"
-    }
-  },
-  "bookingPage": {
-    "tag": {
-      "pt": "Agendar",
-      "en": ""
-    },
-    "subtitle": {
-      "pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
-      "en": ""
-    },
-    "duration": {
-      "pt": "15 a 30 minutos",
-      "en": ""
-    },
-    "validFor": {
-      "pt": "Válido para todos os temas — jurídicos e académicos.",
-      "en": ""
-    },
-    "timezone": {
-      "pt": "Fuso de Portugal",
-      "en": ""
-    },
-    "timezoneNote": {
-      "pt": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
-      "en": ""
-    }
-  }
+	"_template": "booking",
+	"routeKey": "booking",
+	"title": {
+		"pt": "Agende uma conversa",
+		"en": "Book a call"
+	},
+	"summary": {
+		"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Agendar uma conversa inicial",
+			"en": "Book a call — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Marque um primeiro contacto com a Dra. Ana Trevizan. Conversa de 15 a 30 minutos, para temas jurídicos e académicos.",
+			"en": ""
+		},
+		"noindex": true
+	},
+	"media": {
+		"foreground": {
+			"image": "/agendar-hero.webp",
+			"alt": {
+				"pt": "Close-up de uma agenda.",
+				"en": ""
+			},
+			"decorative": false,
+			"aspectRatio": "landscape"
+		}
+	},
+	"bookingPage": {
+		"tag": {
+			"pt": "Agendar",
+			"en": ""
+		},
+		"subtitle": {
+			"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
+			"en": ""
+		},
+		"duration": {
+			"pt": "15 a 30 minutos",
+			"en": ""
+		},
+		"validFor": {
+			"pt": "Válido para todos os temas — jurídicos e académicos.",
+			"en": ""
+		},
+		"timezone": {
+			"pt": "Fuso de Portugal",
+			"en": ""
+		},
+		"timezoneNote": {
+			"pt": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
+			"en": ""
+		}
+	}
 }

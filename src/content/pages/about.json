@@ -1,294 +1,288 @@
 {
-  "routeKey": "about",
-  "title": {
-    "pt": "Dra. Ana Flávia Trevizan",
-    "en": "About"
-  },
-  "summary": {
-    "pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
-    "en": ""
-  },
-  "seo": {
-    "title": {
-      "pt": "Percurso da Dra. Ana Flávia Trevizan",
-      "en": "About — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
-      "en": ""
-    }
-  },
-  "media": {
-    "foreground": {
-      "image": "/hero-placeholder.webp",
-      "alt": {
-        "pt": "",
-        "en": ""
-      },
-      "decorative": true,
-      "aspectRatio": "square"
-    }
-  },
-  "about": {
-    "tag": {
-      "pt": "Sobre mim",
-      "en": "About me"
-    },
-    "subtitle": {
-      "pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas — e entre dois países.",
-      "en": ""
-    },
-    "narrative": [
-      {
-        "pt": "A minha trajetória sempre foi guiada por uma inquietação: perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.",
-        "en": ""
-      },
-      {
-        "pt": "Cedo compreendi que aplicar a lei, por si só, nem sempre basta. É preciso entender as instituições, as políticas públicas e os mecanismos que tornam certas normas efetivas — e outras, letra morta. Foi essa pergunta que me levou da advocacia à investigação, da administração pública à docência, e do Brasil a Portugal.",
-        "en": ""
-      }
-    ],
-    "milestonesTitle": {
-      "pt": "Marcos do percurso",
-      "en": ""
-    },
-    "milestones": [
-      {
-        "year": "2013",
-        "title": {
-          "pt": "Inscrição na OAB e início da advocacia",
-          "en": ""
-        },
-        "description": {
-          "pt": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil.",
-          "en": ""
-        }
-      },
-      {
-        "year": "2015",
-        "title": {
-          "pt": "Mestrado em Direito Agroambiental — UFMT",
-          "en": ""
-        },
-        "description": {
-          "pt": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas.",
-          "en": ""
-        }
-      },
-      {
-        "year": "2018–2019",
-        "title": {
-          "pt": "Assessora Especial — SEMA-MT",
-          "en": ""
-        },
-        "description": {
-          "pt": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança.",
-          "en": ""
-        }
-      },
-      {
-        "year": "2019–2024",
-        "title": {
-          "pt": "Doutoramento — NOVA Lisboa",
-          "en": ""
-        },
-        "description": {
-          "pt": "Bolseira da FCT. Investigação sobre o «Efeito Bruxelas» e o EUDR, com pesquisa empírica de campo na Amazónia junto de produtores, empresas e comunidades.",
-          "en": ""
-        }
-      },
-      {
-        "year": "2020",
-        "title": {
-          "pt": "Mestrado reconhecido pela Universidade de Lisboa",
-          "en": ""
-        },
-        "description": {
-          "pt": "Integração formal ao espaço académico europeu.",
-          "en": ""
-        }
-      },
-      {
-        "year": "2025",
-        "title": {
-          "pt": "SPF Early Career Fellow — Rights Lab, Nottingham",
-          "en": ""
-        },
-        "description": {
-          "pt": "Pesquisa em cadeias globais de fornecimento, direitos humanos e responsabilidade empresarial. Início da docência em inglês na LUNEX (Luxemburgo).",
-          "en": ""
-        }
-      },
-      {
-        "year": "2026",
-        "title": {
-          "pt": "Formadora certificada em Portugal",
-          "en": ""
-        },
-        "description": {
-          "pt": "Habilitação oficial para o desenvolvimento de ações de formação no país.",
-          "en": ""
-        }
-      }
-    ],
-    "currentWorkTitle": {
-      "pt": "Onde atuo hoje",
-      "en": ""
-    },
-    "currentWork": [
-      {
-        "country": {
-          "pt": "",
-          "en": ""
-        },
-        "title": {
-          "pt": "Em Portugal",
-          "en": ""
-        },
-        "description": {
-          "pt": "Investigadora colaboradora do CEJEIA, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica.",
-          "en": ""
-        }
-      },
-      {
-        "country": {
-          "pt": "",
-          "en": ""
-        },
-        "title": {
-          "pt": "No Brasil",
-          "en": ""
-        },
-        "description": {
-          "pt": "Mantenho a atuação em Direito ambiental, governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
-          "en": ""
-        }
-      }
-    ],
-    "valuesTitle": {
-      "pt": "O que orienta o meu trabalho",
-      "en": ""
-    },
-    "valuesSubtitle": {
-      "pt": "Acredito que o Direito deve ser um instrumento de transformação — e um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
-      "en": ""
-    },
-    "values": [
-      {
-        "title": {
-          "pt": "Ética e integridade",
-          "en": ""
-        },
-        "description": {
-          "pt": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Excelência técnica",
-          "en": ""
-        },
-        "description": {
-          "pt": "Soluções fundamentadas e atualização profissional permanente.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Diversidade e inclusão",
-          "en": ""
-        },
-        "description": {
-          "pt": "Valorização da pluralidade de pessoas, culturas e perspetivas.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Proteção de dados",
-          "en": ""
-        },
-        "description": {
-          "pt": "Confidencialidade e cumprimento do RGPD e demais normas aplicáveis.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Compromisso com o cliente",
-          "en": ""
-        },
-        "description": {
-          "pt": "Atendimento próximo, estratégico e personalizado.",
-          "en": ""
-        }
-      },
-      {
-        "title": {
-          "pt": "Sustentabilidade",
-          "en": ""
-        },
-        "description": {
-          "pt": "Práticas alinhadas ao ESG e ao desenvolvimento sustentável.",
-          "en": ""
-        }
-      }
-    ],
-    "networksLabel": {
-      "pt": "Redes e vínculos de investigação",
-      "en": ""
-    },
-    "networks": [
-      {
-        "pt": "LACLIMA",
-        "en": ""
-      },
-      {
-        "pt": "Legally Green",
-        "en": ""
-      },
-      {
-        "pt": "CENSE — NOVA Lisboa",
-        "en": ""
-      },
-      {
-        "pt": "CEDAT — Rovira i Virgili",
-        "en": ""
-      },
-      {
-        "pt": "CEJEIA",
-        "en": ""
-      },
-      {
-        "pt": "GPMAT — UFMT",
-        "en": ""
-      },
-      {
-        "pt": "Observa-MT",
-        "en": ""
-      },
-      {
-        "pt": "Casa Comum da Humanidade",
-        "en": ""
-      }
-    ],
-    "speakerKitCta": {
-      "pt": "Ver kit de palestrante",
-      "en": ""
-    },
-    "finalCtaHeading": {
-      "pt": "Falamos?",
-      "en": ""
-    },
-    "finalCtaText": {
-      "pt": "Seja para consultoria, uma mentoria ou um convite para palestrar, o primeiro passo é uma conversa.",
-      "en": ""
-    },
-    "finalCtaLabel": {
-      "pt": "Agendar primeiro contacto",
-      "en": ""
-    }
-  },
-  "_template": "about"
+	"routeKey": "about",
+	"title": {
+		"pt": "Dra. Ana Flávia Trevizan",
+		"en": "About"
+	},
+	"summary": {
+		"pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
+		"en": ""
+	},
+	"seo": {
+		"title": {
+			"pt": "Percurso da Dra. Ana Flávia Trevizan",
+			"en": "About — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
+			"en": ""
+		}
+	},
+	"media": {
+		"foreground": {
+			"image": "/hero-placeholder.webp",
+			"alt": {
+				"pt": "",
+				"en": ""
+			},
+			"decorative": true,
+			"aspectRatio": "square"
+		}
+	},
+	"about": {
+		"tag": {
+			"pt": "Sobre mim",
+			"en": "About me"
+		},
+		"subtitle": {
+			"pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas — e entre dois países.",
+			"en": ""
+		},
+		"narrative": {
+			"pt": "A minha trajetória sempre foi guiada por uma inquietação: perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nCedo compreendi que aplicar a lei, por si só, nem sempre basta. É preciso entender as instituições, as políticas públicas e os mecanismos que tornam certas normas efetivas — e outras, letra morta. Foi essa pergunta que me levou da advocacia à investigação, da administração pública à docência, e do Brasil a Portugal.",
+			"en": ""
+		},
+		"milestonesTitle": {
+			"pt": "Marcos do percurso",
+			"en": ""
+		},
+		"milestones": [
+			{
+				"year": "2013",
+				"title": {
+					"pt": "Inscrição na OAB e início da advocacia",
+					"en": ""
+				},
+				"description": {
+					"pt": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil.",
+					"en": ""
+				}
+			},
+			{
+				"year": "2015",
+				"title": {
+					"pt": "Mestrado em Direito Agroambiental — UFMT",
+					"en": ""
+				},
+				"description": {
+					"pt": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas.",
+					"en": ""
+				}
+			},
+			{
+				"year": "2018–2019",
+				"title": {
+					"pt": "Assessora Especial — SEMA-MT",
+					"en": ""
+				},
+				"description": {
+					"pt": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança.",
+					"en": ""
+				}
+			},
+			{
+				"year": "2019–2024",
+				"title": {
+					"pt": "Doutoramento — NOVA Lisboa",
+					"en": ""
+				},
+				"description": {
+					"pt": "Bolseira da FCT. Investigação sobre o «Efeito Bruxelas» e o EUDR, com pesquisa empírica de campo na Amazónia junto de produtores, empresas e comunidades.",
+					"en": ""
+				}
+			},
+			{
+				"year": "2020",
+				"title": {
+					"pt": "Mestrado reconhecido pela Universidade de Lisboa",
+					"en": ""
+				},
+				"description": {
+					"pt": "Integração formal ao espaço académico europeu.",
+					"en": ""
+				}
+			},
+			{
+				"year": "2025",
+				"title": {
+					"pt": "SPF Early Career Fellow — Rights Lab, Nottingham",
+					"en": ""
+				},
+				"description": {
+					"pt": "Pesquisa em cadeias globais de fornecimento, direitos humanos e responsabilidade empresarial. Início da docência em inglês na LUNEX (Luxemburgo).",
+					"en": ""
+				}
+			},
+			{
+				"year": "2026",
+				"title": {
+					"pt": "Formadora certificada em Portugal",
+					"en": ""
+				},
+				"description": {
+					"pt": "Habilitação oficial para o desenvolvimento de ações de formação no país.",
+					"en": ""
+				}
+			}
+		],
+		"currentWorkTitle": {
+			"pt": "Onde atuo hoje",
+			"en": ""
+		},
+		"currentWork": [
+			{
+				"country": {
+					"pt": "",
+					"en": ""
+				},
+				"title": {
+					"pt": "Em Portugal",
+					"en": ""
+				},
+				"description": {
+					"pt": "Investigadora colaboradora do CEJEIA, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica.",
+					"en": ""
+				}
+			},
+			{
+				"country": {
+					"pt": "",
+					"en": ""
+				},
+				"title": {
+					"pt": "No Brasil",
+					"en": ""
+				},
+				"description": {
+					"pt": "Mantenho a atuação em Direito ambiental, governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
+					"en": ""
+				}
+			}
+		],
+		"valuesTitle": {
+			"pt": "O que orienta o meu trabalho",
+			"en": ""
+		},
+		"valuesSubtitle": {
+			"pt": "Acredito que o Direito deve ser um instrumento de transformação — e um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
+			"en": ""
+		},
+		"values": [
+			{
+				"title": {
+					"pt": "Ética e integridade",
+					"en": ""
+				},
+				"description": {
+					"pt": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Excelência técnica",
+					"en": ""
+				},
+				"description": {
+					"pt": "Soluções fundamentadas e atualização profissional permanente.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Diversidade e inclusão",
+					"en": ""
+				},
+				"description": {
+					"pt": "Valorização da pluralidade de pessoas, culturas e perspetivas.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Proteção de dados",
+					"en": ""
+				},
+				"description": {
+					"pt": "Confidencialidade e cumprimento do RGPD e demais normas aplicáveis.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Compromisso com o cliente",
+					"en": ""
+				},
+				"description": {
+					"pt": "Atendimento próximo, estratégico e personalizado.",
+					"en": ""
+				}
+			},
+			{
+				"title": {
+					"pt": "Sustentabilidade",
+					"en": ""
+				},
+				"description": {
+					"pt": "Práticas alinhadas ao ESG e ao desenvolvimento sustentável.",
+					"en": ""
+				}
+			}
+		],
+		"networksLabel": {
+			"pt": "Redes e vínculos de investigação",
+			"en": ""
+		},
+		"networks": [
+			{
+				"pt": "LACLIMA",
+				"en": ""
+			},
+			{
+				"pt": "Legally Green",
+				"en": ""
+			},
+			{
+				"pt": "CENSE — NOVA Lisboa",
+				"en": ""
+			},
+			{
+				"pt": "CEDAT — Rovira i Virgili",
+				"en": ""
+			},
+			{
+				"pt": "CEJEIA",
+				"en": ""
+			},
+			{
+				"pt": "GPMAT — UFMT",
+				"en": ""
+			},
+			{
+				"pt": "Observa-MT",
+				"en": ""
+			},
+			{
+				"pt": "Casa Comum da Humanidade",
+				"en": ""
+			}
+		],
+		"speakerKitCta": {
+			"pt": "Ver kit de palestrante",
+			"en": ""
+		},
+		"finalCtaHeading": {
+			"pt": "Falamos?",
+			"en": ""
+		},
+		"finalCtaText": {
+			"pt": "Seja para consultoria, uma mentoria ou um convite para palestrar, o primeiro passo é uma conversa.",
+			"en": ""
+		},
+		"finalCtaLabel": {
+			"pt": "Agendar primeiro contacto",
+			"en": ""
+		}
+	},
+	"_template": "about"
 }

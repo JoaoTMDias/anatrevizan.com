@@ -9,6 +9,7 @@ import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -36,11 +37,7 @@ const icons =
         <Section class="max-w-4xl">
           <>
             <SectionHeading title={service.introHeading} />
-            <div class="space-y-5 text-lg leading-relaxed text-muted-foreground">
-              {service.introParagraphs.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </div>
+            <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
           </>
         </Section>
         <Section background="bg-secondary">

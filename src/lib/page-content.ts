@@ -1,4 +1,5 @@
 import { isRouteKey, type RouteKey } from "./routing";
+import type { TinaRichTextContent } from "@tinacms/astro";
 
 export interface LinkCard {
 	title: string;
@@ -35,7 +36,7 @@ export interface HomeContent {
 export interface AboutContent {
 	tag: string;
 	subtitle: string;
-	narrative: string[];
+	narrative: TinaRichTextContent;
 	milestonesTitle: string;
 	milestones: Array<{ year: string; title: string; description: string }>;
 	currentWorkTitle: string;
@@ -78,7 +79,7 @@ export interface ConsultingServiceContent {
 		alt?: string | null;
 		decorative?: boolean | null;
 	} | null;
-	introParagraphs: string[];
+	introParagraphs: TinaRichTextContent;
 	servicesHeading: string;
 	servicesSubtitle?: string | null;
 	services: Array<{
@@ -99,7 +100,7 @@ export interface ConsultingServiceContent {
 		alt?: string | null;
 		decorative?: boolean | null;
 	} | null;
-	differentiatorParagraphs?: string[] | null;
+	differentiatorParagraphs?: TinaRichTextContent;
 	differentiatorCredentials?: string[] | null;
 	relatedWorkHeading?: string | null;
 	relatedWorkSubtitle?: string | null;
@@ -130,7 +131,7 @@ export interface AcademicHubContent {
 export interface AcademicServiceContent {
 	subtitle: string;
 	introHeading: string;
-	introParagraphs: string[];
+	introParagraphs: TinaRichTextContent;
 	servicesHeading: string;
 	servicesSubtitle?: string | null;
 	services: Array<{ title: string; description: string }>;
@@ -184,7 +185,7 @@ export interface SpeakingPageContent {
 	subtitle: string;
 	photoPlaceholderLabel: string;
 	bioHeading: string;
-	bioParagraphs: string[];
+	bioParagraphs: TinaRichTextContent;
 	topicsHeading: string;
 	topics: string[];
 	kitHeading: string;
@@ -198,27 +199,7 @@ export interface SpeakingPageContent {
 export interface ContactPageContent {
 	tag: string;
 	subtitle: string;
-	formCopy: {
-		nameLabel: string;
-		whatsappLabel: string;
-		emailLabel: string;
-		countryLabel: string;
-		subjectLabel: string;
-		subjectPlaceholder: string;
-		consentText: string;
-		privacyPolicyLabel: string;
-		submitLabel: string;
-		successMessage: string;
-		errorMessage: string;
-		countries: string[];
-	};
 	otherMethodsHeading: string;
-	contactMethods: Array<{
-		label: string;
-		value?: string | null;
-		url?: string | null;
-		status: "valid" | "unconfirmed" | "missing" | "placeholder";
-	}>;
 	countriesLabel: string;
 	languagesLabel: string;
 	bookingCta: string;
@@ -236,7 +217,7 @@ export interface BookingPageContent {
 export interface LegalPageContent {
 	sourceStatus: string;
 	reviewRequirements: string[];
-	sections?: Array<{ heading: string; paragraphs: string[] }> | null;
+	sections?: Array<{ heading: string; paragraphs: TinaRichTextContent }> | null;
 }
 
 export function hasValidRouteKey(value: {
