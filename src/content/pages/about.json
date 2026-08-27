@@ -1,17 +1,17 @@
 {
   "routeKey": "about",
   "title": {
-    "pt": "Dra. Ana Flávia Trevizan",
-    "en": "About"
+    "pt": "Dr. Ana, PhD",
+    "en": "Dr. Ana, PhD"
   },
   "summary": {
     "pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
-    "en": ""
+    "en": "Lawyer admitted to the Brazilian Bar Association (OAB) since 2013, holding a Ph.D. from NOVA University Lisbon. Researcher in Environmental Law, ESG, and Migration, practicing across Portugal and Brazil."
   },
   "seo": {
     "title": {
       "pt": "Sobre a Dra. Ana Flávia Trevizan",
-      "en": "About — Ana Trevizan"
+      "en": "About Dra. Ana Flávia Trevizan"
     },
     "description": {
       "pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
@@ -20,12 +20,12 @@
   },
   "media": {
     "foreground": {
-      "image": "/hero-placeholder.webp",
+      "image": "/about-hero.webp",
       "alt": {
-        "pt": "",
-        "en": ""
+        "pt": "Ana Flávia sentada num divã, a sorrir para a câmera",
+        "en": "Ana Flávia sitting on a couch, smiling at the camera."
       },
-      "decorative": true
+      "decorative": false
     }
   },
   "about": {
