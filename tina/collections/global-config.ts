@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { editorialListItemLabel } from "./common";
 
 const localizedText = (name: string, label: string) => ({
 	name,
@@ -62,8 +63,13 @@ export const GlobalConfigCollection: Collection = {
 					label: "Perfis profissionais",
 					type: "object",
 					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Perfil profissional"),
+						}),
+					},
 					fields: [
-						localizedText("label", "Localized label"),
+						localizedText("label", "Nome apresentado"),
 						{ name: "url", label: "URL", type: "string", required: true },
 					],
 				},
@@ -72,9 +78,14 @@ export const GlobalConfigCollection: Collection = {
 					label: "Regiões de atendimento",
 					type: "object",
 					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Região"),
+						}),
+					},
 					fields: [
 						{ name: "flag", label: "Flag", type: "string", required: true },
-						localizedText("label", "Localized region name"),
+						localizedText("label", "Nome da região"),
 					],
 				},
 				{
@@ -149,8 +160,8 @@ export const GlobalConfigCollection: Collection = {
 			type: "object",
 			required: true,
 			fields: [
-				localizedText("defaultTitle", "Default title"),
-				localizedText("defaultDescription", "Default description"),
+				localizedText("defaultTitle", "Título predefinido"),
+				localizedText("defaultDescription", "Descrição predefinida"),
 				{
 					name: "defaultImage",
 					label: "Imagem social predefinida",
@@ -163,13 +174,13 @@ export const GlobalConfigCollection: Collection = {
 			label: "Rodapé e navegação legal",
 			type: "object",
 			fields: [
-				localizedText("copyright", "Copyright label"),
+				localizedText("copyright", "Texto de copyright"),
 				optionalLocalizedText(
 					"professionalRegistration",
-					"Professional identification",
+					"Identificação profissional",
 				),
-				optionalLocalizedText("disclaimer", "Informational disclaimer"),
-				optionalLocalizedText("rightsReserved", "Rights reserved text"),
+				optionalLocalizedText("disclaimer", "Aviso informativo"),
+				optionalLocalizedText("rightsReserved", "Texto de direitos reservados"),
 			],
 		},
 	],

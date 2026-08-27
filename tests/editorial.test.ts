@@ -21,6 +21,8 @@ import { deriveLinkedPageTitles } from "../src/lib/data.ts";
 import { navigationItems } from "../src/lib/navigation.ts";
 import { heroAspectRatioForRoute } from "../src/lib/hero-media.ts";
 import { incompleteEnglishWarning } from "../tina/editorial-warning.ts";
+import { editorialListItemLabel } from "../tina/collections/common.ts";
+import { PublicationCollection } from "../tina/collections/publication.ts";
 
 const directory = join(process.cwd(), "src/content/pages");
 const pages = readdirSync(directory)
@@ -168,6 +170,71 @@ describe("modelo editorial bilingue", () => {
 		};
 		for (const card of [...home.home.gateways, ...home.home.services])
 			expect(card).not.toHaveProperty("title");
+	});
+
+	it("identifica itens de listas pelo respetivo conteúdo", () => {
+		expect(
+			editorialListItemLabel(
+				{ title: { pt: "Inscrição na OAB", en: "OAB admission" } },
+				"Marco",
+			),
+		).toBe("Inscrição na OAB");
+		expect(
+			editorialListItemLabel({ title: { pt: "", en: "English title" } }, "Item"),
+		).toBe("English title");
+		expect(
+			editorialListItemLabel({ pt: "LACLIMA", en: "" }, "Rede"),
+		).toBe("LACLIMA");
+
+		const aboutTemplate = EditorialCollection.templates?.find(
+			(template) => template.name === "about",
+		);
+		const about = aboutTemplate?.fields.find((field) => field.name === "about");
+		if (!about || about.type !== "object" || !about.fields)
+			throw new Error("Campos About ausentes");
+		const networks = about.fields.find((field) => field.name === "networks");
+		if (!networks?.ui || !("itemProps" in networks.ui))
+			throw new Error("Labels da lista Redes ausentes");
+		expect(networks.ui.itemProps?.({ pt: "LACLIMA", en: "" })).toEqual({
+			label: "LACLIMA",
+		});
+	});
+
+	it("dá nomes úteis a todas as listas de objetos do CMS", () => {
+		const missing: string[] = [];
+		const visit = (
+			fields: NonNullable<typeof GlobalConfigCollection.fields>,
+			prefix: string,
+		) => {
+			for (const field of fields) {
+				const path = `${prefix}.${field.name}`;
+				if (field.type !== "object") continue;
+				if (
+					field.list &&
+					(!field.ui || !("itemProps" in field.ui) || !field.ui.itemProps)
+				)
+					missing.push(path);
+				if (field.fields) visit(field.fields, path);
+			}
+		};
+
+		for (const template of EditorialCollection.templates ?? [])
+			visit(template.fields, `Páginas.${template.name}`);
+		visit(GlobalConfigCollection.fields ?? [], "Configuração global");
+		expect(missing).toEqual([]);
+	});
+
+	it("mostra metadados ORCID sincronizados sem os tornar editáveis", () => {
+		const title = PublicationCollection.fields?.find(
+			(field) => field.name === "title",
+		);
+		expect(title).toMatchObject({ label: "Título", isTitle: true });
+		expect(title?.ui?.component).toBeTypeOf("function");
+		for (const name of ["journal", "year", "type", "doi", "url", "source"])
+			expect(
+				PublicationCollection.fields?.find((field) => field.name === name)?.ui
+					?.component,
+			).toBeTypeOf("function");
 	});
 
 	it("não expõe estrutura de navegação, identidade ou CTAs globais", () => {

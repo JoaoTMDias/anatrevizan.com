@@ -10,4 +10,4 @@ interface Props {
 const { content, class: className } = Astro.props;
 ---
 
-{content && <div class={className}><TinaMarkdown content={content} /></div>}
+{content && <div class:list={["rich-text", className]}><TinaMarkdown content={content} /></div>}
