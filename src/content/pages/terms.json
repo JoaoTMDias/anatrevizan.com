@@ -1,0 +1,56 @@
+{
+  "_template": "terms",
+  "routeKey": "terms",
+  "title": {
+    "pt": "Termos de utilização",
+    "en": "Terms of use"
+  },
+  "summary": {
+    "pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
+    "en": ""
+  },
+  "seo": {
+    "title": {
+      "pt": "Termos de utilização — Ana Trevizan",
+      "en": "Terms of use — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Descrição editorial por aprovar.",
+      "en": ""
+    },
+    "noindex": true
+  },
+  "termsPage": {
+    "sourceStatus": {
+      "pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+      "en": ""
+    },
+    "reviewRequirements": [
+      {
+        "pt": "Finalidade informativa do site",
+        "en": ""
+      },
+      {
+        "pt": "Ausência de aconselhamento jurídico automático",
+        "en": ""
+      },
+      {
+        "pt": "Propriedade intelectual",
+        "en": ""
+      },
+      {
+        "pt": "Ligações externas",
+        "en": ""
+      },
+      {
+        "pt": "Limitação de responsabilidade",
+        "en": ""
+      },
+      {
+        "pt": "Jurisdição aplicável",
+        "en": ""
+      }
+    ],
+    "sections": []
+  }
+}

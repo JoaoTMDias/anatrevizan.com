@@ -8,7 +8,6 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 interface Props {
@@ -21,7 +20,6 @@ const kitIcons = ["user", "photo", "list-check"];
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     speaking ? (
       <>

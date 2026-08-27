@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { listEditorial, toEditorialDocument } from "../lib/data";
 import { type EditorialDocument, isPublishable } from "../lib/editorial";
 import {
-	isPublishedLocale,
+	publishedLocales,
 	type PublishedLocale,
 	pathFor,
 } from "../lib/routing";
@@ -18,12 +18,12 @@ const xml = (value: string) =>
 export const GET: APIRoute = async ({ site }) => {
 	const origin = site ?? new URL("https://anatrevizan.com");
 	const documents = (await listEditorial())
-		.map(toEditorialDocument)
+		.flatMap((raw) =>
+			publishedLocales.map((locale) => toEditorialDocument(raw, locale)),
+		)
 		.filter(
 			(document): document is EditorialDocument & { locale: PublishedLocale } =>
-				document !== null &&
-				isPublishable(document) &&
-				isPublishedLocale(document.locale),
+				document !== null && isPublishable(document),
 		);
 	const available = new Set(
 		documents.map((document) => `${document.routeKey}:${document.locale}`),

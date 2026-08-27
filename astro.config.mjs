@@ -6,6 +6,15 @@ import icon from 'astro-icon';
 import tina from '@tinacms/astro/integration';
 import { tinaAdminDevRedirect } from '@tinacms/astro/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { buildMediaVariants } from './src/lib/media-pipeline.ts';
+
+/** @type {import('astro').AstroIntegration} */
+const editorialMedia = {
+	name: 'editorial-media-pipeline',
+	hooks: {
+		'astro:build:done': async ({ dir }) => buildMediaVariants(new URL('./public', import.meta.url).pathname, dir.pathname),
+	},
+};
 
 // Host-neutral: every content page prerenders to static HTML, and the one
 // on-demand route (/tina-island, the visual-editing endpoint) is served by
@@ -57,7 +66,7 @@ export default defineConfig({
 	output: 'static',
 	adapter: await getAdapter(),
 	redirects: { '/home': '/' },
-	integrations: [mdx(), icon(), react(), tina()],
+	integrations: [mdx(), icon(), react(), tina(), editorialMedia],
 	build: {
 		// Inline the (~10 KiB) bundled CSS into a <style> in <head> instead of a
 		// separate render-blocking <link>. Astro's default ('auto') only inlines

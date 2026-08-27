@@ -41,9 +41,9 @@ describe("design-system guardrails", () => {
 	});
 
 	it("applies a saved or operating-system color theme before the document body", () => {
-		expect(baseLayout).toContain("localStorage.getItem('theme')");
+		expect(baseLayout).toMatch(/localStorage\.getItem\(["']theme["']\)/);
 		expect(baseLayout).toContain("prefers-color-scheme: dark");
-		expect(baseLayout.indexOf("localStorage.getItem('theme')")).toBeLessThan(
+		expect(baseLayout.indexOf("localStorage.getItem")).toBeLessThan(
 			baseLayout.indexOf("<BaseHead"),
 		);
 	});

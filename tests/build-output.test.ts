@@ -15,24 +15,20 @@ const temporaryDirectories: string[] = [];
 function fixture() {
 	const root = mkdtempSync(join(tmpdir(), "editorial-build-report-"));
 	temporaryDirectories.push(root);
-	for (const locale of ["pt-PT", "en"]) {
-		const directory = join(root, "src/content/editorial", locale);
-		mkdirSync(directory, { recursive: true });
-		writeFileSync(
-			join(directory, "home.json"),
-			JSON.stringify({
-				translationGroup: "home",
-				locale,
-				routeKey: "home",
-				slug: "",
-				status: "draft",
-				approvalPending: true,
-				title: "Home",
-				seoTitle: "Home",
-				seoDescription: "Home",
-			}),
-		);
-	}
+	const directory = join(root, "src/content/pages");
+	mkdirSync(directory, { recursive: true });
+	writeFileSync(
+		join(directory, "home.json"),
+		JSON.stringify({
+			routeKey: "home",
+			title: { pt: "Início", en: "Home" },
+			summary: { pt: "Resumo", en: "Summary" },
+			seo: {
+				title: { pt: "Início", en: "Home" },
+				description: { pt: "Resumo", en: "Summary" },
+			},
+		}),
+	);
 	for (const output of [
 		"dist/client/index.html",
 		"dist/client/en/index.html",
@@ -64,7 +60,9 @@ describe("editorial build report", () => {
 	});
 
 	it("rejects a production build with no publishable homepage", () => {
-		expect(() => createEditorialBuildReport(fixture(), "production")).toThrow(
+		const root = fixture();
+		rmSync(join(root, "src/content/pages/home.json"));
+		expect(() => createEditorialBuildReport(root, "production")).toThrow(
 			"Production build has no publishable editorial documents",
 		);
 	});

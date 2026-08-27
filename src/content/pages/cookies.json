@@ -1,0 +1,56 @@
+{
+  "_template": "cookies",
+  "routeKey": "cookies",
+  "title": {
+    "pt": "Política de cookies",
+    "en": "Cookie policy"
+  },
+  "summary": {
+    "pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
+    "en": ""
+  },
+  "seo": {
+    "title": {
+      "pt": "Política de cookies — Ana Trevizan",
+      "en": "Cookie policy — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Descrição editorial por aprovar.",
+      "en": ""
+    },
+    "noindex": true
+  },
+  "cookiesPage": {
+    "sourceStatus": {
+      "pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
+      "en": ""
+    },
+    "reviewRequirements": [
+      {
+        "pt": "Cookies essenciais",
+        "en": ""
+      },
+      {
+        "pt": "Calendly",
+        "en": ""
+      },
+      {
+        "pt": "Analytics, se utilizado",
+        "en": ""
+      },
+      {
+        "pt": "Redes sociais",
+        "en": ""
+      },
+      {
+        "pt": "Fornecedores, finalidades e duração",
+        "en": ""
+      },
+      {
+        "pt": "Consentimento, retirada e alteração",
+        "en": ""
+      }
+    ],
+    "sections": []
+  }
+}

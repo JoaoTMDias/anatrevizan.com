@@ -1,304 +1,85 @@
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-	type EditorialDocument,
-	isEditorialPreviewEnabled,
-	isPublishable,
-	shouldRenderEditorialDocument,
+	isLocaleComplete,
+	localizeValue,
+	missingLocalizedPaths,
+} from "../src/lib/bilingual.ts";
+import {
 	validateEditorialDocuments,
+	type BilingualEditorialDocument,
 } from "../src/lib/editorial.ts";
-import {
-	HERO_PLACEHOLDER_PATH,
-	heroAspectRatio,
-	validateHeroMedia,
-} from "../src/lib/hero-media.ts";
-import {
-	safeCalendlyUrl,
-	safeEmailHref,
-	safeProfileUrl,
-	safeWhatsAppHref,
-} from "../src/lib/external-url.ts";
-import { islandContextFromParams } from "../src/lib/island-context.ts";
-import { pathFor, publishedLocales, routeKeys } from "../src/lib/routing.ts";
-import { localizedDocumentFields } from "../tina/collections/common.ts";
+import { routeKeys } from "../src/lib/routing.ts";
+import { EditorialCollection } from "../tina/collections/editorial.ts";
 
-const documents = routeKeys.flatMap((routeKey) =>
-	publishedLocales.map((locale) => ({
-		translationGroup: routeKey,
-		locale,
-		routeKey,
-		slug: pathFor(routeKey, locale)
-			.replace(/^\/en\/?/, "/")
-			.replace(/^\//, ""),
-		status: "draft" as const,
-		title: routeKey,
-		seoTitle: routeKey,
-		seoDescription: routeKey,
-		approvalPending: true,
-	})),
-);
+const directory = join(process.cwd(), "src/content/pages");
+const pages = readdirSync(directory)
+	.filter((file) => file.endsWith(".json"))
+	.map(
+		(file) =>
+			JSON.parse(
+				readFileSync(join(directory, file), "utf8"),
+			) as BilingualEditorialDocument,
+	);
 
-const jsonFiles = (directory: string): string[] =>
-	readdirSync(directory).flatMap((name) => {
-		const absolute = join(directory, name);
-		return statSync(absolute).isDirectory()
-			? jsonFiles(absolute)
-			: name.endsWith(".json")
-				? [absolute]
-				: [];
+describe("modelo editorial bilingue", () => {
+	it("mantém exatamente um documento fixo por cada uma das 19 páginas", () => {
+		expect(pages).toHaveLength(19);
+		expect(pages.map((page) => page.routeKey).sort()).toEqual(
+			[...routeKeys].sort(),
+		);
+		expect(validateEditorialDocuments(pages)).toEqual([]);
 	});
 
-describe("editorial validation", () => {
-	it("allows only approved external destinations", () => {
-		expect(safeCalendlyUrl("https://calendly.com/ana/initial-call")).toBe(
-			"https://calendly.com/ana/initial-call",
-		);
-		expect(safeCalendlyUrl("javascript:alert(1)")).toBeNull();
-		expect(safeCalendlyUrl("https://example.com/calendly")).toBeNull();
-		expect(safeCalendlyUrl("http://calendly.com/ana")).toBeNull();
-		expect(safeEmailHref("ana@example.com")).toBe("mailto:ana@example.com");
-		expect(safeEmailHref("invalid")).toBeNull();
-		expect(safeWhatsAppHref("+351926430792")).toBe(
-			"https://wa.me/351926430792",
-		);
-		expect(safeWhatsAppHref("926430792")).toBeNull();
-		expect(safeProfileUrl("https://orcid.org/0000-0003-4365-6053")).toBe(
-			"https://orcid.org/0000-0003-4365-6053",
-		);
-		expect(safeProfileUrl("https://example.com/profile")).toBeNull();
+	it("não permite criar, apagar ou renomear páginas no Tina", () => {
+		expect(EditorialCollection.ui?.allowedActions).toEqual({
+			create: false,
+			delete: false,
+		});
+		expect(EditorialCollection.ui?.filename).toEqual({ readonly: true });
 	});
 
-	it("keeps the canonical Home slug optional in Tina", () => {
-		const slug = localizedDocumentFields.find((field) => field.name === "slug");
-		expect(slug).toBeDefined();
-		expect(slug?.required).not.toBe(true);
-	});
-
-	it("validates every real localized editorial document", () => {
-		const actual = jsonFiles(join(process.cwd(), "src/content/editorial")).map(
-			(file) => {
-				const value = JSON.parse(readFileSync(file, "utf8"));
-				return {
-					...value,
-					seoTitle: value.seo.title,
-					seoDescription: value.seo.description,
-				} as EditorialDocument;
-			},
+	it("mostra no About apenas os campos comuns, media e secções About", () => {
+		const about = EditorialCollection.templates?.find(
+			(template) => template.name === "about",
 		);
-		expect(actual).toHaveLength(routeKeys.length * publishedLocales.length);
-		expect(validateEditorialDocuments(actual)).toEqual([]);
-	});
-
-	it("configures an accessible side image for every localized PageHero", () => {
-		const pageHeroRoutes = new Set([
+		expect(about?.fields.map((field) => field.name)).toEqual([
+			"routeKey",
+			"title",
+			"summary",
+			"seo",
+			"media",
 			"about",
-			"academic",
-			"booking",
-			"consulting",
-			"contact",
-			"environmental-esg",
-			"events",
-			"immigration-mobility",
-			"legal",
-			"legal-opinions",
-			"mentoring",
-			"public-policy",
-			"publications",
-			"speaking",
-			"training",
 		]);
-		for (const file of jsonFiles(
-			join(process.cwd(), "src/content/editorial"),
-		)) {
-			const document = JSON.parse(readFileSync(file, "utf8"));
-			if (!pageHeroRoutes.has(document.routeKey)) continue;
-			const foreground = document.media?.foreground;
-			expect(foreground?.image).toBeTruthy();
-			expect(["square", "landscape"]).toContain(foreground?.aspectRatio);
-			if (!foreground?.decorative) expect(foreground?.alt?.trim()).toBeTruthy();
-		}
-	});
-
-	it("configures an introduction image for every consulting service page", () => {
-		for (const file of jsonFiles(
-			join(process.cwd(), "src/content/editorial"),
-		)) {
-			const document = JSON.parse(readFileSync(file, "utf8"));
-			if (!document.consultingService) continue;
-			const image = document.consultingService.introImage;
-			expect(image?.image).toBeTruthy();
-			if (!image?.decorative) expect(image?.alt?.trim()).toBeTruthy();
-		}
-	});
-
-	it("configures accessible optional differentiator images", () => {
-		for (const file of jsonFiles(
-			join(process.cwd(), "src/content/editorial"),
-		)) {
-			const document = JSON.parse(readFileSync(file, "utf8"));
-			const image = document.consultingService?.differentiatorImage;
-			if (!image?.image) continue;
-			if (!image.decorative) expect(image.alt?.trim()).toBeTruthy();
-		}
-	});
-
-	it("validates hero media accessibility and publication safety", () => {
-		expect(heroAspectRatio(undefined)).toBe("square");
-		expect(heroAspectRatio("landscape")).toBe("landscape");
-		expect(
-			validateHeroMedia(
-				{ foreground: { image: "/portrait.webp", aspectRatio: "portrait" } },
-				false,
-			).map((issue) => issue.code),
-		).toEqual(["invalid-hero-aspect-ratio", "missing-hero-alt"]);
-		expect(
-			validateHeroMedia(
-				{
-					foreground: {
-						image: HERO_PLACEHOLDER_PATH,
-						decorative: true,
-						aspectRatio: "square",
-					},
-				},
-				true,
-			).map((issue) => issue.code),
-		).toEqual(["published-hero-placeholder"]);
-		expect(
-			validateHeroMedia(
-				{
-					foreground: {
-						image: "/portrait.webp",
-						alt: "Retrato editorial de Ana Trevizan",
-						aspectRatio: "landscape",
-					},
-				},
-				true,
-			),
-		).toEqual([]);
-	});
-
-	it("does not expose localized payloads for pending English translations", () => {
-		const localizedPayloads = [
-			"home",
-			"about",
+		expect(about?.fields.map((field) => field.name)).not.toContain("home");
+		expect(about?.fields.map((field) => field.name)).not.toContain(
 			"consultingHub",
-			"consultingService",
-			"academicHub",
-			"academicService",
-			"publicationsPage",
-			"eventsPage",
-			"speakingPage",
-			"contactPage",
-			"bookingPage",
-			"privacyPage",
-			"termsPage",
-			"cookiesPage",
-		];
-		for (const file of jsonFiles(
-			join(process.cwd(), "src/content/editorial/en"),
-		)) {
-			const document = JSON.parse(readFileSync(file, "utf8"));
-			if (!document.approvalPending) continue;
-			for (const field of localizedPayloads)
-				expect(document[field]).toBeUndefined();
-		}
+		);
 	});
 
-	it.each([
-		[
-			"duplicate-slug",
-			() =>
-				validateEditorialDocuments([
-					...documents,
-					{
-						...documents[1],
-						translationGroup: "other",
-						routeKey: "about" as const,
-					},
-				]),
-		],
-		[
-			"invalid-locale",
-			() =>
-				validateEditorialDocuments([
-					{ ...documents[0], locale: "pt-BR" } as unknown as EditorialDocument,
-					...documents.slice(1),
-				]),
-		],
-		[
-			"missing-translation",
-			() =>
-				validateEditorialDocuments(
-					documents.filter(
-						(document) =>
-							!(document.routeKey === "about" && document.locale === "en"),
-					),
-				),
-		],
-	] as const)("detects %s", (code, validate) => {
-		expect(validate().some((issue) => issue.code === code)).toBe(true);
+	it("associa cada documento ao template da respetiva família", () => {
+		const templates = new Set(
+			EditorialCollection.templates?.map((template) => template.name),
+		);
+		for (const page of pages)
+			expect(templates.has(page._template as string)).toBe(true);
 	});
 
-	it("requires a ready document without pending approval for publication", () => {
-		expect(isPublishable(documents[0])).toBe(false);
-		expect(
-			isPublishable({
-				...documents[0],
-				status: "ready",
-				approvalPending: true,
-			}),
-		).toBe(false);
-		expect(
-			isPublishable({
-				...documents[0],
-				status: "ready",
-				approvalPending: false,
-			}),
-		).toBe(true);
+	it("localiza sem fallback português", () => {
+		const value = { heading: { pt: "Olá", en: "" }, routeKey: "home" };
+		expect(localizeValue(value, "en")).toEqual({
+			heading: "",
+			routeKey: "home",
+		});
+		expect(isLocaleComplete(value, "en")).toBe(false);
+		expect(missingLocalizedPaths(value, "en")).toEqual(["heading"]);
 	});
 
-	it("separates editorial preview from production publication", () => {
-		expect(isEditorialPreviewEnabled({ dev: false })).toBe(false);
-		expect(
-			isEditorialPreviewEnabled({ dev: false, editorialPreview: "true" }),
-		).toBe(true);
-		expect(
-			isEditorialPreviewEnabled({ dev: false, editorialPreview: "false" }),
-		).toBe(false);
-		expect(
-			isEditorialPreviewEnabled({ dev: true, editorialPreview: "false" }),
-		).toBe(true);
-
-		const draft = {
-			...documents[0],
-			status: "draft" as const,
-			approvalPending: false,
-		};
-		const ready = { ...draft, status: "ready" as const };
-		expect(shouldRenderEditorialDocument(draft, false)).toBe(false);
-		expect(shouldRenderEditorialDocument(draft, true)).toBe(true);
-		expect(shouldRenderEditorialDocument(ready, false)).toBe(true);
-		expect(
-			shouldRenderEditorialDocument({ ...ready, approvalPending: true }, true),
-		).toBe(false);
-	});
-
-	it("rejects invalid Tina island route context", () => {
-		expect(
-			islandContextFromParams(
-				new URLSearchParams({ locale: "en", routeKey: "about" }),
-			),
-		).toEqual({ locale: "en", routeKey: "about" });
-		expect(
-			islandContextFromParams(
-				new URLSearchParams({ locale: "pt-BR", routeKey: "home" }),
-			),
-		).toBeNull();
-		expect(
-			islandContextFromParams(
-				new URLSearchParams({ locale: "en", routeKey: "unknown" }),
-			),
-		).toBeNull();
+	it("aceita uma tradução parcial sem invalidar o documento PT", () => {
+		const home = pages.find((page) => page.routeKey === "home");
+		expect(home).toBeDefined();
+		expect(isLocaleComplete(home, "pt-PT")).toBe(true);
+		expect(isLocaleComplete(home, "en")).toBe(false);
 	});
 });

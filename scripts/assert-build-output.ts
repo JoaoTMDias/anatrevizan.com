@@ -12,7 +12,10 @@ const outputDirectory = join(process.cwd(), "dist/client");
 const draftPage = join(outputDirectory, "sobre/index.html");
 const sitemap = readFileSync(join(outputDirectory, "sitemap.xml"), "utf8");
 const manifest = JSON.parse(
-	readFileSync(join(process.cwd(), "dist/editorial-build-manifest.json"), "utf8"),
+	readFileSync(
+		join(process.cwd(), "dist/editorial-build-manifest.json"),
+		"utf8",
+	),
 ) as {
 	mode: string;
 	totalDocuments: number;
@@ -26,7 +29,10 @@ const manifest = JSON.parse(
 assert.equal(manifest.mode, mode);
 assert.equal(manifest.totalDocuments, 38);
 assert.deepEqual(manifest.missingRoutes, []);
-assert.equal(manifest.generatedEditorialRoutes, manifest.expectedEditorialRoutes);
+assert.equal(
+	manifest.generatedEditorialRoutes,
+	manifest.expectedEditorialRoutes,
+);
 
 if (mode === "preview") {
 	assert.equal(manifest.expectedEditorialRoutes, 38);

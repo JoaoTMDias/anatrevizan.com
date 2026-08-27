@@ -6,7 +6,6 @@ import { pathFor } from "../../lib/routing";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 
 interface Props {
@@ -19,7 +18,6 @@ const icons = ["school", "books", "calendar-event", "microphone-2", "presentatio
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     hub ? (
       <>

@@ -1,187 +1,40 @@
 # AGENTS.md
 
-## Project purpose
+## Fontes normativas
 
-This repository contains the official implementation of `anatrevizan.com`. The production foundation is Astro + TinaCMS, deployed on Netlify. The existing Next.js implementation in another repository is only a visual, functional, editorial, and information architecture specification; it must not be promoted or migrated mechanically.
+Astro é a única fonte visual, funcional e editorial deste projeto. Consultar, por ordem: `docs/decisoes-tecnicas.md`, o pedido atual e `docs/Checklist.md`. Não existe implementação externa de referência.
 
-Before making structural changes, consult:
+## Fundação
 
-1. `docs/decisoes-tecnicas.md` — primary source for established decisions;
-2. `docs/Checklist.md` — outstanding work and launch criteria;
-3. `docs/Relatório Técnico - Versão Next.js.md` — historical audit and risks that must not be repeated.
+- Node 22.22+, pnpm, Astro 7, TinaCMS 3, TypeScript e Tailwind CSS 4; produção no Netlify.
+- Usar `pnpm dev`, `pnpm exec astro check`, `pnpm test`, `pnpm build:local` e, com Tina Cloud disponível, `pnpm build`.
+- Preferir HTML estático e componentes `.astro`; JavaScript cliente apenas para interação real.
 
-In case of conflict, the technical decisions take precedence, followed by the user's current request, and then the checklist. Do not reopen established decisions without explicit instructions.
+## Modelo editorial
 
-## Stack and commands
+- Existem exatamente 19 documentos JSON em `src/content/pages`, um por rota. Cada campo localizado apresenta PT-PT e EN consecutivamente; estrutura, listas, media e destinos são partilhados.
+- A estrutura, os nomes dos ficheiros, o routing, os slugs e os destinos do menu pertencem ao código. O Tina não permite criar, apagar ou renomear páginas.
+- PT-PT é primário e não tem prefixo; EN usa `/en` e slugs localizados. Nunca usar PT como fallback em EN.
+- Traduções são humanas. Podem ser guardadas parcialmente com aviso; EN publica automaticamente apenas com todos os valores usados completos. Uma tradução publicada não pode tornar-se incompleta num deploy.
+- Rich text admite headings internos, parágrafos, negrito, itálico, listas e links. Cartões têm título e resumo localizado; as listas existentes podem ser ordenadas e editadas, mas secções não podem ser ocultadas.
+- Ana edita páginas, labels de navegação, CTAs por página, contactos/perfis/regiões/idiomas, tipos de pedido, rodapé, defaults SEO, media e overlays ORCID. Layout, identidade, URLs, domínio, validação, mensagens funcionais e configuração técnica ficam no código.
+- Edição local grava ficheiros; `/admin` com Tina Cloud grava diretamente em `main` e desencadeia Netlify. Preview é confirmação visual, sem edição por clique. Preview PT funciona online; EN incompleto só localmente.
 
-- Node.js 22.22 or newer, as specified in `.nvmrc` and `package.json`.
-- Use pnpm exclusively; do not create `package-lock.json` or `yarn.lock`.
-- Astro 7, TinaCMS 3, `@tinacms/astro`, TypeScript, and Tailwind CSS 4.
-- Production is deployed on Netlify; `netlify.toml` defines the build command and publish directory.
+## Media e datas
 
-Primary commands:
+- Uploads: JPG, PNG, WebP, AVIF, SVG, PDF, MP3 e MP4. Imagens são renderizadas; PDF/MP3/MP4 são downloads.
+- Recomendar, sem bloquear: 1 MB imagem, 3 MB PDF, 15 MB áudio/vídeo. Preservar nomes e originais no Git.
+- O pipeline próprio Astro/Sharp gera variantes raster; SVG é sanitizado antes do output. Não usar Netlify Image CDN.
+- Imagens são opcionais; quando presentes exigem alt PT/EN e expõem apenas ponto focal. Proporções pertencem ao layout.
+- Páginas normais não guardam datas manuais. Legais guardam apenas data de entrada em vigor. Última alteração deriva do Git, aparece só nas legais e alimenta metadata/`lastmod`.
 
-```sh
-pnpm install
-pnpm dev
-pnpm exec astro check
-pnpm build:local
-pnpm build
-```
+## Conteúdo, integrações e qualidade
 
-Use `pnpm build:local` to validate without the Tina Cloud check. Use `pnpm build` when the required environment and remote schema are available. Do not bypass dependency errors with `--force` or `--legacy-peer-deps`.
+- Não inventar conteúdo factual, legal, académico ou profissional. Português editorial é PT-PT.
+- ORCID é a fonte bibliográfica; no Tina só são editáveis destaque, prioridade, idioma e temas. Falhas externas preservam o snapshot.
+- URLs externas têm de ser HTTPS; rejeitar vazio, `#` e protocolos inseguros. Calendly é link configurável, nunca embed.
+- Segredos ficam em variáveis de ambiente. Validar input no servidor; preservar privacidade, consentimento, acessibilidade e segurança.
+- Para cada alteração executar pelo menos `pnpm exec astro check` e `git diff --check`, mais testes/build proporcionais. Bugs devem ter regressão quando praticável.
+- Preservar alterações alheias e evitar refactors não relacionados. Atualizar decisões e checklist apenas quando o estado real mudar.
 
-## Architecture
-
-- Prefer `.astro` components and static HTML. Add client-side JavaScript only when genuine interactivity requires it.
-- Do not convert components from the Next.js version line by line. Reimplement their behavior idiomatically in Astro.
-- Keep reusable components in `src/components`, layouts in `src/layouts`, utilities in `src/lib`, routes in `src/pages`, and global styles in `src/styles`.
-- Keep schemas and editorial configuration in `tina/`, and CMS-managed content in `src/content/`.
-- Avoid runtime dependencies when Astro or the deployment platform already provides the required functionality.
-- Preserve the host-neutral approach in `astro.config.mjs` without compromising the Netlify deployment.
-
-## Content and TinaCMS
-
-- Ana must be able to edit pages, navigation, services, events, talks, training, mentoring, images, CTAs, contact details, SEO, and legal copy through TinaCMS.
-- Layouts, components, validation, integrations, and business rules remain in code.
-- Changes to the editorial model must update the Tina schemas, generated types/queries when applicable, rendering components, and existing content together.
-- Do not introduce factual, legal, academic, or professional content without a source or approval. Never invent credentials, dates, services, contact details, or outcome claims.
-- Remove placeholders, empty assets, buttons without destinations, and `href="#"` links; do not use them as silent temporary solutions.
-- Write Portuguese content in European Portuguese unless explicitly instructed otherwise.
-
-## Internationalization and routes
-
-- Launch languages are European Portuguese and English.
-- Portuguese is the primary language and has no prefix; English uses `/en` and localized slugs.
-- Do not publish incomplete English content or display visible Portuguese fallback content on English pages.
-- Spanish may be prepared in the editorial model but must not be published in v1. Brazilian Portuguese is not part of v1.
-- When changing routes, preserve PT/EN equivalents and update navigation, canonicals, `hreflang`, `x-default`, and the sitemap.
-- The planned final structure contains 19 routes. Confirm the route map in the documentation/content before adding, removing, or renaming pages.
-
-## Integrations
-
-- Calendly must be a TinaCMS-configurable external link, without an embed or script in v1. Present the contact form as an alternative.
-- ORCID is the automatic source for publications at build time. Validate external responses and keep a local snapshot as a fallback. External downtime must not remove existing publications or block the build.
-- Publications without a valid URL must not produce fake links.
-- The contact form will be processed server-side in Astro/Netlify, using Google Sheets, Resend notifications, Turnstile, a honeypot, validation, size limits, and duplicate-submission prevention.
-- Never place Google, Resend, Tina, or Netlify credentials in code, content, versioned documentation, or `netlify.toml`. Use environment variables and keep `.env`/`.env.local` out of Git.
-
-## Required quality checks
-
-Validate every change in proportion to its risk and run at least:
-
-```sh
-pnpm exec astro check
-git diff --check
-```
-
-Also run an appropriate build when changing configuration, dependencies, routes, content, TinaCMS, or deployment integration. If a test depends on external services, clearly distinguish code failures from credential, remote schema, or external availability failures.
-
-Before completing interface changes:
-
-- test keyboard use, visible focus, semantics, accessible names, and contrast;
-- confirm responsiveness from 320 px and zoom up to 400%;
-- respect `prefers-reduced-motion` and, for heavy media, `Save-Data`;
-- avoid unnecessary JavaScript and downloads;
-- confirm there are no console errors, missing assets, or development URLs.
-
-For critical flows, add or update tests for routing, translations, ORCID, forms, and accessibility. Do not consider a feature complete merely because it compiles.
-
-- Add unit tests whenever practical, especially for utilities, validation, data transformation, content mapping, and integration fallback logic.
-- Add end-to-end tests with Playwright for user-facing flows, routing, navigation, forms, localization, and other behavior that depends on the rendered application.
-- Every bug fix should include a regression test when the affected behavior can be tested reliably.
-- When tests are not practical, document the reason and the manual validation performed in the handoff.
-
-## SEO, privacy, and security
-
-- Every published page must have localized metadata, the correct canonical URL, and consistent alternates.
-- Do not index incomplete pages, languages, or legal copy. Production must not emit `localhost` URLs.
-- Validate all input on the server; limit payload sizes and apply anti-spam protection and rate limiting where required.
-- Do not load non-essential third parties before obtaining applicable consent.
-- Treat privacy policies, cookie policies, terms, and professional claims as content requiring qualified human review.
-- Do not expose secrets in logs, diffs, screenshots, or error messages.
-
-## Migration quality and inherited problems
-
-The Next.js implementation is a visual and functional specification, not an
-implementation standard. Visual fidelity does not imply code fidelity.
-
-When migrating a feature, preserve its approved intent and user experience, but
-reimplement it idiomatically in Astro, accessibly, testably, and with the
-minimum necessary client-side JavaScript.
-
-Do not reproduce known problems from the Next.js implementation, including:
-
-- unnecessarily complex or heavily hydrated components;
-- hardcoded editorial content, metadata, contacts, or identity details;
-- visible language fallbacks that mix Portuguese and English;
-- `href="#"`, links without destinations, or controls without behavior;
-- empty assets or runtime requests used to detect placeholder files;
-- hover-only navigation;
-- menus without keyboard support, semantics, or focus management;
-- media that ignores `prefers-reduced-motion` or `Save-Data`;
-- unvalidated external data, unsafe `any`, or silent integration failures;
-- misleading fallback values for required configuration;
-- globally loaded third-party scripts without a demonstrated need;
-- `mailto:` as the primary form implementation;
-- duplicated constants and contact details;
-- abstractions that do not correspond to a coherent editorial model.
-
-### Decision policy
-
-Fix autonomously without requesting approval when the issue has an established,
-low-risk solution that preserves the approved behavior. Examples include:
-
-- invalid or semantically incorrect HTML;
-- standard accessibility defects;
-- unsafe TypeScript;
-- internal technical duplication;
-- broken or fake links;
-- missing assets;
-- missing validation;
-- build, lint, or test failures;
-- responsiveness defects;
-- unnecessary JavaScript;
-- behavior that contradicts `AGENTS.md` or `docs/decisoes-tecnicas.md`.
-
-Request direction before implementing a solution that would change:
-
-- the approved visual direction;
-- information architecture;
-- the number, name, purpose, or public URL of a page;
-- visible product behavior;
-- professional, legal, academic, or factual content;
-- Ana’s editorial freedom;
-- personal data collected or retained;
-- privacy or consent behavior;
-- external services, recurring costs, or major dependencies;
-- language or localization strategy;
-- an established decision in the project documentation.
-
-When requesting direction:
-
-1. describe the concrete problem and affected pages or files;
-2. provide two or three meaningful options;
-3. recommend one option and briefly explain why;
-4. do not implement the decision until the user responds;
-5. continue with independent work that does not depend on the answer.
-
-If an issue is outside the current phase:
-
-- do not start an unrelated refactor;
-- record it in the handoff with priority, impact, and recommended phase;
-- fix it immediately only when it blocks the current work, risks data loss,
-  exposes secrets, or introduces a material security vulnerability.
-
-Every migration handoff must list:
-
-- inherited problems corrected;
-- decisions requested from the user;
-- identified problems deliberately deferred.
-
-## Change discipline
-
-- Preserve unrelated changes already present in the working tree.
-- Keep changes small and coherent; do not mix broad refactors with focused fixes.
-- Update `docs/decisoes-tecnicas.md` when a structural decision is approved and `docs/Checklist.md` when the real status of a task changes.
-- In the handoff, explain what changed, which checks passed, and any remaining risks or blockers.
+No handoff listar alterações, verificações, decisões pedidas, riscos e trabalho deliberadamente adiado.

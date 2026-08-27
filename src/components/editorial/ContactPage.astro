@@ -8,7 +8,6 @@ import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
-import DraftNotice from "./DraftNotice.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 interface Props {
@@ -28,7 +27,6 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
 ---
 
 <div id="main-content" tabindex="-1">
-  <DraftNotice locale={locale} approvalPending={data.approvalPending} />
   {
     contact ? (
       <>

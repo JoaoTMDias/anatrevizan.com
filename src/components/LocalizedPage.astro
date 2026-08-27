@@ -8,5 +8,5 @@ interface Props { page: EditorialPageView }
 const { page } = Astro.props;
 ---
 <Base title={page.data.seo.title} description={page.data.seo.description} image={page.data.seo.image ?? undefined} locale={page.locale} routeKey={page.document.routeKey} noindex={page.noindex} availableLocales={page.availableLocales} config={page.config}>
-	<TinaIsland name="editorial" wrapper={islands.editorial.wrapper} params={{ relativePath: page.relativePath }} primary><EditorialBody data={page.data} /></TinaIsland>
+	<TinaIsland name="editorial" wrapper={islands.editorial.wrapper} params={{ relativePath: page.relativePath, locale: page.locale, routeKey: page.document.routeKey }} primary><EditorialBody data={page.data} /></TinaIsland>
 </Base>

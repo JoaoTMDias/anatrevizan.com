@@ -1,0 +1,148 @@
+{
+  "_template": "consultingService",
+  "routeKey": "legal-opinions",
+  "media": {
+    "foreground": {
+      "image": "/hero-placeholder.webp",
+      "alt": {
+        "pt": "",
+        "en": ""
+      },
+      "decorative": true,
+      "aspectRatio": "square"
+    }
+  },
+  "title": {
+    "pt": "Pareceres e Notas Técnicas",
+    "en": "Legal opinions"
+  },
+  "summary": {
+    "pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
+    "en": ""
+  },
+  "seo": {
+    "title": {
+      "pt": "Pareceres e Notas Técnicas · Fundamentação para decidir",
+      "en": "Legal opinions — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Pareceres jurídicos e notas técnicas fundamentados em legislação, doutrina, jurisprudência e literatura científica, em Direito ambiental, da UE, migratório e mais.",
+      "en": ""
+    },
+    "noindex": true
+  },
+  "consultingService": {
+    "tag": {
+      "pt": "Portugal e Brasil",
+      "en": ""
+    },
+    "subtitle": {
+      "pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
+      "en": ""
+    },
+    "introHeading": {
+      "pt": "Uma opinião que sustenta a decisão",
+      "en": ""
+    },
+    "introImage": {
+      "image": "/hero-placeholder.webp",
+      "alt": {
+        "pt": "",
+        "en": ""
+      },
+      "decorative": true
+    },
+    "introParagraphs": [
+      {
+        "pt": "Um parecer bem construído não é um documento formal a mais. É o que dá segurança a uma decisão difícil, protege quem a toma e resiste a escrutínio depois.",
+        "en": ""
+      },
+      {
+        "pt": "Cada parecer que entrego é fundamentado em legislação aplicável, doutrina, jurisprudência quando pertinente e literatura científica — com a clareza necessária para orientar quem decide.",
+        "en": ""
+      }
+    ],
+    "servicesHeading": {
+      "pt": "Matérias",
+      "en": ""
+    },
+    "servicesSubtitle": {
+      "pt": "Pareceres e notas técnicas para subsidiar decisões estratégicas.",
+      "en": ""
+    },
+    "services": [
+      {
+        "title": {
+          "pt": "Direito Ambiental e Climático",
+          "en": ""
+        },
+        "description": {
+          "pt": "Conformidade, risco e governança ambiental e climática.",
+          "en": ""
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito da União Europeia",
+          "en": ""
+        },
+        "description": {
+          "pt": "EUDR, CSDDD, CSRD e demais normas de sustentabilidade corporativa.",
+          "en": ""
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito Migratório",
+          "en": ""
+        },
+        "description": {
+          "pt": "Mobilidade internacional e regularização jurídica.",
+          "en": ""
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito Administrativo e Civil",
+          "en": ""
+        },
+        "description": {
+          "pt": "Procedimentos administrativos e relações civis e contratuais.",
+          "en": ""
+        }
+      },
+      {
+        "title": {
+          "pt": "Governança, ESG e Compliance",
+          "en": ""
+        },
+        "description": {
+          "pt": "Estruturação, adequação regulatória e boas práticas.",
+          "en": ""
+        }
+      },
+      {
+        "title": {
+          "pt": "Direitos Humanos",
+          "en": ""
+        },
+        "description": {
+          "pt": "Interface com cadeias de fornecimento e responsabilidade empresarial.",
+          "en": ""
+        }
+      }
+    ],
+    "note": {
+      "pt": "Elaboração de pareceres e notas técnicas de caráter consultivo. Não inclui representação em processos judiciais (contencioso).",
+      "en": ""
+    },
+    "ctaHeading": {
+      "pt": "A sua decisão precisa de base técnica?",
+      "en": ""
+    },
+    "ctaText": {
+      "pt": "Marque uma conversa inicial e descreva a questão — avaliamos o âmbito e o formato do parecer.",
+      "en": ""
+    }
+  }
+}

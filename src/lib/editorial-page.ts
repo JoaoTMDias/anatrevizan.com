@@ -1,13 +1,18 @@
 import type { CmsConfig, CmsEditorial, EditorialListItem } from "./data";
-import { getConfig, listEditorial, toEditorialDocument } from "./data";
 import {
-	type EditorialDocument,
+	getConfig,
+	listEditorial,
+	localizeEditorial,
+	toEditorialDocument,
+} from "./data";
+import {
 	isEditorialPreviewEnabled,
 	isPublishable,
 	shouldRenderEditorialDocument,
+	type EditorialDocument,
 } from "./editorial";
 import {
-	isPublishedLocale,
+	publishedLocales,
 	type PublishedLocale,
 	type RouteKey,
 } from "./routing";
@@ -22,59 +27,35 @@ export interface EditorialPageView {
 	availableLocales: PublishedLocale[];
 	config: CmsConfig | null;
 }
-
 export type EditorialPageResolution =
 	| { kind: "renderable"; page: EditorialPageView }
 	| { kind: "missing"; reason: "missing" | "invalid" | "not-renderable" };
+let indexPromise: Promise<EditorialListItem[]> | undefined;
+const index = () => (indexPromise ??= listEditorial());
 
-let editorialIndexPromise: Promise<EditorialListItem[]> | undefined;
-let configPromise: ReturnType<typeof getConfig> | undefined;
-
-function getEditorialIndex(): Promise<EditorialListItem[]> {
-	if (!editorialIndexPromise) editorialIndexPromise = listEditorial();
-	return editorialIndexPromise;
-}
-
-function getSiteConfig() {
-	if (!configPromise) configPromise = getConfig();
-	return configPromise;
-}
-
-function toPageView(
-	document: EditorialListItem,
-	allDocuments: readonly EditorialListItem[],
+function view(
+	raw: EditorialListItem,
+	locale: PublishedLocale,
 	preview: boolean,
 	config: CmsConfig | null,
 ): EditorialPageResolution {
-	const editorialDocument = toEditorialDocument(document);
-	if (!editorialDocument) return { kind: "missing", reason: "invalid" };
-	if (!shouldRenderEditorialDocument(editorialDocument, preview))
+	const document = toEditorialDocument(raw, locale);
+	if (!document) return { kind: "missing", reason: "invalid" };
+	if (!shouldRenderEditorialDocument(document, preview))
 		return { kind: "missing", reason: "not-renderable" };
-	if (!isPublishedLocale(editorialDocument.locale))
-		return { kind: "missing", reason: "not-renderable" };
-
-	const availableLocales = allDocuments
-		.map(toEditorialDocument)
-		.filter((alternative): alternative is EditorialDocument =>
-			Boolean(alternative && isPublishable(alternative)),
-		)
-		.filter(
-			(alternative) => alternative.routeKey === editorialDocument.routeKey,
-		)
-		.map((alternative) => alternative.locale)
-		.filter(isPublishedLocale);
-
 	return {
 		kind: "renderable",
 		page: {
-			data: document,
-			document: editorialDocument,
-			locale: editorialDocument.locale,
-			relativePath: document._sys.relativePath,
+			data: localizeEditorial(raw, locale),
+			document,
+			locale,
+			relativePath: raw._sys.relativePath,
 			preview,
-			noindex:
-				!isPublishable(editorialDocument) || document.seo.noindex === true,
-			availableLocales: [...new Set(availableLocales)],
+			noindex: !isPublishable(document),
+			availableLocales: publishedLocales.filter((candidate) => {
+				const alternative = toEditorialDocument(raw, candidate);
+				return Boolean(alternative && isPublishable(alternative));
+			}),
 			config,
 		},
 	};
@@ -85,43 +66,28 @@ export async function resolveEditorialPage(
 	locale: PublishedLocale,
 	preview = isEditorialPreviewEnabled(),
 ): Promise<EditorialPageResolution> {
-	const [documents, configResult] = await Promise.all([
-		getEditorialIndex(),
-		getSiteConfig(),
-	]);
-	const document = documents.find(
-		(candidate) =>
-			candidate.routeKey === routeKey && candidate.locale === locale,
-	);
-	if (!document) return { kind: "missing", reason: "missing" };
-	return toPageView(
-		document,
-		documents,
-		preview,
-		configResult.data?.config ?? null,
-	);
+	const [documents, configResult] = await Promise.all([index(), getConfig()]);
+	const raw = documents.find((candidate) => candidate.routeKey === routeKey);
+	return raw
+		? view(raw, locale, preview, configResult.data?.config ?? null)
+		: { kind: "missing", reason: "missing" };
 }
 
 export async function resolveEditorialPages(
 	preview = isEditorialPreviewEnabled(),
 ): Promise<Map<string, EditorialPageView>> {
-	const [documents, configResult] = await Promise.all([
-		getEditorialIndex(),
-		getSiteConfig(),
-	]);
+	const [documents, configResult] = await Promise.all([index(), getConfig()]);
 	const pages = new Map<string, EditorialPageView>();
-	for (const document of documents) {
-		const result = toPageView(
-			document,
-			documents,
-			preview,
-			configResult.data?.config ?? null,
-		);
-		if (result.kind === "renderable")
-			pages.set(
-				`${result.page.document.routeKey}:${result.page.document.locale}`,
-				result.page,
+	for (const raw of documents)
+		for (const locale of publishedLocales) {
+			const result = view(
+				raw,
+				locale,
+				preview,
+				configResult.data?.config ?? null,
 			);
-	}
+			if (result.kind === "renderable")
+				pages.set(`${raw.routeKey}:${locale}`, result.page);
+		}
 	return pages;
 }

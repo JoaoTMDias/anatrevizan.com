@@ -3,7 +3,9 @@ import { expect, test } from "@playwright/test";
 import { routeMap } from "../../src/lib/routing";
 
 test.describe("accessibility and responsive behavior", () => {
-	test("ready editorial pages do not display the draft notice", async ({ page }) => {
+	test("ready editorial pages do not display the draft notice", async ({
+		page,
+	}) => {
 		await page.goto("/consultoria/migracao-e-mobilidade");
 		await expect(page.getByRole("status")).toHaveCount(0);
 	});

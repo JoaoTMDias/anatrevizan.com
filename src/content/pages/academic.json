@@ -1,0 +1,134 @@
+{
+  "_template": "academicHub",
+  "routeKey": "academic",
+  "media": {
+    "foreground": {
+      "image": "/hero-placeholder.webp",
+      "alt": {
+        "pt": "",
+        "en": ""
+      },
+      "decorative": true,
+      "aspectRatio": "square"
+    }
+  },
+  "title": {
+    "pt": "Academia",
+    "en": "Academic"
+  },
+  "summary": {
+    "pt": "Uma trajetória rica só tem valor quando se pode ver inteira. Aqui reúno a investigação, o ensino e a comunicação num só lugar.",
+    "en": ""
+  },
+  "seo": {
+    "title": {
+      "pt": "Academia · Mentorias, publicações e palestras",
+      "en": "Academic — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Hub académico da Dra. Ana Trevizan: mentorias e apoio académico, repositório de publicações, journal de eventos, kit de palestrante e formações.",
+      "en": ""
+    },
+    "noindex": true
+  },
+  "academicHub": {
+    "subtitle": {
+      "pt": "Uma trajetória rica só tem valor quando se pode ver inteira. Aqui reúno a investigação, o ensino e a comunicação num só lugar.",
+      "en": ""
+    },
+    "introText": {
+      "pt": "Produção dispersa entre ORCID, Scholar, Lattes e PDFs não conta a história toda — e faz perder tempo a quem procura, incluindo a mim. Esta é a porta de entrada para quem quer verificar autoridade real num tema, convidar-me para um evento ou destravar a sua pesquisa.",
+      "en": ""
+    },
+    "sections": [
+      {
+        "title": {
+          "pt": "Mentorias e Apoio Académico",
+          "en": ""
+        },
+        "description": {
+          "pt": "Revisão técnica, orientação metodológica e preparação para publicação internacional (PT/EN/ES).",
+          "en": ""
+        },
+        "routeKey": "mentoring",
+        "cta": {
+          "pt": "Aceder",
+          "en": ""
+        },
+        "highlight": false
+      },
+      {
+        "title": {
+          "pt": "Publicações",
+          "en": ""
+        },
+        "description": {
+          "pt": "Repositório de artigos e capítulos, com filtros por ano, tema e idioma.",
+          "en": ""
+        },
+        "routeKey": "publications",
+        "cta": {
+          "pt": "Aceder",
+          "en": ""
+        },
+        "highlight": true
+      },
+      {
+        "title": {
+          "pt": "Eventos e Palestras",
+          "en": ""
+        },
+        "description": {
+          "pt": "Journal de participações em conferências e eventos, desde 2019.",
+          "en": ""
+        },
+        "routeKey": "events",
+        "cta": {
+          "pt": "Aceder",
+          "en": ""
+        },
+        "highlight": false
+      },
+      {
+        "title": {
+          "pt": "Palestras e Convites",
+          "en": ""
+        },
+        "description": {
+          "pt": "Kit de palestrante: biografia, temas e o que precisa para me convidar.",
+          "en": ""
+        },
+        "routeKey": "speaking",
+        "cta": {
+          "pt": "Aceder",
+          "en": ""
+        },
+        "highlight": true
+      },
+      {
+        "title": {
+          "pt": "Cursos e Formações",
+          "en": ""
+        },
+        "description": {
+          "pt": "Cursos e workshops para universidades, empresas, municípios e organizações.",
+          "en": ""
+        },
+        "routeKey": "training",
+        "cta": {
+          "pt": "Aceder",
+          "en": ""
+        },
+        "highlight": false
+      }
+    ],
+    "ctaHeading": {
+      "pt": "Uma mentoria, um convite, uma colaboração?",
+      "en": ""
+    },
+    "ctaText": {
+      "pt": "Seja para destravar uma tese ou convidar-me para falar, o primeiro passo é uma conversa.",
+      "en": ""
+    }
+  }
+}
