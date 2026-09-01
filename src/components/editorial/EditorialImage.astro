@@ -1,11 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
-import {
-  isRenderableImage,
-  responsiveSrcSet,
-  responsiveWidths,
-} from "../../lib/media-pipeline";
+import { isRenderableImage, responsiveSrcSet, responsiveWidths } from "../../lib/media-pipeline";
 
 interface Props extends Omit<HTMLAttributes<"img">, "src" | "width" | "height"> {
   src: string | ImageMetadata;
@@ -43,6 +39,7 @@ if (publicPath && (!width || !height))
       sizes={sizes}
       loading={loading}
       decoding={decoding}
+      class="gradient-border"
       {...rest}
     />
   ) : (
@@ -53,6 +50,7 @@ if (publicPath && (!width || !height))
       sizes={sizes}
       loading={loading}
       decoding={decoding}
+      class="gradient-border"
       {...rest}
     />
   )

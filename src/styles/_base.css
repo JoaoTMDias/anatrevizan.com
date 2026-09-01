@@ -1,3 +1,15 @@
+@property --gradient-border-angle {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 120deg;
+}
+
+@keyframes gradient-border-rotate {
+	to {
+		--gradient-border-angle: 480deg;
+	}
+}
+
 @layer base {
 	* {
 		border-color: var(--border);
@@ -40,6 +52,33 @@
 	}
 	html {
 		@apply font-sans;
+	}
+
+	.gradient-border {
+		@apply border-4 rounded-2xl;
+
+		--gradient-border-angle: 120deg;
+
+		border-color: transparent;
+		background:
+			linear-gradient(
+				oklch(var(--foreground-900)),
+				oklch(var(--foreground-900))
+			)
+			padding-box,
+			linear-gradient(
+				var(--gradient-border-angle),
+				oklch(var(--primary-100)) 0%,
+				oklch(var(--accent-700)) 55%,
+				oklch(var(--accent-200)) 100%
+			)
+			border-box;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.gradient-border {
+			animation: gradient-border-rotate 12s linear infinite;
+		}
 	}
 }
 
