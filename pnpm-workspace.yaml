@@ -27,3 +27,4 @@ minimumReleaseAgeExclude:
   - '@astrojs/sitemap@3.7.4'
   - '@astrojs/vercel@11.0.9'
   - astro@7.2.10
+  - shadcn@4.19.1
