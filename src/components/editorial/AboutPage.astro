@@ -42,7 +42,7 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
               <SectionHeading title={about.milestonesTitle} />
               <ol class="about-timeline">
                 {about.milestones.map((item) => (
-                  <li>
+                  <li class="about-timeline__item">
                     <p>{item.year}</p>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
