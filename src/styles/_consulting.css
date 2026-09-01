@@ -193,7 +193,9 @@
 		height: auto;
 		margin-bottom: 0.5rem;
 		background: transparent;
-		color: color-mix(in oklab, var(--primary) 28%, var(--background));
+		color: color-contrast(
+			color-mix(in oklab, var(--primary) 28%, var(--background))
+		);
 		font-family: var(--font-heading);
 		font-size: 2.25rem;
 		line-height: 1;

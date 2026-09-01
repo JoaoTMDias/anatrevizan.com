@@ -9,17 +9,17 @@ const button = tv({
   variants: {
     variant: {
       default:
-        "bg-action-primary text-action-primary-foreground shadow-sm hover:bg-action-primary/90",
+        "bg-linear-to-br from-[color-mix(in_oklch,var(--action-primary),white_10%)] to-action-primary text-action-primary-foreground shadow-sm hover:from-[color-mix(in_oklch,var(--action-primary),black_10%)]",
       accent:
-        "bg-action-accent text-action-accent-foreground shadow-sm hover:bg-action-accent/90",
+        "bg-linear-to-br from-[color-mix(in_oklch,var(--action-accent),white_10%)] to-action-accent text-action-accent-foreground shadow-sm hover:from-[color-mix(in_oklch,var(--action-accent),black_10%)]",
       accentBlack: "bg-black text-white shadow-sm hover:bg-black/90",
       destructive: "bg-destructive text-white shadow-xs hover:bg-destructive/90",
       outline:
-		"backdrop-blur border-2 border-action-primary bg-white/10 text-action-primary hover:bg-action-primary hover:text-action-primary-foreground",
+        "backdrop-blur border-2 border-action-primary bg-white/10 text-action-primary hover:bg-action-primary hover:text-action-primary-foreground",
       outlineBlack:
-		"backdrop-blur border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background",
+        "backdrop-blur border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background",
       outlineInverse:
-		"backdrop-blur border-2 border-inverse-foreground bg-black/20 text-inverse-foreground hover:bg-inverse-foreground hover:text-primary-950",
+        "backdrop-blur border-2 border-inverse-foreground bg-black/20 text-inverse-foreground hover:bg-inverse-foreground hover:text-primary-950",
       secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-white",
       ghost: "hover:bg-accent hover:text-accent-foreground",
       link: "min-h-0 rounded-none p-0 text-primary underline decoration-1 underline-offset-4 hover:decoration-2",
