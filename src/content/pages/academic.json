@@ -78,18 +78,6 @@
 			},
 			{
 				"description": {
-					"pt": "Kit de palestrante: biografia, temas e tudo o que precisa para me convidar.",
-					"en": "Speaker Kit: biography, speaking topics, and key details for event invitations."
-				},
-				"routeKey": "speaking",
-				"cta": {
-					"pt": "Aceder",
-					"en": "Explore"
-				},
-				"highlight": true
-			},
-			{
-				"description": {
 					"pt": "Cursos e workshops para universidades, empresas, municípios e organizações.",
 					"en": "Courses and workshops tailored for universities, corporations, municipalities, and organizations."
 				},

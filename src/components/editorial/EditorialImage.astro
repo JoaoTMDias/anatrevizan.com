@@ -8,6 +8,7 @@ interface Props extends Omit<HTMLAttributes<"img">, "src" | "width" | "height"> 
   alt: string;
   width?: number;
   height?: number;
+  border?: "default" | "golden";
 }
 
 const {
@@ -18,9 +19,11 @@ const {
   sizes,
   loading = "lazy",
   decoding = "async",
+  border = "default",
   ...rest
 } = Astro.props;
 const publicPath = typeof src === "string" ? src : null;
+const cssClass = `gradient-border${border === "golden" ? " gradient-border--golden" : ""}`;
 
 if (publicPath && !isRenderableImage(publicPath))
   throw new Error(`O ficheiro não é uma imagem renderizável: ${publicPath}`);
@@ -39,7 +42,7 @@ if (publicPath && (!width || !height))
       sizes={sizes}
       loading={loading}
       decoding={decoding}
-      class="gradient-border"
+      class={cssClass}
       {...rest}
     />
   ) : (
@@ -50,7 +53,7 @@ if (publicPath && (!width || !height))
       sizes={sizes}
       loading={loading}
       decoding={decoding}
-      class="gradient-border"
+      class={cssClass}
       {...rest}
     />
   )

@@ -4,9 +4,9 @@ import type { CmsEditorial } from "../../lib/data";
 import type { EventsPageContent } from "../../lib/page-content";
 import { pathFor } from "../../lib/routing";
 import Section from "../ui/Section.astro";
-import ContactCta from "./ContactCta.astro";
 import EmptyState from "./EmptyState.astro";
 import PageHero from "./PageHero.astro";
+import SpeakingPage from "./SpeakingPage.astro";
 interface Props {
   data: CmsEditorial;
 }
@@ -59,13 +59,13 @@ const locale = data.locale === "en" ? "en" : "pt-PT";
               <EmptyState
                 heading={events.emptyHeading}
                 text={events.emptyText}
-                href={pathFor("speaking", locale)}
+                href={`${pathFor("events", locale)}#speaker-kit`}
                 linkLabel={events.speakerKitCta}
               />
             </div>
           )}
         </Section>
-        <ContactCta heading={events.ctaHeading} text={events.ctaText} locale={locale} />
+        <SpeakingPage data={data} embedded />
       </>
     ) : (
       <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">

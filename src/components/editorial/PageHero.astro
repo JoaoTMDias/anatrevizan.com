@@ -36,9 +36,8 @@ const backgroundImage = heroMedia?.background?.image;
 const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
 const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
 const foregroundRatio = heroAspectRatioForRoute(routeKey);
-const foregroundDimensions = foregroundRatio === "landscape"
-  ? { width: 960, height: 720 }
-  : { width: 960, height: 960 };
+const foregroundDimensions =
+  foregroundRatio === "landscape" ? { width: 960, height: 720 } : { width: 960, height: 960 };
 const items = [
   { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
   ...(parent ? [parent] : []),
@@ -96,6 +95,7 @@ const items = [
               loading="eager"
               fetchpriority="high"
               decoding="async"
+              border="golden"
               sizes="(min-width: 1024px) min(40vw, 32rem), calc(100vw - 2.5rem)"
             />
           </figure>

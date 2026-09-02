@@ -1,141 +1,140 @@
 {
-	"_template": "consultingService",
-	"routeKey": "legal-opinions",
-	"media": {
-		"foreground": {
-			"image": "/hero-placeholder.webp",
-			"alt": {
-				"pt": "",
-				"en": ""
-			},
-			"decorative": true
-		}
-	},
-	"title": {
-		"pt": "Pareceres e Notas Técnicas",
-		"en": "Legal Opinions & Technical Briefs"
-	},
-	"summary": {
-		"pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
-		"en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
-	},
-	"seo": {
-		"title": {
-			"pt": "Pareceres e Notas Técnicas · Fundamentação para decidir",
-			"en": "Legal Opinions & Technical Briefs · Sound Decision-Making — Ana Trevizan"
-		},
-		"description": {
-			"pt": "Pareceres jurídicos e notas técnicas fundamentados em legislação, doutrina, jurisprudência e literatura científica, em Direito Ambiental, da UE, migratório e mais.",
-			"en": "Legal opinions and technical briefs grounded in legislation, case law, legal doctrine, and scientific research across Environmental Law, EU Law, Migration Law, and more."
-		},
-		"noindex": true
-	},
-	"consultingService": {
-		"tag": {
-			"pt": "Portugal e Brasil",
-			"en": "Portugal and Brazil"
-		},
-		"subtitle": {
-			"pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
-			"en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
-		},
-		"introHeading": {
-			"pt": "Uma opinião que sustenta a decisão",
-			"en": "Legal analysis that supports decision-making"
-		},
-		"introImage": {
-			"image": "/hero-placeholder.webp",
-			"alt": {
-				"pt": "",
-				"en": ""
-			},
-			"decorative": true
-		},
-		"introParagraphs": {
-			"pt": "Um parecer bem construído não é um documento formal a mais. É o que dá segurança a uma decisão difícil, protege quem a toma e resiste a escrutínio depois.\n\nCada parecer que entrego é fundamentado em legislação aplicável, doutrina, jurisprudência quando pertinente e literatura científica — com a clareza necessária para orientar quem decide.",
-			"en": "A well-crafted legal opinion is not just another formal document. It is what provides certainty during a complex decision, protects decision-makers, and withstands scrutiny down the line.\n\nEvery opinion I deliver is grounded in applicable law, legal doctrine, relevant case law, and academic research — designed with the clarity required to guide decision-makers effectively."
-		},
-		"servicesHeading": {
-			"pt": "Matérias",
-			"en": "Practice Areas"
-		},
-		"servicesSubtitle": {
-			"pt": "Pareceres e notas técnicas para subsidiar decisões estratégicas.",
-			"en": "Legal opinions and technical briefs to support strategic decision-making."
-		},
-		"services": [
-			{
-				"title": {
-					"pt": "Direito Ambiental e Climático",
-					"en": "Environmental and Climate Law"
-				},
-				"description": {
-					"pt": "Conformidade, risco e governança ambiental e climática.",
-					"en": "Compliance, risk, and environmental and climate governance."
-				}
-			},
-			{
-				"title": {
-					"pt": "Direito da União Europeia",
-					"en": "European Union Law"
-				},
-				"description": {
-					"pt": "EUDR, CSDDD, CSRD e demais normas de sustentabilidade corporativa.",
-					"en": "EUDR, CSDDD, CSRD, and corporate sustainability regulations."
-				}
-			},
-			{
-				"title": {
-					"pt": "Direito Migratório",
-					"en": "Immigration Law"
-				},
-				"description": {
-					"pt": "Mobilidade internacional e regularização jurídica.",
-					"en": "International mobility and legal status regularization."
-				}
-			},
-			{
-				"title": {
-					"pt": "Direito Administrativo e Civil",
-					"en": "Administrative and Civil Law"
-				},
-				"description": {
-					"pt": "Procedimentos administrativos e relações civis e contratuais.",
-					"en": "Administrative procedures, civil relations, and contractual matters."
-				}
-			},
-			{
-				"title": {
-					"pt": "Governança, ESG e Compliance",
-					"en": "Governance, ESG, and Compliance"
-				},
-				"description": {
-					"pt": "Estruturação, adequação regulatória e boas práticas.",
-					"en": "Framework design, regulatory alignment, and best practices."
-				}
-			},
-			{
-				"title": {
-					"pt": "Direitos Humanos",
-					"en": "Human Rights"
-				},
-				"description": {
-					"pt": "Interface com cadeias de fornecimento e responsabilidade empresarial.",
-					"en": "Intersection with global supply chains and corporate responsibility."
-				}
-			}
-		],
-		"note": {
-			"pt": "Elaboração de pareceres e notas técnicas de caráter consultivo. Não inclui representação em processos judiciais (contencioso).",
-			"en": "Advisory legal opinions and technical briefs. Does not include litigation or court representation."
-		},
-		"ctaHeading": {
-			"pt": "A sua decisão precisa de base técnica?",
-			"en": "Does your decision require a solid technical foundation?"
-		},
-		"ctaText": {
-			"pt": "Marque uma conversa inicial e descreva a questão — avaliamos o âmbito e o formato do parecer.",
-			"en": "Schedule an initial call to outline your inquiry — we will evaluate the scope and format of the legal opinion."
-		}
-	}
+  "routeKey": "legal-opinions",
+  "title": {
+    "pt": "Pareceres e Notas Técnicas",
+    "en": "Legal Opinions & Technical Briefs"
+  },
+  "summary": {
+    "pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
+    "en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
+  },
+  "seo": {
+    "title": {
+      "pt": "Pareceres e Notas Técnicas · Fundamentação para decidir",
+      "en": "Legal Opinions & Technical Briefs · Sound Decision-Making — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Pareceres jurídicos e notas técnicas fundamentados em legislação, doutrina, jurisprudência e literatura científica, em Direito Ambiental, da UE, migratório e mais.",
+      "en": "Legal opinions and technical briefs grounded in legislation, case law, legal doctrine, and scientific research across Environmental Law, EU Law, Migration Law, and more."
+    }
+  },
+  "media": {
+    "foreground": {
+      "image": "/pareceres-hero.webp",
+      "alt": {
+        "pt": "Ana a tomar notas num caderno",
+        "en": "Ana writing notes in a notebook using a pen"
+      },
+      "decorative": false
+    }
+  },
+  "consultingService": {
+    "tag": {
+      "pt": "Portugal e Brasil",
+      "en": "Portugal and Brazil"
+    },
+    "subtitle": {
+      "pt": "Quando uma decisão importante precisa de chão firme. Fundamentação jurídica sólida para pessoas, empresas e órgãos públicos.",
+      "en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
+    },
+    "introHeading": {
+      "pt": "Uma opinião que sustenta a decisão",
+      "en": "Legal analysis that supports decision-making"
+    },
+    "introImage": {
+      "image": "/pareceres-intro.webp",
+      "alt": {
+        "pt": "Ana a segurar 3 livros no regaço",
+        "en": "Ana holding 3 books in her lap"
+      },
+      "decorative": false
+    },
+    "introParagraphs": {
+      "pt": "Um parecer bem construído não é um documento formal a mais. É o que dá segurança a uma decisão difícil, protege quem a toma e resiste a escrutínio depois.\n\nCada parecer que entrego é fundamentado em legislação aplicável, doutrina, jurisprudência quando pertinente e literatura científica — com a clareza necessária para orientar quem decide.\n",
+      "en": "A well-crafted legal opinion is not just another formal document. It is what provides certainty during a complex decision, protects decision-makers, and withstands scrutiny down the line.\n\nEvery opinion I deliver is grounded in applicable law, legal doctrine, relevant case law, and academic research — designed with the clarity required to guide decision-makers effectively.\n"
+    },
+    "servicesHeading": {
+      "pt": "Matérias",
+      "en": "Practice Areas"
+    },
+    "servicesSubtitle": {
+      "pt": "Pareceres e notas técnicas para subsidiar decisões estratégicas.",
+      "en": "Legal opinions and technical briefs to support strategic decision-making."
+    },
+    "services": [
+      {
+        "title": {
+          "pt": "Direito Ambiental e Climático",
+          "en": "Environmental and Climate Law"
+        },
+        "description": {
+          "pt": "Conformidade, risco e governança ambiental e climática.",
+          "en": "Compliance, risk, and environmental and climate governance."
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito da União Europeia",
+          "en": "European Union Law"
+        },
+        "description": {
+          "pt": "EUDR, CSDDD, CSRD e demais normas de sustentabilidade corporativa.",
+          "en": "EUDR, CSDDD, CSRD, and corporate sustainability regulations."
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito Migratório",
+          "en": "Immigration Law"
+        },
+        "description": {
+          "pt": "Mobilidade internacional e regularização jurídica.",
+          "en": "International mobility and legal status regularization."
+        }
+      },
+      {
+        "title": {
+          "pt": "Direito Administrativo e Civil",
+          "en": "Administrative and Civil Law"
+        },
+        "description": {
+          "pt": "Procedimentos administrativos e relações civis e contratuais.",
+          "en": "Administrative procedures, civil relations, and contractual matters."
+        }
+      },
+      {
+        "title": {
+          "pt": "Governança, ESG e Compliance",
+          "en": "Governance, ESG, and Compliance"
+        },
+        "description": {
+          "pt": "Estruturação, adequação regulatória e boas práticas.",
+          "en": "Framework design, regulatory alignment, and best practices."
+        }
+      },
+      {
+        "title": {
+          "pt": "Direitos Humanos",
+          "en": "Human Rights"
+        },
+        "description": {
+          "pt": "Interface com cadeias de fornecimento e responsabilidade empresarial.",
+          "en": "Intersection with global supply chains and corporate responsibility."
+        }
+      }
+    ],
+    "note": {
+      "pt": "Elaboração de pareceres e notas técnicas de caráter consultivo. Não inclui representação em processos judiciais (contencioso).",
+      "en": "Advisory legal opinions and technical briefs. Does not include litigation or court representation."
+    },
+    "ctaHeading": {
+      "pt": "A sua decisão precisa de base técnica?",
+      "en": "Does your decision require a solid technical foundation?"
+    },
+    "ctaText": {
+      "pt": "Marque uma conversa inicial e descreva a questão — avaliamos o âmbito e o formato do parecer.",
+      "en": "Schedule an initial call to outline your inquiry — we will evaluate the scope and format of the legal opinion."
+    }
+  },
+  "_template": "consultingService"
 }

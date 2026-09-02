@@ -43,7 +43,7 @@ for (const file of (await readdir(directory)).filter((name) => name.endsWith(".j
 		case "academicService":
 			migrate(document.academicService, "introParagraphs");
 			break;
-		case "speaking":
+		case "events":
 			migrate(document.speakingPage, "bioParagraphs");
 			break;
 		case "privacy":

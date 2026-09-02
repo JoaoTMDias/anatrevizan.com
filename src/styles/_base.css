@@ -75,9 +75,26 @@
 			border-box;
 	}
 
+	.gradient-border--golden {
+		background:
+			linear-gradient(#1c1917, #1c1917) padding-box,
+			conic-gradient(
+				from var(--gradient-border-angle),
+				#fbbf24 0%,
+				#fde68a 25%,
+				#b45309 60%,
+				#fbbf24 100%
+			)
+			border-box;
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
-		.gradient-border {
-			animation: gradient-border-rotate 12s linear infinite;
+		.gradient-border,
+		.gradient-border--golden {
+			animation-name: gradient-border-rotate;
+			animation-duration: 4000ms;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
 		}
 	}
 }

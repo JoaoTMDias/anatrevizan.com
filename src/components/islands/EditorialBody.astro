@@ -9,7 +9,6 @@ import ConsultingServicePage from "../editorial/ConsultingServicePage.astro";
 import EventsPage from "../editorial/EventsPage.astro";
 import HomePage from "../editorial/HomePage.astro";
 import PublicationsPage from "../editorial/PublicationsPage.astro";
-import SpeakingPage from "../editorial/SpeakingPage.astro";
 import ContactPage from "../editorial/ContactPage.astro";
 import BookingPage from "../editorial/BookingPage.astro";
 import PrivacyPage from "../editorial/PrivacyPage.astro";
@@ -38,8 +37,6 @@ const { data } = Astro.props;
     <PublicationsPage data={data} />
   ) : data?.routeKey === "events" ? (
     <EventsPage data={data} />
-  ) : data?.routeKey === "speaking" ? (
-    <SpeakingPage data={data} />
   ) : data?.routeKey === "contact" ? (
     <ContactPage data={data} />
   ) : data?.routeKey === "booking" ? (

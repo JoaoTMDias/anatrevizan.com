@@ -176,8 +176,6 @@ export interface EventsPageContent {
 		role?: string | null;
 		url?: string | null;
 	}> | null;
-	ctaHeading: string;
-	ctaText: string;
 }
 
 export interface SpeakingPageContent {

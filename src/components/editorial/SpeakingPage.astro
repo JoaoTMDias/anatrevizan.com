@@ -13,30 +13,31 @@ import SectionHeading from "./SectionHeading.astro";
 import RichText from "./RichText.astro";
 interface Props {
   data: CmsEditorial;
+  embedded?: boolean;
 }
-const { data } = Astro.props;
+const { data, embedded = false } = Astro.props;
 const speaking = data.speakingPage as SpeakingPageContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const kitIcons = ["user", "photo", "list-check"];
 ---
 
-<div id="main-content" tabindex="-1">
+<div id={embedded ? "speaker-kit" : "main-content"} tabindex={embedded ? undefined : "-1"}>
   {
     speaking ? (
       <>
-        <PageHero
-          title={data.title}
-          subtitle={speaking.subtitle}
-          tag={speaking.tag}
-          locale={locale}
-          routeKey={data.routeKey}
-          heroMedia={data.media}
-          parent={{
-            label: locale === "en" ? "Academic" : "Academia",
-            href: pathFor("academic", locale),
-          }}
-          data-tina-field={tinaField(data, "speakingPage")}
-        />
+        {!embedded && <PageHero
+            title={data.title}
+            subtitle={speaking.subtitle}
+            tag={speaking.tag}
+            locale={locale}
+            routeKey={data.routeKey}
+            heroMedia={data.media}
+            parent={{
+              label: locale === "en" ? "Academic" : "Academia",
+              href: pathFor("academic", locale),
+            }}
+            data-tina-field={tinaField(data, "speakingPage")}
+          />}
         <Section>
           <div class="speaking-bio">
             <>

@@ -12,7 +12,7 @@ O conteúdo PT das páginas Home, Sobre, Consultoria, Academia, Contacto e Agend
 
 ## Lacunas abertas
 
-- Tradução e revisão integral de EN nas 19 páginas e configuração global.
+- Tradução e revisão integral de EN nas 18 páginas e configuração global.
 - Texto e revisão jurídica das três páginas legais, com datas de entrada em vigor.
 - Fotografia profissional, kit de palestrante e restantes assets finais/licenças.
 - Política final de privacidade, consentimento e retenção do formulário.

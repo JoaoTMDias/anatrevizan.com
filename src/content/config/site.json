@@ -156,16 +156,6 @@
 					"en": "Navigation description awaiting approval."
 				}
 			},
-			"speaking": {
-				"label": {
-					"pt": "Palestras e Convites",
-					"en": "Speaking"
-				},
-				"description": {
-					"pt": "Kit de palestrante e temas que ministra",
-					"en": "Navigation description awaiting approval."
-				}
-			},
 			"training": {
 				"label": {
 					"pt": "Cursos e Formações",

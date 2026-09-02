@@ -88,6 +88,7 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
+                    border="golden"
                     sizes="(min-width: 1024px) min(36vw, 28rem), calc(100vw - 2.5rem)"
                   />
                 </figure>
@@ -180,7 +181,7 @@ const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
               <Button variant="secondary" size="sm" href={pathFor("publications", locale)}>
                 {home.publicationsCta}
               </Button>
-              <Button variant="outlineBlack" size="sm" href={pathFor("speaking", locale)}>
+              <Button variant="outlineBlack" size="sm" href={`${pathFor("events", locale)}#speaker-kit`}>
                 {home.speakerKitCta}
               </Button>
             </div>

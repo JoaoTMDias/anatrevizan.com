@@ -64,7 +64,6 @@ export function navigationItems(
 				entry("mentoring", navigation?.academic?.mentoring),
 				entry("publications", navigation?.academic?.publications, true),
 				entry("events", navigation?.academic?.events),
-				entry("speaking", navigation?.academic?.speaking, true),
 				entry("training", navigation?.academic?.training),
 			],
 		},

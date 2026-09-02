@@ -31,7 +31,6 @@ export const routeMap = {
 		en: "/en/academic/publications",
 	},
 	events: { "pt-PT": "/academia/eventos", en: "/en/academic/events" },
-	speaking: { "pt-PT": "/academia/palestras", en: "/en/academic/speaking" },
 	training: { "pt-PT": "/academia/formacoes", en: "/en/academic/training" },
 	about: { "pt-PT": "/sobre", en: "/en/about" },
 	contact: { "pt-PT": "/contacto", en: "/en/contact" },

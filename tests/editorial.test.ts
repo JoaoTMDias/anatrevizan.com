@@ -35,8 +35,8 @@ const pages = readdirSync(directory)
 	);
 
 describe("modelo editorial bilingue", () => {
-	it("mantém exatamente um documento fixo por cada uma das 19 páginas", () => {
-		expect(pages).toHaveLength(19);
+	it("mantém exatamente um documento fixo por cada uma das 18 páginas", () => {
+		expect(pages).toHaveLength(18);
 		expect(pages.map((page) => page.routeKey).sort()).toEqual(
 			[...routeKeys].sort(),
 		);

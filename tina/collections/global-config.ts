@@ -135,7 +135,6 @@ export const GlobalConfigCollection: Collection = {
 						navigationEntry("mentoring", "Mentorias e Apoio Académico"),
 						navigationEntry("publications", "Publicações"),
 						navigationEntry("events", "Eventos e Palestras"),
-						navigationEntry("speaking", "Palestras e Convites"),
 						navigationEntry("training", "Cursos e Formações"),
 					],
 				},

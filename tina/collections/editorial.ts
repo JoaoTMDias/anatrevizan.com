@@ -138,11 +138,10 @@ export const EditorialCollection: Collection = {
 			label: "Publicações",
 			fields: pageFields(publicationsPageFields),
 		},
-		{ name: "events", label: "Eventos", fields: pageFields(eventsPageFields) },
 		{
-			name: "speaking",
-			label: "Palestras",
-			fields: pageFields(speakingPageFields),
+			name: "events",
+			label: "Eventos e Palestras",
+			fields: pageFields([...eventsPageFields, ...speakingPageFields]),
 		},
 		{
 			name: "contact",

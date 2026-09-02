@@ -136,8 +136,6 @@ export const eventsPageFields: TinaField[] = [
 					text("url", "URL", false),
 				],
 			},
-			text("ctaHeading", "Título do CTA"),
-			text("ctaText", "Texto do CTA"),
 		],
 	},
 ];
