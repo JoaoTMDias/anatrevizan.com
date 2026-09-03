@@ -5,7 +5,8 @@
 - [x] Ana rever os 17 documentos no `/admin`, incluindo ordem das listas, CTAs e media.
 - [x] Completar e rever humanamente todos os campos EN antes de publicar as rotas inglesas.
 - [ ] Obter revisão qualificada das afirmações profissionais e dos serviços.
-- [ ] Redigir e rever juridicamente Privacidade, Termos e Cookies, incluindo datas de entrada em vigor.
+- [ ] Redigir e rever juridicamente Privacidade e Termos, incluindo datas de entrada em vigor.
+- [ ] Cookies tem rascunho técnico redigido a partir do código (`cookies.json`); falta revisão jurídica e confirmação de negócio dos pontos `[PENDENTE]` antes de remover `seo.noindex`.
 - [ ] Substituir imagens temporárias e confirmar licenças e textos alternativos PT/EN.
 
 ## Funcionalidade
