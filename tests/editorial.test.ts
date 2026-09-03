@@ -169,6 +169,10 @@ describe("modelo editorial bilingue", () => {
 		expect(heroAspectRatioForRoute("contact")).toBe("landscape");
 		expect(heroAspectRatioForRoute("about")).toBe("square");
 		for (const page of pages)
+			expect((page as unknown as { media?: unknown }).media ?? {}).not.toHaveProperty(
+				"background",
+			);
+		for (const page of pages)
 			expect(
 				(page as unknown as { media?: { foreground?: unknown } }).media
 					?.foreground ?? {},

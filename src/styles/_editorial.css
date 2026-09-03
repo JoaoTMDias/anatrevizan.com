@@ -33,24 +33,6 @@
 		background: var(--brand-burgundy);
 	}
 
-	.editorial-hero--media {
-		background:
-			var(--brand-burgundy) var(--hero-image) var(--hero-position) / cover
-			no-repeat;
-	}
-	.editorial-hero__overlay {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-		display: none;
-		background: var(--hero-overlay-color);
-		pointer-events: none;
-	}
-
-	.editorial-hero--media .editorial-hero__overlay {
-		display: block;
-	}
-
 	.editorial-hero__content {
 		display: grid;
 		width: 100%;

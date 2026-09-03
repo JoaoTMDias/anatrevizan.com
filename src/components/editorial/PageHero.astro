@@ -1,8 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { heroAspectRatioForRoute, heroFocalPoint, type HeroMedia } from "../../lib/hero-media";
+import { heroAspectRatioForRoute, type HeroMedia } from "../../lib/hero-media";
 import { pathFor, type PublishedLocale, type RouteKey } from "../../lib/routing";
-import { responsiveCssImage } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 import EditorialImage from "./EditorialImage.astro";
@@ -32,8 +31,6 @@ const {
   class: className,
   ...rest
 } = Astro.props;
-const backgroundImage = heroMedia?.background?.image;
-const backgroundPosition = heroFocalPoint(heroMedia?.background?.focalPoint);
 const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
 const foregroundRatio = heroAspectRatioForRoute(routeKey);
 const foregroundDimensions =
@@ -49,16 +46,11 @@ const items = [
   class:list={[
     "editorial-hero",
     tone === "accent" && "editorial-hero--accent",
-    backgroundImage && "editorial-hero--media",
     foreground && "editorial-hero--with-foreground",
     className,
   ]}
-  style={backgroundImage
-    ? `--hero-image: ${responsiveCssImage(backgroundImage)}; --hero-position: center ${backgroundPosition};`
-    : undefined}
   {...rest}
 >
-  <div class="editorial-hero__overlay"></div>
   <div class="site-container editorial-hero__inner">
     <Breadcrumbs items={items} />
     <div class="editorial-hero__content">

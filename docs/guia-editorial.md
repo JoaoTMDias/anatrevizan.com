@@ -6,7 +6,7 @@ Preencha primeiro **Português (Portugal)** e, logo abaixo, **English**. Pode gu
 
 Pode editar textos, listas, CTAs, imagens, ligações e SEO. Use rich text apenas para headings internos, parágrafos, negrito, itálico, listas e links. Não tente remover secções; alterações estruturais requerem desenvolvimento.
 
-Imagens são opcionais. Se adicionar uma, preencha o texto alternativo em PT e EN e escolha o ponto focal. Recomenda-se até 1 MB por imagem, 3 MB por PDF e 15 MB por MP3/MP4. PDF, MP3 e MP4 aparecem como downloads. Preserve nomes descritivos dos ficheiros.
+Imagens laterais são opcionais. Se adicionar uma, preencha o texto alternativo em PT e EN. O fundo do hero é fixo e não é editável. Recomenda-se até 1 MB por imagem, 3 MB por PDF e 15 MB por MP3/MP4. PDF, MP3 e MP4 aparecem como downloads. Preserve nomes descritivos dos ficheiros.
 
 Use apenas URLs externas `https://`. Para páginas do próprio site, escolha o destino disponibilizado. Nunca use `#` nem deixe um botão sem destino.
 

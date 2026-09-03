@@ -19,10 +19,6 @@
 		}
 	},
 	"media": {
-		"background": {
-			"image": "",
-			"focalPoint": "center"
-		},
 		"foreground": {
 			"image": "/cover_homepage.webp",
 			"alt": {

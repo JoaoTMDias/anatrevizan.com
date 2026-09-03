@@ -50,20 +50,6 @@ const mediaField: TinaField = {
 	type: "object",
 	fields: [
 		{
-			name: "background",
-			label: "Imagem de fundo",
-			type: "object",
-			fields: [
-				{ name: "image", label: "Ficheiro", type: "image" },
-				{
-					name: "focalPoint",
-					label: "Ponto focal",
-					type: "string",
-					options: ["top", "center", "bottom"],
-				},
-			],
-		},
-		{
 			name: "foreground",
 			label: "Imagem lateral",
 			type: "object",

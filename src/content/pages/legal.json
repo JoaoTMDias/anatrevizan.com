@@ -21,9 +21,6 @@
 		"noindex": true
 	},
 	"media": {
-		"background": {
-			"image": ""
-		},
 		"foreground": {
 			"image": "/hero-consultoria.webp",
 			"alt": {

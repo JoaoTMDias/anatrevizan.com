@@ -3,11 +3,10 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { HomeContent } from "../../lib/page-content";
 import { hasValidRouteKey } from "../../lib/page-content";
-import { heroAspectRatioForRoute, heroFocalPoint } from "../../lib/hero-media";
+import { heroAspectRatioForRoute } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
 import { pathFor } from "../../lib/routing";
-import { responsiveCssImage } from "../../lib/media-pipeline";
 import Button from "../ui/Button.astro";
 import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
@@ -29,20 +28,12 @@ const serviceIcons = ["plane-departure", "scale", "leaf", "building-community", 
 const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
 const foreground = data.media?.foreground?.image ? data.media.foreground : null;
 const foregroundRatio = heroAspectRatioForRoute("home");
-const backgroundImage = data.media?.background?.image;
-const backgroundPosition = heroFocalPoint(data.media?.background?.focalPoint);
 ---
 
 <div id="main-content" tabindex="-1">
   {
     home ? (
-        <div
-          class="home-hero"
-          style={backgroundImage
-            ? `--home-hero-image: ${responsiveCssImage(backgroundImage)}; --home-hero-position: center ${backgroundPosition};`
-            : undefined}
-          data-tina-field={tinaField(data, "home")}
-        >
+        <div class="home-hero" data-tina-field={tinaField(data, "home")}>
           <div class="site-container home-hero__inner">
             <div class="home-hero__layout">
               <div class="home-hero__copy">

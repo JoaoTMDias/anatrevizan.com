@@ -20,7 +20,7 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 
 - Formatos: JPG, PNG, WebP, AVIF, SVG, PDF, MP3 e MP4. PDF/MP3/MP4 são apenas downloads.
 - Originais permanecem no Git. O pipeline Astro/Sharp cria variantes em `_media`; SVG é sanitizado no output. Netlify Image CDN não é usado para garantir paridade local.
-- Imagens são opcionais e exigem alt PT/EN quando não decorativas. O editor controla o ponto focal; proporções ficam no layout.
+- Imagens laterais são opcionais e exigem alt PT/EN quando não decorativas. O fundo do hero e as proporções ficam no layout.
 - Apenas páginas legais têm data editorial de entrada em vigor. A última alteração é derivada do Git e alimenta páginas legais, SEO e sitemap.
 
 ## Configuração e publicação

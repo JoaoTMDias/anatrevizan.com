@@ -19,10 +19,6 @@
 		}
 	},
 	"media": {
-		"background": {
-			"image": "",
-			"focalPoint": "center"
-		},
 		"foreground": {
 			"image": "/consultoria-ambiental-esg-hero.webp",
 			"alt": {

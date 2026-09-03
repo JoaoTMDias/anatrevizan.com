@@ -21,9 +21,6 @@
 		"noindex": true
 	},
 	"media": {
-		"background": {
-			"image": ""
-		},
 		"foreground": {
 			"image": "/migracao-e-mobilidade-hero.webp",
 			"alt": {

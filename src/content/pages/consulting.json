@@ -21,10 +21,6 @@
 		"noindex": true
 	},
 	"media": {
-		"background": {
-			"image": "",
-			"focalPoint": "top"
-		},
 		"foreground": {
 			"image": "/hero-placeholder.webp",
 			"alt": {

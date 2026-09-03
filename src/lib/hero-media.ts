@@ -5,14 +5,7 @@ export const HERO_PLACEHOLDER_PATH = "/hero-placeholder.webp";
 export const heroAspectRatios = ["square", "landscape"] as const;
 export type HeroAspectRatio = (typeof heroAspectRatios)[number];
 
-export const heroFocalPoints = ["top", "center", "bottom"] as const;
-export type HeroFocalPoint = (typeof heroFocalPoints)[number];
-
 export interface HeroMedia {
-	background?: {
-		image?: string | null;
-		focalPoint?: string | null;
-	} | null;
 	foreground?: {
 		image?: string | null;
 		alt?: string | null;
@@ -23,7 +16,6 @@ export interface HeroMedia {
 }
 
 export type HeroMediaIssueCode =
-	| "invalid-hero-focal-point"
 	| "missing-hero-alt"
 	| "published-hero-placeholder";
 
@@ -37,17 +29,7 @@ export function validateHeroMedia(
 	publishable: boolean,
 ): HeroMediaIssue[] {
 	const issues: HeroMediaIssue[] = [];
-	const background = media?.background;
 	const foreground = media?.foreground;
-
-	if (
-		background?.focalPoint &&
-		!heroFocalPoints.includes(background.focalPoint as HeroFocalPoint)
-	)
-		issues.push({
-			code: "invalid-hero-focal-point",
-			message: `Ponto focal inválido: ${background.focalPoint}`,
-		});
 
 	if (
 		foreground?.image &&
@@ -79,12 +61,4 @@ const landscapeHeroRoutes = new Set<RouteKey>([
 
 export function heroAspectRatioForRoute(routeKey: RouteKey): HeroAspectRatio {
 	return landscapeHeroRoutes.has(routeKey) ? "landscape" : "square";
-}
-
-export function heroFocalPoint(
-	value: string | null | undefined,
-): HeroFocalPoint {
-	return heroFocalPoints.includes(value as HeroFocalPoint)
-		? (value as HeroFocalPoint)
-		: "center";
 }
