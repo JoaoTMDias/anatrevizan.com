@@ -1,6 +1,6 @@
 # Decisões técnicas — anatrevizan.com
 
-Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
+Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 
 ## Arquitetura
 
@@ -35,4 +35,6 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 
 - ORCID sincroniza em build com validação e snapshot resiliente. Calendly é link HTTPS sem embed.
 - Os textos funcionais e a validação do formulário pertencem ao código; os tipos de pedido permanecem editáveis na configuração global.
+- O contacto usa uma ilha React pequena com React Hook Form e Zod. Email é validado numa Netlify Function, protegido por Turnstile, guardado no Google Sheets e notificado por Resend; WhatsApp abre uma mensagem preenchida e não é guardado automaticamente.
+- A folha Google é a fonte durável dos pedidos enviados pelo site. Falhas de email após a gravação não transformam um pedido recebido em erro para o visitante.
 - Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.

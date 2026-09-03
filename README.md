@@ -17,6 +17,12 @@ pnpm preview
 
 `pnpm build:local` usa conteúdo local e ignora a verificação cloud. `pnpm build` valida o schema no Tina Cloud e requer `PUBLIC_TINA_CLIENT_ID` e `TINA_TOKEN`. A sincronização ORCID usa as credenciais descritas em `.env.example` quando disponíveis e preserva o snapshot em caso de falha.
 
+## Formulário de contacto
+
+O envio por email passa por `/api/contact`: Turnstile valida o visitante, a Netlify Function grava o pedido na aba `Pedidos` do Google Sheets e o Resend notifica a Ana e confirma a receção. O envio por WhatsApp abre uma mensagem preenchida e não grava dados no servidor.
+
+A folha deve começar com estes cabeçalhos em `A1:L1`: `submitted_at_utc`, `request_id`, `channel`, `locale`, `name`, `email`, `whatsapp`, `request_type`, `country`, `message`, `admin_email_status`, `confirmation_email_status`. Criar uma service account, ativar a Google Sheets API e partilhar o documento com `GOOGLE_SERVICE_ACCOUNT_EMAIL`. As restantes variáveis necessárias estão documentadas em `.env.example`; os segredos pertencem apenas ao runtime Netlify.
+
 ## Edição e publicação
 
 As 19 páginas vivem em `src/content/pages`: um JSON por página, com PT-PT e EN no mesmo documento. Estrutura, listas, imagens e destinos são únicos; cada texto apresenta os valores PT e EN consecutivamente. O inglês só entra no site público quando a tradução usada está completa e nunca recebe fallback português.

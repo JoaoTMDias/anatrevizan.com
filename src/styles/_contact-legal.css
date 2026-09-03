@@ -17,18 +17,56 @@
 	.contact-form {
 		@apply mt-8;
 	}
-	.contact-form fieldset {
+	.contact-channel {
+		@apply border-0 p-0;
+	}
+	.contact-channel legend {
+		@apply text-lg font-semibold;
+	}
+	.contact-channel__instruction {
+		@apply mt-2 text-sm text-muted-foreground;
+
+		line-height: 1.5;
+	}
+	.contact-channel__options {
 		@apply grid gap-5;
 
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
-	.contact-form label:not(.contact-form__consent) {
-		@apply grid gap-2 text-base font-semibold;
+	.contact-channel__options label {
+		@apply mt-3 flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-background p-4;
+	}
+	.contact-channel__options label:has(input:checked) {
+		@apply border-primary ring-2 ring-primary/20;
+	}
+	.contact-channel__options input {
+		@apply mt-1 size-4 shrink-0 accent-primary;
+	}
+	.contact-channel__options span,
+	.contact-channel__options small {
+		@apply block;
+	}
+	.contact-channel__options small {
+		@apply mt-1 text-sm font-normal text-muted-foreground;
+		line-height: 1.45;
+	}
+	.contact-form__fields {
+		@apply mt-6 grid gap-5;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.contact-form__field {
+		@apply grid content-start gap-2 text-base font-semibold;
 	}
 	.contact-form input,
 	.contact-form select,
 	.contact-form textarea {
 		@apply w-full rounded-md border border-border bg-secondary px-4 py-3 text-base text-foreground;
+	}
+	.contact-channel__options input {
+		@apply mt-1 size-4 w-4 shrink-0 p-0 accent-primary;
+	}
+	.contact-form [aria-invalid="true"] {
+		@apply border-destructive ring-2 ring-destructive/20;
 	}
 	.contact-form :disabled {
 		@apply cursor-not-allowed;
@@ -37,8 +75,26 @@
 	}
 	.contact-form__wide,
 	.contact-form__consent,
-	.contact-form button {
+	.contact-form__honeypot,
+	.contact-form__turnstile,
+	.contact-form__configuration,
+	.contact-form__status,
+	.contact-form__whatsapp-action {
 		grid-column: 1 / -1;
+	}
+	.contact-form__wide {
+		@apply font-normal;
+	}
+	.contact-form__wide > label {
+		@apply font-semibold;
+	}
+	.contact-form__hint {
+		@apply text-sm text-muted-foreground;
+		line-height: 1.5;
+	}
+	.contact-form__error {
+		@apply text-sm font-medium text-destructive;
+		line-height: 1.45;
 	}
 	.contact-form__consent {
 		@apply flex items-start gap-3 text-base;
@@ -53,8 +109,39 @@
 	.contact-form__consent a {
 		@apply text-primary underline;
 	}
-	.contact-form button {
-		@apply min-h-11 w-fit rounded-full bg-muted-foreground px-6 text-base font-semibold text-background;
+	.contact-form__honeypot {
+		position: absolute;
+		left: -10000px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
+	.contact-form__turnstile {
+		@apply mt-5 min-h-0;
+	}
+	.contact-form__configuration {
+		@apply mt-5 rounded-md border border-border bg-secondary p-4 text-base;
+	}
+	.contact-form > button {
+		@apply mt-5;
+	}
+	.contact-form__whatsapp-action {
+		@apply mt-5 flex flex-wrap items-center gap-4;
+	}
+	.contact-form__whatsapp-action p {
+		@apply w-full text-sm text-muted-foreground;
+	}
+	.contact-form__status {
+		@apply mt-4 rounded-md text-base;
+	}
+	.contact-form__status:not(:empty) {
+		@apply border p-4;
+	}
+	.contact-form__status[data-state="success"] {
+		@apply border-primary/40 bg-primary/5;
+	}
+	.contact-form__status[data-state="error"] {
+		@apply border-destructive/40 bg-destructive/5 text-destructive;
 	}
 	.contact-sidebar {
 		@apply grid self-start gap-5;
@@ -65,15 +152,17 @@
 	}
 	.contact-booking {
 		scroll-margin-top: 7rem;
-		border: 1px solid color-mix(in oklab, var(--accent) 48%, var(--border));
 		background: color-mix(in oklab, var(--accent) 8%, var(--background));
 	}
 	.contact-booking:target,
 	.contact-booking:focus-visible {
 		@apply outline-3 -outline-offset-3 outline-accent;
 	}
+	.contact-booking__header {
+		@apply flex flex-row items-center gap-3;
+	}
 	.contact-booking__icon {
-		@apply mb-4 grid size-12 place-items-center rounded-full text-primary;
+		@apply grid size-12 place-items-center rounded-full text-primary;
 
 		background: color-mix(in oklab, var(--primary) 13%, var(--background));
 	}

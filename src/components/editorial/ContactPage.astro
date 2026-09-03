@@ -2,13 +2,8 @@
 import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import { getConfig } from "../../lib/data";
-import { contactFormCopy } from "../../lib/contact-form-i18n";
-import {
-  safeCalendlyUrl,
-  safeEmailHref,
-  safeProfileUrl,
-  safeWhatsAppHref,
-} from "../../lib/external-url";
+import ContactForm from "../ContactForm";
+import { safeCalendlyUrl, safeProfileUrl, safeWhatsAppHref } from "../../lib/external-url";
 import type { ContactPageContent } from "../../lib/page-content";
 import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
@@ -23,13 +18,12 @@ const { data } = Astro.props;
 const contact = data.contactPage as ContactPageContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const config = contact ? (await getConfig()).data.config : null;
-const formCopy = contactFormCopy(locale);
-const requestTypes = (config?.requestTypes ?? []).flatMap((item) => {
+const requestTypes = (config?.requestTypes ?? []).flatMap((item, index) => {
   const label = locale === "en" ? item?.label?.en : item?.label?.pt;
-  return label ? [label] : [];
+  return label ? [{ value: `request-${index + 1}`, label }] : [];
 });
-const emailHref = safeEmailHref(config?.contacts?.email);
 const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 const bookingId = locale === "en" ? "book" : "agendar";
 const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
@@ -54,80 +48,39 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
         />
         <Section class="contact-layout">
           <div>
-            <SectionHeading title={locale === "en" ? "Contact form" : "Formulário de contacto"} locale={locale} />
-            <p id="contact-form-status" class="contact-form-notice">
-              <Icon name="info-circle" />
-              {locale === "en"
-                ? "The form is editorially prepared, but secure submission will be activated in a later phase."
-                : "O formulário encontra-se preparado editorialmente, mas o envio seguro será ativado numa fase posterior."}
-            </p>
-            <form class="contact-form" aria-describedby="contact-form-status">
-              <fieldset disabled>
-                <label>
-                  {formCopy.nameLabel}
-                  <input name="name" autocomplete="name" />
-                </label>
-                <label>
-                  {formCopy.whatsappLabel}
-                  <input name="whatsapp" type="tel" autocomplete="tel" />
-                </label>
-                <label>
-                  {formCopy.emailLabel}
-                  <input name="email" type="email" autocomplete="email" />
-                </label>
-                <label>
-                  {formCopy.requestTypeLabel}
-                  <select name="requestType">
-                    <option value="">—</option>
-                    {requestTypes.map((requestType) => (
-                      <option value={requestType}>{requestType}</option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  {formCopy.countryLabel}
-                  <select name="country">
-                    <option value="">—</option>
-                    {formCopy.countries.map((country) => (
-                      <option value={country}>{country}</option>
-                    ))}
-                  </select>
-                </label>
-                <label class="contact-form__wide">
-                  {formCopy.subjectLabel}
-                  <textarea
-                    name="subject"
-                    rows="6"
-                    placeholder={formCopy.subjectPlaceholder}
-                  />
-                </label>
-                <label class="contact-form__consent">
-                  <input type="checkbox" name="consent" />{" "}
-                  <span>
-                    {formCopy.consentText}{" "}
-                    <a href={pathFor("privacy", locale)}>{formCopy.privacyPolicyLabel}</a>.
-                  </span>
-                </label>
-                <button type="submit" disabled>
-                  {formCopy.submitLabel}
-                </button>
-              </fieldset>
-            </form>
+            <SectionHeading
+              title={locale === "en" ? "Contact form" : "Formulário de contacto"}
+              locale={locale}
+            />
+            <ContactForm
+              client:load
+              locale={locale}
+              privacyHref={pathFor("privacy", locale)}
+              requestTypes={requestTypes}
+              turnstileSiteKey={turnstileSiteKey}
+              whatsappHref={whatsappHref}
+            />
           </div>
           <aside class="contact-sidebar">
             <section id={bookingId} class="contact-booking" tabindex="-1">
-              <span class="contact-booking__icon">
-                <Icon name={calendlyUrl ? "calendar-event" : "calendar-off"} />
-              </span>
-              <h2>{contact.bookingHeading}</h2>
+              <div class="contact-booking__header">
+                <span class="contact-booking__icon">
+                  <Icon name={calendlyUrl ? "calendar-event" : "calendar-off"} />
+                </span>
+                <h2>{contact.bookingHeading}</h2>
+              </div>
               <p>{contact.bookingIntro}</p>
               <dl class="contact-booking__details">
                 <div>
-                  <dt><Icon name="clock" /> {contact.duration}</dt>
+                  <dt>
+                    <Icon name="clock" /> {contact.duration}
+                  </dt>
                   <dd>{contact.validFor}</dd>
                 </div>
                 <div>
-                  <dt><Icon name="world" /> {contact.timezone}</dt>
+                  <dt>
+                    <Icon name="world" /> {contact.timezone}
+                  </dt>
                   <dd>{contact.timezoneNote}</dd>
                 </div>
               </dl>
@@ -147,20 +100,6 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
             <section class="contact-methods">
               <h2>{contact.otherMethodsHeading}</h2>
               <ul>
-                {emailHref && (
-                  <li>
-                    <Icon name="mail" />
-                    <a href={emailHref}>{config?.contacts?.email}</a>
-                  </li>
-                )}
-                {whatsappHref && (
-                  <li>
-                    <Icon name="brand-whatsapp" />
-                    <a href={whatsappHref} target="_blank" rel="external noopener noreferrer">
-                      WhatsApp <span>{config?.contacts?.phone}</span>
-                    </a>
-                  </li>
-                )}
                 {profileLinks.map((profile) => (
                   <li>
                     <Icon name="external-link" />

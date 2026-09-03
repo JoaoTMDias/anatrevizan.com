@@ -2,7 +2,7 @@ import type { PublishedLocale } from "./routing";
 
 const copy = {
 	"pt-PT": {
-		nameLabel: "Nome completo",
+		nameLabel: "Nome",
 		whatsappLabel: "WhatsApp",
 		emailLabel: "E-mail",
 		requestTypeLabel: "Tipo de pedido",
@@ -26,7 +26,7 @@ const copy = {
 		],
 	},
 	en: {
-		nameLabel: "Full name",
+		nameLabel: "Name",
 		whatsappLabel: "WhatsApp",
 		emailLabel: "Email",
 		requestTypeLabel: "Type of request",

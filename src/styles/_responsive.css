@@ -31,7 +31,8 @@
 		grid-template-columns: 1fr;
 	}
 	.contact-layout,
-	.contact-form fieldset {
+	.contact-form__fields,
+	.contact-channel__options {
 		grid-template-columns: minmax(0, 1fr);
 	}
 	.contact-layout > * {
