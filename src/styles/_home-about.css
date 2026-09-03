@@ -293,6 +293,11 @@
 		gap: 0.75rem;
 		margin-bottom: 2rem;
 	}
+	.home-academic-heading .editorial-section-heading {
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+	}
 	.home-publications {
 		display: grid;
 		gap: 1.5rem;
@@ -461,7 +466,7 @@
 		0% {
 			opacity: 0;
 			transform: translateY(100%);
-			filter: blur(4px);
+			filter: blur(8px);
 		}
 		100% {
 			opacity: 1;
@@ -479,7 +484,7 @@
 		100% {
 			opacity: 0;
 			transform: translateY(-100%);
-			filter: blur(4px);
+			filter: blur(8px);
 		}
 	}
 }
