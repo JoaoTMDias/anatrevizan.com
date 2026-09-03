@@ -1,34 +1,13 @@
 /* Public class exposed by @jtmdias/react-a11y-tools/SkipLinks. */
 .css-skip-links__item {
-	position: fixed;
-	top: 0.75rem;
-	left: 1rem;
-	z-index: 70;
-	display: inline-flex;
-	min-height: 2.75rem;
-	align-items: center;
-	justify-content: center;
-	padding-inline: 1rem;
-	border-radius: var(--radius-md);
-	background: var(--background);
-	box-shadow: var(--shadow-lg);
-	color: var(--foreground);
-	font-family: var(--font-sans);
-	font-size: 1rem;
-	font-weight: 600;
-	text-decoration: none;
+	@apply fixed top-3 left-4 z-70 inline-flex min-h-11 items-center justify-center rounded-md bg-background px-4 font-sans text-base font-semibold text-foreground no-underline shadow-lg;
 }
 
 .css-skip-links__item:not(:focus) {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	border: 0;
+	@apply absolute size-px overflow-hidden border-0 p-0 whitespace-nowrap;
+
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
-	overflow: hidden;
-	white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -75,9 +54,8 @@
 }
 
 .rich-text a {
-	color: var(--primary);
-	font-weight: 600;
-	text-decoration-line: underline;
+	@apply font-semibold text-primary underline;
+
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.2em;
 }

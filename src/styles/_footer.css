@@ -25,15 +25,11 @@
 }
 
 .footer-contact__details a {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
+	@apply inline-flex items-center gap-2;
 }
 
 .footer-contact__details svg {
-	width: 1rem;
-	height: 1rem;
-	flex: none;
+	@apply size-4 shrink-0;
 }
 
 .footer-contact__details a:hover {
@@ -41,18 +37,14 @@
 }
 
 .footer-contact__profiles {
-	display: flex;
+	@apply mt-3 flex;
+
 	gap: 0.35rem;
-	margin-top: 0.75rem;
 }
 
 .footer-contact__profiles a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 2.75rem;
-	height: 2.75rem;
-	border-radius: 999px;
+	@apply inline-flex size-11 items-center justify-center rounded-full;
+
 	color: var(--footer-muted);
 }
 
@@ -61,24 +53,20 @@
 }
 
 .footer-contact__profiles svg {
-	width: 1.125rem;
-	height: 1.125rem;
+	@apply size-4.5;
 }
 
 .footer-contact__languages {
+	@apply text-xs;
+
 	margin-top: 0.65rem;
-	font-size: 0.75rem;
 	color: var(--footer-muted);
 }
 
 .footer-legal__inner {
-	display: grid;
+	@apply grid items-center gap-4 py-5 text-xs;
+
 	grid-template-columns: auto minmax(12rem, 1fr) minmax(18rem, 2fr) auto;
-	align-items: center;
-	gap: 1rem;
-	padding-top: 1.25rem;
-	padding-bottom: 1.25rem;
-	font-size: 0.75rem;
 	line-height: 1.5;
 }
 
@@ -88,10 +76,7 @@
 }
 
 .footer-legal__brand {
-	font-family: var(--font-heading);
-	font-weight: 700;
-	width: auto;
-	height: 3rem;
+	@apply size-auto h-12 font-heading font-bold;
 
 	svg {
 		width: 100%;

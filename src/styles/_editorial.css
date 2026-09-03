@@ -10,23 +10,16 @@
 
 	/* Hero section container */
 	.editorial-hero {
-		position: relative;
-		isolation: isolate;
-		min-height: 35rem;
+		@apply relative isolate min-h-[35rem] text-white;
+
 		background: linear-gradient(
 			var(--color-primary-800),
 			var(--brand-burgundy)
 		);
-		color: var(--hero-white);
 		text-shadow: var(--hero-text-shadow);
 	}
 	.editorial-hero__inner {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		padding: 6rem 0 2rem;
+		@apply relative z-1 flex h-full flex-col pt-24 pb-8;
 	}
 
 	.editorial-hero--accent {
@@ -34,30 +27,20 @@
 	}
 
 	.editorial-hero__content {
-		display: grid;
-		width: 100%;
-		max-width: 48rem;
-		flex: 1;
+		@apply grid w-full max-w-3xl flex-1 content-center items-center py-8;
+
 		gap: clamp(2rem, 5vw, 4rem);
-		align-content: center;
-		align-items: center;
-		padding-block: 2rem;
 	}
 	.editorial-hero__copy {
-		min-width: 0;
+		@apply min-w-0;
 	}
 
 	/* Hero foreground media (image/video) */
 	.editorial-hero__foreground {
-		width: min(100%, 32rem);
-		margin: 0;
-		padding: 0;
-		border: none;
-		border-radius: var(--radius-xl);
+		@apply m-0 w-full max-w-lg justify-self-center overflow-hidden rounded-xl border-0 p-0;
+
 		background: color-mix(in oklab, var(--brand-burgundy) 82%, black);
 		box-shadow: 0 1.5rem 3rem rgb(20 6 7 / 28%);
-		overflow: hidden;
-		justify-self: center;
 		rotate: 1deg;
 		scale: 1;
 		transform-origin: center;
@@ -85,10 +68,7 @@
 	}
 
 	.editorial-hero__foreground img {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		@apply flex size-full object-cover;
 		object-position: var(--hero-position, 50% 50%);
 	}
 
@@ -108,38 +88,34 @@
 
 	/* Hero headings and typography */
 	.editorial-hero h1 {
+		@apply font-bold;
+
 		font-size: clamp(2.25rem, 7vw, 3.75rem);
-		font-weight: 700;
 		line-height: 1.05;
 		letter-spacing: -0.025em;
 	}
 
 	.editorial-hero__subtitle {
-		max-width: 36rem;
-		margin-top: 1.5rem;
-		color: var(--hero-white);
+		@apply mt-6 max-w-xl text-white;
+
 		font-size: clamp(1rem, 2vw, 1.125rem);
 		line-height: 1.7;
 	}
 
 	/* Breadcrumbs navigation */
 	.editorial-breadcrumbs {
-		color: var(--hero-white);
-		font-size: 0.75rem;
+		@apply text-xs text-white;
 	}
 	.editorial-breadcrumbs ol {
-		display: flex;
-		flex-wrap: wrap;
+		@apply m-0 flex flex-wrap list-none p-0;
+
 		gap: 0.4rem;
-		list-style: none;
-		margin: 0;
-		padding: 0;
 	}
 
 	.editorial-breadcrumbs li {
-		display: flex;
+		@apply flex min-w-0;
+
 		gap: 0.4rem;
-		min-width: 0;
 	}
 
 	.editorial-breadcrumbs a {
@@ -150,15 +126,10 @@
 
 	/* Eyebrow label above hero heading */
 	.editorial-eyebrow {
-		display: inline-flex;
-		width: fit-content;
-		align-items: center;
-		margin-bottom: 1.5rem;
-		padding: 0.375rem 1rem;
+		@apply mb-6 inline-flex w-fit items-center rounded-full px-4 py-1.5 text-xs uppercase;
+
 		border: 1px solid rgb(255 255 255 / 62%);
-		border-radius: 999px;
 		background: color-mix(in oklab, var(--hero-white) 10%, transparent);
-		font-size: 0.75rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		backdrop-filter: blur(0.5rem);
@@ -166,47 +137,41 @@
 
 	/* Section headings */
 	.editorial-section-heading {
-		max-width: 44rem;
-		margin-bottom: 2rem;
+		@apply mb-8 max-w-3xl;
 	}
 	.editorial-section-heading h2,
 	.editorial-cta h2 {
+		@apply font-bold;
+
 		font-size: clamp(1.875rem, 4vw, 2.25rem);
-		font-weight: 700;
 		line-height: 1.15;
 	}
 
 	.editorial-section-heading__subtitle {
-		max-width: 40rem;
-		margin-top: 0.75rem;
-		color: var(--muted-foreground);
+		@apply mt-3 max-w-2xl text-muted-foreground;
+
 		line-height: 1.7;
 	}
 
 	/* Optional media beside introductory copy */
 	.editorial-intro {
-		display: grid;
+		@apply grid items-center;
+
 		gap: clamp(2rem, 5vw, 4rem);
-		align-items: center;
 	}
 	.editorial-intro--text-only {
-		max-width: 48rem;
+		@apply max-w-3xl;
 	}
 	.editorial-intro__media {
-		overflow: hidden;
-		margin: 0;
-		border-radius: var(--radius-xl);
-		background: var(--muted);
+		@apply m-0 overflow-hidden rounded-xl bg-muted;
+
 		aspect-ratio: 4 / 3;
 	}
 	.editorial-intro__media img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		@apply block size-full object-cover;
 	}
 	.editorial-intro__copy {
-		min-width: 0;
+		@apply min-w-0;
 	}
 	@media (min-width: 64rem) {
 		.editorial-intro:not(.editorial-intro--text-only) {
@@ -216,63 +181,46 @@
 
 	/* Grid layout for editorial cards */
 	.editorial-grid {
-		display: grid;
+		@apply grid gap-6;
+
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1.5rem;
 	}
 
 	/* Empty state messaging */
 	.editorial-empty-state {
-		max-width: 40rem;
-		margin-inline: auto;
-		padding: 3.5rem 2.5rem;
-		text-align: center;
+		@apply mx-auto max-w-2xl px-10 py-14 text-center;
 	}
 	.editorial-empty-state__icon {
-		display: grid;
-		width: 3.5rem;
-		height: 3.5rem;
-		margin: 0 auto 1.5rem;
-		place-items: center;
-		border-radius: 999px;
-		background: var(--secondary);
-		color: var(--accent);
+		@apply mx-auto mb-6 grid size-14 place-items-center rounded-full bg-secondary text-accent;
 	}
 
 	.editorial-empty-state__icon svg {
-		width: 1.5rem;
-		height: 1.5rem;
+		@apply size-6;
 	}
 
 	.editorial-empty-state h2 {
-		font-size: 1.25rem;
-		font-weight: 600;
+		@apply text-xl font-semibold;
 	}
 
 	.editorial-empty-state p {
-		margin: 1rem auto 1.5rem;
-		color: var(--muted-foreground);
+		@apply mx-auto mt-4 mb-6 text-muted-foreground;
 	}
 
 	/* Call-to-action section */
 	.editorial-cta {
+		@apply bg-primary text-inverse-foreground;
+
 		padding-block: clamp(4rem, 8vw, 5rem);
-		background: var(--brand-burgundy);
-		color: var(--inverse-foreground);
 	}
 
 	.editorial-cta p {
-		max-width: 40rem;
-		margin: 1rem auto 2rem;
-		color: var(--inverse-muted-foreground);
+		@apply mx-auto mt-4 mb-8 max-w-2xl text-inverse-muted-foreground;
+
 		line-height: 1.7;
 	}
 
 	.editorial-cta__actions {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 0.75rem;
+		@apply flex flex-wrap justify-center gap-3;
 	}
 
 	@keyframes scale-up-on-exit {

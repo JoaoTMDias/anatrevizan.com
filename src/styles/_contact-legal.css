@@ -1,53 +1,38 @@
 @layer components {
 	.contact-layout {
-		display: grid;
-		gap: 2.5rem;
+		@apply grid gap-10;
+
 		grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
 	}
 	.contact-form-notice {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.625rem;
-		padding: 1rem;
-		border: 1px solid color-mix(in oklab, var(--accent) 42%, var(--border));
-		border-radius: var(--radius-md);
+		@apply flex items-start gap-2.5 rounded-md border p-4 text-base;
+
+		border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
 		background: color-mix(in oklab, var(--accent) 7%, var(--background));
-		font-size: 1rem;
 		line-height: 1.6;
 	}
 	.contact-form-notice svg {
-		width: 1.25rem;
-		height: 1.25rem;
-		flex: none;
-		color: var(--accent);
+		@apply size-5 shrink-0 text-accent;
 	}
 	.contact-form {
-		margin-top: 2rem;
+		@apply mt-8;
 	}
 	.contact-form fieldset {
-		display: grid;
-		gap: 1.25rem;
+		@apply grid gap-5;
+
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.contact-form label:not(.contact-form__consent) {
-		display: grid;
-		gap: 0.5rem;
-		font-size: 1rem;
-		font-weight: 600;
+		@apply grid gap-2 text-base font-semibold;
 	}
 	.contact-form input,
 	.contact-form select,
 	.contact-form textarea {
-		width: 100%;
-		padding: 0.75rem 1rem;
-		border: 1px solid var(--border);
-		border-radius: var(--radius-md);
-		background: var(--secondary);
-		color: var(--foreground);
-		font-size: 1rem;
+		@apply w-full rounded-md border border-border bg-secondary px-4 py-3 text-base text-foreground;
 	}
 	.contact-form :disabled {
-		cursor: not-allowed;
+		@apply cursor-not-allowed;
+
 		opacity: 0.78;
 	}
 	.contact-form__wide,
@@ -56,40 +41,27 @@
 		grid-column: 1 / -1;
 	}
 	.contact-form__consent {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.75rem;
-		font-size: 1rem;
+		@apply flex items-start gap-3 text-base;
+
 		line-height: 1.5;
 	}
 	.contact-form__consent input {
-		width: auto;
+		@apply w-auto;
+
 		margin-top: 0.2rem;
 	}
 	.contact-form__consent a {
-		color: var(--primary);
-		text-decoration: underline;
+		@apply text-primary underline;
 	}
 	.contact-form button {
-		min-height: 2.75rem;
-		width: fit-content;
-		padding-inline: 1.5rem;
-		border-radius: 999px;
-		background: var(--muted-foreground);
-		color: var(--background);
-		font-size: 1rem;
-		font-weight: 600;
+		@apply min-h-11 w-fit rounded-full bg-muted-foreground px-6 text-base font-semibold text-background;
 	}
 	.contact-sidebar {
-		display: grid;
-		align-self: start;
-		gap: 1.25rem;
+		@apply grid self-start gap-5;
 	}
 	.contact-booking,
 	.contact-methods {
-		padding: 1.5rem;
-		border-radius: var(--radius-lg);
-		background: var(--secondary);
+		@apply rounded-lg bg-secondary p-6;
 	}
 	.contact-booking {
 		scroll-margin-top: 7rem;
@@ -98,183 +70,137 @@
 	}
 	.contact-booking:target,
 	.contact-booking:focus-visible {
-		outline: 3px solid var(--accent);
-		outline-offset: 3px;
+		@apply outline-3 -outline-offset-3 outline-accent;
 	}
 	.contact-booking__icon {
-		display: grid;
-		width: 3rem;
-		height: 3rem;
-		place-items: center;
-		margin-bottom: 1rem;
-		border-radius: 999px;
+		@apply mb-4 grid size-12 place-items-center rounded-full text-primary;
+
 		background: color-mix(in oklab, var(--primary) 13%, var(--background));
-		color: var(--primary);
 	}
 	.contact-booking__icon svg {
-		width: 1.5rem;
-		height: 1.5rem;
+		@apply size-6;
 	}
 	.contact-booking h2,
 	.contact-methods h2 {
-		font-size: 1.125rem;
-		font-weight: 600;
+		@apply text-lg font-semibold;
 	}
 	.contact-booking > p {
-		margin-top: 0.75rem;
-		color: var(--muted-foreground);
-		font-size: 1rem;
+		@apply mt-3 text-base text-muted-foreground;
+
 		line-height: 1.6;
 	}
 	.contact-booking__details {
-		display: grid;
-		gap: 1rem;
-		margin-block: 1.25rem;
+		@apply my-5 grid gap-4;
 	}
 	.contact-booking__details div {
-		display: grid;
+		@apply grid;
+
 		gap: 0.35rem;
 	}
 	.contact-booking__details dt {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-size: 1rem;
-		font-weight: 600;
+		@apply flex items-center gap-2 text-base font-semibold;
 	}
 	.contact-booking__details dt svg {
-		width: 1.125rem;
-		height: 1.125rem;
-		flex: none;
-		color: var(--primary);
+		@apply size-4.5 shrink-0 text-primary;
 	}
 	.contact-booking__details dd {
-		color: var(--muted-foreground);
-		font-size: 0.9375rem;
+		@apply text-[0.9375rem] text-muted-foreground;
+
 		line-height: 1.5;
 	}
 	.contact-booking a {
-		max-width: 100%;
-		white-space: normal;
-		text-align: center;
+		@apply max-w-full text-center whitespace-normal;
 	}
 	.contact-booking__notice {
-		padding-top: 1rem;
-		border-top: 1px solid var(--border);
+		@apply border-t border-border pt-4;
 	}
 	.contact-methods ul {
-		display: grid;
-		gap: 1rem;
-		margin-top: 1.25rem;
-		list-style: none;
+		@apply mt-5 grid gap-4 list-none;
 	}
 	.contact-methods li {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.75rem;
-		font-size: 1rem;
+		@apply flex items-start gap-3 text-base;
 	}
 	.contact-methods li > svg {
-		width: 1.125rem;
-		height: 1.125rem;
-		flex: none;
-		color: var(--primary);
+		@apply size-4.5 shrink-0 text-primary;
 	}
 	.contact-methods a {
 		overflow-wrap: anywhere;
-		color: var(--foreground);
+		@apply text-foreground;
 	}
 	.contact-methods a:hover {
-		color: var(--primary);
+		@apply text-primary;
 	}
 	.contact-methods a span {
-		display: block;
-		color: var(--muted-foreground);
+		@apply block text-muted-foreground;
 	}
 	.contact-methods hr {
-		margin-block: 1.25rem;
-		border-color: var(--border);
+		@apply my-5 border-border;
 	}
 	.contact-methods > p {
-		margin-top: 0.5rem;
-		color: var(--muted-foreground);
-		font-size: 1rem;
+		@apply mt-2 text-base text-muted-foreground;
+
 		line-height: 1.5;
 	}
 	.legal-header {
+		@apply border-b border-border bg-secondary;
+
 		padding-block: clamp(3.5rem, 8vw, 5rem);
-		border-bottom: 1px solid var(--border);
-		background: var(--secondary);
 	}
 	.legal-header .site-container,
 	.legal-content {
-		max-width: 56rem;
+		@apply max-w-4xl;
 	}
 	.legal-header h1 {
+		@apply font-bold;
+
 		font-size: clamp(2.25rem, 6vw, 3rem);
-		font-weight: 700;
 		line-height: 1.1;
 	}
 	.legal-header p {
-		max-width: 42rem;
-		margin-top: 1.25rem;
-		color: var(--muted-foreground);
+		@apply mt-5 max-w-2xl text-muted-foreground;
+
 		line-height: 1.7;
 	}
 	.legal-content {
 		padding-block: clamp(3rem, 7vw, 4rem);
 	}
 	.legal-review-notice {
-		padding: 1.25rem;
-		border: 1px solid color-mix(in oklab, var(--accent) 42%, var(--border));
-		border-left: 4px solid var(--accent);
-		border-radius: var(--radius-md);
+		@apply rounded-md border border-l-4 border-l-accent p-5 text-base;
+
+		border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
 		background: color-mix(in oklab, var(--accent) 7%, var(--background));
-		font-size: 1rem;
 		line-height: 1.6;
 	}
 	.legal-content section {
-		margin-top: 2.5rem;
+		@apply mt-10;
 	}
 	.legal-content h2 {
-		font-size: 1.5rem;
-		font-weight: 700;
+		@apply text-2xl font-bold;
 	}
 	.legal-content section > p,
 	.legal-content section > div {
-		margin-top: 0.75rem;
-		color: var(--muted-foreground);
+		@apply mt-3 text-muted-foreground;
+
 		line-height: 1.7;
 	}
 	.legal-content section > div {
-		display: grid;
-		gap: 1rem;
+		@apply grid gap-4;
 	}
 	.legal-content ul {
-		display: grid;
-		gap: 0.5rem;
-		margin-top: 1.25rem;
-		padding-left: 1.25rem;
-		color: var(--muted-foreground);
+		@apply mt-5 grid list-disc gap-2 pl-5 text-muted-foreground;
 	}
 	.not-found-page {
-		display: grid;
-		min-height: 70vh;
-		padding: 1.5rem;
-		place-items: center;
-		background: var(--background);
-		text-align: center;
+		@apply grid min-h-[70vh] place-items-center bg-background p-6 text-center;
 	}
 	.not-found-page > div > p:first-child {
 		color: color-mix(in oklab, var(--primary) 40%, var(--background));
-		font-family: var(--font-heading);
+		@apply font-heading font-bold leading-none;
+
 		font-size: clamp(4rem, 14vw, 6rem);
-		font-weight: 700;
-		line-height: 1;
 	}
 	.not-found-page h1 {
-		margin-top: 1rem;
+		@apply mt-4 font-semibold;
+
 		font-size: clamp(1.5rem, 5vw, 2rem);
-		font-weight: 600;
 	}
 }

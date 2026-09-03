@@ -14,18 +14,10 @@
 	.publication-filters,
 	.publication-filters label,
 	.publication-filters select {
-		width: 100%;
+		@apply w-full;
 	}
 	.publication-filters > p {
-		width: auto;
-		margin-left: 0;
-	}
-	.publication-card {
-		flex-direction: column;
-	}
-	.publication-card__unavailable {
-		max-width: none;
-		text-align: left;
+		@apply ml-0 w-auto;
 	}
 	.speaking-bio,
 	.speaking-kit-grid,
@@ -56,15 +48,14 @@
 		min-height: 21rem;
 	}
 	.home-gateway__icon {
-		width: 4rem;
-		height: 4rem;
+		@apply size-16;
 		opacity: 0.12;
 	}
 	.home-gateway + .home-gateway {
 		border-top: 1px solid #80666b;
-		border-left: 0;
+		@apply border-l-0;
 	}
 	.speaking-photo {
-		max-width: 22rem;
+		@apply max-w-sm;
 	}
 }
