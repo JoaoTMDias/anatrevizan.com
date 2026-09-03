@@ -37,6 +37,10 @@
       "pt": "Conhecimento que se usa na segunda-feira",
       "en": "Knowledge you can apply on Monday"
     },
+    "introImage": {
+      "image": "/hero-placeholder.webp",
+      "decorative": true
+    },
     "introParagraphs": {
       "pt": "Dou aulas há mais de uma década: no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.\n\nDesenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina.\n",
       "en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programs for universities, corporations, municipalities, and organizations, combining research rigor with pedagogical clarity.\n"

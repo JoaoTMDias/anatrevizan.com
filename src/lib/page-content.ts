@@ -36,6 +36,11 @@ export interface HomeContent {
 export interface AboutContent {
 	tag: string;
 	subtitle: string;
+	introImage?: {
+		image?: string | null;
+		alt?: string | null;
+		decorative?: boolean | null;
+	} | null;
 	narrative: TinaRichTextContent;
 	milestonesTitle: string;
 	milestones: Array<{ year: string; title: string; description: string }>;
@@ -131,6 +136,11 @@ export interface AcademicHubContent {
 export interface AcademicServiceContent {
 	subtitle: string;
 	introHeading: string;
+	introImage?: {
+		image?: string | null;
+		alt?: string | null;
+		decorative?: boolean | null;
+	} | null;
 	introParagraphs: TinaRichTextContent;
 	servicesHeading: string;
 	servicesSubtitle?: string | null;

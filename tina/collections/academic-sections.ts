@@ -59,6 +59,23 @@ export const academicServiceFields: TinaField[] = [
 		fields: [
 			text("subtitle", "Introdução do hero"),
 			text("introHeading", "Título da introdução"),
+			{
+				name: "introImage",
+				label: "Imagem da introdução",
+				type: "object",
+				fields: [
+					{ name: "image", label: "Imagem", type: "image" },
+					text("alt", "Texto alternativo", false),
+					{
+						name: "decorative",
+						label: "Imagem decorativa",
+						type: "boolean",
+						description:
+							"Imagens decorativas usam um atributo alt vazio. Caso contrário, o texto alternativo é obrigatório.",
+						ui: { defaultValue: false },
+					},
+				],
+			},
 			richText("introParagraphs", "Texto de introdução"),
 			text("servicesHeading", "Título dos serviços"),
 			text("servicesSubtitle", "Introdução dos serviços", false),

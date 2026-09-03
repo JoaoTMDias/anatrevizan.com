@@ -111,6 +111,23 @@ export const aboutFields: TinaField[] = [
 		fields: [
 			text("tag", "Etiqueta do hero"),
 			text("subtitle", "Introdução do hero"),
+			{
+				name: "introImage",
+				label: "Imagem da introdução",
+				type: "object",
+				fields: [
+					{ name: "image", label: "Imagem", type: "image" },
+					text("alt", "Texto alternativo", false),
+					{
+						name: "decorative",
+						label: "Imagem decorativa",
+						type: "boolean",
+						description:
+							"Imagens decorativas usam um atributo alt vazio. Caso contrário, o texto alternativo é obrigatório.",
+						ui: { defaultValue: false },
+					},
+				],
+			},
 			richText("narrative", "Narrativa"),
 			text("milestonesTitle", "Título dos marcos"),
 			{

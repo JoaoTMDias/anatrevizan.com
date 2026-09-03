@@ -7,6 +7,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 import RichText from "./RichText.astro";
@@ -35,11 +36,26 @@ const icons =
           parent={{ label: "Academia", href: pathFor("academic", locale) }}
           data-tina-field={tinaField(data, "academicService")}
         />
-        <Section class="max-w-4xl">
-          <>
-            <SectionHeading title={service.introHeading} />
-            <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
-          </>
+        <Section>
+          <div class:list={["editorial-intro", !service.introImage?.image && "editorial-intro--text-only"]}>
+            {service.introImage?.image && (
+              <figure class="editorial-intro__media" data-tina-field={tinaField(data, "academicService")}>
+                <EditorialImage
+                  src={service.introImage.image}
+                  alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
+                  width={960}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </figure>
+            )}
+            <div class="editorial-intro__copy">
+              <SectionHeading title={service.introHeading} />
+              <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
+            </div>
+          </div>
         </Section>
         <Section background="bg-secondary">
           <>

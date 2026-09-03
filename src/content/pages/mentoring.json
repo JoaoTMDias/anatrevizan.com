@@ -39,6 +39,10 @@
 			"pt": "Sei onde a escrita costuma travar",
 			"en": "I know where writing usually gets stuck"
 		},
+		"introImage": {
+			"image": "/hero-placeholder.webp",
+			"decorative": true
+		},
 		"introParagraphs": {
 			"pt": "Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.\n\nJá passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos.",
 			"en": "A thesis doesn't stall due to lack of effort. It stalls over an incomplete structure, an argument that won't move forward, or an article rejected without a clear explanation.\n\nHaving navigated these hurdles myself, I help you overcome them through rigorous technical review, clear methodology, and hands-on experience publishing in and reviewing for international journals."

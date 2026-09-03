@@ -8,6 +8,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 import RichText from "./RichText.astro";
@@ -34,7 +35,22 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
           data-tina-field={tinaField(data, "about")}
         />
         <Section>
-          <RichText content={about.narrative} class="about-narrative max-w-3xl" />
+          <div class:list={["editorial-intro", !about.introImage?.image && "editorial-intro--text-only"]}>
+            {about.introImage?.image && (
+              <figure class="editorial-intro__media" data-tina-field={tinaField(data, "about")}>
+                <EditorialImage
+                  src={about.introImage.image}
+                  alt={about.introImage.decorative ? "" : (about.introImage.alt?.trim() ?? "")}
+                  width={960}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </figure>
+            )}
+            <RichText content={about.narrative} class="about-narrative editorial-intro__copy" />
+          </div>
         </Section>
         <Section background="bg-secondary">
           <div class="max-w-3xl">
