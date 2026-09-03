@@ -61,6 +61,18 @@
 
 		border-color: transparent;
 		background:
+			linear-gradient(#0b1220, #0b1220) padding-box,
+			linear-gradient(
+				var(--gradient-border-angle),
+				#f8fafc 0%,
+				#94a3b8 50%,
+				#e2e8f0 100%
+			)
+			border-box;
+	}
+
+	.gradient-border--golden {
+		background:
 			linear-gradient(
 				oklch(var(--foreground-900)),
 				oklch(var(--foreground-900))
@@ -71,19 +83,6 @@
 				oklch(var(--primary-100)) 0%,
 				oklch(var(--accent-700)) 55%,
 				oklch(var(--accent-200)) 100%
-			)
-			border-box;
-	}
-
-	.gradient-border--golden {
-		background:
-			linear-gradient(#1c1917, #1c1917) padding-box,
-			conic-gradient(
-				from var(--gradient-border-angle),
-				#fbbf24 0%,
-				#fde68a 25%,
-				#b45309 60%,
-				#fbbf24 100%
 			)
 			border-box;
 	}
