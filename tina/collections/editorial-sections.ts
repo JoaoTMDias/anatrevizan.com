@@ -185,57 +185,6 @@ const consultingOfferingFields: TinaField[] = [
 	},
 ];
 
-export const consultingHubFields: TinaField[] = [
-	{
-		name: "consultingHub",
-		label: "Conteúdo da página Consultoria",
-		type: "object",
-		fields: [
-			text("subtitle", "Introdução do hero"),
-			text("introHeading", "Título da introdução"),
-			text("introText", "Texto introdutório"),
-			{
-				name: "filters",
-				label: "Filtros por país",
-				type: "object",
-				fields: [
-					text("portugal", "Portugal"),
-					text("brazil", "Brasil"),
-					text("all", "Todos"),
-				],
-			},
-			{
-				name: "areas",
-				label: "Áreas de consultoria",
-				type: "object",
-				list: true,
-				required: true,
-				fields: [
-					text("tag", "Etiqueta"),
-					text("summary", "Resumo"),
-					{
-						name: "routeKey",
-						label: "Destino",
-						type: "string",
-						required: true,
-					},
-					{
-						name: "countries",
-						label: "Filtros por país",
-						type: "string",
-						list: true,
-						required: true,
-					},
-				],
-			},
-			text("areaCta", "CTA da área"),
-			text("note", "Nota profissional"),
-			text("ctaHeading", "Título do CTA"),
-			text("ctaText", "Texto do CTA"),
-		],
-	},
-];
-
 export const consultingServiceFields: TinaField[] = [
 	{
 		name: "consultingService",

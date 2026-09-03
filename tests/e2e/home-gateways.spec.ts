@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test, type Locator } from "@playwright/test";
+import { expect, type Locator, test } from "@playwright/test";
 
 const relativeLuminance = ([red, green, blue]: number[]) => {
 	const channels = [red, green, blue].map((value) => {
@@ -93,8 +93,8 @@ test.describe("home editorial gateways", () => {
 		const academic = page.getByRole("link", {
 			name: /Academia.*Explorar Academia/,
 		});
-		await expect(consulting).toHaveAttribute("href", "/consultoria");
-		await expect(academic).toHaveAttribute("href", "/academia");
+		await expect(consulting).toHaveAttribute("href", "/consultoria/juridica");
+		await expect(academic).toHaveAttribute("href", "/academia/publicacoes");
 
 		await page.locator(".home-hero__actions a").last().focus();
 		await page.keyboard.press("Tab");

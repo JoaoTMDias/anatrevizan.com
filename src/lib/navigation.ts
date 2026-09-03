@@ -43,7 +43,7 @@ export function navigationItems(
 	return [
 		{
 			type: "menu",
-			routeKey: "consulting",
+			routeKey: "legal",
 			label: localized(navigation?.consulting?.label, locale),
 			children: [
 				entry(
@@ -58,7 +58,7 @@ export function navigationItems(
 		},
 		{
 			type: "menu",
-			routeKey: "academic",
+			routeKey: "publications",
 			label: localized(navigation?.academic?.label, locale),
 			children: [
 				entry("mentoring", navigation?.academic?.mentoring),

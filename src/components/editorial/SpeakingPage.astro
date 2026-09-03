@@ -8,6 +8,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 import RichText from "./RichText.astro";
@@ -25,7 +26,8 @@ const kitIcons = ["user", "photo", "list-check"];
   {
     speaking ? (
       <>
-        {!embedded && <PageHero
+        {!embedded && (
+          <PageHero
             title={data.title}
             subtitle={speaking.subtitle}
             tag={speaking.tag}
@@ -34,19 +36,34 @@ const kitIcons = ["user", "photo", "list-check"];
             heroMedia={data.media}
             parent={{
               label: locale === "en" ? "Academic" : "Academia",
-              href: pathFor("academic", locale),
+              href: pathFor("publications", locale),
             }}
             data-tina-field={tinaField(data, "speakingPage")}
-          />}
+          />
+        )}
         <Section>
           <div class="speaking-bio">
             <>
-              <div class="speaking-photo" role="img" aria-label={speaking.photoPlaceholderLabel}>
-                <>
-                  <Icon name="photo" />
-                  <span>{speaking.photoPlaceholderLabel}</span>
-                </>
-              </div>
+              {speaking.photo?.image ? (
+                <figure class="speaking-photo">
+                  <EditorialImage
+                    src={speaking.photo.image}
+                    alt={speaking.photo.decorative ? "" : (speaking.photo.alt?.trim() ?? "")}
+                    width={540}
+                    height={960}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                  />
+                </figure>
+              ) : (
+                <div class="speaking-photo" role="img" aria-label={speaking.photoPlaceholderLabel}>
+                  <>
+                    <Icon name="photo" />
+                    <span>{speaking.photoPlaceholderLabel}</span>
+                  </>
+                </div>
+              )}
               <div>
                 <>
                   <SectionHeading title={speaking.bioHeading} />

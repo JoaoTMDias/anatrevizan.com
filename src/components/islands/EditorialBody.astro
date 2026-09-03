@@ -2,9 +2,7 @@
 import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import AboutPage from "../editorial/AboutPage.astro";
-import AcademicHubPage from "../editorial/AcademicHubPage.astro";
 import AcademicServicePage from "../editorial/AcademicServicePage.astro";
-import ConsultingHubPage from "../editorial/ConsultingHubPage.astro";
 import ConsultingServicePage from "../editorial/ConsultingServicePage.astro";
 import EventsPage from "../editorial/EventsPage.astro";
 import HomePage from "../editorial/HomePage.astro";
@@ -24,12 +22,8 @@ const { data } = Astro.props;
     <HomePage data={data} />
   ) : data?.routeKey === "about" ? (
     <AboutPage data={data} />
-  ) : data?.routeKey === "consulting" ? (
-    <ConsultingHubPage data={data} />
   ) : data?.consultingService ? (
     <ConsultingServicePage data={data} />
-  ) : data?.routeKey === "academic" ? (
-    <AcademicHubPage data={data} />
   ) : data?.academicService ? (
     <AcademicServicePage data={data} />
   ) : data?.routeKey === "publications" ? (

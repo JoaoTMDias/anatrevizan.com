@@ -33,13 +33,21 @@ const icons =
           locale={locale}
           routeKey={data.routeKey}
           heroMedia={data.media}
-          parent={{ label: "Academia", href: pathFor("academic", locale) }}
+          parent={{ label: "Academia", href: pathFor("publications", locale) }}
           data-tina-field={tinaField(data, "academicService")}
         />
         <Section>
-          <div class:list={["editorial-intro", !service.introImage?.image && "editorial-intro--text-only"]}>
+          <div
+            class:list={[
+              "editorial-intro",
+              !service.introImage?.image && "editorial-intro--text-only",
+            ]}
+          >
             {service.introImage?.image && (
-              <figure class="editorial-intro__media" data-tina-field={tinaField(data, "academicService")}>
+              <figure
+                class="editorial-intro__media"
+                data-tina-field={tinaField(data, "academicService")}
+              >
                 <EditorialImage
                   src={service.introImage.image}
                   alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
@@ -53,7 +61,10 @@ const icons =
             )}
             <div class="editorial-intro__copy">
               <SectionHeading title={service.introHeading} />
-              <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
+              <RichText
+                content={service.introParagraphs}
+                class="space-y-5 text-lg leading-relaxed text-muted-foreground"
+              />
             </div>
           </div>
         </Section>

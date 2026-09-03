@@ -51,11 +51,17 @@ export function validateHeroMedia(
 }
 
 const landscapeHeroRoutes = new Set<RouteKey>([
+	"contact",
+	"events",
 	"home",
 	"immigration-mobility",
-	"public-policy",
 	"mentoring",
-	"contact",
+	"public-policy",
+	"publications",
+	"training",
+	"about",
+	"legal-opinions",
+	"legal",
 ]);
 
 export function heroAspectRatioForRoute(routeKey: RouteKey): HeroAspectRatio {

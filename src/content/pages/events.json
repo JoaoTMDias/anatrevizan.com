@@ -1,150 +1,157 @@
 {
-	"_template": "events",
-	"routeKey": "events",
-	"media": {
-		"foreground": {
-			"image": "/hero-placeholder.webp",
-			"alt": {
-				"pt": "",
-				"en": ""
-			},
-			"decorative": true
-		}
-	},
-	"title": {
-		"pt": "Eventos e Palestras",
-		"en": "Events & Speaking Engagements"
-	},
-	"summary": {
-		"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-		"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
-	},
-	"seo": {
-		"title": {
-			"pt": "Eventos e Palestras · Diário desde 2019",
-			"en": "Events & Speaking Engagements · Journal since 2019 — Ana Trevizan"
-		},
-		"description": {
-			"pt": "Diário de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
-			"en": "Journal of conference participations, panels, and academic/institutional speaking engagements by Dr. Ana Trevizan since 2019."
-		},
-		"noindex": true
-	},
-	"eventsPage": {
-		"tag": {
-			"pt": "Academia",
-			"en": "Academia"
-		},
-		"subtitle": {
-			"pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
-			"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
-		},
-		"emptyHeading": {
-			"pt": "Diário em consolidação",
-			"en": "Journal under compilation"
-		},
-		"emptyText": {
-			"pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019. Entretanto, se me quiser convidar para o seu evento, o kit de palestrante já está disponível.",
-			"en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019. In the meantime, if you would like to invite me to speak at your event, my speaker kit is already available."
-		},
-		"speakerKitCta": {
-			"pt": "Ver kit de palestrante",
-			"en": "View Speaker Kit"
-		},
-		"entries": []
-	},
-	"speakingPage": {
-		"tag": {
-			"pt": "Academia",
-			"en": "Academia"
-		},
-		"subtitle": {
-			"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
-			"en": "Keynotes on the EUDR delivered through firsthand field research — not secondhand accounts. Verify subject-matter authority in two minutes and send an invitation."
-		},
-		"photoPlaceholderLabel": {
-			"pt": "Foto em alta resolução",
-			"en": "High-resolution photo"
-		},
-		"bioHeading": {
-			"pt": "Quem sobe ao palco",
-			"en": "About the Speaker"
-		},
-		"bioParagraphs": {
-			"pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada inscrita na OAB desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.\n\nFalo em português, inglês e espanhol, para plateias académicas, corporativas e institucionais — sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.",
-			"en": "Holding a Ph.D. in Climate Change and Sustainable Development Policies from NOVA University Lisbon, serves as an SPF Early Career Fellow at the Rights Lab (University of Nottingham), and is admitted to the OAB (2013). Her empirical research led her into the field in the Amazon, examining the 'Brussels Effect' and the EUDR where they unfold on the ground.\n\nShe delivers keynotes in Portuguese, English, and Spanish to academic, corporate, and policy audiences — consistently focusing on making complex issues clear without compromising scientific rigor."
-		},
-		"topicsHeading": {
-			"pt": "Temas que ministro",
-			"en": "Speaking Topics"
-		},
-		"topics": [
-			{
-				"pt": "EUDR e cadeias florestais",
-				"en": "EUDR and Forest Supply Chains"
-			},
-			{
-				"pt": "Direito Ambiental",
-				"en": "Environmental Law"
-			},
-			{
-				"pt": "ESG e Sustentabilidade",
-				"en": "ESG and Sustainability"
-			},
-			{
-				"pt": "Governança Climática",
-				"en": "Climate Governance"
-			},
-			{
-				"pt": "Compliance",
-				"en": "Compliance"
-			},
-			{
-				"pt": "Direito da União Europeia",
-				"en": "European Union Law"
-			},
-			{
-				"pt": "Direito Migratório",
-				"en": "Immigration Law"
-			},
-			{
-				"pt": "Direitos Humanos",
-				"en": "Human Rights"
-			}
-		],
-		"kitHeading": {
-			"pt": "O que encontra no kit",
-			"en": "What's in the kit"
-		},
-		"kitItems": [
-			{
-				"pt": "Biografia curta e completa",
-				"en": "Short and full biographies"
-			},
-			{
-				"pt": "Foto em alta resolução",
-				"en": "High-resolution headshots"
-			},
-			{
-				"pt": "Lista de temas e formatos",
-				"en": "Overview of speaking topics and presentation formats"
-			}
-		],
-		"kitDownloadLabel": {
-			"pt": "Descarregar kit de palestrante",
-			"en": "Download Speaker Kit"
-		},
-		"inviteCta": {
-			"pt": "Convidar para palestrar",
-			"en": "Invite to Speak"
-		},
-		"ctaHeading": {
-			"pt": "Tem um evento à vista?",
-			"en": "Planning an upcoming event?"
-		},
-		"ctaText": {
-			"pt": "Envie os detalhes — data, tema e formato — e retomo o contacto para combinarmos.",
-			"en": "Send over the event details — date, topic, and format — and I will get back to you to coordinate."
-		}
-	}
+  "routeKey": "events",
+  "title": {
+    "pt": "Eventos e Palestras",
+    "en": "Events & Speaking Engagements"
+  },
+  "summary": {
+    "pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
+    "en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
+  },
+  "seo": {
+    "title": {
+      "pt": "Eventos e Palestras · Diário desde 2019",
+      "en": "Events & Speaking Engagements · Journal since 2019 — Ana Trevizan"
+    },
+    "description": {
+      "pt": "Diário de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
+      "en": "Journal of conference participations, panels, and academic/institutional speaking engagements by Dr. Ana Trevizan since 2019."
+    }
+  },
+  "media": {
+    "foreground": {
+      "image": "/palestras-hero.webp",
+      "alt": {
+        "pt": "Ana a dar uma palestra sobre direito climático",
+        "en": "Ana giving a lecture on climate law"
+      },
+      "decorative": false
+    }
+  },
+  "eventsPage": {
+    "tag": {
+      "pt": "Academia",
+      "en": "Academia"
+    },
+    "subtitle": {
+      "pt": "Um registo vivo de onde estive, sobre o que falei e com quem. O melhor portfólio para um próximo convite.",
+      "en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
+    },
+    "emptyHeading": {
+      "pt": "Diário em consolidação",
+      "en": "Journal under compilation"
+    },
+    "emptyText": {
+      "pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019. Entretanto, se me quiser convidar para o seu evento, o kit de palestrante já está disponível.",
+      "en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019. In the meantime, if you would like to invite me to speak at your event, my speaker kit is already available."
+    },
+    "speakerKitCta": {
+      "pt": "Ver kit de palestrante",
+      "en": "View Speaker Kit"
+    },
+    "entries": []
+  },
+  "speakingPage": {
+    "tag": {
+      "pt": "Academia",
+      "en": "Academia"
+    },
+    "subtitle": {
+      "pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio — não de segunda mão. Verifique a autoridade em dois minutos e convide.",
+      "en": "Keynotes on the EUDR delivered through firsthand field research — not secondhand accounts. Verify subject-matter authority in two minutes and send an invitation."
+    },
+    "photoPlaceholderLabel": {
+      "pt": "Foto em alta resolução",
+      "en": "High-resolution photo"
+    },
+    "photo": {
+      "image": "/palestras-info.webp",
+      "alt": {
+        "pt": "Ana à frente de um palanque da Universidade de Coimbra",
+        "en": "Ana in front of a stage platform from Coimbra University"
+      },
+      "decorative": false
+    },
+    "bioHeading": {
+      "pt": "Quem sobe ao palco",
+      "en": "About the Speaker"
+    },
+    "bioParagraphs": {
+      "pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada inscrita na OAB desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.\n\nFalo em português, inglês e espanhol, para plateias académicas, corporativas e institucionais — sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.\n",
+      "en": "Holding a Ph.D. in Climate Change and Sustainable Development Policies from NOVA University Lisbon, serves as an SPF Early Career Fellow at the Rights Lab (University of Nottingham), and is admitted to the OAB (2013). Her empirical research led her into the field in the Amazon, examining the 'Brussels Effect' and the EUDR where they unfold on the ground.\n\nShe delivers keynotes in Portuguese, English, and Spanish to academic, corporate, and policy audiences — consistently focusing on making complex issues clear without compromising scientific rigor.\n"
+    },
+    "topicsHeading": {
+      "pt": "Temas que ministro",
+      "en": "Speaking Topics"
+    },
+    "topics": [
+      {
+        "pt": "EUDR e cadeias florestais",
+        "en": "EUDR and Forest Supply Chains"
+      },
+      {
+        "pt": "Direito Ambiental",
+        "en": "Environmental Law"
+      },
+      {
+        "pt": "ESG e Sustentabilidade",
+        "en": "ESG and Sustainability"
+      },
+      {
+        "pt": "Governança Climática",
+        "en": "Climate Governance"
+      },
+      {
+        "pt": "Compliance",
+        "en": "Compliance"
+      },
+      {
+        "pt": "Direito da União Europeia",
+        "en": "European Union Law"
+      },
+      {
+        "pt": "Direito Migratório",
+        "en": "Immigration Law"
+      },
+      {
+        "pt": "Direitos Humanos",
+        "en": "Human Rights"
+      }
+    ],
+    "kitHeading": {
+      "pt": "O que encontra no kit",
+      "en": "What's in the kit"
+    },
+    "kitItems": [
+      {
+        "pt": "Biografia curta e completa",
+        "en": "Short and full biographies"
+      },
+      {
+        "pt": "Foto em alta resolução",
+        "en": "High-resolution headshots"
+      },
+      {
+        "pt": "Lista de temas e formatos",
+        "en": "Overview of speaking topics and presentation formats"
+      }
+    ],
+    "kitDownloadLabel": {
+      "pt": "Descarregar kit de palestrante",
+      "en": "Download Speaker Kit"
+    },
+    "inviteCta": {
+      "pt": "Convidar para palestrar",
+      "en": "Invite to Speak"
+    },
+    "ctaHeading": {
+      "pt": "Tem um evento à vista?",
+      "en": "Planning an upcoming event?"
+    },
+    "ctaText": {
+      "pt": "Envie os detalhes — data, tema e formato — e retomo o contacto para combinarmos.",
+      "en": "Send over the event details — date, topic, and format — and I will get back to you to coordinate."
+    }
+  },
+  "_template": "events"
 }

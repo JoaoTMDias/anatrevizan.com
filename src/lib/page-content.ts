@@ -1,5 +1,5 @@
-import { isRouteKey, type RouteKey } from "./routing";
 import type { TinaRichTextContent } from "@tinacms/astro";
+import { isRouteKey, type RouteKey } from "./routing";
 
 export interface LinkCard {
 	title: string;
@@ -192,6 +192,11 @@ export interface SpeakingPageContent {
 	tag: string;
 	subtitle: string;
 	photoPlaceholderLabel: string;
+	photo?: {
+		image?: string | null;
+		alt?: string | null;
+		decorative?: boolean | null;
+	} | null;
 	bioHeading: string;
 	bioParagraphs: TinaRichTextContent;
 	topicsHeading: string;

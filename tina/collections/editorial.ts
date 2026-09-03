@@ -1,7 +1,7 @@
 import type { Collection, TinaField } from "tinacms";
 import { pathFor, type RouteKey } from "../../src/lib/routing";
+import { incompleteEnglishWarning } from "../editorial-warning";
 import {
-	academicHubFields,
 	academicServiceFields,
 	eventsPageFields,
 	publicationsPageFields,
@@ -11,7 +11,6 @@ import { bilingualFields, localizedText } from "./common";
 import { contactPageFields } from "./contact-sections";
 import {
 	aboutFields,
-	consultingHubFields,
 	consultingServiceFields,
 	homeFields,
 } from "./editorial-sections";
@@ -20,7 +19,6 @@ import {
 	privacyPageFields,
 	termsPageFields,
 } from "./legal-sections";
-import { incompleteEnglishWarning } from "../editorial-warning";
 
 const textAndSeoFields: TinaField[] = [
 	{
@@ -100,19 +98,9 @@ export const EditorialCollection: Collection = {
 		{ name: "home", label: "Início", fields: pageFields(homeFields) },
 		{ name: "about", label: "Sobre", fields: pageFields(aboutFields) },
 		{
-			name: "consultingHub",
-			label: "Consultoria",
-			fields: pageFields(consultingHubFields),
-		},
-		{
 			name: "consultingService",
 			label: "Página de serviço de consultoria",
 			fields: pageFields(consultingServiceFields),
-		},
-		{
-			name: "academicHub",
-			label: "Academia",
-			fields: pageFields(academicHubFields),
 		},
 		{
 			name: "academicService",

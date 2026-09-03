@@ -54,7 +54,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
           showActions={accent}
           parent={{
             label: locale === "en" ? "Consulting" : "Consultoria",
-            href: pathFor("consulting", locale),
+            href: pathFor("legal", locale),
           }}
           data-tina-field={tinaField(data, "consultingService")}
         />
@@ -83,7 +83,10 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
             )}
             <div class="consulting-intro__copy">
               <SectionHeading title={service.introHeading} />
-              <RichText content={service.introParagraphs} class="space-y-5 text-lg leading-relaxed text-muted-foreground" />
+              <RichText
+                content={service.introParagraphs}
+                class="space-y-5 text-lg leading-relaxed text-muted-foreground"
+              />
             </div>
           </div>
         </Section>
@@ -175,7 +178,10 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                 )}
               </div>
               <div class="consulting-differentiator__column">
-                <RichText content={service.differentiatorParagraphs} class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground" />
+                <RichText
+                  content={service.differentiatorParagraphs}
+                  class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground"
+                />
                 {service.differentiatorCredentials?.length && (
                   <ul
                     class:list={

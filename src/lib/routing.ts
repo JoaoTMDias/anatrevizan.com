@@ -6,7 +6,6 @@ export type EditorialLocale = (typeof editorialLocales)[number];
 
 export const routeMap = {
 	home: { "pt-PT": "/", en: "/en" },
-	consulting: { "pt-PT": "/consultoria", en: "/en/consulting" },
 	"immigration-mobility": {
 		"pt-PT": "/consultoria/migracao-e-mobilidade",
 		en: "/en/consulting/immigration-mobility",
@@ -24,7 +23,6 @@ export const routeMap = {
 		"pt-PT": "/consultoria/pareceres",
 		en: "/en/consulting/legal-opinions",
 	},
-	academic: { "pt-PT": "/academia", en: "/en/academic" },
 	mentoring: { "pt-PT": "/academia/mentorias", en: "/en/academic/mentoring" },
 	publications: {
 		"pt-PT": "/academia/publicacoes",

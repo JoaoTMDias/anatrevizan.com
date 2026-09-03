@@ -39,13 +39,11 @@ const profileIcon = (label: string, url: string) => {
 };
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
   home: { pt: "Início", en: "Home" },
-  consulting: { pt: "Consultoria", en: "Consulting" },
   "immigration-mobility": { pt: "Migração e mobilidade", en: "Immigration and mobility" },
   legal: { pt: "Consultoria jurídica", en: "Legal consulting" },
   "environmental-esg": { pt: "Ambiente e ESG", en: "Environmental and ESG" },
   "public-policy": { pt: "Políticas públicas", en: "Public policy" },
   "legal-opinions": { pt: "Pareceres", en: "Legal opinions" },
-  academic: { pt: "Academia", en: "Academic" },
   mentoring: { pt: "Mentorias", en: "Mentoring" },
   publications: { pt: "Publicações", en: "Publications" },
   events: { pt: "Eventos", en: "Events" },
@@ -71,15 +69,15 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
           </a>
           <ul class="mt-4 space-y-2.5 text-base text-muted-foreground">
             {(menu.children ?? []).map((child) => (
-                <li>
-                  <a
-                    class="hover:text-primary hover:underline"
-                    href={pathFor(child.routeKey, locale)}
-                  >
-                    {child.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  class="hover:text-primary hover:underline"
+                  href={pathFor(child.routeKey, locale)}
+                >
+                  {child.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       ))

@@ -75,7 +75,7 @@
 					"pt": "Ver áreas de atuação",
 					"en": "View practice areas"
 				},
-				"routeKey": "consulting"
+				"routeKey": "legal"
 			},
 			{
 				"eyebrow": {
@@ -90,7 +90,7 @@
 					"pt": "Explorar Academia",
 					"en": "Explore Academia"
 				},
-				"routeKey": "academic"
+				"routeKey": "publications"
 			}
 		],
 		"differencesTitle": {

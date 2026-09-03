@@ -160,9 +160,15 @@
 		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 	}
 	.speaking-photo {
-		@apply grid place-items-center content-center gap-2 rounded-lg border border-border bg-secondary text-center text-xs text-muted-foreground;
+		@apply grid place-items-center content-center gap-2 rounded-lg;
 
-		aspect-ratio: 4 / 5;
+		aspect-ratio: 9 / 16;
+		overflow: hidden;
+	}
+	.speaking-photo img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
 	}
 	.speaking-photo svg {
 		@apply size-10;

@@ -20,37 +20,6 @@ const stringList = (
 	required,
 });
 
-export const academicHubFields: TinaField[] = [
-	{
-		name: "academicHub",
-		label: "Conteúdo da página Academia",
-		type: "object",
-		fields: [
-			text("subtitle", "Introdução do hero"),
-			text("introText", "Texto introdutório"),
-			{
-				name: "sections",
-				label: "Áreas académicas",
-				type: "object",
-				list: true,
-				required: true,
-				fields: [
-					text("description", "Descrição"),
-					text("routeKey", "Destino"),
-					text("cta", "CTA"),
-					{
-						name: "highlight",
-						label: "Destaque",
-						type: "boolean",
-					},
-				],
-			},
-			text("ctaHeading", "Título do CTA"),
-			text("ctaText", "Texto do CTA"),
-		],
-	},
-];
-
 export const academicServiceFields: TinaField[] = [
 	{
 		name: "academicService",
@@ -166,6 +135,21 @@ export const speakingPageFields: TinaField[] = [
 			text("tag", "Etiqueta do hero"),
 			text("subtitle", "Introdução do hero"),
 			text("photoPlaceholderLabel", "Texto da fotografia temporária"),
+			{
+				name: "photo",
+				label: "Fotografia da palestrante",
+				type: "object",
+				fields: [
+					{ name: "image", label: "Imagem", type: "image", required: false },
+					text("alt", "Texto alternativo", false),
+					{
+						name: "decorative",
+						label: "Imagem decorativa",
+						type: "boolean",
+						ui: { defaultValue: false },
+					},
+				],
+			},
 			text("bioHeading", "Título da biografia"),
 			richText("bioParagraphs", "Biografia"),
 			text("topicsHeading", "Título dos temas"),
