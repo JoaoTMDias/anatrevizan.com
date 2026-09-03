@@ -1,0 +1,19 @@
+---
+import type { PublishedLocale } from "../../lib/routing";
+import { configuredAcronyms, segmentAcronyms } from "../../lib/acronyms";
+import Acronym from "./Acronym.astro";
+
+interface Props {
+  text?: string | null;
+  locale: PublishedLocale;
+}
+
+const { text, locale } = Astro.props;
+const segments = segmentAcronyms(text ?? "", configuredAcronyms(locale));
+---
+
+{segments.map((segment) =>
+  segment.type === "acronym" && segment.expansion
+    ? <Acronym acronym={segment.value} expansion={segment.expansion} />
+    : segment.value
+)}

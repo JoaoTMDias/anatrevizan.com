@@ -12,6 +12,7 @@ import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
 import RichText from "./RichText.astro";
+import AcronymText from "./AcronymText.astro";
 interface Props {
   data: CmsEditorial;
   embedded?: boolean;
@@ -66,8 +67,8 @@ const kitIcons = ["user", "photo", "list-check"];
               )}
               <div>
                 <>
-                  <SectionHeading title={speaking.bioHeading} />
-                  <RichText content={speaking.bioParagraphs} class="speaking-bio__text" />
+                  <SectionHeading title={speaking.bioHeading} locale={locale} />
+                  <RichText content={speaking.bioParagraphs} locale={locale} class="speaking-bio__text" />
                   <p class="speaking-kit-notice">
                     <Icon name="info-circle" />
                     {speaking.kitDownloadLabel}:{" "}
@@ -83,17 +84,17 @@ const kitIcons = ["user", "photo", "list-check"];
         </Section>
         <Section background="bg-secondary">
           <>
-            <SectionHeading title={speaking.topicsHeading} />
+            <SectionHeading title={speaking.topicsHeading} locale={locale} />
             <ul class="speaking-topics">
               {speaking.topics.map((topic) => (
-                <li>{topic}</li>
+                <li><AcronymText text={topic} locale={locale} /></li>
               ))}
             </ul>
           </>
         </Section>
         <Section>
           <>
-            <SectionHeading title={speaking.kitHeading} />
+            <SectionHeading title={speaking.kitHeading} locale={locale} />
             <ul class="speaking-kit-grid">
               {speaking.kitItems.map((item, index) => (
                 <li>
@@ -101,7 +102,7 @@ const kitIcons = ["user", "photo", "list-check"];
                     <span class="academic-icon" aria-hidden="true">
                       <Icon name={kitIcons[index]} />
                     </span>
-                    <span>{item}</span>
+                    <span><AcronymText text={item} locale={locale} /></span>
                   </Card>
                 </li>
               ))}

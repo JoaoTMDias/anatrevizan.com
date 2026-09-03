@@ -1,0 +1,31 @@
+---
+interface Props {
+  acronym: string;
+  expansion: string;
+  bold?: boolean;
+  italic?: boolean;
+}
+
+const { acronym, expansion, bold = false, italic = false } = Astro.props;
+const tooltipId = `acronym-tooltip-${crypto.randomUUID()}`;
+---
+
+<span class="acronym-tooltip" data-acronym-tooltip>
+  <abbr
+    class="acronym-tooltip__trigger"
+    tabindex="0"
+    aria-describedby={tooltipId}
+    data-acronym-trigger
+  >
+    {bold ? <strong>{italic ? <em>{acronym}</em> : acronym}</strong> : italic ? <em>{acronym}</em> : acronym}
+  </abbr>
+  <span
+    id={tooltipId}
+    class="acronym-tooltip__content"
+    role="tooltip"
+    popover="hint"
+    data-acronym-content
+  >
+    {expansion}
+  </span>
+</span>

@@ -1,4 +1,13 @@
 {
+	"acronyms": [
+		{
+			"acronym": "EUDR",
+			"expansion": {
+				"pt": "Regulamento Europeu de Produtos Livres de Desflorestação",
+				"en": "European Union Deforestation Regulation"
+			}
+		}
+	],
 	"contacts": {
 		"email": "contato@anatrevizan.com",
 		"phone": "+351926430792",

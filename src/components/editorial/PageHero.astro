@@ -10,6 +10,7 @@ import {
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 import EditorialImage from "./EditorialImage.astro";
+import AcronymText from "./AcronymText.astro";
 
 interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   title: string;
@@ -60,9 +61,9 @@ const items = [
     <Breadcrumbs items={items} />
     <div class="editorial-hero__content">
       <div class="editorial-hero__copy">
-        {tag && <p class="editorial-eyebrow">{tag}</p>}
-        <h1>{title}</h1>
-        {subtitle && <p class="editorial-hero__subtitle">{subtitle}</p>}
+        {tag && <p class="editorial-eyebrow"><AcronymText text={tag} locale={locale} /></p>}
+        <h1><AcronymText text={title} locale={locale} /></h1>
+        {subtitle && <p class="editorial-hero__subtitle"><AcronymText text={subtitle} locale={locale} /></p>}
         {
           showActions && (
             <div class="mt-8 flex flex-wrap gap-4">

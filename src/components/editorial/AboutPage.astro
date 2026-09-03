@@ -8,6 +8,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
 import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
@@ -49,19 +50,19 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
                 />
               </figure>
             )}
-            <RichText content={about.narrative} class="about-narrative editorial-intro__copy" />
+            <RichText content={about.narrative} locale={locale} class="about-narrative editorial-intro__copy" />
           </div>
         </Section>
         <Section background="bg-secondary">
           <div class="max-w-3xl">
             <>
-              <SectionHeading title={about.milestonesTitle} />
+              <SectionHeading title={about.milestonesTitle} locale={locale} />
               <ol class="about-timeline">
                 {about.milestones.map((item) => (
                   <li class="about-timeline__item">
                     <p>{item.year}</p>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3><AcronymText text={item.title} locale={locale} /></h3>
+                    <p><AcronymText text={item.description} locale={locale} /></p>
                   </li>
                 ))}
               </ol>
@@ -70,15 +71,15 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
         </Section>
         <Section>
           <>
-            <SectionHeading title={about.currentWorkTitle} />
+            <SectionHeading title={about.currentWorkTitle} locale={locale} />
             <div class="about-current-work">
               {about.currentWork.map((item) => (
                 <Card as="article" class="p-6">
                   <p class="text-2xl" aria-hidden="true">
                     {item.country}
                   </p>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p>
                 </Card>
               ))}
             </div>
@@ -86,7 +87,7 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
         </Section>
         <Section background="bg-secondary">
           <>
-            <SectionHeading title={about.valuesTitle} subtitle={about.valuesSubtitle} />
+            <SectionHeading title={about.valuesTitle} subtitle={about.valuesSubtitle} locale={locale} />
             <div class="about-values">
               {about.values.map((item, index) => (
                 <article>
@@ -94,8 +95,8 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
                     <Icon name={valueIcons[index]} />
                   </span>
                   <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3><AcronymText text={item.title} locale={locale} /></h3>
+                    <p><AcronymText text={item.description} locale={locale} /></p>
                   </div>
                 </article>
               ))}
@@ -107,7 +108,7 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
             <h2>{about.networksLabel}</h2>
             <ul>
               {about.networks.map((network) => (
-                <li>{network}</li>
+                <li><AcronymText text={network} locale={locale} /></li>
               ))}
             </ul>
             <Button class="mt-8" variant="outline" href={`${pathFor("events", locale)}#speaker-kit`}>

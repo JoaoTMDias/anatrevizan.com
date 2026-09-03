@@ -12,6 +12,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
 import EditorialImage from "./EditorialImage.astro";
 import SectionHeading from "./SectionHeading.astro";
 interface Props {
@@ -48,7 +49,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                     </li>
                   ))}
                 </ul>
-                <h1>{home.hero.heading}</h1>
+                <h1><AcronymText text={home.hero.heading} locale={locale} /></h1>
                 <p>{home.hero.subtitle}</p>
                 <div class="home-hero__actions">
                   <Button size="lg" variant="accent" href={contactBookingPath(locale)}>
@@ -106,10 +107,10 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                       />
                     </span>
                     <div>
-                      <h2>{item.title}</h2>
-                      <p class="home-gateway__eyebrow">{item.eyebrow}</p>
+                      <h2><AcronymText text={item.title} locale={locale} /></h2>
+                      <p class="home-gateway__eyebrow"><AcronymText text={item.eyebrow} locale={locale} /></p>
                     </div>
-                    <p class="home-gateway__description">{item.description}</p>
+                    <p class="home-gateway__description"><AcronymText text={item.description} locale={locale} /></p>
                     <span class="home-gateway__cta">
                       {item.cta}
                       <Icon name="arrow-right" />
@@ -124,6 +125,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
             <SectionHeading
               title={home.differencesTitle}
               subtitle={home.differencesSubtitle}
+              locale={locale}
               centered
             />
             <div class="home-differences">
@@ -132,8 +134,8 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                   <span class="home-difference__icon">
                     <Icon name={differenceIcons[index]} />
                   </span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p>
                 </Card>
               ))}
             </div>
@@ -141,7 +143,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
         </Section>
         <Section>
           <>
-            <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} centered />
+            <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} locale={locale} centered />
             <div class="home-services">
               {home.services.map(
                 (item, index) =>
@@ -151,10 +153,10 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                         <span class="home-service-card__icon">
                           <Icon name={serviceIcons[index]} />
                         </span>
-                        <span>{item.tag}</span>
+                        <span><AcronymText text={item.tag} locale={locale} /></span>
                       </span>
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
+                      <h3><AcronymText text={item.title} locale={locale} /></h3>
+                      <p><AcronymText text={item.description} locale={locale} /></p>
                       <span class="home-service-card__cta">
                         {item.cta}
                         <Icon name="arrow-right" />
@@ -167,7 +169,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
         </Section>
         <Section background="bg-secondary">
           <div class="home-academic-heading">
-            <SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} />
+            <SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} locale={locale} />
             <div>
               <Button variant="secondary" size="sm" href={pathFor("publications", locale)}>
                 {home.publicationsCta}

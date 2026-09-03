@@ -51,6 +51,14 @@ describe("modelo editorial bilingue", () => {
 		expect(EditorialCollection.ui?.filename).toEqual({ readonly: true });
 	});
 
+	it("expõe o glossário bilingue na configuração global", () => {
+		const acronyms = GlobalConfigCollection.fields?.find(
+			(field) => field.name === "acronyms",
+		);
+		expect(acronyms?.type).toBe("object");
+		expect(acronyms?.list).toBe(true);
+	});
+
 	it("mostra no About apenas os campos comuns, media e secções About", () => {
 		const about = EditorialCollection.templates?.find(
 			(template) => template.name === "about",

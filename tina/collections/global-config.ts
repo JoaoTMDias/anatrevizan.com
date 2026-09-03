@@ -45,6 +45,39 @@ export const GlobalConfigCollection: Collection = {
 	ui: { global: true },
 	fields: [
 		{
+			name: "acronyms",
+			label: "Glossário de siglas",
+			type: "object",
+			list: true,
+			description:
+				"As siglas são reconhecidas exatamente como aqui escritas no conteúdo editorial.",
+			ui: {
+				itemProps: (item) => ({ label: item.acronym ?? "Sigla" }),
+			},
+			fields: [
+				{
+					name: "acronym",
+					label: "Sigla",
+					type: "string",
+					required: true,
+				},
+				{
+					name: "expansion",
+					label: "Nome por extenso",
+					type: "object",
+					fields: [
+						{
+							name: "pt",
+							label: "Português (Portugal)",
+							type: "string",
+							required: true,
+						},
+						{ name: "en", label: "Inglês", type: "string" },
+					],
+				},
+			],
+		},
+		{
 			name: "contacts",
 			label: "Contactos, perfis e atendimento",
 			type: "object",

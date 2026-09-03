@@ -8,6 +8,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
 import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
@@ -82,16 +83,17 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
               </figure>
             )}
             <div class="consulting-intro__copy">
-              <SectionHeading title={service.introHeading} />
+              <SectionHeading title={service.introHeading} locale={locale} />
               <RichText
                 content={service.introParagraphs}
+                locale={locale}
                 class="space-y-5 text-lg leading-relaxed text-muted-foreground"
               />
             </div>
           </div>
         </Section>
         <Section background="bg-secondary">
-          <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} />
+          <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} locale={locale} />
           <div class="editorial-grid">
             {service.services.map((item, index) => (
               <Card
@@ -105,15 +107,15 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                   <span class="consulting-card__icon" aria-hidden="true">
                     <Icon name={serviceIcons[index % serviceIcons.length]} />
                   </span>
-                  <h3 class="text-lg font-semibold">{item.title}</h3>
+                  <h3 class="text-lg font-semibold"><AcronymText text={item.title} locale={locale} /></h3>
                 </div>
                 {item.description && (
-                  <p class="text-base leading-relaxed text-muted-foreground">{item.description}</p>
+                  <p class="text-base leading-relaxed text-muted-foreground"><AcronymText text={item.description} locale={locale} /></p>
                 )}
                 {item.items && (
                   <ul class="consulting-card__items list-disc space-y-2 pl-5 text-base text-muted-foreground">
                     {item.items.map((entry) => (
-                      <li>{entry}</li>
+                      <li><AcronymText text={entry} locale={locale} /></li>
                     ))}
                   </ul>
                 )}
@@ -123,7 +125,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
         </Section>
         {service.steps?.length && service.stepsHeading && (
           <Section>
-            <SectionHeading title={service.stepsHeading} subtitle={service.stepsSubtitle} />
+            <SectionHeading title={service.stepsHeading} subtitle={service.stepsSubtitle} locale={locale} />
             <ol class="consulting-steps">
               {service.steps.map((step) => (
                 <li>
@@ -135,8 +137,8 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                   >
                     {step.number}
                   </p>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
+                  <h3><AcronymText text={step.title} locale={locale} /></h3>
+                  <p><AcronymText text={step.description} locale={locale} /></p>
                 </li>
               ))}
             </ol>
@@ -156,6 +158,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                 <SectionHeading
                   title={service.differentiatorHeading}
                   eyebrow={service.differentiatorEyebrow}
+                  locale={locale}
                   class={accent ? "consulting-differentiator__heading" : undefined}
                 />
                 {service.differentiatorImage?.image && (
@@ -182,6 +185,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
               <div class="consulting-differentiator__column">
                 <RichText
                   content={service.differentiatorParagraphs}
+                  locale={locale}
                   class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground"
                 />
                 {service.differentiatorCredentials?.length && (
@@ -205,7 +209,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                             <Icon name="award" />
                           </span>
                         )}
-                        <span>{credential}</span>
+                        <span><AcronymText text={credential} locale={locale} /></span>
                       </li>
                     ))}
                   </ul>
@@ -220,6 +224,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
               <SectionHeading
                 title={service.relatedWorkHeading}
                 subtitle={service.relatedWorkSubtitle}
+                locale={locale}
                 class="mb-0"
               />
               {accent && (
@@ -236,7 +241,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                       {publication.highlight}
                     </p>
                   )}
-                  <h3 class="text-lg font-semibold">{publication.title}</h3>
+                  <h3 class="text-lg font-semibold"><AcronymText text={publication.title} locale={locale} /></h3>
                   <p class="text-base text-muted-foreground">{publication.publication}</p>
                 </Card>
               ))}

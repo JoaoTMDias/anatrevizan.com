@@ -54,7 +54,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
         />
         <Section class="contact-layout">
           <div>
-            <SectionHeading title={locale === "en" ? "Contact form" : "Formulário de contacto"} />
+            <SectionHeading title={locale === "en" ? "Contact form" : "Formulário de contacto"} locale={locale} />
             <p id="contact-form-status" class="contact-form-notice">
               <Icon name="info-circle" />
               {locale === "en"

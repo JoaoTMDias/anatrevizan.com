@@ -16,6 +16,24 @@ import { isRouteKey, type RouteKey } from "../src/lib/routing.ts";
 
 const root = process.cwd();
 const errors: string[] = [];
+const config = JSON.parse(
+	readFileSync(join(root, "src/content/config/site.json"), "utf8"),
+) as {
+	acronyms?: Array<{
+		acronym?: unknown;
+		expansion?: { pt?: unknown; en?: unknown };
+	}>;
+};
+const seenAcronyms = new Set<string>();
+for (const [index, entry] of (config.acronyms ?? []).entries()) {
+	const acronym = typeof entry.acronym === "string" ? entry.acronym.trim() : "";
+	if (!acronym) errors.push(`[config/acronyms[${index}]] sigla obrigatória`);
+	else if (seenAcronyms.has(acronym))
+		errors.push(`[config/acronyms[${index}]] sigla duplicada: ${acronym}`);
+	else seenAcronyms.add(acronym);
+	if (typeof entry.expansion?.pt !== "string" || !entry.expansion.pt.trim())
+		errors.push(`[config/acronyms[${index}]] nome PT-PT obrigatório`);
+}
 const directory = join(root, "src/content/pages");
 const pages = readdirSync(directory)
 	.filter((file) => file.endsWith(".json"))

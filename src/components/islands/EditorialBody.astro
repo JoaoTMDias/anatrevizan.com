@@ -11,6 +11,7 @@ import ContactPage from "../editorial/ContactPage.astro";
 import PrivacyPage from "../editorial/PrivacyPage.astro";
 import TermsPage from "../editorial/TermsPage.astro";
 import CookiesPage from "../editorial/CookiesPage.astro";
+import AcronymText from "../editorial/AcronymText.astro";
 interface Props {
   data?: CmsEditorial | null;
 }
@@ -41,8 +42,8 @@ const { data } = Astro.props;
   ) : (
     data && (
       <div id="main-content" tabindex="-1" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
-        <h1 data-tina-field={tinaField(data, "title")}>{data.title}</h1>
-        {data.summary && <p data-tina-field={tinaField(data, "summary")}>{data.summary}</p>}
+        <h1 data-tina-field={tinaField(data, "title")}><AcronymText text={data.title} locale={data.locale} /></h1>
+        {data.summary && <p data-tina-field={tinaField(data, "summary")}><AcronymText text={data.summary} locale={data.locale} /></p>}
       </div>
     )
   )

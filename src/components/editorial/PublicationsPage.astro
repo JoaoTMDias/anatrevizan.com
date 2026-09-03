@@ -9,6 +9,7 @@ import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
 import PageHero from "./PageHero.astro";
 interface Props {
   data: CmsEditorial;
@@ -44,7 +45,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
           data-tina-field={tinaField(data, "publicationsPage")}
         />
         <Section>
-          <p class="max-w-3xl text-lg leading-relaxed text-muted-foreground">{page.introText}</p>
+          <p class="max-w-3xl text-lg leading-relaxed text-muted-foreground"><AcronymText text={page.introText} locale={locale} /></p>
           <form class="publication-filters" data-publication-filters>
             <label>
               <>
@@ -113,12 +114,12 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
                         </strong>
                       )}
                     </div>
-                    <h2 id={`publication-${index}`}>{publication.title}</h2>
-                    {publication.journal && <p>{publication.journal}</p>}
+                    <h2 id={`publication-${index}`}><AcronymText text={publication.title} locale={locale} /></h2>
+                    {publication.journal && <p><AcronymText text={publication.journal} locale={locale} /></p>}
                     {publication.topics?.length && (
                       <ul aria-label={locale === "en" ? "Topics" : "Temas"}>
                         {publication.topics.map((topic) => (
-                          <li>{topic}</li>
+                          <li><AcronymText text={topic} locale={locale} /></li>
                         ))}
                       </ul>
                     )}
@@ -140,7 +141,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
           <p class="publication-empty hidden" data-publication-empty>
             {page.filters.empty}
           </p>
-          <p class="publication-orcid-note">{page.orcidNote}</p>
+          <p class="publication-orcid-note"><AcronymText text={page.orcidNote} locale={locale} /></p>
         </Section>
         <ContactCta heading={page.ctaHeading} text={page.ctaText} locale={locale} />
       </>

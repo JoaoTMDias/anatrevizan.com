@@ -15,6 +15,7 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 - PT é a fonte aprovada. EN é tradução humana, sem fallback. Traduções parciais podem ser guardadas; só ficam públicas quando todos os campos localizados usados têm EN.
 - Hero e resumo servem de default SEO; overrides são opcionais. CTAs pertencem à página. Ligações internas usam destinos semânticos.
 - Tina expõe apenas Páginas, configuração global simplificada, Publicações ORCID e Media. ORCID só permite editar idioma, temas, destaque e prioridade.
+- A configuração global inclui um glossário bilingue de siglas. Ocorrências exatas no conteúdo editorial são renderizadas como abreviaturas com Tooltip ARIA APG; uma expansão EN ausente nunca recorre a PT.
 
 ## Media e datas
 

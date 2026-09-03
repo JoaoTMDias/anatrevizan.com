@@ -7,6 +7,7 @@ import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
 import EditorialImage from "./EditorialImage.astro";
 import PageHero from "./PageHero.astro";
 import SectionHeading from "./SectionHeading.astro";
@@ -60,9 +61,10 @@ const icons =
               </figure>
             )}
             <div class="editorial-intro__copy">
-              <SectionHeading title={service.introHeading} />
+              <SectionHeading title={service.introHeading} locale={locale} />
               <RichText
                 content={service.introParagraphs}
+                locale={locale}
                 class="space-y-5 text-lg leading-relaxed text-muted-foreground"
               />
             </div>
@@ -70,15 +72,15 @@ const icons =
         </Section>
         <Section background="bg-secondary">
           <>
-            <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} />
+            <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} locale={locale} />
             <div class="editorial-grid">
               {service.services.map((item, index) => (
                 <Card as="article" class="academic-service-card p-6 md:p-8">
                   <span class="academic-icon" aria-hidden="true">
                     <Icon name={icons[index]} />
                   </span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p>
                 </Card>
               ))}
             </div>
