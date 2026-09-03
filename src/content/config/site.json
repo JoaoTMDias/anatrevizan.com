@@ -14,35 +14,59 @@
 		},
 		{
 			"acronym": "OAB",
-			"expansion": { "pt": "Ordem dos Advogados do Brasil", "en": "Brazilian Bar Association" }
+			"expansion": {
+				"pt": "Ordem dos Advogados do Brasil",
+				"en": "Brazilian Bar Association"
+			}
 		},
 		{
 			"acronym": "NIF",
-			"expansion": { "pt": "Número de Identificação Fiscal", "en": "Tax Identification Number" }
+			"expansion": {
+				"pt": "Número de Identificação Fiscal",
+				"en": "Tax Identification Number"
+			}
 		},
 		{
 			"acronym": "DGES",
-			"expansion": { "pt": "Direção-Geral do Ensino Superior", "en": "Directorate-General for Higher Education" }
+			"expansion": {
+				"pt": "Direção-Geral do Ensino Superior",
+				"en": "Directorate-General for Higher Education"
+			}
 		},
 		{
 			"acronym": "UFMT",
-			"expansion": { "pt": "Universidade Federal de Mato Grosso", "en": "Federal University of Mato Grosso" }
+			"expansion": {
+				"pt": "Universidade Federal de Mato Grosso",
+				"en": "Federal University of Mato Grosso"
+			}
 		},
 		{
 			"acronym": "FAPEMAT",
-			"expansion": { "pt": "Fundação de Amparo à Pesquisa do Estado de Mato Grosso", "en": "Mato Grosso State Research Support Foundation" }
+			"expansion": {
+				"pt": "Fundação de Amparo à Pesquisa do Estado de Mato Grosso",
+				"en": "Mato Grosso State Research Support Foundation"
+			}
 		},
 		{
 			"acronym": "SEMA-MT",
-			"expansion": { "pt": "Secretaria de Estado de Meio Ambiente de Mato Grosso", "en": "Mato Grosso State Department of the Environment" }
+			"expansion": {
+				"pt": "Secretaria de Estado de Meio Ambiente de Mato Grosso",
+				"en": "Mato Grosso State Department of the Environment"
+			}
 		},
 		{
 			"acronym": "FCT",
-			"expansion": { "pt": "Fundação para a Ciência e a Tecnologia", "en": "Foundation for Science and Technology" }
+			"expansion": {
+				"pt": "Fundação para a Ciência e a Tecnologia",
+				"en": "Foundation for Science and Technology"
+			}
 		},
 		{
 			"acronym": "ESG",
-			"expansion": { "pt": "Ambiental, Social e Governança", "en": "Environmental, Social and Governance" }
+			"expansion": {
+				"pt": "Ambiental, Social e Governança",
+				"en": "Environmental, Social and Governance"
+			}
 		},
 		{
 			"acronym": "EUDR",
@@ -53,15 +77,24 @@
 		},
 		{
 			"acronym": "CSDDD",
-			"expansion": { "pt": "Diretiva relativa ao dever de diligência das empresas em matéria de sustentabilidade", "en": "Corporate Sustainability Due Diligence Directive" }
+			"expansion": {
+				"pt": "Diretiva relativa ao dever de diligência das empresas em matéria de sustentabilidade",
+				"en": "Corporate Sustainability Due Diligence Directive"
+			}
 		},
 		{
 			"acronym": "CSRD",
-			"expansion": { "pt": "Diretiva relativa ao relato de sustentabilidade das empresas", "en": "Corporate Sustainability Reporting Directive" }
+			"expansion": {
+				"pt": "Diretiva relativa ao relato de sustentabilidade das empresas",
+				"en": "Corporate Sustainability Reporting Directive"
+			}
 		},
 		{
 			"acronym": "KPI",
-			"expansion": { "pt": "Indicador-chave de desempenho", "en": "Key Performance Indicator" }
+			"expansion": {
+				"pt": "Indicador-chave de desempenho",
+				"en": "Key Performance Indicator"
+			}
 		},
 		{
 			"acronym": "UE",
@@ -73,55 +106,94 @@
 		},
 		{
 			"acronym": "RGPD",
-			"expansion": { "pt": "Regulamento Geral sobre a Proteção de Dados", "en": "General Data Protection Regulation" }
+			"expansion": {
+				"pt": "Regulamento Geral sobre a Proteção de Dados",
+				"en": "General Data Protection Regulation"
+			}
 		},
 		{
 			"acronym": "GDPR",
-			"expansion": { "pt": "Regulamento Geral sobre a Proteção de Dados", "en": "General Data Protection Regulation" }
+			"expansion": {
+				"pt": "Regulamento Geral sobre a Proteção de Dados",
+				"en": "General Data Protection Regulation"
+			}
 		},
 		{
 			"acronym": "ONGs",
-			"expansion": { "pt": "Organizações Não Governamentais", "en": "Non-governmental Organisations" }
+			"expansion": {
+				"pt": "Organizações Não Governamentais",
+				"en": "Non-governmental Organisations"
+			}
 		},
 		{
 			"acronym": "ORCID",
-			"expansion": { "pt": "Identificador Aberto de Investigador e Colaborador", "en": "Open Researcher and Contributor ID" }
+			"expansion": {
+				"pt": "Identificador Aberto de Investigador e Colaborador",
+				"en": "Open Researcher and Contributor ID"
+			}
 		},
 		{
 			"acronym": "DOI",
-			"expansion": { "pt": "Identificador de Objeto Digital", "en": "Digital Object Identifier" }
+			"expansion": {
+				"pt": "Identificador de Objeto Digital",
+				"en": "Digital Object Identifier"
+			}
 		},
 		{
 			"acronym": "OCDE",
-			"expansion": { "pt": "Organização para a Cooperação e Desenvolvimento Económico", "en": "Organisation for Economic Co-operation and Development" }
+			"expansion": {
+				"pt": "Organização para a Cooperação e Desenvolvimento Económico",
+				"en": "Organisation for Economic Co-operation and Development"
+			}
 		},
 		{
 			"acronym": "OMC",
-			"expansion": { "pt": "Organização Mundial do Comércio", "en": "World Trade Organization" }
+			"expansion": {
+				"pt": "Organização Mundial do Comércio",
+				"en": "World Trade Organization"
+			}
 		},
 		{
 			"acronym": "MBRE",
-			"expansion": { "pt": "Mercado Brasileiro de Redução de Emissões", "en": "Brazilian Emissions Reduction Market" }
+			"expansion": {
+				"pt": "Mercado Brasileiro de Redução de Emissões",
+				"en": "Brazilian Emissions Reduction Market"
+			}
 		},
 		{
 			"acronym": "ETUI",
-			"expansion": { "pt": "Instituto Sindical Europeu", "en": "European Trade Union Institute" }
+			"expansion": {
+				"pt": "Instituto Sindical Europeu",
+				"en": "European Trade Union Institute"
+			}
 		},
 		{
 			"acronym": "ETUC",
-			"expansion": { "pt": "Confederação Europeia de Sindicatos", "en": "European Trade Union Confederation" }
+			"expansion": {
+				"pt": "Confederação Europeia de Sindicatos",
+				"en": "European Trade Union Confederation"
+			}
 		},
 		{
 			"acronym": "ETIC",
-			"expansion": { "pt": "Encontro de Iniciação Científica", "en": "Scientific Initiation Meeting" }
+			"expansion": {
+				"pt": "Encontro de Iniciação Científica",
+				"en": "Scientific Initiation Meeting"
+			}
 		},
 		{
 			"acronym": "CONPEDI",
-			"expansion": { "pt": "Conselho Nacional de Pesquisa e Pós-Graduação em Direito", "en": "National Council for Research and Graduate Studies in Law" }
+			"expansion": {
+				"pt": "Conselho Nacional de Pesquisa e Pós-Graduação em Direito",
+				"en": "National Council for Research and Graduate Studies in Law"
+			}
 		},
 		{
 			"acronym": "GJHSS",
-			"expansion": { "pt": "Global Journal of Human-Social Science", "en": "Global Journal of Human-Social Science" }
+			"expansion": {
+				"pt": "Global Journal of Human-Social Science",
+				"en": "Global Journal of Human-Social Science"
+			}
 		},
 		{
 			"acronym": "PT",
@@ -137,27 +209,45 @@
 		},
 		{
 			"acronym": "CEJEIA",
-			"expansion": { "pt": "Centro de Estudos Jurídicos, Económicos e Ambientais", "en": "Center for Juridical, Economic and Environmental Studies" }
+			"expansion": {
+				"pt": "Centro de Estudos Jurídicos, Económicos e Ambientais",
+				"en": "Center for Juridical, Economic and Environmental Studies"
+			}
 		},
 		{
 			"acronym": "CENSE",
-			"expansion": { "pt": "Centro de Investigação em Ambiente e Sustentabilidade", "en": "Center for Environmental and Sustainability Research" }
+			"expansion": {
+				"pt": "Centro de Investigação em Ambiente e Sustentabilidade",
+				"en": "Center for Environmental and Sustainability Research"
+			}
 		},
 		{
 			"acronym": "GPMAT",
-			"expansion": { "pt": "Grupos de Pesquisa em Meio Ambiente do Trabalho", "en": "Research Group on Labor Environment" }
+			"expansion": {
+				"pt": "Grupos de Pesquisa em Meio Ambiente do Trabalho",
+				"en": "Research Group on Labor Environment"
+			}
 		},
 		{
 			"acronym": "SPF",
-			"expansion": { "pt": "Fundo de Prioridades Estratégicas", "en": "Strategic Priorities Fund" }
+			"expansion": {
+				"pt": "Fundo de Prioridades Estratégicas",
+				"en": "Strategic Priorities Fund"
+			}
 		},
 		{
 			"acronym": "EULAS",
-			"expansion": { "pt": "Sinergias Académicas UE-América Latina", "en": "EU-Latin America Academic Synergies" }
+			"expansion": {
+				"pt": "Sinergias Académicas UE-América Latina",
+				"en": "EU-Latin America Academic Synergies"
+			}
 		},
 		{
 			"acronym": "SIS",
-			"expansion": { "pt": "Soluções Inclusivas Sustentáveis", "en": "Soluções Inclusivas Sustentáveis" }
+			"expansion": {
+				"pt": "Soluções Inclusivas Sustentáveis",
+				"en": "Soluções Inclusivas Sustentáveis"
+			}
 		}
 	],
 	"contacts": {
@@ -203,11 +293,7 @@
 				}
 			}
 		],
-		"serviceLanguages": [
-			"PT",
-			"EN",
-			"ES"
-		]
+		"serviceLanguages": ["PT", "EN", "ES"]
 	},
 	"navigation": {
 		"consulting": {
