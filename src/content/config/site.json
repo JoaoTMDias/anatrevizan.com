@@ -1,6 +1,6 @@
 {
 	"contacts": {
-		"email": "geral@anatrevizan.com",
+		"email": "contato@anatrevizan.com",
 		"phone": "+351926430792",
 		"calendlyUrl": "https://calendly.com/dratrevizan",
 		"profiles": [
@@ -42,7 +42,11 @@
 				}
 			}
 		],
-		"serviceLanguages": ["PT", "EN", "ES"]
+		"serviceLanguages": [
+			"PT",
+			"EN",
+			"ES"
+		]
 	},
 	"navigation": {
 		"consulting": {
