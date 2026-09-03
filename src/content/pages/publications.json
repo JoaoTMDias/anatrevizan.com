@@ -1,92 +1,92 @@
 {
-  "routeKey": "publications",
-  "title": {
-    "pt": "Publicações",
-    "en": "Publications"
-  },
-  "summary": {
-    "pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
-    "en": "Academic research in Environmental Law, climate governance, and human rights — centralized, searchable, and always up to date."
-  },
-  "seo": {
-    "title": {
-      "pt": "Publicações · Produção científica",
-      "en": "Publications · Research & Academic Work — Ana Trevizan"
-    },
-    "description": {
-      "pt": "Repositório de publicações em Direito Ambiental, EUDR, governança climática e direitos humanos, com filtros por ano, tema e idioma.",
-      "en": "Repository of academic publications in Environmental Law, EUDR, climate governance, and human rights, searchable by year, topic, and language."
-    }
-  },
-  "media": {
-    "foreground": {
-      "image": "/publicacoes-hero.webp",
-      "alt": {
-        "pt": "Ana segura um livro sentada no chão, onde outros quatro se encontram espalhados.",
-        "en": "Ana is sitting on the floor holding a book, with four others scattered around her."
-      },
-      "decorative": false
-    }
-  },
-  "publicationsPage": {
-    "tag": {
-      "pt": "Academia",
-      "en": "Academia"
-    },
-    "subtitle": {
-      "pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
-      "en": "Academic research in Environmental Law, climate governance, and human rights — centralized, searchable, and always up to date."
-    },
-    "introText": {
-      "pt": "Este repositório reúne a minha produção científica num só lugar — para quem investiga, para quem procura autoridade real num tema e para mim, que preciso de encontrar depressa o meu próprio trabalho. Filtre por ano, tema ou idioma.",
-      "en": "This repository brings together my academic output in one place — for researchers, for those seeking proven expertise in a specific topic, and for quick reference to my own work. Filter by year, topic, or language."
-    },
-    "orcidNote": {
-      "pt": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI.",
-      "en": "Repository maintained directly from ORCID (0000-0003-4365-6053), the official record of published work. Listings link directly to the journal or DOI."
-    },
-    "filters": {
-      "allYears": {
-        "pt": "Todos os anos",
-        "en": "All years"
-      },
-      "allTopics": {
-        "pt": "Todos os temas",
-        "en": "All topics"
-      },
-      "allLanguages": {
-        "pt": "Todos os idiomas",
-        "en": "All languages"
-      },
-      "clear": {
-        "pt": "Limpar filtros",
-        "en": "Clear filters"
-      },
-      "singleResult": {
-        "pt": "publicação",
-        "en": "publication"
-      },
-      "multipleResults": {
-        "pt": "publicações",
-        "en": "publications"
-      },
-      "view": {
-        "pt": "Ver publicação",
-        "en": "View publication"
-      },
-      "empty": {
-        "pt": "Nenhuma publicação corresponde a estes filtros.",
-        "en": "No publications match the selected filters."
-      }
-    },
-    "ctaHeading": {
-      "pt": "Procura autoridade verificável num tema?",
-      "en": "Looking for verifiable expertise on a subject?"
-    },
-    "ctaText": {
-      "pt": "Para pareceres, mentorias ou convites para palestrar, comece por uma conversa.",
-      "en": "For legal opinions, mentorship, or speaking invitations, let's start with a conversation."
-    }
-  },
-  "_template": "publications"
+	"routeKey": "publications",
+	"title": {
+		"pt": "Publicações",
+		"en": "Publications"
+	},
+	"summary": {
+		"pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
+		"en": "Academic research in Environmental Law, climate governance, and human rights — centralized, searchable, and always up to date."
+	},
+	"seo": {
+		"title": {
+			"pt": "Publicações · Produção científica",
+			"en": "Publications · Research & Academic Work — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Repositório de publicações em Direito Ambiental, EUDR, governança climática e direitos humanos, com filtros por ano, tema e idioma.",
+			"en": "Repository of academic publications in Environmental Law, EUDR, climate governance, and human rights, searchable by year, topic, and language."
+		}
+	},
+	"media": {
+		"foreground": {
+			"image": "/publicacoes-hero.webp",
+			"alt": {
+				"pt": "Ana segura um livro sentada no chão, onde outros quatro se encontram espalhados.",
+				"en": "Ana is sitting on the floor holding a book, with four others scattered around her."
+			},
+			"decorative": false
+		}
+	},
+	"publicationsPage": {
+		"tag": {
+			"pt": "Academia",
+			"en": "Academia"
+		},
+		"subtitle": {
+			"pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos — reunida, filtrável e sempre atualizada.",
+			"en": "Academic research in Environmental Law, climate governance, and human rights — centralized, searchable, and always up to date."
+		},
+		"introText": {
+			"pt": "Este repositório reúne a minha produção científica num só lugar — para quem investiga, para quem procura autoridade real num tema e para mim, que preciso de encontrar depressa o meu próprio trabalho. Filtre por ano, tema ou idioma.",
+			"en": "This repository brings together my academic output in one place — for researchers, for those seeking proven expertise in a specific topic, and for quick reference to my own work. Filter by year, topic, or language."
+		},
+		"orcidNote": {
+			"pt": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI.",
+			"en": "Repository maintained directly from ORCID (0000-0003-4365-6053), the official record of published work. Listings link directly to the journal or DOI."
+		},
+		"filters": {
+			"allYears": {
+				"pt": "Todos os anos",
+				"en": "All years"
+			},
+			"allTopics": {
+				"pt": "Todos os temas",
+				"en": "All topics"
+			},
+			"allLanguages": {
+				"pt": "Todos os idiomas",
+				"en": "All languages"
+			},
+			"clear": {
+				"pt": "Limpar filtros",
+				"en": "Clear filters"
+			},
+			"singleResult": {
+				"pt": "publicação",
+				"en": "publication"
+			},
+			"multipleResults": {
+				"pt": "publicações",
+				"en": "publications"
+			},
+			"view": {
+				"pt": "Ver publicação",
+				"en": "View publication"
+			},
+			"empty": {
+				"pt": "Nenhuma publicação corresponde a estes filtros.",
+				"en": "No publications match the selected filters."
+			}
+		},
+		"ctaHeading": {
+			"pt": "Procura autoridade verificável num tema?",
+			"en": "Looking for verifiable expertise on a subject?"
+		},
+		"ctaText": {
+			"pt": "Para pareceres, mentorias ou convites para palestrar, comece por uma conversa.",
+			"en": "For legal opinions, mentorship, or speaking invitations, let's start with a conversation."
+		}
+	},
+	"_template": "publications"
 }
