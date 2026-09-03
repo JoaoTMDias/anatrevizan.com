@@ -101,10 +101,12 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                   accent && "consulting-card--accent",
                 ]}
               >
-                <span class="consulting-card__icon mb-4" aria-hidden="true">
-                  <Icon name={serviceIcons[index % serviceIcons.length]} />
-                </span>
-                <h3 class="text-lg font-semibold">{item.title}</h3>
+                <div class="consulting-card__heading">
+                  <span class="consulting-card__icon" aria-hidden="true">
+                    <Icon name={serviceIcons[index % serviceIcons.length]} />
+                  </span>
+                  <h3 class="text-lg font-semibold">{item.title}</h3>
+                </div>
                 {item.description && (
                   <p class="text-base leading-relaxed text-muted-foreground">{item.description}</p>
                 )}
