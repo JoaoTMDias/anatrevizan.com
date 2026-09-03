@@ -35,8 +35,8 @@ const pages = readdirSync(directory)
 	);
 
 describe("modelo editorial bilingue", () => {
-	it("mantém exatamente um documento fixo por cada uma das 18 páginas", () => {
-		expect(pages).toHaveLength(18);
+	it("mantém exatamente um documento fixo por cada uma das 17 páginas", () => {
+		expect(pages).toHaveLength(17);
 		expect(pages.map((page) => page.routeKey).sort()).toEqual(
 			[...routeKeys].sort(),
 		);
@@ -137,10 +137,12 @@ describe("modelo editorial bilingue", () => {
 		const regressedPages = pages.map((page) =>
 			page.routeKey === "home" ? regressedHome : page,
 		);
-		expect(validateEditorialDocuments(regressedPages, ["home"])).toContainEqual({
-			code: "published-english-regression",
-			message: "home: uma tradução inglesa já publicada ficou incompleta",
-		});
+		expect(validateEditorialDocuments(regressedPages, ["home"])).toContainEqual(
+			{
+				code: "published-english-regression",
+				message: "home: uma tradução inglesa já publicada ficou incompleta",
+			},
+		);
 	});
 
 	it("deriva títulos de cartões a partir da página de destino", () => {
@@ -169,9 +171,9 @@ describe("modelo editorial bilingue", () => {
 		expect(heroAspectRatioForRoute("contact")).toBe("landscape");
 		expect(heroAspectRatioForRoute("about")).toBe("square");
 		for (const page of pages)
-			expect((page as unknown as { media?: unknown }).media ?? {}).not.toHaveProperty(
-				"background",
-			);
+			expect(
+				(page as unknown as { media?: unknown }).media ?? {},
+			).not.toHaveProperty("background");
 		for (const page of pages)
 			expect(
 				(page as unknown as { media?: { foreground?: unknown } }).media
@@ -195,11 +197,14 @@ describe("modelo editorial bilingue", () => {
 			),
 		).toBe("Inscrição na OAB");
 		expect(
-			editorialListItemLabel({ title: { pt: "", en: "English title" } }, "Item"),
+			editorialListItemLabel(
+				{ title: { pt: "", en: "English title" } },
+				"Item",
+			),
 		).toBe("English title");
-		expect(
-			editorialListItemLabel({ pt: "LACLIMA", en: "" }, "Rede"),
-		).toBe("LACLIMA");
+		expect(editorialListItemLabel({ pt: "LACLIMA", en: "" }, "Rede")).toBe(
+			"LACLIMA",
+		);
 
 		const aboutTemplate = EditorialCollection.templates?.find(
 			(template) => template.name === "about",
@@ -271,7 +276,6 @@ describe("modelo editorial bilingue", () => {
 			"academic",
 			"about",
 			"contact",
-			"booking",
 		]);
 		expect(JSON.stringify(navigation)).not.toMatch(
 			/routeKey|emphasis|highlight/,
@@ -289,7 +293,6 @@ describe("modelo editorial bilingue", () => {
 				},
 				about: { pt: "Sobre", en: "About" },
 				contact: { pt: "Contacto", en: "Contact" },
-				booking: { pt: "Agendar", en: "Book" },
 			} as never,
 			"pt-PT",
 		);
@@ -298,7 +301,6 @@ describe("modelo editorial bilingue", () => {
 			"academic",
 			"about",
 			"contact",
-			"booking",
 		]);
 		expect(navigation.at(-1)?.emphasis).toBe(true);
 		expect(
@@ -318,6 +320,29 @@ describe("modelo editorial bilingue", () => {
 		).toBeUndefined();
 		expect(contactFormCopy("pt-PT").submitLabel).toBe("Enviar");
 		expect(contactFormCopy("en").submitLabel).toBe("Send");
+	});
+
+	it("incorpora o conteúdo editorial de agendamento no contacto", () => {
+		const contact = contactPageFields[0];
+		if (contact.type !== "object") throw new Error("contactPage ausente");
+		expect(contact.fields?.map((field) => field.name)).toEqual([
+			"tag",
+			"subtitle",
+			"bookingHeading",
+			"bookingIntro",
+			"duration",
+			"validFor",
+			"timezone",
+			"timezoneNote",
+			"otherMethodsHeading",
+			"countriesLabel",
+			"languagesLabel",
+		]);
+		expect(
+			EditorialCollection.templates?.some(
+				(template) => template.name === "booking",
+			),
+		).toBe(false);
 	});
 
 	it("limita o rich text editorial ao conjunto aprovado", () => {

@@ -76,11 +76,6 @@ export function navigationItems(
 			type: "link",
 			routeKey: "contact",
 			label: localized(navigation?.contact, locale),
-		},
-		{
-			type: "link",
-			routeKey: "booking",
-			label: localized(navigation?.booking, locale),
 			emphasis: true,
 		},
 	];

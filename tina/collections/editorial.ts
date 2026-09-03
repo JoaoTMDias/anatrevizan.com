@@ -8,7 +8,7 @@ import {
 	speakingPageFields,
 } from "./academic-sections";
 import { bilingualFields, localizedText } from "./common";
-import { bookingPageFields, contactPageFields } from "./contact-sections";
+import { contactPageFields } from "./contact-sections";
 import {
 	aboutFields,
 	consultingHubFields,
@@ -133,11 +133,6 @@ export const EditorialCollection: Collection = {
 			name: "contact",
 			label: "Contacto",
 			fields: pageFields(contactPageFields),
-		},
-		{
-			name: "booking",
-			label: "Agendamento",
-			fields: pageFields(bookingPageFields),
 		},
 		{
 			name: "privacy",

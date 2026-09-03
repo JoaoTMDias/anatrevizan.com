@@ -15,26 +15,15 @@ export const contactPageFields: TinaField[] = [
 		fields: [
 			text("tag", "Etiqueta do hero"),
 			text("subtitle", "Introdução"),
-			text("otherMethodsHeading", "Título das outras formas de contacto"),
-			text("countriesLabel", "Texto das regiões de atendimento"),
-			text("languagesLabel", "Texto dos idiomas de atendimento"),
-			text("bookingCta", "CTA de agendamento"),
-		],
-	},
-];
-
-export const bookingPageFields: TinaField[] = [
-	{
-		name: "bookingPage",
-		label: "Conteúdo da página de agendamento",
-		type: "object",
-		fields: [
-			text("tag", "Etiqueta do hero"),
-			text("subtitle", "Introdução"),
+			text("bookingHeading", "Título do agendamento"),
+			text("bookingIntro", "Introdução do agendamento"),
 			text("duration", "Duração"),
 			text("validFor", "Temas aplicáveis"),
 			text("timezone", "Fuso horário"),
 			text("timezoneNote", "Nota sobre o fuso horário"),
+			text("otherMethodsHeading", "Título das outras formas de contacto"),
+			text("countriesLabel", "Texto das regiões de atendimento"),
+			text("languagesLabel", "Texto dos idiomas de atendimento"),
 		],
 	},
 ];

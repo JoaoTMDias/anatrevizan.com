@@ -18,13 +18,13 @@ test.describe("color theme", () => {
 		await expect(page.locator("footer [data-theme-toggle]")).toHaveCount(0);
 		await expect(toggle).toHaveAccessibleName("Usar tema escuro");
 
-		const booking = page
-			.getByRole("link", { name: /Agendar contacto/ })
+		const contact = page
+			.getByRole("link", { name: "Contacto", exact: true })
 			.first();
-		const desktopBookingBox = await booking.boundingBox();
+		const desktopContactBox = await contact.boundingBox();
 		const desktopToggleBox = await toggle.boundingBox();
 		expect(desktopToggleBox?.x).toBeGreaterThan(
-			desktopBookingBox ? desktopBookingBox.x + desktopBookingBox.width : 0,
+			desktopContactBox ? desktopContactBox.x + desktopContactBox.width : 0,
 		);
 
 		await page.setViewportSize({ width: 320, height: 720 });
@@ -106,7 +106,7 @@ test.describe("color theme", () => {
 		await page.goto("/");
 
 		await expect(
-			page.getByRole("link", { name: /Agendar contacto/ }).first(),
+			page.getByRole("link", { name: "Contacto", exact: true }).first(),
 		).toHaveCSS("background-color", "rgb(244, 237, 225)");
 		await expect(page.locator(".home-hero__actions a").first()).toHaveCSS(
 			"background-color",

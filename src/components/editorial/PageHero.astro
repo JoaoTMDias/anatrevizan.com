@@ -1,7 +1,12 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { heroAspectRatioForRoute, type HeroMedia } from "../../lib/hero-media";
-import { pathFor, type PublishedLocale, type RouteKey } from "../../lib/routing";
+import {
+  contactBookingPath,
+  pathFor,
+  type PublishedLocale,
+  type RouteKey,
+} from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 import EditorialImage from "./EditorialImage.astro";
@@ -61,7 +66,7 @@ const items = [
         {
           showActions && (
             <div class="mt-8 flex flex-wrap gap-4">
-              <Button variant="accent" href={pathFor("booking", locale)}>
+              <Button variant="accent" href={contactBookingPath(locale)}>
                 {locale === "en" ? "Book an initial call" : "Agendar contacto"}
               </Button>
               <Button variant="outlineInverse" href={pathFor("contact", locale)}>

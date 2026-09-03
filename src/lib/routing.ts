@@ -34,7 +34,6 @@ export const routeMap = {
 	training: { "pt-PT": "/academia/formacoes", en: "/en/academic/training" },
 	about: { "pt-PT": "/sobre", en: "/en/about" },
 	contact: { "pt-PT": "/contacto", en: "/en/contact" },
-	booking: { "pt-PT": "/agendar", en: "/en/book-a-call" },
 	privacy: { "pt-PT": "/politica-de-privacidade", en: "/en/privacy-policy" },
 	terms: { "pt-PT": "/termos", en: "/en/terms" },
 	cookies: { "pt-PT": "/cookies", en: "/en/cookies" },
@@ -60,6 +59,10 @@ export function isRouteKey(value: unknown): value is RouteKey {
 
 export function pathFor(routeKey: RouteKey, locale: PublishedLocale): string {
 	return routeMap[routeKey][locale];
+}
+
+export function contactBookingPath(locale: PublishedLocale): string {
+	return `${pathFor("contact", locale)}#${locale === "en" ? "book" : "agendar"}`;
 }
 
 export function alternatePath(path: string): string | undefined {

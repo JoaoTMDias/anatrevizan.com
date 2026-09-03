@@ -31,8 +31,8 @@ test.describe("site navigation", () => {
 		const dialog = page.getByRole("dialog", { name: "Menu principal" });
 		await expect(dialog).toBeVisible();
 		await expect(
-			dialog.getByRole("link", { name: /Agendar (?:primeiro )?contacto/ }),
-		).toHaveAttribute("href", "/agendar");
+			dialog.getByRole("link", { name: "Contacto", exact: true }),
+		).toHaveAttribute("href", "/contacto");
 
 		await page.keyboard.press("Escape");
 		await expect(trigger).toHaveAttribute("aria-expanded", "false");
@@ -58,5 +58,19 @@ test.describe("site navigation", () => {
 					.locator("footer")
 					.getByRole("link", { name: profile, exact: true }),
 			).toBeVisible();
+	});
+
+	test("booking CTAs target the localized section on the contact page", async ({
+		page,
+	}) => {
+		await page.goto("/");
+		await expect(
+			page.getByRole("link", { name: "Agendar primeiro contacto" }),
+		).toHaveAttribute("href", "/contacto#agendar");
+
+		await page.goto("/en");
+		await expect(
+			page.getByRole("link", { name: /book|schedule/i }).first(),
+		).toHaveAttribute("href", "/en/contact#book");
 	});
 });

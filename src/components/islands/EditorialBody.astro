@@ -10,7 +10,6 @@ import EventsPage from "../editorial/EventsPage.astro";
 import HomePage from "../editorial/HomePage.astro";
 import PublicationsPage from "../editorial/PublicationsPage.astro";
 import ContactPage from "../editorial/ContactPage.astro";
-import BookingPage from "../editorial/BookingPage.astro";
 import PrivacyPage from "../editorial/PrivacyPage.astro";
 import TermsPage from "../editorial/TermsPage.astro";
 import CookiesPage from "../editorial/CookiesPage.astro";
@@ -39,8 +38,6 @@ const { data } = Astro.props;
     <EventsPage data={data} />
   ) : data?.routeKey === "contact" ? (
     <ContactPage data={data} />
-  ) : data?.routeKey === "booking" ? (
-    <BookingPage data={data} />
   ) : data?.routeKey === "privacy" ? (
     <PrivacyPage data={data} />
   ) : data?.routeKey === "terms" ? (

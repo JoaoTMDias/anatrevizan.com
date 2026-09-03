@@ -207,19 +207,15 @@ export interface SpeakingPageContent {
 export interface ContactPageContent {
 	tag: string;
 	subtitle: string;
-	otherMethodsHeading: string;
-	countriesLabel: string;
-	languagesLabel: string;
-	bookingCta: string;
-}
-
-export interface BookingPageContent {
-	tag: string;
-	subtitle: string;
+	bookingHeading: string;
+	bookingIntro: string;
 	duration: string;
 	validFor: string;
 	timezone: string;
 	timezoneNote: string;
+	otherMethodsHeading: string;
+	countriesLabel: string;
+	languagesLabel: string;
 }
 
 export interface LegalPageContent {

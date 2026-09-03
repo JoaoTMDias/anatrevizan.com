@@ -2,7 +2,7 @@
 
 ## Conteúdo e revisão
 
-- [x] Ana rever os 18 documentos no `/admin`, incluindo ordem das listas, CTAs e media.
+- [x] Ana rever os 17 documentos no `/admin`, incluindo ordem das listas, CTAs e media.
 - [x] Completar e rever humanamente todos os campos EN antes de publicar as rotas inglesas.
 - [ ] Obter revisão qualificada das afirmações profissionais e dos serviços.
 - [ ] Redigir e rever juridicamente Privacidade, Termos e Cookies, incluindo datas de entrada em vigor.
@@ -16,7 +16,7 @@
 
 ## QA e lançamento
 
-- [ ] Testar as 18 páginas no site e admin: teclado, foco, nomes acessíveis, contraste, 320 px, zoom 400%, movimento reduzido e Save-Data.
+- [ ] Testar as 17 páginas no site e admin: teclado, foco, nomes acessíveis, contraste, 320 px, zoom 400%, movimento reduzido e Save-Data.
 - [x] Testar edição PT/EN, rich text, listas, CTAs, configuração global, ORCID e media.
 - [x] Testar variantes Sharp, sanitização SVG e downloads em desenvolvimento e produção.
 - [x] Executar Playwright completo sem erros de consola, assets ausentes ou URLs locais.

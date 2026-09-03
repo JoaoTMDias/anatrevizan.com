@@ -140,7 +140,6 @@ export const GlobalConfigCollection: Collection = {
 				},
 				localizedText("about", "Sobre"),
 				localizedText("contact", "Contacto"),
-				localizedText("booking", "Agendar contacto"),
 			],
 		},
 		{

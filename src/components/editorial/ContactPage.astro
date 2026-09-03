@@ -3,7 +3,12 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import { getConfig } from "../../lib/data";
 import { contactFormCopy } from "../../lib/contact-form-i18n";
-import { safeEmailHref, safeProfileUrl, safeWhatsAppHref } from "../../lib/external-url";
+import {
+  safeCalendlyUrl,
+  safeEmailHref,
+  safeProfileUrl,
+  safeWhatsAppHref,
+} from "../../lib/external-url";
 import type { ContactPageContent } from "../../lib/page-content";
 import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
@@ -25,6 +30,8 @@ const requestTypes = (config?.requestTypes ?? []).flatMap((item) => {
 });
 const emailHref = safeEmailHref(config?.contacts?.email);
 const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
+const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
+const bookingId = locale === "en" ? "book" : "agendar";
 const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
   const href = safeProfileUrl(profile?.url);
   const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
@@ -107,8 +114,37 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
               </fieldset>
             </form>
           </div>
-          <aside class="contact-methods">
-            <>
+          <aside class="contact-sidebar">
+            <section id={bookingId} class="contact-booking" tabindex="-1">
+              <span class="contact-booking__icon">
+                <Icon name={calendlyUrl ? "calendar-event" : "calendar-off"} />
+              </span>
+              <h2>{contact.bookingHeading}</h2>
+              <p>{contact.bookingIntro}</p>
+              <dl class="contact-booking__details">
+                <div>
+                  <dt><Icon name="clock" /> {contact.duration}</dt>
+                  <dd>{contact.validFor}</dd>
+                </div>
+                <div>
+                  <dt><Icon name="world" /> {contact.timezone}</dt>
+                  <dd>{contact.timezoneNote}</dd>
+                </div>
+              </dl>
+              {calendlyUrl ? (
+                <Button class="w-full" href={calendlyUrl} rel="external noreferrer">
+                  {locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}
+                  <Icon name="external-link" />
+                </Button>
+              ) : (
+                <p class="contact-booking__notice">
+                  {locale === "en"
+                    ? "The booking link is not yet configured."
+                    : "A ligação de agendamento ainda não está configurada."}
+                </p>
+              )}
+            </section>
+            <section class="contact-methods">
               <h2>{contact.otherMethodsHeading}</h2>
               <ul>
                 {emailHref && (
@@ -137,10 +173,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
               <hr />
               <p>{contact.countriesLabel}</p>
               <p>{contact.languagesLabel}</p>
-              <Button class="mt-6 w-full" href={pathFor("booking", locale)}>
-                {contact.bookingCta}
-              </Button>
-            </>
+            </section>
           </aside>
         </Section>
       </>

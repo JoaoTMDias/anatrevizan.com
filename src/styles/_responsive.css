@@ -39,18 +39,11 @@
 		grid-template-columns: 1fr;
 	}
 	.contact-layout,
-	.booking-layout,
 	.contact-form fieldset {
 		grid-template-columns: minmax(0, 1fr);
 	}
-	.contact-layout > *,
-	.booking-layout > * {
+	.contact-layout > * {
 		min-width: 0;
-	}
-	.booking-panel a {
-		max-width: 100%;
-		white-space: normal;
-		text-align: center;
 	}
 	.home-academic-heading {
 		align-items: flex-start;

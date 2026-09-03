@@ -5,12 +5,12 @@ Atualizado em agosto de 2026. Este documento é a fonte normativa principal.
 ## Arquitetura
 
 - Astro é a única fonte visual, funcional e editorial. Stack: Astro 7, TinaCMS 3, TypeScript, Tailwind CSS 4 e pnpm; deploy Netlify.
-- As 18 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados.
+- As 17 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados.
 - A estrutura visual e as secções pertencem ao código; não existe criação de páginas ou alteração de URLs no CMS.
 
 ## Conteúdo bilingue
 
-- `src/content/pages` contém 18 JSON: um documento por página, PT e EN na mesma estrutura.
+- `src/content/pages` contém 17 JSON: um documento por página, PT e EN na mesma estrutura.
 - Listas, media e destinos são partilhados. Folhas localizadas usam `{ pt, en }`, apresentadas consecutivamente no Tina.
 - PT é a fonte aprovada. EN é tradução humana, sem fallback. Traduções parciais podem ser guardadas; só ficam públicas quando todos os campos localizados usados têm EN.
 - Hero e resumo servem de default SEO; overrides são opcionais. CTAs pertencem à página. Ligações internas usam destinos semânticos.

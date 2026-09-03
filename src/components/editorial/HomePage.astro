@@ -6,7 +6,7 @@ import { hasValidRouteKey } from "../../lib/page-content";
 import { heroAspectRatioForRoute } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
-import { pathFor } from "../../lib/routing";
+import { contactBookingPath, pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
@@ -51,7 +51,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                 <h1>{home.hero.heading}</h1>
                 <p>{home.hero.subtitle}</p>
                 <div class="home-hero__actions">
-                  <Button size="lg" variant="accent" href={pathFor("booking", locale)}>
+                  <Button size="lg" variant="accent" href={contactBookingPath(locale)}>
                     {home.hero.primaryCta}
                   </Button>
                   <Button

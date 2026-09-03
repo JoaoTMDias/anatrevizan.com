@@ -56,7 +56,6 @@ const landscapeHeroRoutes = new Set<RouteKey>([
 	"public-policy",
 	"mentoring",
 	"contact",
-	"booking",
 ]);
 
 export function heroAspectRatioForRoute(routeKey: RouteKey): HeroAspectRatio {

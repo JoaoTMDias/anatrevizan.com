@@ -174,10 +174,6 @@
 		"contact": {
 			"pt": "Contacto",
 			"en": "Contact"
-		},
-		"booking": {
-			"pt": "Agendar contacto",
-			"en": "Book a call"
 		}
 	},
 	"requestTypes": [

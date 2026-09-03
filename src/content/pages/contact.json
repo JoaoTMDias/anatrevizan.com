@@ -39,6 +39,30 @@
 			"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
 			"en": "Tell me about your situation and what you are looking for. I read every message and reply personally."
 		},
+		"bookingHeading": {
+			"pt": "Agende uma conversa",
+			"en": "Book a call"
+		},
+		"bookingIntro": {
+			"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
+			"en": "Complimentary 15-to-30-minute initial call, scheduled in Portugal time."
+		},
+		"duration": {
+			"pt": "15 a 30 minutos",
+			"en": "15 to 30 minutes"
+		},
+		"validFor": {
+			"pt": "Válido para todos os temas — jurídicos e académicos.",
+			"en": "Applies to all inquiries — both legal and academic."
+		},
+		"timezone": {
+			"pt": "Fuso de Portugal",
+			"en": "Portugal Time Zone"
+		},
+		"timezoneNote": {
+			"pt": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
+			"en": "Note: Local time in Brazil will be a few hours behind Portugal time."
+		},
 		"otherMethodsHeading": {
 			"pt": "Outras formas de contacto",
 			"en": "Other ways to connect"
@@ -50,10 +74,6 @@
 		"languagesLabel": {
 			"pt": "Atendimento em PT · EN · ES",
 			"en": "Available in PT · EN · ES"
-		},
-		"bookingCta": {
-			"pt": "Prefere agendar uma conversa?",
-			"en": "Prefer to schedule a call?"
 		}
 	}
 }

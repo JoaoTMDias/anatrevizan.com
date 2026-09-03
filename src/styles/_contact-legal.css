@@ -1,6 +1,5 @@
 @layer components {
-	.contact-layout,
-	.booking-layout {
+	.contact-layout {
 		display: grid;
 		gap: 2.5rem;
 		grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
@@ -81,16 +80,87 @@
 		font-size: 1rem;
 		font-weight: 600;
 	}
-	.contact-methods {
+	.contact-sidebar {
+		display: grid;
 		align-self: start;
+		gap: 1.25rem;
+	}
+	.contact-booking,
+	.contact-methods {
 		padding: 1.5rem;
 		border-radius: var(--radius-lg);
 		background: var(--secondary);
 	}
-	.contact-methods h2,
-	.booking-notes h2 {
+	.contact-booking {
+		scroll-margin-top: 7rem;
+		border: 1px solid color-mix(in oklab, var(--accent) 48%, var(--border));
+		background: color-mix(in oklab, var(--accent) 8%, var(--background));
+	}
+	.contact-booking:target,
+	.contact-booking:focus-visible {
+		outline: 3px solid var(--accent);
+		outline-offset: 3px;
+	}
+	.contact-booking__icon {
+		display: grid;
+		width: 3rem;
+		height: 3rem;
+		place-items: center;
+		margin-bottom: 1rem;
+		border-radius: 999px;
+		background: color-mix(in oklab, var(--primary) 13%, var(--background));
+		color: var(--primary);
+	}
+	.contact-booking__icon svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	.contact-booking h2,
+	.contact-methods h2 {
 		font-size: 1.125rem;
 		font-weight: 600;
+	}
+	.contact-booking > p {
+		margin-top: 0.75rem;
+		color: var(--muted-foreground);
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+	.contact-booking__details {
+		display: grid;
+		gap: 1rem;
+		margin-block: 1.25rem;
+	}
+	.contact-booking__details div {
+		display: grid;
+		gap: 0.35rem;
+	}
+	.contact-booking__details dt {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.contact-booking__details dt svg {
+		width: 1.125rem;
+		height: 1.125rem;
+		flex: none;
+		color: var(--primary);
+	}
+	.contact-booking__details dd {
+		color: var(--muted-foreground);
+		font-size: 0.9375rem;
+		line-height: 1.5;
+	}
+	.contact-booking a {
+		max-width: 100%;
+		white-space: normal;
+		text-align: center;
+	}
+	.contact-booking__notice {
+		padding-top: 1rem;
+		border-top: 1px solid var(--border);
 	}
 	.contact-methods ul {
 		display: grid;
@@ -130,63 +200,6 @@
 		color: var(--muted-foreground);
 		font-size: 1rem;
 		line-height: 1.5;
-	}
-	.booking-panel {
-		display: flex;
-		min-height: 20rem;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 1.5rem;
-		padding: clamp(2rem, 6vw, 4rem);
-		border: 1px dashed var(--border);
-		border-radius: var(--radius-lg);
-		background: var(--secondary);
-		text-align: center;
-	}
-	.booking-panel__icon {
-		display: grid;
-		width: 4rem;
-		height: 4rem;
-		place-items: center;
-		border-radius: 999px;
-		background: color-mix(in oklab, var(--primary) 13%, var(--background));
-		color: var(--primary);
-	}
-	.booking-panel__icon svg {
-		width: 1.75rem;
-		height: 1.75rem;
-	}
-	.booking-panel > p {
-		color: var(--muted-foreground);
-		line-height: 1.6;
-	}
-	.booking-panel--notice .booking-panel__icon {
-		background: color-mix(in oklab, var(--accent) 14%, var(--background));
-		color: var(--accent);
-	}
-	.booking-notes {
-		display: grid;
-		align-self: start;
-		gap: 1.25rem;
-	}
-	.booking-notes article {
-		gap: 0.75rem;
-	}
-	.booking-notes article > div {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-	}
-	.booking-notes svg {
-		width: 1.25rem;
-		height: 1.25rem;
-		color: var(--primary);
-	}
-	.booking-notes p {
-		color: var(--muted-foreground);
-		font-size: 1rem;
-		line-height: 1.6;
 	}
 	.legal-header {
 		padding-block: clamp(3.5rem, 8vw, 5rem);
