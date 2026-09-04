@@ -36,7 +36,12 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
           data-tina-field={tinaField(data, "about")}
         />
         <Section>
-          <div class:list={["editorial-intro", !about.introImage?.image && "editorial-intro--text-only"]}>
+          <div
+            class:list={[
+              "editorial-intro",
+              !about.introImage?.image && "editorial-intro--text-only",
+            ]}
+          >
             {about.introImage?.image && (
               <figure class="editorial-intro__media" data-tina-field={tinaField(data, "about")}>
                 <EditorialImage
@@ -50,80 +55,92 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
                 />
               </figure>
             )}
-            <RichText content={about.narrative} locale={locale} class="about-narrative editorial-intro__copy" />
+            <RichText
+              content={about.narrative}
+              locale={locale}
+              class="about-narrative editorial-intro__copy"
+            />
           </div>
         </Section>
         <Section background="bg-secondary">
           <div class="max-w-3xl">
-            <>
-              <SectionHeading title={about.milestonesTitle} locale={locale} />
-              <ol class="about-timeline">
-                {about.milestones.map((item) => (
-                  <li class="about-timeline__item">
-                    <p>{item.year}</p>
-                    <h3><AcronymText text={item.title} locale={locale} /></h3>
-                    <p><AcronymText text={item.description} locale={locale} /></p>
-                  </li>
-                ))}
-              </ol>
-            </>
+            <SectionHeading title={about.milestonesTitle} locale={locale} />
+            <ol class="about-timeline">
+              {about.milestones.map((item) => (
+                <li class="about-timeline__item">
+                  <p>{item.year}</p>
+                  <h3>
+                    <AcronymText text={item.title} locale={locale} />
+                  </h3>
+                  <p>
+                    <AcronymText text={item.description} locale={locale} />
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
         </Section>
         <Section>
-          <>
-            <SectionHeading title={about.currentWorkTitle} locale={locale} />
-            <div class="about-current-work">
-              {about.currentWork.map((item) => (
-                <Card as="article" class="p-6">
-                  <p class="text-2xl" aria-hidden="true">
-                    {item.country}
-                  </p>
-                  <h3><AcronymText text={item.title} locale={locale} /></h3>
-                  <p><AcronymText text={item.description} locale={locale} /></p>
-                </Card>
-              ))}
-            </div>
-          </>
+          <SectionHeading title={about.currentWorkTitle} locale={locale} />
+          <div class="about-current-work">
+            {about.currentWork.map((item) => (
+              <Card as="article" class="p-6">
+                <p class="text-2xl" aria-hidden="true">
+                  {item.country}
+                </p>
+                <h3>
+                  <AcronymText text={item.title} locale={locale} />
+                </h3>
+                <p>
+                  <AcronymText text={item.description} locale={locale} />
+                </p>
+              </Card>
+            ))}
+          </div>
         </Section>
         <Section background="bg-secondary">
-          <>
-            <SectionHeading title={about.valuesTitle} subtitle={about.valuesSubtitle} locale={locale} />
-            <div class="about-values">
-              {about.values.map((item, index) => (
-                <article>
-                  <span>
-                    <Icon name={valueIcons[index]} />
-                  </span>
-                  <div>
-                    <h3><AcronymText text={item.title} locale={locale} /></h3>
-                    <p><AcronymText text={item.description} locale={locale} /></p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </>
+          <SectionHeading
+            title={about.valuesTitle}
+            subtitle={about.valuesSubtitle}
+            locale={locale}
+          />
+          <div class="about-values">
+            {about.values.map((item, index) => (
+              <article>
+                <span>
+                  <Icon name={valueIcons[index]} />
+                </span>
+                <div>
+                  <h3>
+                    <AcronymText text={item.title} locale={locale} />
+                  </h3>
+                  <p>
+                    <AcronymText text={item.description} locale={locale} />
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </Section>
         <Section class="about-networks">
-          <>
-            <h2>{about.networksLabel}</h2>
-            <ul>
-              {about.networks.map((network) => (
-                <li><AcronymText text={network} locale={locale} /></li>
-              ))}
-            </ul>
-            <Button class="mt-8" variant="outline" href={`${pathFor("events", locale)}#speaker-kit`}>
-              {about.speakerKitCta}
-            </Button>
-          </>
+          <h2>{about.networksLabel}</h2>
+          <ul>
+            {about.networks.map((network) => (
+              <li>
+                <AcronymText text={network} locale={locale} />
+              </li>
+            ))}
+          </ul>
+          <Button class="mt-8" variant="outline" href={`${pathFor("events", locale)}#speaker-kit`}>
+            {about.speakerKitCta}
+          </Button>
         </Section>
         <ContactCta heading={about.finalCtaHeading} text={about.finalCtaText} locale={locale} />
       </>
     ) : (
       <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
-        <>
-          <h1>{data.title}</h1>
-          <p class="mt-4">{data.summary}</p>
-        </>
+        <h1>{data.title}</h1>
+        <p class="mt-4">{data.summary}</p>
       </section>
     )
   }
