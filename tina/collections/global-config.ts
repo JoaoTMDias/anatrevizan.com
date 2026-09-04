@@ -208,11 +208,6 @@ export const GlobalConfigCollection: Collection = {
 				localizedText("copyright", "Texto de copyright"),
 				localizedText("contactIntro", "Introdução de contacto"),
 				localizedText("contactCta", "Botão de contacto"),
-				optionalLocalizedText(
-					"professionalRegistration",
-					"Identificação profissional",
-				),
-				optionalLocalizedText("disclaimer", "Aviso informativo"),
 				optionalLocalizedText("rightsReserved", "Texto de direitos reservados"),
 			],
 		},

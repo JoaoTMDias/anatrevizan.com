@@ -489,12 +489,13 @@
       "pt": "Ana Trevizan",
       "en": "Ana Trevizan"
     },
-    "professionalRegistration": {
-      "pt": "OAB nº [reservado]"
+    "contactIntro": {
+      "pt": "Envie uma mensagem através do formulário ou continue pelo WhatsApp.",
+      "en": "Send a message through the form or continue via WhatsApp."
     },
-    "disclaimer": {
-      "pt": "Desenvolvido por João Dias",
-      "en": "Developed by João Dias"
+    "contactCta": {
+      "pt": "Entrar em contacto",
+      "en": "Get in touch"
     },
     "rightsReserved": {
       "pt": "Todos os direitos reservados.",

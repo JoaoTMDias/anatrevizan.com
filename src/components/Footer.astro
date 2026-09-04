@@ -27,8 +27,6 @@ const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter(
 );
 const contactIntro = config?.footer?.contactIntro?.[languageField];
 const contactCta = config?.footer?.contactCta?.[languageField];
-const professionalRegistration = config?.footer?.professionalRegistration?.[languageField];
-const disclaimer = config?.footer?.disclaimer?.[languageField];
 const rightsReserved = config?.footer?.rightsReserved?.[languageField];
 const profileIcon = (label: string, url: string) => {
   const value = `${label} ${url}`.toLowerCase();
@@ -174,8 +172,6 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
           ></path>
         </svg>
       </div>
-      {professionalRegistration && <p>{professionalRegistration}</p>}
-      {disclaimer && <p>{disclaimer}</p>}
       <p>
         © {new Date().getFullYear()}
         &nbsp;
