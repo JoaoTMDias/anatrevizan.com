@@ -15,7 +15,7 @@
 
 .site-footer > div:first-child > nav > a,
 .site-footer > div:first-child > nav > p,
-.site-footer .footer-contact > p {
+.footer-contact__heading {
 	color: var(--footer-foreground);
 }
 
@@ -24,16 +24,20 @@
 	color: var(--footer-accent);
 }
 
-.footer-contact__details a {
-	@apply inline-flex items-center gap-2;
+.footer-contact__intro {
+	@apply mt-4 text-base;
+
+	max-width: 18rem;
+	color: var(--footer-muted);
 }
 
-.footer-contact__details svg {
-	@apply size-4 shrink-0;
+.footer-contact__cta {
+	@apply mt-4;
 }
 
-.footer-contact__details a:hover {
-	text-decoration: underline;
+.site-footer .footer-contact__cta:hover,
+.site-footer .footer-contact__cta:focus-visible {
+	color: var(--brand-ink);
 }
 
 .footer-contact__profiles {

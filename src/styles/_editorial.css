@@ -41,7 +41,7 @@
 
 		background: color-mix(in oklab, var(--brand-burgundy) 82%, black);
 		box-shadow: 0 1.5rem 3rem rgb(20 6 7 / 28%);
-		rotate: 1deg;
+		rotate: 0.5deg;
 		scale: 1;
 		transform-origin: center;
 	}
@@ -215,9 +215,13 @@
 
 	/* Call-to-action section */
 	.editorial-cta {
-		@apply bg-primary text-inverse-foreground;
+		@apply bg-linear-to-b from-foreground-800 to-foreground text-inverse-foreground;
 
 		padding-block: clamp(4rem, 8vw, 5rem);
+	}
+
+	.dark .editorial-cta {
+		@apply bg-linear-to-b from-background-800 to-background;
 	}
 
 	.editorial-cta p {

@@ -2,8 +2,8 @@
 import type { CmsConfig } from "../lib/data";
 import { navigationItems } from "../lib/navigation";
 import { pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+import Button from "./ui/Button.astro";
 import IconLink from "./IconLink.astro";
-import Icon from "./ui/Icon.astro";
 interface Props {
   config?: CmsConfig | null;
   locale?: PublishedLocale;
@@ -19,18 +19,17 @@ const directLinks = navigation.filter(
   (item) => item.type !== "menu" && item.routeKey !== "contact"
 );
 const legalRoutes: RouteKey[] = ["privacy", "terms", "cookies"];
-const email = config?.contacts?.email;
-const phone = config?.contacts?.phone;
 const profiles = (config?.contacts?.profiles ?? [])
   .filter(present)
   .filter((profile) => Boolean(profile.url));
 const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter(
   (language): language is string => Boolean(language)
 );
+const contactIntro = config?.footer?.contactIntro?.[languageField];
+const contactCta = config?.footer?.contactCta?.[languageField];
 const professionalRegistration = config?.footer?.professionalRegistration?.[languageField];
 const disclaimer = config?.footer?.disclaimer?.[languageField];
 const rightsReserved = config?.footer?.rightsReserved?.[languageField];
-const whatsappUrl = phone ? `https://wa.me/${phone.replace(/\D/g, "")}` : null;
 const profileIcon = (label: string, url: string) => {
   const value = `${label} ${url}`.toLowerCase();
   if (value.includes("linkedin")) return "tabler:brand-linkedin";
@@ -108,27 +107,22 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
       </ul>
     </nav>
     <div class="footer-contact">
-      <p class="font-heading font-semibold">{locale === "en" ? "Contact" : "Contacto"}</p>
-      <ul class="footer-contact__details mt-4 space-y-2.5 text-base text-muted-foreground">
-        {
-          email && (
-            <li>
-              <a href={`mailto:${email}`}>
-                <Icon name="mail" /> <span>{email}</span>
-              </a>
-            </li>
-          )
-        }
-        {
-          phone && whatsappUrl && (
-            <li>
-              <a href={whatsappUrl} target="_blank" rel="external noopener noreferrer">
-                <Icon name="brand-whatsapp" /> <span>{phone}</span>
-              </a>
-            </li>
-          )
-        }
-      </ul>
+      <p class="footer-contact__heading font-heading font-semibold">
+        {locale === "en" ? "Contact" : "Contacto"}
+      </p>
+      {contactIntro && <p class="footer-contact__intro">{contactIntro}</p>}
+      {
+        contactCta && (
+          <Button
+            class="footer-contact__cta"
+            href={pathFor("contact", locale)}
+            variant="outlineInverse"
+            size="sm"
+          >
+            {contactCta}
+          </Button>
+        )
+      }
       {
         profiles.length > 0 && (
           <div class="footer-contact__profiles">

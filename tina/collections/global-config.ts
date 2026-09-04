@@ -206,6 +206,8 @@ export const GlobalConfigCollection: Collection = {
 			type: "object",
 			fields: [
 				localizedText("copyright", "Texto de copyright"),
+				localizedText("contactIntro", "Introdução de contacto"),
+				localizedText("contactCta", "Botão de contacto"),
 				optionalLocalizedText(
 					"professionalRegistration",
 					"Identificação profissional",
