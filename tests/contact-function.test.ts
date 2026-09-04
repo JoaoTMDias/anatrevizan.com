@@ -27,7 +27,6 @@ const body = {
 	requestType: "request-1",
 	country: "PT",
 	message: "Preciso de orientação sobre este assunto.",
-	consent: true,
 	website: "",
 	startedAt: Date.now() - 4_000,
 	turnstileToken: "token",

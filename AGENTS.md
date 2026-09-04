@@ -12,7 +12,7 @@ Astro é a única fonte visual, funcional e editorial deste projeto. Consultar, 
 
 ## Modelo editorial
 
-- Existem exatamente 17 documentos JSON em `src/content/pages`, um por rota. Cada campo localizado apresenta PT-PT e EN consecutivamente; estrutura, listas, media e destinos são partilhados.
+- Existem exatamente 14 documentos JSON em `src/content/pages`, um por rota. Cada campo localizado apresenta PT-PT e EN consecutivamente; estrutura, listas, media e destinos são partilhados.
 - A estrutura, os nomes dos ficheiros, o routing, os slugs e os destinos do menu pertencem ao código. O Tina não permite criar, apagar ou renomear páginas.
 - PT-PT é primário e não tem prefixo; EN usa `/en` e slugs localizados. Nunca usar PT como fallback em EN.
 - Traduções são humanas. Podem ser guardadas parcialmente com aviso; EN publica automaticamente apenas com todos os valores usados completos. Uma tradução publicada não pode tornar-se incompleta num deploy.

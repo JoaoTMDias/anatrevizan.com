@@ -39,10 +39,6 @@ export const privacyPageFields: TinaField[] = [
 	legalDocument("privacyPage", "Privacy policy sections"),
 ];
 
-export const termsPageFields: TinaField[] = [
-	legalDocument("termsPage", "Terms of use sections"),
-];
-
-export const cookiesPageFields: TinaField[] = [
-	legalDocument("cookiesPage", "Cookie policy sections"),
+export const accessibilityPageFields: TinaField[] = [
+	legalDocument("accessibilityPage", "Accessibility statement sections"),
 ];

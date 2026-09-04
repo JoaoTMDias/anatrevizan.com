@@ -12,8 +12,8 @@ O conteúdo PT das páginas Home, Sobre, Consultoria, Academia, Contacto e Agend
 
 ## Lacunas abertas
 
-- Tradução e revisão integral de EN nas 17 páginas e configuração global.
-- Texto e revisão jurídica das três páginas legais, com datas de entrada em vigor. A política de cookies tem rascunho técnico redigido a partir do código-fonte (formulário, Calendly, ausência de analytics), com pontos `[PENDENTE]` que exigem decisão jurídica/negócio; Privacidade e Termos continuam apenas com placeholder.
+- Tradução e revisão integral de EN nas 14 páginas e configuração global.
+- Confirmação factual e revisão jurídica da Política de Privacidade; confirmação operacional e auditoria abrangente para a Declaração de Acessibilidade. Os pontos `[PENDENTE]` permanecem deliberadamente explícitos.
 - Fotografia profissional, kit de palestrante e restantes assets finais/licenças.
 - Política final de privacidade e retenção do formulário.
 - Confirmação final de descrições profissionais, âmbito geográfico e serviços.

@@ -35,8 +35,8 @@ const pages = readdirSync(directory)
 	);
 
 describe("modelo editorial bilingue", () => {
-	it("mantém exatamente um documento fixo por cada uma das 17 páginas", () => {
-		expect(pages).toHaveLength(17);
+	it("mantém exatamente um documento fixo por cada uma das 14 páginas", () => {
+		expect(pages).toHaveLength(14);
 		expect(pages.map((page) => page.routeKey).sort()).toEqual(
 			[...routeKeys].sort(),
 		);
@@ -177,7 +177,7 @@ describe("modelo editorial bilingue", () => {
 
 	it("mantém proporções de hero no layout e fora do conteúdo", () => {
 		expect(heroAspectRatioForRoute("contact")).toBe("landscape");
-		expect(heroAspectRatioForRoute("about")).toBe("square");
+		expect(heroAspectRatioForRoute("about")).toBe("landscape");
 		for (const page of pages)
 			expect(
 				(page as unknown as { media?: unknown }).media ?? {},
@@ -305,8 +305,8 @@ describe("modelo editorial bilingue", () => {
 			"pt-PT",
 		);
 		expect(navigation.map((item) => item.routeKey)).toEqual([
-			"consulting",
-			"academic",
+			"legal",
+			"publications",
 			"about",
 			"contact",
 		]);

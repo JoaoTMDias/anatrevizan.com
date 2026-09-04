@@ -1,13 +1,10 @@
 {
 	"_template": "privacy",
 	"routeKey": "privacy",
-	"title": {
-		"pt": "Política de privacidade",
-		"en": "Privacy policy"
-	},
+	"title": { "pt": "Política de privacidade", "en": "Privacy policy" },
 	"summary": {
-		"pt": "Página em construção — o conteúdo desta secção será adicionado em breve.",
-		"en": "Page under construction — content for this section will be added soon."
+		"pt": "Informação sobre o tratamento de dados pessoais neste site e nos canais de contacto associados.",
+		"en": "Information about personal data processing on this website and through its associated contact channels."
 	},
 	"seo": {
 		"title": {
@@ -15,58 +12,116 @@
 			"en": "Privacy policy — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Descrição editorial por aprovar.",
-			"en": "Editorial description pending approval."
-		},
-		"noindex": true
+			"pt": "Informação sobre o tratamento de dados pessoais no site de Ana Trevizan.",
+			"en": "Information about personal data processing on Ana Trevizan's website."
+		}
 	},
 	"privacyPage": {
 		"sourceStatus": {
-			"pt": "O conteúdo de origem contém apenas um placeholder. O texto integral requer redação e revisão jurídica qualificada.",
-			"en": "Source content contains a placeholder only. The full text requires drafting and qualified legal review."
+			"pt": "Texto técnico provisório baseado na implementação verificada em 4 de setembro de 2026. Os pontos assinalados como pendentes exigem confirmação da responsável e revisão jurídica antes do lançamento.",
+			"en": "Interim technical text based on the implementation reviewed on 4 September 2026. Items marked as pending require confirmation by the controller and legal review before launch."
 		},
 		"reviewRequirements": [
 			{
-				"pt": "Responsável pelo tratamento",
-				"en": "Data controller"
+				"pt": "Morada e restantes elementos de identificação legal da responsável",
+				"en": "Address and remaining legal identification details of the controller"
 			},
 			{
-				"pt": "Dados recolhidos",
-				"en": "Data collected"
+				"pt": "Fundamentos jurídicos definitivos por finalidade",
+				"en": "Final legal bases for each purpose"
 			},
 			{
-				"pt": "Finalidades e base legal",
-				"en": "Purposes and legal basis"
+				"pt": "Prazos ou critérios de conservação",
+				"en": "Retention periods or criteria"
 			},
 			{
-				"pt": "Retenção",
-				"en": "Data retention"
+				"pt": "Relações contratuais, localizações e salvaguardas dos fornecedores",
+				"en": "Provider contracts, locations, and safeguards"
 			},
 			{
-				"pt": "Destinatários e transferências internacionais",
-				"en": "Recipients and international transfers"
-			},
-			{
-				"pt": "Direitos do titular e contacto",
-				"en": "Data subject rights and contact info"
-			},
-			{
-				"pt": "Formulário",
-				"en": "Contact form"
-			},
-			{
-				"pt": "Calendly",
-				"en": "Calendly"
-			},
-			{
-				"pt": "Hosting",
-				"en": "Web hosting"
-			},
-			{
-				"pt": "Analytics, se utilizado",
-				"en": "Analytics, if applicable"
+				"pt": "Procedimento e prazo operacional de resposta aos pedidos dos titulares",
+				"en": "Procedure and operational response time for data-subject requests"
 			}
 		],
-		"sections": []
-	}
+		"sections": [
+			{
+				"heading": {
+					"pt": "Responsável e contacto",
+					"en": "Controller and contact"
+				},
+				"paragraphs": {
+					"pt": "A responsável pelo tratamento é Ana Trevizan. Para questões de privacidade ou para exercer direitos, escreva para [contato@anatrevizan.com](mailto:contato@anatrevizan.com).\n\n[PENDENTE DE CONFIRMAÇÃO E REVISÃO JURÍDICA: morada e restantes elementos de identificação legal que devam constar desta política.]",
+					"en": "The data controller is Ana Trevizan. For privacy questions or to exercise your rights, email [contato@anatrevizan.com](mailto:contato@anatrevizan.com).\n\n[PENDING CONFIRMATION AND LEGAL REVIEW: address and any remaining legal identification details that must be included in this policy.]"
+				}
+			},
+			{
+				"heading": {
+					"pt": "Dados, finalidades e fundamentos",
+					"en": "Data, purposes, and legal bases"
+				},
+				"paragraphs": {
+					"pt": "No envio pelo formulário, são tratados o nome, email, WhatsApp opcional, tipo de pedido, país, mensagem, idioma, identificador do pedido, momento do envio e dados técnicos necessários à verificação anti-spam. Estes dados são usados para receber, registar, responder e proteger o formulário contra abuso.\n\nNa opção WhatsApp, o site usa o nome, tipo de pedido, país e mensagem apenas no navegador para preparar o texto. Ao continuar, sai deste site e abre o WhatsApp; a mensagem só é enviada depois de a confirmar nesse serviço. O site não guarda automaticamente este pedido.\n\nNão inclua na primeira mensagem dados particularmente sensíveis que não sejam necessários. [PENDENTE DE REVISÃO JURÍDICA: confirmar e documentar o fundamento aplicável a cada finalidade.]",
+					"en": "When you submit the form, the site processes your name, email address, optional WhatsApp number, request type, country, message, language, request identifier, submission time, and technical data required for anti-spam verification. This data is used to receive, record, and reply to the request and to protect the form against abuse.\n\nWith the WhatsApp option, the site uses your name, request type, country, and message in the browser only to prepare the text. Continuing takes you away from this site and opens WhatsApp; the message is sent only after you confirm it in that service. The site does not automatically store this request.\n\nDo not include particularly sensitive data that is unnecessary for the initial contact. [PENDING LEGAL REVIEW: confirm and document the legal basis for each purpose.]"
+				}
+			},
+			{
+				"heading": {
+					"pt": "Destinatários, fornecedores e transferências",
+					"en": "Recipients, providers, and transfers"
+				},
+				"paragraphs": {
+					"pt": "A implementação do formulário utiliza a infraestrutura de alojamento da Netlify, Cloudflare Turnstile para verificação anti-spam, Google Sheets para registo dos pedidos e Resend para notificações por email. Os dados são disponibilizados apenas na medida necessária a estes serviços e à resposta ao pedido.\n\n[PENDENTE DE CONFIRMAÇÃO E REVISÃO JURÍDICA: identificar entidades contratantes, funções, localizações do tratamento, eventuais transferências internacionais e respetivas salvaguardas.]",
+					"en": "The form implementation uses Netlify hosting infrastructure, Cloudflare Turnstile for anti-spam verification, Google Sheets to record requests, and Resend for email notifications. Data is made available only as needed for these services and to reply to the request.\n\n[PENDING CONFIRMATION AND LEGAL REVIEW: identify contracting entities, roles, processing locations, any international transfers, and the relevant safeguards.]"
+				}
+			},
+			{
+				"heading": {
+					"pt": "Conservação e segurança",
+					"en": "Retention and security"
+				},
+				"paragraphs": {
+					"pt": "O formulário valida o conteúdo no servidor, limita o tamanho dos pedidos, verifica a origem, usa proteção anti-spam e neutraliza fórmulas no registo. Os segredos das integrações não são enviados para o navegador. Nenhuma medida elimina todos os riscos.\n\n[PENDENTE DE DECISÃO E REVISÃO JURÍDICA: definir prazos de conservação ou critérios verificáveis para pedidos, registos técnicos e mensagens de email, bem como o processo de eliminação.]",
+					"en": "The form validates content on the server, limits request size, checks origin, uses anti-spam protection, and neutralises spreadsheet formulas. Integration secrets are not sent to the browser. No measure eliminates every risk.\n\n[PENDING DECISION AND LEGAL REVIEW: define retention periods or verifiable criteria for requests, technical records, and email messages, together with the deletion process.]"
+				}
+			},
+			{
+				"heading": { "pt": "Os seus direitos", "en": "Your rights" },
+				"paragraphs": {
+					"pt": "Nos termos aplicáveis, pode pedir acesso, retificação, apagamento, limitação ou portabilidade dos seus dados e opor-se a determinados tratamentos. Quando o tratamento se basear em consentimento, pode retirá-lo sem afetar a licitude do tratamento anterior. O exercício de cada direito depende das circunstâncias e dos limites legais.\n\nPode contactar a responsável pelo endereço acima. Tem ainda o direito de apresentar reclamação à [Comissão Nacional de Proteção de Dados](https://www.cnpd.pt/).",
+					"en": "Where applicable, you may request access, rectification, erasure, restriction, or portability of your data and object to certain processing. Where processing relies on consent, you may withdraw it without affecting prior lawful processing. Each right is subject to its circumstances and legal limits.\n\nYou may contact the controller at the address above. You also have the right to lodge a complaint with Portugal's [National Data Protection Commission](https://www.cnpd.pt/)."
+				}
+			},
+			{
+				"heading": {
+					"pt": "Cookies e armazenamento local",
+					"en": "Cookies and local storage"
+				},
+				"paragraphs": {
+					"pt": "A auditoria técnica de 4 de setembro de 2026 não identificou cookies de analítica, publicidade ou perfilamento, nem analytics ou pixels no site público. Por isso, o site não apresenta um banner de consentimento.\n\nA preferência de tema claro ou escuro é guardada no `localStorage` do navegador depois de escolher o tema. Não é enviada ao servidor. Na página de contacto, o Cloudflare Turnstile é carregado para proteger o envio por email e pode usar armazenamento estritamente necessário à verificação de segurança. Não é carregado nas restantes páginas. [PENDENTE DE CONFIRMAÇÃO EM DEPLOY: verificar os cabeçalhos e o armazenamento efetivamente definidos pelo Turnstile com as credenciais de produção.]",
+					"en": "The technical audit of 4 September 2026 found no analytics, advertising, or profiling cookies and no analytics tools or pixels on the public site. The site therefore does not display a consent banner.\n\nYour light or dark theme preference is stored in browser `localStorage` after you choose a theme. It is not sent to the server. On the contact page, Cloudflare Turnstile loads to protect email submission and may use storage strictly necessary for the security check. It does not load on other pages. [PENDING DEPLOYMENT CONFIRMATION: verify the headers and storage actually set by Turnstile using production credentials.]"
+				}
+			},
+			{
+				"heading": {
+					"pt": "Serviços e ligações externas",
+					"en": "External services and links"
+				},
+				"paragraphs": {
+					"pt": "Calendly, WhatsApp, ORCID, LinkedIn, Instagram e outros perfis são destinos externos, não conteúdos incorporados. Ao seguir essas ligações, sai deste site e o serviço de destino trata dados segundo as suas próprias práticas. Consulte a informação de privacidade e acessibilidade desse serviço. Esta separação não limita as responsabilidades próprias deste site.",
+					"en": "Calendly, WhatsApp, ORCID, LinkedIn, Instagram, and other profiles are external destinations, not embedded content. Following those links takes you away from this site, and the destination service processes data under its own practices. Review that service's privacy and accessibility information. This separation does not limit this site's own responsibilities."
+				}
+			},
+			{
+				"heading": {
+					"pt": "Revisão desta política",
+					"en": "Review of this policy"
+				},
+				"paragraphs": {
+					"pt": "Última revisão técnica: 4 de setembro de 2026. Esta versão contém pontos expressamente pendentes de confirmação e revisão jurídica.",
+					"en": "Last technical review: 4 September 2026. This version contains items expressly pending confirmation and legal review."
+				}
+			}
+		]
+	},
+	"legal": { "effectiveDate": "2026-09-04" }
 }

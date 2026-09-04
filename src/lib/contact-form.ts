@@ -33,7 +33,6 @@ export const contactSubmissionSchema = z
 		requestType: z.string().trim().min(1).max(160),
 		country: z.enum(countryValues),
 		message: z.string().trim().min(20).max(5_000),
-		consent: z.literal(true),
 		website: z.string().max(0),
 		startedAt: z.number().int().positive(),
 		turnstileToken: z.string().min(1).max(2_048),

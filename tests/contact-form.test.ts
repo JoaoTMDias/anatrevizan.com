@@ -15,7 +15,6 @@ const validSubmission = {
 	requestType: "request-1",
 	country: "PT",
 	message: "Preciso de orientação sobre este assunto.",
-	consent: true as const,
 	website: "",
 	startedAt: Date.now() - 4_000,
 	turnstileToken: "valid-token",
@@ -32,9 +31,8 @@ describe("contact form", () => {
 		).toBe(false);
 	});
 
-	it("rejects missing consent, invalid email and oversized messages", () => {
+	it("rejects invalid email and oversized messages", () => {
 		for (const submission of [
-			{ ...validSubmission, consent: false },
 			{ ...validSubmission, email: "invalid" },
 			{ ...validSubmission, message: "x".repeat(5_001) },
 		])

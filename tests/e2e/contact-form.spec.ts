@@ -20,9 +20,13 @@ test.describe("contact form", () => {
 		await form
 			.getByLabel("Mensagem")
 			.fill("Gostaria de explicar este pedido com mais detalhe.");
-		await expect(submit).toBeDisabled();
-		await form.getByLabel(/Li e aceito/).check();
 		await expect(submit).toBeEnabled();
+		await expect(
+			form.getByText(/sairá deste site para o WhatsApp/),
+		).toBeVisible();
+		await expect(
+			form.getByRole("link", { name: "Política de Privacidade" }),
+		).toHaveAttribute("href", "/politica-de-privacidade");
 
 		const results = await new AxeBuilder({ page })
 			.include(".contact-form")

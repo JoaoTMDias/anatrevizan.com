@@ -33,8 +33,10 @@ export const routeMap = {
 	about: { "pt-PT": "/sobre", en: "/en/about" },
 	contact: { "pt-PT": "/contacto", en: "/en/contact" },
 	privacy: { "pt-PT": "/politica-de-privacidade", en: "/en/privacy-policy" },
-	terms: { "pt-PT": "/termos", en: "/en/terms" },
-	cookies: { "pt-PT": "/cookies", en: "/en/cookies" },
+	accessibility: {
+		"pt-PT": "/declaracao-de-acessibilidade",
+		en: "/en/accessibility-statement",
+	},
 } as const satisfies Record<
 	string,
 	Record<PublishedLocale, `/${string}` | "/">

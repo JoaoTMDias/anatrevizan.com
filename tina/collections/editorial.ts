@@ -14,11 +14,7 @@ import {
 	consultingServiceFields,
 	homeFields,
 } from "./editorial-sections";
-import {
-	cookiesPageFields,
-	privacyPageFields,
-	termsPageFields,
-} from "./legal-sections";
+import { accessibilityPageFields, privacyPageFields } from "./legal-sections";
 
 const textAndSeoFields: TinaField[] = [
 	{
@@ -128,14 +124,9 @@ export const EditorialCollection: Collection = {
 			fields: [...pageFields(privacyPageFields, false), legalField],
 		},
 		{
-			name: "terms",
-			label: "Termos",
-			fields: [...pageFields(termsPageFields, false), legalField],
-		},
-		{
-			name: "cookies",
-			label: "Cookies",
-			fields: [...pageFields(cookiesPageFields, false), legalField],
+			name: "accessibility",
+			label: "Declaração de acessibilidade",
+			fields: [...pageFields(accessibilityPageFields, false), legalField],
 		},
 	],
 };

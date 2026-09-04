@@ -20,17 +20,6 @@ const effectiveDate = (data.legal as { effectiveDate?: string | null } | null)?.
   {
     page && (
       <div class="legal-content site-container" data-tina-field={tinaField(data, "privacyPage")}>
-        <section>
-          <>
-            <h2>Cobertura necessária antes da publicação</h2>
-            <p>Lista interna de revisão; não constitui uma política de privacidade.</p>
-            <ul>
-              {page.reviewRequirements.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </>
-        </section>
         {page.sections?.map((section) => (
           <section>
             <h2><AcronymText text={section.heading} locale={data.locale} /></h2>

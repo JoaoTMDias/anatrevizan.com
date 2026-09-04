@@ -58,6 +58,15 @@ test.describe("site navigation", () => {
 					.locator("footer")
 					.getByRole("link", { name: profile, exact: true }),
 			).toBeVisible();
+		await expect(
+			page.getByRole("link", { name: "Política de privacidade" }),
+		).toHaveAttribute("href", "/politica-de-privacidade");
+		await expect(
+			page.getByRole("link", { name: "Declaração de acessibilidade" }),
+		).toHaveAttribute("href", "/declaracao-de-acessibilidade");
+		await expect(
+			page.locator('footer a[href="/termos"], footer a[href="/cookies"]'),
+		).toHaveCount(0);
 	});
 
 	test("booking CTAs target the localized section on the contact page", async ({

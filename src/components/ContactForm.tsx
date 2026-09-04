@@ -20,7 +20,6 @@ interface FormValues {
 	requestType: string;
 	country: string;
 	message: string;
-	consent: boolean;
 	website: string;
 	turnstileToken: string;
 }
@@ -74,7 +73,10 @@ const copy = {
 		messageHint:
 			"Não inclua dados particularmente sensíveis que não sejam necessários para este primeiro contacto.",
 		messagePlaceholder: "Conte brevemente o que aconteceu e o que procura",
-		consent: "Li e aceito o tratamento dos meus dados de acordo com a",
+		privacyNotice:
+			"Usaremos os dados para receber e responder ao seu pedido. Consulte a",
+		privacyExternal:
+			"Ao continuar, sairá deste site para o WhatsApp, que tratará os dados segundo as suas próprias práticas.",
 		privacy: "Política de Privacidade",
 		submit: "Enviar pedido",
 		sending: "A enviar…",
@@ -94,7 +96,6 @@ const copy = {
 		invalidEmail: "Introduza um endereço de email válido.",
 		shortName: "Introduza pelo menos 2 caracteres.",
 		shortMessage: "Introduza pelo menos 20 caracteres.",
-		consentRequired: "Tem de aceitar a Política de Privacidade para continuar.",
 	},
 	en: {
 		legend: "How would you like to send your request?",
@@ -118,8 +119,10 @@ const copy = {
 			"Do not include particularly sensitive information that is not needed for this initial contact.",
 		messagePlaceholder:
 			"Briefly explain what happened and what you are looking for",
-		consent:
-			"I have read and accept the processing of my data in accordance with the",
+		privacyNotice:
+			"We will use the data to receive and reply to your request. See the",
+		privacyExternal:
+			"Continuing takes you away from this site to WhatsApp, which processes data under its own practices.",
 		privacy: "Privacy Policy",
 		submit: "Send request",
 		sending: "Sending…",
@@ -139,7 +142,6 @@ const copy = {
 		invalidEmail: "Enter a valid email address.",
 		shortName: "Enter at least 2 characters.",
 		shortMessage: "Enter at least 20 characters.",
-		consentRequired: "You must accept the Privacy Policy to continue.",
 	},
 } as const;
 
@@ -213,7 +215,6 @@ export default function ContactForm({
 					t.required,
 				),
 			message: z.string().trim().min(20, t.shortMessage).max(5_000),
-			consent: z.boolean().refine((value) => value, t.consentRequired),
 			website: z.string().max(0),
 			turnstileToken: z.string(),
 		})
@@ -250,7 +251,6 @@ export default function ContactForm({
 			requestType: "",
 			country: "",
 			message: "",
-			consent: false,
 			website: "",
 			turnstileToken: "",
 		},
@@ -358,7 +358,6 @@ export default function ContactForm({
 					requestType,
 					country: countryCode,
 					message,
-					consent: data.consent,
 					website: data.website,
 					startedAt,
 					turnstileToken: data.turnstileToken,
@@ -391,6 +390,7 @@ export default function ContactForm({
 		<form
 			className="contact-form"
 			lang={locale}
+			aria-describedby={id("privacy-notice")}
 			onSubmit={handleSubmit(submit)}
 			noValidate
 		>
@@ -559,22 +559,12 @@ export default function ContactForm({
 					/>
 				</div>
 
-				<label className="contact-form__consent" htmlFor={id("consent")}>
-					<input
-						id={id("consent")}
-						type="checkbox"
-						aria-invalid={errors.consent ? "true" : undefined}
-						aria-describedby={errors.consent ? id("consent-error") : undefined}
-						{...register("consent")}
-					/>
-					<span>
-						{t.consent} <a href={privacyHref}>{t.privacy}</a>.
-					</span>
-				</label>
-				<FieldError
-					id={id("consent-error")}
-					message={errors.consent?.message}
-				/>
+				<div id={id("privacy-notice")} className="contact-form__consent">
+					<p>
+						{t.privacyNotice} <a href={privacyHref}>{t.privacy}</a>.
+					</p>
+					{channel === "whatsapp" && <p>{t.privacyExternal}</p>}
+				</div>
 			</fieldset>
 
 			{channel === "email" ? (

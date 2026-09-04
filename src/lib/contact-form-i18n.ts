@@ -9,8 +9,6 @@ const copy = {
 		countryLabel: "País onde está",
 		subjectLabel: "Assunto",
 		subjectPlaceholder: "Conte o que aconteceu e o que procura",
-		consentText:
-			"Consinto com o tratamento dos meus dados pessoais de acordo com a",
 		privacyPolicyLabel: "Política de Privacidade",
 		submitLabel: "Enviar",
 		successMessage:
@@ -33,8 +31,6 @@ const copy = {
 		countryLabel: "Country",
 		subjectLabel: "Subject",
 		subjectPlaceholder: "Tell me what happened and what you are looking for",
-		consentText:
-			"I consent to the processing of my personal data in accordance with the",
 		privacyPolicyLabel: "Privacy Policy",
 		submitLabel: "Send",
 		successMessage:

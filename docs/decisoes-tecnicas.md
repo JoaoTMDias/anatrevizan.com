@@ -5,12 +5,12 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 ## Arquitetura
 
 - Astro é a única fonte visual, funcional e editorial. Stack: Astro 7, TinaCMS 3, TypeScript, Tailwind CSS 4 e pnpm; deploy Netlify.
-- As 17 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados.
+- As 14 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados. O lançamento exclui Termos de Utilização e uma Política de Cookies autónoma; inclui a Declaração de Acessibilidade.
 - A estrutura visual e as secções pertencem ao código; não existe criação de páginas ou alteração de URLs no CMS.
 
 ## Conteúdo bilingue
 
-- `src/content/pages` contém 17 JSON: um documento por página, PT e EN na mesma estrutura.
+- `src/content/pages` contém 14 JSON: um documento por página, PT e EN na mesma estrutura.
 - Listas, media e destinos são partilhados. Folhas localizadas usam `{ pt, en }`, apresentadas consecutivamente no Tina.
 - PT é a fonte aprovada. EN é tradução humana, sem fallback. Traduções parciais podem ser guardadas; só ficam públicas quando todos os campos localizados usados têm EN.
 - Hero e resumo servem de default SEO; overrides são opcionais. CTAs pertencem à página. Ligações internas usam destinos semânticos.
@@ -38,3 +38,5 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 - O contacto usa uma ilha React pequena com React Hook Form e Zod. Email é validado numa Netlify Function, protegido por Turnstile, guardado no Google Sheets e notificado por Resend; WhatsApp abre uma mensagem preenchida e não é guardado automaticamente.
 - A folha Google é a fonte durável dos pedidos enviados pelo site. Falhas de email após a gravação não transformam um pedido recebido em erro para o visitante.
 - Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.
+- O site público não usa analytics nem pixels. A preferência de tema usa `localStorage`; o Turnstile é carregado apenas no contacto como controlo de segurança. Não existe banner nem página autónoma de Cookies; a informação fica na Política de Privacidade. O `/admin` é um ambiente Tina separado desta conclusão.
+- A Política de Privacidade e a Declaração de Acessibilidade mantêm pendências factuais/jurídicas explícitas. A avaliação de acessibilidade de 4 de setembro de 2026 é uma revisão técnica limitada, não uma declaração de conformidade WCAG.

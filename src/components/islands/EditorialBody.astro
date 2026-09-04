@@ -9,8 +9,7 @@ import HomePage from "../editorial/HomePage.astro";
 import PublicationsPage from "../editorial/PublicationsPage.astro";
 import ContactPage from "../editorial/ContactPage.astro";
 import PrivacyPage from "../editorial/PrivacyPage.astro";
-import TermsPage from "../editorial/TermsPage.astro";
-import CookiesPage from "../editorial/CookiesPage.astro";
+import AccessibilityPage from "../editorial/AccessibilityPage.astro";
 import AcronymText from "../editorial/AcronymText.astro";
 interface Props {
   data?: CmsEditorial | null;
@@ -35,10 +34,8 @@ const { data } = Astro.props;
     <ContactPage data={data} />
   ) : data?.routeKey === "privacy" ? (
     <PrivacyPage data={data} />
-  ) : data?.routeKey === "terms" ? (
-    <TermsPage data={data} />
-  ) : data?.routeKey === "cookies" ? (
-    <CookiesPage data={data} />
+  ) : data?.routeKey === "accessibility" ? (
+    <AccessibilityPage data={data} />
   ) : (
     data && (
       <div id="main-content" tabindex="-1" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">

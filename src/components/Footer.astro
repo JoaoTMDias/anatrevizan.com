@@ -18,7 +18,7 @@ const menus = navigation.filter((item) => item.type === "menu" && item.children?
 const directLinks = navigation.filter(
   (item) => item.type !== "menu" && item.routeKey !== "contact"
 );
-const legalRoutes: RouteKey[] = ["privacy", "terms", "cookies"];
+const legalRoutes: RouteKey[] = ["privacy", "accessibility"];
 const profiles = (config?.contacts?.profiles ?? [])
   .filter(present)
   .filter((profile) => Boolean(profile.url));
@@ -48,8 +48,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
   about: { pt: "Sobre", en: "About" },
   contact: { pt: "Contacto", en: "Contact" },
   privacy: { pt: "Política de privacidade", en: "Privacy policy" },
-  terms: { pt: "Termos de utilização", en: "Terms of use" },
-  cookies: { pt: "Política de cookies", en: "Cookie policy" },
+  accessibility: { pt: "Declaração de acessibilidade", en: "Accessibility statement" },
 };
 ---
 

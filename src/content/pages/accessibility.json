@@ -1,0 +1,95 @@
+{
+	"_template": "accessibility",
+	"routeKey": "accessibility",
+	"title": {
+		"pt": "Declaração de acessibilidade",
+		"en": "Accessibility statement"
+	},
+	"summary": {
+		"pt": "Compromisso, avaliação atual e formas de comunicar barreiras de acessibilidade neste site.",
+		"en": "The current accessibility commitment, assessment, and ways to report barriers on this website."
+	},
+	"seo": {
+		"title": {
+			"pt": "Declaração de acessibilidade — Ana Trevizan",
+			"en": "Accessibility statement — Ana Trevizan"
+		},
+		"description": {
+			"pt": "Compromisso e estado de acessibilidade do site de Ana Trevizan.",
+			"en": "Accessibility commitment and current status of Ana Trevizan's website."
+		}
+	},
+	"accessibilityPage": {
+		"sourceStatus": {
+			"pt": "Declaração baseada na revisão técnica automatizada e manual limitada realizada em 4 de setembro de 2026; não equivale a uma auditoria integral por entidade independente.",
+			"en": "Statement based on the limited automated and manual technical review carried out on 4 September 2026; it is not equivalent to a comprehensive independent audit."
+		},
+		"reviewRequirements": [
+			{
+				"pt": "Auditoria abrangente com tecnologias de apoio e utilizadores",
+				"en": "Comprehensive audit with assistive technologies and users"
+			},
+			{
+				"pt": "Confirmação do processo e prazo de resposta a comunicações",
+				"en": "Confirmation of the process and response time for reports"
+			}
+		],
+		"sections": [
+			{
+				"heading": {
+					"pt": "Compromisso e norma-alvo",
+					"en": "Commitment and target standard"
+				},
+				"paragraphs": {
+					"pt": "Ana Trevizan compromete-se a tornar este site utilizável pelo maior número possível de pessoas. A norma-alvo é a WCAG 2.2, nível AA. A acessibilidade é tratada como um requisito contínuo de conceção, conteúdo, desenvolvimento e manutenção.",
+					"en": "Ana Trevizan is committed to making this website usable by as many people as possible. The target standard is WCAG 2.2 Level AA. Accessibility is treated as an ongoing requirement across design, content, development, and maintenance."
+				}
+			},
+			{
+				"heading": {
+					"pt": "Estado de conformidade",
+					"en": "Conformance status"
+				},
+				"paragraphs": {
+					"pt": "Ainda não foi determinada uma classificação formal de conformidade. A avaliação disponível confirma várias medidas técnicas, mas não é suficientemente abrangente para declarar conformidade total ou parcial com a WCAG 2.2 AA.",
+					"en": "A formal conformance status has not yet been determined. The available assessment confirms several technical measures but is not sufficiently comprehensive to claim full or partial conformance with WCAG 2.2 AA."
+				}
+			},
+			{
+				"heading": {
+					"pt": "Método e data da avaliação",
+					"en": "Assessment method and date"
+				},
+				"paragraphs": {
+					"pt": "A última avaliação técnica foi realizada em 4 de setembro de 2026. Incluiu inspeção do código e testes automatizados do routing, conteúdo bilingue, formulários e componentes. A verificação integral em browser, incluindo teclado, tecnologias de apoio, reflow e zoom, continua pendente. Esta revisão limitada do lançamento não é uma auditoria independente completa.",
+					"en": "The latest technical assessment was carried out on 4 September 2026. It included code inspection and automated tests of routing, bilingual content, forms, and components. Full browser verification, including keyboard use, assistive technologies, reflow, and zoom, remains pending. This limited launch review is not a comprehensive independent audit."
+				}
+			},
+			{
+				"heading": { "pt": "Limitações conhecidas", "en": "Known limitations" },
+				"paragraphs": {
+					"pt": "Não foi concluída uma auditoria abrangente com utilizadores e múltiplas tecnologias de apoio. Os serviços externos abertos a partir deste site, incluindo Calendly, WhatsApp, ORCID e perfis sociais, têm ambientes próprios cuja acessibilidade não é controlada por este site. Se encontrar outra barreira, comunique-a através do contacto abaixo.",
+					"en": "A comprehensive audit with users and multiple assistive technologies has not been completed. External services opened from this site, including Calendly, WhatsApp, ORCID, and social profiles, have their own environments, whose accessibility is not controlled by this website. If you encounter another barrier, please report it using the contact below."
+				}
+			},
+			{
+				"heading": {
+					"pt": "Alternativas e contacto",
+					"en": "Alternatives and contact"
+				},
+				"paragraphs": {
+					"pt": "Se não conseguir aceder a conteúdo ou concluir uma ação, envie uma mensagem para [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Indique a página, a barreira encontrada, o dispositivo ou tecnologia de apoio utilizada e o formato acessível de que necessita, apenas se se sentir confortável em fazê-lo. Pode também usar o WhatsApp indicado na página de Contacto.\n\nSerá acusada a receção da comunicação, analisada a barreira e procurada uma alternativa acessível. [PENDENTE DE CONFIRMAÇÃO OPERACIONAL: definir o prazo esperado para a primeira resposta e para comunicar o resultado.]",
+					"en": "If you cannot access content or complete an action, email [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Please identify the page, the barrier encountered, the device or assistive technology used, and the accessible format you need, only if you are comfortable doing so. You may also use the WhatsApp contact shown on the Contact page.\n\nThe report will be acknowledged, the barrier will be reviewed, and an accessible alternative will be sought. [PENDING OPERATIONAL CONFIRMATION: define the expected time for an initial response and for communicating the outcome.]"
+				}
+			},
+			{
+				"heading": { "pt": "Revisão da declaração", "en": "Statement review" },
+				"paragraphs": {
+					"pt": "Última revisão: 4 de setembro de 2026. A declaração será atualizada quando existirem novos resultados de avaliação ou alterações relevantes no site.",
+					"en": "Last reviewed: 4 September 2026. This statement will be updated when new assessment results or relevant website changes become available."
+				}
+			}
+		]
+	},
+	"legal": { "effectiveDate": "2026-09-04" }
+}
