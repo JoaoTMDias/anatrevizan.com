@@ -12,6 +12,7 @@
 @import "./_theme.css";
 @import "./_base.css";
 @import "./_layout-navigation.css";
+@import "./_acronym-tooltip.css";
 @import "./_editorial.css";
 @import "./_consulting.css";
 @import "./_academic.css";
@@ -20,4 +21,3 @@
 @import "./_responsive.css";
 @import "./_footer.css";
 @import "./_accessibility.css";
-@import "./_acronym-tooltip.css";

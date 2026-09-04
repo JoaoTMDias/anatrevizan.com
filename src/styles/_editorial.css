@@ -173,6 +173,13 @@
 	.editorial-intro__copy {
 		@apply min-w-0;
 	}
+
+	.editorial-hero__copy .acronym-tooltip__trigger,
+	.editorial-intro__copy .acronym-tooltip__trigger,
+	.consulting-intro__copy .acronym-tooltip__trigger {
+		@apply decoration-3 decoration-dotted decoration-[var(--background)];
+	}
+
 	@media (min-width: 64rem) {
 		.editorial-intro:not(.editorial-intro--text-only) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -231,7 +231,7 @@
 		line-height: 1.5;
 	}
 	.legal-header {
-		@apply border-b border-border bg-secondary;
+		@apply bg-secondary;
 
 		padding-block: clamp(3.5rem, 8vw, 5rem);
 	}

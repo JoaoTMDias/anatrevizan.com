@@ -1,91 +1,56 @@
 @layer components {
 	.acronym-tooltip {
-		display: inline;
+		@apply inline;
 	}
 
 	.acronym-tooltip__trigger {
-		cursor: help;
-		text-decoration-line: underline;
-		text-decoration-style: dotted;
-		text-decoration-color: var(--accent);
-		text-decoration-thickness: 0.08em;
-		text-underline-offset: 0.18em;
+		@apply cursor-help underline decoration-1 decoration-dotted decoration-[var(--accent)] underline-offset-2;
 	}
 
 	.acronym-tooltip__trigger:focus-visible {
-		border-radius: var(--radius-sm);
-		outline: 3px solid color-mix(in srgb, var(--ring) 45%, transparent);
-		outline-offset: 3px;
+		@apply rounded-sm outline-3 outline-offset-3;
+
+		outline-color: color-mix(in srgb, var(--ring) 45%, transparent);
 	}
 
 	.acronym-tooltip__content {
-		position: fixed;
+		@apply fixed z-70 invisible max-w-[min(28rem,calc(100vw-1rem))] overflow-visible border border-border rounded-md bg-popover px-4 py-3 font-[family-name:var(--font-body)] text-base font-normal not-italic leading-6 text-popover-foreground opacity-0 pointer-events-none translate-y-1 transition-[opacity,transform,visibility] duration-150;
+
 		inset: auto;
 		margin: 0;
-		overflow: visible;
-		z-index: 70;
-		visibility: hidden;
-		max-width: min(20rem, calc(100vw - 1rem));
-		padding: 0.5rem 0.7rem;
-		border: 1px solid var(--border);
-		border-radius: var(--radius-md);
-		background: var(--popover);
 		box-shadow: 0 8px 24px
 			color-mix(in srgb, var(--foreground) 16%, transparent);
-		color: var(--popover-foreground);
-		font-family: var(--font-body);
-		font-size: 0.875rem;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 1.35;
-		opacity: 0;
-		pointer-events: none;
-		transform: translateY(0.2rem);
-		transition:
-			opacity 120ms ease,
-			transform 120ms ease,
-			visibility 120ms;
+		text-shadow: none;
 	}
 
 	.acronym-tooltip[data-open] .acronym-tooltip__content {
-		visibility: visible;
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0);
+		@apply visible opacity-100 pointer-events-auto translate-y-0;
 	}
 
 	.acronym-tooltip__content:popover-open {
-		visibility: visible;
-		display: block;
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0);
+		@apply visible block opacity-100 pointer-events-auto translate-y-0;
 	}
 
 	.acronym-tooltip__content::after {
-		position: absolute;
+		@apply absolute size-3 border-b border-r border-border bg-popover;
+
 		inset-inline-start: var(--acronym-tooltip-arrow-inline, 50%);
-		width: 0.55rem;
-		height: 0.55rem;
-		border-inline-end: 1px solid var(--border);
-		border-block-end: 1px solid var(--border);
-		background: var(--popover);
 		content: "";
 		transform: translateX(-50%) rotate(45deg);
 	}
 
 	.acronym-tooltip__content[data-placement="top"]::after {
-		inset-block-end: -0.34rem;
+		@apply -bottom-1.5;
 	}
 
 	.acronym-tooltip__content[data-placement="bottom"]::after {
-		inset-block-start: -0.34rem;
+		@apply -top-1.5;
 		transform: translateX(-50%) rotate(225deg);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.acronym-tooltip__content {
-			transition: none;
+			@apply transition-none;
 		}
 	}
 }

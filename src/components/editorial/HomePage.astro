@@ -121,7 +121,6 @@ const foregroundRatio = heroAspectRatioForRoute("home");
           </nav>
         </Section>
         <Section background="bg-secondary">
-          <>
             <SectionHeading
               title={home.differencesTitle}
               subtitle={home.differencesSubtitle}
@@ -139,10 +138,8 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                 </Card>
               ))}
             </div>
-          </>
         </Section>
         <Section>
-          <>
             <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} locale={locale} centered />
             <div class="home-services">
               {home.services.map(
@@ -165,7 +162,6 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                   )
               )}
             </div>
-          </>
         </Section>
         <Section background="bg-secondary">
           <div class="home-academic-heading">

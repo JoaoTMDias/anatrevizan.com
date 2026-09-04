@@ -11,16 +11,27 @@ const { locale, effectiveDate, lastModified } = Astro.props;
 const formatter = new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "pt-PT", {
   dateStyle: "long",
 });
-const format = (value?: string | null) => value && !Number.isNaN(Date.parse(value))
-  ? formatter.format(new Date(value))
-  : null;
+const format = (value?: string | null) =>
+  value && !Number.isNaN(Date.parse(value)) ? formatter.format(new Date(value)) : null;
 const effective = format(effectiveDate);
 const modified = format(lastModified);
 ---
 
-{(effective || modified) && (
-  <dl class="legal-dates">
-    {effective && <><dt>{locale === "en" ? "Effective date" : "Entrada em vigor"}</dt><dd>{effective}</dd></>}
-    {modified && <><dt>{locale === "en" ? "Last updated" : "Última alteração"}</dt><dd>{modified}</dd></>}
-  </dl>
-)}
+{
+  (effective || modified) && (
+    <dl class="flex flex-col gap-2 mt-4">
+      {effective && (
+        <div class="flex flex-row gap-1">
+          <dt>{locale === "en" ? "Effective date:" : "Entrada em vigor:"}</dt>
+          <dd class="font-semibold">{effective}</dd>
+        </div>
+      )}
+      {modified && (
+        <div class="flex flex-row gap-1">
+          <dt>{locale === "en" ? "Last updated:" : "Última alteração:"}</dt>
+          <dd class="font-semibold">{modified}</dd>
+        </div>
+      )}
+    </dl>
+  )
+}

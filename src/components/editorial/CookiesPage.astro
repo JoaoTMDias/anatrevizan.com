@@ -15,25 +15,24 @@ const effectiveDate = (data.legal as { effectiveDate?: string | null } | null)?.
 
 <div id="main-content" tabindex="-1">
   <div class="legal-header">
-    <div class="site-container"><h1>{data.title}</h1><p>{data.summary}</p><LegalDates locale={data.locale} effectiveDate={effectiveDate} lastModified={data.lastModified} /></div>
+    <div class="site-container">
+      <h1>{data.title}</h1>
+      <p class="text-xl">{data.summary}</p>
+      <LegalDates
+        locale={data.locale}
+        effectiveDate={effectiveDate}
+        lastModified={data.lastModified}
+      />
+    </div>
   </div>
   {
     page && (
       <div class="legal-content site-container" data-tina-field={tinaField(data, "cookiesPage")}>
-        <section>
-          <>
-            <h2>Cobertura necessária antes da publicação</h2>
-            <p>Lista interna de revisão; não constitui uma política de cookies.</p>
-            <ul>
-              {page.reviewRequirements.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </>
-        </section>
         {page.sections?.map((section) => (
           <section>
-            <h2><AcronymText text={section.heading} locale={data.locale} /></h2>
+            <h2>
+              <AcronymText text={section.heading} locale={data.locale} />
+            </h2>
             <RichText content={section.paragraphs} locale={data.locale} />
           </section>
         ))}
