@@ -114,6 +114,7 @@ const copy = {
 		copyFallback: "Copiar número e mensagem",
 		copyInstructions:
 			"Se o WhatsApp não abrir, copie manualmente o número e a mensagem abaixo.",
+		externalHint: "abre num novo separador",
 	},
 	en: {
 		legend: "How would you like to send your request?",
@@ -171,6 +172,7 @@ const copy = {
 		copyFallback: "Copy number and message",
 		copyInstructions:
 			"If WhatsApp does not open, manually copy the number and message below.",
+		externalHint: "opens in a new tab",
 	},
 } as const;
 
@@ -793,6 +795,7 @@ export default function ContactForm({
 									rel="noopener noreferrer"
 								>
 									{whatsappHref}
+									<span className="sr-only"> ({t.externalHint})</span>
 								</a>
 							</p>
 							<pre>{whatsappPreview}</pre>

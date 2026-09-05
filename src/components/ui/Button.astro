@@ -47,6 +47,9 @@ const linkTarget = external ? "_blank" : target;
 const linkRel = external
   ? [...new Set(`${rel ?? ""} external noopener noreferrer`.trim().split(/\s+/))].join(" ")
   : rel;
+const externalHint = Astro.url.pathname.startsWith("/en")
+  ? "opens in a new tab"
+  : "abre num novo separador";
 ---
 
 {
@@ -59,6 +62,7 @@ const linkRel = external
       {...(rest as HTMLAttributes<"a">)}
     >
       <slot />
+      {external && <span class="sr-only"> ({externalHint})</span>}
     </a>
   ) : (
     <button class={classes} {...(rest as HTMLAttributes<"button">)}>

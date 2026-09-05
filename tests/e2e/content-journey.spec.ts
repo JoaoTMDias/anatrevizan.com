@@ -48,8 +48,64 @@ test.describe("visitor consumes published content", () => {
 				"href",
 				`https://anatrevizan.com${path}`,
 			);
+			await expect(
+				page.locator('link[rel="alternate"][hreflang="pt-PT"]'),
+			).toHaveCount(1);
+			await expect(
+				page.locator('link[rel="alternate"][hreflang="en"]'),
+			).toHaveCount(1);
+			await expect(
+				page.locator('link[rel="alternate"][hreflang="x-default"]'),
+			).toHaveCount(1);
+			const isLegal = [
+				"/politica-de-privacidade",
+				"/en/privacy-policy",
+				"/declaracao-de-acessibilidade",
+				"/en/accessibility-statement",
+			].includes(path);
+			await expect(
+				page.locator('meta[property="article:modified_time"]'),
+			).toHaveCount(isLegal ? 1 : 0);
 			expect(await page.locator('a[href="#"]').count(), path).toBe(0);
 			expect(problems, path).toEqual([]);
+		}
+	});
+
+	test("same-origin assets referenced by the compiled DOM resolve", async ({
+		page,
+		request,
+	}) => {
+		const checked = new Set<string>();
+		for (const path of await publishedPaths(request)) {
+			await page.goto(path);
+			const references = await page
+				.locator(
+					"img[src], source[src], source[srcset], script[src], link[href]",
+				)
+				.evaluateAll((elements) =>
+					elements.flatMap((element) => {
+						const raw =
+							element.getAttribute("src") ??
+							element.getAttribute("href") ??
+							element.getAttribute("srcset") ??
+							"";
+						return raw
+							.split(",")
+							.map((candidate) => candidate.trim().split(/\s+/)[0]);
+					}),
+				);
+			for (const reference of references) {
+				if (!reference) continue;
+				const url = new URL(reference, page.url());
+				if (
+					url.origin !== new URL(page.url()).origin ||
+					checked.has(url.pathname)
+				)
+					continue;
+				checked.add(url.pathname);
+				const response = await request.get(url.pathname);
+				expect(response.status(), `${path} -> ${reference}`).toBeLessThan(400);
+			}
 		}
 	});
 
@@ -65,6 +121,8 @@ test.describe("visitor consumes published content", () => {
 					href: anchor.getAttribute("href") ?? "",
 					target: anchor.getAttribute("target"),
 					rel: anchor.getAttribute("rel") ?? "",
+					accessibleName:
+						anchor.getAttribute("aria-label") ?? anchor.textContent ?? "",
 				})),
 			);
 			for (const link of links) {
@@ -74,6 +132,11 @@ test.describe("visitor consumes published content", () => {
 					expect(url.protocol, link.href).toBe("https:");
 					expect(link.target, link.href).toBe("_blank");
 					expect(link.rel, link.href).toContain("noopener");
+					expect(link.accessibleName, link.accessibleName).toMatch(
+						path.startsWith("/en")
+							? /opens in a new tab/i
+							: /abre num novo separador/i,
+					);
 					continue;
 				}
 				const response = await request.get(url.pathname);

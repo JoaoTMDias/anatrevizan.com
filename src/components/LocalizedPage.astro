@@ -7,6 +7,6 @@ import { islands } from '../lib/islands';
 interface Props { page: EditorialPageView }
 const { page } = Astro.props;
 ---
-<Base title={page.data.seo.title} description={page.data.seo.description} image={page.data.seo.image ?? undefined} locale={page.locale} routeKey={page.document.routeKey} noindex={page.noindex} availableLocales={page.availableLocales} lastModified={page.document.lastModified} config={page.config}>
+<Base title={page.data.seo.title} description={page.data.seo.description} image={page.data.seo.image ?? undefined} locale={page.locale} routeKey={page.document.routeKey} noindex={page.noindex} availableLocales={page.availableLocales} lastModified={page.document.routeKey === "privacy" || page.document.routeKey === "accessibility" ? page.document.lastModified : undefined} config={page.config}>
 	<TinaIsland name="editorial" wrapper={islands.editorial.wrapper} params={{ relativePath: page.relativePath, locale: page.locale, routeKey: page.document.routeKey }} primary><EditorialBody data={page.data} /></TinaIsland>
 </Base>

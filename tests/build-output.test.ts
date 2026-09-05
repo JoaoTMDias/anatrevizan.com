@@ -7,7 +7,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { createEditorialBuildReport } from "../scripts/report-build-output.ts";
 
 const temporaryDirectories: string[] = [];
@@ -65,5 +65,32 @@ describe("editorial build report", () => {
 		expect(() => createEditorialBuildReport(root, "production")).toThrow(
 			"Production build has no publishable editorial documents",
 		);
+	});
+
+	it("reports duplicate metadata without rejecting the build", () => {
+		const root = fixture();
+		writeFileSync(
+			join(root, "src/content/pages/legal.json"),
+			JSON.stringify({
+				routeKey: "legal",
+				title: { pt: "Início", en: "Home" },
+				summary: { pt: "Resumo", en: "Summary" },
+				seo: {
+					title: { pt: "Início", en: "Home" },
+					description: { pt: "Resumo", en: "Summary" },
+				},
+			}),
+		);
+		for (const output of [
+			"dist/client/consultoria/juridica/index.html",
+			"dist/client/en/consulting/legal/index.html",
+		]) {
+			mkdirSync(dirname(join(root, output)), { recursive: true });
+			writeFileSync(join(root, output), "<!doctype html><title>Legal</title>");
+		}
+		const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+		const report = createEditorialBuildReport(root, "preview");
+		expect(report.duplicateMetadata).toHaveLength(4);
+		expect(warn).toHaveBeenCalledTimes(4);
 	});
 });

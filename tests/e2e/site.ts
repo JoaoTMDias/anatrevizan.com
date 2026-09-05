@@ -11,12 +11,15 @@ export async function publishedPaths(request: APIRequestContext) {
 
 export async function installFakeTurnstile(page: Page) {
 	await page.addInitScript(() => {
+		let issueToken: (() => void) | undefined;
 		window.turnstile = {
 			render: (_container: HTMLElement, options: Record<string, unknown>) => {
-				(options.callback as (token: string) => void)("test-token");
+				issueToken = () =>
+					(options.callback as (token: string) => void)("test-token");
+				issueToken();
 				return "test-widget";
 			},
-			reset: () => undefined,
+			reset: () => issueToken?.(),
 			remove: () => undefined,
 		};
 	});

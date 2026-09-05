@@ -197,6 +197,9 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                   >
                     {locale === "en" ? "View publication" : "Ver publicação"}
                     <Icon name="external-link" />
+                    <span class="sr-only">
+                      ({locale === "en" ? "opens in a new tab" : "abre num novo separador"})
+                    </span>
                   </a>
                 )}
               </Card>

@@ -16,8 +16,12 @@ const linkTarget = isExternal ? '_blank' : target;
 const linkRel = isExternal
 	? [...new Set(`${rel ?? ''} external noopener noreferrer`.trim().split(/\s+/))].join(' ')
 	: rel;
+const externalHint = Astro.url.pathname.startsWith('/en')
+	? 'opens in a new tab'
+	: 'abre num novo separador';
+const accessibleTitle = isExternal ? `${title} (${externalHint})` : title;
 ---
 
-<a href={link} target={linkTarget} rel={linkRel} aria-label={title} title={title} {...rest}>
+<a href={link} target={linkTarget} rel={linkRel} aria-label={accessibleTitle} title={title} {...rest}>
 	<Icon name={icon} aria-hidden="true" />
 </a>

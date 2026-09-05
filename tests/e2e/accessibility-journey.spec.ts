@@ -48,7 +48,7 @@ test.describe("visitor uses accessibility preferences", () => {
 		}
 	});
 
-	test("all routes reflow at 320px", async ({ page, request }) => {
+	test("all routes reflow at 320px, equivalent to 400% zoom at 1280px", async ({ page, request }) => {
 		await page.setViewportSize({ width: 320, height: 900 });
 		for (const path of await publishedPaths(request)) {
 			await page.goto(path);

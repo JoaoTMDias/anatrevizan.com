@@ -1,5 +1,5 @@
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	Collapsible,
 	CollapsibleContent,
@@ -65,6 +65,31 @@ export default function HeaderMenu({
 	menuLabel,
 }: HeaderMenuProps) {
 	const [mobileOpen, setMobileOpen] = useState(false);
+	const mobileTriggerRef = useRef<HTMLButtonElement>(null);
+	const wasMobileOpenRef = useRef(false);
+	useEffect(() => {
+		if (mobileOpen) {
+			wasMobileOpenRef.current = true;
+			return;
+		}
+		if (!wasMobileOpenRef.current) return;
+		wasMobileOpenRef.current = false;
+		// Base UI completes its 200 ms exit transition and focus cleanup after
+		// `open` changes. Restore focus once that lifecycle has settled.
+		const focusTimer = window.setTimeout(
+			() => mobileTriggerRef.current?.focus(),
+			250,
+		);
+		return () => window.clearTimeout(focusTimer);
+	}, [mobileOpen]);
+	useEffect(() => {
+		if (!mobileOpen) return;
+		const closeOnEscape = (event: KeyboardEvent) => {
+			if (event.key === "Escape") setMobileOpen(false);
+		};
+		document.addEventListener("keydown", closeOnEscape);
+		return () => document.removeEventListener("keydown", closeOnEscape);
+	}, [mobileOpen]);
 	const localizedLanguageHref = (href: string) => {
 		if (typeof window === "undefined") return href;
 		const fragments: Record<string, string> = {
@@ -160,6 +185,7 @@ export default function HeaderMenu({
 
 			<Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
 				<SheetTrigger
+					ref={mobileTriggerRef}
 					className="header-menu-toggle grid size-11 cursor-pointer place-items-center rounded-full text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 					aria-label={menuLabel}
 				>

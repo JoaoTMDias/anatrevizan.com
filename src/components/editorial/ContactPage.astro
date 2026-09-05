@@ -105,6 +105,9 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
                     <Icon name="external-link" />
                     <a href={profile.href} target="_blank" rel="external noopener noreferrer">
                       {profile.label}
+                      <span class="sr-only">
+                        ({locale === "en" ? "opens in a new tab" : "abre num novo separador"})
+                      </span>
                     </a>
                   </li>
                 ))}

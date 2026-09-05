@@ -38,8 +38,21 @@ export function createEditorialBuildReport(
 	);
 	const localizedDocuments = documents.flatMap((document) =>
 		publishedLocales.flatMap((locale) => {
-			const localized = localizeValue(document, locale) as { title?: string; summary?: string; seo?: { title?: string; description?: string } };
-			return [{ routeKey: document.routeKey, locale, title: localized.title ?? "", seoTitle: localized.seo?.title || localized.title || "", seoDescription: localized.seo?.description || localized.summary || "", complete: isLocaleComplete(document, locale) } as EditorialDocument];
+			const localized = localizeValue(document, locale) as {
+				title?: string;
+				summary?: string;
+				seo?: { title?: string; description?: string };
+			};
+			return [
+				{
+					routeKey: document.routeKey,
+					locale,
+					title: localized.title ?? "",
+					seoTitle: localized.seo?.title || localized.title || "",
+					seoDescription: localized.seo?.description || localized.summary || "",
+					complete: isLocaleComplete(document, locale),
+				} as EditorialDocument,
+			];
 		}),
 	);
 	const publishable = localizedDocuments.filter(isPublishable);
@@ -49,6 +62,25 @@ export function createEditorialBuildReport(
 	const excludedDrafts = localizedDocuments.filter(
 		(document) => !isPublishable(document),
 	).length;
+	const duplicateMetadata = ["seoTitle", "seoDescription"].flatMap((field) => {
+		const seen = new Map<string, string>();
+		return publishable.flatMap((document) => {
+			const value = document[field as "seoTitle" | "seoDescription"].trim();
+			if (!value) return [];
+			const key = `${document.locale}:${value}`;
+			const previous = seen.get(key);
+			seen.set(key, document.routeKey);
+			return previous
+				? [
+						{
+							field,
+							locale: document.locale,
+							routes: [previous, document.routeKey],
+						},
+					]
+				: [];
+		});
+	});
 
 	const outputFor = (
 		document: EditorialDocument & { locale: PublishedLocale },
@@ -73,6 +105,7 @@ export function createEditorialBuildReport(
 		missingRoutes: expected
 			.filter((document) => !generated.includes(document))
 			.map((document) => pathFor(document.routeKey, document.locale)),
+		duplicateMetadata,
 	};
 	const manifestPath = join(root, "dist/editorial-build-manifest.json");
 	mkdirSync(dirname(manifestPath), { recursive: true });
@@ -83,6 +116,11 @@ export function createEditorialBuildReport(
 		`Publishable documents: ${publishable.length}/${localizedDocuments.length}`,
 	);
 	console.log(`Excluded drafts: ${excludedDrafts}`);
+	for (const duplicate of duplicateMetadata) {
+		console.warn(
+			`Duplicate ${duplicate.field} (${duplicate.locale}): ${duplicate.routes.join(", ")}`,
+		);
+	}
 	console.log(
 		`Generated editorial routes: ${generated.length}/${expected.length}`,
 	);

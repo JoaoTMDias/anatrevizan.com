@@ -48,6 +48,9 @@ const locale = data.locale === "en" ? "en" : "pt-PT";
                         rel="external noopener noreferrer"
                       >
                         {locale === "en" ? "View event" : "Ver evento"}
+                        <span class="sr-only">
+                          ({locale === "en" ? "opens in a new tab" : "abre num novo separador"})
+                        </span>
                       </a>
                     )}
                   </article>
