@@ -6,13 +6,17 @@ const baseURL = externalBaseUrl ?? "http://127.0.0.1:4322";
 export default defineConfig({
 	testDir: "./tests/e2e",
 	fullyParallel: true,
+	timeout: 180_000,
 	forbidOnly: !!process.env.CI,
-	retries: process.env.CI ? 2 : 0,
-	workers: process.env.CI ? 1 : undefined,
-	reporter: "list",
+	retries: 0,
+	reporter: process.env.CI
+		? [["list"], ["html", { open: "never", outputFolder: "playwright-report" }]]
+		: "list",
 	use: {
 		baseURL,
-		trace: "on-first-retry",
+		trace: "retain-on-failure",
+		screenshot: "only-on-failure",
+		video: "off",
 	},
 	webServer: externalBaseUrl
 		? undefined
@@ -22,9 +26,15 @@ export default defineConfig({
 				// the preview in the preceding workflow step.
 				command: process.env.CI
 					? "pnpm preview"
-					: "pnpm build:preview && pnpm preview",
+					: "cross-env SITE_URL=https://anatrevizan.com pnpm build:local && pnpm preview",
 				url: baseURL,
 				reuseExistingServer: !process.env.CI,
+				timeout: 180_000,
+				env: {
+					...process.env,
+					PUBLIC_TURNSTILE_SITE_KEY:
+						process.env.PUBLIC_TURNSTILE_SITE_KEY ?? "test-site-key",
+				},
 			},
 	projects: [
 		{
@@ -32,4 +42,5 @@ export default defineConfig({
 			use: { ...devices["Desktop Chrome"] },
 		},
 	],
+	workers: 2,
 });

@@ -3,12 +3,18 @@ name: Quality
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  quality:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,7 +23,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 11.21.0
+          version: 11.25.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -40,14 +46,80 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
-      - name: Build editorial preview
-        run: pnpm build:preview
-
       - name: Check Astro types
         run: pnpm exec astro check
 
+  production-e2e:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_TURNSTILE_SITE_KEY: test-site-key
+      SITE_URL: https://anatrevizan.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect production-facing changes
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            e2e:
+              - "**"
+              - "!docs/**"
+              - "!**/*.md"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.22.0
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build production artifact
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
+        run: pnpm build:local
+
+      - name: Assert production publishing
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
+        run: node --experimental-strip-types scripts/assert-build-output.ts production
+
+      - name: Report performance budget
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
+        run: pnpm test:performance
+
+      - name: Cache Playwright Chromium
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Chromium system dependencies
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
+        run: pnpm exec playwright install-deps chromium
+
       - name: Install Playwright Chromium
-        run: pnpm exec playwright install --with-deps chromium
+        if: (steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule') && steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install chromium
 
       - name: Run end-to-end tests
+        if: steps.changes.outputs.e2e == 'true' || github.event_name == 'schedule'
         run: pnpm test:e2e
+
+      - name: Upload Playwright failure report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7

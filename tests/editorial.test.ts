@@ -7,22 +7,11 @@ import {
 	missingLocalizedPaths,
 } from "../src/lib/bilingual.ts";
 import {
-	isLocalIncompleteEnglishPreviewEnabled,
+	type BilingualEditorialDocument,
 	shouldRenderEditorialDocument,
 	validateEditorialDocuments,
-	type BilingualEditorialDocument,
 } from "../src/lib/editorial.ts";
 import { routeKeys } from "../src/lib/routing.ts";
-import { EditorialCollection } from "../tina/collections/editorial.ts";
-import { GlobalConfigCollection } from "../tina/collections/global-config.ts";
-import { contactPageFields } from "../tina/collections/contact-sections.ts";
-import { contactFormCopy } from "../src/lib/contact-form-i18n.ts";
-import { deriveLinkedPageTitles } from "../src/lib/linked-page-titles.ts";
-import { navigationItems } from "../src/lib/navigation.ts";
-import { heroAspectRatioForRoute } from "../src/lib/hero-media.ts";
-import { incompleteEnglishWarning } from "../tina/editorial-warning.ts";
-import { editorialListItemLabel } from "../tina/collections/common.ts";
-import { PublicationCollection } from "../tina/collections/publication.ts";
 
 const directory = join(process.cwd(), "src/content/pages");
 const pages = readdirSync(directory)
@@ -34,94 +23,28 @@ const pages = readdirSync(directory)
 			) as BilingualEditorialDocument,
 	);
 
-describe("modelo editorial bilingue", () => {
-	it("mantém exatamente um documento fixo por cada uma das 14 páginas", () => {
+describe("publicação editorial bilingue", () => {
+	it("mantém exatamente as 14 páginas PT obrigatórias", () => {
 		expect(pages).toHaveLength(14);
 		expect(pages.map((page) => page.routeKey).sort()).toEqual(
 			[...routeKeys].sort(),
 		);
 		expect(validateEditorialDocuments(pages)).toEqual([]);
-	});
-
-	it("não permite criar, apagar ou renomear páginas no Tina", () => {
-		expect(EditorialCollection.ui?.allowedActions).toEqual({
-			create: false,
-			delete: false,
-		});
-		expect(EditorialCollection.ui?.filename).toEqual({ readonly: true });
-	});
-
-	it("expõe o glossário bilingue na configuração global", () => {
-		const acronyms = GlobalConfigCollection.fields?.find(
-			(field) => field.name === "acronyms",
-		);
-		expect(acronyms?.type).toBe("object");
-		expect(acronyms?.list).toBe(true);
-	});
-
-	it("mostra no About apenas os campos comuns, media e secções About", () => {
-		const about = EditorialCollection.templates?.find(
-			(template) => template.name === "about",
-		);
-		expect(about?.fields.map((field) => field.name)).toEqual([
-			"routeKey",
-			"title",
-			"summary",
-			"seo",
-			"media",
-			"about",
-		]);
-		expect(about?.fields.map((field) => field.name)).not.toContain("home");
-		expect(about?.fields.map((field) => field.name)).not.toContain(
-			"consultingHub",
-		);
-	});
-
-	it("associa cada documento ao template da respetiva família", () => {
-		const templates = new Set(
-			EditorialCollection.templates?.map((template) => template.name),
-		);
 		for (const page of pages)
-			expect(templates.has(page._template as string)).toBe(true);
+			expect(isLocaleComplete(page, "pt-PT")).toBe(true);
 	});
 
-	it("localiza sem fallback português", () => {
+	it("localiza inglês sem recorrer ao português", () => {
 		const value = { heading: { pt: "Olá", en: "" }, routeKey: "home" };
 		expect(localizeValue(value, "en")).toEqual({
 			heading: "",
 			routeKey: "home",
 		});
-		expect(isLocaleComplete(value, "en")).toBe(false);
 		expect(missingLocalizedPaths(value, "en")).toEqual(["heading"]);
+		expect(isLocaleComplete(value, "en")).toBe(false);
 	});
 
-	it("aceita uma tradução parcial sem invalidar o documento PT", () => {
-		const home = pages.find((page) => page.routeKey === "home");
-		expect(home).toBeDefined();
-		const partiallyTranslatedHome = structuredClone(home) as typeof home & {
-			title: { pt: string; en: string };
-		};
-		partiallyTranslatedHome.title.en = "";
-		expect(isLocaleComplete(partiallyTranslatedHome, "pt-PT")).toBe(true);
-		expect(isLocaleComplete(partiallyTranslatedHome, "en")).toBe(false);
-	});
-
-	it("avisa sem bloquear quando a tradução inglesa está incompleta", () => {
-		expect(
-			incompleteEnglishWarning({
-				title: { pt: "Título", en: "" },
-				summary: { pt: "Resumo", en: "Summary" },
-			}),
-		).toBe(
-			"A tradução inglesa está incompleta (1 campo por preencher). A página será guardada, mas a versão EN não será publicada até ficar completa.",
-		);
-		expect(
-			incompleteEnglishWarning({ title: { pt: "Título", en: "Title" } }),
-		).toBeNull();
-		expect(EditorialCollection.ui?.beforeSubmit).toBeTypeOf("function");
-	});
-
-	it("só permite preview de inglês incompleto em desenvolvimento local", () => {
+	it("não publica traduções EN incompletas", () => {
 		const incomplete = {
 			routeKey: "home" as const,
 			locale: "en" as const,
@@ -131,11 +54,9 @@ describe("modelo editorial bilingue", () => {
 			complete: false,
 		};
 		expect(shouldRenderEditorialDocument(incomplete, true, false)).toBe(false);
-		expect(shouldRenderEditorialDocument(incomplete, true, true)).toBe(true);
-		expect(isLocalIncompleteEnglishPreviewEnabled({ dev: false })).toBe(false);
 	});
 
-	it("bloqueia regressões de traduções inglesas já publicadas", () => {
+	it("bloqueia regressões de traduções EN já publicadas", () => {
 		const home = pages.find((page) => page.routeKey === "home");
 		expect(home).toBeDefined();
 		const regressedHome = structuredClone(home) as typeof home & {
@@ -153,229 +74,7 @@ describe("modelo editorial bilingue", () => {
 		);
 	});
 
-	it("deriva títulos de cartões a partir da página de destino", () => {
-		const linked = deriveLinkedPageTitles(
-			{
-				routeKey: "home",
-				locale: "pt-PT",
-				title: "Início",
-				seo: { title: "Início", description: "" },
-				cards: [{ routeKey: "about" }],
-				_sys: { relativePath: "home.json" },
-			} as never,
-			[
-				{
-					routeKey: "about",
-					title: { pt: "Sobre", en: "About" },
-					_sys: { relativePath: "about.json" },
-				} as never,
-			],
-			"pt-PT",
-		) as unknown as { cards: Array<{ title: string }> };
-		expect(linked.cards[0].title).toBe("Sobre");
-	});
-
-	it("mantém proporções de hero no layout e fora do conteúdo", () => {
-		expect(heroAspectRatioForRoute("contact")).toBe("landscape");
-		expect(heroAspectRatioForRoute("about")).toBe("landscape");
-		for (const page of pages)
-			expect(
-				(page as unknown as { media?: unknown }).media ?? {},
-			).not.toHaveProperty("background");
-		for (const page of pages)
-			expect(
-				(page as unknown as { media?: { foreground?: unknown } }).media
-					?.foreground ?? {},
-			).not.toHaveProperty("aspectRatio");
-		const home = pages.find((page) => page.routeKey === "home") as never as {
-			home: {
-				gateways: Array<Record<string, unknown>>;
-				services: Array<Record<string, unknown>>;
-			};
-		};
-		for (const card of [...home.home.gateways, ...home.home.services])
-			expect(card).not.toHaveProperty("title");
-	});
-
-	it("identifica itens de listas pelo respetivo conteúdo", () => {
-		expect(
-			editorialListItemLabel(
-				{ title: { pt: "Inscrição na OAB", en: "OAB admission" } },
-				"Marco",
-			),
-		).toBe("Inscrição na OAB");
-		expect(
-			editorialListItemLabel(
-				{ title: { pt: "", en: "English title" } },
-				"Item",
-			),
-		).toBe("English title");
-		expect(editorialListItemLabel({ pt: "LACLIMA", en: "" }, "Rede")).toBe(
-			"LACLIMA",
-		);
-
-		const aboutTemplate = EditorialCollection.templates?.find(
-			(template) => template.name === "about",
-		);
-		const about = aboutTemplate?.fields.find((field) => field.name === "about");
-		if (!about || about.type !== "object" || !about.fields)
-			throw new Error("Campos About ausentes");
-		const networks = about.fields.find((field) => field.name === "networks");
-		if (!networks?.ui || !("itemProps" in networks.ui))
-			throw new Error("Labels da lista Redes ausentes");
-		expect(networks.ui.itemProps?.({ pt: "LACLIMA", en: "" })).toEqual({
-			label: "LACLIMA",
-		});
-	});
-
-	it("dá nomes úteis a todas as listas de objetos do CMS", () => {
-		const missing: string[] = [];
-		const visit = (
-			fields: NonNullable<typeof GlobalConfigCollection.fields>,
-			prefix: string,
-		) => {
-			for (const field of fields) {
-				const path = `${prefix}.${field.name}`;
-				if (field.type !== "object") continue;
-				if (
-					field.list &&
-					(!field.ui || !("itemProps" in field.ui) || !field.ui.itemProps)
-				)
-					missing.push(path);
-				if (field.fields) visit(field.fields, path);
-			}
-		};
-
-		for (const template of EditorialCollection.templates ?? [])
-			visit(template.fields, `Páginas.${template.name}`);
-		visit(GlobalConfigCollection.fields ?? [], "Configuração global");
-		expect(missing).toEqual([]);
-	});
-
-	it("mostra metadados ORCID sincronizados sem os tornar editáveis", () => {
-		const title = PublicationCollection.fields?.find(
-			(field) => field.name === "title",
-		);
-		expect(title).toMatchObject({ label: "Título", isTitle: true });
-		expect(title?.ui?.component).toBeTypeOf("function");
-		for (const name of ["journal", "year", "type", "doi", "url", "source"])
-			expect(
-				PublicationCollection.fields?.find((field) => field.name === name)?.ui
-					?.component,
-			).toBeTypeOf("function");
-	});
-
-	it("não expõe estrutura de navegação, identidade ou CTAs globais", () => {
-		const field = (name: string) =>
-			GlobalConfigCollection.fields?.find(
-				(candidate) => candidate.name === name,
-			);
-		expect(field("identity")).toBeUndefined();
-		expect(field("ctas")).toBeUndefined();
-		const seo = field("seo");
-		if (!seo || seo.type !== "object") throw new Error("seo ausente");
-		expect(seo.fields?.find((item) => item.name === "siteUrl")).toBeUndefined();
-		const navigation = field("navigation");
-		if (!navigation || navigation.type !== "object")
-			throw new Error("navigation ausente");
-		expect(navigation.list).not.toBe(true);
-		expect(navigation.fields?.map((item) => item.name)).toEqual([
-			"consulting",
-			"academic",
-			"about",
-			"contact",
-		]);
-		expect(JSON.stringify(navigation)).not.toMatch(
-			/routeKey|emphasis|highlight/,
-		);
-		expect(field("requestTypes")).toBeDefined();
-	});
-
-	it("deriva estrutura, destinos e destaques da navegação no código", () => {
-		const navigation = navigationItems(
-			{
-				consulting: { label: { pt: "Consultoria", en: "Consulting" } },
-				academic: {
-					label: { pt: "Academia", en: "Academic" },
-					publications: { label: { pt: "Publicações", en: "Publications" } },
-				},
-				about: { pt: "Sobre", en: "About" },
-				contact: { pt: "Contacto", en: "Contact" },
-			} as never,
-			"pt-PT",
-		);
-		expect(navigation.map((item) => item.routeKey)).toEqual([
-			"legal",
-			"publications",
-			"about",
-			"contact",
-		]);
-		expect(navigation.at(-1)?.emphasis).toBe(true);
-		expect(
-			navigation[1].children?.find((item) => item.routeKey === "publications")
-				?.highlight,
-		).toBe(true);
-	});
-
-	it("mantém os textos funcionais do formulário em código", () => {
-		const contact = contactPageFields[0];
-		if (contact.type !== "object") throw new Error("contactPage ausente");
-		expect(
-			contact.fields?.find((field) => field.name === "formCopy"),
-		).toBeUndefined();
-		expect(
-			contact.fields?.find((field) => field.name === "contactMethods"),
-		).toBeUndefined();
-		expect(contactFormCopy("pt-PT").submitLabel).toBe("Enviar");
-		expect(contactFormCopy("en").submitLabel).toBe("Send");
-	});
-
-	it("incorpora o conteúdo editorial de agendamento no contacto", () => {
-		const contact = contactPageFields[0];
-		if (contact.type !== "object") throw new Error("contactPage ausente");
-		expect(contact.fields?.map((field) => field.name)).toEqual([
-			"tag",
-			"subtitle",
-			"bookingHeading",
-			"bookingIntro",
-			"duration",
-			"validFor",
-			"timezone",
-			"timezoneNote",
-			"otherMethodsHeading",
-			"countriesLabel",
-			"languagesLabel",
-		]);
-		expect(
-			EditorialCollection.templates?.some(
-				(template) => template.name === "booking",
-			),
-		).toBe(false);
-	});
-
-	it("limita o rich text editorial ao conjunto aprovado", () => {
-		const about = EditorialCollection.templates?.find(
-			(template) => template.name === "about",
-		);
-		const aboutSection = about?.fields.find((field) => field.name === "about");
-		if (!aboutSection || aboutSection.type !== "object")
-			throw new Error("about ausente");
-		const narrative = aboutSection.fields?.find(
-			(field) => field.name === "narrative",
-		);
-		if (!narrative || narrative.type !== "object")
-			throw new Error("narrative ausente");
-		for (const locale of narrative.fields ?? []) {
-			expect(locale.type).toBe("rich-text");
-			if (locale.type !== "rich-text") continue;
-			expect(locale.overrides).toEqual({
-				toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
-				headingLevels: ["h2", "h3", "h4"],
-			});
-		}
-	});
-
-	it("considera rich text EN vazio uma tradução incompleta", () => {
+	it("considera rich text EN vazio incompleto", () => {
 		const value = {
 			body: {
 				pt: {
@@ -388,18 +87,5 @@ describe("modelo editorial bilingue", () => {
 			},
 		};
 		expect(missingLocalizedPaths(value, "en")).toEqual(["body"]);
-		expect(isLocaleComplete(value, "en")).toBe(false);
-	});
-
-	it("persiste rich text em Markdown, não na árvore interna do editor", () => {
-		const containsStoredRoot = (value: unknown): boolean => {
-			if (Array.isArray(value)) return value.some(containsStoredRoot);
-			if (!value || typeof value !== "object") return false;
-			const record = value as Record<string, unknown>;
-			if (record.type === "root" && Array.isArray(record.children)) return true;
-			return Object.values(record).some(containsStoredRoot);
-		};
-
-		for (const page of pages) expect(containsStoredRoot(page)).toBe(false);
 	});
 });

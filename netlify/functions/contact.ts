@@ -23,11 +23,20 @@ function env(name: string): string {
 	return value;
 }
 
-function json(status: number, body: Record<string, unknown>): Response {
-	return new Response(JSON.stringify(body), {
-		status,
-		headers: JSON_HEADERS,
-	});
+type ContactResponseCode = "accepted" | "invalid" | "unavailable";
+
+function json(
+	status: number,
+	code: ContactResponseCode,
+	requestId = "",
+): Response {
+	return new Response(
+		JSON.stringify({ version: 1, ok: code === "accepted", code, requestId }),
+		{
+			status,
+			headers: JSON_HEADERS,
+		},
+	);
 }
 
 function base64url(value: string | Buffer): string {
@@ -219,37 +228,36 @@ export default async function contact(
 	request: Request,
 	context: Context,
 ): Promise<Response> {
-	if (request.method !== "POST") return json(405, { ok: false });
-	if (!isSameOrigin(request)) return json(403, { ok: false });
+	if (request.method !== "POST") return json(405, "invalid");
+	if (!isSameOrigin(request)) return json(403, "invalid");
 	const declaredLength = Number(request.headers.get("content-length") ?? 0);
-	if (declaredLength > CONTACT_FORM_MAXIMUM_BYTES)
-		return json(413, { ok: false });
+	if (declaredLength > CONTACT_FORM_MAXIMUM_BYTES) return json(413, "invalid");
 
 	let rawBody: string;
 	try {
 		rawBody = await request.text();
 	} catch {
-		return json(400, { ok: false });
+		return json(400, "invalid");
 	}
 	if (Buffer.byteLength(rawBody, "utf8") > CONTACT_FORM_MAXIMUM_BYTES)
-		return json(413, { ok: false });
+		return json(413, "invalid");
 
 	let parsed: ReturnType<typeof contactSubmissionSchema.safeParse>;
 	try {
 		parsed = contactSubmissionSchema.safeParse(JSON.parse(rawBody));
 	} catch {
-		return json(400, { ok: false });
+		return json(400, "invalid");
 	}
 	if (!parsed.success || !isPlausibleSubmissionTime(parsed.data.startedAt))
-		return json(400, { ok: false });
+		return json(400, "invalid");
 	const submission = parsed.data;
 	const allowedRequestTypes = new Set(
 		siteConfig.requestTypes.map((_, index) => `request-${index + 1}`),
 	);
 	if (!allowedRequestTypes.has(submission.requestType))
-		return json(400, { ok: false });
+		return json(400, "invalid", submission.requestId);
 	if (!(await verifyTurnstile(submission.turnstileToken, request, context.ip)))
-		return json(400, { ok: false });
+		return json(400, "invalid", submission.requestId);
 
 	try {
 		const requestIndex =
@@ -261,10 +269,11 @@ export default async function contact(
 		const country = contactCountries.find(
 			(option) => option.value === submission.country,
 		)?.label[submission.locale];
-		if (!requestType || !country) return json(400, { ok: false });
+		if (!requestType || !country)
+			return json(400, "invalid", submission.requestId);
 		const accessToken = await googleAccessToken();
 		if (await existingRequest(accessToken, submission.requestId))
-			return json(200, { ok: true, duplicate: true });
+			return json(200, "accepted", submission.requestId);
 
 		const row = await appendSubmission(
 			accessToken,
@@ -329,12 +338,12 @@ export default async function contact(
 					target: index === 0 ? "admin" : "confirmation",
 				});
 		}
-		return json(200, { ok: true });
+		return json(200, "accepted", submission.requestId);
 	} catch {
 		console.error("contact-submission-persistence-failed", {
 			requestId: submission.requestId,
 		});
-		return json(503, { ok: false });
+		return json(503, "unavailable", submission.requestId);
 	}
 }
 

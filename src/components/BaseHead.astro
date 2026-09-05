@@ -15,7 +15,7 @@ const en = new URL(routeMap[routeKey].en, origin);
 {availableLocales.includes('pt-PT') && <link rel="alternate" hreflang="pt-PT" href={pt} />}
 {availableLocales.includes('en') && <link rel="alternate" hreflang="en" href={en} />}
 {availableLocales.includes('pt-PT') && <link rel="alternate" hreflang="x-default" href={pt} />}
-{noindex && <meta name="robots" content="noindex,nofollow" />}
+{noindex && <meta name="robots" content="noindex,follow" />}
 <meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'pt_PT'} /><meta property="og:title" content={title} /><meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, origin)} /><meta property="og:image:alt" content="Dra. Ana Trevizan — Consultoria jurídica e ambiental" />
 {lastModified && <meta property="article:modified_time" content={lastModified} />}

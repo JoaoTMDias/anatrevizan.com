@@ -56,5 +56,12 @@ const lightLabel = locale === "en" ? "Use light theme" : "Usar tema claro";
       document.documentElement.classList.toggle("dark", event.matches);
       syncThemeToggle();
     });
+    window.addEventListener("storage", (event) => {
+      if (event.key !== "theme") return;
+      const isDark = event.newValue === "dark" ||
+        (event.newValue !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList.toggle("dark", isDark);
+      syncThemeToggle();
+    });
   }
 </script>

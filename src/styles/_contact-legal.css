@@ -15,7 +15,29 @@
 		@apply size-5 shrink-0 text-accent;
 	}
 	.contact-form {
-		@apply mt-8;
+		@apply mt-8 min-w-0;
+	}
+	.contact-form__error-summary,
+	.contact-form__fallback {
+		@apply mb-6 rounded-md border p-4;
+	}
+	.contact-form__error-summary {
+		@apply border-destructive/40 bg-destructive/5 text-destructive;
+	}
+	.contact-form__error-summary ul {
+		@apply mt-2 list-disc pl-6;
+	}
+	.contact-form__error-summary a {
+		@apply underline;
+	}
+	.contact-form__fallback {
+		@apply mt-6 grid gap-4 border-border bg-secondary;
+	}
+	.contact-form__fallback h2 {
+		@apply text-xl font-semibold;
+	}
+	.contact-form__fallback pre {
+		@apply max-h-64 overflow-auto whitespace-pre-wrap rounded-md border bg-background p-3 text-sm;
 	}
 	.contact-channel {
 		@apply border-0 p-0;
@@ -117,7 +139,7 @@
 		overflow: hidden;
 	}
 	.contact-form__turnstile {
-		@apply mt-5 min-h-0;
+		@apply mt-5 min-h-0 max-w-full overflow-hidden;
 	}
 	.contact-form__configuration {
 		@apply mt-5 rounded-md border border-border bg-secondary p-4 text-base;
@@ -144,11 +166,11 @@
 		@apply border-destructive/40 bg-destructive/5 text-destructive;
 	}
 	.contact-sidebar {
-		@apply grid self-start gap-5;
+		@apply grid min-w-0 self-start gap-5;
 	}
 	.contact-booking,
 	.contact-methods {
-		@apply rounded-lg bg-secondary p-6;
+		@apply min-w-0 max-w-full rounded-lg bg-secondary p-6;
 	}
 	.contact-booking {
 		scroll-margin-top: 7rem;
@@ -198,7 +220,8 @@
 		line-height: 1.5;
 	}
 	.contact-booking a {
-		@apply max-w-full text-center whitespace-normal;
+		@apply w-full min-w-0 max-w-full text-center whitespace-normal;
+		overflow-wrap: anywhere;
 	}
 	.contact-booking__notice {
 		@apply border-t border-border pt-4;

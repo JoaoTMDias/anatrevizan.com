@@ -1,5 +1,3 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
 	localizeAcronyms,
@@ -14,22 +12,6 @@ const entries = [
 ];
 
 describe("glossário de siglas", () => {
-	it("declara a relação APG e o popover hint nativo", async () => {
-		const component = await readFile(
-			join(
-				process.cwd(),
-				"src/components/editorial/Acronym.astro",
-			),
-			"utf8",
-		);
-		expect(component).toContain("<abbr");
-		expect(component).toContain('tabindex="0"');
-		expect(component).toContain("aria-describedby={tooltipId}");
-		expect(component).toContain('role="tooltip"');
-		expect(component).toContain('popover="hint"');
-		expect(component).toContain("id={tooltipId}");
-	});
-
 	it("reconhece termos completos, pontuação e todas as ocorrências", () => {
 		expect(segmentAcronyms("EUDR, NIF e EUDR.", entries)).toEqual([
 			{

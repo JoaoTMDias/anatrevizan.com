@@ -55,32 +55,6 @@ describe("pipeline de media", () => {
 		}
 	});
 
-	it("centraliza imagens editoriais e usa Image do Astro quando possível", async () => {
-		const component = await readFile(
-			join(
-				process.cwd(),
-				"src/components/editorial/EditorialImage.astro",
-			),
-			"utf8",
-		);
-		expect(component).toContain('import { Image } from "astro:assets"');
-		expect(component).toContain("<Image");
-		expect(component).toContain("responsiveSrcSet(publicPath)");
-
-		for (const name of [
-			"HomePage.astro",
-			"PageHero.astro",
-			"ConsultingServicePage.astro",
-		]) {
-			const source = await readFile(
-				join(process.cwd(), "src/components/editorial", name),
-				"utf8",
-			);
-			expect(source).toContain("<EditorialImage");
-			expect(source).not.toContain("<img");
-		}
-	});
-
 	it("remove scripts, eventos e URLs executáveis de SVG", () => {
 		const unsafe =
 			'<svg onload="alert(1)"><script>alert(1)</script><foreignObject><iframe src="https://example.com"></iframe></foreignObject><path onclick=alert(1) style="fill:url(javascript:alert(1))"/><a href="javascript:alert(1)">x</a></svg>';

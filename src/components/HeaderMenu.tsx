@@ -1,4 +1,5 @@
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
+import { useState } from "react";
 import {
 	Collapsible,
 	CollapsibleContent,
@@ -63,6 +64,16 @@ export default function HeaderMenu({
 	languageLink,
 	menuLabel,
 }: HeaderMenuProps) {
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const localizedLanguageHref = (href: string) => {
+		if (typeof window === "undefined") return href;
+		const fragments: Record<string, string> = {
+			"#agendar": "#book",
+			"#book": "#agendar",
+		};
+		return `${href}${fragments[window.location.hash] ?? ""}`;
+	};
+
 	return (
 		<>
 			<NavigationMenu className="hidden lg:flex">
@@ -134,6 +145,11 @@ export default function HeaderMenu({
 								lang={languageLink.lang}
 								hrefLang={languageLink.hreflang}
 								aria-label={languageLink.accessibleLabel}
+								onClick={(event) => {
+									event.currentTarget.href = localizedLanguageHref(
+										languageLink.href,
+									);
+								}}
 							>
 								{languageLink.label}
 							</NavigationMenuLink>
@@ -142,7 +158,7 @@ export default function HeaderMenu({
 				</NavigationMenuList>
 			</NavigationMenu>
 
-			<Sheet>
+			<Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
 				<SheetTrigger
 					className="header-menu-toggle grid size-11 cursor-pointer place-items-center rounded-full text-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 					aria-label={menuLabel}
@@ -181,6 +197,7 @@ export default function HeaderMenu({
 													<li key={child.href}>
 														<a
 															href={child.href}
+															onClick={() => setMobileOpen(false)}
 															className="block rounded-md px-3 py-2 hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 															aria-current={
 																child.isCurrent ? "page" : undefined
@@ -203,6 +220,7 @@ export default function HeaderMenu({
 								) : (
 									<a
 										href={item.href}
+										onClick={() => setMobileOpen(false)}
 										className={cn(
 											"block rounded-md px-3 py-3 font-medium hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
 											item.emphasis &&
@@ -222,6 +240,13 @@ export default function HeaderMenu({
 							href={languageLink.href}
 							lang={languageLink.lang}
 							hrefLang={languageLink.hreflang}
+							aria-label={languageLink.accessibleLabel}
+							onClick={(event) => {
+								event.currentTarget.href = localizedLanguageHref(
+									languageLink.href,
+								);
+								setMobileOpen(false);
+							}}
 						>
 							{languageLink.mobileLabel}
 						</a>

@@ -77,6 +77,12 @@ describe("contact Netlify Function", () => {
 	it("persists once and sends both emails", async () => {
 		const response = await contact(request(), { ip: "127.0.0.1" } as Context);
 		expect(response.status).toBe(200);
+		await expect(response.json()).resolves.toEqual({
+			version: 1,
+			ok: true,
+			code: "accepted",
+			requestId: body.requestId,
+		});
 		const calls = vi.mocked(fetch).mock.calls;
 		expect(
 			calls.filter(([url]) => String(url).includes("api.resend.com")),
@@ -108,6 +114,12 @@ describe("contact Netlify Function", () => {
 		});
 		const response = await contact(request(), {} as Context);
 		expect(response.status).toBe(200);
+		await expect(response.json()).resolves.toMatchObject({
+			version: 1,
+			ok: true,
+			code: "accepted",
+			requestId: body.requestId,
+		});
 		expect(console.error).toHaveBeenCalledWith(
 			"contact-email-delivery-failed",
 			expect.objectContaining({ requestId: body.requestId }),
@@ -125,10 +137,52 @@ describe("contact Netlify Function", () => {
 		});
 		const response = await contact(request(), {} as Context);
 		expect(response.status).toBe(503);
+		await expect(response.json()).resolves.toEqual({
+			version: 1,
+			ok: false,
+			code: "unavailable",
+			requestId: body.requestId,
+		});
 		expect(
 			vi
 				.mocked(fetch)
 				.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
 		).toBe(false);
 	});
+
+	it("treats a previously persisted request as accepted without sending again", async () => {
+		vi.mocked(fetch).mockImplementation((url, init) => {
+			if (String(url).includes("B2%3AB"))
+				return Promise.resolve(Response.json({ values: [[body.requestId]] }));
+			return successfulFetch(url, init);
+		});
+		const response = await contact(request(), {} as Context);
+		expect(response.status).toBe(200);
+		await expect(response.json()).resolves.toMatchObject({
+			code: "accepted",
+			requestId: body.requestId,
+		});
+		expect(
+			vi
+				.mocked(fetch)
+				.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
+		).toBe(false);
+	});
+
+	it.each(["oauth2", "B2%3AB"])(
+		"returns unavailable when the %s boundary fails",
+		async (boundary) => {
+			vi.mocked(fetch).mockImplementation((url, init) => {
+				if (String(url).includes(boundary))
+					return Promise.resolve(new Response(null, { status: 503 }));
+				return successfulFetch(url, init);
+			});
+			const response = await contact(request(), {} as Context);
+			expect(response.status).toBe(503);
+			await expect(response.json()).resolves.toMatchObject({
+				code: "unavailable",
+				requestId: body.requestId,
+			});
+		},
+	);
 });

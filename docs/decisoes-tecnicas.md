@@ -38,5 +38,8 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 - O contacto usa uma ilha React pequena com React Hook Form e Zod. Email é validado numa Netlify Function, protegido por Turnstile, guardado no Google Sheets e notificado por Resend; WhatsApp abre uma mensagem preenchida e não é guardado automaticamente.
 - A folha Google é a fonte durável dos pedidos enviados pelo site. Falhas de email após a gravação não transformam um pedido recebido em erro para o visitante.
 - Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.
+- A suite de resiliência valida o artefacto compilado: Vitest fica reservado a contratos com lógica e fronteiras externas; Playwright Chromium cobre jornadas, rotas, DOM final, navegação e axe sem retries nem snapshots visuais.
+- O sitemap e `published-en.json` formam o contrato de publicação. O CI constrói uma vez, serve exatamente esse artefacto e guarda trace, screenshot e relatório HTML apenas em falhas.
+- Deploy previews usam um build próprio com `X-Robots-Tag: noindex`; o smoke real do formulário e desse cabeçalho continua a ser uma decisão manual pré-produção.
 - O site público não usa analytics nem pixels. A preferência de tema usa `localStorage`; o Turnstile é carregado apenas no contacto como controlo de segurança. Não existe banner nem página autónoma de Cookies; a informação fica na Política de Privacidade. O `/admin` é um ambiente Tina separado desta conclusão.
 - A Política de Privacidade e a Declaração de Acessibilidade mantêm pendências factuais/jurídicas explícitas. A avaliação de acessibilidade de 4 de setembro de 2026 é uma revisão técnica limitada, não uma declaração de conformidade WCAG.

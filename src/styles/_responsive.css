@@ -60,3 +60,12 @@
 		@apply max-w-sm;
 	}
 }
+
+@media (max-width: 56rem) {
+	.contact-layout {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.contact-layout > * {
+		min-width: 0;
+	}
+}

@@ -37,6 +37,13 @@ interface ContactFormProps {
 	whatsappHref: string | null;
 }
 
+interface ContactResponse {
+	version: 1;
+	ok: boolean;
+	code: "accepted" | "invalid" | "unavailable";
+	requestId: string;
+}
+
 declare global {
 	interface Window {
 		turnstile?: {
@@ -96,6 +103,17 @@ const copy = {
 		invalidEmail: "Introduza um endereço de email válido.",
 		shortName: "Introduza pelo menos 2 caracteres.",
 		shortMessage: "Introduza pelo menos 20 caracteres.",
+		formLabel: "Pedido de contacto",
+		errorSummary: "Corrija os campos assinalados",
+		fallbackHeading: "Continuar pelo WhatsApp",
+		fallbackIntro:
+			"O envio pelo formulário está indisponível. Reveja a mensagem antes de a transferir para o WhatsApp.",
+		fallbackNote: "Nota: o formulário do site estava indisponível.",
+		fallbackPreview: "Mensagem para o WhatsApp",
+		fallbackTooLong: "Reduza a mensagem antes de continuar no WhatsApp.",
+		copyFallback: "Copiar número e mensagem",
+		copyInstructions:
+			"Se o WhatsApp não abrir, copie manualmente o número e a mensagem abaixo.",
 	},
 	en: {
 		legend: "How would you like to send your request?",
@@ -142,6 +160,17 @@ const copy = {
 		invalidEmail: "Enter a valid email address.",
 		shortName: "Enter at least 2 characters.",
 		shortMessage: "Enter at least 20 characters.",
+		formLabel: "Contact request",
+		errorSummary: "Correct the highlighted fields",
+		fallbackHeading: "Continue through WhatsApp",
+		fallbackIntro:
+			"Form submission is unavailable. Review the message before transferring it to WhatsApp.",
+		fallbackNote: "Note: the website form was unavailable.",
+		fallbackPreview: "Message for WhatsApp",
+		fallbackTooLong: "Shorten the message before continuing to WhatsApp.",
+		copyFallback: "Copy number and message",
+		copyInstructions:
+			"If WhatsApp does not open, manually copy the number and message below.",
 	},
 } as const;
 
@@ -186,6 +215,7 @@ export default function ContactForm({
 	const t = copy[locale];
 	const prefix = useId();
 	const statusRef = useRef<HTMLDivElement>(null);
+	const errorSummaryRef = useRef<HTMLDivElement>(null);
 	const turnstileContainerRef = useRef<HTMLDivElement>(null);
 	const widgetIdRef = useRef<string | null>(null);
 	const requestIdRef = useRef<string | null>(null);
@@ -195,6 +225,9 @@ export default function ContactForm({
 		"idle" | "sending" | "success" | "error"
 	>("idle");
 	const [statusMessage, setStatusMessage] = useState("");
+	const [whatsappPreview, setWhatsappPreview] = useState("");
+	const [showCopyFallback, setShowCopyFallback] = useState(false);
+	const [focusErrorSummary, setFocusErrorSummary] = useState(false);
 	const schema = z
 		.object({
 			channel: z.enum(["email", "whatsapp"]),
@@ -239,10 +272,12 @@ export default function ContactForm({
 		handleSubmit,
 		setValue,
 		reset,
-		formState: { errors, isSubmitting, isValid },
+		getValues,
+		formState: { errors, isSubmitting },
 	} = useForm<FormValues>({
 		resolver: zodResolver(schema),
-		mode: "onChange",
+		mode: "onBlur",
+		reValidateMode: "onChange",
 		defaultValues: {
 			channel: "email",
 			name: "",
@@ -255,6 +290,26 @@ export default function ContactForm({
 			turnstileToken: "",
 		},
 	});
+
+	useEffect(() => {
+		const url = new URL(window.location.href);
+		if (url.searchParams.get("status") !== "sent") return;
+		setStatus("success");
+		setStatusMessage(t.success);
+		url.searchParams.delete("status");
+		window.history.replaceState(
+			null,
+			"",
+			`${url.pathname}${url.search}${url.hash}`,
+		);
+		requestAnimationFrame(() => statusRef.current?.focus());
+	}, [t.success]);
+
+	useEffect(() => {
+		if (!focusErrorSummary || !errorSummaryRef.current) return;
+		errorSummaryRef.current.focus();
+		setFocusErrorSummary(false);
+	}, [errors, focusErrorSummary]);
 
 	useEffect(() => {
 		if (
@@ -304,32 +359,49 @@ export default function ContactForm({
 		setValue("channel", nextChannel, { shouldValidate: true });
 		setStatus("idle");
 		setStatusMessage("");
+		setWhatsappPreview("");
+		setShowCopyFallback(false);
 		setStartedAt(Date.now());
 	}
 
+	function whatsappMessage(data: FormValues, fallback = false) {
+		const country =
+			contactCountries.find((item) => item.value === data.country)?.label[
+				locale
+			] ?? data.country;
+		const requestType =
+			requestTypes.find((item) => item.value === data.requestType)?.label ??
+			data.requestType;
+		return [
+			fallback ? t.fallbackNote : "",
+			buildWhatsAppMessage({
+				locale,
+				name: data.name,
+				requestType,
+				country,
+				message: data.message,
+			}),
+			data.email ? `${t.email}: ${data.email}` : "",
+			data.whatsapp ? `${t.whatsapp}: ${data.whatsapp}` : "",
+		]
+			.filter(Boolean)
+			.join("\n\n");
+	}
+
+	function offerWhatsappFallback(data = getValues()) {
+		if (!whatsappHref) return;
+		setWhatsappPreview(whatsappMessage(data, true));
+	}
+
 	async function submit(data: FormValues) {
+		setFocusErrorSummary(false);
 		const name = data.name;
 		const requestType = data.requestType;
 		const countryCode = data.country;
-		const country =
-			contactCountries.find((item) => item.value === countryCode)?.label[
-				locale
-			] ?? countryCode;
 		const message = data.message;
 
 		if (channel === "whatsapp" && whatsappHref) {
-			const text = buildWhatsAppMessage({
-				locale,
-				name,
-				requestType:
-					requestTypes.find((item) => item.value === requestType)?.label ??
-					requestType,
-				country,
-				message,
-			});
-			window.location.assign(
-				`${whatsappHref}?text=${encodeURIComponent(text)}`,
-			);
+			setWhatsappPreview(whatsappMessage(data));
 			return;
 		}
 
@@ -338,6 +410,7 @@ export default function ContactForm({
 			setStatusMessage(
 				turnstileSiteKey ? t.turnstileError : t.configurationError,
 			);
+			offerWhatsappFallback(data);
 			statusRef.current?.focus();
 			return;
 		}
@@ -349,6 +422,7 @@ export default function ContactForm({
 			const response = await fetch("/api/contact", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
+				signal: AbortSignal.timeout(15_000),
 				body: JSON.stringify({
 					requestId: requestIdRef.current,
 					locale,
@@ -363,20 +437,56 @@ export default function ContactForm({
 					turnstileToken: data.turnstileToken,
 				}),
 			});
-			if (!response.ok) throw new Error("contact submission failed");
-			setStatus("success");
-			setStatusMessage(t.success);
+			const result = (await response.json()) as ContactResponse;
+			if (
+				result.version !== 1 ||
+				result.requestId !== requestIdRef.current ||
+				result.code !== "accepted" ||
+				!response.ok
+			)
+				throw new Error(
+					result.code === "unavailable" ? "unavailable" : "invalid",
+				);
 			reset();
 			requestIdRef.current = null;
 			setStartedAt(Date.now());
-		} catch {
+			const url = new URL(window.location.href);
+			url.search = "?status=sent";
+			url.hash = "contact-form-status";
+			window.location.replace(url);
+		} catch (error) {
 			setStatus("error");
 			setStatusMessage(t.error);
+			if (error instanceof Error && error.message === "unavailable")
+				offerWhatsappFallback(data);
 		} finally {
 			setValue("turnstileToken", "");
 			if (widgetIdRef.current && window.turnstile)
 				window.turnstile.reset(widgetIdRef.current);
 			requestAnimationFrame(() => statusRef.current?.focus());
+		}
+	}
+
+	function openWhatsapp() {
+		if (!whatsappHref || !whatsappPreview) return;
+		const destination = `${whatsappHref}?text=${encodeURIComponent(whatsappPreview)}`;
+		if (destination.length > 2_000) {
+			setStatus("error");
+			setStatusMessage(t.fallbackTooLong);
+			statusRef.current?.focus();
+			return;
+		}
+		const opened = window.open(destination, "_blank", "noopener,noreferrer");
+		if (!opened) setShowCopyFallback(true);
+	}
+
+	async function copyWhatsappFallback() {
+		if (!whatsappPreview) return;
+		try {
+			await navigator.clipboard.writeText(whatsappPreview);
+			setShowCopyFallback(true);
+		} catch {
+			setShowCopyFallback(true);
 		}
 	}
 
@@ -390,10 +500,42 @@ export default function ContactForm({
 		<form
 			className="contact-form"
 			lang={locale}
+			aria-label={t.formLabel}
 			aria-describedby={id("privacy-notice")}
-			onSubmit={handleSubmit(submit)}
+			onSubmit={handleSubmit(submit, () => {
+				setFocusErrorSummary(true);
+			})}
 			noValidate
 		>
+			{Object.keys(errors).some((field) =>
+				["name", "email", "requestType", "country", "message"].includes(field),
+			) && (
+				<div
+					ref={errorSummaryRef}
+					className="contact-form__error-summary"
+					role="alert"
+					tabIndex={-1}
+				>
+					<strong>{t.errorSummary}</strong>
+					<ul>
+						{Object.entries(errors)
+							.filter(([field]) =>
+								["name", "email", "requestType", "country", "message"].includes(
+									field,
+								),
+							)
+							.map(([field, error]) => (
+								<li key={field}>
+									<a
+										href={`#${id(field === "requestType" ? "request-type" : field)}`}
+									>
+										{error?.message}
+									</a>
+								</li>
+							))}
+					</ul>
+				</div>
+			)}
 			<fieldset
 				className="contact-channel"
 				aria-describedby={id("channel-instruction")}
@@ -583,17 +725,14 @@ export default function ContactForm({
 						id={id("turnstile-error")}
 						message={errors.turnstileToken?.message}
 					/>
-					<Button
-						type="submit"
-						disabled={isSubmitting || !turnstileSiteKey || !isValid}
-					>
+					<Button type="submit" disabled={isSubmitting || !turnstileSiteKey}>
 						{isSubmitting ? t.sending : t.submit}
 					</Button>
 				</>
 			) : (
 				<div className="contact-form__whatsapp-action">
 					<p>{t.whatsappNotice}</p>
-					<Button type="submit" disabled={isSubmitting || !isValid}>
+					<Button type="submit" disabled={isSubmitting}>
 						{t.openWhatsapp}
 					</Button>
 				</div>
@@ -601,13 +740,66 @@ export default function ContactForm({
 
 			<div
 				ref={statusRef}
+				id="contact-form-status"
 				className="contact-form__status"
 				data-state={status}
 				role={status === "error" ? "alert" : "status"}
 				tabIndex={status === "success" || status === "error" ? -1 : undefined}
 			>
-				{statusMessage}
+				{status === "success" ? <h2>{statusMessage}</h2> : statusMessage}
 			</div>
+			{status === "error" && !whatsappPreview && whatsappHref && (
+				<Button
+					type="button"
+					variant="outline"
+					onClick={() => offerWhatsappFallback()}
+				>
+					{t.openWhatsapp}
+				</Button>
+			)}
+
+			{whatsappPreview && whatsappHref && (
+				<section
+					className="contact-form__fallback"
+					aria-labelledby={id("fallback-heading")}
+				>
+					<h2 id={id("fallback-heading")}>{t.fallbackHeading}</h2>
+					<p>{t.fallbackIntro}</p>
+					<label htmlFor={id("whatsapp-preview")}>{t.fallbackPreview}</label>
+					<textarea
+						id={id("whatsapp-preview")}
+						rows={8}
+						value={whatsappPreview}
+						onChange={(event) => setWhatsappPreview(event.target.value)}
+					/>
+					<p>{t.privacyExternal}</p>
+					<Button type="button" onClick={openWhatsapp}>
+						{t.openWhatsapp}
+					</Button>
+					<Button
+						type="button"
+						variant="outline"
+						onClick={copyWhatsappFallback}
+					>
+						{t.copyFallback}
+					</Button>
+					{showCopyFallback && (
+						<div role="status">
+							<p>{t.copyInstructions}</p>
+							<p>
+								<a
+									href={whatsappHref}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{whatsappHref}
+								</a>
+							</p>
+							<pre>{whatsappPreview}</pre>
+						</div>
+					)}
+				</section>
+			)}
 		</form>
 	);
 }
