@@ -17,6 +17,8 @@ const JSON_HEADERS = {
 	"Cache-Control": "no-store",
 };
 
+const EXTERNAL_REQUEST_TIMEOUT_MS = 8_000;
+
 function env(name: string): string {
 	const value = Netlify.env.get(name);
 	if (!value) throw new Error(`Missing environment variable: ${name}`);
@@ -69,6 +71,7 @@ async function googleAccessToken(): Promise<string> {
 	const response = await fetch("https://oauth2.googleapis.com/token", {
 		method: "POST",
 		headers: { "Content-Type": "application/x-www-form-urlencoded" },
+		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 		body: new URLSearchParams({
 			grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
 			assertion,
@@ -94,6 +97,7 @@ async function existingRequest(
 	const tab = env("GOOGLE_SHEETS_TAB");
 	const response = await fetch(sheetsUrl(`${tab}!B2:B`), {
 		headers: { Authorization: `Bearer ${accessToken}` },
+		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 	});
 	if (!response.ok)
 		throw new Error(`Google Sheets read failed (${response.status})`);
@@ -113,6 +117,7 @@ async function appendSubmission(
 		),
 		{
 			method: "POST",
+			signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
 				"Content-Type": "application/json",
@@ -140,6 +145,7 @@ async function updateEmailStatus(
 		sheetsUrl(`${tab}!K${row}:L${row}`, "?valueInputOption=RAW"),
 		{
 			method: "PUT",
+			signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
 				"Content-Type": "application/json",
@@ -168,6 +174,7 @@ async function sendEmail(message: {
 }): Promise<void> {
 	const response = await fetch("https://api.resend.com/emails", {
 		method: "POST",
+		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 		headers: {
 			Authorization: `Bearer ${env("RESEND_API_KEY")}`,
 			"Content-Type": "application/json",
@@ -234,6 +241,18 @@ export default async function contact(
 	if (declaredLength > CONTACT_FORM_MAXIMUM_BYTES) return json(413, "invalid");
 
 	let rawBody: string;
+	const integrationStartedAt = Date.now();
+	let integrationStage = "google-auth";
+	const logIntegrationStage = (state: "started" | "completed") =>
+		console.info(
+			JSON.stringify({
+				event: "contact-integration",
+				requestId: submission.requestId,
+				integrationStage,
+				state,
+				durationMs: Date.now() - integrationStartedAt,
+			}),
+		);
 	try {
 		rawBody = await request.text();
 	} catch {
@@ -271,10 +290,17 @@ export default async function contact(
 		)?.label[submission.locale];
 		if (!requestType || !country)
 			return json(400, "invalid", submission.requestId);
+		logIntegrationStage("started");
 		const accessToken = await googleAccessToken();
-		if (await existingRequest(accessToken, submission.requestId))
-			return json(200, "accepted", submission.requestId);
+		logIntegrationStage("completed");
+		integrationStage = "sheets-read";
+		logIntegrationStage("started");
+		const duplicate = await existingRequest(accessToken, submission.requestId);
+		logIntegrationStage("completed");
+		if (duplicate) return json(200, "accepted", submission.requestId);
 
+		integrationStage = "sheets-write";
+		logIntegrationStage("started");
 		const row = await appendSubmission(
 			accessToken,
 			[
@@ -292,6 +318,7 @@ export default async function contact(
 				"pending",
 			].map(normalizeSheetCell),
 		);
+		logIntegrationStage("completed");
 
 		const safe = Object.fromEntries(
 			Object.entries(submission).map(([key, value]) => [
@@ -299,6 +326,8 @@ export default async function contact(
 				escapeHtml(String(value)),
 			]),
 		);
+		integrationStage = "email-dispatch";
+		logIntegrationStage("started");
 		const adminEmail = sendEmail({
 			to: env("CONTACT_EMAIL_TO"),
 			replyTo: submission.email,
@@ -338,11 +367,18 @@ export default async function contact(
 					target: index === 0 ? "admin" : "confirmation",
 				});
 		}
+		logIntegrationStage("completed");
 		return json(200, "accepted", submission.requestId);
 	} catch {
-		console.error("contact-submission-persistence-failed", {
-			requestId: submission.requestId,
-		});
+		console.error(
+			JSON.stringify({
+				event: "contact-submission-persistence-failed",
+				requestId: submission.requestId,
+				integrationStage,
+				state: "failed",
+				durationMs: Date.now() - integrationStartedAt,
+			}),
+		);
 		return json(503, "unavailable", submission.requestId);
 	}
 }
