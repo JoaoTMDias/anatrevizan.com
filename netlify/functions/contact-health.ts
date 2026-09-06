@@ -16,17 +16,24 @@ function base64url(value: string | Buffer): string {
 	return Buffer.from(value).toString("base64url");
 }
 
+function sheetsUrl(range: string): string {
+	const spreadsheetId = encodeURIComponent(env("GOOGLE_SHEETS_SPREADSHEET_ID"));
+	return `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(range)}`;
+}
+
 export default async function contactHealth(): Promise<Response> {
 	try {
 		const now = Math.floor(Date.now() / 1_000);
 		const header = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
-		const claims = base64url(JSON.stringify({
-			iss: env("GOOGLE_SERVICE_ACCOUNT_EMAIL"),
-			scope: "https://www.googleapis.com/auth/spreadsheets",
-			aud: "https://oauth2.googleapis.com/token",
-			iat: now,
-			exp: now + 3_600,
-		}));
+		const claims = base64url(
+			JSON.stringify({
+				iss: env("GOOGLE_SERVICE_ACCOUNT_EMAIL"),
+				scope: "https://www.googleapis.com/auth/spreadsheets",
+				aud: "https://oauth2.googleapis.com/token",
+				iat: now,
+				exp: now + 3_600,
+			}),
+		);
 		const unsigned = `${header}.${claims}`;
 		const signer = createSign("RSA-SHA256");
 		signer.update(unsigned);
@@ -42,13 +49,35 @@ export default async function contactHealth(): Promise<Response> {
 				assertion: `${unsigned}.${base64url(signature)}`,
 			}),
 		});
-		const payload = await response.json() as { error?: string };
-		return new Response(JSON.stringify({
-			ok: response.ok,
-			stage: "google-auth",
-			status: response.status,
-			error: payload.error ?? null,
-		}), { status: response.ok ? 200 : 503, headers: HEADERS });
+		const payload = (await response.json()) as {
+			access_token?: string;
+			error?: string;
+		};
+		if (!response.ok || !payload.access_token)
+			return new Response(
+				JSON.stringify({
+					ok: false,
+					stage: "google-auth",
+					status: response.status,
+					error: payload.error ?? "missing-access-token",
+				}),
+				{ status: 503, headers: HEADERS },
+			);
+
+		const tab = env("GOOGLE_SHEETS_TAB");
+		const sheetsResponse = await fetch(sheetsUrl(`${tab}!B2:B`), {
+			headers: { Authorization: `Bearer ${payload.access_token}` },
+			signal: AbortSignal.timeout(8_000),
+		});
+		return new Response(
+			JSON.stringify({
+				ok: sheetsResponse.ok,
+				stage: "sheets-read",
+				status: sheetsResponse.status,
+				error: sheetsResponse.ok ? null : "sheets-request-failed",
+			}),
+			{ status: sheetsResponse.ok ? 200 : 503, headers: HEADERS },
+		);
 	} catch (error) {
 		const errorCode =
 			error instanceof Error && error.message === "missing-environment"
@@ -56,11 +85,14 @@ export default async function contactHealth(): Promise<Response> {
 				: error instanceof Error && error.name === "TimeoutError"
 					? "timeout"
 					: "signing-or-network";
-		return new Response(JSON.stringify({
-			ok: false,
-			stage: "google-auth-local",
-			error: errorCode,
-		}), { status: 503, headers: HEADERS });
+		return new Response(
+			JSON.stringify({
+				ok: false,
+				stage: "google-auth-local",
+				error: errorCode,
+			}),
+			{ status: 503, headers: HEADERS },
+		);
 	}
 }
 

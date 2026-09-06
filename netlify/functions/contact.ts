@@ -369,13 +369,14 @@ export default async function contact(
 		}
 		logIntegrationStage("completed");
 		return json(200, "accepted", submission.requestId);
-	} catch {
+	} catch (error) {
 		console.error(
 			JSON.stringify({
 				event: "contact-submission-persistence-failed",
 				requestId: submission.requestId,
 				integrationStage,
 				state: "failed",
+				error: error instanceof Error ? error.message : "unknown-error",
 				durationMs: Date.now() - integrationStartedAt,
 			}),
 		);

@@ -148,6 +148,9 @@ describe("contact Netlify Function", () => {
 				.mocked(fetch)
 				.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
 		).toBe(false);
+		expect(console.error).toHaveBeenCalledWith(
+			expect.stringContaining('"error":"Google Sheets append failed (503)"'),
+		);
 	});
 
 	it("treats a previously persisted request as accepted without sending again", async () => {
