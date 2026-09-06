@@ -90,6 +90,9 @@ describe("contact Netlify Function", () => {
 		expect(
 			calls.filter(([url]) => String(url).includes("insertDataOption")),
 		).toHaveLength(1);
+		expect(
+			calls.some(([url]) => String(url).includes(":append?valueInputOption")),
+		).toBe(true);
 	});
 
 	it("rejects invalid, cross-origin and failed Turnstile submissions", async () => {

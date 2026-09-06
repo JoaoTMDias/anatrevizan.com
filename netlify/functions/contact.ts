@@ -113,7 +113,7 @@ async function appendSubmission(
 	const response = await fetch(
 		sheetsUrl(
 			`${tab}!A:L`,
-			"?valueInputOption=RAW&insertDataOption=INSERT_ROWS",
+			":append?valueInputOption=RAW&insertDataOption=INSERT_ROWS",
 		),
 		{
 			method: "POST",
