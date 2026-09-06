@@ -25,6 +25,12 @@ function env(name: string): string {
 	return value;
 }
 
+function emailIsConfigured(): boolean {
+	return ["RESEND_API_KEY", "CONTACT_EMAIL_FROM", "CONTACT_EMAIL_TO"].every(
+		(name) => Boolean(Netlify.env.get(name)),
+	);
+}
+
 type ContactResponseCode = "accepted" | "invalid" | "unavailable";
 
 function json(
@@ -326,33 +332,44 @@ export default async function contact(
 				escapeHtml(String(value)),
 			]),
 		);
-		integrationStage = "email-dispatch";
-		logIntegrationStage("started");
-		const adminEmail = sendEmail({
-			to: env("CONTACT_EMAIL_TO"),
-			replyTo: submission.email,
-			subject:
-				submission.locale === "en"
-					? `New contact request — ${submission.name}`
-					: `Novo pedido de contacto — ${submission.name}`,
-			html: `<h1>Novo pedido de contacto</h1><p><strong>Nome:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>WhatsApp:</strong> ${safe.whatsapp || "—"}</p><p><strong>Tipo:</strong> ${escapeHtml(requestType)}</p><p><strong>País:</strong> ${escapeHtml(country)}</p><p><strong>Mensagem:</strong></p><p>${String(safe.message).replaceAll("\n", "<br>")}</p><p>ID: ${safe.requestId}</p>`,
-		});
-		const confirmationEmail = sendEmail({
-			to: submission.email,
-			replyTo: env("CONTACT_EMAIL_TO"),
-			subject:
-				submission.locale === "en"
-					? "We received your message — Ana Trevizan"
-					: "Recebemos a sua mensagem — Ana Trevizan",
-			html:
-				submission.locale === "en"
-					? `<p>Hello ${safe.name},</p><p>Your message was received successfully. I will be in touch soon.</p><p>Ana Trevizan</p>`
-					: `<p>Olá ${safe.name},</p><p>A sua mensagem foi recebida com sucesso. Entrarei em contacto em breve.</p><p>Ana Trevizan</p>`,
-		});
-		const results = await Promise.allSettled([adminEmail, confirmationEmail]);
-		const statuses = results.map((result) =>
-			result.status === "fulfilled" ? "sent" : "failed",
-		) as [string, string];
+		let statuses: [string, string] = ["not-configured", "not-configured"];
+		if (emailIsConfigured()) {
+			integrationStage = "email-dispatch";
+			logIntegrationStage("started");
+			const adminEmail = sendEmail({
+				to: env("CONTACT_EMAIL_TO"),
+				replyTo: submission.email,
+				subject:
+					submission.locale === "en"
+						? `New contact request — ${submission.name}`
+						: `Novo pedido de contacto — ${submission.name}`,
+				html: `<h1>Novo pedido de contacto</h1><p><strong>Nome:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>WhatsApp:</strong> ${safe.whatsapp || "—"}</p><p><strong>Tipo:</strong> ${escapeHtml(requestType)}</p><p><strong>País:</strong> ${escapeHtml(country)}</p><p><strong>Mensagem:</strong></p><p>${String(safe.message).replaceAll("\n", "<br>")}</p><p>ID: ${safe.requestId}</p>`,
+			});
+			const confirmationEmail = sendEmail({
+				to: submission.email,
+				replyTo: env("CONTACT_EMAIL_TO"),
+				subject:
+					submission.locale === "en"
+						? "We received your message — Ana Trevizan"
+						: "Recebemos a sua mensagem — Ana Trevizan",
+				html:
+					submission.locale === "en"
+						? `<p>Hello ${safe.name},</p><p>Your message was received successfully. I will be in touch soon.</p><p>Ana Trevizan</p>`
+						: `<p>Olá ${safe.name},</p><p>A sua mensagem foi recebida com sucesso. Entrarei em contacto em breve.</p><p>Ana Trevizan</p>`,
+			});
+			const results = await Promise.allSettled([adminEmail, confirmationEmail]);
+			statuses = results.map((result) =>
+				result.status === "fulfilled" ? "sent" : "failed",
+			) as [string, string];
+			for (const [index, result] of results.entries()) {
+				if (result.status === "rejected")
+					console.error("contact-email-delivery-failed", {
+						requestId: submission.requestId,
+						target: index === 0 ? "admin" : "confirmation",
+					});
+			}
+			logIntegrationStage("completed");
+		}
 		try {
 			await updateEmailStatus(accessToken, row, statuses);
 		} catch {
@@ -360,14 +377,6 @@ export default async function contact(
 				requestId: submission.requestId,
 			});
 		}
-		for (const [index, result] of results.entries()) {
-			if (result.status === "rejected")
-				console.error("contact-email-delivery-failed", {
-					requestId: submission.requestId,
-					target: index === 0 ? "admin" : "confirmation",
-				});
-		}
-		logIntegrationStage("completed");
 		return json(200, "accepted", submission.requestId);
 	} catch (error) {
 		console.error(

@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import contact from "../netlify/functions/contact.ts";
 
 const { privateKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
-const environment: Record<string, string> = {
+const defaultEnvironment: Record<string, string> = {
 	TURNSTILE_SECRET_KEY: "turnstile-secret",
 	GOOGLE_SERVICE_ACCOUNT_EMAIL: "contact@example.iam.gserviceaccount.com",
 	GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: privateKey.export({
@@ -17,6 +17,7 @@ const environment: Record<string, string> = {
 	CONTACT_EMAIL_FROM: "Ana <formulario@mail.example.com>",
 	CONTACT_EMAIL_TO: "contato@example.com",
 };
+let environment: Record<string, string>;
 
 const body = {
 	requestId: "0b4f45d7-663d-4ceb-a6c4-9a338caa548f",
@@ -65,6 +66,7 @@ function successfulFetch(url: string | URL | Request, init?: RequestInit) {
 
 describe("contact Netlify Function", () => {
 	beforeEach(() => {
+		environment = { ...defaultEnvironment };
 		vi.stubGlobal("Netlify", {
 			env: { get: (name: string) => environment[name] },
 		});
@@ -93,6 +95,21 @@ describe("contact Netlify Function", () => {
 		expect(
 			calls.some(([url]) => String(url).includes(":append?valueInputOption")),
 		).toBe(true);
+	});
+
+	it("persists successfully when Resend is not configured", async () => {
+		delete environment.RESEND_API_KEY;
+		const response = await contact(request(), {} as Context);
+		expect(response.status).toBe(200);
+		await expect(response.json()).resolves.toMatchObject({
+			code: "accepted",
+			requestId: body.requestId,
+		});
+		expect(
+			vi
+				.mocked(fetch)
+				.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
+		).toBe(false);
 	});
 
 	it("rejects invalid, cross-origin and failed Turnstile submissions", async () => {
