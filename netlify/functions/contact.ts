@@ -25,10 +25,26 @@ function env(name: string): string {
 	return value;
 }
 
-function emailIsConfigured(): boolean {
-	return ["RESEND_API_KEY", "CONTACT_EMAIL_FROM", "CONTACT_EMAIL_TO"].every(
-		(name) => Boolean(Netlify.env.get(name)),
-	);
+interface EmailConfiguration {
+	apiKey: string;
+	from: string;
+	to: string;
+}
+
+interface EmailMessage {
+	html: string;
+	replyTo: string;
+	subject: string;
+	to: string;
+}
+
+type EmailStatus = "failed" | "not-configured" | "sent";
+
+function emailConfiguration(): EmailConfiguration | null {
+	const apiKey = Netlify.env.get("RESEND_API_KEY");
+	const from = Netlify.env.get("CONTACT_EMAIL_FROM");
+	const to = Netlify.env.get("CONTACT_EMAIL_TO");
+	return apiKey && from && to ? { apiKey, from, to } : null;
 }
 
 type ContactResponseCode = "accepted" | "invalid" | "unavailable";
@@ -172,21 +188,19 @@ function escapeHtml(value: string): string {
 		.replaceAll("'", "&#039;");
 }
 
-async function sendEmail(message: {
-	to: string;
-	subject: string;
-	html: string;
-	replyTo?: string;
-}): Promise<void> {
+async function sendEmail(
+	configuration: EmailConfiguration,
+	message: EmailMessage,
+): Promise<void> {
 	const response = await fetch("https://api.resend.com/emails", {
 		method: "POST",
 		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 		headers: {
-			Authorization: `Bearer ${env("RESEND_API_KEY")}`,
+			Authorization: `Bearer ${configuration.apiKey}`,
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
-			from: env("CONTACT_EMAIL_FROM"),
+			from: configuration.from,
 			to: [message.to],
 			subject: message.subject,
 			html: message.html,
@@ -195,6 +209,61 @@ async function sendEmail(message: {
 	});
 	if (!response.ok)
 		throw new Error(`Resend delivery failed (${response.status})`);
+}
+
+async function sendContactEmails(
+	configuration: EmailConfiguration,
+	submission: {
+		email: string;
+		locale: string;
+		message: string;
+		name: string;
+		requestId: string;
+		whatsapp: string;
+	},
+	requestType: string,
+	country: string,
+): Promise<[EmailStatus, EmailStatus]> {
+	const safe = Object.fromEntries(
+		Object.entries(submission).map(([key, value]) => [
+			key,
+			escapeHtml(String(value)),
+		]),
+	);
+	const isEnglish = submission.locale === "en";
+	const messages: [EmailMessage, EmailMessage] = [
+		{
+			to: configuration.to,
+			replyTo: submission.email,
+			subject: isEnglish
+				? `New contact request — ${submission.name}`
+				: `Novo pedido de contacto — ${submission.name}`,
+			html: `<h1>Novo pedido de contacto</h1><p><strong>Nome:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>WhatsApp:</strong> ${safe.whatsapp || "—"}</p><p><strong>Tipo:</strong> ${escapeHtml(requestType)}</p><p><strong>País:</strong> ${escapeHtml(country)}</p><p><strong>Mensagem:</strong></p><p>${safe.message.replaceAll("\n", "<br>")}</p><p>ID: ${safe.requestId}</p>`,
+		},
+		{
+			to: submission.email,
+			replyTo: configuration.to,
+			subject: isEnglish
+				? "We received your message — Ana Trevizan"
+				: "Recebemos a sua mensagem — Ana Trevizan",
+			html: isEnglish
+				? `<p>Hello ${safe.name},</p><p>Your message was received successfully. I will be in touch soon.</p><p>Ana Trevizan</p>`
+				: `<p>Olá ${safe.name},</p><p>A sua mensagem foi recebida com sucesso. Entrarei em contacto em breve.</p><p>Ana Trevizan</p>`,
+		},
+	];
+	const results = await Promise.allSettled(
+		messages.map((message) => sendEmail(configuration, message)),
+	);
+	for (const [index, result] of results.entries()) {
+		if (result.status === "rejected")
+			console.error("contact-email-delivery-failed", {
+				requestId: submission.requestId,
+				target: index === 0 ? "admin" : "confirmation",
+			});
+	}
+	return results.map((result) =>
+		result.status === "fulfilled" ? "sent" : "failed",
+	) as [EmailStatus, EmailStatus];
 }
 
 async function verifyTurnstile(
@@ -326,48 +395,20 @@ export default async function contact(
 		);
 		logIntegrationStage("completed");
 
-		const safe = Object.fromEntries(
-			Object.entries(submission).map(([key, value]) => [
-				key,
-				escapeHtml(String(value)),
-			]),
-		);
-		let statuses: [string, string] = ["not-configured", "not-configured"];
-		if (emailIsConfigured()) {
+		let statuses: [EmailStatus, EmailStatus] = [
+			"not-configured",
+			"not-configured",
+		];
+		const configuration = emailConfiguration();
+		if (configuration) {
 			integrationStage = "email-dispatch";
 			logIntegrationStage("started");
-			const adminEmail = sendEmail({
-				to: env("CONTACT_EMAIL_TO"),
-				replyTo: submission.email,
-				subject:
-					submission.locale === "en"
-						? `New contact request — ${submission.name}`
-						: `Novo pedido de contacto — ${submission.name}`,
-				html: `<h1>Novo pedido de contacto</h1><p><strong>Nome:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>WhatsApp:</strong> ${safe.whatsapp || "—"}</p><p><strong>Tipo:</strong> ${escapeHtml(requestType)}</p><p><strong>País:</strong> ${escapeHtml(country)}</p><p><strong>Mensagem:</strong></p><p>${String(safe.message).replaceAll("\n", "<br>")}</p><p>ID: ${safe.requestId}</p>`,
-			});
-			const confirmationEmail = sendEmail({
-				to: submission.email,
-				replyTo: env("CONTACT_EMAIL_TO"),
-				subject:
-					submission.locale === "en"
-						? "We received your message — Ana Trevizan"
-						: "Recebemos a sua mensagem — Ana Trevizan",
-				html:
-					submission.locale === "en"
-						? `<p>Hello ${safe.name},</p><p>Your message was received successfully. I will be in touch soon.</p><p>Ana Trevizan</p>`
-						: `<p>Olá ${safe.name},</p><p>A sua mensagem foi recebida com sucesso. Entrarei em contacto em breve.</p><p>Ana Trevizan</p>`,
-			});
-			const results = await Promise.allSettled([adminEmail, confirmationEmail]);
-			statuses = results.map((result) =>
-				result.status === "fulfilled" ? "sent" : "failed",
-			) as [string, string];
-			for (const [index, result] of results.entries()) {
-				if (result.status === "rejected")
-					console.error("contact-email-delivery-failed", {
-						requestId: submission.requestId,
-						target: index === 0 ? "admin" : "confirmation",
-					});
-			}
+			statuses = await sendContactEmails(
+				configuration,
+				submission,
+				requestType,
+				country,
+			);
 			logIntegrationStage("completed");
 		}
 		try {

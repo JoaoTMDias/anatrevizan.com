@@ -4,6 +4,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import contact from "../netlify/functions/contact.ts";
 
 const { privateKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
+const emailStatusValues = ["failed", "not-configured", "sent"] as const;
+type EmailStatus = (typeof emailStatusValues)[number];
+
 const defaultEnvironment: Record<string, string> = {
 	TURNSTILE_SECRET_KEY: "turnstile-secret",
 	GOOGLE_SERVICE_ACCOUNT_EMAIL: "contact@example.iam.gserviceaccount.com",
@@ -42,6 +45,17 @@ function request(payload: unknown = body): Request {
 		},
 		body: JSON.stringify(payload),
 	});
+}
+
+function expectEmailStatuses(statuses: [EmailStatus, EmailStatus]) {
+	const update = vi
+		.mocked(fetch)
+		.mock.calls.find(
+			([url, init]) =>
+				String(url).includes("sheets.googleapis.com") && init?.method === "PUT",
+		);
+	expect(update).toBeDefined();
+	expect(JSON.parse(String(update?.[1]?.body)).values).toEqual([statuses]);
 }
 
 function successfulFetch(url: string | URL | Request, init?: RequestInit) {
@@ -85,7 +99,25 @@ describe("contact Netlify Function", () => {
 			code: "accepted",
 			requestId: body.requestId,
 		});
+		expectEmailStatuses(["sent", "sent"]);
 		const calls = vi.mocked(fetch).mock.calls;
+		const emails = calls.filter(([url]) =>
+			String(url).includes("api.resend.com"),
+		);
+		const messages = emails.map(([, init]) => JSON.parse(String(init?.body)));
+		expect(messages[0]).toMatchObject({
+			from: environment.CONTACT_EMAIL_FROM,
+			to: [environment.CONTACT_EMAIL_TO],
+			reply_to: body.email,
+		});
+		expect(messages[1]).toMatchObject({
+			from: environment.CONTACT_EMAIL_FROM,
+			to: [body.email],
+			reply_to: environment.CONTACT_EMAIL_TO,
+		});
+		expect(
+			calls.findIndex(([url]) => String(url).includes("insertDataOption")),
+		).toBeLessThan(calls.indexOf(emails[0]));
 		expect(
 			calls.filter(([url]) => String(url).includes("api.resend.com")),
 		).toHaveLength(2);
@@ -97,20 +129,25 @@ describe("contact Netlify Function", () => {
 		).toBe(true);
 	});
 
-	it("persists successfully when Resend is not configured", async () => {
-		delete environment.RESEND_API_KEY;
-		const response = await contact(request(), {} as Context);
-		expect(response.status).toBe(200);
-		await expect(response.json()).resolves.toMatchObject({
-			code: "accepted",
-			requestId: body.requestId,
-		});
-		expect(
-			vi
-				.mocked(fetch)
-				.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
-		).toBe(false);
-	});
+	it.each(["RESEND_API_KEY", "CONTACT_EMAIL_FROM", "CONTACT_EMAIL_TO"])(
+		"persists successfully without %s",
+		async (key) => {
+			delete environment[key];
+
+			const response = await contact(request(), {} as Context);
+			expect(response.status).toBe(200);
+			await expect(response.json()).resolves.toMatchObject({
+				code: "accepted",
+				requestId: body.requestId,
+			});
+			expectEmailStatuses(["not-configured", "not-configured"]);
+			expect(
+				vi
+					.mocked(fetch)
+					.mock.calls.some(([url]) => String(url).includes("api.resend.com")),
+			).toBe(false);
+		},
+	);
 
 	it("rejects invalid, cross-origin and failed Turnstile submissions", async () => {
 		expect((await contact(request({}), {} as Context)).status).toBe(400);
@@ -140,9 +177,58 @@ describe("contact Netlify Function", () => {
 			code: "accepted",
 			requestId: body.requestId,
 		});
+		expectEmailStatuses(["failed", "failed"]);
 		expect(console.error).toHaveBeenCalledWith(
 			"contact-email-delivery-failed",
 			expect.objectContaining({ requestId: body.requestId }),
+		);
+	});
+
+	it.each([0, 1])(
+		"keeps independent statuses when email %s rejects without logging sensitive errors",
+		async (failedIndex) => {
+			let emailIndex = 0;
+			vi.mocked(fetch).mockImplementation((url, init) => {
+				if (
+					String(url).includes("api.resend.com") &&
+					emailIndex++ === failedIndex
+				)
+					return Promise.reject(
+						new Error(
+							`${environment.RESEND_API_KEY} ${body.email} ${body.message} ${body.turnstileToken}`,
+						),
+					);
+				return successfulFetch(url, init);
+			});
+			expect((await contact(request(), {} as Context)).status).toBe(200);
+			expectEmailStatuses(
+				failedIndex === 0 ? ["failed", "sent"] : ["sent", "failed"],
+			);
+			expect(console.error).toHaveBeenCalledExactlyOnceWith(
+				"contact-email-delivery-failed",
+				{
+					requestId: body.requestId,
+					target: failedIndex === 0 ? "admin" : "confirmation",
+				},
+			);
+		},
+	);
+
+	it("returns success when the email status write fails", async () => {
+		vi.mocked(fetch).mockImplementation((url, init) => {
+			if (init?.method === "PUT")
+				return Promise.reject(new Error("sensitive upstream error"));
+			return successfulFetch(url, init);
+		});
+		const response = await contact(request(), {} as Context);
+		expect(response.status).toBe(200);
+		await expect(response.json()).resolves.toMatchObject({
+			ok: true,
+			code: "accepted",
+		});
+		expect(console.error).toHaveBeenCalledExactlyOnceWith(
+			"contact-email-status-update-failed",
+			{ requestId: body.requestId },
 		);
 	});
 
