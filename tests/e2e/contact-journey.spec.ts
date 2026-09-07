@@ -91,15 +91,15 @@ test.describe("potential client sends a contact request", () => {
 			await expect(button).toBeVisible();
 			const fits = await button.evaluate((element) => {
 				const box = element.getBoundingClientRect();
-				const icon = element.querySelector("svg")!.getBoundingClientRect();
+				const icon = element.querySelector("svg")?.getBoundingClientRect();
 				const text = element
-					.querySelector("span:not(.sr-only)")!
-					.getBoundingClientRect();
+					.querySelector("span:not(.sr-only)")
+					?.getBoundingClientRect();
 				return (
-					icon.width >= 16 &&
-					icon.right <= box.right &&
-					text.left >= box.left &&
-					text.right <= box.right &&
+					(icon?.width ?? 0) >= 16 &&
+					(icon?.right ?? Infinity) <= box.right &&
+					(text?.left ?? -Infinity) >= box.left &&
+					(text?.right ?? Infinity) <= box.right &&
 					element.scrollWidth <= element.clientWidth + 1
 				);
 			});

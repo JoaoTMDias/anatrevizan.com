@@ -151,7 +151,7 @@ export default function ContactForm({
 		if (!focusErrorSummary || !errorSummaryRef.current) return;
 		errorSummaryRef.current.focus();
 		setFocusErrorSummary(false);
-	}, [focusErrorSummary, errors]);
+	}, [focusErrorSummary]);
 
 	function chooseChannel(nextChannel: FormValues["channel"]) {
 		setChannel(nextChannel);

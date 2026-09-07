@@ -157,13 +157,13 @@
 	.home-difference__icon {
 		@apply row-span-2 size-10 rounded-full;
 	}
-	.home-difference p {
+	.home-differences .home-difference p {
 		grid-column: 2;
 	}
 	.home-difference h3 {
 		@apply text-lg font-semibold;
 	}
-	.home-difference p {
+	.home-differences .home-difference p {
 		@apply text-base/[1.65] text-muted-foreground;
 	}
 	/* --- Academic & publications --- */
@@ -297,7 +297,7 @@
 	}
 	.about-timeline h3 + p,
 	.about-current-work h3 + p,
-	.about-values p {
+	.about-values article p {
 		@apply mt-1 text-base/[1.65] text-muted-foreground;
 	}
 	.about-values {
