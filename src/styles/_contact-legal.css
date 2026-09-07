@@ -22,13 +22,19 @@
 		@apply mb-6 rounded-md border p-4;
 	}
 	.contact-form__error-summary {
-		@apply border-destructive/40 bg-destructive/5 text-destructive;
+		@apply flex items-start gap-3 text-foreground;
+
+		border-color: color-mix(in oklab, var(--destructive) 45%, var(--border));
+		background: color-mix(in oklab, var(--destructive) 6%, var(--background));
+	}
+	.contact-form__error-summary svg {
+		@apply mt-0.5 size-5 shrink-0 text-destructive;
 	}
 	.contact-form__error-summary ul {
 		@apply mt-2 list-disc pl-6;
 	}
 	.contact-form__error-summary a {
-		@apply underline;
+		@apply font-medium text-foreground underline decoration-destructive/70 underline-offset-2;
 	}
 	.contact-form__fallback {
 		@apply mt-6 grid gap-4 border-border bg-secondary;
@@ -157,13 +163,31 @@
 		@apply mt-4 rounded-md text-base;
 	}
 	.contact-form__status:not(:empty) {
-		@apply border p-4;
+		@apply flex items-start gap-3 border p-4;
+	}
+	.contact-form__status svg {
+		@apply mt-0.5 size-5 shrink-0;
 	}
 	.contact-form__status[data-state="success"] {
-		@apply border-primary/40 bg-primary/5;
+		@apply text-foreground;
+
+		border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+		background: color-mix(in oklab, var(--primary) 6%, var(--background));
+	}
+	.contact-form__status[data-state="success"] svg {
+		@apply text-primary;
+	}
+	.contact-form__status[data-state="success"] h2 {
+		@apply m-0 text-base font-semibold;
 	}
 	.contact-form__status[data-state="error"] {
-		@apply border-destructive/40 bg-destructive/5 text-destructive;
+		@apply text-foreground;
+
+		border-color: color-mix(in oklab, var(--destructive) 45%, var(--border));
+		background: color-mix(in oklab, var(--destructive) 6%, var(--background));
+	}
+	.contact-form__status[data-state="error"] svg {
+		@apply text-destructive;
 	}
 	.contact-sidebar {
 		@apply grid min-w-0 self-start gap-5;
