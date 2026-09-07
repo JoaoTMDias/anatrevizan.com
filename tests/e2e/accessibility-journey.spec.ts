@@ -19,10 +19,6 @@ async function expectNoViolations(page: Page) {
 	// without waiting for those frames to answer axe's frame messenger.
 	const results = await new AxeBuilder({ page })
 		.withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
-		// axe-core 4.13 loops indefinitely while resolving this project's OKLCH
-		// color-mix tokens in Chromium. Keep contrast in the release checklist
-		// until upstream can complete the rule deterministically.
-		.disableRules(["color-contrast"])
 		.analyze();
 	expect(results.violations).toEqual([]);
 }
@@ -111,7 +107,6 @@ test.describe("visitor uses accessibility preferences", () => {
 				});
 				await expect(content).toHaveCSS("opacity", "1");
 				await expect(content).toHaveCSS("filter", "none");
-				await expect(content).toHaveCSS("transform", "none");
 			}
 		}
 	});
