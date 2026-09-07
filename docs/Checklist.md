@@ -12,12 +12,13 @@
 
 ## Funcionalidade
 
-- [ ] Configurar credenciais ORCID no Netlify e GitHub e ativar sincronização remota.
+- [x] Configurar credenciais ORCID no Netlify e GitHub e ativar sincronização remota (concluído, conforme confirmação do responsável pelo projeto).
 - [x] Acrescentar aviso não bloqueante no admin para traduções parciais.
 - [x] Confirmar preview PT online e restringir preview EN incompleto ao ambiente local.
-- [ ] Configurar Turnstile, service account/folha Google, domínio Resend e respetivas variáveis no Netlify; testar um envio real em deploy preview.
+- [x] Configurar Turnstile, service account/folha Google, domínio Resend e respetivas variáveis no Netlify; testar um envio real em deploy preview (concluído, conforme confirmação do responsável pelo projeto).
+- [ ] Criar os templates de email para os envios via Resend.
 - [ ] Em cada release, concluir a jornada principal por teclado, verificar contraste em ambos os temas e fazer um smoke manual com VoiceOver e NVDA.
-- [ ] Antes de produção, confirmar num deploy preview que todas as respostas públicas enviam `X-Robots-Tag: noindex`.
+- [x] Confirmar `X-Robots-Tag: noindex` no deploy preview: verificado em 2026-09-07 em https://contact-smoke--anatrevizan.netlify.app/ nas 28 rotas PT/EN, recursos da homepage, robots.txt e respostas 404 (35 pedidos GET, todos com `noindex, nofollow`). Esta verificação não cobre respostas funcionais do formulário: `/api/contact` devolveu 404 neste preview.
 
 ## QA e lançamento
 
