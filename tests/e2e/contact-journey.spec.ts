@@ -17,14 +17,28 @@ const englishPersona = {
 
 async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	const form = page.getByRole("form", { name: "Pedido de contacto" });
-	await form.getByLabel("Nome").fill(persona.name);
-	await form.getByLabel("E-mail").fill(persona.email);
-	await form.getByLabel("WhatsApp (opcional)").fill(persona.whatsapp);
-	await form.getByLabel("Tipo de pedido").selectOption("request-1");
-	await form.getByLabel("País onde está").selectOption("PT");
-	await form
-		.getByRole("textbox", { name: "Mensagem", exact: true })
-		.fill(persona.message);
+	const nameInput = form.getByLabel("Nome");
+	const emailInput = form.getByLabel("E-mail");
+	const whatsappInput = form.getByLabel("WhatsApp (opcional)");
+	const requestTypeSelect = form.getByLabel("Tipo de pedido");
+	const countrySelect = form.getByLabel("País onde está");
+	const messageTextarea = form.getByRole("textbox", { name: "Mensagem", exact: true });
+
+	await nameInput.click();
+	await nameInput.fill(persona.name);
+
+	await emailInput.click();
+	await emailInput.fill(persona.email);
+
+	await whatsappInput.click();
+	await whatsappInput.fill(persona.whatsapp);
+
+	await requestTypeSelect.selectOption("request-1");
+
+	await countrySelect.selectOption("PT");
+
+	await messageTextarea.fill(persona.message);
+
 	return form;
 }
 
@@ -112,7 +126,12 @@ test.describe("potential client sends a contact request", () => {
 		});
 		await page.goto("/contacto");
 		const form = await fillPortugueseForm(page);
-		await form.getByRole("button", { name: "Enviar pedido" }).press("Enter");
+
+		const sendButton = form.getByRole("button", { name: "Enviar pedido" });
+
+		await sendButton.focus();
+		await sendButton.press("Enter");
+
 		await expect(page).toHaveURL(/\/contacto#contact-form-status$/);
 		await expect(page.getByRole("status")).toContainText(
 			"Mensagem enviada com sucesso",
