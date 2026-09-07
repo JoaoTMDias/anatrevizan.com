@@ -96,7 +96,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
           <div class="publication-list" data-publications>
             {publications.map((publication, index) => (
               <article
-                class="publication-card"
+                class:list={["publication-card", publication.highlight && "publication-card--highlight"]}
                 aria-labelledby={`publication-${index}`}
                 data-year={publication.year ?? ""}
                 data-language={publication.language ?? ""}
@@ -125,7 +125,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
                     )}
                   </div>
                   {publication.url ? (
-                    <Button variant="outline" href={publication.url} rel="external">
+                    <Button class="publication-card__link whitespace-normal" variant="link" href={publication.url} rel="external">
                       {page.filters.view}
                       <Icon name="external-link" />
                     </Button>

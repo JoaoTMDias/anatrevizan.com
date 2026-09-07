@@ -316,3 +316,52 @@
 		font-size: clamp(1.5rem, 5vw, 2rem);
 	}
 }
+
+@layer components {
+	.contact-hero {
+		min-height: 0;
+	}
+	.contact-hero .editorial-hero__inner {
+		padding-top: 2rem;
+		padding-bottom: 1.5rem;
+	}
+	.contact-hero .editorial-hero__content {
+		padding-block: 1.5rem;
+		gap: 1.5rem;
+		max-width: none;
+	}
+	.contact-hero .editorial-hero__foreground {
+		max-width: 10rem;
+		justify-self: start;
+	}
+	.contact-hero__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+	.contact-message {
+		scroll-margin-top: 2rem;
+	}
+	.contact-message:target {
+		outline: 2px solid var(--ring);
+		outline-offset: 0.5rem;
+	}
+	@media (min-width: 48rem) {
+		.contact-hero .editorial-hero__content {
+			grid-template-columns: minmax(0, 1fr) minmax(10rem, 16rem);
+		}
+		.contact-hero .editorial-hero__foreground {
+			max-width: 16rem;
+			justify-self: end;
+		}
+	}
+}
+
+/* Override the shared desktop hero floor for the action-focused contact page. */
+.contact-hero {
+	min-height: 0;
+}
+.contact-hero .editorial-hero__inner {
+	padding-top: 2rem;
+}

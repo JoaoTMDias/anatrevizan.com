@@ -48,7 +48,10 @@ test.describe("visitor uses accessibility preferences", () => {
 		}
 	});
 
-	test("all routes reflow at 320px, equivalent to 400% zoom at 1280px", async ({ page, request }) => {
+	test("all routes reflow at 320px, equivalent to 400% zoom at 1280px", async ({
+		page,
+		request,
+	}) => {
 		await page.setViewportSize({ width: 320, height: 900 });
 		for (const path of await publishedPaths(request)) {
 			await page.goto(path);
@@ -89,6 +92,28 @@ test.describe("visitor uses accessibility preferences", () => {
 		await expectNoViolations(page);
 		await page.keyboard.press("Escape");
 		await expect(tooltip).toBeHidden();
+	});
+
+	test("portraits and milestones remain readable while scrolling", async ({
+		page,
+	}) => {
+		for (const reducedMotion of ["no-preference", "reduce"] as const) {
+			await page.emulateMedia({ reducedMotion });
+			for (const [path, selector] of [
+				["/", ".home-hero__foreground"],
+				["/sobre", ".about-timeline__item"],
+			]) {
+				await page.goto(path);
+				const content = page.locator(selector).first();
+				await content.evaluate((element) => {
+					const box = element.getBoundingClientRect();
+					window.scrollTo(0, window.scrollY + box.top + box.height * 0.65);
+				});
+				await expect(content).toHaveCSS("opacity", "1");
+				await expect(content).toHaveCSS("filter", "none");
+				await expect(content).toHaveCSS("transform", "none");
+			}
+		}
 	});
 
 	test("content remains useful without JavaScript", async ({ browser }) => {

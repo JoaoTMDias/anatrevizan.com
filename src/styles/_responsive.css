@@ -1,7 +1,6 @@
 @media (max-width: 63.999rem) {
 	.editorial-grid,
-	.home-differences,
-	.home-services {
+	.home-differences {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
@@ -24,7 +23,6 @@
 	.home-gateways,
 	.home-differences,
 	.home-publications,
-	.home-services,
 	.editorial-grid,
 	.about-current-work,
 	.about-values {
@@ -46,7 +44,7 @@
 		margin-top: -1rem;
 	}
 	.home-gateway {
-		min-height: 21rem;
+		min-height: auto;
 	}
 	.home-gateway__icon {
 		@apply size-16;

@@ -278,6 +278,7 @@ export default function ContactForm({
 		formState: { errors, isSubmitting },
 	} = useForm<FormValues>({
 		resolver: zodResolver(schema),
+		shouldFocusError: false,
 		mode: "onBlur",
 		reValidateMode: "onChange",
 		defaultValues: {
@@ -311,7 +312,7 @@ export default function ContactForm({
 		if (!focusErrorSummary || !errorSummaryRef.current) return;
 		errorSummaryRef.current.focus();
 		setFocusErrorSummary(false);
-	}, [errors, focusErrorSummary]);
+	}, [focusErrorSummary, errors]);
 
 	useEffect(() => {
 		if (
@@ -497,6 +498,13 @@ export default function ContactForm({
 		label: country.label[locale],
 	}));
 	const id = (name: string) => `${prefix}-${name}`;
+	const errorFields = [
+		"name",
+		"email",
+		"requestType",
+		"country",
+		"message",
+	] as const;
 
 	return (
 		<form
@@ -520,18 +528,14 @@ export default function ContactForm({
 				>
 					<strong>{t.errorSummary}</strong>
 					<ul>
-						{Object.entries(errors)
-							.filter(([field]) =>
-								["name", "email", "requestType", "country", "message"].includes(
-									field,
-								),
-							)
-							.map(([field, error]) => (
+						{errorFields
+							.filter((field) => errors[field])
+							.map((field) => (
 								<li key={field}>
 									<a
 										href={`#${id(field === "requestType" ? "request-type" : field)}`}
 									>
-										{error?.message}
+										{t[field]}: {errors[field]?.message}
 									</a>
 								</li>
 							))}

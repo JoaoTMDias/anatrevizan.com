@@ -1,0 +1,17 @@
+---
+interface Props { class?: string; }
+const { class: className } = Astro.props;
+---
+
+<svg
+  class:list={["editorial-mark", className]}
+  viewBox="0 0 160 80"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d="M0 40H160M104 0V80M24 68C24 30 64 12 104 12M104 68C136 68 148 52 148 12" />
+  <circle cx="104" cy="40" r="5" fill="currentColor" stroke="none" />
+</svg>

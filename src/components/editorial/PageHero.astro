@@ -22,6 +22,7 @@ interface Props extends Omit<HTMLAttributes<"header">, "title"> {
   tone?: "accent" | "primary";
   heroMedia?: HeroMedia | null;
   showActions?: boolean;
+  showContactLink?: boolean;
 }
 
 const {
@@ -34,6 +35,7 @@ const {
   tone = "primary",
   heroMedia,
   showActions = false,
+  showContactLink = true,
   class: className,
   ...rest
 } = Astro.props;
@@ -70,12 +72,13 @@ const items = [
               <Button variant="accent" href={contactBookingPath(locale)}>
                 {locale === "en" ? "Book an initial call" : "Agendar contacto"}
               </Button>
-              <Button variant="outlineInverse" href={pathFor("contact", locale)}>
+              {showContactLink && <Button variant="outlineInverse" href={pathFor("contact", locale)}>
                 {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
-              </Button>
+              </Button>}
             </div>
           )
         }
+        <slot name="actions" />
       </div>
       {
         foreground && (

@@ -26,6 +26,7 @@ const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 const bookingId = locale === "en" ? "book" : "agendar";
+const messageId = locale === "en" ? "message" : "mensagem";
 const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
   const href = safeProfileUrl(profile?.url);
   const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
@@ -38,6 +39,7 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
     contact ? (
       <>
         <PageHero
+          class="contact-hero"
           title={data.title}
           subtitle={contact.subtitle}
           tag={contact.tag}
@@ -45,9 +47,18 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
           routeKey={data.routeKey}
           heroMedia={data.media}
           data-tina-field={tinaField(data, "contactPage")}
-        />
+        >
+          <div slot="actions" class="contact-hero__actions">
+            <Button variant="accent" href={`#${messageId}`}>
+              {locale === "en" ? "Send a message" : "Enviar mensagem"}
+            </Button>
+            <Button variant="outlineInverse" href={`#${bookingId}`}>
+              {locale === "en" ? "Book a conversation" : "Agendar conversa"}
+            </Button>
+          </div>
+        </PageHero>
         <Section class="contact-layout">
-          <div>
+          <div id={messageId} class="contact-message" tabindex="-1">
             <SectionHeading
               title={locale === "en" ? "Contact form" : "Formulário de contacto"}
               locale={locale}
@@ -85,8 +96,8 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
                 </div>
               </dl>
               {calendlyUrl ? (
-                <Button class="w-full" href={calendlyUrl} rel="external noreferrer">
-                  {locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}
+                <Button class="w-full whitespace-normal [&_svg]:shrink-0" href={calendlyUrl} rel="external noreferrer">
+                  <span>{locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}</span>
                   <Icon name="external-link" />
                 </Button>
               ) : (

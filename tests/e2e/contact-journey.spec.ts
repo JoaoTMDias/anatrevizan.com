@@ -41,6 +41,15 @@ test.describe("potential client sends a contact request", () => {
 			.getByRole("alert")
 			.filter({ hasText: "Corrija os campos" });
 		await expect(summary).toBeFocused();
+		await expect(summary.getByRole("link")).toHaveText([
+			"Nome: Introduza pelo menos 2 caracteres.",
+			"E-mail: Introduza um endereço de email válido.",
+			"Tipo de pedido: Este campo é obrigatório.",
+			"País onde está: Este campo é obrigatório.",
+			"Mensagem: Introduza pelo menos 20 caracteres.",
+		]);
+		await summary.getByRole("link", { name: /^Nome:/ }).press("Enter");
+		await expect(form.getByLabel("Nome")).toBeFocused();
 		await expect(form.getByLabel("Nome")).toHaveAttribute(
 			"aria-invalid",
 			"true",
@@ -56,6 +65,32 @@ test.describe("potential client sends a contact request", () => {
 			.disableRules(["color-contrast"])
 			.analyze();
 		expect(results.violations).toEqual([]);
+	});
+
+	test("booking action fits narrow screens in both languages", async ({
+		page,
+	}) => {
+		await page.setViewportSize({ width: 320, height: 900 });
+		for (const path of ["/contacto#agendar", "/en/contact#book"]) {
+			await page.goto(path);
+			const button = page.locator(".contact-booking a");
+			await expect(button).toBeVisible();
+			const fits = await button.evaluate((element) => {
+				const box = element.getBoundingClientRect();
+				const icon = element.querySelector("svg")!.getBoundingClientRect();
+				const text = element
+					.querySelector("span:not(.sr-only)")!
+					.getBoundingClientRect();
+				return (
+					icon.width >= 16 &&
+					icon.right <= box.right &&
+					text.left >= box.left &&
+					text.right <= box.right &&
+					element.scrollWidth <= element.clientWidth + 1
+				);
+			});
+			expect(fits).toBe(true);
+		}
 	});
 
 	test("successful email submission uses the versioned contract and one-time confirmation", async ({

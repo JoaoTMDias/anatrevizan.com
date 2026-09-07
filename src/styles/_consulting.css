@@ -134,3 +134,9 @@
 		@apply flex items-center justify-between gap-8 rounded-lg border border-border bg-card p-8;
 	}
 }
+
+@media (min-width: 48rem) {
+	.consulting-service--public-policy .editorial-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}

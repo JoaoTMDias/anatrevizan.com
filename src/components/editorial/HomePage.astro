@@ -3,17 +3,16 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { HomeContent } from "../../lib/page-content";
 import { hasValidRouteKey } from "../../lib/page-content";
-import { heroAspectRatioForRoute } from "../../lib/hero-media";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
 import { contactBookingPath, pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
-import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
 import AcronymText from "./AcronymText.astro";
 import EditorialImage from "./EditorialImage.astro";
+import EditorialMark from "./EditorialMark.astro";
 import SectionHeading from "./SectionHeading.astro";
 interface Props {
   data: CmsEditorial;
@@ -25,16 +24,19 @@ const destination = (item: { routeKey?: unknown }) =>
   hasValidRouteKey(item) ? pathFor(item.routeKey, locale) : undefined;
 const brandIcons = ["scale", "leaf", "school", "world"];
 const differenceIcons = ["world", "microscope", "language", "arrows-exchange"];
-const serviceIcons = ["plane-departure", "scale", "leaf", "building-community", "file-description"];
 const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
 const foreground = data.media?.foreground?.image ? data.media.foreground : null;
-const foregroundRatio = heroAspectRatioForRoute("home");
+const spotlight = featuredPublications.find((publication) => publication.highlight) ?? featuredPublications[0];
+const homePublications = spotlight
+  ? [spotlight, ...featuredPublications.filter((publication) => publication.sourceId !== spotlight.sourceId)]
+  : [];
 ---
 
 <div id="main-content" tabindex="-1">
   {
     home ? (
-        <div class="home-hero" data-tina-field={tinaField(data, "home")}>
+        <div class:list={["home-hero", !foreground && "home-hero--text-only"]} data-tina-field={tinaField(data, "home")}>
+          <EditorialMark class="home-hero__mark" />
           <div class="site-container home-hero__inner">
             <div class="home-hero__layout">
               <div class="home-hero__copy">
@@ -66,10 +68,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
               </div>
               {foreground && (
                 <figure
-                  class:list={[
-                    "editorial-hero__foreground home-hero__foreground",
-                    `editorial-hero__foreground--${foregroundRatio}`,
-                  ]}
+                  class="editorial-hero__foreground home-hero__foreground"
                   data-tina-field={tinaField(data, "media")}
                 >
                   <EditorialImage
@@ -81,7 +80,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                     fetchpriority="high"
                     decoding="async"
                     border="golden"
-                    sizes="(min-width: 1024px) min(36vw, 28rem), calc(100vw - 2.5rem)"
+                    sizes="(min-width: 1024px) min(44vw, 34rem), (min-width: 768px) 28rem, calc(100vw - 2.5rem)"
                   />
                 </figure>
               )}
@@ -107,7 +106,7 @@ const foregroundRatio = heroAspectRatioForRoute("home");
                       />
                     </span>
                     <div>
-                      <h2><AcronymText text={item.title} locale={locale} /></h2>
+                      <h2><AcronymText text={item.routeKey === "publications" ? home.academicTitle : item.title} locale={locale} /></h2>
                       <p class="home-gateway__eyebrow"><AcronymText text={item.eyebrow} locale={locale} /></p>
                     </div>
                     <p class="home-gateway__description"><AcronymText text={item.description} locale={locale} /></p>
@@ -129,39 +128,36 @@ const foregroundRatio = heroAspectRatioForRoute("home");
             />
             <div class="home-differences">
               {home.differences.map((item, index) => (
-                <Card as="article" class="home-difference p-6 md:p-8">
+                <article class="home-difference">
                   <span class="home-difference__icon">
                     <Icon name={differenceIcons[index]} />
                   </span>
                   <h3><AcronymText text={item.title} locale={locale} /></h3>
                   <p><AcronymText text={item.description} locale={locale} /></p>
-                </Card>
+                </article>
               ))}
             </div>
         </Section>
-        <Section>
-            <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} locale={locale} centered />
-            <div class="home-services">
-              {home.services.map(
-                (item, index) =>
-                  destination(item) && (
-                    <a class="home-service-card" href={destination(item)}>
-                      <span class="home-service-card__heading">
-                        <span class="home-service-card__icon">
-                          <Icon name={serviceIcons[index]} />
-                        </span>
-                        <span><AcronymText text={item.tag} locale={locale} /></span>
-                      </span>
-                      <h3><AcronymText text={item.title} locale={locale} /></h3>
-                      <p><AcronymText text={item.description} locale={locale} /></p>
-                      <span class="home-service-card__cta">
-                        {item.cta}
-                        <Icon name="arrow-right" />
-                      </span>
-                    </a>
-                  )
-              )}
-            </div>
+        <Section class="home-services-layout">
+          <div class="home-services-heading">
+            <EditorialMark />
+            <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} locale={locale} />
+          </div>
+          <ol class="home-service-index" role="list">
+            {home.services.map((item, index) => destination(item) && (
+              <li>
+                <a class="home-service-entry" href={destination(item)}>
+                  <span class="home-service-entry__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <div class="home-service-entry__copy">
+                    <p class="home-service-entry__region"><AcronymText text={item.tag} locale={locale} /></p>
+                    <h3><AcronymText text={item.title} locale={locale} /></h3>
+                    <p class="home-service-entry__description"><AcronymText text={item.description} locale={locale} /></p>
+                  </div>
+                  <span class="home-service-entry__cta">{item.cta}<Icon name="arrow-up-right" /></span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </Section>
         <Section background="bg-secondary">
           <div class="home-academic-heading">
@@ -176,33 +172,23 @@ const foregroundRatio = heroAspectRatioForRoute("home");
             </div>
           </div>
           <div class="home-publications">
-            {featuredPublications.map((publication) => (
-              <Card as="article" class="home-publication p-6 md:p-8 gap-2">
-                {publication.highlight && <strong>{publication.highlight}</strong>}
-                <p class="text-xs text-muted-foreground">
-                  {[publication.year, publication.language].filter(Boolean).join(" · ")}
-                </p>
-                <h3 class="font-heading font-semibold text-card-foreground leading-snug">
-                  {publication.title}
-                </h3>
-                {publication.journal && (
-                  <p class="text-base text-muted-foreground flex-1">{publication.journal}</p>
-                )}
+            {homePublications.map((publication, index) => (
+              <article class:list={["home-publication", index === 0 && "home-publication--spotlight"]}>
+                {index === 0 && <EditorialMark class="home-publication__mark" />}
+                <div class="home-publication__meta">
+                  {publication.highlight && <strong>{publication.highlight}</strong>}
+                  <p>{[publication.year, publication.language].filter(Boolean).join(" · ")}</p>
+                </div>
+                <h3>{publication.title}</h3>
+                {publication.journal && <p class="home-publication__journal">{publication.journal}</p>}
                 {publication.url && (
-                  <a
-                    href={publication.url}
-                    class="inline-flex items-center gap-1 text-base font-medium text-accent hover:underline"
-                    target="_blank"
-                    rel="external noopener noreferrer"
-                  >
+                  <a href={publication.url} target="_blank" rel="external noopener noreferrer">
                     {locale === "en" ? "View publication" : "Ver publicação"}
                     <Icon name="external-link" />
-                    <span class="sr-only">
-                      ({locale === "en" ? "opens in a new tab" : "abre num novo separador"})
-                    </span>
+                    <span class="sr-only">({locale === "en" ? "opens in a new tab" : "abre num novo separador"})</span>
                   </a>
                 )}
-              </Card>
+              </article>
             ))}
           </div>
         </Section>

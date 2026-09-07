@@ -95,6 +95,8 @@ export default function HeaderMenu({
 		const fragments: Record<string, string> = {
 			"#agendar": "#book",
 			"#book": "#agendar",
+			"#mensagem": "#message",
+			"#message": "#mensagem",
 		};
 		return `${href}${fragments[window.location.hash] ?? ""}`;
 	};

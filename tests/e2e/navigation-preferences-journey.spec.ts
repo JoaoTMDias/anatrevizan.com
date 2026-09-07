@@ -45,6 +45,9 @@ test.describe("visitor navigates and keeps accessibility preferences", () => {
 		await page.goto("/contacto?status=sent#agendar");
 		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
 		await expect(page).toHaveURL(/\/en\/contact#book$/);
+		await page.goto("/contacto#mensagem");
+		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
+		await expect(page).toHaveURL(/\/en\/contact#message$/);
 		await page.goto("/sobre?status=sent#sem-equivalente");
 		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
 		await expect(page).toHaveURL(/\/en\/about$/);
