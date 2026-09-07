@@ -88,8 +88,25 @@
 		@apply ml-auto text-xs text-muted-foreground;
 	}
 	.publication-list {
+		--publications-per-row: 1;
 		@apply grid gap-0;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: repeat(var(--publications-per-row), minmax(0, 1fr));
+	}
+
+	@media (min-width: 48rem) {
+		.publication-list {
+			--publications-per-row: 2;
+
+			@apply gap-x-6;
+		}
+	}
+
+	@media (min-width: 64rem) {
+		.publication-list {
+			--publications-per-row: 3;
+
+			@apply gap-x-7;
+		}
 	}
 	.publication-card {
 		@apply border-b border-border py-4;
