@@ -162,13 +162,13 @@ describe("contact Netlify Function", () => {
 		},
 	);
 
-	it("keeps the saved submission accepted when confirmation rendering fails", async () => {
+	it("keeps the saved submission accepted when notification rendering fails", async () => {
 		vi.spyOn(emailRender, "render").mockRejectedValueOnce(
 			new Error("render failed"),
 		);
 		const response = await contact(request(), {} as Context);
 		expect(response.status).toBe(200);
-		expectEmailStatuses(["sent", "failed"]);
+		expectEmailStatuses(["failed", "sent"]);
 		expect(
 			vi
 				.mocked(fetch)

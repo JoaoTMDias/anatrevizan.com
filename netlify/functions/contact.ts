@@ -6,6 +6,7 @@ import siteConfig from "../../src/content/config/site.json" with {
 	type: "json",
 };
 import ContactConfirmation from "../../src/emails/ContactConfirmation";
+import ContactNotification from "../../src/emails/ContactNotification";
 import {
 	CONTACT_FORM_ACTION,
 	CONTACT_FORM_MAXIMUM_BYTES,
@@ -182,15 +183,6 @@ async function updateEmailStatus(
 		throw new Error(`Google Sheets status update failed (${response.status})`);
 }
 
-function escapeHtml(value: string): string {
-	return value
-		.replaceAll("&", "&amp;")
-		.replaceAll("<", "&lt;")
-		.replaceAll(">", "&gt;")
-		.replaceAll('"', "&quot;")
-		.replaceAll("'", "&#039;");
-}
-
 async function sendEmail(
 	configuration: EmailConfiguration,
 	message: EmailMessage,
@@ -230,12 +222,6 @@ async function sendContactEmails(
 	requestType: string,
 	country: string,
 ): Promise<[EmailStatus, EmailStatus]> {
-	const safe = Object.fromEntries(
-		Object.entries(submission).map(([key, value]) => [
-			key,
-			escapeHtml(String(value)),
-		]),
-	);
 	const isEnglish = submission.locale === "en";
 	const messages: [EmailMessage, EmailMessage] = [
 		{
@@ -244,7 +230,14 @@ async function sendContactEmails(
 			subject: isEnglish
 				? `New contact request — ${submission.name}`
 				: `Novo pedido de contacto — ${submission.name}`,
-			html: `<h1>Novo pedido de contacto</h1><p><strong>Nome:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>WhatsApp:</strong> ${safe.whatsapp || "—"}</p><p><strong>Tipo:</strong> ${escapeHtml(requestType)}</p><p><strong>País:</strong> ${escapeHtml(country)}</p><p><strong>Mensagem:</strong></p><p>${safe.message.replaceAll("\n", "<br>")}</p><p>ID: ${safe.requestId}</p>`,
+			html: async () =>
+				await render(
+					createElement(ContactNotification, {
+						...submission,
+						requestType,
+						country,
+					}),
+				),
 		},
 		{
 			to: submission.email,
