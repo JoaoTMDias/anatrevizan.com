@@ -14,9 +14,6 @@ const templatePaths = [
 ];
 
 async function expectNoViolations(page: Page) {
-	// Cross-origin widgets (Turnstile) are third-party boundaries and can never be
-	// audited reliably by our CI. Legacy mode audits the complete same-origin DOM
-	// without waiting for those frames to answer axe's frame messenger.
 	const results = await new AxeBuilder({ page })
 		.withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
 		.analyze();
