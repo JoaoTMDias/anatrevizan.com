@@ -46,6 +46,9 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
+      - name: Generate Tina types
+        run: pnpm exec tinacms build --local --skip-cloud-checks --skip-indexing
+
       - name: Check Astro types
         run: pnpm exec astro check
 
