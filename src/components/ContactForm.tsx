@@ -109,7 +109,8 @@ export default function ContactForm({
 	});
 
 	const onTurnstileToken = useCallback(
-		(token: string) => setValue("turnstileToken", token, { shouldValidate: true }),
+		(token: string) =>
+			setValue("turnstileToken", token, { shouldValidate: true }),
 		[setValue],
 	);
 	const onTurnstileExpire = useCallback(
