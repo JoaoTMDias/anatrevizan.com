@@ -8,6 +8,14 @@ interface Props {
   config?: CmsConfig | null;
   locale?: PublishedLocale;
 }
+interface LocalizedLabel {
+  pt: string;
+  en: string;
+}
+interface Profile {
+  label?: LocalizedLabel | null;
+  url?: string | null;
+}
 const { config, locale = "pt-PT" } = Astro.props;
 const languageField = locale === "pt-PT" ? "pt" : "en";
 const labelFor = (value: { pt: string; en: string } | null | undefined) =>
@@ -19,12 +27,12 @@ const directLinks = navigation.filter(
   (item) => item.type !== "menu" && item.routeKey !== "contact"
 );
 const legalRoutes: RouteKey[] = ["privacy", "accessibility"];
-const profiles = (config?.contacts?.profiles ?? [])
+const profiles = ((config?.contacts?.profiles as Profile[] | null | undefined) ?? [])
   .filter(present)
-  .filter((profile) => Boolean(profile.url));
-const serviceLanguages = (config?.contacts?.serviceLanguages ?? []).filter(
-  (language): language is string => Boolean(language)
-);
+  .filter((profile: Profile) => Boolean(profile.url));
+const serviceLanguages = (
+  (config?.contacts?.serviceLanguages as (string | null)[] | null | undefined) ?? []
+).filter((language: string | null): language is string => Boolean(language));
 const contactIntro = config?.footer?.contactIntro?.[languageField];
 const contactCta = config?.footer?.contactCta?.[languageField];
 const rightsReserved = config?.footer?.rightsReserved?.[languageField];

@@ -14,24 +14,39 @@ import SectionHeading from "./SectionHeading.astro";
 interface Props {
   data: CmsEditorial;
 }
+interface LocalizedLabel {
+  pt: string;
+  en: string;
+}
+interface Profile {
+  label?: LocalizedLabel | null;
+  url?: string | null;
+}
+interface RequestType {
+  label?: LocalizedLabel | null;
+}
 const { data } = Astro.props;
 const contact = data.contactPage as ContactPageContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const config = contact ? (await getConfig()).data.config : null;
-const requestTypes = (config?.requestTypes ?? []).flatMap((item, index) => {
-  const label = locale === "en" ? item?.label?.en : item?.label?.pt;
-  return label ? [{ value: `request-${index + 1}`, label }] : [];
-});
+const requestTypes = ((config?.requestTypes as RequestType[] | null | undefined) ?? []).flatMap(
+  (item: RequestType, index) => {
+    const label = locale === "en" ? item?.label?.en : item?.label?.pt;
+    return label ? [{ value: `request-${index + 1}`, label }] : [];
+  }
+);
 const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
 const bookingId = locale === "en" ? "book" : "agendar";
 const messageId = locale === "en" ? "message" : "mensagem";
-const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
-  const href = safeProfileUrl(profile?.url);
-  const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
-  return href && label ? [{ href, label }] : [];
-});
+const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefined) ?? []).flatMap(
+  (profile: Profile) => {
+    const href = safeProfileUrl(profile?.url);
+    const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
+    return href && label ? [{ href, label }] : [];
+  }
+);
 ---
 
 <div id="main-content" tabindex="-1">
@@ -96,8 +111,14 @@ const profileLinks = (config?.contacts?.profiles ?? []).flatMap((profile) => {
                 </div>
               </dl>
               {calendlyUrl ? (
-                <Button class="w-full whitespace-normal [&_svg]:shrink-0" href={calendlyUrl} rel="external noreferrer">
-                  <span>{locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}</span>
+                <Button
+                  class="w-full whitespace-normal [&_svg]:shrink-0"
+                  href={calendlyUrl}
+                  rel="external noreferrer"
+                >
+                  <span>
+                    {locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}
+                  </span>
                   <Icon name="external-link" />
                 </Button>
               ) : (
