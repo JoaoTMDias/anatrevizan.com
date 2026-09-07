@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -108,18 +108,27 @@ export default function ContactForm({
 		},
 	});
 
+	const onTurnstileToken = useCallback(
+		(token: string) => setValue("turnstileToken", token, { shouldValidate: true }),
+		[setValue],
+	);
+	const onTurnstileExpire = useCallback(
+		() => setValue("turnstileToken", ""),
+		[setValue],
+	);
+	const onTurnstileError = useCallback(() => {
+		setValue("turnstileToken", "");
+		setStatus("error");
+		setStatusMessage(t.turnstileError);
+	}, [setValue, t.turnstileError]);
+
 	const { containerRef: turnstileContainerRef, resetWidget: resetTurnstile } =
 		useTurnstileWidget({
 			channel,
 			turnstileSiteKey,
-			onToken: (token) =>
-				setValue("turnstileToken", token, { shouldValidate: true }),
-			onExpire: () => setValue("turnstileToken", ""),
-			onError: () => {
-				setValue("turnstileToken", "");
-				setStatus("error");
-				setStatusMessage(t.turnstileError);
-			},
+			onToken: onTurnstileToken,
+			onExpire: onTurnstileExpire,
+			onError: onTurnstileError,
 		});
 
 	// A redirect after a successful email submission carries `?status=sent`.
