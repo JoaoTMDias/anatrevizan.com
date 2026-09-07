@@ -82,7 +82,6 @@ export default function ContactForm({
 	const [statusMessage, setStatusMessage] = useState("");
 	const [whatsappPreview, setWhatsappPreview] = useState("");
 	const [showCopyFallback, setShowCopyFallback] = useState(false);
-	const [focusErrorSummary, setFocusErrorSummary] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -147,12 +146,6 @@ export default function ContactForm({
 		requestAnimationFrame(() => statusRef.current?.focus());
 	}, [t.success]);
 
-	useEffect(() => {
-		if (!focusErrorSummary || !errorSummaryRef.current) return;
-		errorSummaryRef.current.focus();
-		setFocusErrorSummary(false);
-	}, [focusErrorSummary]);
-
 	function chooseChannel(nextChannel: FormValues["channel"]) {
 		setChannel(nextChannel);
 		setValue("channel", nextChannel, { shouldValidate: true });
@@ -193,7 +186,6 @@ export default function ContactForm({
 	}
 
 	async function submit(data: FormValues) {
-		setFocusErrorSummary(false);
 		const name = data.name;
 		const requestType = data.requestType;
 		const countryCode = data.country;
@@ -299,9 +291,7 @@ export default function ContactForm({
 			lang={locale}
 			aria-label={t.formLabel}
 			aria-describedby={id("privacy-notice")}
-			onSubmit={handleSubmit(submit, () => {
-				setFocusErrorSummary(true);
-			})}
+			onSubmit={handleSubmit(submit)}
 			noValidate
 		>
 			{hasSummarizedErrors(errors) && (

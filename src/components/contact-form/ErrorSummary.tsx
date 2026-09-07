@@ -1,5 +1,5 @@
 import { CircleAlert } from "lucide-react";
-import type { RefObject } from "react";
+import { type RefObject, useLayoutEffect } from "react";
 import type { FieldErrors } from "react-hook-form";
 import type { ContactFormCopy } from "./copy";
 import type { FormValues } from "./types";
@@ -24,6 +24,10 @@ export function hasSummarizedErrors(errors: FieldErrors<FormValues>) {
 }
 
 export function ErrorSummary({ t, errors, id, summaryRef }: ErrorSummaryProps) {
+	useLayoutEffect(() => {
+		summaryRef.current?.focus();
+	}, [summaryRef]);
+
 	return (
 		<div
 			ref={summaryRef}
