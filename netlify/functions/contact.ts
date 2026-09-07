@@ -250,9 +250,16 @@ async function sendContactEmails(
 				await render(createElement(ContactConfirmation, submission)),
 		},
 	];
-	const results = await Promise.allSettled(
-		messages.map((message) => sendEmail(configuration, message)),
-	);
+	// Sent sequentially so delivery order is deterministic regardless of render timing.
+	const results: PromiseSettledResult<void>[] = [];
+	for (const message of messages) {
+		try {
+			await sendEmail(configuration, message);
+			results.push({ status: "fulfilled", value: undefined });
+		} catch (error) {
+			results.push({ status: "rejected", reason: error });
+		}
+	}
 	for (const [index, result] of results.entries()) {
 		if (result.status === "rejected")
 			console.error("contact-email-delivery-failed", {
