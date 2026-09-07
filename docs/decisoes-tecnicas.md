@@ -36,6 +36,9 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 - ORCID sincroniza em build com validação e snapshot resiliente. Calendly é link HTTPS sem embed.
 - Os textos funcionais e a validação do formulário pertencem ao código; os tipos de pedido permanecem editáveis na configuração global.
 - O contacto usa uma ilha React pequena com React Hook Form e Zod. Email é validado numa Netlify Function, protegido por Turnstile, guardado no Google Sheets e notificado por Resend; WhatsApp abre uma mensagem preenchida e não é guardado automaticamente.
+- A confirmação de contacto PT/EN usa React Email (`src/emails/ContactConfirmation.tsx`), renderizado no servidor e enviado por Resend com alternativa em texto simples. Falhas de renderização e envio são isoladas por destinatário.
+- O email usa o logo PNG em `public/emails/logo.png`, derivado de `public/logo.svg` com Sharp a 480 px e apresentado a 240 px. O preview serve o mesmo ficheiro através de `src/emails/static`; a versão enviada usa o URL HTTPS do domínio canónico. O fecho usa `public/signature.png`, com cópia no preview, e a confirmação fala na primeira pessoa em PT/EN.
+- Preview local de email: `pnpm email:dev` abre React Email em `http://localhost:3001`, com atualização automática e exemplos fictícios PT/EN em `src/emails`. Não requer credenciais Resend.
 - A folha Google é a fonte durável dos pedidos enviados pelo site. Falhas de email após a gravação não transformam um pedido recebido em erro para o visitante.
 - Acessibilidade, segurança, privacidade, SEO localizado, canonicals, alternates e testes são bloqueantes para lançamento.
 - A suite de resiliência valida o artefacto compilado: Vitest fica reservado a contratos com lógica e fronteiras externas; Playwright Chromium cobre jornadas, rotas, DOM final, navegação e axe sem retries nem snapshots visuais.

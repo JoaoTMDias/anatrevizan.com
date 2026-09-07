@@ -1,8 +1,11 @@
 import { createSign } from "node:crypto";
 import type { Config, Context } from "@netlify/functions";
+import { render, toPlainText } from "@react-email/render";
+import { createElement } from "react";
 import siteConfig from "../../src/content/config/site.json" with {
 	type: "json",
 };
+import ContactConfirmation from "../../src/emails/ContactConfirmation";
 import {
 	CONTACT_FORM_ACTION,
 	CONTACT_FORM_MAXIMUM_BYTES,
@@ -32,7 +35,7 @@ interface EmailConfiguration {
 }
 
 interface EmailMessage {
-	html: string;
+	html: string | (() => Promise<string>);
 	replyTo: string;
 	subject: string;
 	to: string;
@@ -192,6 +195,8 @@ async function sendEmail(
 	configuration: EmailConfiguration,
 	message: EmailMessage,
 ): Promise<void> {
+	const html =
+		typeof message.html === "function" ? await message.html() : message.html;
 	const response = await fetch("https://api.resend.com/emails", {
 		method: "POST",
 		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
@@ -203,7 +208,8 @@ async function sendEmail(
 			from: configuration.from,
 			to: [message.to],
 			subject: message.subject,
-			html: message.html,
+			html,
+			text: toPlainText(html),
 			reply_to: message.replyTo,
 		}),
 	});
@@ -215,7 +221,7 @@ async function sendContactEmails(
 	configuration: EmailConfiguration,
 	submission: {
 		email: string;
-		locale: string;
+		locale: "pt-PT" | "en";
 		message: string;
 		name: string;
 		requestId: string;
@@ -244,11 +250,11 @@ async function sendContactEmails(
 			to: submission.email,
 			replyTo: configuration.to,
 			subject: isEnglish
-				? "We received your message — Ana Trevizan"
-				: "Recebemos a sua mensagem — Ana Trevizan",
-			html: isEnglish
-				? `<p>Hello ${safe.name},</p><p>Your message was received successfully. I will be in touch soon.</p><p>Ana Trevizan</p>`
-				: `<p>Olá ${safe.name},</p><p>A sua mensagem foi recebida com sucesso. Entrarei em contacto em breve.</p><p>Ana Trevizan</p>`,
+				? "I received your message — Ana Trevizan"
+				: "Recebi a sua mensagem — Ana Trevizan",
+			// createElement is the JSX equivalent in this .ts Netlify entrypoint.
+			html: async () =>
+				await render(createElement(ContactConfirmation, submission)),
 		},
 	];
 	const results = await Promise.allSettled(

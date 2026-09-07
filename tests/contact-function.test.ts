@@ -1,7 +1,10 @@
 import { generateKeyPairSync } from "node:crypto";
 import type { Context } from "@netlify/functions";
+import * as emailRender from "@react-email/render";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import contact from "../netlify/functions/contact.ts";
+
+vi.mock("@react-email/render", { spy: true });
 
 const { privateKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
 const emailStatusValues = ["failed", "not-configured", "sent"] as const;
@@ -127,6 +130,50 @@ describe("contact Netlify Function", () => {
 		expect(
 			calls.some(([url]) => String(url).includes(":append?valueInputOption")),
 		).toBe(true);
+	});
+
+	it.each(["pt-PT", "en"])(
+		"renders a safe, localized confirmation (%s)",
+		async (locale) => {
+			const message =
+				'Primeira linha <script>alert("x")</script>\nSegunda linha & fim';
+			const response = await contact(
+				request({ ...body, locale, message }),
+				{} as Context,
+			);
+			expect(response.status).toBe(200);
+			const emails = vi
+				.mocked(fetch)
+				.mock.calls.filter(([url]) => String(url).includes("api.resend.com"))
+				.map(([, init]) => JSON.parse(String(init?.body)));
+			const confirmation = emails.find((email) => email.to[0] === body.email);
+			expect(confirmation.html).toContain(`lang="${locale}"`);
+			expect(confirmation.html).toContain(
+				locale === "en" ? "I received your message" : "Recebi a sua mensagem",
+			);
+			expect(confirmation.html).toContain("&lt;script&gt;");
+			expect(confirmation.html).not.toContain("<script>");
+			expect(confirmation.html).toContain("<br");
+			expect(confirmation.html).toContain("font-size:16px");
+			expect(confirmation.text).toContain(body.requestId);
+			expect(confirmation.text).toContain("Segunda linha & fim");
+			if (locale === "en")
+				expect(confirmation.text).not.toContain("A sua mensagem");
+		},
+	);
+
+	it("keeps the saved submission accepted when confirmation rendering fails", async () => {
+		vi.spyOn(emailRender, "render").mockRejectedValueOnce(
+			new Error("render failed"),
+		);
+		const response = await contact(request(), {} as Context);
+		expect(response.status).toBe(200);
+		expectEmailStatuses(["sent", "failed"]);
+		expect(
+			vi
+				.mocked(fetch)
+				.mock.calls.filter(([url]) => String(url).includes("api.resend.com")),
+		).toHaveLength(1);
 	});
 
 	it.each(["RESEND_API_KEY", "CONTACT_EMAIL_FROM", "CONTACT_EMAIL_TO"])(

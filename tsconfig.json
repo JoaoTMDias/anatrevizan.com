@@ -9,6 +9,8 @@
 		"tina/config.ts"
 	],
 	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
 		"strictNullChecks": true,
 		"ignoreDeprecations": "6.0",
 		"baseUrl": ".",
