@@ -167,6 +167,7 @@ export const aboutFields: TinaField[] = [
 				required: true,
 				fields: [
 					text("country", "País"),
+					{ name: "image", label: "Imagem", type: "image", required: false },
 					text("title", "Título"),
 					text("description", "Descrição"),
 				],

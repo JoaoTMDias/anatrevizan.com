@@ -138,13 +138,14 @@
 					"pt": "Portugal",
 					"en": "Portugal"
 				},
+				"image": "/hero-placeholder.webp",
 				"title": {
 					"pt": "Em Portugal",
 					"en": "In Portugal"
 				},
 				"description": {
-					"pt": "Em Portugal, desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
-					"en": "In Portugal, I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures."
+					"pt": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
+					"en": "I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures."
 				}
 			},
 			{
@@ -152,13 +153,14 @@
 					"pt": "Brasil",
 					"en": "Brazil"
 				},
+				"image": "/hero-placeholder.webp",
 				"title": {
 					"pt": "No Brasil",
 					"en": "In Brazil"
 				},
 				"description": {
-					"pt": "No Brasil, mantenho a atuação em Direito brasileiro nas áreas ambiental, de governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
-					"en": "In Brazil, I continue to practise Brazilian law in environmental matters, climate governance, compliance, ESG and sustainability, with opinions, reports and projects for public and private organisations."
+					"pt": "Mantenho a atuação em Direito brasileiro nas áreas ambiental, de governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
+					"en": "I continue to practise Brazilian law in environmental matters, climate governance, compliance, ESG and sustainability, with opinions, reports and projects for public and private organisations."
 				}
 			}
 		],
