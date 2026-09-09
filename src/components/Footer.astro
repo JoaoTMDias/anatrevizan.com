@@ -22,9 +22,9 @@ const labelFor = (value: { pt: string; en: string } | null | undefined) =>
   value?.[languageField] ?? "";
 const present = <T,>(value: T | null): value is T => value !== null;
 const navigation = navigationItems(config?.navigation, locale);
-const menus = navigation.filter((item) => item.type === "menu" && item.children?.length);
+const menus = navigation.filter((item) => item.children?.length);
 const directLinks = navigation.filter(
-  (item) => item.type !== "menu" && item.routeKey !== "contact"
+  (item) => !item.children?.length && item.routeKey !== "contact"
 );
 const legalRoutes: RouteKey[] = ["privacy", "accessibility"];
 const profiles = ((config?.contacts?.profiles as Profile[] | null | undefined) ?? [])
@@ -43,6 +43,8 @@ const profileIcon = (label: string, url: string) => {
   return "tabler:external-link";
 };
 const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
+ practice: { pt: "Atuação", en: "Practice" },
+ "portugal-support": { pt: "Apoio administrativo em Portugal", en: "Administrative support in Portugal" },
   home: { pt: "Início", en: "Home" },
   "immigration-mobility": { pt: "Migração e mobilidade", en: "Immigration and mobility" },
   legal: { pt: "Consultoria jurídica", en: "Legal consulting" },

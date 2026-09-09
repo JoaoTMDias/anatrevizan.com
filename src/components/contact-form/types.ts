@@ -2,6 +2,7 @@ import type { Channel, Locale } from "./copy";
 
 export interface FormValues {
 	channel: Channel;
+	scope: string;
 	name: string;
 	email: string;
 	whatsapp: string;
@@ -20,7 +21,8 @@ export interface Option {
 export interface ContactFormProps {
 	locale: Locale;
 	privacyHref: string;
-	requestTypes: Option[];
+	requestTypes: Array<Option & { scope: string }>;
+	scopeNotice?: string;
 	turnstileSiteKey: string;
 	whatsappHref: string | null;
 }

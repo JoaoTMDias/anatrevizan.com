@@ -82,8 +82,8 @@ describe("editorial build report", () => {
 			}),
 		);
 		for (const output of [
-			"dist/client/consultoria/juridica/index.html",
-			"dist/client/en/consulting/legal/index.html",
+			"dist/client/atuacao/advocacia-brasil/index.html",
+			"dist/client/en/practice/brazilian-law/index.html",
 		]) {
 			mkdirSync(dirname(join(root, output)), { recursive: true });
 			writeFileSync(join(root, output), "<!doctype html><title>Legal</title>");

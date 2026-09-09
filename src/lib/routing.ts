@@ -5,23 +5,31 @@ export type PublishedLocale = (typeof publishedLocales)[number];
 export type EditorialLocale = (typeof editorialLocales)[number];
 
 export const routeMap = {
+	practice: { "pt-PT": "/atuacao", en: "/en/practice" },
+	"portugal-support": {
+		"pt-PT": "/atuacao/apoio-administrativo-portugal",
+		en: "/en/practice/administrative-support-portugal",
+	},
 	home: { "pt-PT": "/", en: "/en" },
 	"immigration-mobility": {
-		"pt-PT": "/consultoria/migracao-e-mobilidade",
-		en: "/en/consulting/immigration-mobility",
+		"pt-PT": "/atuacao/migracao-e-mobilidade",
+		en: "/en/practice/immigration-mobility",
 	},
-	legal: { "pt-PT": "/consultoria/juridica", en: "/en/consulting/legal" },
+	legal: {
+		"pt-PT": "/atuacao/advocacia-brasil",
+		en: "/en/practice/brazilian-law",
+	},
 	"environmental-esg": {
-		"pt-PT": "/consultoria/ambiental-e-esg",
-		en: "/en/consulting/environmental-esg",
+		"pt-PT": "/atuacao/ambiental-administrativo-urbanismo",
+		en: "/en/practice/environmental-administrative-urban-law",
 	},
 	"public-policy": {
-		"pt-PT": "/consultoria/politicas-publicas",
-		en: "/en/consulting/public-policy",
+		"pt-PT": "/atuacao/esg-politicas-publicas-sustentabilidade",
+		en: "/en/practice/esg-public-policy-sustainability",
 	},
 	"legal-opinions": {
-		"pt-PT": "/consultoria/pareceres",
-		en: "/en/consulting/legal-opinions",
+		"pt-PT": "/atuacao/pareceres-e-notas-tecnicas",
+		en: "/en/practice/legal-opinions-technical-reports",
 	},
 	mentoring: { "pt-PT": "/academia/mentorias", en: "/en/academic/mentoring" },
 	publications: {

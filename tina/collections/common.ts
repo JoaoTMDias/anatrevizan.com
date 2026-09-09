@@ -49,6 +49,9 @@ export const localizedText = (
 
 const sharedStringNames = new Set([
 	"routeKey",
+	"scope",
+	"anchor",
+	"countryCode",
 	"crosslinkRouteKey",
 	"image",
 	"video",
@@ -78,6 +81,9 @@ const listLabelKeys = [
 	"date",
 	"description",
 	"routeKey",
+	"scope",
+	"anchor",
+	"countryCode",
 	"url",
 ];
 
@@ -112,10 +118,7 @@ export function bilingualFields(fields: TinaField[]): TinaField[] {
 				ui: {
 					...field.ui,
 					itemProps: (item: Record<string, unknown>) => ({
-						label: editorialListItemLabel(
-							item,
-							`${field.label ?? "Item"}`,
-						),
+						label: editorialListItemLabel(item, `${field.label ?? "Item"}`),
 					}),
 				},
 			};
@@ -141,10 +144,7 @@ export function bilingualFields(fields: TinaField[]): TinaField[] {
 						list: true,
 						ui: {
 							itemProps: (item: Record<string, unknown>) => ({
-								label: editorialListItemLabel(
-									item,
-									`${field.label ?? "Item"}`,
-								),
+								label: editorialListItemLabel(item, `${field.label ?? "Item"}`),
 							}),
 						},
 					}

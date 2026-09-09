@@ -23,6 +23,8 @@ interface Profile {
   url?: string | null;
 }
 interface RequestType {
+ id: string;
+ scope: string;
   label?: LocalizedLabel | null;
 }
 const { data } = Astro.props;
@@ -30,9 +32,9 @@ const contact = data.contactPage as ContactPageContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const config = contact ? (await getConfig()).data.config : null;
 const requestTypes = ((config?.requestTypes as RequestType[] | null | undefined) ?? []).flatMap(
-  (item: RequestType, index) => {
+  (item: RequestType) => {
     const label = locale === "en" ? item?.label?.en : item?.label?.pt;
-    return label ? [{ value: `request-${index + 1}`, label }] : [];
+    return label ? [{ value: item.id, scope: item.scope, label }] : [];
   }
 );
 const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
@@ -72,7 +74,8 @@ const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefine
             </Button>
           </div>
         </PageHero>
-        <Section class="contact-layout">
+        <Section><p>{contact.conditions}</p></Section>
+ <Section class="contact-layout">
           <div id={messageId} class="contact-message" tabindex="-1">
             <SectionHeading
               title={locale === "en" ? "Contact form" : "Formulário de contacto"}

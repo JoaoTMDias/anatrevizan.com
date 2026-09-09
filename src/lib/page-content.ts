@@ -2,6 +2,8 @@ import type { TinaRichTextContent } from "@tinacms/astro";
 import { isRouteKey, type RouteKey } from "./routing";
 
 export interface LinkCard {
+	label?: string;
+	anchor?: string;
 	title: string;
 	description: string;
 	routeKey: RouteKey;
@@ -22,6 +24,7 @@ export interface HomeContent {
 	servicesTitle: string;
 	servicesSubtitle: string;
 	services: Array<LinkCard & { tag: string; cta: string }>;
+	academicCards: LinkCard[];
 	academicTitle: string;
 	academicSubtitle: string;
 	publicationsCta: string;
@@ -45,7 +48,7 @@ export interface AboutContent {
 	milestonesTitle: string;
 	milestones: Array<{ year: string; title: string; description: string }>;
 	currentWorkTitle: string;
-	currentWork: Array<{ country: string; title: string; description: string }>;
+	currentWork: Array<{ country: string; title: string; description: string; image?: string | null }>;
 	valuesTitle: string;
 	valuesSubtitle: string;
 	values: Array<{ title: string; description: string }>;
@@ -221,6 +224,7 @@ export interface ContactPageContent {
 	otherMethodsHeading: string;
 	countriesLabel: string;
 	languagesLabel: string;
+	conditions: string;
 }
 
 export interface LegalPageContent {

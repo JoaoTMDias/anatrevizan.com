@@ -93,7 +93,9 @@ export function ContactFields({
 			</div>
 
 			<div className="contact-form__field">
-				<label htmlFor={id("country")}>{t.country}</label>
+				<label htmlFor={id("country")}>
+					{t.country} ({t.optional})
+				</label>
 				<select
 					id={id("country")}
 					aria-invalid={errors.country ? "true" : undefined}

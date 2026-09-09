@@ -3,7 +3,6 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { PublicationsPageContent } from "../../lib/page-content";
 import { getPublications } from "../../lib/publication-content";
-import { sortPublications } from "../../lib/publications";
 import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
@@ -17,7 +16,16 @@ interface Props {
 const { data } = Astro.props;
 const page = data.publicationsPage as PublicationsPageContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
-const publications = page ? sortPublications(await getPublications()) : [];
+const publications = page
+  ? (await getPublications()).sort((a, b) => {
+      const aHighlight = Boolean(a.highlight);
+      const bHighlight = Boolean(b.highlight);
+      if (aHighlight !== bHighlight) return aHighlight ? -1 : 1;
+      const aYear = Number.parseInt(a.year ?? "", 10) || 0;
+      const bYear = Number.parseInt(b.year ?? "", 10) || 0;
+      return bYear - aYear;
+    })
+  : [];
 const years = [...new Set(publications.flatMap((item) => (item.year ? [item.year] : [])))]
   .sort()
   .reverse();
@@ -105,14 +113,13 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
                 <div class="publication-card__layout">
                   <div class="publication-card__content">
                     <div class="publication-card__meta">
-                      {publication.year && <span>{publication.year}</span>}
-                      {publication.language && <span>{publication.language}</span>}
                       {publication.highlight && (
                         <strong>
-                          <Icon name="award" />
                           {publication.highlight}
                         </strong>
                       )}
+                      {publication.year && <span>{publication.year}</span>}
+                      {publication.language && <span>{publication.language}</span>}
                     </div>
                     <h2 id={`publication-${index}`}><AcronymText text={publication.title} locale={locale} /></h2>
                     {publication.journal && <p><AcronymText text={publication.journal} locale={locale} /></p>}
@@ -125,7 +132,7 @@ const topics = [...new Set(publications.flatMap((item) => item.topics ?? []))].s
                     )}
                   </div>
                   {publication.url ? (
-                    <Button class="publication-card__link whitespace-normal" variant="link" href={publication.url} rel="external">
+                    <Button class="publication-card__link !pl-0 whitespace-normal" variant="link" href={publication.url} rel="external">
                       {page.filters.view}
                       <Icon name="external-link" />
                     </Button>

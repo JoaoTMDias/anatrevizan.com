@@ -5,12 +5,12 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 ## Arquitetura
 
 - Astro é a única fonte visual, funcional e editorial. Stack: Astro 7, TinaCMS 3, TypeScript, Tailwind CSS 4 e pnpm; deploy Netlify.
-- As 14 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados. O lançamento exclui Termos de Utilização e uma Política de Cookies autónoma; inclui a Declaração de Acessibilidade.
+- As 16 rotas canónicas estão em `src/lib/routing.ts`. PT-PT não tem prefixo e EN usa `/en` com slugs localizados. O lançamento exclui Termos de Utilização e uma Política de Cookies autónoma; inclui a Declaração de Acessibilidade.
 - A estrutura visual e as secções pertencem ao código; não existe criação de páginas ou alteração de URLs no CMS.
 
 ## Conteúdo bilingue
 
-- `src/content/pages` contém 14 JSON: um documento por página, PT e EN na mesma estrutura.
+- `src/content/pages` contém 16 JSON: um documento por página, PT e EN na mesma estrutura.
 - Listas, media e destinos são partilhados. Folhas localizadas usam `{ pt, en }`, apresentadas consecutivamente no Tina.
 - PT é a fonte aprovada. EN é tradução humana, sem fallback. Traduções parciais podem ser guardadas; só ficam públicas quando todos os campos localizados usados têm EN.
 - Hero e resumo servem de default SEO; overrides são opcionais. CTAs pertencem à página. Ligações internas usam destinos semânticos.
@@ -46,3 +46,10 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 - Deploy previews usam um build próprio com `X-Robots-Tag: noindex`; o smoke real do formulário e desse cabeçalho continua a ser uma decisão manual pré-produção.
 - O site público não usa analytics nem pixels. A preferência de tema usa `localStorage`; o Turnstile é carregado apenas no contacto como controlo de segurança. Não existe banner nem página autónoma de Cookies; a informação fica na Política de Privacidade. O `/admin` é um ambiente Tina separado desta conclusão.
 - A Política de Privacidade e a Declaração de Acessibilidade mantêm pendências factuais/jurídicas explícitas. A avaliação de acessibilidade de 4 de setembro de 2026 é uma revisão técnica limitada, não uma declaração de conformidade WCAG.
+
+## Revisão territorial de setembro de 2026
+
+- Atuação separa advocacia e consultoria em Direito brasileiro (OAB/SP n.º 330.386) de apoio administrativo e técnico não jurídico em Portugal. A página portuguesa é única; Migração e Pareceres apresentam escolha explícita de país sem seleção inicial.
+- A arquitetura passa a 16 páginas fixas. Civil, Trabalho e Direitos Humanos ficam agrupados na página brasileira. Não há redirecionamentos de migração, por confirmação de que o site ainda não foi lançado.
+- Nesta revisão, o responsável autorizou tradução assistida PT→EN e propostas para lacunas do documento; ambas aguardam revisão humana antes de produção. Ver `docs/revisao-brasil-portugal.md`.
+- O formulário transmite âmbito profissional independente da residência, IDs estáveis de pedido e validação territorial no servidor. A coluna M do Google Sheets guarda o âmbito, mantendo A:L. Previews exigem destinos de teste explícitos e encaminham ambos os emails para o destinatário de teste.

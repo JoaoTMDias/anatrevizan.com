@@ -67,6 +67,7 @@ export default function HeaderMenu({
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const mobileTriggerRef = useRef<HTMLButtonElement>(null);
 	const wasMobileOpenRef = useRef(false);
+
 	useEffect(() => {
 		if (mobileOpen) {
 			wasMobileOpenRef.current = true;
@@ -74,14 +75,13 @@ export default function HeaderMenu({
 		}
 		if (!wasMobileOpenRef.current) return;
 		wasMobileOpenRef.current = false;
-		// Base UI completes its 200 ms exit transition and focus cleanup after
-		// `open` changes. Restore focus once that lifecycle has settled.
 		const focusTimer = window.setTimeout(
 			() => mobileTriggerRef.current?.focus(),
 			250,
 		);
 		return () => window.clearTimeout(focusTimer);
 	}, [mobileOpen]);
+
 	useEffect(() => {
 		if (!mobileOpen) return;
 		const closeOnEscape = (event: KeyboardEvent) => {
@@ -90,6 +90,7 @@ export default function HeaderMenu({
 		document.addEventListener("keydown", closeOnEscape);
 		return () => document.removeEventListener("keydown", closeOnEscape);
 	}, [mobileOpen]);
+
 	const localizedLanguageHref = (href: string) => {
 		if (typeof window === "undefined") return href;
 		const fragments: Record<string, string> = {
@@ -196,7 +197,7 @@ export default function HeaderMenu({
 				<SheetContent
 					side="right"
 					showCloseButton={false}
-					className="w-80! max-w-[85vw]! gap-0 overflow-y-auto bg-background p-5"
+					className="w-full max-w-[85vw]! gap-0 overflow-y-auto bg-background p-5"
 				>
 					<SheetTitle className="sr-only">{menuLabel}</SheetTitle>
 					<div className="mb-8 flex items-center justify-between gap-4">

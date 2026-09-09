@@ -36,6 +36,13 @@
 		],
 		"sections": [
 			{
+				"heading": { "pt": "Âmbito profissional e territorial", "en": "Professional and territorial scope" },
+				"paragraphs": {
+					"pt": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil. Em Portugal, o site apresenta apenas apoio administrativo e trabalho técnico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. Esta distinção também orienta a forma como o conteúdo e os contactos devem ser acessíveis e compreensíveis.",
+					"en": "Legal practice and consultancy in Brazilian law are provided in Brazil. In Portugal, this website presents only administrative support and technical work, without legal advice, representation, or activities reserved to Portuguese lawyers or solicitors. This distinction also guides how the content and contact options should remain accessible and understandable."
+				}
+			},
+			{
 				"heading": {
 					"pt": "Compromisso e norma-alvo",
 					"en": "Commitment and target standard"

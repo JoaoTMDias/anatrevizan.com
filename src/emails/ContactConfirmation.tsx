@@ -12,6 +12,7 @@ import {
 	Text,
 } from "@react-email/components";
 import * as React from "react";
+import { type ContactScope, scopeConfirmations } from "../lib/contact-scope";
 
 export interface ContactConfirmationProps {
 	name: string;
@@ -19,6 +20,7 @@ export interface ContactConfirmationProps {
 	message: string;
 	requestId: string;
 	locale: "pt-PT" | "en";
+	scope?: ContactScope;
 	logoUrl?: string;
 	signatureUrl?: string;
 }
@@ -66,6 +68,7 @@ export default function ContactConfirmation({
 	message,
 	requestId,
 	locale,
+	scope,
 	logoUrl = "https://anatrevizan.com/emails/logo.png",
 	signatureUrl = "https://anatrevizan.com/signature.png",
 }: ContactConfirmationProps) {
@@ -132,7 +135,7 @@ export default function ContactConfirmation({
 							{text.greeting} {name},
 						</Text>
 						<Text style={{ ...paragraph, margin: "0" }}>
-							{text.confirmation}
+							{scope ? scopeConfirmations[locale][scope] : text.confirmation}
 						</Text>
 						<Hr style={divider} />
 						<Heading

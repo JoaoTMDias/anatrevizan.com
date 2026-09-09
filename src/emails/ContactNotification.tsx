@@ -12,6 +12,7 @@ import {
 	Text,
 } from "@react-email/components";
 import * as React from "react";
+import { type ContactScope, scopeLabels } from "../lib/contact-scope";
 
 export interface ContactNotificationProps {
 	name: string;
@@ -19,6 +20,7 @@ export interface ContactNotificationProps {
 	message: string;
 	requestId: string;
 	locale: "pt-PT" | "en";
+	scope?: ContactScope;
 	logoUrl?: string;
 	whatsapp: string;
 	requestType: string;
@@ -70,6 +72,7 @@ export default function ContactNotification({
 	message,
 	requestId,
 	locale,
+	scope,
 	logoUrl = "https://anatrevizan.com/emails/logo.png",
 	whatsapp,
 	requestType,
@@ -139,6 +142,7 @@ export default function ContactNotification({
 						</Text>
 						<Text style={{ ...paragraph, margin: "0" }}>
 							{text.confirmation}
+							{scope && ` ${scopeLabels[locale][scope]}`}
 						</Text>
 						<Hr style={divider} />
 						<Heading

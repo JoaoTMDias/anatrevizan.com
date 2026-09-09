@@ -5,7 +5,7 @@ import { installFakeTurnstile, publishedPaths } from "./site";
 const templatePaths = [
 	"/",
 	"/sobre",
-	"/consultoria/juridica",
+	"/atuacao/advocacia-brasil",
 	"/academia/publicacoes",
 	"/academia/eventos",
 	"/contacto",
@@ -77,7 +77,7 @@ test.describe("visitor uses accessibility preferences", () => {
 	test("acronym tooltip opens with focus and closes with Escape", async ({
 		page,
 	}) => {
-		await page.goto("/consultoria/ambiental-e-esg");
+		await page.goto("/atuacao/esg-politicas-publicas-sustentabilidade");
 		const acronym = page.locator("[data-acronym-trigger]").first();
 		await acronym.focus();
 		const tooltip = page.getByRole("tooltip").first();

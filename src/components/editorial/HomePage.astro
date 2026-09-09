@@ -2,10 +2,10 @@
 import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import type { HomeContent } from "../../lib/page-content";
-import { hasValidRouteKey } from "../../lib/page-content";
+import { isRouteKey } from "../../lib/routing";
 import { getPublications } from "../../lib/publication-content";
 import { selectHomePublications } from "../../lib/publications";
-import { contactBookingPath, pathFor } from "../../lib/routing";
+import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
@@ -20,8 +20,8 @@ interface Props {
 const { data } = Astro.props;
 const home = data.home as HomeContent | null | undefined;
 const locale = data.locale === "en" ? "en" : "pt-PT";
-const destination = (item: { routeKey?: unknown }) =>
-  hasValidRouteKey(item) ? pathFor(item.routeKey, locale) : undefined;
+const destination = (item: { routeKey?: unknown; anchor?: string }) =>
+  isRouteKey(item.routeKey) ? pathFor(item.routeKey, locale) + (item.anchor ? `#${item.anchor}` : "") : undefined;
 const brandIcons = ["scale", "leaf", "school", "world"];
 const differenceIcons = ["world", "microscope", "language", "arrows-exchange"];
 const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
@@ -54,13 +54,13 @@ const homePublications = spotlight
                 <h1><AcronymText text={home.hero.heading} locale={locale} /></h1>
                 <p>{home.hero.subtitle}</p>
                 <div class="home-hero__actions">
-                  <Button size="lg" variant="accent" href={contactBookingPath(locale)}>
+                  <Button size="lg" variant="accent" href={pathFor("practice", locale)}>
                     {home.hero.primaryCta}
                   </Button>
                   <Button
                     size="lg"
                     variant="outlineInverse"
-                    href={pathFor("legal", locale)}
+                    href={pathFor("contact", locale)}
                   >
                     {home.hero.secondaryCta}
                   </Button>
@@ -150,7 +150,7 @@ const homePublications = spotlight
                   <span class="home-service-entry__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                   <div class="home-service-entry__copy">
                     <p class="home-service-entry__region"><AcronymText text={item.tag} locale={locale} /></p>
-                    <h3><AcronymText text={item.title} locale={locale} /></h3>
+                    <h3><AcronymText text={item.label ?? item.title} locale={locale} /></h3>
                     <p class="home-service-entry__description"><AcronymText text={item.description} locale={locale} /></p>
                   </div>
                   <span class="home-service-entry__cta">{item.cta}<Icon name="arrow-up-right" /></span>
@@ -171,7 +171,10 @@ const homePublications = spotlight
               </Button>
             </div>
           </div>
-          <div class="home-publications">
+          <div class="editorial-grid mb-8">
+ {home.academicCards.map(item => <a class="rounded-lg border bg-card p-6" href={destination(item)}><h3 class="text-xl font-semibold">{item.label}</h3><p class="mt-3">{item.description}</p></a>)}
+ </div>
+ <div class="home-publications">
             {homePublications.map((publication, index) => (
               <article class:list={["home-publication", index === 0 && "home-publication--spotlight"]}>
                 {index === 0 && <EditorialMark class="home-publication__mark" />}
@@ -192,26 +195,13 @@ const homePublications = spotlight
             ))}
           </div>
         </Section>
-        <section class="home-credentials">
-          <div class="site-container">
-            <h2 class="text-xs text-muted-foreground text-center uppercase tracking-widest">
-              {home.credentialsLabel}
-            </h2>
-            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-base text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
-              {home.credentials.map((credential) => (
-                <li>
-                  <Icon name="circle-check" />
-                  {credential}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
         <ContactCta
           heading={home.finalCtaHeading}
           text={home.finalCtaText}
           locale={locale}
           showContactLink={false}
+ label={home.finalCtaLabel}
+ href={pathFor("contact", locale)}
         />
     ) : (
       <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">

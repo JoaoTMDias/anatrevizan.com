@@ -5,17 +5,17 @@
 		"en": "Home"
 	},
 	"summary": {
-		"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
-		"en": "Scientific-based legal and environmental consulting across Portugal and Brazil."
+		"pt": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
+		"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
 	},
 	"seo": {
 		"title": {
-			"pt": "Dra. Ana Trevizan — Consultoria Jurídica e Ambiental",
-			"en": "Dr. Ana Trevizan — Legal and Environmental Consulting"
+			"pt": "Ana Flávia Trevizan — Atuação profissional e Academia",
+			"en": "Ana Flávia Trevizan — Professional Practice and Academia"
 		},
 		"description": {
-			"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
-			"en": "Scientific-based legal and environmental consulting across Portugal and Brazil."
+			"pt": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
+			"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
 		}
 	},
 	"media": {
@@ -31,85 +31,77 @@
 	"home": {
 		"hero": {
 			"heading": {
-				"pt": "Decisões seguras para cenários jurídicos e ambientais complexos.",
-				"en": "Confident decisions for complex legal and environmental scenarios."
+				"pt": "Clareza e acompanhamento para decisões que atravessam fronteiras.",
+				"en": "Clarity and support for decisions that cross borders."
 			},
 			"subtitle": {
-				"pt": "Consultoria técnica, estratégica e de base científica para pessoas e empresas navegarem com clareza nos mercados luso-brasileiros.",
-				"en": "Technical, strategic, and research-backed consulting for individuals and businesses navigating Portuguese and Brazilian frameworks with clarity."
+				"pt": "Advocacia e consultoria jurídica no Brasil, apoio administrativo e documental em Portugal. Acompanhamento próximo para pessoas, empresas e organizações.",
+				"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
 			},
 			"brandWords": [
 				{
-					"pt": "Portugal e Brasil",
-					"en": "Portugal and Brazil"
-				},
-				{
-					"pt": "Direito Ambiental",
-					"en": "Environmental Law"
-				},
-				{
-					"pt": "Rigor Científico",
-					"en": "Scientific Rigor"
+					"pt": "Brasil e Portugal",
+					"en": "Brazil and Portugal · Distinct scopes of practice"
 				}
 			],
 			"primaryCta": {
-				"pt": "Agendar Consulta",
-				"en": "Book a Consultation"
+				"pt": "Conhecer a atuação",
+				"en": "Explore the practice"
 			},
 			"secondaryCta": {
-				"pt": "Conhecer Áreas de Atuação",
-				"en": "Explore Practice Areas"
+				"pt": "Entrar em contacto",
+				"en": "Get in touch"
 			}
 		},
 		"gateways": [
 			{
+				"routeKey": "legal",
 				"eyebrow": {
-					"pt": "Advogada ↔ Cliente",
-					"en": "Counsel ↔ Client"
+					"pt": "Brasil — Advocacia e consultoria jurídica",
+					"en": "Brazil — Legal practice and legal consulting"
 				},
 				"description": {
-					"pt": "Consultoria jurídica e ambiental preventiva, consultiva e extrajudicial, com atuação focada em decisões seguras e fundamentadas.",
-					"en": "Preventive, advisory, and out-of-court legal and environmental consulting, focused on sound and well-founded decision-making."
+					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
 				},
 				"cta": {
-					"pt": "Ver áreas de atuação",
-					"en": "View practice areas"
-				},
-				"routeKey": "legal"
+					"pt": "Conhecer a atuação no Brasil",
+					"en": "Explore practice in Brazil"
+				}
 			},
 			{
+				"routeKey": "portugal-support",
 				"eyebrow": {
-					"pt": "Mentorias · Publicações · Palestras",
-					"en": "Mentorship · Publications · Speaking"
+					"pt": "Portugal — Apoio administrativo",
+					"en": "Portugal — Administrative support"
 				},
 				"description": {
-					"pt": "Hub académico que reúne mentorias, publicações científicas, eventos, palestras e cursos — da pesquisa à comunicação.",
-					"en": "Academic hub bringing together mentorship, scientific publications, events, speaking engagements, and courses — from research to communication."
+					"pt": "Organização documental e apoio prático em procedimentos administrativos",
+					"en": "Document organisation and practical support in administrative procedures, without legal advice, representation or activities reserved to authorised professionals."
 				},
 				"cta": {
-					"pt": "Explorar Academia",
-					"en": "Explore Academia"
-				},
-				"routeKey": "publications"
+					"pt": "Conhecer o apoio administrativo",
+					"en": "Explore administrative support"
+				}
 			}
 		],
 		"differencesTitle": {
-			"pt": "Por que a Dra. Ana Trevizan?",
-			"en": "Why Dr. Ana Trevizan?"
+			"pt": "Experiência, investigação e acompanhamento direto",
+			"en": "Experience, research and direct support"
 		},
 		"differencesSubtitle": {
-			"pt": "Uma ponte real entre dois países, três idiomas e mundos que raramente se encontram.",
-			"en": "A genuine bridge across two countries, three languages, and disciplines that rarely intersect."
+			"pt": "Trajetória profissional e académica com âmbitos de atuação distintos.",
+			"en": "A professional and academic journey with distinct scopes of practice."
 		},
 		"differences": [
 			{
 				"title": {
-					"pt": "Binacional real",
-					"en": "Truly Binational"
+					"pt": "Experiência desde 2013",
+					"en": "Experience since 2013"
 				},
 				"description": {
-					"pt": "OAB desde 2013 + doutoramento e residência em Portugal. Vivência e atuação efetiva nos dois países.",
-					"en": "Admitted to the OAB since 2013, alongside a Ph.D. and residency in Portugal. Active professional practice in both countries."
+					"pt": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386.",
+					"en": "Legal practice in Brazil, registered with OAB/SP under no. 330.386."
 				}
 			},
 			{
@@ -119,7 +111,7 @@
 				},
 				"description": {
 					"pt": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas.",
-					"en": "Consultations in Portuguese, English, and Spanish. Published work and keynotes across all three languages."
+					"en": "Assistance in Portuguese, English and Spanish. Publications and talks in all three languages."
 				}
 			},
 			{
@@ -134,98 +126,140 @@
 			},
 			{
 				"title": {
-					"pt": "Sábio + Cuidador",
-					"en": "Analytical + Client-Centered"
+					"pt": "Atendimento direto",
+					"en": "Direct support"
 				},
 				"description": {
-					"pt": "Rigor técnico aliado a uma escuta individualizada e atenta. Clareza sem juridiquês.",
-					"en": "Technical rigor paired with attentive, personalized counsel. Clarity without legal jargon."
+					"pt": "Escuta individualizada e atenta, com clareza sobre o âmbito do trabalho.",
+					"en": "Attentive, individual listening, with clarity about the scope of the work."
 				}
 			}
 		],
 		"servicesTitle": {
-			"pt": "Áreas de Consultoria",
-			"en": "Consulting Services"
+			"pt": "Áreas de atuação",
+			"en": "Practice areas"
 		},
 		"servicesSubtitle": {
-			"pt": "Atuação preventiva, consultiva e extrajudicial. Cinco áreas com foco em decisões seguras e fundamentadas.",
-			"en": "Preventive, advisory, and out-of-court practice. Five key areas designed for sound, well-founded decisions."
+			"pt": "Selecione a área e confirme o âmbito territorial.",
+			"en": "Select the area and check its territorial scope."
 		},
 		"services": [
 			{
-				"tag": {
-					"pt": "Portugal",
-					"en": "Portugal"
+				"routeKey": "immigration-mobility",
+				"label": {
+					"pt": "Migração e Mobilidade",
+					"en": "Migration and Mobility"
 				},
 				"description": {
-					"pt": "Planeamento da mudança para Portugal, vistos, residência, NIF, Segurança Social e integração jurídica.",
-					"en": "Relocation planning to Portugal, visas, residency, NIF, Social Security, and legal integration."
+					"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+					"en": "Explore the work available in Brazil, Portugal and Academia."
 				},
 				"cta": {
 					"pt": "Saber mais",
 					"en": "Learn more"
 				},
-				"routeKey": "immigration-mobility"
-			},
-			{
 				"tag": {
-					"pt": "Portugal",
-					"en": "Portugal"
-				},
-				"description": {
-					"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico. Análise contratual e estratégia preventiva.",
-					"en": "Civil, Labor, Administrative, and Planning Law. Contract analysis and preventive strategy."
-				},
-				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
-				},
-				"routeKey": "legal"
-			},
-			{
-				"tag": {
-					"pt": "Brasil · União Europeia",
-					"en": "Brazil · European Union"
-				},
-				"description": {
-					"pt": "Diagnóstico ESG, compliance, EUDR, due diligence e adequação à regulação da União Europeia.",
-					"en": "ESG assessment, compliance, EUDR, due diligence, and alignment with European Union regulations."
-				},
-				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
-				},
-				"routeKey": "environmental-esg"
-			},
-			{
-				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
-				},
-				"description": {
-					"pt": "Análise de projetos de lei e consultoria para municípios, ONGs, associações e instituições.",
-					"en": "Legislative analysis and consulting for municipalities, NGOs, associations, and public institutions."
-				},
-				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
-				},
-				"routeKey": "public-policy"
-			},
-			{
-				"tag": {
-					"pt": "Portugal e Brasil",
+					"pt": "Portugal e Brasil · Escolha prévia do país",
 					"en": "Portugal and Brazil"
+				}
+			},
+			{
+				"routeKey": "legal",
+				"label": {
+					"pt": "Civil, Contratos e Consumidor",
+					"en": "Civil Law, Contracts and Consumer Matters"
 				},
 				"description": {
-					"pt": "Pareceres fundamentados em legislação, doutrina, jurisprudência e literatura científica.",
-					"en": "Legal opinions backed by legislation, legal doctrine, case law, and academic research."
+					"pt": "Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica.",
+					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty."
 				},
 				"cta": {
 					"pt": "Saber mais",
 					"en": "Learn more"
 				},
-				"routeKey": "legal-opinions"
+				"tag": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				},
+				"anchor": "civil"
+			},
+			{
+				"routeKey": "legal",
+				"label": {
+					"pt": "Trabalho e Relações Laborais",
+					"en": "Employment and Labour Relations"
+				},
+				"description": {
+					"pt": "Direitos, deveres e relações profissionais exigem clareza — tanto na prevenção quanto diante de um conflito.",
+					"en": "Rights, duties and professional relationships require clarity — both in prevention and when facing a dispute."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"tag": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				},
+				"anchor": "trabalho"
+			},
+			{
+				"routeKey": "environmental-esg",
+				"label": {
+					"pt": "Ambiental, Administrativo e Urbanismo",
+					"en": "Environmental, Administrative and Urban Planning Law"
+				},
+				"description": {
+					"pt": "Advocacia e consultoria jurídica no Brasil em matérias ambientais, administrativas e urbanísticas.",
+					"en": "Legal practice and legal consulting in Brazil on environmental, administrative and urban planning matters."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"tag": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				}
+			},
+			{
+				"routeKey": "public-policy",
+				"label": {
+					"pt": "ESG, Políticas Públicas e Sustentabilidade",
+					"en": "Public Policy and Governance"
+				},
+				"description": {
+					"pt": "Advocacia e consultoria jurídica no Brasil em ESG, políticas públicas e sustentabilidade.",
+					"en": "Legal practice and legal consulting in Brazil on ESG, public policy and sustainability."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"tag": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				}
+			},
+			{
+				"routeKey": "legal",
+				"label": {
+					"pt": "Direitos Humanos",
+					"en": "Human Rights"
+				},
+				"description": {
+					"pt": "No Brasil, atuação e consultoria jurídica em Direito brasileiro, quando o caso estiver dentro da experiência e do serviço efetivamente aceite.",
+					"en": "In Brazil, legal practice and consulting under Brazilian law, where the case falls within the experience and scope of the service actually accepted."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"tag": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				},
+				"anchor": "direitos-humanos"
 			}
 		],
 		"academicTitle": {
@@ -244,44 +278,53 @@
 			"pt": "Kit de palestrante",
 			"en": "Speaker Kit"
 		},
-		"credentialsLabel": {
-			"pt": "Credenciais e vínculos",
-			"en": "Credentials & Affiliations"
-		},
-		"credentials": [
-			{
-				"pt": "Doutoramento em Alterações Climáticas e Políticas de Desenvolvimento Sustentável — NOVA Lisboa (2024)",
-				"en": "Ph.D. in Climate Change and Sustainable Development Policies — NOVA University Lisbon (2024)"
-			},
-			{
-				"pt": "SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)",
-				"en": "SPF Early Career Fellow — Rights Lab, University of Nottingham (2025)"
-			},
-			{
-				"pt": "Mestrado em Direito Agroambiental — UFMT, reconhecido pela U. Lisboa (2020)",
-				"en": "Master’s Degree in Agro-Environmental Law — UFMT, recognized by the University of Lisbon (2020)"
-			},
-			{
-				"pt": "Docência em inglês — LUNEX, Luxemburgo",
-				"en": "Teaching in English — LUNEX, Luxembourg"
-			},
-			{
-				"pt": "Formadora certificada em Portugal (2026)",
-				"en": "Certified Trainer in Portugal (2026)"
-			}
-		],
 		"finalCtaHeading": {
-			"pt": "Marque uma conversa inicial",
-			"en": "Schedule an initial call"
+			"pt": "Como posso ajudar?",
+			"en": "Let us understand the scope of your request"
 		},
 		"finalCtaText": {
-			"pt": "Um primeiro passo para transformar a complexidade jurídica em decisões seguras. Atendimento em português, inglês e espanhol.",
-			"en": "The first step toward turning legal complexity into confident decisions. Consultations available in Portuguese, English, and Spanish."
+			"pt": "Conheça as áreas de atuação ou entre em contacto para falar sobre o que procura.",
+			"en": "The terms of engagement are defined individually, taking into account the nature and extent of the work and the different circumstances of those seeking assistance."
 		},
 		"finalCtaLabel": {
-			"pt": "Agendar primeiro contacto",
-			"en": "Schedule an initial call"
-		}
+			"pt": "Entrar em contacto",
+			"en": "Get in touch"
+		},
+		"academicCards": [
+			{
+				"routeKey": "mentoring",
+				"label": {
+					"pt": "Mentoria Académica",
+					"en": "Academic Mentoring"
+				},
+				"description": {
+					"pt": "Orientação para projetos, dissertações, teses e artigos científicos.",
+					"en": "Guidance for projects, dissertations, theses and scientific articles."
+				}
+			},
+			{
+				"routeKey": "publications",
+				"label": {
+					"pt": "Publicações e Pesquisa",
+					"en": "Publications and Research"
+				},
+				"description": {
+					"pt": "Artigos, capítulos e produção científica.",
+					"en": "Articles, chapters and scientific output."
+				}
+			},
+			{
+				"routeKey": "events",
+				"label": {
+					"pt": "Palestras e Eventos",
+					"en": "Talks and Events"
+				},
+				"description": {
+					"pt": "Aulas, palestras e participações em português, inglês e espanhol.",
+					"en": "Classes, talks and participation in Portuguese, English and Spanish."
+				}
+			}
+		]
 	},
 	"_template": "home"
 }

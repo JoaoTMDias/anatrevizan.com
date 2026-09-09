@@ -24,7 +24,7 @@ const manifest = JSON.parse(
 };
 
 assert.equal(manifest.mode, mode);
-assert.equal(manifest.totalDocuments, 28);
+assert.equal(manifest.totalDocuments, 32);
 assert.deepEqual(manifest.missingRoutes, []);
 assert.equal(
 	manifest.generatedEditorialRoutes,
@@ -32,9 +32,9 @@ assert.equal(
 );
 
 if (mode === "preview") {
-	assert.equal(manifest.expectedEditorialRoutes, 28);
+	assert.equal(manifest.expectedEditorialRoutes, 32);
 } else {
-	assert.equal(manifest.publishableDocuments, 28);
-	assert.equal(manifest.expectedEditorialRoutes, 28);
+	assert.equal(manifest.publishableDocuments, 32);
+	assert.equal(manifest.expectedEditorialRoutes, 32);
 }
 console.log(`Build output validation passed in ${mode} mode.`);

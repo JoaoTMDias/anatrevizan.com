@@ -30,10 +30,16 @@ const crosslinkLabel =
       ? "Discover the journey"
       : "Conhecer o percurso"
     : locale === "en"
-      ? "Legal consulting"
-      : "Consultoria Jurídica";
+      ? "Legal consulting in Brazil"
+      : "Consultoria jurídica no Brasil";
 const accent = data.routeKey === "environmental-esg";
-const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award"];
+const serviceIconsByRoute = {
+  "immigration-mobility": ["route", "e-passport", "language", "clipboard-check", "briefcase", "award"],
+  "environmental-esg": ["scale", "shield-check", "file-certificate", "chart-donut", "route", "users-group"],
+  "public-policy": ["file-analytics", "building-community", "users-group", "user-cog"],
+  "legal-opinions": ["leaf", "world", "e-passport", "scale", "shield-check", "users-group"],
+};
+const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIconsByRoute] ?? ["files", "files", "files", "files", "files", "files"];
 ---
 
 <div
@@ -55,8 +61,8 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
           showActions
           showContactLink={accent}
           parent={{
-            label: locale === "en" ? "Consulting" : "Consultoria",
-            href: pathFor("legal", locale),
+            label: locale === "en" ? "Practice" : "Atuação",
+            href: pathFor("practice", locale),
           }}
           data-tina-field={tinaField(data, "consultingService")}
         />
@@ -236,7 +242,12 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
             </div>
             <div class="grid gap-6 md:grid-cols-2">
               {service.relatedPublications?.map((publication) => (
-                <Card as="article" class="p-6 gap-2 relative">
+                <a
+                  href={pathFor("publications", locale)}
+                  class="block rounded-lg transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  aria-label={`${locale === "en" ? "Read publication" : "Ver publicação"}: ${publication.title}`}
+                >
+                <Card as="article" class="p-6 gap-2 relative h-full">
                   {publication.highlight && (
                     <p class="absolute -top-2 right-4 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                       {publication.highlight}
@@ -245,6 +256,7 @@ const serviceIcons = ["route", "id", "files", "credit-card", "briefcase", "award
                   <h3 class="text-lg font-semibold"><AcronymText text={publication.title} locale={locale} /></h3>
                   <p class="text-base text-muted-foreground">{publication.publication}</p>
                 </Card>
+                </a>
               ))}
             </div>
           </Section>

@@ -98,11 +98,11 @@ const kitIcons = ["user", "photo", "list-check"];
             <ul class="speaking-kit-grid">
               {speaking.kitItems.map((item, index) => (
                 <li>
-                  <Card class="speaking-kit-card p-6">
+                  <Card class="speaking-kit-card flex flex-col gap-4 p-6 sm:flex-row sm:items-start">
                     <span class="academic-icon" aria-hidden="true">
                       <Icon name={kitIcons[index]} />
                     </span>
-                    <span><AcronymText text={item} locale={locale} /></span>
+                    <span class="min-w-0"><AcronymText text={item} locale={locale} /></span>
                   </Card>
                 </li>
               ))}

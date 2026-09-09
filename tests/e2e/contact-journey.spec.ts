@@ -21,8 +21,11 @@ async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	const emailInput = form.getByLabel("E-mail");
 	const whatsappInput = form.getByLabel("WhatsApp (opcional)");
 	const requestTypeSelect = form.getByLabel("Tipo de pedido");
-	const countrySelect = form.getByLabel("País onde está");
-	const messageTextarea = form.getByRole("textbox", { name: "Mensagem", exact: true });
+	const countrySelect = form.getByLabel("País de residência");
+	const messageTextarea = form.getByRole("textbox", {
+		name: "Mensagem",
+		exact: true,
+	});
 
 	await nameInput.click();
 	await nameInput.fill(persona.name);
@@ -33,7 +36,8 @@ async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	await whatsappInput.click();
 	await whatsappInput.fill(persona.whatsapp);
 
-	await requestTypeSelect.selectOption("request-1");
+	await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
+	await requestTypeSelect.selectOption("brazil-law");
 
 	await countrySelect.selectOption("PT");
 
@@ -56,10 +60,11 @@ test.describe("potential client sends a contact request", () => {
 			.filter({ hasText: "Corrija os campos" });
 		await expect(summary).toBeFocused();
 		await expect(summary.getByRole("link")).toHaveText([
+			"Âmbito do pedido: Este campo é obrigatório.",
 			"Nome: Introduza pelo menos 2 caracteres.",
 			"E-mail: Introduza um endereço de email válido.",
 			"Tipo de pedido: Este campo é obrigatório.",
-			"País onde está: Este campo é obrigatório.",
+			"País de residência: Este campo é obrigatório.",
 			"Mensagem: Introduza pelo menos 20 caracteres.",
 		]);
 		await summary.getByRole("link", { name: /^Nome:/ }).press("Enter");
@@ -132,9 +137,11 @@ test.describe("potential client sends a contact request", () => {
 		await sendButton.focus();
 		await sendButton.press("Enter");
 
-		await expect(page).toHaveURL(/\/contacto#contact-form-status$/);
+		await expect(page).toHaveURL(
+			/\/contacto\?scope=BR_LEGAL#contact-form-status$/,
+		);
 		await expect(page.getByRole("status")).toContainText(
-			"Mensagem enviada com sucesso",
+			"Recebi o seu pedido relativo a Direito brasileiro",
 		);
 		expect(payload).toMatchObject({
 			locale: "pt-PT",
@@ -142,7 +149,9 @@ test.describe("potential client sends a contact request", () => {
 			country: "PT",
 		});
 		await page.reload();
-		await expect(page.getByText("Mensagem enviada com sucesso")).toHaveCount(0);
+		await expect(
+			page.getByText("Recebi o seu pedido relativo a Direito brasileiro"),
+		).toHaveCount(0);
 	});
 
 	test("unavailable storage preserves data and offers editable WhatsApp fallback", async ({
@@ -184,8 +193,9 @@ test.describe("potential client sends a contact request", () => {
 		});
 		await whatsappChannel.focus();
 		await whatsappChannel.press("Space");
-		await form.getByLabel("Tipo de pedido").selectOption("request-1");
-		await form.getByLabel("País onde está").selectOption("PT");
+		await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
+		await form.getByLabel("Tipo de pedido").selectOption("brazil-law");
+		await form.getByLabel("País de residência").selectOption("PT");
 		await form
 			.getByRole("textbox", { name: "Mensagem", exact: true })
 			.fill(persona.message);
@@ -227,7 +237,9 @@ test.describe("potential client sends a contact request", () => {
 		);
 		await expect(form.getByLabel("Nome")).toHaveValue(persona.name);
 		await submit.press("Enter");
-		await expect(page).toHaveURL(/contacto#contact-form-status$/);
+		await expect(page).toHaveURL(
+			/contacto\?scope=BR_LEGAL#contact-form-status$/,
+		);
 		expect(requestIds).toHaveLength(2);
 		expect(new Set(requestIds).size).toBe(1);
 	});
@@ -264,7 +276,9 @@ test.describe("potential client sends a contact request", () => {
 		).toBeDisabled();
 		await page.keyboard.press("Enter");
 		completeRequest?.();
-		await expect(page).toHaveURL(/contacto#contact-form-status$/);
+		await expect(page).toHaveURL(
+			/contacto\?scope=BR_LEGAL#contact-form-status$/,
+		);
 		expect(requests).toBe(1);
 	});
 
@@ -291,14 +305,19 @@ test.describe("potential client sends a contact request", () => {
 		await form
 			.getByRole("textbox", { name: "Email", exact: true })
 			.fill(englishPersona.email);
-		await form.getByLabel("Type of request").selectOption("request-1");
+		await form.getByLabel("Scope of the enquiry").selectOption("BR_LEGAL");
+		await form.getByLabel("Type of request").selectOption("brazil-law");
 		await form.getByLabel("Country").selectOption("PT");
 		await form
 			.getByRole("textbox", { name: "Message", exact: true })
 			.fill(englishPersona.message);
 		await form.getByRole("button", { name: "Send request" }).press("Enter");
-		await expect(page).toHaveURL(/\/en\/contact#contact-form-status$/);
-		await expect(page.getByRole("status")).toContainText("sent successfully");
+		await expect(page).toHaveURL(
+			/\/en\/contact\?scope=BR_LEGAL#contact-form-status$/,
+		);
+		await expect(page.getByRole("status")).toContainText(
+			"I received your enquiry relating to Brazilian law",
+		);
 		expect(payload).toMatchObject({
 			locale: "en",
 			email: englishPersona.email,
@@ -332,8 +351,9 @@ test.describe("potential client sends a contact request", () => {
 		await form
 			.getByRole("radio", { name: /Enviar pelo WhatsApp/ })
 			.press("Space");
-		await form.getByLabel("Tipo de pedido").selectOption("request-1");
-		await form.getByLabel("País onde está").selectOption("PT");
+		await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
+		await form.getByLabel("Tipo de pedido").selectOption("brazil-law");
+		await form.getByLabel("País de residência").selectOption("PT");
 		await form
 			.getByRole("textbox", { name: "Mensagem", exact: true })
 			.fill("x".repeat(2_100));

@@ -4,6 +4,11 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppMessage, contactCountries } from "@/lib/contact-form";
+import {
+	isContactScope,
+	scopeConfirmations,
+	scopeSubmitLabels,
+} from "@/lib/contact-scope";
 import { ChannelFieldset } from "./contact-form/ChannelFieldset";
 import { ContactFields } from "./contact-form/ContactFields";
 import { contactFormCopy } from "./contact-form/copy";
@@ -25,6 +30,7 @@ function buildSchema(
 	return z
 		.object({
 			channel: z.enum(["email", "whatsapp"]),
+			scope: z.string().refine(isContactScope, t.required),
 			name: z.string().trim().min(2, t.shortName).max(120),
 			email: z.string().trim().max(254),
 			whatsapp: z.string().trim().max(32),
@@ -38,7 +44,8 @@ function buildSchema(
 			country: z
 				.string()
 				.refine(
-					(value) => contactCountries.some((option) => option.value === value),
+					(value) =>
+						!value || contactCountries.some((option) => option.value === value),
 					t.required,
 				),
 			message: z.string().trim().min(20, t.shortMessage).max(5_000),
@@ -46,6 +53,18 @@ function buildSchema(
 			turnstileToken: z.string(),
 		})
 		.superRefine((values, context) => {
+			if (
+				!requestTypes.some(
+					(option) =>
+						option.value === values.requestType &&
+						option.scope === values.scope,
+				)
+			)
+				context.addIssue({
+					code: "custom",
+					path: ["requestType"],
+					message: t.required,
+				});
 			if (values.channel !== "email") return;
 			const email = z.email().safeParse(values.email);
 			if (!email.success)
@@ -66,6 +85,7 @@ function buildSchema(
 export default function ContactForm({
 	locale,
 	privacyHref,
+	scopeNotice,
 	requestTypes,
 	turnstileSiteKey,
 	whatsappHref,
@@ -88,6 +108,7 @@ export default function ContactForm({
 		setValue,
 		reset,
 		getValues,
+		watch,
 		formState: { errors, isSubmitting },
 	} = useForm<FormValues>({
 		resolver: zodResolver(buildSchema(t, requestTypes)),
@@ -96,6 +117,7 @@ export default function ContactForm({
 		reValidateMode: "onChange",
 		defaultValues: {
 			channel: "email",
+			scope: "",
 			name: "",
 			email: "",
 			whatsapp: "",
@@ -107,6 +129,19 @@ export default function ContactForm({
 		},
 	});
 
+	const scope = watch("scope");
+	const requestType = watch("requestType");
+	const availableRequestTypes = requestTypes;
+	useEffect(() => {
+		const selected = requestTypes.find(
+			(option) => option.value === requestType,
+		);
+		if (selected && selected.scope !== scope) setValue("scope", selected.scope);
+	}, [requestType, requestTypes, scope, setValue]);
+	useEffect(() => {
+		const chosen = new URL(window.location.href).searchParams.get("scope");
+		if (isContactScope(chosen)) setValue("scope", chosen);
+	}, [setValue]);
 	const onTurnstileToken = useCallback(
 		(token: string) =>
 			setValue("turnstileToken", token, { shouldValidate: true }),
@@ -136,7 +171,12 @@ export default function ContactForm({
 		const url = new URL(window.location.href);
 		if (url.searchParams.get("status") !== "sent") return;
 		setStatus("success");
-		setStatusMessage(t.success);
+		const completedScope = url.searchParams.get("scope");
+		setStatusMessage(
+			isContactScope(completedScope)
+				? scopeConfirmations[locale][completedScope]
+				: t.success,
+		);
 		url.searchParams.delete("status");
 		window.history.replaceState(
 			null,
@@ -144,7 +184,7 @@ export default function ContactForm({
 			`${url.pathname}${url.search}${url.hash}`,
 		);
 		requestAnimationFrame(() => statusRef.current?.focus());
-	}, [t.success]);
+	}, [t.success, locale]);
 
 	function chooseChannel(nextChannel: FormValues["channel"]) {
 		setChannel(nextChannel);
@@ -169,6 +209,7 @@ export default function ContactForm({
 			buildWhatsAppMessage({
 				locale,
 				name: data.name,
+				scope: isContactScope(data.scope) ? data.scope : "OTHER",
 				requestType,
 				country,
 				message: data.message,
@@ -181,7 +222,15 @@ export default function ContactForm({
 	}
 
 	function offerWhatsappFallback(data = getValues()) {
-		if (!whatsappHref) return;
+		if (
+			!whatsappHref ||
+			!isContactScope(data.scope) ||
+			!requestTypes.some(
+				(option) =>
+					option.value === data.requestType && option.scope === data.scope,
+			)
+		)
+			return;
 		setWhatsappPreview(whatsappMessage(data, true));
 	}
 
@@ -221,6 +270,7 @@ export default function ContactForm({
 					email: data.email,
 					whatsapp: data.whatsapp,
 					requestType,
+					scope: data.scope,
 					country: countryCode,
 					message,
 					website: data.website,
@@ -242,7 +292,7 @@ export default function ContactForm({
 			requestIdRef.current = null;
 			setStartedAt(Date.now());
 			const url = new URL(window.location.href);
-			url.search = "?status=sent";
+			url.search = `?status=sent&scope=${encodeURIComponent(data.scope)}`;
 			url.hash = "contact-form-status";
 			window.location.replace(url);
 		} catch (error) {
@@ -303,6 +353,7 @@ export default function ContactForm({
 				/>
 			)}
 
+			<input type="hidden" {...register("scope")} />
 			<ChannelFieldset
 				t={t}
 				id={id}
@@ -317,11 +368,14 @@ export default function ContactForm({
 				channel={channel}
 				errors={errors}
 				register={register}
-				requestTypes={requestTypes}
+				requestTypes={availableRequestTypes}
 				countries={countries}
 				privacyHref={privacyHref}
 			/>
 
+			<aside className="contact-form__scope-notice">
+				<p>{scopeNotice}</p>
+			</aside>
 			{channel === "email" ? (
 				<>
 					{!turnstileSiteKey && (
@@ -339,7 +393,11 @@ export default function ContactForm({
 						message={errors.turnstileToken?.message}
 					/>
 					<Button type="submit" disabled={isSubmitting || !turnstileSiteKey}>
-						{isSubmitting ? t.sending : t.submit}
+						{isSubmitting
+							? t.sending
+							: isContactScope(scope)
+								? scopeSubmitLabels[locale][scope]
+								: t.submit}
 					</Button>
 				</>
 			) : (

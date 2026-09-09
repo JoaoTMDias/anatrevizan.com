@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { ReadonlyField } from "../components/ReadonlyField.ts";
 import { editorialListItemLabel } from "./common";
 
 const localizedText = (name: string, label: string) => ({
@@ -136,7 +137,7 @@ export const GlobalConfigCollection: Collection = {
 			fields: [
 				{
 					name: "consulting",
-					label: "Menu Consultoria",
+					label: "Menu Atuação",
 					type: "object",
 					fields: [
 						localizedText("label", "Nome do menu"),
@@ -145,7 +146,12 @@ export const GlobalConfigCollection: Collection = {
 							"Migração e Mobilidade",
 							true,
 						),
-						navigationEntry("legal", "Consultoria Jurídica", true),
+						navigationEntry("legal", "Advocacia no Brasil", true),
+						navigationEntry(
+							"portugalSupport",
+							"Apoio administrativo em Portugal",
+							true,
+						),
 						navigationEntry("environmentalEsg", "Ambiental e ESG", true),
 						navigationEntry(
 							"publicPolicy",
@@ -183,7 +189,24 @@ export const GlobalConfigCollection: Collection = {
 			ui: {
 				itemProps: (item) => ({ label: item.label?.pt ?? "Tipo de pedido" }),
 			},
-			fields: [localizedText("label", "Nome apresentado")],
+			fields: [
+				{
+					name: "id",
+					label: "Identificador estável",
+					type: "string",
+					required: true,
+					ui: { component: ReadonlyField },
+				},
+				{
+					name: "scope",
+					label: "Âmbito",
+					type: "string",
+					required: true,
+					options: ["BR_LEGAL", "PT_ADMIN", "ACADEMIC", "OTHER"],
+					ui: { component: ReadonlyField },
+				},
+				localizedText("label", "Nome apresentado"),
+			],
 		},
 		{
 			name: "seo",

@@ -86,9 +86,9 @@ test.describe("visitor navigates and keeps accessibility preferences", () => {
 
 	test("keyboard journey reaches a service and contact", async ({ page }) => {
 		await page.goto("/");
-		await tabToHref(page, "/consultoria/juridica");
+		await tabToHref(page, "/atuacao/advocacia-brasil");
 		await page.keyboard.press("Enter");
-		await expect(page).toHaveURL(/\/consultoria\/juridica$/);
+		await expect(page).toHaveURL(/\/atuacao\/advocacia-brasil$/);
 		await tabToHref(page, "/contacto");
 		await page.keyboard.press("Enter");
 		await expect(page).toHaveURL(/\/contacto$/);

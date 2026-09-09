@@ -83,17 +83,21 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
         <Section>
           <SectionHeading title={about.currentWorkTitle} locale={locale} />
           <div class="about-current-work">
-            {about.currentWork.map((item) => (
-              <Card as="article" class="p-6">
-                <p class="text-2xl" aria-hidden="true">
-                  {item.country}
-                </p>
-                <h3>
-                  <AcronymText text={item.title} locale={locale} />
-                </h3>
-                <p>
-                  <AcronymText text={item.description} locale={locale} />
-                </p>
+            {about.currentWork.map((item, index) => (
+              <Card as="article" class="about-region-card !gap-0 !py-0">
+                <div class="about-region-card__media">
+                  {item.image ? (
+                    <EditorialImage src={item.image} alt="" width={960} height={640} loading="lazy" decoding="async" border="none" />
+                  ) : null}
+                </div>
+                <div class="about-region-card__content">
+                  <h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p>
+                  <a class="about-region-card__link" href={pathFor(index === 0 ? "immigration-mobility" : "legal", locale)}>
+                    {locale === "en" ? "Explore this area" : "Conhecer esta área"}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </Card>
             ))}
           </div>

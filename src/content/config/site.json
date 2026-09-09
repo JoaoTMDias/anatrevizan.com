@@ -308,77 +308,91 @@
 	"navigation": {
 		"consulting": {
 			"label": {
-				"pt": "Consultoria",
-				"en": "Consulting"
+				"pt": "Atuação",
+				"en": "Practice"
 			},
 			"immigrationMobility": {
 				"label": {
 					"pt": "Migração e Mobilidade",
-					"en": "Immigration and mobility"
+					"en": "Migration and Mobility"
 				},
 				"description": {
-					"pt": "Vistos, residência e integração jurídica em Portugal",
-					"en": "Navigation description awaiting approval."
+					"pt": "Mudar de país é uma das decisões mais importantes da sua vida.",
+					"en": "Changing countries is one of the most important decisions in your life."
 				},
 				"tag": {
-					"pt": "Portugal",
-					"en": "English tag awaiting approval"
+					"pt": "Escolha o país",
+					"en": "Choose a country"
 				}
 			},
 			"legal": {
 				"label": {
-					"pt": "Consultoria Jurídica",
-					"en": "Legal consulting"
+					"pt": "Advocacia e consultoria jurídica no Brasil",
+					"en": "Legal practice and legal consulting in Brazil"
 				},
 				"description": {
-					"pt": "Direito Civil, Trabalho, Administrativo e Urbanístico",
-					"en": "Navigation description awaiting approval."
+					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
 				},
 				"tag": {
-					"pt": "Portugal",
-					"en": "English tag awaiting approval"
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
 				}
 			},
 			"environmentalEsg": {
 				"label": {
-					"pt": "Ambiental e ESG",
-					"en": "Environmental and ESG"
+					"pt": "Consultoria Ambiental e ESG",
+					"en": "Environmental and ESG consulting"
 				},
 				"description": {
-					"pt": "Compliance ambiental, due diligence e regulação da UE",
-					"en": "Navigation description awaiting approval."
+					"pt": "Advocacia e consultoria jurídica no Brasil em matérias ambientais, administrativas e urbanísticas.",
+					"en": "Legal practice and legal consulting in Brazil on environmental, administrative and urban planning matters."
 				},
 				"tag": {
-					"pt": "Brasil · União Europeia",
-					"en": "English tag awaiting approval"
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
 				}
 			},
 			"publicPolicy": {
 				"label": {
 					"pt": "Políticas Públicas e Governança",
-					"en": "Public policy"
+					"en": "Public Policy and Governance"
 				},
 				"description": {
-					"pt": "Análise legislativa e consultoria para municípios e ONGs",
-					"en": "Navigation description awaiting approval."
+					"pt": "Advocacia e consultoria jurídica no Brasil em ESG, políticas públicas e sustentabilidade.",
+					"en": "Legal practice and legal consulting in Brazil on ESG, public policy and sustainability."
 				},
 				"tag": {
-					"pt": "Brasil",
-					"en": "English tag awaiting approval"
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
 				}
 			},
 			"legalOpinions": {
 				"label": {
-					"pt": "Pareceres e Notas Técnicas",
-					"en": "Legal opinions"
+					"pt": "Pareceres jurídicos em Direito brasileiro",
+					"en": "Legal opinions under Brazilian law"
 				},
 				"description": {
-					"pt": "Pareceres fundamentados em múltiplas áreas do Direito",
-					"en": "Navigation description awaiting approval."
+					"pt": "Análise clara e fundamentada para apoiar decisões, propostas e projetos no contexto do Direito brasileiro.",
+					"en": "Clear, grounded analysis to support decisions, proposals and projects under Brazilian law."
 				},
 				"tag": {
-					"pt": "Portugal e Brasil",
-					"en": "English tag awaiting approval"
+					"pt": "Escolha o país",
+					"en": "Brazil"
+				}
+			},
+			"portugalSupport": {
+				"label": {
+					"pt": "Apoio administrativo em Portugal",
+					"en": "Administrative support in Portugal"
+				},
+				"description": {
+					"pt": "Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.",
+					"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+				},
+				"tag": {
+					"pt": "PORTUGAL · Apoio administrativo",
+					"en": "PORTUGAL · Administrative support"
 				}
 			}
 		},
@@ -394,7 +408,7 @@
 				},
 				"description": {
 					"pt": "Revisão técnica, orientação metodológica e preparação para publicação",
-					"en": "Navigation description awaiting approval."
+					"en": "Technical review, methodological guidance and preparation for publication"
 				}
 			},
 			"publications": {
@@ -404,7 +418,7 @@
 				},
 				"description": {
 					"pt": "Artigos em revistas científicas internacionais",
-					"en": "Navigation description awaiting approval."
+					"en": "Articles in international scientific journals"
 				}
 			},
 			"events": {
@@ -414,7 +428,7 @@
 				},
 				"description": {
 					"pt": "Histórico de participações desde 2019",
-					"en": "Navigation description awaiting approval."
+					"en": "Record of participation since 2019"
 				}
 			},
 			"training": {
@@ -424,7 +438,7 @@
 				},
 				"description": {
 					"pt": "Para universidades, empresas e organizações",
-					"en": "Navigation description awaiting approval."
+					"en": "For universities, businesses and organisations"
 				}
 			}
 		},
@@ -439,44 +453,101 @@
 	},
 	"requestTypes": [
 		{
+			"id": "brazil-law",
+			"scope": "BR_LEGAL",
 			"label": {
-				"pt": "Consulta jurídica",
-				"en": "Legal consultation"
+				"pt": "Assunto jurídico de Direito brasileiro",
+				"en": "Legal matter under Brazilian law"
 			}
 		},
 		{
+			"id": "brazil-civil-contracts-consumer",
+			"scope": "BR_LEGAL",
 			"label": {
-				"pt": "Consultoria ambiental e ESG",
-				"en": "Environmental and ESG consulting"
+				"pt": "Civil, contratos e consumidor",
+				"en": "Civil law, contracts and consumer matters"
 			}
 		},
 		{
+			"id": "brazil-labour",
+			"scope": "BR_LEGAL",
 			"label": {
-				"pt": "Mentoria ou apoio académico",
-				"en": "Mentoring or academic support"
+				"pt": "Trabalho e relações laborais",
+				"en": "Labour and employment relations"
 			}
 		},
 		{
+			"id": "brazil-human-rights",
+			"scope": "BR_LEGAL",
+			"label": { "pt": "Direitos humanos", "en": "Human rights" }
+		},
+		{
+			"id": "brazil-legal-opinion",
+			"scope": "BR_LEGAL",
+			"label": { "pt": "Parecer jurídico", "en": "Legal opinion" }
+		},
+		{
+			"id": "brazil-environment",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Ambiental, ESG e políticas públicas — Brasil",
+				"en": "Environmental, ESG and public policy — Brazil"
+			}
+		},
+		{
+			"id": "portugal-administrative",
+			"scope": "PT_ADMIN",
+			"label": {
+				"pt": "Apoio administrativo ou documental em Portugal",
+				"en": "Administrative or document support in Portugal"
+			}
+		},
+		{
+			"id": "academic-mentoring",
+			"scope": "ACADEMIC",
+			"label": {
+				"pt": "Mentoria ou investigação",
+				"en": "Mentoring or research"
+			}
+		},
+		{
+			"id": "academic-research",
+			"scope": "ACADEMIC",
+			"label": {
+				"pt": "Investigação e colaboração científica",
+				"en": "Research and scientific collaboration"
+			}
+		},
+		{
+			"id": "academic-training",
+			"scope": "ACADEMIC",
+			"label": { "pt": "Formação", "en": "Training" }
+		},
+		{
+			"id": "academic-speaking",
+			"scope": "ACADEMIC",
 			"label": {
 				"pt": "Palestra ou formação",
-				"en": "Speaking or training"
+				"en": "Talk or training"
 			}
 		},
 		{
+			"id": "professional-other",
+			"scope": "OTHER",
 			"label": {
-				"pt": "Outro pedido",
-				"en": "Other request"
+				"pt": "Outro pedido profissional",
+				"en": "Other professional request"
 			}
 		}
 	],
 	"seo": {
 		"defaultTitle": {
-			"pt": "Dr. Ana Trevizan, PhD",
-			"en": "Dr. Ana Trevizan, PhD"
+			"pt": "Ana Flávia Trevizan — Atuação profissional e Academia",
+			"en": "Ana Flávia Trevizan — Professional Practice and Academia"
 		},
 		"defaultDescription": {
-			"pt": "Consultoria jurídica e ambiental entre Portugal e Brasil, com base científica.",
-			"en": "Scientific-based legal and environmental consulting between Portugal and Brazil."
+			"pt": "Atuação profissional, investigação e formação em ambiente, direitos humanos e políticas públicas.",
+			"en": "Professional practice, research and teaching in environment, human rights and public policy."
 		},
 		"defaultImage": "/open-graph-image.webp"
 	},

@@ -23,7 +23,11 @@ export function deriveLinkedPageTitles<T extends Record<string, unknown>>(
 		const record = Object.fromEntries(
 			Object.entries(value).map(([key, child]) => [key, walk(child)]),
 		);
-		if (isRouteKey(record.routeKey) && titles.has(record.routeKey))
+		if (
+			typeof record.title !== "string" &&
+			isRouteKey(record.routeKey) &&
+			titles.has(record.routeKey)
+		)
 			record.title = titles.get(record.routeKey);
 		return record;
 	};

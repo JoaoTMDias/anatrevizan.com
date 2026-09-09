@@ -94,6 +94,51 @@
 	.about-current-work {
 		@apply grid grid-cols-1 gap-6;
 	}
+	.about-region-card {
+		@apply overflow-hidden p-0;
+		border-color: color-mix(in oklab, var(--border) 55%, var(--background));
+	}
+	.about-region-card__media {
+		@apply relative flex aspect-4/3 items-end overflow-hidden bg-secondary p-6 text-4xl font-semibold text-primary;
+		background-image: linear-gradient(
+			135deg,
+			color-mix(in oklab, var(--accent) 30%, var(--secondary)),
+			var(--secondary)
+		);
+	}
+	.about-region-card__media::after {
+		@apply absolute inset-0 opacity-20;
+		background: radial-gradient(
+			circle at 75% 25%,
+			var(--primary),
+			transparent 55%
+		);
+		content: "";
+	}
+	.about-region-card__media img {
+		@apply absolute inset-0 size-full object-cover;
+	}
+	.about-region-card__content {
+		@apply p-6;
+	}
+	.about-region-card h3 {
+		font-size: clamp(1.4rem, 2vw, 1.75rem);
+	}
+	.about-region-card__link {
+		@apply mt-6 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4;
+	}
+	@media (min-width: 64rem) {
+		.about-region-card {
+			flex-direction: row !important;
+		}
+		.about-region-card__media {
+			@apply aspect-auto w-2/5 shrink-0;
+			min-height: 18rem;
+		}
+		.about-region-card__content {
+			@apply flex min-w-0 flex-1 flex-col justify-center p-8;
+		}
+	}
 	.home-gateway {
 		@apply relative grid min-h-72 grid-rows-[auto_1fr_auto] gap-5 bg-transparent p-[clamp(1.5rem,3vw,2.5rem)] text-[#fffaf4] no-underline transition-colors duration-200 ease-out hover:bg-[#2b1c20] focus-visible:z-1 focus-visible:bg-[#2b1c20] focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-white motion-reduce:transition-none;
 	}

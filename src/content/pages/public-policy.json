@@ -6,7 +6,7 @@
 		"en": "Public Policy and Governance"
 	},
 	"summary": {
-		"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+		"pt": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
 		"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
 	},
 	"seo": {
@@ -15,7 +15,7 @@
 			"en": "Public Policy and Governance · Municipalities, NGOs, and Associations — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Consultoria em políticas públicas e governança ambiental: análise de projetos de lei e apoio técnico a municípios, ONGs, associações e instituições.",
+			"pt": "Apoio técnico em políticas públicas, governança ambiental e sustentabilidade para municípios, organizações e instituições no Brasil e noutros contextos internacionais.",
 			"en": "Public policy and environmental governance consulting: legislative draft analysis and technical support for municipalities, NGOs, associations, and public institutions."
 		},
 		"noindex": true
@@ -32,11 +32,11 @@
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Brasil e Portugal",
+			"pt": "Políticas públicas · apoio técnico",
 			"en": "Brazil and Portugal"
 		},
 		"subtitle": {
-			"pt": "Boas leis não bastam. É preciso que funcionem. Apoio técnico a quem constrói e implementa políticas ambientais e climáticas.",
+			"pt": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
 			"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
 		},
 		"introHeading": {
@@ -60,18 +60,18 @@
 			"en": "How I can help"
 		},
 		"servicesSubtitle": {
-			"pt": "Apoio técnico e consultoria estratégica em políticas públicas e governança.",
+			"pt": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade.",
 			"en": "Technical support and strategic advisory in public policy and governance."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Análise de projetos de lei",
+					"pt": "Análise de políticas e propostas",
 					"en": "Legislative Draft Analysis"
 				},
 				"items": [
 					{
-						"pt": "Análise jurídica e técnica",
+						"pt": "Leio propostas, programas e regulamentos para identificar os seus objetivos, impactos possíveis e condições de implementação.",
 						"en": "Legal and technical analysis"
 					},
 					{
@@ -90,12 +90,12 @@
 			},
 			{
 				"title": {
-					"pt": "Consultoria para municípios",
+					"pt": "Políticas locais e clima",
 					"en": "Consulting for Municipalities"
 				},
 				"items": [
 					{
-						"pt": "Elaboração de políticas públicas",
+						"pt": "Apoio municípios e equipas técnicas a transformar objetivos ambientais e climáticos em planos, projetos e formas de acompanhamento.",
 						"en": "Public policy drafting"
 					},
 					{
@@ -114,12 +114,12 @@
 			},
 			{
 				"title": {
-					"pt": "Consultoria para ONGs",
+					"pt": "Organizações e direitos humanos",
 					"en": "Consulting for NGOs"
 				},
 				"items": [
 					{
-						"pt": "Análise normativa e pareceres",
+						"pt": "Trabalho com organizações que desenvolvem projetos ambientais e de direitos humanos, ajudando a estruturar informação, objetivos e formas de avaliação.",
 						"en": "Regulatory analysis and legal opinions"
 					},
 					{
@@ -138,12 +138,12 @@
 			},
 			{
 				"title": {
-					"pt": "Associações e instituições",
+					"pt": "Governança e sustentabilidade",
 					"en": "Associations & Institutions"
 				},
 				"items": [
 					{
-						"pt": "Regulamentos internos e governança",
+						"pt": "Ajudo associações e instituições a organizar regras internas, responsabilidades e informação para acompanhar os seus compromissos ambientais e sociais.",
 						"en": "Internal regulations and governance"
 					},
 					{
@@ -170,15 +170,15 @@
 			"en": ""
 		},
 		"note": {
-			"pt": "Atuação técnica, consultiva e de assessoria. Não inclui representação em processos judiciais (contencioso).",
+			"pt": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal.",
 			"en": "Technical advisory and consulting practice. Does not include litigation or court representation."
 		},
 		"ctaHeading": {
-			"pt": "Precisa de fundamentação técnica para uma decisão pública?",
+			"pt": "Tem uma política ou projeto para desenvolver?",
 			"en": "Do you need technical backing for a public decision?"
 		},
 		"ctaText": {
-			"pt": "Marque uma conversa inicial para avaliarmos o âmbito do apoio de que a sua organização precisa.",
+			"pt": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil.",
 			"en": "Schedule an initial call to evaluate the scope of support your organization requires."
 		}
 	}

@@ -5,6 +5,7 @@ import type { ContactFormCopy } from "./copy";
 import type { FormValues } from "./types";
 
 const ERROR_FIELDS = [
+	"scope",
 	"name",
 	"email",
 	"requestType",

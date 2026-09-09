@@ -5,7 +5,7 @@
 		"en": "Training & Courses"
 	},
 	"summary": {
-		"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+		"pt": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
 		"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
 	},
 	"seo": {
@@ -30,19 +30,19 @@
 	},
 	"academicService": {
 		"subtitle": {
-			"pt": "Formação que traduz temas complexos em conhecimento aplicável. Formadora certificada em Portugal, com docência no Brasil e na Europa.",
+			"pt": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
 			"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
 		},
 		"introHeading": {
-			"pt": "Conhecimento que se usa na segunda-feira",
-			"en": "Knowledge you can apply on Monday"
+			"pt": "Conhecimento para aplicar no trabalho",
+			"en": "Knowledge to use at work"
 		},
 		"introImage": {
 			"image": "/hero-placeholder.webp",
 			"decorative": true
 		},
 		"introParagraphs": {
-			"pt": "Dou aulas há mais de uma década: no Brasil, e em inglês na LUNEX, no Luxemburgo. Aprendi que uma boa formação não despeja teoria: parte da realidade de quem ouve e entrega algo que dá para aplicar já.\n\nDesenho cursos, workshops e formações à medida de universidades, empresas, municípios e organizações, com o rigor da investigação e a clareza de quem ensina.\n",
+			"pt": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n",
 			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programs for universities, corporations, municipalities, and organizations, combining research rigor with pedagogical clarity.\n"
 		},
 		"servicesHeading": {

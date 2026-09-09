@@ -1,4 +1,9 @@
 import { z } from "zod";
+import {
+	type ContactScope,
+	contactScopes,
+	scopeLabels,
+} from "./contact-scope.ts";
 
 export const CONTACT_FORM_ACTION = "contact_form";
 export const CONTACT_FORM_MINIMUM_SECONDS = 3;
@@ -26,12 +31,13 @@ const countryValues = contactCountries.map((country) => country.value) as [
 export const contactSubmissionSchema = z
 	.object({
 		requestId: z.uuid(),
+		scope: z.enum(contactScopes),
 		locale: z.enum(["pt-PT", "en"]),
 		name: z.string().trim().min(2).max(120),
 		email: z.email().max(254),
 		whatsapp: z.string().trim().max(32).optional().default(""),
 		requestType: z.string().trim().min(1).max(160),
-		country: z.enum(countryValues),
+		country: z.enum(countryValues).or(z.literal("")),
 		message: z.string().trim().min(20).max(5_000),
 		website: z.string().max(0),
 		startedAt: z.number().int().positive(),
@@ -62,6 +68,7 @@ export function isPlausibleSubmissionTime(
 
 export function buildWhatsAppMessage(input: {
 	locale: "pt-PT" | "en";
+	scope: ContactScope;
 	name: string;
 	requestType: string;
 	country: string;
@@ -71,5 +78,5 @@ export function buildWhatsAppMessage(input: {
 		input.locale === "en"
 			? { intro: "Hello, my name is", type: "Request", country: "Country" }
 			: { intro: "Olá, o meu nome é", type: "Pedido", country: "País" };
-	return `${labels.intro} ${input.name}.\n\n${labels.type}: ${input.requestType}\n${labels.country}: ${input.country}\n\n${input.message}`;
+	return `${labels.intro} ${input.name}.\n\n${scopeLabels[input.locale][input.scope]}\n${labels.type}: ${input.requestType}\n${labels.country}: ${input.country}\n\n${input.message}`;
 }
