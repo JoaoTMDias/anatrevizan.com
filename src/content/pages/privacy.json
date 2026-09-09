@@ -1,15 +1,18 @@
 {
 	"_template": "privacy",
 	"routeKey": "privacy",
-	"title": { "pt": "Política de privacidade", "en": "Privacy policy" },
+	"title": {
+		"pt": "Política de privacidade",
+		"en": "Privacy policy"
+	},
 	"summary": {
 		"pt": "Informação sobre o tratamento de dados pessoais neste site e nos canais de contacto associados.",
 		"en": "Information about personal data processing on this website and through its associated contact channels."
 	},
 	"seo": {
 		"title": {
-			"pt": "Política de privacidade — Ana Trevizan",
-			"en": "Privacy policy — Ana Trevizan"
+			"pt": "Política de privacidade - Ana Trevizan",
+			"en": "Privacy policy - Ana Trevizan"
 		},
 		"description": {
 			"pt": "Informação sobre o tratamento de dados pessoais no site de Ana Trevizan.",
@@ -45,7 +48,10 @@
 		],
 		"sections": [
 			{
-				"heading": { "pt": "Âmbito profissional e territorial", "en": "Professional and territorial scope" },
+				"heading": {
+					"pt": "Âmbito profissional e territorial",
+					"en": "Professional and territorial scope"
+				},
 				"paragraphs": {
 					"pt": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil, no âmbito da inscrição profissional indicada no site. Em Portugal, os contactos relativos a apoio administrativo ou trabalho técnico não constituem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. [PENDENTE DE REVISÃO JURÍDICA: confirmar a formulação final e a sua articulação com esta política.]",
 					"en": "Legal practice and consultancy in Brazilian law are provided in Brazil, within the professional registration identified on this website. In Portugal, contacts concerning administrative support or technical work do not constitute legal advice, representation, or the practice of activities reserved to Portuguese lawyers or solicitors. [PENDING LEGAL REVIEW: confirm the final wording and its relationship with this policy.]"
@@ -92,7 +98,10 @@
 				}
 			},
 			{
-				"heading": { "pt": "Os seus direitos", "en": "Your rights" },
+				"heading": {
+					"pt": "Os seus direitos",
+					"en": "Your rights"
+				},
 				"paragraphs": {
 					"pt": "Nos termos aplicáveis, pode pedir acesso, retificação, apagamento, limitação ou portabilidade dos seus dados e opor-se a determinados tratamentos. Quando o tratamento se basear em consentimento, pode retirá-lo sem afetar a licitude do tratamento anterior. O exercício de cada direito depende das circunstâncias e dos limites legais.\n\nPode contactar a responsável pelo endereço acima. Tem ainda o direito de apresentar reclamação à [Comissão Nacional de Proteção de Dados](https://www.cnpd.pt/).",
 					"en": "Where applicable, you may request access, rectification, erasure, restriction, or portability of your data and object to certain processing. Where processing relies on consent, you may withdraw it without affecting prior lawful processing. Each right is subject to its circumstances and legal limits.\n\nYou may contact the controller at the address above. You also have the right to lodge a complaint with Portugal's [National Data Protection Commission](https://www.cnpd.pt/)."
@@ -130,5 +139,7 @@
 			}
 		]
 	},
-	"legal": { "effectiveDate": "2026-09-04" }
+	"legal": {
+		"effectiveDate": "2026-09-04"
+	}
 }

@@ -10,8 +10,8 @@
 	},
 	"seo": {
 		"title": {
-			"pt": "Ana Flávia Trevizan — Sobre mim",
-			"en": "Ana Flávia Trevizan — About me"
+			"pt": "Ana Flávia Trevizan - Sobre mim",
+			"en": "Ana Flávia Trevizan - About me"
 		},
 		"description": {
 			"pt": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
@@ -34,8 +34,8 @@
 			"en": "Dr. Ana, PhD"
 		},
 		"subtitle": {
-			"pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas — e entre dois países.",
-			"en": "A career built at the intersection of science, law, and people — and across two countries."
+			"pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas - e entre dois países.",
+			"en": "A career built at the intersection of science, law, and people - and across two countries."
 		},
 		"introImage": {
 			"image": "/hero-placeholder.webp",
@@ -64,8 +64,8 @@
 			{
 				"year": "2015",
 				"title": {
-					"pt": "Mestrado em Direito Agroambiental — UFMT",
-					"en": "Master’s Degree in Agro-Environmental Law — Federal University of Mato Grosso (UFMT)"
+					"pt": "Mestrado em Direito Agroambiental - UFMT",
+					"en": "Master’s Degree in Agro-Environmental Law - Federal University of Mato Grosso (UFMT)"
 				},
 				"description": {
 					"pt": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas.",
@@ -75,8 +75,8 @@
 			{
 				"year": "2018–2019",
 				"title": {
-					"pt": "Assessora Especial — SEMA-MT",
-					"en": "Special Advisor — Department of Environment of the State of Mato Grosso (SEMA-MT)"
+					"pt": "Assessora Especial - SEMA-MT",
+					"en": "Special Advisor - Department of Environment of the State of Mato Grosso (SEMA-MT)"
 				},
 				"description": {
 					"pt": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança.",
@@ -86,8 +86,8 @@
 			{
 				"year": "2019–2024",
 				"title": {
-					"pt": "Doutoramento — NOVA Lisboa",
-					"en": "Ph.D. — NOVA University Lisbon"
+					"pt": "Doutoramento - NOVA Lisboa",
+					"en": "Ph.D. - NOVA University Lisbon"
 				},
 				"description": {
 					"pt": "Bolseira da FCT. Investigação sobre o «Efeito Bruxelas» e o EUDR, com pesquisa empírica de campo na Amazónia junto de produtores, empresas e comunidades.",
@@ -108,8 +108,8 @@
 			{
 				"year": "2025",
 				"title": {
-					"pt": "SPF Early Career Fellow — Rights Lab, Nottingham",
-					"en": "SPF Early Career Fellow — Rights Lab, Nottingham"
+					"pt": "SPF Early Career Fellow - Rights Lab, Nottingham",
+					"en": "SPF Early Career Fellow - Rights Lab, Nottingham"
 				},
 				"description": {
 					"pt": "Pesquisa em cadeias globais de fornecimento, direitos humanos e responsabilidade empresarial. Início da docência em inglês na LUNEX (Luxemburgo).",
@@ -169,8 +169,8 @@
 			"en": "My Core Values"
 		},
 		"valuesSubtitle": {
-			"pt": "Acredito que o Direito deve ser um instrumento de transformação — aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
-			"en": "I believe that law should be a tool for transformation — grounded in a close, personal approach where every client is truly heard and understood."
+			"pt": "Acredito que o Direito deve ser um instrumento de transformação - aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
+			"en": "I believe that law should be a tool for transformation - grounded in a close, personal approach where every client is truly heard and understood."
 		},
 		"values": [
 			{
@@ -248,20 +248,20 @@
 				"en": "Legally Green"
 			},
 			{
-				"pt": "CENSE — NOVA Lisboa",
-				"en": "CENSE — NOVA University Lisbon"
+				"pt": "CENSE - NOVA Lisboa",
+				"en": "CENSE - NOVA University Lisbon"
 			},
 			{
-				"pt": "CEDAT — Rovira i Virgili",
-				"en": "CEDAT — Rovira i Virgili University"
+				"pt": "CEDAT - Rovira i Virgili",
+				"en": "CEDAT - Rovira i Virgili University"
 			},
 			{
 				"pt": "CEJEIA",
 				"en": "CEJEIA"
 			},
 			{
-				"pt": "GPMAT — UFMT",
-				"en": "GPMAT — UFMT"
+				"pt": "GPMAT - UFMT",
+				"en": "GPMAT - UFMT"
 			},
 			{
 				"pt": "Observa-MT",

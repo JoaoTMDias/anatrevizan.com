@@ -11,8 +11,8 @@
 	},
 	"seo": {
 		"title": {
-			"pt": "Declaração de acessibilidade — Ana Trevizan",
-			"en": "Accessibility statement — Ana Trevizan"
+			"pt": "Declaração de acessibilidade - Ana Trevizan",
+			"en": "Accessibility statement - Ana Trevizan"
 		},
 		"description": {
 			"pt": "Compromisso e estado de acessibilidade do site de Ana Trevizan.",
@@ -36,7 +36,10 @@
 		],
 		"sections": [
 			{
-				"heading": { "pt": "Âmbito profissional e territorial", "en": "Professional and territorial scope" },
+				"heading": {
+					"pt": "Âmbito profissional e territorial",
+					"en": "Professional and territorial scope"
+				},
 				"paragraphs": {
 					"pt": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil. Em Portugal, o site apresenta apenas apoio administrativo e trabalho técnico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. Esta distinção também orienta a forma como o conteúdo e os contactos devem ser acessíveis e compreensíveis.",
 					"en": "Legal practice and consultancy in Brazilian law are provided in Brazil. In Portugal, this website presents only administrative support and technical work, without legal advice, representation, or activities reserved to Portuguese lawyers or solicitors. This distinction also guides how the content and contact options should remain accessible and understandable."
@@ -73,7 +76,10 @@
 				}
 			},
 			{
-				"heading": { "pt": "Limitações conhecidas", "en": "Known limitations" },
+				"heading": {
+					"pt": "Limitações conhecidas",
+					"en": "Known limitations"
+				},
 				"paragraphs": {
 					"pt": "Não foi concluída uma auditoria abrangente com utilizadores e múltiplas tecnologias de apoio. Os serviços externos abertos a partir deste site, incluindo Calendly, WhatsApp, ORCID e perfis sociais, têm ambientes próprios cuja acessibilidade não é controlada por este site. Se encontrar outra barreira, comunique-a através do contacto abaixo.",
 					"en": "A comprehensive audit with users and multiple assistive technologies has not been completed. External services opened from this site, including Calendly, WhatsApp, ORCID, and social profiles, have their own environments, whose accessibility is not controlled by this website. If you encounter another barrier, please report it using the contact below."
@@ -90,7 +96,10 @@
 				}
 			},
 			{
-				"heading": { "pt": "Revisão da declaração", "en": "Statement review" },
+				"heading": {
+					"pt": "Revisão da declaração",
+					"en": "Statement review"
+				},
 				"paragraphs": {
 					"pt": "Última revisão: 4 de setembro de 2026. A declaração será atualizada quando existirem novos resultados de avaliação ou alterações relevantes no site.",
 					"en": "Last reviewed: 4 September 2026. This statement will be updated when new assessment results or relevant website changes become available."
@@ -98,5 +107,7 @@
 			}
 		]
 	},
-	"legal": { "effectiveDate": "2026-09-04" }
+	"legal": {
+		"effectiveDate": "2026-09-04"
+	}
 }

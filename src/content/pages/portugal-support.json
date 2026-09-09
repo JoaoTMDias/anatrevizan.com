@@ -51,28 +51,28 @@
 				"scope": "PT_ADMIN",
 				"items": [
 					{
-						"pt": "Documentos — Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar.",
-						"en": "Documents — Organising the documents listed in official requirements, so you know what is ready and what remains."
+						"pt": "Documentos - Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar.",
+						"en": "Documents - Organising the documents listed in official requirements, so you know what is ready and what remains."
 					},
 					{
-						"pt": "Plataformas e formulários — Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece.",
-						"en": "Platforms and forms — Support using official portals and completing fields with the information you provide."
+						"pt": "Plataformas e formulários - Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece.",
+						"en": "Platforms and forms - Support using official portals and completing fields with the information you provide."
 					},
 					{
-						"pt": "Agendamentos — Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião.",
-						"en": "Appointments — Booking appointments and preparing what to bring and do each time."
+						"pt": "Agendamentos - Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião.",
+						"en": "Appointments - Booking appointments and preparing what to bring and do each time."
 					},
 					{
-						"pt": "Traduções e certificações — Coordenação do contacto com tradutores, notários e entidades certificadoras.",
-						"en": "Translations and certifications — Coordinating contact with translators, notaries and certifying entities."
+						"pt": "Traduções e certificações - Coordenação do contacto com tradutores, notários e entidades certificadoras.",
+						"en": "Translations and certifications - Coordinating contact with translators, notaries and certifying entities."
 					},
 					{
-						"pt": "Registos administrativos — Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos.",
-						"en": "Administrative registrations — Organising steps related to NIF, Social Security, healthcare registration and other records."
+						"pt": "Registos administrativos - Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos.",
+						"en": "Administrative registrations - Organising steps related to NIF, Social Security, healthcare registration and other records."
 					},
 					{
-						"pt": "Comunicações e prazos — Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades.",
-						"en": "Communications and deadlines — Organising messages received, relevant dates and statuses indicated by public bodies."
+						"pt": "Comunicações e prazos - Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades.",
+						"en": "Communications and deadlines - Organising messages received, relevant dates and statuses indicated by public bodies."
 					}
 				],
 				"paragraphs": [

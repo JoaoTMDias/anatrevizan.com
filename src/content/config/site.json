@@ -303,7 +303,11 @@
 				}
 			}
 		],
-		"serviceLanguages": ["PT", "EN", "ES"]
+		"serviceLanguages": [
+			"PT",
+			"EN",
+			"ES"
+		]
 	},
 	"navigation": {
 		"consulting": {
@@ -479,19 +483,25 @@
 		{
 			"id": "brazil-human-rights",
 			"scope": "BR_LEGAL",
-			"label": { "pt": "Direitos humanos", "en": "Human rights" }
+			"label": {
+				"pt": "Direitos humanos",
+				"en": "Human rights"
+			}
 		},
 		{
 			"id": "brazil-legal-opinion",
 			"scope": "BR_LEGAL",
-			"label": { "pt": "Parecer jurídico", "en": "Legal opinion" }
+			"label": {
+				"pt": "Parecer jurídico",
+				"en": "Legal opinion"
+			}
 		},
 		{
 			"id": "brazil-environment",
 			"scope": "BR_LEGAL",
 			"label": {
-				"pt": "Ambiental, ESG e políticas públicas — Brasil",
-				"en": "Environmental, ESG and public policy — Brazil"
+				"pt": "Ambiental, ESG e políticas públicas - Brasil",
+				"en": "Environmental, ESG and public policy - Brazil"
 			}
 		},
 		{
@@ -521,7 +531,10 @@
 		{
 			"id": "academic-training",
 			"scope": "ACADEMIC",
-			"label": { "pt": "Formação", "en": "Training" }
+			"label": {
+				"pt": "Formação",
+				"en": "Training"
+			}
 		},
 		{
 			"id": "academic-speaking",
@@ -542,8 +555,8 @@
 	],
 	"seo": {
 		"defaultTitle": {
-			"pt": "Ana Flávia Trevizan — Atuação profissional e Academia",
-			"en": "Ana Flávia Trevizan — Professional Practice and Academia"
+			"pt": "Ana Flávia Trevizan - Atuação profissional e Academia",
+			"en": "Ana Flávia Trevizan - Professional Practice and Academia"
 		},
 		"defaultDescription": {
 			"pt": "Atuação profissional, investigação e formação em ambiente, direitos humanos e políticas públicas.",

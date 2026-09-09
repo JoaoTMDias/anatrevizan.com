@@ -51,28 +51,28 @@
 				"anchor": "civil",
 				"items": [
 					{
-						"pt": "Contratos — elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos.",
-						"en": "Contracts — drafting and reviewing contracts, clauses, obligations, guarantees and risks."
+						"pt": "Contratos - elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos.",
+						"en": "Contracts - drafting and reviewing contracts, clauses, obligations, guarantees and risks."
 					},
 					{
-						"pt": "Obrigações e responsabilidade civil — incumprimento, danos e deveres de reparação.",
-						"en": "Obligations and civil liability — non-performance, damage and duties to compensate."
+						"pt": "Obrigações e responsabilidade civil - incumprimento, danos e deveres de reparação.",
+						"en": "Obligations and civil liability - non-performance, damage and duties to compensate."
 					},
 					{
-						"pt": "Relações de consumo — cobranças indevidas, falhas na prestação de serviços, produtos e garantias.",
-						"en": "Consumer matters — improper charges, service failures, products and warranties."
+						"pt": "Relações de consumo - cobranças indevidas, falhas na prestação de serviços, produtos e garantias.",
+						"en": "Consumer matters - improper charges, service failures, products and warranties."
 					},
 					{
-						"pt": "Questões patrimoniais — bens, direitos e obrigações com repercussão patrimonial.",
-						"en": "Property matters — assets, rights and obligations with financial consequences."
+						"pt": "Questões patrimoniais - bens, direitos e obrigações com repercussão patrimonial.",
+						"en": "Property matters - assets, rights and obligations with financial consequences."
 					},
 					{
-						"pt": "Cobranças, acordos e negociação — negociação de obrigações e soluções extrajudiciais.",
-						"en": "Debt collection, agreements and negotiation — negotiating obligations and out-of-court solutions."
+						"pt": "Cobranças, acordos e negociação - negociação de obrigações e soluções extrajudiciais.",
+						"en": "Debt collection, agreements and negotiation - negotiating obligations and out-of-court solutions."
 					},
 					{
-						"pt": "Consultas e pareceres jurídicos — análise fundamentada de questões específicas de Direito brasileiro.",
-						"en": "Legal consultations and opinions — reasoned analysis of specific matters of Brazilian law."
+						"pt": "Consultas e pareceres jurídicos - análise fundamentada de questões específicas de Direito brasileiro.",
+						"en": "Legal consultations and opinions - reasoned analysis of specific matters of Brazilian law."
 					}
 				],
 				"paragraphs": [
@@ -89,7 +89,7 @@
 				},
 				"description": {
 					"pt": "Uma relação de trabalho pode levantar dúvidas para qualquer das partes. Analiso a situação e os documentos disponíveis para explicar o que está em causa e quais os caminhos possíveis no Direito brasileiro.",
-					"en": "Rights, duties and professional relationships require clarity — both in prevention and when facing a dispute."
+					"en": "Rights, duties and professional relationships require clarity - both in prevention and when facing a dispute."
 				},
 				"notice": {
 					"pt": "BRASIL · OAB/SP n.º 330.386",
