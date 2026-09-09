@@ -5,17 +5,17 @@
 		"en": "About me"
 	},
 	"summary": {
-		"pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito Ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
-		"en": "Lawyer admitted to the Brazilian Bar Association (OAB) since 2013, holding a Ph.D. from NOVA University Lisbon. Researcher in Environmental Law, ESG, and Migration, practicing across Portugal and Brazil."
+		"pt": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
+		"en": "My legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors."
 	},
 	"seo": {
 		"title": {
-			"pt": "Sobre a Dra. Ana Flávia Trevizan",
-			"en": "About Dra. Ana Flávia Trevizan"
+			"pt": "Ana Flávia Trevizan — Sobre mim",
+			"en": "Ana Flávia Trevizan — About me"
 		},
 		"description": {
-			"pt": "Advogada inscrita na OAB desde 2013, doutorada pela NOVA Lisboa e investigadora em Direito Ambiental, ESG e migração, com atuação entre Portugal e Brasil.",
-			"en": "Lawyer admitted to the Brazilian Bar Association (OAB) since 2013, holding a Ph.D. from NOVA University Lisbon. Researcher in Environmental Law, ESG, and Migration, practicing across Portugal and Brazil."
+			"pt": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
+			"en": "My legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors."
 		}
 	},
 	"media": {
@@ -42,8 +42,8 @@
 			"decorative": true
 		},
 		"narrative": {
-			"pt": "A minha trajetória sempre foi guiada por uma inquietação: perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nCedo compreendi que aplicar a lei, por si só, nem sempre basta. É preciso entender as instituições, as políticas públicas e os mecanismos que tornam certas normas efetivas, e outras em letra morta.\n\nFoi essa pergunta que me levou da advocacia à investigação, da administração pública à docência, e do Brasil a Portugal.\n",
-			"en": "My career has always been driven by a single question: “how can the law protect those in vulnerable situations and contribute to a more just society”?\n\nEarly on, I realized that applying the law is not always enough. It is essential to understand the institutions, public policies, and mechanisms that make certain regulations effective, and leave others as dead letters.\n\nIt was this search for answers that led me from legal practice to research, from public administration to academia, and from Brazil to Portugal.\n"
+			"pt": "A minha trajetória sempre foi guiada por uma inquietação: perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nCedo compreendi que aplicar a lei, por si só, nem sempre basta. É preciso entender as instituições, as políticas públicas e os mecanismos que tornam certas normas efetivas, e outras em letra morta.\n\nFoi essa pergunta que me levou da advocacia à investigação, da administração pública à docência, e do Brasil a Portugal.\n\nA atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.\n",
+			"en": "My career has always been driven by a single question: “how can the law protect those in vulnerable situations and contribute to a more just society”?\n\nEarly on, I realized that applying the law is not always enough. It is essential to understand the institutions, public policies, and mechanisms that make certain regulations effective, and leave others as dead letters.\n\nIt was this search for answers that led me from legal practice to research, from public administration to academia, and from Brazil to Portugal.\n\nMy legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors.\n"
 		},
 		"milestonesTitle": {
 			"pt": "Marcos do percurso",
@@ -143,8 +143,8 @@
 					"en": "In Portugal"
 				},
 				"description": {
-					"pt": "Investigadora colaboradora do CEJEIA, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica.",
-					"en": "As an associate researcher at CEJEIA, I specialize in Civil Law and Immigration Law, advising individuals and businesses on international mobility and legal status regularization."
+					"pt": "Em Portugal, desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
+					"en": "In Portugal, I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures."
 				}
 			},
 			{
@@ -157,8 +157,8 @@
 					"en": "In Brazil"
 				},
 				"description": {
-					"pt": "Mantenho a atuação em Direito Ambiental, governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
-					"en": "I continue to advise on Environmental Law, Climate Governance, Compliance, ESG, and Sustainability, providing legal opinions, reports, and projects for public and private organizations."
+					"pt": "No Brasil, mantenho a atuação em Direito brasileiro nas áreas ambiental, de governança climática, compliance, ESG e sustentabilidade, com pareceres, relatórios e projetos para organizações públicas e privadas.",
+					"en": "In Brazil, I continue to practise Brazilian law in environmental matters, climate governance, compliance, ESG and sustainability, with opinions, reports and projects for public and private organisations."
 				}
 			}
 		],

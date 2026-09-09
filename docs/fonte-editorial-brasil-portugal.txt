@@ -1,0 +1,236 @@
+﻿Site Ana Trevizan — plano editorial por página e prompt de implementação
+Documento-mestre de trabalho. O documento original com anotações permanece inalterado.
+1. Decisões já fechadas
+* O site permanece único e destina-se a públicos no Brasil e em Portugal.
+* O menu principal passa de “Consultoria” para “Atuação”.
+* Brasil: advocacia, consultoria e assessoria jurídica em Direito brasileiro, com identificação OAB/SP n.º 330.386.
+* Portugal: apoio exclusivamente administrativo, documental e técnico não jurídico.
+* Portugal terá uma página única: “Apoio administrativo em Portugal”.
+* Áreas comuns, como Migração e Mobilidade, começam por uma escolha obrigatória do país; nenhum conteúdo fica ativo por defeito.
+* As páginas brasileiras e portuguesas não apresentarão os serviços como um pacote conjunto ou complementar.
+* A acessibilidade económica será comunicada de forma institucional, sem menção pública a preços, descontos, gratuidade ou parcelamento.
+* A versão inglesa deverá reproduzir exatamente a mesma separação territorial.
+Limites obrigatórios da atuação em Portugal
+Pode ser anunciado: organização documental conforme listas oficiais; apoio material no preenchimento de formulários com dados fornecidos pelo interessado; ajuda na utilização de plataformas; agendamentos; acompanhamento administrativo de estados públicos; coordenação de traduções, apostilas e certificações; informação geral sobre entidades e canais oficiais.
+Não pode ser anunciado nem prestado neste âmbito: consulta ou aconselhamento jurídico; interpretação ou aplicação individualizada de normas; avaliação de direitos, requisitos ou probabilidades; escolha de estratégia ou procedimento com fundamento jurídico; redação de contratos, reclamações, impugnações, exposições ou respostas jurídicas; negociação em nome do cliente; assinatura, procuração, representação ou mandato.
+Teste operacional: se a tarefa exigir uma decisão jurídica, argumentação, representação ou apreciação do mérito, o apoio administrativo termina e o interessado é encaminhado para advogado inscrito na Ordem dos Advogados Portuguesa.
+Identificação profissional
+Forma principal: “Ana Flávia Trevizan — Advogada no Brasil, inscrita na OAB/SP sob o n.º 330.386.”
+Na área portuguesa, a inscrição brasileira pode aparecer apenas como elemento biográfico. Nunca usar “advogada” isoladamente de modo que possa sugerir inscrição ou exercício da advocacia em Portugal.
+2. Navegação e arquitetura
+Menu principal
+* Atuação
+* Academia
+* Sobre mim
+* Contacto
+* EN
+O item “Atuação” abre uma página de entrada neutra. Essa página explica os dois âmbitos e encaminha o visitante sem misturar serviços.
+Percursos dentro de Atuação
+* Brasil — Advocacia e consultoria jurídica
+* Portugal — Apoio administrativo
+* Migração e Mobilidade — escolher Portugal ou Brasil
+* Academia, investigação, palestras e formação — área própria
+Princípio de interface
+Nas páginas com escolha de país, mostrar primeiro um seletor neutro com duas opções: “Portugal” e “Brasil”. Não abrir automaticamente nenhuma tab. A seleção deve alterar título de contexto, descrição, lista de atividades, aviso de enquadramento e CTA. Não inferir o país pela localização do utilizador.
+3. Conteúdo página a página
+Página inicial
+Objetivo: apresentar a atuação binacional sem sugerir que o mesmo serviço é prestado nos dois países.
+Hero — texto-base
+Selo: “Brasil e Portugal · Âmbitos de atuação distintos”
+Título: “Clareza e acompanhamento para decisões que atravessam fronteiras.”
+Descrição: “No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.”
+CTAs: “Conhecer a atuação” e “Entrar em contacto”.
+Dois blocos principais
+Brasil — Advocacia e consultoria jurídica. “Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.”
+Portugal — Apoio administrativo. “Organização documental e apoio prático em procedimentos administrativos, sem consulta jurídica, representação ou prática de atos reservados.”
+Elementos a manter e reformular
+* Manter os quatro elementos de autoridade: experiência desde 2013, formação e investigação, atuação em três idiomas e atendimento direto.
+* Substituir “Por que a Dra. Ana Trevizan?” por um título menos promocional, como “Experiência, investigação e acompanhamento direto”.
+* Retirar “Sábio + Cuidador” e outras etiquetas de arquétipo.
+* Manter a área Academia com os três cartões: Mentoria Académica; Publicações e Pesquisa; Palestras e Eventos.
+* Atualizar todos os rótulos territoriais dos cartões.
+Áreas apresentadas na homepage
+* Migração e Mobilidade — Portugal e Brasil, com escolha prévia do país.
+* Civil, Contratos e Consumidor — Brasil.
+* Trabalho e Relações Laborais — Brasil.
+* Ambiental, Administrativo e Urbanismo — Brasil.
+* ESG, Políticas Públicas e Sustentabilidade — serviços no Brasil; experiência académica e técnica internacional apresentada apenas como credencial.
+* Direitos Humanos — atuação jurídica no Brasil; investigação e formação no plano internacional.
+Página Atuação
+Título: “Atuação profissional no Brasil e apoio administrativo em Portugal”.
+Introdução: “A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.”
+Apresentar dois cartões grandes, Brasil e Portugal, e um acesso autónomo a Academia. Evitar uma lista global denominada “serviços jurídicos”.
+Migração e Mobilidade
+Estado inicial: introdução neutra e seletor obrigatório de país. Nenhuma tab ativa por defeito.
+Tab Portugal — apoio administrativo
+Título: “Apoio administrativo em migração e instalação em Portugal”.
+Texto-base: “Migrar envolve documentos, plataformas, agendamentos e diferentes etapas administrativas. O apoio prestado ajuda a organizar essas tarefas e a acompanhar o procedimento de forma clara, sem substituir a consulta jurídica ou a representação por profissional habilitado.”
+* Organização de documentos conforme informação e listas oficiais.
+* Apoio material no preenchimento de formulários com dados fornecidos pelo interessado.
+* Agendamentos e utilização de plataformas.
+* Apoio administrativo relacionado com NIF, NISS, número de utente e outros registos.
+* Coordenação de traduções, apostilas, certificações e documentação académica.
+* Acompanhamento do estado administrativo de pedidos, quando o acesso disponível o permita.
+Aviso: “Este apoio não inclui aconselhamento jurídico, análise de elegibilidade, escolha do procedimento, elaboração de peças, resposta jurídica a notificações, representação ou mandato.”
+CTA: “Solicitar apoio administrativo”.
+Tab Brasil — serviços jurídicos
+Título: “Advocacia e consultoria em Direito Migratório brasileiro”.
+Texto-base: “Orientação e atuação jurídica em questões de entrada, permanência, regularização, nacionalidade e mobilidade regidas pelo Direito brasileiro, com análise individualizada do caso e definição do serviço adequado.”
+Identificação: “Atuação no Brasil — OAB/SP n.º 330.386.”
+CTA: “Solicitar atendimento jurídico no Brasil”.
+Apoio administrativo em Portugal
+Esta será a única página portuguesa de oferta de serviços. Deve ser organizada por tarefas, e não por áreas do Direito.
+Título: “Apoio administrativo em Portugal”.
+Subtítulo: “Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.”
+Introdução: “O apoio destina-se a pessoas que já conhecem o procedimento que pretendem realizar ou que receberam essa definição de uma entidade ou profissional habilitado. O trabalho concentra-se na organização material das etapas, documentos e canais administrativos.”
+Como posso apoiar
+* Organização e conferência material de documentos segundo listas oficiais.
+* Apoio na utilização de plataformas e no preenchimento de dados factuais.
+* Agendamento e preparação logística para atendimentos.
+* Organização de traduções, apostilas e certificações.
+* Apoio em registos administrativos e instalação.
+* Acompanhamento organizacional de comunicações e estados do pedido.
+O que não está incluído
+“Não são prestados consulta ou aconselhamento jurídico, interpretação da legislação portuguesa, elaboração de peças ou contratos, representação, mandato, negociação em nome do interessado ou outros atos reservados a advogados e solicitadores.”
+CTA: “Explicar o apoio de que preciso”.
+Civil, Contratos e Consumidor — Brasil
+Título: “Civil, Contratos e Consumidor”.
+Selo territorial: “BRASIL · OAB/SP n.º 330.386”.
+Hero: “Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica.”
+Introdução: “Um contrato, uma obrigação não cumprida, uma cobrança, uma compra, um prejuízo ou uma questão patrimonial podem produzir consequências que nem sempre são percebidas de imediato. A atuação jurídica permite avaliar essas consequências, proteger direitos e procurar soluções antes ou depois do surgimento de um conflito.”
+* Contratos — elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos.
+* Obrigações e responsabilidade civil — incumprimento, danos e deveres de reparação.
+* Relações de consumo — cobranças indevidas, falhas na prestação de serviços, produtos e garantias.
+* Questões patrimoniais — bens, direitos e obrigações com repercussão patrimonial.
+* Cobranças, acordos e negociação — negociação de obrigações e soluções extrajudiciais.
+* Consultas e pareceres jurídicos — análise fundamentada de questões específicas de Direito brasileiro.
+CTA: “Apresentar uma questão de Direito brasileiro”.
+Trabalho e Relações Laborais — Brasil
+Título: “Trabalho e Relações Laborais”.
+Selo territorial: “BRASIL · OAB/SP n.º 330.386”.
+Hero: “Direitos, deveres e relações profissionais exigem clareza — tanto na prevenção quanto diante de um conflito.”
+Introdução: “Do início de um vínculo profissional ao seu encerramento, diferentes decisões podem produzir consequências para trabalhadores e empregadores. Uma atuação jurídica cuidadosa permite antecipar riscos, enfrentar conflitos e proteger os interesses envolvidos em cada etapa.”
+* Contratos de trabalho.
+* Direitos e deveres decorrentes do vínculo.
+* Cessação do contrato e acordos de saída.
+* Conflitos, assédio e discriminação.
+* Negociação e acordos.
+* Conformidade laboral para empresas.
+CTA: “Solicitar atendimento em Direito do Trabalho brasileiro”.
+Ambiental, Administrativo e Urbanismo — Brasil
+Selo territorial obrigatório: “BRASIL · OAB/SP n.º 330.386”.
+Apresentar consultoria e assessoria jurídica em legislação brasileira, licenciamento, procedimentos administrativos, questões ambientais e urbanísticas, prevenção de riscos e relações com entidades públicas. Não associar esta oferta a Portugal.
+Nota sobre o documento original: a anotação colocada junto da URL “ambiental-e-esg” contém texto de Direito do Trabalho. Tratar como provável erro de associação e manter as duas áreas em páginas distintas.
+ESG, Políticas Públicas e Sustentabilidade
+Serviços jurídicos: Brasil. Em Portugal e na União Europeia, mencionar investigação, publicações, docência, formação e experiência técnica apenas como credenciais, sem oferta de aconselhamento jurídico ou conformidade regulatória individualizada.
+* Brasil — ESG, compliance, due diligence, sustentabilidade, governança, políticas públicas e análise regulatória em Direito brasileiro.
+* Internacional — investigação e formação sobre EUDR, cadeias de fornecimento, sustentabilidade e direitos humanos.
+* Se um projeto em Portugal exigir interpretação ou aplicação do Direito português ou europeu, encaminhar essa componente para profissional habilitado.
+Direitos Humanos
+Brasil: atuação e consultoria jurídica em Direito brasileiro, quando o caso estiver dentro da experiência e do serviço efetivamente aceite.
+Portugal e internacional: investigação, formação, análise de políticas e projetos técnicos. Não oferecer representação, defesa ou aconselhamento jurídico português.
+Pareceres e Notas Técnicas
+Parecer jurídico: apenas Brasil, identificado como análise de Direito brasileiro e com OAB/SP n.º 330.386.
+Portugal, União Europeia e plano internacional: usar “estudos”, “relatórios” ou “notas técnico-científicas” apenas quando o produto não interpretar nem aplicar o Direito ao caso concreto do cliente.
+Nunca usar uma descrição global que apresente pareceres jurídicos como disponíveis indistintamente nos dois países.
+Academia
+Manter como área própria, com foco na trajetória internacional e interdisciplinar.
+* Mentoria Académica — orientação para projetos, dissertações, teses e artigos científicos.
+* Publicações e Pesquisa — artigos, capítulos e produção científica.
+* Palestras e Eventos — aulas, palestras e participações em português, inglês e espanhol.
+Retirar da homepage a listagem longa de formações e vínculos; conservar os elementos principais na página Sobre e nas páginas académicas.
+Sobre mim
+Manter a narrativa da trajetória entre advocacia, investigação, administração pública, docência, Brasil e Portugal.
+Substituir “Em Portugal, dedico-me ao Direito Civil e ao Direito Migratório, apoiando pessoas e empresas em processos de mobilidade internacional e regularização jurídica” por: “Em Portugal, desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.”
+Acrescentar: “A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.”
+Manter valores: ética, excelência técnica, diversidade, proteção de dados, proximidade e sustentabilidade. Evitar autoelogios ou promessas de resultado.
+Contacto
+Título: “Vamos compreender o âmbito do seu pedido”.
+Introdução: “Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal.”
+Primeira escolha obrigatória
+* Brasil — assunto jurídico de Direito brasileiro.
+* Portugal — apoio administrativo ou documental.
+* Academia — mentoria, investigação, palestra ou formação.
+* Outro pedido profissional.
+Substituir “Consulta jurídica” por “Assunto jurídico de Direito brasileiro”. Não disponibilizar a combinação “Consulta jurídica + Portugal”.
+Brasil — CTA: “Enviar pedido de contacto jurídico”.
+Portugal — CTA: “Enviar pedido de apoio administrativo”.
+A conversa inicial serve para identificar o âmbito e apresentar condições de contratação. Na vertente portuguesa, não inclui consulta ou avaliação jurídica.
+Mensagem sobre condições: “As condições de contratação são definidas individualmente, considerando a natureza e a extensão do trabalho e as diferentes realidades de quem procura atendimento.” Não mencionar gratuidade, descontos ou parcelamento.
+Rodapé e aviso global
+Texto recomendado: “Brasil: advocacia e consultoria jurídica em Direito brasileiro — OAB/SP n.º 330.386. Portugal: apoio administrativo e técnico não jurídico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores.”
+O aviso deve aparecer também na página Atuação e antes do envio do formulário, não apenas nos termos ou na política de privacidade.
+SEO, URLs e versão inglesa
+* Remover de títulos e descrições qualquer associação entre “consultoria jurídica” e Portugal.
+* Alterar o título global atual “Consultoria Jurídica e Ambiental” para uma identificação institucional neutra.
+* Usar “Advocacia e consultoria jurídica no Brasil” nos metadados das páginas brasileiras.
+* Usar “Apoio administrativo em Portugal” nos metadados da página portuguesa.
+* Preservar URLs antigas por redirecionamento permanente quando houver mudança de slug.
+* Traduzir o enquadramento por jurisdição para inglês sem suavizar ou omitir as limitações portuguesas.
+4. Regras editoriais de conformidade
+Expressões permitidas para o Brasil
+* Advocacia no Brasil.
+* Consultoria e assessoria jurídica em Direito brasileiro.
+* Análise jurídica, parecer jurídico, representação e atuação judicial ou extrajudicial no Brasil.
+* Advogada inscrita na OAB/SP sob o n.º 330.386.
+Expressões permitidas para Portugal
+* Apoio administrativo.
+* Organização documental.
+* Apoio material no uso de plataformas e formulários.
+* Informação geral obtida em fontes oficiais.
+* Acompanhamento organizacional.
+* Investigação, formação e trabalho técnico não jurídico.
+Expressões a excluir da oferta portuguesa
+* Consultoria jurídica.
+* Orientação ou aconselhamento jurídico.
+* Estratégia jurídica ou migratória.
+* Análise de requisitos, direitos ou notificações.
+* Defesa ou representação administrativa.
+* Elaboração de requerimentos, reclamações ou impugnações.
+* Revisão jurídica de contratos.
+* Regularização ou integração jurídica.
+* Parecer jurídico sobre Direito português ou europeu.
+5. Checklist técnico para implementação
+* Preservar o desenho visual, tipografia, cores, fotografias e componentes existentes sempre que possível.
+* Alterar “Consultoria” para “Atuação” no menu, breadcrumbs e rodapé.
+* Implementar seletor acessível de país sem tab ativa inicialmente nas páginas comuns.
+* Garantir navegação por teclado, estados ARIA, foco visível e leitura adequada por tecnologias de apoio.
+* Separar CTAs, formulários e mensagens de confirmação por país.
+* Não utilizar geolocalização para escolher automaticamente a jurisdição.
+* Rever conteúdo visível, títulos HTML, meta descriptions, Open Graph, dados estruturados, texto alternativo e versão inglesa.
+* Adicionar redirecionamentos permanentes para URLs alteradas.
+* Executar testes de lint, build, acessibilidade e navegação responsiva.
+* Gerar preview; não publicar em produção antes da aprovação da Ana.
+6. Prompt para o developer utilizar no Codex
+Documento editorial de referência: Site Ana Trevizan — plano editorial por página e prompt de implementação
+Site atual: https://contact-smoke--anatrevizan.netlify.app/
+Prompt
+Atua como developer sénior responsável por implementar uma revisão editorial e de conformidade num site profissional já existente. Trabalha no repositório atual e começa por inspecionar a stack, as rotas, os componentes reutilizáveis, o formulário, os metadados e os testes. Não reconstruas o site e não alteres a identidade visual sem necessidade.
+Usa o documento editorial indicado acima como fonte de verdade para conteúdo, estrutura e limites profissionais. Não inventes qualificações, serviços, factos, contactos, números de inscrição, depoimentos, resultados ou áreas de atuação.
+Objetivo: manter um único site para Brasil e Portugal, com separação inequívoca entre: (1) advocacia e consultoria jurídica em Direito brasileiro, exercidas por Ana Flávia Trevizan, OAB/SP n.º 330.386; e (2) apoio administrativo, documental e técnico não jurídico em Portugal.
+Requisitos obrigatórios:
+* Muda o item global “Consultoria” para “Atuação”, incluindo menus, breadcrumbs e rodapé.
+* Preserva o desenho e reutiliza os componentes existentes.
+* Cria uma página de entrada “Atuação” com percursos separados para Brasil e Portugal.
+* Cria ou adapta a página “Apoio administrativo em Portugal” conforme o documento editorial.
+* Nas áreas comuns, apresenta primeiro um seletor de país sem opção ativa por defeito. Só depois da escolha mostra o conteúdo, o aviso e o CTA da jurisdição selecionada.
+* Não uses geolocalização nem idioma para inferir o país.
+* Nas páginas brasileiras, identifica sempre o âmbito como Direito brasileiro e apresenta OAB/SP n.º 330.386 nos locais definidos.
+* Na área portuguesa, remove todas as expressões que possam sugerir consulta, aconselhamento, análise, estratégia, defesa, representação ou serviço jurídico.
+* Não apresentes o apoio português como extensão ou complemento da advocacia brasileira.
+* Adapta o formulário para impedir a combinação de “consulta jurídica” com Portugal.
+* Implementa mensagens de enquadramento antes do envio e CTAs diferentes por país.
+* Não anuncies preços, descontos, gratuidade, vagas sociais ou parcelamento.
+* Corrige títulos, meta descriptions, Open Graph, dados estruturados e versão inglesa.
+* Se mudares URLs, cria redirecionamentos permanentes e confirma que não há ligações internas quebradas.
+* Mantém a área Academia e separa-a claramente das ofertas profissionais.
+Critérios de aceitação:
+* Nenhuma página, componente, formulário ou metadado associa consultoria ou serviço jurídico a Portugal.
+* Toda oferta jurídica está explicitamente limitada ao Brasil e ao Direito brasileiro.
+* A página portuguesa descreve apenas tarefas administrativas e contém a exclusão expressa de consulta, representação e atos reservados.
+* O seletor de país é acessível por teclado e não tem país preselecionado.
+* O formulário envia o contexto territorial correto e mostra a confirmação correspondente.
+* Desktop e mobile preservam a qualidade visual atual.
+* Lint, testes e build passam sem erros.
+* É fornecido um resumo dos ficheiros alterados, decisões técnicas, testes executados e eventuais pontos que exigem confirmação.
+Antes de editar, apresenta um plano curto baseado no repositório. Depois implementa em branch própria, gera um preview e não faças deploy de produção sem aprovação expressa. Se o documento editorial contiver um ponto marcado como pendente ou contraditório, não o resolvas por suposição: assinala-o no relatório final.

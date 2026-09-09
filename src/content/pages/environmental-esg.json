@@ -1,20 +1,20 @@
 {
 	"routeKey": "environmental-esg",
 	"title": {
-		"pt": "Consultoria Ambiental e ESG",
+		"pt": "Direito Ambiental brasileiro, ESG e regulação europeia",
 		"en": "Environmental and ESG Consulting"
 	},
 	"summary": {
-		"pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
+		"pt": "Trabalho com Direito Ambiental brasileiro e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
 		"en": "European environmental regulation has reached Brazilian supply chains. I translate this complexity into sound decisions for your business."
 	},
 	"seo": {
 		"title": {
-			"pt": "Consultoria Ambiental e ESG · EUDR, CSDDD e CSRD",
+			"pt": "Direito Ambiental brasileiro, ESG e regulação europeia · EUDR, CSDDD e CSRD",
 			"en": "Environmental and ESG Consulting · EUDR, CSDDD, and CSRD — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Consultoria em Direito Ambiental, ESG e compliance para empresas expostas à regulação europeia — EUDR, CSDDD e CSRD — com base em pesquisa de campo sobre cadeias florestais.",
+			"pt": "Direito Ambiental brasileiro, ESG e apoio técnico sobre EUDR, CSDDD e CSRD para empresas e organizações com operações ou cadeias de fornecimento ligadas ao Brasil.",
 			"en": "Consulting in Environmental Law, ESG, and compliance for companies exposed to European regulations — EUDR, CSDDD, and CSRD — backed by empirical field research on forest supply chains."
 		}
 	},
@@ -30,11 +30,11 @@
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Brasil · União Europeia",
+			"pt": "Brasil · Direito Ambiental | Regulação europeia · apoio técnico",
 			"en": "Brazil · European Union"
 		},
 		"subtitle": {
-			"pt": "A regulação ambiental europeia já chegou às cadeias de fornecimento brasileiras. Traduzo essa complexidade em decisões seguras para a sua empresa.",
+			"pt": "Trabalho com Direito Ambiental brasileiro e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
 			"en": "European environmental regulation has reached Brazilian supply chains. I translate this complexity into sound decisions for your business."
 		},
 		"introHeading": {
@@ -50,7 +50,7 @@
 			"decorative": true
 		},
 		"introParagraphs": {
-			"pt": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia — mesmo a partir do Brasil. Um produtor que exporta madeira, um frigorífico, uma trading de commodities: todos passam a responder por aquilo que acontece na sua cadeia.\n\nO risco raramente está na falta de vontade de cumprir. Está na distância entre o texto de um regulamento europeu e a realidade de uma operação no terreno. É essa distância que trabalho para encurtar — com análise jurídica clara, fundamentada e aplicável.\n",
+			"pt": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia — mesmo a partir do Brasil. Um produtor que exporta madeira, um frigorífico, uma trading de commodities: todos passam a responder por aquilo que acontece na sua cadeia.\n\nO desafio está em ligar o texto dos regulamentos europeus à realidade de cada operação. A minha experiência em Direito Ambiental brasileiro, investigação e trabalho de campo ajuda a transformar estas exigências em informação útil para a sua empresa.\n",
 			"en": "EUDR, CSDDD, CSRD. European sustainability requirements are advancing rapidly and reaching anyone who produces, exports, or supplies to the European Union — even from Brazil. Timber exporters, meatpackers, commodity trading companies: all are becoming accountable for what happens along their supply chain.\n\nThe risk rarely lies in a lack of willingness to comply. It lies in the gap between the text of a European regulation and the reality of an operation on the ground. Bridging that gap is precisely what I do — providing clear, well-founded, and actionable legal analysis.\n"
 		},
 		"servicesHeading": {
@@ -58,18 +58,18 @@
 			"en": "How I can help"
 		},
 		"servicesSubtitle": {
-			"pt": "Da avaliação de risco à adequação regulatória, na interface entre Direito, sustentabilidade e governança.",
+			"pt": "Direito Ambiental brasileiro e apoio técnico para lidar com exigências ambientais e de sustentabilidade.",
 			"en": "From risk assessment to regulatory compliance, at the intersection of law, sustainability, and governance."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "ESG e relatórios de sustentabilidade",
+					"pt": "Direito Ambiental brasileiro",
 					"en": "ESG and Sustainability Reporting"
 				},
 				"items": [
 					{
-						"pt": "Diagnóstico ESG e definição de indicadores",
+						"pt": "Acompanho empresas e organizações que desenvolvem projetos no Brasil em questões de Direito Ambiental, desde a análise do problema até à definição do caminho jurídico mais adequado.",
 						"en": "ESG assessment and KPI definition"
 					},
 					{
@@ -88,12 +88,12 @@
 			},
 			{
 				"title": {
-					"pt": "Compliance ambiental e EUDR",
-					"en": "Environmental Compliance and EUDR"
+					"pt": "Compliance ambiental no Brasil",
+					"en": "Environmental compliance in Brazil"
 				},
 				"items": [
 					{
-						"pt": "Compliance ambiental e ESG",
+						"pt": "Revejo consigo os processos e as obrigações ambientais da atividade, identifico pontos de atenção e ajudo a definir as medidas necessárias para os cumprir.",
 						"en": "Environmental and ESG compliance"
 					},
 					{
@@ -112,12 +112,12 @@
 			},
 			{
 				"title": {
-					"pt": "Due diligence ambiental e laboral",
-					"en": "Environmental and Labor Due Diligence"
+					"pt": "Políticas ambientais e licenciamento",
+					"en": "Environmental policy and licensing"
 				},
 				"items": [
 					{
-						"pt": "Conformidade com a legislação brasileira e europeia",
+						"pt": "Organizo informação sobre fornecedores, condições de trabalho e riscos identificados, para apoiar os processos internos de avaliação e acompanhamento.",
 						"en": "Compliance with Brazilian and European law"
 					},
 					{
@@ -136,8 +136,8 @@
 			},
 			{
 				"title": {
-					"pt": "Regulação da União Europeia",
-					"en": "European Union Regulation"
+					"pt": "ESG e relatórios de sustentabilidade",
+					"en": "ESG and sustainability reporting"
 				},
 				"items": [
 					{
@@ -160,8 +160,8 @@
 			},
 			{
 				"title": {
-					"pt": "Mudanças climáticas e governança",
-					"en": "Climate Change and Governance"
+					"pt": "Cadeias de fornecimento e EUDR",
+					"en": "Supply chains and EUDR"
 				},
 				"items": [
 					{
@@ -180,8 +180,8 @@
 			},
 			{
 				"title": {
-					"pt": "Avaliação de riscos e relatórios técnicos",
-					"en": "Risk Assessment and Technical Reports"
+					"pt": "Direitos humanos e fornecedores",
+					"en": "Human rights and suppliers"
 				},
 				"items": [
 					{
@@ -204,7 +204,7 @@
 			"en": "What Sets Me Apart"
 		},
 		"differentiatorHeading": {
-			"pt": "Não falo do EUDR de fora. Fui à Amazónia estudá-lo.",
+			"pt": "Não falo do EUDR de fora. Fui à Amazónia para o estudar.",
 			"en": "I don't examine the EUDR from afar. I went to the Amazon to study it."
 		},
 		"differentiatorImage": {
@@ -216,7 +216,7 @@
 			"decorative": false
 		},
 		"differentiatorParagraphs": {
-			"pt": "O meu doutoramento na NOVA Lisboa investigou o «Efeito Bruxelas» sobre a política florestal brasileira. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam — ou tropeçam — na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta cada parecer e cada recomendação que entrego.\n",
+			"pt": "O meu doutoramento na NOVA Lisboa investigou o «Efeito Bruxelas» sobre a política florestal brasileira. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam — ou tropeçam — na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta as notas técnicas, os estudos e o apoio que presto a empresas e organizações.\n",
 			"en": "My Ph.D. at NOVA University Lisbon examined the 'Brussels Effect' on Brazilian forest policy. I conducted empirical field research in the Amazon, interviewing producers, companies, communities, and public agencies to understand how new European requirements function — or falter — in practice.\n\nIt is the difference between knowing the regulation and knowing the terrain where it is applied. This scientific foundation underpins every legal opinion and strategic recommendation I deliver.\n"
 		},
 		"differentiatorCredentials": [
@@ -238,7 +238,7 @@
 			"en": "Related Publications"
 		},
 		"relatedWorkSubtitle": {
-			"pt": "A autoridade nesta área não é uma afirmação — está publicada e é verificável.",
+			"pt": "Investigação e publicações relacionadas com esta área.",
 			"en": "Subject-matter expertise is not just a statement — it is published and verifiable."
 		},
 		"relatedPublications": [
@@ -265,7 +265,7 @@
 			}
 		],
 		"note": {
-			"pt": "Atuação preventiva, consultiva e extrajudicial, orientada para a conformidade e a gestão de risco. Não inclui representação em processos judiciais.",
+			"pt": "Os serviços jurídicos são prestados exclusivamente no âmbito do Direito Ambiental brasileiro. O trabalho sobre regulação europeia consiste em apoio técnico, investigação e organização de informação, sem prestação de consulta jurídica em Portugal.",
 			"en": "Advisory, preventive, and out-of-court practice focused on compliance and risk management. Does not include litigation or court representation."
 		},
 		"ctaHeading": {
@@ -273,7 +273,7 @@
 			"en": "Is your supply chain prepared for European regulations?"
 		},
 		"ctaText": {
-			"pt": "Marque uma conversa inicial para mapearmos, sem compromisso, onde estão os seus riscos e por onde começar.",
+			"pt": "Se a sua empresa tem operações ou fornecedores ligados ao Brasil, posso ajudar a organizar a informação necessária e a identificar os pontos que precisam de atenção.",
 			"en": "Schedule an initial call to map out your risks and identify where to begin, with no obligation."
 		}
 	},

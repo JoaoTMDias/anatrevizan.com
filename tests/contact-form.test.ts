@@ -12,7 +12,8 @@ const validSubmission = {
 	name: "Maria Silva",
 	email: "maria@example.com",
 	whatsapp: "",
-	requestType: "request-1",
+	requestType: "brazil-law",
+	scope: "BR_LEGAL" as const,
 	country: "PT",
 	message: "Preciso de orientação sobre este assunto.",
 	website: "",
@@ -58,12 +59,13 @@ describe("contact form", () => {
 		const message = buildWhatsAppMessage({
 			locale: "en",
 			name: "John Smith",
-			requestType: "Legal consultation",
+			requestType: "Legal matter under Brazilian law",
+			scope: "BR_LEGAL",
 			country: "Portugal",
 			message: "I would like to arrange an initial conversation.",
 		});
 		expect(message).toContain("Hello, my name is John Smith.");
-		expect(message).toContain("Request: Legal consultation");
+		expect(message).toContain("Request: Legal matter under Brazilian law");
 		expect(decodeURIComponent(encodeURIComponent(message))).toBe(message);
 	});
 });

@@ -1,24 +1,22 @@
 {
-	"_template": "contact",
 	"routeKey": "contact",
 	"title": {
 		"pt": "Vamos falar",
-		"en": "Contact"
+		"en": "Let's talk"
 	},
 	"summary": {
-		"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-		"en": "Tell me about your situation and what you are looking for. I read every message and reply personally."
+		"pt": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
+		"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
 	},
 	"seo": {
 		"title": {
-			"pt": "Contacto",
-			"en": "Contact — Ana Trevizan"
+			"pt": "Vamos falar",
+			"en": "Let us understand the scope of your request"
 		},
 		"description": {
-			"pt": "Fale com a Dra. Ana Trevizan. Consultoria jurídica e ambiental entre Portugal e Brasil, com atendimento em português, inglês e espanhol.",
-			"en": "Get in touch with Dr. Ana Trevizan. Legal and environmental consulting across Portugal and Brazil, available in Portuguese, English, and Spanish."
-		},
-		"noindex": true
+			"pt": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
+			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
+		}
 	},
 	"media": {
 		"foreground": {
@@ -31,29 +29,33 @@
 		}
 	},
 	"contactPage": {
+		"conditions": {
+			"pt": "As condições de contratação são definidas individualmente, considerando a natureza e a extensão do trabalho e as diferentes realidades de quem procura atendimento.",
+			"en": "The terms of engagement are defined individually, taking into account the nature and extent of the work and the different circumstances of those seeking assistance."
+		},
 		"tag": {
 			"pt": "Contacto",
 			"en": "Contact"
 		},
 		"subtitle": {
-			"pt": "Conte-me a sua situação e o que procura. Leio cada mensagem e respondo pessoalmente.",
-			"en": "Tell me about your situation and what you are looking for. I read every message and reply personally."
+			"pt": "Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal.",
+			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
 		},
 		"bookingHeading": {
 			"pt": "Agende uma conversa",
 			"en": "Book a call"
 		},
 		"bookingIntro": {
-			"pt": "Primeiro contacto de 15 a 30 minutos, sem custo, no fuso horário de Portugal.",
-			"en": "Complimentary 15-to-30-minute initial call, scheduled in Portugal time."
+			"pt": "Se preferir falar primeiro, pode marcar uma conversa inicial. Conte-me brevemente o que procura e combinamos o próximo passo.",
+			"en": "The initial conversation identifies the scope and presents the terms of engagement. For the Portuguese scope, it does not include legal advice or legal assessment."
 		},
 		"duration": {
-			"pt": "15 a 30 minutos",
-			"en": "15 to 30 minutes"
+			"pt": "Conversa inicial",
+			"en": "Initial conversation"
 		},
 		"validFor": {
-			"pt": "Válido para todos os temas — jurídicos e académicos.",
-			"en": "Applies to all inquiries — both legal and academic."
+			"pt": "Conversa inicial",
+			"en": "Identifying the scope of the enquiry"
 		},
 		"timezone": {
 			"pt": "Fuso de Portugal",
@@ -75,5 +77,6 @@
 			"pt": "Atendimento em PT · EN · ES",
 			"en": "Available in PT · EN · ES"
 		}
-	}
+	},
+	"_template": "contact"
 }

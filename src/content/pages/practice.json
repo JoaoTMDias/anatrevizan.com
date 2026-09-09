@@ -1,0 +1,94 @@
+{
+	"routeKey": "practice",
+	"title": {
+		"pt": "Atuação profissional no Brasil e apoio administrativo em Portugal",
+		"en": "Professional practice in Brazil and administrative support in Portugal"
+	},
+	"summary": {
+		"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+		"en": "Explore the work available in Brazil, Portugal and Academia."
+	},
+	"seo": {
+		"title": {
+			"pt": "Atuação profissional no Brasil e apoio administrativo em Portugal",
+			"en": "Professional practice in Brazil and administrative support in Portugal"
+		},
+		"description": {
+			"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+			"en": "Explore the work available in Brazil, Portugal and Academia."
+		}
+	},
+	"_template": "practice",
+	"practicePage": {
+		"tag": {
+			"pt": "Brasil e Portugal · Âmbitos de atuação distintos",
+			"en": "Brazil and Portugal · Distinct scopes of practice"
+		},
+		"intro": {
+			"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+			"en": "Explore the work available in Brazil, Portugal and Academia."
+		},
+		"sections": [
+			{
+				"title": {
+					"pt": "Brasil — Advocacia e consultoria jurídica",
+					"en": "Brazil — Legal practice and legal consulting"
+				},
+				"description": {
+					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
+				},
+				"notice": {
+					"pt": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386"
+				},
+				"cta": {
+					"pt": "Conhecer a atuação no Brasil",
+					"en": "Explore practice in Brazil"
+				},
+				"routeKey": "legal",
+				"scope": "BR_LEGAL"
+			},
+			{
+				"title": {
+					"pt": "Portugal — Apoio administrativo",
+					"en": "Portugal — Administrative support"
+				},
+				"description": {
+					"pt": "Organização documental e apoio prático em procedimentos administrativos, sem consulta jurídica, representação ou prática de atos reservados.",
+					"en": "Document organisation and practical support in administrative procedures, without legal advice, representation or activities reserved to authorised professionals."
+				},
+				"notice": {
+					"pt": "",
+					"en": "No legal consultations or advice, interpretation of Portuguese legislation, drafting of legal documents or contracts, representation, mandates, negotiation on behalf of the person concerned or other activities reserved to lawyers and solicitors are provided."
+				},
+				"cta": {
+					"pt": "Conhecer o apoio administrativo",
+					"en": "Explore administrative support"
+				},
+				"routeKey": "portugal-support",
+				"scope": "PT_ADMIN"
+			},
+			{
+				"title": {
+					"pt": "Academia",
+					"en": "Academia"
+				},
+				"description": {
+					"pt": "Mentoria, investigação, palestras e formação.",
+					"en": "Mentoring, research, talks and training."
+				},
+				"notice": {
+					"pt": "Área académica autónoma.",
+					"en": "A separate academic area."
+				},
+				"cta": {
+					"pt": "Explorar Academia",
+					"en": "Explore Academia"
+				},
+				"routeKey": "publications",
+				"scope": "ACADEMIC"
+			}
+		]
+	}
+}

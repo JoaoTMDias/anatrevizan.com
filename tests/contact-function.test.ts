@@ -31,7 +31,8 @@ const body = {
 	name: "Maria Silva",
 	email: "maria@example.com",
 	whatsapp: "",
-	requestType: "request-1",
+	requestType: "brazil-law",
+	scope: "BR_LEGAL" as const,
 	country: "PT",
 	message: "Preciso de orientação sobre este assunto.",
 	website: "",
@@ -341,4 +342,50 @@ describe("contact Netlify Function", () => {
 			});
 		},
 	);
+});
+
+describe("territorial server validation", () => {
+	beforeEach(() => {
+		environment = { ...defaultEnvironment };
+		vi.stubGlobal("Netlify", {
+			env: { get: (name: string) => environment[name] },
+		});
+		vi.stubGlobal("fetch", vi.fn(successfulFetch));
+		vi.spyOn(console, "error").mockImplementation(() => undefined);
+	});
+
+	afterEach(() => vi.restoreAllMocks());
+
+	it("rejects a forged legal request in Portuguese administrative scope before external calls", async () => {
+		const response = await contact(
+			request({ ...body, scope: "PT_ADMIN" }),
+			{} as Context,
+		);
+		expect(response.status).toBe(400);
+		expect(fetch).not.toHaveBeenCalled();
+	});
+	it("persists scope in the appended column and includes it in confirmation emails", async () => {
+		const response = await contact(
+			request({
+				...body,
+				scope: "PT_ADMIN",
+				requestType: "portugal-administrative",
+			}),
+			{} as Context,
+		);
+		expect(response.status).toBe(200);
+		const append = vi
+			.mocked(fetch)
+			.mock.calls.find(([url]) => String(url).includes(":append"));
+		expect(JSON.parse(String(append?.[1]?.body)).values[0][12]).toBe(
+			"Portugal — apoio administrativo ou documental",
+		);
+		const emails = vi
+			.mocked(fetch)
+			.mock.calls.filter(([url]) => String(url).includes("api.resend.com"));
+		expect(emails).toHaveLength(2);
+		expect(String(emails[1][1]?.body)).toContain(
+			"não inclui consulta ou avaliação jurídica",
+		);
+	});
 });

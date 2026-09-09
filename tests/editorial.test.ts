@@ -24,8 +24,8 @@ const pages = readdirSync(directory)
 	);
 
 describe("publicação editorial bilingue", () => {
-	it("mantém exatamente as 14 páginas PT obrigatórias", () => {
-		expect(pages).toHaveLength(14);
+	it("mantém exatamente as 16 páginas PT obrigatórias", () => {
+		expect(pages).toHaveLength(16);
 		expect(pages.map((page) => page.routeKey).sort()).toEqual(
 			[...routeKeys].sort(),
 		);

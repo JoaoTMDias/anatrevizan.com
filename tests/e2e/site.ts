@@ -34,10 +34,7 @@ export interface TurnstileMock {
 	/**
 	 * Renders the Turnstile widget and immediately triggers the validation callback.
 	 */
-	render: (
-		container: HTMLElement,
-		options: Record<string, unknown>,
-	) => string;
+	render: (container: HTMLElement, options: Record<string, unknown>) => string;
 	/**
 	 * Resets the Turnstile widget state and re-issues a mock token.
 	 */
@@ -171,7 +168,10 @@ export async function installFakeTurnstile(page: Page): Promise<void> {
 /**
  * Helper to determine if a failed request originated from the current page's domain origin.
  */
-function isSameOriginRequest(failedRequest: Request, currentContextUrl: string): boolean {
+function isSameOriginRequest(
+	failedRequest: Request,
+	currentContextUrl: string,
+): boolean {
 	try {
 		const targetUrl = new URL(failedRequest.url());
 		const currentOrigin = new URL(currentContextUrl).origin;

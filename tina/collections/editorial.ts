@@ -15,6 +15,7 @@ import {
 	homeFields,
 } from "./editorial-sections";
 import { accessibilityPageFields, privacyPageFields } from "./legal-sections";
+import { practiceFields } from "./practice-sections";
 
 const textAndSeoFields: TinaField[] = [
 	{
@@ -91,6 +92,11 @@ export const EditorialCollection: Collection = {
 		},
 	},
 	templates: [
+		{
+			name: "practice",
+			label: "Atuação e âmbitos territoriais",
+			fields: pageFields(practiceFields),
+		},
 		{ name: "home", label: "Início", fields: pageFields(homeFields) },
 		{ name: "about", label: "Sobre", fields: pageFields(aboutFields) },
 		{

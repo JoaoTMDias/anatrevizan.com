@@ -68,9 +68,8 @@
 }
 
 .footer-legal__inner {
-	@apply grid items-center gap-4 py-5 text-xs;
+	@apply flex flex-col items-center gap-4 py-5 text-center text-xs;
 
-	grid-template-columns: auto minmax(12rem, 1fr) minmax(18rem, 2fr) auto;
 	line-height: 1.5;
 }
 
@@ -85,18 +84,5 @@
 	svg {
 		width: 100%;
 		height: 100%;
-	}
-}
-
-@media (max-width: 63.999rem) {
-	.footer-legal__inner {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
-
-@media (max-width: 39.999rem) {
-	.footer-legal__inner {
-		grid-template-columns: minmax(0, 1fr);
-		gap: 0.65rem;
 	}
 }

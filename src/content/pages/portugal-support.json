@@ -1,0 +1,86 @@
+{
+	"routeKey": "portugal-support",
+	"title": {
+		"pt": "Apoio administrativo em Portugal",
+		"en": "Administrative support in Portugal"
+	},
+	"summary": {
+		"pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
+		"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+	},
+	"seo": {
+		"title": {
+			"pt": "Apoio administrativo em Portugal",
+			"en": "Administrative support in Portugal"
+		},
+		"description": {
+			"pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
+			"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+		}
+	},
+	"_template": "practice",
+	"practicePage": {
+		"tag": {
+			"pt": "PORTUGAL · Apoio administrativo",
+			"en": "PORTUGAL · Administrative support"
+		},
+		"intro": {
+			"pt": "Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.",
+			"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+		},
+		"sections": [
+			{
+				"title": {
+					"pt": "Como posso apoiar",
+					"en": "How I can help"
+				},
+				"description": {
+					"pt": "O apoio destina-se a pessoas que já conhecem o procedimento que pretendem realizar ou que receberam essa definição de uma entidade ou profissional habilitado. O trabalho concentra-se na organização material das etapas, documentos e canais administrativos.",
+					"en": "Support is intended for people who already know which procedure they wish to follow, or whose procedure has been identified by an authorised body or qualified professional. The work focuses on the practical organisation of steps, documents and administrative channels."
+				},
+				"notice": {
+					"pt": "",
+					"en": "No legal consultations or advice, interpretation of Portuguese legislation, drafting of legal documents or contracts, representation, mandates, negotiation on behalf of the person concerned or other activities reserved to lawyers and solicitors are provided."
+				},
+				"cta": {
+					"pt": "Explicar o apoio de que preciso",
+					"en": "Describe the support I need"
+				},
+				"routeKey": "contact",
+				"scope": "PT_ADMIN",
+				"items": [
+					{
+						"pt": "Organização e conferência material de documentos segundo listas oficiais.",
+						"en": "Organisation and material checking of documents against official lists."
+					},
+					{
+						"pt": "Apoio na utilização de plataformas e no preenchimento de dados factuais.",
+						"en": "Support with platforms and entering factual data."
+					},
+					{
+						"pt": "Agendamento e preparação logística para atendimentos.",
+						"en": "Scheduling and logistical preparation for appointments."
+					},
+					{
+						"pt": "Organização de traduções, apostilas e certificações.",
+						"en": "Organisation of translations, apostilles and certifications."
+					},
+					{
+						"pt": "Apoio em registos administrativos e instalação.",
+						"en": "Support with administrative registrations and settling in."
+					},
+					{
+						"pt": "Acompanhamento organizacional de comunicações e estados do pedido.",
+						"en": "Organisational tracking of communications and application status."
+					}
+				],
+				"paragraphs": [
+					{
+						"pt": "Se a tarefa exigir uma decisão jurídica, argumentação, representação ou apreciação do mérito, o apoio administrativo termina e o interessado é encaminhado para advogado inscrito na Ordem dos Advogados Portuguesa.",
+						"en": "If a task requires a legal decision, argumentation, representation or assessment of the merits, administrative support ends and the person concerned is referred to a lawyer registered with the Portuguese Bar Association."
+					}
+				]
+			}
+		]
+	}
+}

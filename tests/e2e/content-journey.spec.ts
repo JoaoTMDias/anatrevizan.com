@@ -22,7 +22,7 @@ test.describe("visitor consumes published content", () => {
 		const enPaths = paths.filter((path) => path.startsWith("/en"));
 		const problems = collectBrowserProblems(page);
 		expect(new Set(paths).size).toBe(paths.length);
-		expect(ptPaths).toHaveLength(14);
+		expect(ptPaths).toHaveLength(16);
 		expect(enPaths.sort()).toEqual(
 			publishedEnglish
 				.map((key) => routeMap[key as keyof typeof routeMap].en)

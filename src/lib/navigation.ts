@@ -43,7 +43,7 @@ export function navigationItems(
 	return [
 		{
 			type: "menu",
-			routeKey: "legal",
+			routeKey: "practice",
 			label: localized(navigation?.consulting?.label, locale),
 			children: [
 				entry(
@@ -51,6 +51,7 @@ export function navigationItems(
 					navigation?.consulting?.immigrationMobility,
 				),
 				entry("legal", navigation?.consulting?.legal),
+				entry("portugal-support", navigation?.consulting?.portugalSupport),
 				entry("environmental-esg", navigation?.consulting?.environmentalEsg),
 				entry("public-policy", navigation?.consulting?.publicPolicy),
 				entry("legal-opinions", navigation?.consulting?.legalOpinions),

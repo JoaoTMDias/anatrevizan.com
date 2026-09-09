@@ -3,6 +3,7 @@ export type Channel = "email" | "whatsapp";
 
 export const contactFormCopy = {
 	"pt-PT": {
+		scope: "Âmbito do pedido",
 		legend: "Como prefere enviar o seu pedido?",
 		channelInstruction:
 			"A escolha do canal altera os dados necessários e a forma de envio.",
@@ -19,7 +20,8 @@ export const contactFormCopy = {
 		email: "E-mail",
 		whatsapp: "WhatsApp (opcional)",
 		requestType: "Tipo de pedido",
-		country: "País onde está",
+		country: "País de residência",
+		optional: "opcional",
 		message: "Mensagem",
 		messageHint:
 			"Não inclua dados particularmente sensíveis que não sejam necessários para este primeiro contacto.",
@@ -61,6 +63,7 @@ export const contactFormCopy = {
 		externalHint: "abre num novo separador",
 	},
 	en: {
+		scope: "Scope of the enquiry",
 		legend: "How would you like to send your request?",
 		channelInstruction:
 			"Your choice changes the information required and how the request is sent.",
@@ -77,6 +80,7 @@ export const contactFormCopy = {
 		whatsapp: "WhatsApp (optional)",
 		requestType: "Type of request",
 		country: "Country",
+		optional: "optional",
 		message: "Message",
 		messageHint:
 			"Do not include particularly sensitive information that is not needed for this initial contact.",

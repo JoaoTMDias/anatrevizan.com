@@ -1,3 +1,8 @@
+import {
+	requestMatchesScope,
+	scopeLabels,
+	type ContactScope,
+} from "../../src/lib/contact-scope.ts";
 import { createSign } from "node:crypto";
 import type { Config, Context } from "@netlify/functions";
 import { render, toPlainText } from "@react-email/render";
@@ -19,10 +24,17 @@ import {
 const JSON_HEADERS = {
 	"Content-Type": "application/json; charset=utf-8",
 	"Cache-Control": "no-store",
+	"X-Robots-Tag": "noindex, nofollow",
 };
 
 const EXTERNAL_REQUEST_TIMEOUT_MS = 8_000;
 
+function isPreviewRequest(request: Request): boolean {
+	return (
+		new URL(request.url).hostname.endsWith(".netlify.app") &&
+		new URL(request.url).hostname.includes("--")
+	);
+}
 function env(name: string): string {
 	const value = Netlify.env.get(name);
 	if (!value) throw new Error(`Missing environment variable: ${name}`);
@@ -33,6 +45,7 @@ interface EmailConfiguration {
 	apiKey: string;
 	from: string;
 	to: string;
+	previewRecipient?: string;
 }
 
 interface EmailMessage {
@@ -44,11 +57,15 @@ interface EmailMessage {
 
 type EmailStatus = "failed" | "not-configured" | "sent";
 
-function emailConfiguration(): EmailConfiguration | null {
+function emailConfiguration(preview = false): EmailConfiguration | null {
 	const apiKey = Netlify.env.get("RESEND_API_KEY");
 	const from = Netlify.env.get("CONTACT_EMAIL_FROM");
-	const to = Netlify.env.get("CONTACT_EMAIL_TO");
-	return apiKey && from && to ? { apiKey, from, to } : null;
+	const to = Netlify.env.get(
+		preview ? "CONTACT_PREVIEW_EMAIL_TO" : "CONTACT_EMAIL_TO",
+	);
+	return apiKey && from && to
+		? { apiKey, from, to, ...(preview ? { previewRecipient: to } : {}) }
+		: null;
 }
 
 type ContactResponseCode = "accepted" | "invalid" | "unavailable";
@@ -111,17 +128,26 @@ async function googleAccessToken(): Promise<string> {
 	return payload.access_token;
 }
 
-function sheetsUrl(range: string, suffix = ""): string {
-	const spreadsheetId = encodeURIComponent(env("GOOGLE_SHEETS_SPREADSHEET_ID"));
+interface SheetDestination {
+	spreadsheetId: string;
+	tab: string;
+}
+function sheetsUrl(
+	destination: SheetDestination,
+	range: string,
+	suffix = "",
+): string {
+	const spreadsheetId = encodeURIComponent(destination.spreadsheetId);
 	return `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(range)}${suffix}`;
 }
 
 async function existingRequest(
+	destination: SheetDestination,
 	accessToken: string,
 	requestId: string,
 ): Promise<boolean> {
-	const tab = env("GOOGLE_SHEETS_TAB");
-	const response = await fetch(sheetsUrl(`${tab}!B2:B`), {
+	const tab = destination.tab;
+	const response = await fetch(sheetsUrl(destination, `${tab}!B2:B`), {
 		headers: { Authorization: `Bearer ${accessToken}` },
 		signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
 	});
@@ -132,13 +158,15 @@ async function existingRequest(
 }
 
 async function appendSubmission(
+	destination: SheetDestination,
 	accessToken: string,
 	values: string[],
 ): Promise<number> {
-	const tab = env("GOOGLE_SHEETS_TAB");
+	const tab = destination.tab;
 	const response = await fetch(
 		sheetsUrl(
-			`${tab}!A:L`,
+			destination,
+			`${tab}!A:M`,
 			":append?valueInputOption=RAW&insertDataOption=INSERT_ROWS",
 		),
 		{
@@ -162,13 +190,14 @@ async function appendSubmission(
 }
 
 async function updateEmailStatus(
+	destination: SheetDestination,
 	accessToken: string,
 	row: number,
 	statuses: [string, string],
 ): Promise<void> {
-	const tab = env("GOOGLE_SHEETS_TAB");
+	const tab = destination.tab;
 	const response = await fetch(
-		sheetsUrl(`${tab}!K${row}:L${row}`, "?valueInputOption=RAW"),
+		sheetsUrl(destination, `${tab}!K${row}:L${row}`, "?valueInputOption=RAW"),
 		{
 			method: "PUT",
 			signal: AbortSignal.timeout(EXTERNAL_REQUEST_TIMEOUT_MS),
@@ -214,6 +243,7 @@ async function sendContactEmails(
 	submission: {
 		email: string;
 		locale: "pt-PT" | "en";
+		scope: ContactScope;
 		message: string;
 		name: string;
 		requestId: string;
@@ -240,7 +270,7 @@ async function sendContactEmails(
 				),
 		},
 		{
-			to: submission.email,
+			to: configuration.previewRecipient ?? submission.email,
 			replyTo: configuration.to,
 			subject: isEnglish
 				? "I received your message — Ana Trevizan"
@@ -351,38 +381,58 @@ export default async function contact(
 	if (!parsed.success || !isPlausibleSubmissionTime(parsed.data.startedAt))
 		return json(400, "invalid");
 	const submission = parsed.data;
-	const allowedRequestTypes = new Set(
-		siteConfig.requestTypes.map((_, index) => `request-${index + 1}`),
-	);
-	if (!allowedRequestTypes.has(submission.requestType))
+	if (
+		!requestMatchesScope(
+			siteConfig.requestTypes,
+			submission.requestType,
+			submission.scope,
+		)
+	)
 		return json(400, "invalid", submission.requestId);
+	const preview = isPreviewRequest(request);
+	if (
+		preview &&
+		(Netlify.env.get("CONTACT_PREVIEW_SEND_ENABLED") !== "true" ||
+			!Netlify.env.get("CONTACT_PREVIEW_SHEET_ID") ||
+			!Netlify.env.get("CONTACT_PREVIEW_SHEET_TAB") ||
+			!Netlify.env.get("CONTACT_PREVIEW_EMAIL_TO"))
+	)
+		return json(503, "unavailable", submission.requestId);
 	if (!(await verifyTurnstile(submission.turnstileToken, request, context.ip)))
 		return json(400, "invalid", submission.requestId);
 
 	try {
-		const requestIndex =
-			Number(submission.requestType.replace("request-", "")) - 1;
-		const requestType =
-			siteConfig.requestTypes[requestIndex]?.label[
-				submission.locale === "en" ? "en" : "pt"
-			];
+		const destination: SheetDestination = {
+			spreadsheetId: env(
+				preview ? "CONTACT_PREVIEW_SHEET_ID" : "GOOGLE_SHEETS_SPREADSHEET_ID",
+			),
+			tab: env(preview ? "CONTACT_PREVIEW_SHEET_TAB" : "GOOGLE_SHEETS_TAB"),
+		};
+		const requestType = siteConfig.requestTypes.find(
+			(type) => type.id === submission.requestType,
+		)?.label[submission.locale === "en" ? "en" : "pt"];
 		const country = contactCountries.find(
 			(option) => option.value === submission.country,
-		)?.label[submission.locale];
-		if (!requestType || !country)
+		)?.label[submission.locale] ?? "";
+		if (!requestType)
 			return json(400, "invalid", submission.requestId);
 		logIntegrationStage("started");
 		const accessToken = await googleAccessToken();
 		logIntegrationStage("completed");
 		integrationStage = "sheets-read";
 		logIntegrationStage("started");
-		const duplicate = await existingRequest(accessToken, submission.requestId);
+		const duplicate = await existingRequest(
+			destination,
+			accessToken,
+			submission.requestId,
+		);
 		logIntegrationStage("completed");
 		if (duplicate) return json(200, "accepted", submission.requestId);
 
 		integrationStage = "sheets-write";
 		logIntegrationStage("started");
 		const row = await appendSubmission(
+			destination,
 			accessToken,
 			[
 				new Date().toISOString(),
@@ -397,6 +447,7 @@ export default async function contact(
 				submission.message,
 				"pending",
 				"pending",
+				scopeLabels[submission.locale][submission.scope],
 			].map(normalizeSheetCell),
 		);
 		logIntegrationStage("completed");
@@ -405,7 +456,7 @@ export default async function contact(
 			"not-configured",
 			"not-configured",
 		];
-		const configuration = emailConfiguration();
+		const configuration = emailConfiguration(preview);
 		if (configuration) {
 			integrationStage = "email-dispatch";
 			logIntegrationStage("started");
@@ -418,7 +469,7 @@ export default async function contact(
 			logIntegrationStage("completed");
 		}
 		try {
-			await updateEmailStatus(accessToken, row, statuses);
+			await updateEmailStatus(destination, accessToken, row, statuses);
 		} catch {
 			console.error("contact-email-status-update-failed", {
 				requestId: submission.requestId,
