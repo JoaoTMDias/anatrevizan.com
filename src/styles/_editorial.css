@@ -71,6 +71,8 @@
 		}
 
 		.editorial-hero__foreground {
+			@apply max-w-none;
+
 			width: 100%;
 			height: 100%;
 			justify-self: end;
@@ -184,6 +186,34 @@
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 
+	@keyframes scroll-stagger-fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(1rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.scroll-stagger-fade-in > * {
+				animation: scroll-stagger-fade-in linear both;
+				animation-timeline: view();
+				animation-range: entry 0% entry 100%;
+			}
+			.scroll-stagger-fade-in > :nth-child(2) { animation-delay: 80ms; }
+			.scroll-stagger-fade-in > :nth-child(3) { animation-delay: 160ms; }
+			.scroll-stagger-fade-in > :nth-child(4) { animation-delay: 240ms; }
+			.scroll-stagger-fade-in > :nth-child(5) { animation-delay: 320ms; }
+			.scroll-stagger-fade-in > :nth-child(6) { animation-delay: 400ms; }
+			.scroll-stagger-fade-in > :nth-child(7) { animation-delay: 480ms; }
+			.scroll-stagger-fade-in > :nth-child(8) { animation-delay: 560ms; }
+		}
+	}
+
 	/* Empty state messaging */
 	.editorial-empty-state {
 		@apply mx-auto max-w-2xl px-10 py-14 text-center;
@@ -223,6 +253,37 @@
 
 	.editorial-cta__actions {
 		@apply flex flex-wrap justify-center gap-3;
+	}
+
+	@keyframes editorial-cta-bounce {
+		0% {
+			opacity: 0;
+			transform: translateY(1rem) scale(0.96);
+		}
+		55% {
+			opacity: 1;
+			transform: translateY(-0.35rem) scale(1.02);
+		}
+		75% {
+			transform: translateY(0.12rem) scale(0.995);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.editorial-cta__actions > * {
+				animation: editorial-cta-bounce linear both;
+				animation-timeline: view();
+				animation-range: entry 0% entry 100%;
+			}
+			.editorial-cta__actions > :nth-child(2) {
+				animation-delay: 250ms;
+			}
+		}
 	}
 
 	.editorial-mark {

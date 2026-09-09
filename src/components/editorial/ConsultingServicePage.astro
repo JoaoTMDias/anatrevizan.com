@@ -133,7 +133,7 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
         {service.steps?.length && service.stepsHeading && (
           <Section>
             <SectionHeading title={service.stepsHeading} subtitle={service.stepsSubtitle} locale={locale} />
-            <ol class="consulting-steps">
+            <ol class="consulting-steps scroll-stagger-fade-in">
               {service.steps.map((step) => (
                 <li>
                   <p
