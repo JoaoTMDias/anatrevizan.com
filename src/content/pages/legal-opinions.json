@@ -2,71 +2,20 @@
 	"routeKey": "legal-opinions",
 	"title": {
 		"pt": "Pareceres jurídicos em Direito brasileiro",
-		"en": "Legal opinions under Brazilian law"
+		"en": "Legal Opinions & Technical Briefs"
 	},
 	"summary": {
-		"pt": "Análise clara e fundamentada para apoiar decisões, propostas e projetos no contexto do Direito brasileiro.",
-		"en": "Clear, grounded analysis to support decisions, proposals and projects under Brazilian law."
+		"pt": "Pareceres jurídicos fundamentados para apoiar decisões, propostas e projetos no âmbito do Direito brasileiro.",
+		"en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
 	},
 	"seo": {
 		"title": {
-			"pt": "Pareceres jurídicos em Direito brasileiro",
-			"en": "Legal opinions under Brazilian law"
+			"pt": "Pareceres jurídicos em Direito brasileiro · Fundamentação para decidir",
+			"en": "Legal Opinions & Technical Briefs · Sound Decision-Making — Ana Trevizan"
 		},
 		"description": {
-			"pt": "Pareceres jurídicos em Direito brasileiro para apoiar decisões, propostas e projetos.",
-			"en": "Legal opinions under Brazilian law; studies and scientific and technical reports without applying law to individual cases in Portugal."
-		}
-	},
-	"_template": "practice",
-	"practicePage": {
-		"tag": {
-			"pt": "Brasil",
-			"en": "Brazil"
-		},
-		"intro": {
-			"pt": "Análise clara e fundamentada para apoiar decisões, propostas e projetos no contexto do Direito brasileiro.",
-			"en": "Clear, grounded analysis to support decisions, proposals and projects under Brazilian law."
-		},
-		"brazil": {
-			"title": {
-				"pt": "Pareceres jurídicos — Direito brasileiro",
-				"en": "Legal opinions — Brazilian law"
-			},
-			"description": {
-				"pt": "Há situações em que é útil parar, reunir a informação e perceber o que diz o Direito brasileiro. Num parecer, começo por ouvir a questão, consultar as fontes relevantes e explicar por escrito o que encontrei e quais as opções que se colocam.",
-				"en": "Reasoned analysis of matters of Brazilian law, with the scope of the opinion defined individually."
-			},
-			"notice": {
-				"pt": "BRASIL · OAB/SP n.º 330.386",
-				"en": "BRAZIL · OAB/SP no. 330.386"
-			},
-			"cta": {
-				"pt": "Solicitar um parecer",
-				"en": "Describe a matter of Brazilian law"
-			},
-			"routeKey": "contact",
-			"scope": "BR_LEGAL"
-		},
-		"portugal": {
-			"title": {
-				"pt": "Estudos e notas técnico-científicas",
-				"en": "Studies and scientific and technical reports"
-			},
-			"description": {
-				"pt": "Estudos, relatórios e notas técnico-científicas no âmbito da investigação e de projetos técnicos não jurídicos.",
-				"en": "Studies and scientific and technical reports within research and non-legal technical projects."
-			},
-			"notice": {
-				"pt": "Estes trabalhos não interpretam nem aplicam o Direito ao caso concreto do cliente e não incluem consulta jurídica, representação ou mandato.",
-				"en": "These works do not interpret or apply the law to the client’s individual case and do not include legal advice, representation or a mandate."
-			},
-			"cta": {
-				"pt": "Apresentar um projeto académico ou técnico",
-				"en": "Describe an academic or technical project"
-			},
-			"routeKey": "contact",
-			"scope": "ACADEMIC"
+			"pt": "Pareceres jurídicos em Direito brasileiro, fundamentados em legislação, doutrina, jurisprudência e investigação académica.",
+			"en": "Legal opinions and technical briefs grounded in legislation, case law, legal doctrine, and scientific research across Environmental Law, EU Law, Migration Law, and more."
 		}
 	},
 	"media": {
@@ -78,5 +27,114 @@
 			},
 			"decorative": false
 		}
-	}
+	},
+	"consultingService": {
+		"tag": {
+			"pt": "Brasil · OAB/SP n.º 330.386",
+			"en": "Portugal and Brazil"
+		},
+		"subtitle": {
+			"pt": "Pareceres jurídicos fundamentados para apoiar decisões, propostas e projetos no âmbito do Direito brasileiro.",
+			"en": "When a major decision requires solid ground. Rigorous legal analysis for individuals, corporations, and public entities."
+		},
+		"introHeading": {
+			"pt": "Uma opinião que sustenta a decisão",
+			"en": "Legal analysis that supports decision-making"
+		},
+		"introImage": {
+			"image": "/pareceres-intro.webp",
+			"alt": {
+				"pt": "Ana a segurar 3 livros no regaço",
+				"en": "Ana holding 3 books in her lap"
+			},
+			"decorative": false
+		},
+		"introParagraphs": {
+			"pt": "Há decisões que não se resolvem com uma resposta rápida. É preciso parar, ouvir a questão e perceber o que está realmente em causa.\n\nNum parecer, reúno a legislação e as fontes relevantes, explico como se aplicam ao problema apresentado e mostro as opções que o Direito brasileiro oferece. O objetivo é que possa decidir com informação clara e adequada à sua situação.\n",
+			"en": "A well-crafted legal opinion is not just another formal document. It is what provides certainty during a complex decision, protects decision-makers, and withstands scrutiny down the line.\n\nEvery opinion I deliver is grounded in applicable law, legal doctrine, relevant case law, and academic research — designed with the clarity required to guide decision-makers effectively.\n"
+		},
+		"servicesHeading": {
+			"pt": "Matérias",
+			"en": "Practice Areas"
+		},
+		"servicesSubtitle": {
+			"pt": "Análises escritas para esclarecer questões de Direito brasileiro e apoiar decisões concretas.",
+			"en": "Legal opinions and technical briefs to support strategic decision-making."
+		},
+		"services": [
+			{
+				"title": {
+					"pt": "Direito Ambiental e Climático brasileiro",
+					"en": "Environmental and Climate Law"
+				},
+				"description": {
+					"pt": "Analiso questões ambientais e climáticas à luz do Direito brasileiro, reunindo as fontes necessárias para responder ao problema apresentado.",
+					"en": "Compliance, risk, and environmental and climate governance."
+				}
+			},
+			{
+				"title": {
+					"pt": "Regulação europeia e cadeias brasileiras",
+					"en": "European Union Law"
+				},
+				"description": {
+					"pt": "Analiso, no plano técnico, como EUDR, CSDDD e CSRD podem afetar empresas brasileiras que produzem, exportam ou fornecem para a União Europeia.",
+					"en": "EUDR, CSDDD, CSRD, and corporate sustainability regulations."
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito Migratório brasileiro",
+					"en": "Immigration Law"
+				},
+				"description": {
+					"pt": "Elaboro pareceres sobre entrada, permanência, regularização e nacionalidade quando a questão é regida pelo Direito brasileiro.",
+					"en": "International mobility and legal status regularization."
+				}
+			},
+			{
+				"title": {
+					"pt": "Direito Administrativo e Civil brasileiro",
+					"en": "Administrative and Civil Law"
+				},
+				"description": {
+					"pt": "Examino procedimentos administrativos, relações civis e contratos sujeitos ao Direito brasileiro, com a fundamentação necessária para apoiar a sua decisão.",
+					"en": "Administrative procedures, civil relations, and contractual matters."
+				}
+			},
+			{
+				"title": {
+					"pt": "Governança, ESG e compliance no Brasil",
+					"en": "Governance, ESG, and Compliance"
+				},
+				"description": {
+					"pt": "Apoio empresas e organizações brasileiras a estruturar políticas, responsabilidades e procedimentos relacionados com sustentabilidade e integridade.",
+					"en": "Framework design, regulatory alignment, and best practices."
+				}
+			},
+			{
+				"title": {
+					"pt": "Direitos Humanos no Brasil",
+					"en": "Human Rights"
+				},
+				"description": {
+					"pt": "Analiso questões de direitos humanos relacionadas com projetos, organizações e cadeias de fornecimento no contexto brasileiro.",
+					"en": "Intersection with global supply chains and corporate responsibility."
+				}
+			}
+		],
+		"note": {
+			"pt": "Elaboro pareceres jurídicos no âmbito do Direito brasileiro, com inscrição na OAB/SP n.º 330.386. Notas técnicas e estudos sobre outros contextos têm natureza académica ou técnica e não substituem consulta jurídica em Portugal.",
+			"en": "Advisory legal opinions and technical briefs. Does not include litigation or court representation."
+		},
+		"ctaHeading": {
+			"pt": "A sua decisão precisa de base técnica?",
+			"en": "Does your decision require a solid technical foundation?"
+		},
+		"ctaText": {
+			"pt": "Descreva a questão e indique o contexto brasileiro em que se coloca. Avaliarei consigo se um parecer é o formato adequado.",
+			"en": "Schedule an initial call to outline your inquiry — we will evaluate the scope and format of the legal opinion."
+		}
+	},
+	"_template": "consultingService"
 }

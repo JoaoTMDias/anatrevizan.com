@@ -1,53 +1,221 @@
 ---
-import { getConfig, type CmsEditorial } from '../../lib/data';
-import { navigationItems } from '../../lib/navigation';
-import type { PracticeContent } from '../../lib/practice-content';
-import { pathFor } from '../../lib/routing';
-import PageHero from './PageHero.astro';
-import PracticeSection from './PracticeSection.astro';
-import Section from '../ui/Section.astro';
-interface Props { data: CmsEditorial }
+import { getConfig, type CmsEditorial } from "../../lib/data";
+import { navigationItems } from "../../lib/navigation";
+import type { PracticeContent } from "../../lib/practice-content";
+import { pathFor } from "../../lib/routing";
+import PageHero from "./PageHero.astro";
+import PracticeSection from "./PracticeSection.astro";
+import Section from "../ui/Section.astro";
+import EditorialImage from "./EditorialImage.astro";
+interface Props {
+  data: CmsEditorial;
+}
 const { data } = Astro.props;
 const page = data.practicePage as PracticeContent;
-const locale = data.locale === 'en' ? 'en' : 'pt-PT';
+const locale = data.locale === "en" ? "en" : "pt-PT";
 const hasChoice = Boolean(page.portugal && page.brazil);
-const practiceLinks = navigationItems((await getConfig()).data.config.navigation, locale)[0].children ?? [];
-const chooserIntro = data.routeKey === 'legal-opinions'
- ? (locale === 'en' ? 'A legal opinion starts with a concrete question. Choose the country where the matter is based to see the type of work available.' : 'Um parecer começa por uma questão concreta. Escolha o país a que diz respeito a sua situação para conhecer o trabalho disponível.')
- : (locale === 'en' ? 'Migration involves different procedures depending on the country and the rules that apply. Choose where your matter is based to see the relevant information and next steps.' : 'A migração envolve procedimentos diferentes consoante o país e as regras aplicáveis. Escolha o país a que diz respeito a sua situação para conhecer a informação e os próximos passos.');
+const practiceLinks =
+  navigationItems((await getConfig()).data.config.navigation, locale)[0].children ?? [];
+const chooserIntro =
+  data.routeKey === "legal-opinions"
+    ? locale === "en"
+      ? "A legal opinion starts with a concrete question. Choose the country where the matter is based to see the type of work available."
+      : "Um parecer começa por uma questão concreta. Escolha o país a que diz respeito a sua situação para conhecer o trabalho disponível."
+    : locale === "en"
+      ? "Migration involves different procedures depending on the country and the rules that apply. Choose where your matter is based to see the relevant information and next steps."
+      : "A migração envolve procedimentos diferentes consoante o país e as regras aplicáveis. Escolha o país a que diz respeito a sua situação para conhecer a informação e os próximos passos.";
+const relatedCopy =
+  locale === "en"
+    ? {
+        "immigration-mobility": [
+          "Administrative support in Portugal and Brazilian immigration law.",
+          "route",
+          "/migracao-e-mobilidade-hero.webp",
+          "Migration and Mobility",
+        ],
+        "environmental-esg": [
+          "Brazilian environmental law and technical support on European regulation.",
+          "leaf",
+          "/consultoria-ambiental-esg-hero.webp",
+          "Environmental and ESG consulting",
+        ],
+        "public-policy": [
+          "Research and technical support for environmental, climate and sustainability policies.",
+          "building-community",
+          "/politicas-publicas-hero.webp",
+          "Public policy and governance",
+        ],
+        "legal-opinions": [
+          "Written analysis for concrete questions of Brazilian law.",
+          "file-analytics",
+          "/pareceres-hero.webp",
+          "Legal opinions under Brazilian law",
+        ],
+      }
+    : {
+        "immigration-mobility": [
+          "Apoio administrativo em Portugal e questões de Direito Migratório brasileiro.",
+          "route",
+          "/migracao-e-mobilidade-hero.webp",
+          "Migração e Mobilidade",
+        ],
+        "environmental-esg": [
+          "Direito Ambiental brasileiro e apoio técnico sobre regulação europeia.",
+          "leaf",
+          "/consultoria-ambiental-esg-hero.webp",
+          "Consultoria Ambiental e ESG",
+        ],
+        "public-policy": [
+          "Investigação e apoio técnico para políticas ambientais, climáticas e de sustentabilidade.",
+          "building-community",
+          "/politicas-publicas-hero.webp",
+          "Políticas Públicas e Governança",
+        ],
+        "legal-opinions": [
+          "Análises escritas para questões concretas de Direito brasileiro.",
+          "file-analytics",
+          "/pareceres-hero.webp",
+          "Pareceres jurídicos em Direito brasileiro",
+        ],
+      };
 ---
+
 <div id="main-content" tabindex="-1">
- <PageHero title={data.title} subtitle={page.intro} tag={page.tag} locale={locale} routeKey={data.routeKey} heroMedia={data.media} parent={data.routeKey === 'practice' ? undefined : { label: locale === 'en' ? 'Practice' : 'Atuação', href: pathFor('practice', locale) }} />
- <Section>
- {hasChoice ? <country-choice>
-  <div class="mb-8 max-w-3xl">
-   <h2 class="text-2xl font-semibold">{locale === 'en' ? 'How can I help?' : 'Como posso ajudar?'}</h2>
-   <p class="mt-3 text-lg leading-relaxed">{chooserIntro}</p>
+  <PageHero
+    title={data.title}
+    subtitle={page.intro}
+    tag={page.tag}
+    locale={locale}
+    routeKey={data.routeKey}
+    heroMedia={data.media}
+    parent={data.routeKey === "practice"
+      ? undefined
+      : { label: locale === "en" ? "Practice" : "Atuação", href: pathFor("practice", locale) }}
+  />
+  <div class:list={["site-container py-16 md:py-20", !hasChoice && "contents"]}>
+    {
+      hasChoice ? (
+        <country-choice>
+          <div class="mb-8 max-w-3xl">
+            <h2 class="text-2xl font-semibold">
+              {locale === "en" ? "How can I help?" : "Como posso ajudar?"}
+            </h2>
+            <p class="mt-3 text-lg leading-relaxed">{chooserIntro}</p>
+          </div>
+          <fieldset class="mb-8 rounded-lg border p-6">
+            <legend class="px-2 text-xl font-semibold">
+              {locale === "en" ? "Choose the country" : "Escolha o país"}
+            </legend>
+            <p class="mb-4">
+              {locale === "en"
+                ? "Choose an option to see its scope, activities and contact details."
+                : "Escolha uma opção para conhecer o enquadramento, as atividades e o contacto."}
+            </p>
+            <div class="flex flex-wrap gap-6">
+              <label class="inline-flex min-h-11 cursor-pointer items-center gap-3">
+                <input type="radio" name="jurisdiction" value="PT" aria-controls="scope-pt" />
+                Portugal
+              </label>
+              <label class="inline-flex min-h-11 cursor-pointer items-center gap-3">
+                <input type="radio" name="jurisdiction" value="BR" aria-controls="scope-br" />
+                {locale === "en" ? "Brazil" : "Brasil"}
+              </label>
+            </div>
+          </fieldset>
+          <div id="scope-pt" data-country="PT" hidden>
+            <PracticeSection section={page.portugal!} locale={locale} />
+          </div>
+          <div id="scope-br" data-country="BR" hidden>
+            <PracticeSection section={page.brazil!} locale={locale} />
+          </div>
+          <noscript>
+            <p>
+              {locale === "en"
+                ? "Enable JavaScript to choose the country, or open the dedicated pages:"
+                : "Ative JavaScript para escolher o país ou abra as páginas dedicadas:"}{" "}
+              <a href={pathFor("portugal-support", locale)}>Portugal</a> ·{" "}
+              <a href={pathFor("legal", locale)}>{locale === "en" ? "Brazil" : "Brasil"}</a>
+            </p>
+          </noscript>
+        </country-choice>
+      ) : (
+        <div class="space-y-0">
+          {page.sections?.map((section, index) => (
+            <Section background={index % 2 === 1 ? "bg-secondary" : undefined}>
+              <PracticeSection section={section} locale={locale} />
+            </Section>
+          ))}
+        </div>
+      )
+    }
+    {
+      data.routeKey === "legal" && (
+        <nav
+          class="site-container mt-16 pb-16 md:pb-20"
+          aria-label={locale === "en" ? "Other practice areas" : "Outras áreas de atuação"}
+        >
+          <>
+            <h2 class="mb-6 text-2xl font-semibold">
+              {locale === "en" ? "Explore other areas" : "Conheça outras áreas"}
+            </h2>
+            <ul class="grid gap-4 md:grid-cols-2">
+              {practiceLinks
+                .filter((link) => link.routeKey !== "legal" && link.routeKey !== "portugal-support")
+                .map((link) => {
+                  const copy = relatedCopy[link.routeKey as keyof typeof relatedCopy];
+                  return (
+                    <li>
+                      <a
+                        class="group flex h-full flex-row overflow-hidden bg-default transition hover:bg-secondary hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary max-sm:flex-col"
+                        href={pathFor(link.routeKey, locale)}
+                      >
+                        {copy?.[2] && (
+                          <EditorialImage
+                            src={copy[2]}
+                            alt={copy?.[3] ?? ""}
+                            width={800}
+                            height={360}
+                            loading="lazy"
+                            decoding="async"
+                            border="none"
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            class="aspect-4/3 basis-2/5 w-2/5 shrink-0 object-cover max-sm:w-full md:aspect-square"
+                          />
+                        )}
+                        <div class="min-w-0 flex-1 p-6">
+                          <h3 class="text-xl font-semibold">{copy?.[3] ?? link.label}</h3>
+                          <p class="mt-2 text-muted-foreground">{copy?.[0] ?? ""}</p>
+                          <span class="mt-5 inline-flex items-center gap-2 font-semibold text-primary">
+                            {locale === "en" ? "Explore" : "Explorar"}{" "}
+                            <span aria-hidden="true">↗</span>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                  );
+                })}
+            </ul>
+          </>
+        </nav>
+      )
+    }
   </div>
-  <fieldset class="mb-8 rounded-lg border p-6">
-   <legend class="px-2 text-xl font-semibold">{locale === 'en' ? 'Choose the country' : 'Escolha o país'}</legend>
-   <p class="mb-4">{locale === 'en' ? 'Choose an option to see its scope, activities and contact details.' : 'Escolha uma opção para conhecer o enquadramento, as atividades e o contacto.'}</p>
-   <div class="flex flex-wrap gap-6">
-    <label class="inline-flex min-h-11 cursor-pointer items-center gap-3"><input type="radio" name="jurisdiction" value="PT" aria-controls="scope-pt" />Portugal</label>
-    <label class="inline-flex min-h-11 cursor-pointer items-center gap-3"><input type="radio" name="jurisdiction" value="BR" aria-controls="scope-br" />{locale === 'en' ? 'Brazil' : 'Brasil'}</label>
-   </div>
-  </fieldset>
-  <div id="scope-pt" data-country="PT" hidden><PracticeSection section={page.portugal!} locale={locale} /></div>
-  <div id="scope-br" data-country="BR" hidden><PracticeSection section={page.brazil!} locale={locale} /></div>
-  <noscript><p>{locale === 'en' ? 'Enable JavaScript to choose the country, or open the dedicated pages:' : 'Ative JavaScript para escolher o país ou abra as páginas dedicadas:'} <a href={pathFor('portugal-support', locale)}>Portugal</a> · <a href={pathFor('legal', locale)}>{locale === 'en' ? 'Brazil' : 'Brasil'}</a></p></noscript>
- </country-choice> : <div class="space-y-0">{page.sections?.map(section => <PracticeSection section={section} locale={locale} />)}</div>}
- {data.routeKey === 'legal' && <nav class="mt-10" aria-label={locale === 'en' ? 'Other practice areas' : 'Outras áreas de atuação'}><ul class="grid gap-4 md:grid-cols-2">{practiceLinks.filter(link => link.routeKey !== 'legal' && link.routeKey !== 'portugal-support').map(link => <li><a class="underline" href={pathFor(link.routeKey, locale)}>{link.label}</a></li>)}</ul></nav>}
- </Section>
 </div>
 <script>
- if (!customElements.get('country-choice')) customElements.define('country-choice', class extends HTMLElement {
-  connectedCallback() {
-   this.querySelectorAll<HTMLInputElement>('input[type=radio]').forEach(input => {
-    input.checked = false;
-    input.addEventListener('change', () => {
-     this.querySelectorAll<HTMLElement>('[data-country]').forEach(panel => { panel.hidden = panel.dataset.country !== input.value; });
-    });
-   });
-  }
- });
+  if (!customElements.get("country-choice"))
+    customElements.define(
+      "country-choice",
+      class extends HTMLElement {
+        connectedCallback() {
+          this.querySelectorAll<HTMLInputElement>("input[type=radio]").forEach((input) => {
+            input.checked = false;
+            input.addEventListener("change", () => {
+              this.querySelectorAll<HTMLElement>("[data-country]").forEach((panel) => {
+                panel.hidden = panel.dataset.country !== input.value;
+              });
+            });
+          });
+        }
+      }
+    );
 </script>
