@@ -109,12 +109,32 @@
 		}
 	}
 	.publication-card {
-		@apply border-b border-border py-4;
+		@apply border-b border-border p-6;
 		container-name: publication-card;
 		container-type: inline-size;
 	}
 	.publication-card--highlight {
-		@apply mb-6 rounded-lg border border-l-4 border-l-accent bg-secondary p-6 md:p-8;
+		@apply mb-6 rounded-lg border-0 md:mb-0;
+
+		background: var(--brand-burgundy);
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight .publication-card__meta,
+	.publication-card--highlight h2 + p,
+	.publication-card--highlight .publication-card__link {
+		color: var(--inverse-foreground) !important;
+	}
+	.publication-card--highlight .publication-card__meta strong {
+		@apply rounded-none bg-transparent p-0;
+
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight li {
+		background: rgb(255 255 255 / 8%) !important;
+		color: var(--inverse-foreground) !important;
+	}
+	.publication-card--highlight .acronym-tooltip__trigger {
+		text-decoration-color: var(--inverse-foreground);
 	}
 	.publication-card__layout {
 		@apply flex flex-col items-start gap-3;
@@ -145,7 +165,7 @@
 	.publication-card h2 {
 		@apply mt-2 mb-1 font-semibold leading-7;
 
-		font-size: clamp(1rem, 2vw, 1.125rem);
+		font-size: clamp(1.05rem, 1.8vw, 1.35rem);
 	}
 	.publication-card h2 + p {
 		@apply mb-3 text-base text-muted-foreground;
@@ -164,6 +184,27 @@
 	@container publication-card (min-width: 32rem) {
 		.publication-card__unavailable {
 			@apply max-w-36 text-right;
+		}
+	}
+	@media (min-width: 48rem) {
+		.publication-card--highlight {
+			grid-row: span 2;
+		}
+		.publication-card h2 + p,
+		.publication-card__unavailable {
+			@apply text-lg;
+		}
+	}
+	@media (min-width: 64rem) {
+		.publication-card h2 {
+			font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+		}
+		.publication-card--highlight h2 {
+			font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+			line-height: 1.15;
+		}
+		.publication-card h2 + p {
+			font-size: 1.125rem;
 		}
 	}
 	.publication-empty {
