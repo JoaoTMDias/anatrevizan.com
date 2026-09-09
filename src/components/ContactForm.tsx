@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderCircle } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -393,6 +394,9 @@ export default function ContactForm({
 						message={errors.turnstileToken?.message}
 					/>
 					<Button type="submit" disabled={isSubmitting || !turnstileSiteKey}>
+						{isSubmitting && (
+							<LoaderCircle className="animate-spin" aria-hidden="true" />
+						)}
 						{isSubmitting
 							? t.sending
 							: isContactScope(scope)
