@@ -45,6 +45,13 @@
 		],
 		"sections": [
 			{
+				"heading": { "pt": "Âmbito profissional e territorial", "en": "Professional and territorial scope" },
+				"paragraphs": {
+					"pt": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil, no âmbito da inscrição profissional indicada no site. Em Portugal, os contactos relativos a apoio administrativo ou trabalho técnico não constituem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. [PENDENTE DE REVISÃO JURÍDICA: confirmar a formulação final e a sua articulação com esta política.]",
+					"en": "Legal practice and consultancy in Brazilian law are provided in Brazil, within the professional registration identified on this website. In Portugal, contacts concerning administrative support or technical work do not constitute legal advice, representation, or the practice of activities reserved to Portuguese lawyers or solicitors. [PENDING LEGAL REVIEW: confirm the final wording and its relationship with this policy.]"
+				}
+			},
+			{
 				"heading": {
 					"pt": "Responsável e contacto",
 					"en": "Controller and contact"
