@@ -2,7 +2,7 @@
 
 ## Estado e contrato
 
-A integração está implementada em `netlify/functions/contact.ts`. A configuração externa e o envio real ainda precisam de confirmação. Nunca copiar API keys, tokens ou capturas com segredos para o chat, Git ou relatórios.
+A integração está implementada em `netlify/functions/contact.ts` e a configuração de produção foi confirmada pelo responsável do projeto. Nunca copiar API keys, tokens ou capturas com segredos para o chat, Git ou relatórios.
 
 A função grava primeiro no Sheets e só depois tenta a notificação e a confirmação, independentemente. K é o estado da notificação; L é o da confirmação: `sent` (API aceitou), `failed` (pedido de envio falhou) ou `not-configured` (falta pelo menos uma das três variáveis). `sent` não comprova entrega na caixa de entrada: não existem webhooks de entrega/bounce. Se a atualização K:L falhar, a linha pode conservar `pending`; o visitante continua a receber sucesso e é registado `contact-email-status-update-failed`. Não repetir a submissão para resolver emails: o mesmo requestId não volta a enviar.
 
@@ -58,10 +58,8 @@ Não usar bounces de teste para esperar `failed` na folha: bounces acontecem dep
 
 Fonte: [destinatários oficiais de testes Resend](https://resend.com/docs/dashboard/emails/send-test-emails).
 
-## Pendências
+## Manutenção futura
 
-- Confirmar caixa `contato@anatrevizan.com` e escolha do domínio/remetente.
-- Criar/verificar os registos DNS concretos fornecidos pelo painel e rever DMARC.
-- Criar chave e variáveis Production diretamente nos painéis; fazer novo deploy.
-- Escolher ambiente restrito e destinatários controlados para smoke real.
-- Acompanhamento de entrega por webhooks e reconciliação de estados `pending` ficam fora desta configuração.
+- Rever o estado do domínio, DNS e DMARC se o remetente ou fornecedor de email mudar.
+- Revogar e substituir a API key segundo a política de segurança da conta.
+- Se forem necessários estados de entrega, acrescentar webhooks e reconciliação de `pending`; isso não faz parte da configuração atual.
