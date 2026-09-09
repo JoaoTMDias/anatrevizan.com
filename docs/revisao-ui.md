@@ -97,3 +97,11 @@ hierarquia; não constitui evidência medida de melhoria de conversão.
 
 Mantém-se a exclusão de contraste no axe descrita acima. D6 aguarda os originais
 fotográficos definitivos; não há decisões adicionais necessárias para D1–D5.
+
+## Alterações posteriores pendentes de validação
+
+As alterações posteriores à revisão D1–D5 incluem o novo tratamento dos cartões
+territoriais em “Sobre”, imagens editáveis no Tina, links para as áreas de atuação
+e a composição responsiva dos cartões de publicações. Estas alterações ainda
+precisam de inspeção visual e confirmação no Tina antes de serem consideradas
+fechadas.

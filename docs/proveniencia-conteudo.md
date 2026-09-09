@@ -2,7 +2,7 @@
 
 ## Origem relevante
 
-Os 19 documentos bilingues foram consolidados a partir do conteúdo editorial Astro existente na branch `migration/astro`. O texto PT-PT foi migrado integralmente sem reescrita factual. As traduções EN que eram cópias portuguesas, placeholders ou avisos estruturais não foram tratadas como traduções válidas e ficaram vazias.
+Os 16 documentos bilingues foram consolidados a partir do conteúdo editorial Astro existente na branch `migration/astro`. O texto PT-PT foi migrado integralmente sem reescrita factual. As traduções EN que eram cópias portuguesas, placeholders ou avisos estruturais não foram tratadas como traduções válidas e ficaram vazias.
 
 Os metadados bibliográficos têm como fonte o ORCID `0000-0003-4365-6053`; o snapshot versionado contém 28 obras no momento desta consolidação. Contactos e perfis públicos provêm da configuração editorial existente.
 
@@ -12,7 +12,7 @@ O conteúdo PT das páginas Home, Sobre, Consultoria, Academia, Contacto e Agend
 
 ## Lacunas abertas
 
-- Tradução e revisão integral de EN nas 14 páginas e configuração global.
+- Tradução e revisão integral de EN nas 16 páginas e configuração global.
 - Confirmação factual e revisão jurídica da Política de Privacidade; confirmação operacional e auditoria abrangente para a Declaração de Acessibilidade. Os pontos `[PENDENTE]` permanecem deliberadamente explícitos.
 - Fotografia profissional, kit de palestrante e restantes assets finais/licenças.
 - Política final de privacidade e retenção do formulário.

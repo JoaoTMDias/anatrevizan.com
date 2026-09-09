@@ -9,6 +9,7 @@
 - [x] Retirar Termos de Utilização e a Política de Cookies autónoma do lançamento; manter a informação técnica de cookies/armazenamento na Política de Privacidade.
 - [ ] Confirmar o processo e prazo de resposta na Declaração de Acessibilidade e realizar auditoria abrangente antes de atribuir um estado formal de conformidade.
 - [ ] Substituir imagens temporárias e confirmar licenças e textos alternativos PT/EN.
+- [ ] Substituir os placeholders dos cartões territoriais em “Sobre” pelas imagens finais.
 
 ## Funcionalidade
 
@@ -30,3 +31,9 @@
 - [x] Executar Playwright completo sem erros de consola, assets ausentes ou URLs locais.
 - [ ] Executar `pnpm exec astro check`, `pnpm test`, `pnpm build:local`, `pnpm build` e `git diff --check`.
 - [ ] Rever deploy preview com Ana antes de qualquer merge para `main`.
+
+## Trabalho de interface ainda por validar
+
+- [ ] Rever visualmente os cartões de “Sobre”, Publicações e os cartões editoriais em mobile, tablet e desktop.
+- [ ] Confirmar no Tina que os campos de imagem de “Trabalho atual” aparecem e gravam corretamente.
+- [ ] Confirmar que os links dos cartões territoriais apontam para Migração e Mobilidade e Advocacia no Brasil em PT/EN.
