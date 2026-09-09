@@ -77,12 +77,12 @@ const icons =
             <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} locale={locale} />
             <div class="editorial-grid">
               {service.services.map((item, index) => (
-                <Card as="article" class="academic-service-card p-6 md:p-8">
-                  <span class="academic-icon" aria-hidden="true">
+                <Card as="article" class="academic-service-card flex flex-col gap-4 p-6 sm:flex-row sm:items-start md:p-8">
+                  <span class="academic-icon shrink-0" aria-hidden="true">
                     <Icon name={icons[index]} />
                   </span>
-                  <h3><AcronymText text={item.title} locale={locale} /></h3>
-                  <p><AcronymText text={item.description} locale={locale} /></p>
+                  <div><h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p></div>
                 </Card>
               ))}
             </div>

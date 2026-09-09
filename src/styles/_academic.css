@@ -162,9 +162,6 @@
 		@apply text-left text-base text-muted-foreground;
 	}
 	@container publication-card (min-width: 32rem) {
-		.publication-card__layout {
-			@apply flex-row;
-		}
 		.publication-card__unavailable {
 			@apply max-w-36 text-right;
 		}

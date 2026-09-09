@@ -30,12 +30,13 @@
 		},
 		"sections": [
 			{
+				"variant": "services",
 				"title": {
-					"pt": "Como posso apoiar",
+					"pt": "Como posso ajudar",
 					"en": "How I can help"
 				},
 				"description": {
-					"pt": "O apoio destina-se a pessoas que já conhecem o procedimento que pretendem realizar ou que receberam essa definição de uma entidade ou profissional habilitado. O trabalho concentra-se na organização material das etapas, documentos e canais administrativos.",
+					"pt": "Há procedimentos que se tornam difíceis apenas porque têm muitos passos, documentos e plataformas diferentes. Ajudo a pôr essa parte em ordem, com base nas indicações oficiais e no procedimento que já foi definido.",
 					"en": "Support is intended for people who already know which procedure they wish to follow, or whose procedure has been identified by an authorised body or qualified professional. The work focuses on the practical organisation of steps, documents and administrative channels."
 				},
 				"notice": {
@@ -50,28 +51,28 @@
 				"scope": "PT_ADMIN",
 				"items": [
 					{
-						"pt": "Organização e conferência material de documentos segundo listas oficiais.",
-						"en": "Organisation and material checking of documents against official lists."
+						"pt": "Documentos — Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar.",
+						"en": "Documents — Organising the documents listed in official requirements, so you know what is ready and what remains."
 					},
 					{
-						"pt": "Apoio na utilização de plataformas e no preenchimento de dados factuais.",
-						"en": "Support with platforms and entering factual data."
+						"pt": "Plataformas e formulários — Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece.",
+						"en": "Platforms and forms — Support using official portals and completing fields with the information you provide."
 					},
 					{
-						"pt": "Agendamento e preparação logística para atendimentos.",
-						"en": "Scheduling and logistical preparation for appointments."
+						"pt": "Agendamentos — Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião.",
+						"en": "Appointments — Booking appointments and preparing what to bring and do each time."
 					},
 					{
-						"pt": "Organização de traduções, apostilas e certificações.",
-						"en": "Organisation of translations, apostilles and certifications."
+						"pt": "Traduções e certificações — Coordenação do contacto com tradutores, notários e entidades certificadoras.",
+						"en": "Translations and certifications — Coordinating contact with translators, notaries and certifying entities."
 					},
 					{
-						"pt": "Apoio em registos administrativos e instalação.",
-						"en": "Support with administrative registrations and settling in."
+						"pt": "Registos administrativos — Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos.",
+						"en": "Administrative registrations — Organising steps related to NIF, Social Security, healthcare registration and other records."
 					},
 					{
-						"pt": "Acompanhamento organizacional de comunicações e estados do pedido.",
-						"en": "Organisational tracking of communications and application status."
+						"pt": "Comunicações e prazos — Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades.",
+						"en": "Communications and deadlines — Organising messages received, relevant dates and statuses indicated by public bodies."
 					}
 				],
 				"paragraphs": [
@@ -82,5 +83,15 @@
 				]
 			}
 		]
+	},
+	"media": {
+		"foreground": {
+			"image": "/migracao-e-mobilidade-hero.webp",
+			"alt": {
+				"pt": "Agenda, documentos e passaporte numa mesa.",
+				"en": "Planner, documents and a passport on a table."
+			},
+			"decorative": false
+		}
 	}
 }

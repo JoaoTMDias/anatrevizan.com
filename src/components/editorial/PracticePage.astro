@@ -6,6 +6,9 @@ import { pathFor } from "../../lib/routing";
 import PageHero from "./PageHero.astro";
 import PracticeSection from "./PracticeSection.astro";
 import Section from "../ui/Section.astro";
+import SectionHeading from "./SectionHeading.astro";
+import ContactCta from "./ContactCta.astro";
+import Icon from "../ui/Icon.astro";
 import EditorialImage from "./EditorialImage.astro";
 interface Props {
   data: CmsEditorial;
@@ -82,6 +85,7 @@ const relatedCopy =
 
 <div id="main-content" tabindex="-1">
   <PageHero
+
     title={data.title}
     subtitle={page.intro}
     tag={page.tag}
@@ -92,6 +96,9 @@ const relatedCopy =
       ? undefined
       : { label: locale === "en" ? "Practice" : "Atuação", href: pathFor("practice", locale) }}
   />
+ {data.routeKey === "portugal-support" && <Section><div class="grid items-center gap-10 md:grid-cols-2"><img src="/migracao-e-mobilidade-intro.webp" alt={locale === "en" ? "Ana Flávia holding Portuguese and Brazilian passports." : "Ana Flávia a segurar passaportes português e brasileiro."} width="960" height="720" loading="lazy" decoding="async" class="aspect-[4/3] w-full rounded-lg object-cover" /><div class="space-y-5 text-lg leading-relaxed text-muted-foreground"><p>{locale === "en" ? "Some procedures become difficult simply because they involve many steps, documents and different platforms. I help put this part in order, based on official guidance and the procedure already defined." : "Há procedimentos que se tornam difíceis apenas porque têm muitos passos, documentos e plataformas diferentes. Ajudo a pôr essa parte em ordem, com base nas indicações oficiais e no procedimento que já foi definido."}</p><p>{locale === "en" ? "If a task requires a legal decision, argument or representation, administrative support ends and the person concerned is referred to a lawyer registered with the Portuguese Bar Association." : "Se a tarefa exigir uma decisão jurídica, argumentação, representação ou apreciação do mérito, o apoio administrativo termina e o interessado é encaminhado para advogado inscrito na Ordem dos Advogados Portuguesa."}</p></div></div></Section>}
+  {data.routeKey === "portugal-support" && <Section background="bg-secondary"><SectionHeading title={locale === "en" ? "How I can help" : "Como posso ajudar"} subtitle={locale === "en" ? "From preparing the move to organizing administrative steps in Portugal." : "Da preparação da mudança à organização das etapas administrativas em Portugal."} locale={locale} /><div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{page.sections?.[0]?.items?.map((text) => { const [title, ...rest] = text.split(" — "); const icon = title.includes("Documento") ? "files" : title.includes("Plataforma") ? "browser" : title.includes("Agendamento") ? "calendar-event" : title.includes("Tradu") ? "language" : title.includes("Registo") ? "clipboard-check" : "mail"; return <article class="group flex flex-col gap-4 rounded-lg border border-foreground/15 bg-background p-6 sm:flex-row sm:items-start"><span class="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-primary/30 text-primary" aria-hidden="true"><Icon name={icon} /></span><div class="min-w-0"><h3 class="text-xl font-semibold">{title}</h3><p class="mt-3 text-muted-foreground">{rest.join(" — ")}</p></div></article> })}</div></Section>}
+  {data.routeKey === "portugal-support" && <ContactCta heading={locale === "en" ? "Need help with a practical step?" : "Precisa de ajuda com um passo prático?"} text={locale === "en" ? "Tell me what you are trying to organise and we can identify the administrative support that fits." : "Conte-me o que está a tentar organizar e vemos que tipo de apoio administrativo pode ser útil."} locale={locale} href={`${pathFor("contact", locale)}?scope=PT_ADMIN`} />}
   <div class:list={["site-container py-16 md:py-20", !hasChoice && "contents"]}>
     {
       hasChoice ? (
@@ -138,11 +145,11 @@ const relatedCopy =
             </p>
           </noscript>
         </country-choice>
-      ) : (
+      ) : data.routeKey === "portugal-support" ? null : (
         <div class="space-y-0">
           {page.sections?.map((section, index) => (
             <Section background={index % 2 === 1 ? "bg-secondary" : undefined}>
-              <PracticeSection section={section} locale={locale} />
+              <PracticeSection section={{ ...section, ...(data.routeKey === 'portugal-support' ? { variant: 'bento' as const } : {}) }} locale={locale} />
             </Section>
           ))}
         </div>

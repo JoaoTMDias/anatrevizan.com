@@ -1,5 +1,6 @@
 import type { RouteKey } from "./routing";
 export interface PracticeSection {
+	variant?: "bento" | "services";
 	anchor?: string;
 	title: string;
 	description: string;

@@ -14,7 +14,7 @@ const sectionIcon = section.anchor === 'civil' ? 'scale' : section.anchor === 't
   <div><div class="flex flex-col gap-4 sm:flex-row sm:items-center"><span class="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-primary/30 text-primary" aria-hidden="true"><Icon name={sectionIcon} /></span><h2 class="text-2xl font-semibold md:text-3xl"><AcronymText text={section.title} locale={locale} /></h2></div><p class="mt-4 text-lg leading-relaxed">{section.description}</p></div>
   <div class="practice-section__detail">
    {section.paragraphs?.map(text => <p class="practice-section__lead mb-6 leading-relaxed">{text}</p>)}
-   {section.items?.length && <ol class="practice-section__items mb-8 grid gap-3 sm:grid-cols-2">{section.items.map((text) => { const [itemTitle, ...rest] = text.split(' — '); const itemDescription = rest.join(' — '); return <li class="practice-section__item"><div><h3 class="practice-section__item-title"><AcronymText text={itemTitle} locale={locale} /></h3>{itemDescription && <p class="practice-section__item-description"><AcronymText text={itemDescription} locale={locale} /></p>}</div></li>})}</ol>}
+   {section.items?.length && <ol class:list={["practice-section__items mb-8 grid gap-3 sm:grid-cols-2", section.variant === "services" && "lg:grid-cols-3", section.variant === "bento" && "practice-section__items--bento"]}>{section.items.map((text) => { const [itemTitle, ...rest] = text.split(' — '); const itemDescription = rest.join(' — '); return <li class="practice-section__item"><div><h3 class="practice-section__item-title"><AcronymText text={itemTitle} locale={locale} /></h3>{itemDescription && <p class="practice-section__item-description"><AcronymText text={itemDescription} locale={locale} /></p>}</div></li>})}</ol>}
    {section.notice && <aside class="my-6 border-l-4 border-primary pl-4"><p>{section.notice}</p></aside>}
    <Button href={href}>{section.cta}</Button>
   </div>
@@ -25,8 +25,10 @@ const sectionIcon = section.anchor === 'civil' ? 'scale' : section.anchor === 't
  .practice-section :global(a) { white-space: normal; height: auto; min-height: 2.75rem; }
  .practice-section__lead { font-size: 1.08rem; }
  .practice-section__items { counter-reset: practice-item; list-style: none; padding-left: 0; }
- .practice-section__item { display: flex; gap: .75rem; border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: .6rem; padding: 1rem; background: color-mix(in srgb, currentColor 4%, transparent); line-height: 1.5; counter-increment: practice-item; }
+ .practice-section__item { display: flex; flex-direction: column; gap: .75rem; border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: .6rem; padding: 1rem; background: color-mix(in srgb, currentColor 4%, transparent); line-height: 1.5; counter-increment: practice-item; }
+ @media (min-width: 640px) { .practice-section__item { flex-direction: row; align-items: flex-start; } }
  .practice-section__item::before { display: block; content: counter(practice-item, decimal-leading-zero); flex: 0 0 auto; font-family: var(--font-heading, Georgia, serif); font-size: 1.35rem; font-style: italic; font-weight: 500; line-height: 1; color: var(--primary); }
  .practice-section__item-title { font-family: var(--font-heading, Georgia, serif); font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
  .practice-section__item-description { margin-top: .35rem; color: hsl(var(--muted-foreground)); }
+ .practice-section__items--bento .practice-section__item { min-height: 8rem; }
 </style>

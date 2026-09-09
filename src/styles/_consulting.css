@@ -73,7 +73,7 @@
 		@apply shadow-md;
 	}
 	.consulting-card__heading {
-		@apply mb-3 flex flex-wrap items-center gap-3;
+		@apply mb-3 flex flex-col items-start gap-3 sm:flex-row sm:items-center;
 	}
 	.consulting-card__icon {
 		@apply grid size-10 shrink-0 place-items-center rounded-lg text-primary;
