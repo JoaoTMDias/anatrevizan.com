@@ -325,8 +325,8 @@
 					"en": "Changing countries is one of the most important decisions in your life."
 				},
 				"tag": {
-					"pt": "Escolha o país",
-					"en": "Choose a country"
+					"pt": "Portugal · Brasil",
+					"en": "Portugal · Brazil"
 				}
 			},
 			"legal": {
@@ -339,8 +339,8 @@
 					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
 				},
 				"tag": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt": "Brasil",
+					"en": "Brazil"
 				}
 			},
 			"environmentalEsg": {
@@ -353,8 +353,8 @@
 					"en": "Legal practice and legal consulting in Brazil on environmental, administrative and urban planning matters."
 				},
 				"tag": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt": "Brasil",
+					"en": "Brazil"
 				}
 			},
 			"publicPolicy": {
@@ -367,8 +367,8 @@
 					"en": "Legal practice and legal consulting in Brazil on ESG, public policy and sustainability."
 				},
 				"tag": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt": "Brasil",
+					"en": "Brazil"
 				}
 			},
 			"legalOpinions": {
@@ -381,7 +381,7 @@
 					"en": "Clear, grounded analysis to support decisions, proposals and projects under Brazilian law."
 				},
 				"tag": {
-					"pt": "Escolha o país",
+					"pt": "Brasil",
 					"en": "Brazil"
 				}
 			},
@@ -395,8 +395,8 @@
 					"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
 				},
 				"tag": {
-					"pt": "PORTUGAL · Apoio administrativo",
-					"en": "PORTUGAL · Administrative support"
+					"pt": "Portugal",
+					"en": "Portugal"
 				}
 			}
 		},
