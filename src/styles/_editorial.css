@@ -200,17 +200,32 @@
 	@supports (animation-timeline: view()) {
 		@media (prefers-reduced-motion: no-preference) {
 			.scroll-stagger-fade-in > * {
+				--fade-in-delay: 160ms;
 				animation: scroll-stagger-fade-in linear both;
 				animation-timeline: view();
 				animation-range: entry 0% entry 100%;
 			}
-			.scroll-stagger-fade-in > :nth-child(2) { animation-delay: 80ms; }
-			.scroll-stagger-fade-in > :nth-child(3) { animation-delay: 160ms; }
-			.scroll-stagger-fade-in > :nth-child(4) { animation-delay: 240ms; }
-			.scroll-stagger-fade-in > :nth-child(5) { animation-delay: 320ms; }
-			.scroll-stagger-fade-in > :nth-child(6) { animation-delay: 400ms; }
-			.scroll-stagger-fade-in > :nth-child(7) { animation-delay: 480ms; }
-			.scroll-stagger-fade-in > :nth-child(8) { animation-delay: 560ms; }
+			.scroll-stagger-fade-in > :nth-child(2) {
+				animation-delay: var(--fade-in-delay);
+			}
+			.scroll-stagger-fade-in > :nth-child(3) {
+				animation-delay: calc(var(--fade-in-delay) * 2);
+			}
+			.scroll-stagger-fade-in > :nth-child(4) {
+				animation-delay: calc(var(--fade-in-delay) * 3);
+			}
+			.scroll-stagger-fade-in > :nth-child(5) {
+				animation-delay: calc(var(--fade-in-delay) * 4);
+			}
+			.scroll-stagger-fade-in > :nth-child(6) {
+				animation-delay: calc(var(--fade-in-delay) * 5);
+			}
+			.scroll-stagger-fade-in > :nth-child(7) {
+				animation-delay: calc(var(--fade-in-delay) * 6);
+			}
+			.scroll-stagger-fade-in > :nth-child(8) {
+				animation-delay: calc(var(--fade-in-delay) * 7);
+			}
 		}
 	}
 

@@ -48,7 +48,12 @@ export interface AboutContent {
 	milestonesTitle: string;
 	milestones: Array<{ year: string; title: string; description: string }>;
 	currentWorkTitle: string;
-	currentWork: Array<{ country: string; title: string; description: string; image?: string | null }>;
+	currentWork: Array<{
+		country: string;
+		title: string;
+		description: string;
+		image?: string | null;
+	}>;
 	valuesTitle: string;
 	valuesSubtitle: string;
 	values: Array<{ title: string; description: string }>;
