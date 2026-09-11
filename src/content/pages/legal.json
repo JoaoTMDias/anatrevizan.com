@@ -51,63 +51,63 @@
         "anchor": "civil",
         "items": [
           {
-            "pt": {
-              "title": "Contratos - elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos",
-              "description": ""
+            "title": {
+              "pt": "Contratos - elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos",
+              "en": "Contracts - drafting and reviewing contracts, clauses, obligations, guarantees and risks"
             },
-            "en": {
-              "title": "Contracts - drafting and reviewing contracts, clauses, obligations, guarantees and risks",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Obrigações e responsabilidade civil - incumprimento, danos e deveres de reparação",
-              "description": ""
+            "title": {
+              "pt": "Obrigações e responsabilidade civil - incumprimento, danos e deveres de reparação",
+              "en": "Obligations and civil liability - non-performance, damage and duties to compensate"
             },
-            "en": {
-              "title": "Obligations and civil liability - non-performance, damage and duties to compensate",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Relações de consumo - cobranças indevidas, falhas na prestação de serviços, produtos e garantias",
-              "description": ""
+            "title": {
+              "pt": "Relações de consumo - cobranças indevidas, falhas na prestação de serviços, produtos e garantias",
+              "en": "Consumer matters - improper charges, service failures, products and warranties"
             },
-            "en": {
-              "title": "Consumer matters - improper charges, service failures, products and warranties",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Questões patrimoniais - bens, direitos e obrigações com repercussão patrimonial",
-              "description": ""
+            "title": {
+              "pt": "Questões patrimoniais - bens, direitos e obrigações com repercussão patrimonial",
+              "en": "Property matters - assets, rights and obligations with financial consequences"
             },
-            "en": {
-              "title": "Property matters - assets, rights and obligations with financial consequences",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Cobranças, acordos e negociação - negociação de obrigações e soluções extrajudiciais",
-              "description": ""
+            "title": {
+              "pt": "Cobranças, acordos e negociação - negociação de obrigações e soluções extrajudiciais",
+              "en": "Debt collection, agreements and negotiation - negotiating obligations and out-of-court solutions"
             },
-            "en": {
-              "title": "Debt collection, agreements and negotiation - negotiating obligations and out-of-court solutions",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Consultas e pareceres jurídicos - análise fundamentada de questões específicas de Direito brasileiro",
-              "description": ""
+            "title": {
+              "pt": "Consultas e pareceres jurídicos - análise fundamentada de questões específicas de Direito brasileiro",
+              "en": "Legal consultations and opinions - reasoned analysis of specific matters of Brazilian law"
             },
-            "en": {
-              "title": "Legal consultations and opinions - reasoned analysis of specific matters of Brazilian law",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           }
         ],
@@ -140,63 +140,63 @@
         "anchor": "trabalho",
         "items": [
           {
-            "pt": {
-              "title": "Contratos de trabalho",
-              "description": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato."
+            "title": {
+              "pt": "Contratos de trabalho",
+              "en": "Employment contracts"
             },
-            "en": {
-              "title": "Employment contracts",
-              "description": "Review of the main clauses, conditions and risks associated with the contract."
+            "description": {
+              "pt": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato.",
+              "en": "Review of the main clauses, conditions and risks associated with the contract."
             }
           },
           {
-            "pt": {
-              "title": "Direitos e deveres decorrentes do vínculo",
-              "description": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores."
+            "title": {
+              "pt": "Direitos e deveres decorrentes do vínculo",
+              "en": "Rights and duties arising from the employment relationship"
             },
-            "en": {
-              "title": "Rights and duties arising from the employment relationship",
-              "description": "Clarification of legal matters relating to employers’ and workers’ rights and duties."
+            "description": {
+              "pt": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores.",
+              "en": "Clarification of legal matters relating to employers’ and workers’ rights and duties."
             }
           },
           {
-            "pt": {
-              "title": "Cessação do contrato e acordos de saída",
-              "description": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída."
+            "title": {
+              "pt": "Cessação do contrato e acordos de saída",
+              "en": "Termination of employment and exit agreements"
             },
-            "en": {
-              "title": "Termination of employment and exit agreements",
-              "description": "Analysis of termination arrangements and support in assessing the terms of an exit agreement."
+            "description": {
+              "pt": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída.",
+              "en": "Analysis of termination arrangements and support in assessing the terms of an exit agreement."
             }
           },
           {
-            "pt": {
-              "title": "Conflitos, assédio e discriminação",
-              "description": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral."
+            "title": {
+              "pt": "Conflitos, assédio e discriminação",
+              "en": "Workplace conflicts, harassment and discrimination"
             },
-            "en": {
-              "title": "Workplace conflicts, harassment and discrimination",
-              "description": "Initial analysis of conflict, harassment or discrimination situations in the workplace."
+            "description": {
+              "pt": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral.",
+              "en": "Initial analysis of conflict, harassment or discrimination situations in the workplace."
             }
           },
           {
-            "pt": {
-              "title": "Negociação e acordos",
-              "description": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho."
+            "title": {
+              "pt": "Negociação e acordos",
+              "en": "Negotiation and agreements"
             },
-            "en": {
-              "title": "Negotiation and agreements",
-              "description": "Support with analysing and negotiating solutions for employment-related matters."
+            "description": {
+              "pt": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho.",
+              "en": "Support with analysing and negotiating solutions for employment-related matters."
             }
           },
           {
-            "pt": {
-              "title": "Conformidade laboral para empresas",
-              "description": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa."
+            "title": {
+              "pt": "Conformidade laboral para empresas",
+              "en": "Employment compliance for businesses"
             },
-            "en": {
-              "title": "Employment compliance for businesses",
-              "description": "Analysis of employment matters and identification of relevant legal risks for the business."
+            "description": {
+              "pt": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa.",
+              "en": "Analysis of employment matters and identification of relevant legal risks for the business."
             }
           }
         ],

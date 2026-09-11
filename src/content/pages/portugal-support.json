@@ -51,63 +51,63 @@
         "scope": "PT_ADMIN",
         "items": [
           {
-            "pt": {
-              "title": "Documentos - Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar",
-              "description": ""
+            "title": {
+              "pt": "Documentos - Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar",
+              "en": "Documents - Organising the documents listed in official requirements, so you know what is ready and what remains"
             },
-            "en": {
-              "title": "Documents - Organising the documents listed in official requirements, so you know what is ready and what remains",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Plataformas e formulários - Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece",
-              "description": ""
+            "title": {
+              "pt": "Plataformas e formulários - Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece",
+              "en": "Platforms and forms - Support using official portals and completing fields with the information you provide"
             },
-            "en": {
-              "title": "Platforms and forms - Support using official portals and completing fields with the information you provide",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Agendamentos - Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião",
-              "description": ""
+            "title": {
+              "pt": "Agendamentos - Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião",
+              "en": "Appointments - Booking appointments and preparing what to bring and do each time"
             },
-            "en": {
-              "title": "Appointments - Booking appointments and preparing what to bring and do each time",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Traduções e certificações - Coordenação do contacto com tradutores, notários e entidades certificadoras",
-              "description": ""
+            "title": {
+              "pt": "Traduções e certificações - Coordenação do contacto com tradutores, notários e entidades certificadoras",
+              "en": "Translations and certifications - Coordinating contact with translators, notaries and certifying entities"
             },
-            "en": {
-              "title": "Translations and certifications - Coordinating contact with translators, notaries and certifying entities",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Registos administrativos - Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos",
-              "description": ""
+            "title": {
+              "pt": "Registos administrativos - Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos",
+              "en": "Administrative registrations - Organising steps related to NIF, Social Security, healthcare registration and other records"
             },
-            "en": {
-              "title": "Administrative registrations - Organising steps related to NIF, Social Security, healthcare registration and other records",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           },
           {
-            "pt": {
-              "title": "Comunicações e prazos - Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades",
-              "description": ""
+            "title": {
+              "pt": "Comunicações e prazos - Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades",
+              "en": "Communications and deadlines - Organising messages received, relevant dates and statuses indicated by public bodies"
             },
-            "en": {
-              "title": "Communications and deadlines - Organising messages received, relevant dates and statuses indicated by public bodies",
-              "description": ""
+            "description": {
+              "pt": "",
+              "en": ""
             }
           }
         ],
