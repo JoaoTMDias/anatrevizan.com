@@ -3,6 +3,7 @@ import { tinaField } from "@tinacms/astro/tina-field";
 import type { CmsEditorial } from "../../lib/data";
 import { getConfig } from "../../lib/data";
 import ContactForm from "../ContactForm";
+import BrasiliaClock from "../islands/BrasiliaClock";
 import { safeCalendlyUrl, safeProfileUrl, safeWhatsAppHref } from "../../lib/external-url";
 import type { ContactPageContent } from "../../lib/page-content";
 import { pathFor } from "../../lib/routing";
@@ -111,7 +112,10 @@ const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefine
                   <dt>
                     <Icon name="world" /> {contact.timezone}
                   </dt>
-                  <dd>{contact.timezoneNote}</dd>
+                  <dd>
+                    {contact.timezoneNote}
+                    <BrasiliaClock client:load locale={locale} />
+                  </dd>
                 </div>
               </dl>
               {calendlyUrl ? (
@@ -149,7 +153,9 @@ const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefine
                 ))}
               </ul>
               <hr />
-              <p>{contact.countriesLabel}</p>
+              <p class="font-emoji" aria-hidden="true">
+                {contact.countriesLabel}
+              </p>
               <p>{contact.languagesLabel}</p>
             </section>
           </aside>
