@@ -74,6 +74,10 @@
 			)
 			border-box;
 	}
+
+	.font-emoji {
+		font-family: var(--font-emoji);
+	}
 }
 
 @layer components {

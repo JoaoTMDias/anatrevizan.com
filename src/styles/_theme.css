@@ -7,6 +7,9 @@
 }
 
 @theme inline {
+	--font-emoji:
+		"Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols",
+		"Twemoji Country Flags", "Segoe UI Emoji";
 	--font-sans: "Fira Sans", system-ui, sans-serif;
 	--font-heading: "Playfair Display", Georgia, serif;
 	--font-body: var(--font-sans);

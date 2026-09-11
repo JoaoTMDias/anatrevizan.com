@@ -90,6 +90,11 @@
 	.contact-form textarea {
 		@apply w-full rounded-md border border-border bg-secondary px-4 py-3 text-base text-foreground;
 	}
+	.contact-form select,
+	.footer-contact__languages,
+	.footer-contact__regions {
+		font-family: "Twemoji Country Flags", var(--font-sans);
+	}
 	.contact-channel__options input {
 		@apply mt-1 size-4 w-4 shrink-0 p-0 accent-primary;
 	}
@@ -243,6 +248,14 @@
 		@apply text-[0.9375rem] text-muted-foreground;
 
 		line-height: 1.5;
+	}
+	.contact-booking__current-time {
+		@apply text-[0.875rem] text-muted-foreground;
+
+		line-height: 1.5;
+	}
+	.contact-booking__current-time time {
+		@apply font-semibold tabular-nums text-foreground;
 	}
 	.contact-booking a {
 		@apply w-full min-w-0 max-w-full text-center whitespace-normal;

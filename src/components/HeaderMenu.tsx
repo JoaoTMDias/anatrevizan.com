@@ -131,7 +131,10 @@ export default function HeaderMenu({
 														aria-current={child.isCurrent ? "page" : undefined}
 													>
 														{child.tag && (
-															<span className="nav-dropdown__tag">
+															<span
+																aria-hidden="true"
+																className="font-emoji nav-dropdown__tag"
+															>
 																{child.tag}
 															</span>
 														)}
@@ -179,7 +182,10 @@ export default function HeaderMenu({
 									);
 								}}
 							>
-								{languageLink.label}
+								<span className="font-emoji" aria-hidden="true">
+									{languageLink.lang === "pt-PT" ? "🇵🇹" : "🇬🇧"}
+								</span>
+								<span>{languageLink.label}</span>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 					)}

@@ -20,12 +20,12 @@
 	},
 	"media": {
 		"foreground": {
-			"image": "/contact-hero.webp",
+			"image": "",
 			"alt": {
-				"pt": "Telefone iPhone com o ícone da aplicação do WhatsApp.",
-				"en": "iPhone displaying the WhatsApp application icon."
+				"pt": "",
+				"en": ""
 			},
-			"decorative": false
+			"decorative": true
 		}
 	},
 	"contactPage": {
@@ -66,12 +66,12 @@
 			"en": "Other ways to connect"
 		},
 		"countriesLabel": {
-			"pt": "Portugal · Brasil",
-			"en": "Portugal · Brazil"
+			"pt": "🇵🇹 · 🇧🇷",
+			"en": "🇵🇹 · 🇧🇷"
 		},
 		"languagesLabel": {
-			"pt": "Atendimento em PT · EN · ES",
-			"en": "Available in PT · EN · ES"
+			"pt": "Atendimento em Português, Inglês e Espanhol",
+			"en": "Available in Portuguese, English and Spanish"
 		}
 	},
 	"_template": "contact"
