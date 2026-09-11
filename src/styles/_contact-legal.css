@@ -194,11 +194,12 @@
 	}
 	.contact-booking,
 	.contact-methods {
-		@apply min-w-0 max-w-full rounded-lg bg-secondary p-6;
+		@apply min-w-0 max-w-full rounded-lg p-6;
+
+		background: color-mix(in oklab, var(--accent) 8%, var(--background));
 	}
 	.contact-booking {
 		scroll-margin-top: 7rem;
-		background: color-mix(in oklab, var(--accent) 8%, var(--background));
 	}
 	.contact-booking:target,
 	.contact-booking:focus-visible {

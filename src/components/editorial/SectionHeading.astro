@@ -9,9 +9,10 @@ interface Props extends HTMLAttributes<"header"> {
   eyebrow?: string | null;
   centered?: boolean;
   locale: PublishedLocale;
+  headingId?: string;
 }
 
-const { title, subtitle, eyebrow, locale, centered = false, class: className, ...rest } = Astro.props;
+const { title, subtitle, eyebrow, locale, centered = false, headingId, class: className, ...rest } = Astro.props;
 ---
 
 <div
@@ -19,7 +20,7 @@ const { title, subtitle, eyebrow, locale, centered = false, class: className, ..
   {...rest}
 >
   {eyebrow && <p class="editorial-eyebrow"><AcronymText text={eyebrow} locale={locale} /></p>}
-  <h2><AcronymText text={title} locale={locale} /></h2>
+  <h2 id={headingId}><AcronymText text={title} locale={locale} /></h2>
   {
     subtitle && (
       <p class:list={["editorial-section-heading__subtitle", centered && "mx-auto"]}><AcronymText text={subtitle} locale={locale} /></p>

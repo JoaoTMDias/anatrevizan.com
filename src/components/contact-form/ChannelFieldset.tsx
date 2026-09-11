@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Channel, ContactFormCopy } from "./copy";
 
 interface ChannelFieldsetProps {
@@ -15,6 +16,15 @@ export function ChannelFieldset({
 	whatsappHref,
 	onSelect,
 }: ChannelFieldsetProps) {
+	const [announcement, setAnnouncement] = useState("");
+
+	function selectChannel(nextChannel: Channel) {
+		onSelect(nextChannel);
+		setAnnouncement(
+			nextChannel === "email" ? t.emailSelected : t.whatsappSelected,
+		);
+	}
+
 	return (
 		<>
 			<fieldset
@@ -30,37 +40,41 @@ export function ChannelFieldset({
 				</p>
 				<div className="contact-channel__options">
 					{whatsappHref && (
-						<label>
+						<label htmlFor={id("channel-whatsapp")}>
 							<input
+								id={id("channel-whatsapp")}
 								type="radio"
 								name="channel"
 								value="whatsapp"
 								checked={channel === "whatsapp"}
-								onChange={() => onSelect("whatsapp")}
+								aria-describedby={id("channel-whatsapp-help")}
+								onChange={() => selectChannel("whatsapp")}
 							/>
 							<span>
 								<strong>{t.whatsappChannel}</strong>
-								<small>{t.whatsappHelp}</small>
+								<small id={id("channel-whatsapp-help")}>{t.whatsappHelp}</small>
 							</span>
 						</label>
 					)}
-					<label>
+					<label htmlFor={id("channel-email")}>
 						<input
+							id={id("channel-email")}
 							type="radio"
 							name="channel"
 							value="email"
 							checked={channel === "email"}
-							onChange={() => onSelect("email")}
+							aria-describedby={id("channel-email-help")}
+							onChange={() => selectChannel("email")}
 						/>
 						<span>
 							<strong>{t.emailChannel}</strong>
-							<small>{t.emailHelp}</small>
+							<small id={id("channel-email-help")}>{t.emailHelp}</small>
 						</span>
 					</label>
 				</div>
 			</fieldset>
 			<p className="sr-only" aria-live="polite" aria-atomic="true">
-				{channel === "email" ? t.emailSelected : t.whatsappSelected}
+				{announcement}
 			</p>
 		</>
 	);

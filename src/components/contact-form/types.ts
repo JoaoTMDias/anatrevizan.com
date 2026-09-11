@@ -20,6 +20,7 @@ export interface Option {
 
 export interface ContactFormProps {
 	locale: Locale;
+	formHeadingId: string;
 	privacyHref: string;
 	requestTypes: Array<Option & { scope: string }>;
 	scopeNotice?: string;

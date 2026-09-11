@@ -29,10 +29,6 @@
 		}
 	},
 	"contactPage": {
-		"conditions": {
-			"pt": "As condições de contratação são definidas individualmente, considerando a natureza e a extensão do trabalho e as diferentes realidades de quem procura atendimento.",
-			"en": "The terms of engagement are defined individually, taking into account the nature and extent of the work and the different circumstances of those seeking assistance."
-		},
 		"tag": {
 			"pt": "Contacto",
 			"en": "Contact"

@@ -13,12 +13,6 @@ export const contactPageFields: TinaField[] = [
 		label: "Conteúdo da página de contacto",
 		type: "object",
 		fields: [
-			{
-				name: "conditions",
-				label: "Condições de contratação",
-				type: "string",
-				required: true,
-			},
 			text("tag", "Etiqueta do hero"),
 			text("subtitle", "Introdução"),
 			text("bookingHeading", "Título do agendamento"),

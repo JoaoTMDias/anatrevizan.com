@@ -26,6 +26,7 @@ export function ContactFields({
 }: ContactFieldsProps) {
 	return (
 		<fieldset className="contact-form__fields">
+			<legend className="sr-only">{t.contactFormLegend}</legend>
 			<div className="contact-form__field">
 				<label htmlFor={id("name")}>{t.name}</label>
 				<input
@@ -33,6 +34,7 @@ export function ContactFields({
 					autoComplete="name"
 					aria-invalid={errors.name ? "true" : undefined}
 					aria-describedby={errors.name ? id("name-error") : undefined}
+					required
 					{...register("name")}
 				/>
 				<FieldError id={id("name-error")} message={errors.name?.message} />
@@ -48,6 +50,7 @@ export function ContactFields({
 							autoComplete="email"
 							aria-invalid={errors.email ? "true" : undefined}
 							aria-describedby={errors.email ? id("email-error") : undefined}
+							required
 							{...register("email")}
 						/>
 						<FieldError
@@ -75,9 +78,10 @@ export function ContactFields({
 					aria-describedby={
 						errors.requestType ? id("request-type-error") : undefined
 					}
+					required
 					{...register("requestType")}
 				>
-					<option value="" disabled>
+					<option value="" disabled selected>
 						{t.choose}
 					</option>
 					{requestTypes.map((option) => (
@@ -127,6 +131,7 @@ export function ContactFields({
 					rows={7}
 					aria-invalid={errors.message ? "true" : undefined}
 					aria-describedby={`${id("message-hint")}${errors.message ? ` ${id("message-error")}` : ""}`}
+					required
 					placeholder={t.messagePlaceholder}
 					{...register("message")}
 				/>

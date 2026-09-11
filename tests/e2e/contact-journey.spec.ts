@@ -16,7 +16,7 @@ const englishPersona = {
 };
 
 async function fillPortugueseForm(page: import("@playwright/test").Page) {
-	const form = page.getByRole("form", { name: "Pedido de contacto" });
+	const form = page.getByRole("form", { name: "Formulário de contacto" });
 	const nameInput = form.getByLabel("Nome");
 	const emailInput = form.getByLabel("E-mail");
 	const whatsappInput = form.getByLabel("WhatsApp (opcional)");
@@ -53,7 +53,7 @@ test.describe("potential client sends a contact request", () => {
 		page,
 	}) => {
 		await page.goto("/contacto");
-		const form = page.getByRole("form", { name: "Pedido de contacto" });
+		const form = page.getByRole("form", { name: "Formulário de contacto" });
 		await form.getByRole("button", { name: "Enviar pedido" }).press("Enter");
 		const summary = form
 			.getByRole("alert")
@@ -64,7 +64,6 @@ test.describe("potential client sends a contact request", () => {
 			"Nome: Introduza pelo menos 2 caracteres.",
 			"E-mail: Introduza um endereço de email válido.",
 			"Tipo de pedido: Este campo é obrigatório.",
-			"País de residência: Este campo é obrigatório.",
 			"Mensagem: Introduza pelo menos 20 caracteres.",
 		]);
 		await summary.getByRole("link", { name: /^Nome:/ }).press("Enter");
@@ -186,7 +185,7 @@ test.describe("potential client sends a contact request", () => {
 		page,
 	}) => {
 		await page.goto("/contacto");
-		const form = page.getByRole("form", { name: "Pedido de contacto" });
+		const form = page.getByRole("form", { name: "Formulário de contacto" });
 		await form.getByLabel("Nome").fill(persona.name);
 		const whatsappChannel = form.getByRole("radio", {
 			name: /Enviar pelo WhatsApp/,
@@ -346,7 +345,7 @@ test.describe("potential client sends a contact request", () => {
 			window.open = () => null;
 		});
 		await page.goto("/contacto");
-		const form = page.getByRole("form", { name: "Pedido de contacto" });
+		const form = page.getByRole("form", { name: "Formulário de contacto" });
 		await form.getByLabel("Nome").fill(persona.name);
 		await form
 			.getByRole("radio", { name: /Enviar pelo WhatsApp/ })

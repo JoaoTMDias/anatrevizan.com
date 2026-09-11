@@ -74,18 +74,17 @@ const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefine
             </Button>
           </div>
         </PageHero>
-        <Section>
-          <p>{contact.conditions}</p>
-        </Section>
         <Section class="contact-layout">
           <div id={messageId} class="contact-message" tabindex="-1">
             <SectionHeading
               title={locale === "en" ? "Contact form" : "Formulário de contacto"}
               locale={locale}
+              headingId={`${messageId}-heading`}
             />
             <ContactForm
               client:load
               locale={locale}
+              formHeadingId={`${messageId}-heading`}
               privacyHref={pathFor("privacy", locale)}
               requestTypes={requestTypes}
               turnstileSiteKey={turnstileSiteKey}

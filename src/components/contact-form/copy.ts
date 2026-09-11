@@ -27,7 +27,7 @@ export const contactFormCopy = {
 			"Não inclua dados particularmente sensíveis que não sejam necessários para este primeiro contacto.",
 		messagePlaceholder: "Conte brevemente o que aconteceu e o que procura",
 		privacyNotice:
-			"Usaremos os dados para receber e responder ao seu pedido. Consulte a",
+			"Usarei os dados para receber e responder ao seu pedido. Consulte a",
 		privacyExternal:
 			"Ao continuar, sairá deste site para o WhatsApp, que tratará os dados segundo as suas próprias práticas.",
 		privacy: "Política de Privacidade",
@@ -61,6 +61,7 @@ export const contactFormCopy = {
 		copyInstructions:
 			"Se o WhatsApp não abrir, copie manualmente o número e a mensagem abaixo.",
 		externalHint: "abre num novo separador",
+		contactFormLegend: "Dados do pedido",
 	},
 	en: {
 		scope: "Scope of the enquiry",
@@ -87,7 +88,7 @@ export const contactFormCopy = {
 		messagePlaceholder:
 			"Briefly explain what happened and what you are looking for",
 		privacyNotice:
-			"We will use the data to receive and reply to your request. See the",
+			"I'll use the data to receive and reply to your request. See the",
 		privacyExternal:
 			"Continuing takes you away from this site to WhatsApp, which processes data under its own practices.",
 		privacy: "Privacy Policy",
@@ -121,6 +122,7 @@ export const contactFormCopy = {
 		copyInstructions:
 			"If WhatsApp does not open, manually copy the number and message below.",
 		externalHint: "opens in a new tab",
+		contactFormLegend: "Request details",
 	},
 } as const;
 

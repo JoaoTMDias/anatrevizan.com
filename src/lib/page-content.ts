@@ -229,7 +229,6 @@ export interface ContactPageContent {
 	otherMethodsHeading: string;
 	countriesLabel: string;
 	languagesLabel: string;
-	conditions: string;
 }
 
 export interface LegalPageContent {
