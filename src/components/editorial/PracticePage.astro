@@ -145,8 +145,8 @@ const relatedCopy =
           locale={locale}
         />
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 administrative-support-grid scroll-stagger-fade-in">
-          {page.sections?.[0]?.items?.map((text) => {
-            const [title, ...rest] = text.split(" — ");
+          {page.sections?.[0]?.items?.map((item) => {
+            const title = item.title;
             const icon = title.includes("Documento")
               ? "files"
               : title.includes("Plataforma")
@@ -168,7 +168,7 @@ const relatedCopy =
                 </span>
                 <div class="min-w-0">
                   <h3 class="text-xl font-semibold">{title}</h3>
-                  <p class="mt-3 text-muted-foreground">{rest.join(" — ")}</p>
+                  {item.description && <p class="mt-3 text-muted-foreground">{item.description}</p>}
                 </div>
               </article>
             );
