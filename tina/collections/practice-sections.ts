@@ -16,7 +16,16 @@ const sectionFields: TinaField[] = [
 	text("title", "Título"),
 	text("description", "Descrição"),
 	{ name: "paragraphs", label: "Parágrafos", type: "string", list: true },
-	{ name: "items", label: "Atividades", type: "string", list: true },
+	{
+		name: "items",
+		label: "Atividades",
+		type: "object",
+		list: true,
+		fields: [
+			text("title", "Título"),
+			{ ...text("description", "Descrição"), required: false },
+		],
+	},
 	text("notice", "Enquadramento"),
 	text("cta", "Botão"),
 	{
