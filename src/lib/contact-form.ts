@@ -10,11 +10,12 @@ export const CONTACT_FORM_MINIMUM_SECONDS = 3;
 export const CONTACT_FORM_MAXIMUM_BYTES = 16_384;
 
 export const contactCountries = [
-	{ value: "PT", label: { "pt-PT": "Portugal", en: "Portugal" } },
-	{ value: "BR", label: { "pt-PT": "Brasil", en: "Brazil" } },
-	{ value: "ES", label: { "pt-PT": "Espanha", en: "Spain" } },
+	{ value: "PT", flag: "🇵🇹", label: { "pt-PT": "Portugal", en: "Portugal" } },
+	{ value: "BR", flag: "🇧🇷", label: { "pt-PT": "Brasil", en: "Brazil" } },
+	{ value: "ES", flag: "🇪🇸", label: { "pt-PT": "Espanha", en: "Spain" } },
 	{
 		value: "EU_OTHER",
+		flag: "🇪🇺",
 		label: {
 			"pt-PT": "Outro país da União Europeia",
 			en: "Another European Union country",

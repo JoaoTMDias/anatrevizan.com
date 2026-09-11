@@ -37,6 +37,10 @@ const config = props.config ?? null;
       })();
     </script>
     <BaseHead {...props} />
+    <script>
+      import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+      polyfillCountryFlagEmojis("Twemoji Country Flags", "/fonts/TwemojiCountryFlags.woff2");
+    </script>
   </head>
   <body>
     <TinaIsland

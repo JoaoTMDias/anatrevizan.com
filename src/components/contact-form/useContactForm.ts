@@ -250,6 +250,7 @@ export function useContactForm({
 
 	const countries = contactCountries.map((country) => ({
 		value: country.value,
+		flag: "flag" in country ? country.flag : undefined,
 		label: country.label[locale],
 	}));
 

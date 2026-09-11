@@ -16,6 +16,7 @@ export interface FormValues {
 export interface Option {
 	label: string;
 	value: string;
+	flag?: string;
 }
 
 export interface ContactFormProps {

@@ -110,7 +110,12 @@ export function ContactFields({
 						{t.choose}
 					</option>
 					{countries.map((option) => (
-						<option key={option.value} value={option.value}>
+						<option
+							key={option.value}
+							value={option.value}
+							aria-label={option.label}
+						>
+							{option.flag ? `${option.flag} ` : ""}
 							{option.label}
 						</option>
 					))}
