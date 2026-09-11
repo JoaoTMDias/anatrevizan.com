@@ -110,7 +110,7 @@ export async function buildMediaVariants(
 				await mkdir(join(target, ".."), { recursive: true });
 				await sharp(source)
 					.resize({ width, withoutEnlargement: true })
-					.webp({ quality: 82 })
+					.webp({ quality: 90 })
 					.toFile(target);
 			}
 		}
