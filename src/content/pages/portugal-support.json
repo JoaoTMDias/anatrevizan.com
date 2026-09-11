@@ -1,133 +1,133 @@
 {
-  "routeKey": "portugal-support",
-  "title": {
-    "pt": "Apoio administrativo em Portugal",
-    "en": "Administrative support in Portugal"
-  },
-  "summary": {
-    "pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
-    "en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
-  },
-  "seo": {
-    "title": {
-      "pt": "Apoio administrativo em Portugal",
-      "en": "Administrative support in Portugal"
-    },
-    "description": {
-      "pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
-      "en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
-    }
-  },
-  "_template": "practice",
-  "practicePage": {
-    "tag": {
-      "pt": "PORTUGAL · Apoio administrativo",
-      "en": "PORTUGAL · Administrative support"
-    },
-    "intro": {
-      "pt": "Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.",
-      "en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
-    },
-    "sections": [
-      {
-        "variant": "services",
-        "title": {
-          "pt": "Como posso ajudar",
-          "en": "How I can help"
-        },
-        "description": {
-          "pt": "Há procedimentos que se tornam difíceis apenas porque têm muitos passos, documentos e plataformas diferentes. Ajudo a pôr essa parte em ordem, com base nas indicações oficiais e no procedimento que já foi definido.",
-          "en": "Support is intended for people who already know which procedure they wish to follow, or whose procedure has been identified by an authorised body or qualified professional. The work focuses on the practical organisation of steps, documents and administrative channels."
-        },
-        "notice": {
-          "pt": "",
-          "en": "No legal consultations or advice, interpretation of Portuguese legislation, drafting of legal documents or contracts, representation, mandates, negotiation on behalf of the person concerned or other activities reserved to lawyers and solicitors are provided."
-        },
-        "cta": {
-          "pt": "Explicar o apoio de que preciso",
-          "en": "Describe the support I need"
-        },
-        "routeKey": "contact",
-        "scope": "PT_ADMIN",
-        "items": [
-          {
-            "title": {
-              "pt": "Documentos",
-              "en": "Documents"
-            },
-            "description": {
-              "pt": "Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar.",
-              "en": "Organising the documents listed in official requirements, so you know what is ready and what remains."
-            }
-          },
-          {
-            "title": {
-              "pt": "Plataformas e formulários",
-              "en": "Platforms and forms"
-            },
-            "description": {
-              "pt": "Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece.",
-              "en": "Support using official portals and completing fields with the information you provide."
-            }
-          },
-          {
-            "title": {
-              "pt": "Agendamentos",
-              "en": "Appointments"
-            },
-            "description": {
-              "pt": "Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião.",
-              "en": "Booking appointments and preparing what to bring and do each time."
-            }
-          },
-          {
-            "title": {
-              "pt": "Traduções e certificações",
-              "en": "Translations and certifications"
-            },
-            "description": {
-              "pt": "Coordenação do contacto com tradutores, notários e entidades certificadoras.",
-              "en": "Coordinating contact with translators, notaries and certifying entities."
-            }
-          },
-          {
-            "title": {
-              "pt": "Registos administrativos",
-              "en": "Administrative registrations"
-            },
-            "description": {
-              "pt": "Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos.",
-              "en": "Organising steps related to NIF, Social Security, healthcare registration and other records."
-            }
-          },
-          {
-            "title": {
-              "pt": "Comunicações e prazos",
-              "en": "Communications and deadlines"
-            },
-            "description": {
-              "pt": "Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades.",
-              "en": "Organising messages received, relevant dates and statuses indicated by public bodies."
-            }
-          }
-        ],
-        "paragraphs": [
-          {
-            "pt": "Se a tarefa exigir uma decisão jurídica, argumentação, representação ou apreciação do mérito, o apoio administrativo termina e o interessado é encaminhado para advogado inscrito na Ordem dos Advogados Portuguesa.",
-            "en": "If a task requires a legal decision, argumentation, representation or assessment of the merits, administrative support ends and the person concerned is referred to a lawyer registered with the Portuguese Bar Association."
-          }
-        ]
-      }
-    ]
-  },
-  "media": {
-    "foreground": {
-      "image": "/migracao-e-mobilidade-hero.webp",
-      "alt": {
-        "pt": "Agenda, documentos e passaporte numa mesa.",
-        "en": "Planner, documents and a passport on a table."
-      },
-      "decorative": false
-    }
-  }
+	"routeKey": "portugal-support",
+	"title": {
+		"pt": "Apoio administrativo em Portugal",
+		"en": "Administrative support in Portugal"
+	},
+	"summary": {
+		"pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
+		"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+	},
+	"seo": {
+		"title": {
+			"pt": "Apoio administrativo em Portugal",
+			"en": "Administrative support in Portugal"
+		},
+		"description": {
+			"pt": "Precisa de organizar documentos, utilizar uma plataforma ou tratar de um registo administrativo? Conte com apoio próximo para tornar estas tarefas mais simples.",
+			"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+		}
+	},
+	"_template": "practice",
+	"practicePage": {
+		"tag": {
+			"pt": "PORTUGAL · Apoio administrativo",
+			"en": "PORTUGAL · Administrative support"
+		},
+		"intro": {
+			"pt": "Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.",
+			"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
+		},
+		"sections": [
+			{
+				"variant": "services",
+				"title": {
+					"pt": "Como posso ajudar",
+					"en": "How I can help"
+				},
+				"description": {
+					"pt": "Há procedimentos que se tornam difíceis apenas porque têm muitos passos, documentos e plataformas diferentes. Ajudo a pôr essa parte em ordem, com base nas indicações oficiais e no procedimento que já foi definido.",
+					"en": "Support is intended for people who already know which procedure they wish to follow, or whose procedure has been identified by an authorised body or qualified professional. The work focuses on the practical organisation of steps, documents and administrative channels."
+				},
+				"notice": {
+					"pt": "",
+					"en": "No legal consultations or advice, interpretation of Portuguese legislation, drafting of legal documents or contracts, representation, mandates, negotiation on behalf of the person concerned or other activities reserved to lawyers and solicitors are provided."
+				},
+				"cta": {
+					"pt": "Explicar o apoio de que preciso",
+					"en": "Describe the support I need"
+				},
+				"routeKey": "contact",
+				"scope": "PT_ADMIN",
+				"items": [
+					{
+						"title": {
+							"pt": "Documentos",
+							"en": "Documents"
+						},
+						"description": {
+							"pt": "Organização dos documentos indicados nas listas oficiais, para saber o que já está reunido e o que falta preparar.",
+							"en": "Organising the documents listed in official requirements, so you know what is ready and what remains."
+						}
+					},
+					{
+						"title": {
+							"pt": "Plataformas e formulários",
+							"en": "Platforms and forms"
+						},
+						"description": {
+							"pt": "Apoio na utilização dos portais oficiais e no preenchimento dos campos com os dados que fornece.",
+							"en": "Support using official portals and completing fields with the information you provide."
+						}
+					},
+					{
+						"title": {
+							"pt": "Agendamentos",
+							"en": "Appointments"
+						},
+						"description": {
+							"pt": "Marcação de atendimentos e preparação prática do que deve levar e fazer em cada ocasião.",
+							"en": "Booking appointments and preparing what to bring and do each time."
+						}
+					},
+					{
+						"title": {
+							"pt": "Traduções e certificações",
+							"en": "Translations and certifications"
+						},
+						"description": {
+							"pt": "Coordenação do contacto com tradutores, notários e entidades certificadoras.",
+							"en": "Coordinating contact with translators, notaries and certifying entities."
+						}
+					},
+					{
+						"title": {
+							"pt": "Registos administrativos",
+							"en": "Administrative registrations"
+						},
+						"description": {
+							"pt": "Organização dos passos relacionados com NIF, Segurança Social, número de utente e outros registos.",
+							"en": "Organising steps related to NIF, Social Security, healthcare registration and other records."
+						}
+					},
+					{
+						"title": {
+							"pt": "Comunicações e prazos",
+							"en": "Communications and deadlines"
+						},
+						"description": {
+							"pt": "Organização das mensagens recebidas, datas relevantes e estados indicados pelas entidades.",
+							"en": "Organising messages received, relevant dates and statuses indicated by public bodies."
+						}
+					}
+				],
+				"paragraphs": [
+					{
+						"pt": "Se a tarefa exigir uma decisão jurídica, argumentação, representação ou apreciação do mérito, o apoio administrativo termina e o interessado é encaminhado para advogado inscrito na Ordem dos Advogados Portuguesa.",
+						"en": "If a task requires a legal decision, argumentation, representation or assessment of the merits, administrative support ends and the person concerned is referred to a lawyer registered with the Portuguese Bar Association."
+					}
+				]
+			}
+		]
+	},
+	"media": {
+		"foreground": {
+			"image": "/migracao-e-mobilidade-hero.webp",
+			"alt": {
+				"pt": "Agenda, documentos e passaporte numa mesa.",
+				"en": "Planner, documents and a passport on a table."
+			},
+			"decorative": false
+		}
+	}
 }
