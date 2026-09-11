@@ -5,7 +5,7 @@ export interface PracticeSection {
 	title: string;
 	description: string;
 	paragraphs?: string[];
-	items?: string[];
+	items?: Array<string | { title: string; description?: string }>;
 	notice: string;
 	cta: string;
 	routeKey: RouteKey;

@@ -104,28 +104,64 @@
 				"anchor": "trabalho",
 				"items": [
 					{
-						"pt": "Contratos de trabalho.",
-						"en": "Employment contracts."
+						"pt": {
+							"title": "Contratos de trabalho",
+							"description": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato."
+						},
+						"en": {
+							"title": "Employment contracts",
+							"description": "Review of the main clauses, conditions and risks associated with the contract."
+						}
 					},
 					{
-						"pt": "Direitos e deveres decorrentes do vínculo.",
-						"en": "Rights and duties arising from the employment relationship."
+						"pt": {
+							"title": "Direitos e deveres decorrentes do vínculo",
+							"description": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores."
+						},
+						"en": {
+							"title": "Rights and duties arising from the employment relationship",
+							"description": "Clarification of legal matters relating to employers’ and workers’ rights and duties."
+						}
 					},
 					{
-						"pt": "Cessação do contrato e acordos de saída.",
-						"en": "Termination of employment and exit agreements."
+						"pt": {
+							"title": "Cessação do contrato e acordos de saída",
+							"description": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída."
+						},
+						"en": {
+							"title": "Termination of employment and exit agreements",
+							"description": "Analysis of termination arrangements and support in assessing the terms of an exit agreement."
+						}
 					},
 					{
-						"pt": "Conflitos, assédio e discriminação.",
-						"en": "Disputes, harassment and discrimination."
+						"pt": {
+							"title": "Conflitos, assédio e discriminação",
+							"description": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral."
+						},
+						"en": {
+							"title": "Workplace conflicts, harassment and discrimination",
+							"description": "Initial analysis of conflict, harassment or discrimination situations in the workplace."
+						}
 					},
 					{
-						"pt": "Negociação e acordos.",
-						"en": "Negotiation and agreements."
+						"pt": {
+							"title": "Negociação e acordos",
+							"description": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho."
+						},
+						"en": {
+							"title": "Negotiation and agreements",
+							"description": "Support with analysing and negotiating solutions for employment-related matters."
+						}
 					},
 					{
-						"pt": "Conformidade laboral para empresas.",
-						"en": "Employment compliance for businesses."
+						"pt": {
+							"title": "Conformidade laboral para empresas",
+							"description": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa."
+						},
+						"en": {
+							"title": "Employment compliance for businesses",
+							"description": "Analysis of employment matters and identification of relevant legal risks for the business."
+						}
 					}
 				],
 				"paragraphs": [
