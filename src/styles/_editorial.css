@@ -18,6 +18,15 @@
 		);
 		text-shadow: var(--hero-text-shadow);
 	}
+
+	.editorial-hero a {
+		text-shadow: 1px 1px var(--color-gray-950);
+	}
+
+	.dark .editorial-hero a {
+		text-shadow: none;
+	}
+
 	.editorial-hero__inner {
 		@apply relative z-1 flex h-full flex-col pt-24 pb-8;
 	}
