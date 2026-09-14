@@ -10,6 +10,11 @@ export function buildContactSchema(
 	t: FormCopy,
 	requestTypes: ContactFormProps["requestTypes"],
 ) {
+	const requestTypeValues = new Set(requestTypes.map(({ value }) => value));
+	const countryValues = new Set<string>(
+		contactCountries.map(({ value }) => value),
+	);
+
 	return z
 		.object({
 			channel: z.enum(["email", "whatsapp"]),
@@ -20,17 +25,10 @@ export function buildContactSchema(
 			requestType: z
 				.string()
 				.min(1, t.required)
-				.refine(
-					(value) => requestTypes.some((option) => option.value === value),
-					t.required,
-				),
+				.refine((value) => requestTypeValues.has(value), t.required),
 			country: z
 				.string()
-				.refine(
-					(value) =>
-						!value || contactCountries.some((option) => option.value === value),
-					t.required,
-				),
+				.refine((value) => !value || countryValues.has(value), t.required),
 			message: z.string().trim().min(20, t.shortMessage).max(5_000),
 			website: z.string().max(0),
 			turnstileToken: z.string(),
@@ -50,8 +48,7 @@ export function buildContactSchema(
 
 			if (values.channel !== "email") return;
 
-			const email = z.email().safeParse(values.email);
-			if (!email.success) {
+			if (!z.email().safeParse(values.email).success) {
 				context.addIssue({
 					code: "custom",
 					path: ["email"],

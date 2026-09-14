@@ -30,7 +30,7 @@ describe("territorial editorial contract", () => {
 				section.title.pt,
 				section.description.pt,
 				...section.paragraphs.map((p) => p.pt),
-				...(section.items ?? []).map((p) => p.pt),
+				...(section.items ?? []).map((item) => item.title.pt),
 			);
 		for (const value of values)
 			if (approved.includes(value)) expect(approved, value).toContain(value);

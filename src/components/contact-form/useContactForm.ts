@@ -25,16 +25,25 @@ export function useContactForm({
 }: ContactFormProps) {
 	const t = contactFormCopy[locale];
 	const prefix = useId();
-	const id = (name: string) => `${prefix}-${name}`;
 	const statusRef = useRef<HTMLDivElement>(null);
 	const errorSummaryRef = useRef<HTMLDivElement>(null);
 	const requestIdRef = useRef<string | null>(null);
+
 	const [channel, setChannel] = useState<FormValues["channel"]>("email");
 	const [startedAt, setStartedAt] = useState(() => Date.now());
-	const [status, setStatus] = useState<SubmitStatus>("idle");
-	const [statusMessage, setStatusMessage] = useState("");
+	const [{ status, statusMessage }, setFeedback] = useState<{
+		status: SubmitStatus;
+		statusMessage: string;
+	}>({ status: "idle", statusMessage: "" });
 	const [whatsappPreview, setWhatsappPreview] = useState("");
 	const [showCopyFallback, setShowCopyFallback] = useState(false);
+
+	const updateStatus = useCallback(
+		(status: SubmitStatus, statusMessage = "") =>
+			setFeedback({ status, statusMessage }),
+		[],
+	);
+
 	const {
 		register,
 		handleSubmit,
@@ -64,12 +73,16 @@ export function useContactForm({
 
 	const scope = watch("scope");
 	const requestType = watch("requestType");
+
 	useEffect(() => {
 		const selected = requestTypes.find(
 			(option) => option.value === requestType,
 		);
-		if (selected && selected.scope !== scope) setValue("scope", selected.scope);
+		if (selected && selected.scope !== scope) {
+			setValue("scope", selected.scope);
+		}
 	}, [requestType, requestTypes, scope, setValue]);
+
 	useEffect(() => {
 		const chosen = new URL(window.location.href).searchParams.get("scope");
 		if (isContactScope(chosen)) setValue("scope", chosen);
@@ -80,15 +93,16 @@ export function useContactForm({
 			setValue("turnstileToken", token, { shouldValidate: true }),
 		[setValue],
 	);
+
 	const onTurnstileExpire = useCallback(
 		() => setValue("turnstileToken", ""),
 		[setValue],
 	);
+
 	const onTurnstileError = useCallback(() => {
 		setValue("turnstileToken", "");
-		setStatus("error");
-		setStatusMessage(t.turnstileError);
-	}, [setValue, t.turnstileError]);
+		updateStatus("error", t.turnstileError);
+	}, [setValue, updateStatus, t.turnstileError]);
 
 	const { containerRef: turnstileContainerRef, resetWidget: resetTurnstile } =
 		useTurnstileWidget({
@@ -102,13 +116,15 @@ export function useContactForm({
 	useEffect(() => {
 		const url = new URL(window.location.href);
 		if (url.searchParams.get("status") !== "sent") return;
-		setStatus("success");
+
 		const completedScope = url.searchParams.get("scope");
-		setStatusMessage(
+		updateStatus(
+			"success",
 			isContactScope(completedScope)
 				? scopeConfirmations[locale][completedScope]
 				: t.success,
 		);
+
 		url.searchParams.delete("status");
 		window.history.replaceState(
 			null,
@@ -116,13 +132,12 @@ export function useContactForm({
 			`${url.pathname}${url.search}${url.hash}`,
 		);
 		requestAnimationFrame(() => statusRef.current?.focus());
-	}, [t.success, locale]);
+	}, [t.success, locale, updateStatus]);
 
 	function chooseChannel(nextChannel: FormValues["channel"]) {
 		setChannel(nextChannel);
 		setValue("channel", nextChannel, { shouldValidate: true });
-		setStatus("idle");
-		setStatusMessage("");
+		updateStatus("idle");
 		setWhatsappPreview("");
 		setShowCopyFallback(false);
 		setStartedAt(Date.now());
@@ -130,6 +145,7 @@ export function useContactForm({
 
 	function offerWhatsappFallback(data = getValues()) {
 		if (!whatsappHref || !canOfferWhatsappFallback(data, requestTypes)) return;
+
 		setWhatsappPreview(
 			buildWhatsappPreview(
 				data,
@@ -144,11 +160,6 @@ export function useContactForm({
 	}
 
 	async function submit(data: FormValues) {
-		const name = data.name;
-		const requestType = data.requestType;
-		const countryCode = data.country;
-		const message = data.message;
-
 		if (channel === "whatsapp" && whatsappHref) {
 			setWhatsappPreview(
 				buildWhatsappPreview(
@@ -164,8 +175,8 @@ export function useContactForm({
 		}
 
 		if (!turnstileSiteKey || !data.turnstileToken) {
-			setStatus("error");
-			setStatusMessage(
+			updateStatus(
+				"error",
 				turnstileSiteKey ? t.turnstileError : t.configurationError,
 			);
 			offerWhatsappFallback(data);
@@ -173,10 +184,11 @@ export function useContactForm({
 			return;
 		}
 
-		setStatus("sending");
-		setStatusMessage("");
+		updateStatus("sending");
+
 		try {
-			if (!requestIdRef.current) requestIdRef.current = crypto.randomUUID();
+			requestIdRef.current ||= crypto.randomUUID();
+
 			const response = await fetch("/api/contact", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -184,40 +196,44 @@ export function useContactForm({
 				body: JSON.stringify({
 					requestId: requestIdRef.current,
 					locale,
-					name,
+					name: data.name,
 					email: data.email,
 					whatsapp: data.whatsapp,
-					requestType,
+					requestType: data.requestType,
 					scope: data.scope,
-					country: countryCode,
-					message,
+					country: data.country,
+					message: data.message,
 					website: data.website,
 					startedAt,
 					turnstileToken: data.turnstileToken,
 				}),
 			});
 			const result = (await response.json()) as ContactResponse;
+
 			if (
 				result.version !== 1 ||
 				result.requestId !== requestIdRef.current ||
 				result.code !== "accepted" ||
 				!response.ok
-			)
+			) {
 				throw new Error(
 					result.code === "unavailable" ? "unavailable" : "invalid",
 				);
+			}
+
 			reset();
 			requestIdRef.current = null;
 			setStartedAt(Date.now());
+
 			const url = new URL(window.location.href);
 			url.search = `?status=sent&scope=${encodeURIComponent(data.scope)}`;
 			url.hash = "contact-form-status";
 			window.location.replace(url);
 		} catch (error) {
-			setStatus("error");
-			setStatusMessage(t.error);
-			if (error instanceof Error && error.message === "unavailable")
+			updateStatus("error", t.error);
+			if (error instanceof Error && error.message === "unavailable") {
 				offerWhatsappFallback(data);
+			}
 		} finally {
 			setValue("turnstileToken", "");
 			resetTurnstile();
@@ -227,32 +243,29 @@ export function useContactForm({
 
 	function openWhatsapp() {
 		if (!whatsappHref || !whatsappPreview) return;
+
 		const destination = `${whatsappHref}?text=${encodeURIComponent(whatsappPreview)}`;
 		if (destination.length > 2_000) {
-			setStatus("error");
-			setStatusMessage(t.fallbackTooLong);
+			updateStatus("error", t.fallbackTooLong);
 			statusRef.current?.focus();
 			return;
 		}
-		const opened = window.open(destination, "_blank", "noopener,noreferrer");
-		if (!opened) setShowCopyFallback(true);
+
+		if (!window.open(destination, "_blank", "noopener,noreferrer")) {
+			setShowCopyFallback(true);
+		}
 	}
 
 	async function copyWhatsappFallback() {
 		if (!whatsappPreview) return;
+
 		try {
 			await navigator.clipboard.writeText(whatsappPreview);
-			setShowCopyFallback(true);
 		} catch {
-			setShowCopyFallback(true);
+			// Keep the text available for manual copying.
 		}
+		setShowCopyFallback(true);
 	}
-
-	const countries = contactCountries.map((country) => ({
-		value: country.value,
-		flag: "flag" in country ? country.flag : undefined,
-		label: country.label[locale],
-	}));
 
 	return {
 		t,
@@ -263,7 +276,7 @@ export function useContactForm({
 		requestTypes,
 		turnstileSiteKey,
 		whatsappHref,
-		id,
+		id: (name: string) => `${prefix}-${name}`,
 		statusRef,
 		errorSummaryRef,
 		channel,
@@ -275,7 +288,11 @@ export function useContactForm({
 		scopeSubmitLabel: isContactScope(scope)
 			? scopeSubmitLabels[locale][scope]
 			: t.submit,
-		countries,
+		countries: contactCountries.map((country) => ({
+			value: country.value,
+			flag: "flag" in country ? country.flag : undefined,
+			label: country.label[locale],
+		})),
 		errors,
 		isSubmitting,
 		register,
