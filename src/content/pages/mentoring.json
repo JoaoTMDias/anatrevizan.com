@@ -1,129 +1,128 @@
 {
-	"_template": "academicService",
-	"routeKey": "mentoring",
-	"title": {
-		"pt": "Mentorias e Apoio Académico",
-		"en": "Mentorship and Academic Support"
-	},
-	"summary": {
-		"pt": "Está a escrever uma tese, a preparar um artigo ou a começar uma investigação? Posso ajudar a organizar o trabalho e a encontrar os próximos passos.",
-		"en": "Are you writing a thesis, preparing an article or starting a research project? I can help organise the work and find the next steps."
-	},
-	"seo": {
-		"title": {
-			"pt": "Mentorias e Apoio Académico · Publicar com quem já publicou",
-			"en": "Mentorship and Academic Support · Publish with Proven Experience - Ana Trevizan"
-		},
-		"description": {
-			"pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
-			"en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation."
-		},
-		"noindex": true
-	},
-	"media": {
-		"foreground": {
-			"image": "/mentorias-e-apoio-academico-hero.webp",
-			"alt": {
-				"pt": "Close-up da Ana a tomar notas em papel.",
-				"en": "Close-up of Ana taking notes on paper."
-			},
-			"decorative": false
-		}
-	},
-	"academicService": {
-		"subtitle": {
-			"pt": "Está a escrever uma tese, a preparar um artigo ou a começar uma investigação? Posso ajudar a organizar o trabalho e a encontrar os próximos passos.",
-			"en": "Are you writing a thesis, preparing an article or starting a research project? I can help organise the work and find the next steps."
-		},
-		"introHeading": {
-			"pt": "Sei onde a escrita costuma travar",
-			"en": "I know where writing usually gets stuck"
-		},
-		"introImage": {
-			"image": "/hero-placeholder.webp",
-			"decorative": true
-		},
-		"introParagraphs": {
-			"pt": "Uma tese não emperra por falta de esforço. Emperra na estrutura que não fecha, no argumento que não avança, no artigo que volta rejeitado sem se perceber porquê.\n\nJá passei por tudo isso e ajudo-o a atravessá-lo: com leitura técnica atenta, método e a experiência de quem publica em revistas internacionais e revê para periódicos científicos.",
-			"en": "A thesis doesn't stall due to lack of effort. It stalls over an incomplete structure, an argument that won't move forward, or an article rejected without a clear explanation.\n\nHaving navigated these hurdles myself, I help you overcome them through rigorous technical review, clear methodology, and hands-on experience publishing in and reviewing for international journals."
-		},
-		"servicesHeading": {
-			"pt": "Como posso apoiar",
-			"en": "How I can support you"
-		},
-		"services": [
-			{
-				"title": {
-					"pt": "Revisão técnica de artigos",
-					"en": "Technical Paper Review"
-				},
-				"description": {
-					"pt": "Revisão de conteúdo jurídico e científico em português, inglês e espanhol.",
-					"en": "Review of legal and scientific content in Portuguese, English, and Spanish."
-				}
-			},
-			{
-				"title": {
-					"pt": "Estratégia de pesquisa",
-					"en": "Research Strategy"
-				},
-				"description": {
-					"pt": "Definição de foco, questão e desenho metodológico do seu projeto.",
-					"en": "Defining project scope, research questions, and methodological design."
-				}
-			},
-			{
-				"title": {
-					"pt": "Estruturação de dissertações",
-					"en": "Dissertation & Thesis Structuring"
-				},
-				"description": {
-					"pt": "Organização da tese, do argumento central à arquitetura dos capítulos.",
-					"en": "Structuring the dissertation, from core arguments to chapter architecture."
-				}
-			},
-			{
-				"title": {
-					"pt": "Orientação metodológica",
-					"en": "Methodological Guidance"
-				},
-				"description": {
-					"pt": "Método adequado à sua pergunta e à sua área.",
-					"en": "Tailoring methodologies to your specific research question and domain."
-				}
-			},
-			{
-				"title": {
-					"pt": "Destravamento da escrita",
-					"en": "Overcoming Writer's Block"
-				},
-				"description": {
-					"pt": "Apoio para sair do bloqueio e recuperar o ritmo de produção.",
-					"en": "Targeted support to overcome blocks and regain writing momentum."
-				}
-			},
-			{
-				"title": {
-					"pt": "Preparação para publicação internacional",
-					"en": "International Publishing Preparation"
-				},
-				"description": {
-					"pt": "Adequação do artigo às exigências de revistas indexadas.",
-					"en": "Aligning manuscripts with the standards of indexed journals."
-				}
-			}
-		],
-		"note": {
-			"pt": "Apoio académico e metodológico. Orçamento sob consulta; o primeiro contacto é feito pela marcação de uma conversa inicial.",
-			"en": "Academic and methodological support. Quotes available upon request; initial contact is made by booking an introductory call."
-		},
-		"ctaHeading": {
-			"pt": "Vamos destravar a sua pesquisa?",
-			"en": "Ready to advance your research?"
-		},
-		"ctaText": {
-			"pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
-			"en": "Schedule an initial call and share where you currently stand with your thesis or paper."
-		}
-	}
+  "routeKey": "mentoring",
+  "title": {
+    "pt": "Mentorias Profissionais e Académicas",
+    "en": "Mentorship and Academic Support"
+  },
+  "summary": {
+    "pt": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
+    "en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+  },
+  "seo": {
+    "title": {
+      "pt": "Mentorias Profissionais e Académicas · Publicar com quem já publicou",
+      "en": "Mentorship and Academic Support · Publish with Proven Experience - Ana Trevizan"
+    },
+    "description": {
+      "pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
+      "en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation."
+    }
+  },
+  "media": {
+    "foreground": {
+      "image": "/mentorias-e-apoio-academico-hero.webp",
+      "alt": {
+        "pt": "Close-up da Ana a tomar notas em papel.",
+        "en": "Close-up of Ana taking notes on paper."
+      },
+      "decorative": false
+    }
+  },
+  "academicService": {
+    "subtitle": {
+      "pt": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
+      "en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+    },
+    "introHeading": {
+      "pt": "Experiência para acompanhar o seu percurso",
+      "en": "Experience to support you on your journey"
+    },
+    "introImage": {
+      "image": "/hero-placeholder.webp",
+      "decorative": true
+    },
+    "introParagraphs": {
+      "pt": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n",
+      "en": "Choosing a master’s or PhD programme, undertaking research or taking your career in a new direction involves uncertainties and important decisions. It is not always easy to identify opportunities and work out where to start.\n\nI draw on the experience I have gained in the legal profession, in teaching and in international research to help you turn your goals into an action plan, using a structured approach, listening carefully and taking your career path into account.\n"
+    },
+    "servicesHeading": {
+      "pt": "Como posso apoiar",
+      "en": "How I can support you"
+    },
+    "services": [
+      {
+        "title": {
+          "pt": "Planeamento de carreira",
+          "en": "Career planning"
+        },
+        "description": {
+          "pt": "Definição de objetivos e próximos passos profissionais, considerando a sua experiência, os seus interesses e as oportunidades de atuação.",
+          "en": "Setting career goals and planning your next career steps, taking into account your experience, your interests and the opportunities available."
+        }
+      },
+      {
+        "title": {
+          "pt": "Candidaturas a mestrados e doutoramentos",
+          "en": "Applications for master’s and doctoral programmes"
+        },
+        "description": {
+          "pt": "Escolha de programas e preparação de candidaturas, com atenção aos requisitos, à documentação e ao projeto exigido.",
+          "en": "Selecting programmes and preparing applications, paying close attention to the requirements, the necessary documentation and the project proposal."
+        }
+      },
+      {
+        "title": {
+          "pt": "Estratégia e metodologia de pesquisa",
+          "en": "Research strategy and methodology"
+        },
+        "description": {
+          "pt": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto.",
+          "en": "Defining the topic, formulating the research question and selecting the appropriate methods for your project."
+        }
+      },
+      {
+        "title": {
+          "pt": "Estruturação e escrita académica",
+          "en": "Academic structuring and writing"
+        },
+        "description": {
+          "pt": "Organização de dissertações e teses, desenvolvimento dos argumentos e estratégias para superar bloqueios na escrita.",
+          "en": "Organisation of dissertations and theses, development of arguments and strategies for overcoming writer’s block."
+        }
+      },
+      {
+        "title": {
+          "pt": "Revisão técnica de artigos",
+          "en": "Technical review of articles"
+        },
+        "description": {
+          "pt": "Análise do rigor do conteúdo, da coerência dos argumentos e da clareza da escrita em português, inglês e espanhol.",
+          "en": "Analysis of the accuracy of the content, the coherence of the arguments and the clarity of the writing in Portuguese, English and Spanish."
+        }
+      },
+      {
+        "title": {
+          "pt": "Preparação para publicação internacional",
+          "en": "International Publishing Preparation"
+        },
+        "description": {
+          "pt": "Seleção de revistas e adequação do manuscrito às normas editoriais e aos critérios de submissão.",
+          "en": "Selection of journals and ensuring the manuscript complies with editorial guidelines and submission criteria."
+        }
+      }
+    ],
+    "note": {
+      "pt": "Cada mentoria é definida a partir dos seus objetivos, do momento em que se encontra e dos desafios que pretende trabalhar.",
+      "en": "Each mentoring programme is tailored to your objectives, your current situation and the challenges you wish to address."
+    },
+    "ctaHeading": {
+      "pt": "Vamos destravar a sua pesquisa?",
+      "en": "Ready to advance your research?"
+    },
+    "ctaText": {
+      "pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
+      "en": "Schedule an initial call and share where you currently stand with your thesis or paper."
+    }
+  },
+  "_template": "academicService"
 }

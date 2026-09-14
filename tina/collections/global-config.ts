@@ -171,7 +171,10 @@ export const GlobalConfigCollection: Collection = {
 					type: "object",
 					fields: [
 						localizedText("label", "Nome do menu"),
-						navigationEntry("mentoring", "Mentorias e Apoio Académico"),
+						navigationEntry(
+							"mentoring",
+							"Mentorias Profissionais e Académicas",
+						),
 						navigationEntry("publications", "Publicações"),
 						navigationEntry("events", "Eventos e Palestras"),
 						navigationEntry("training", "Cursos e Formações"),

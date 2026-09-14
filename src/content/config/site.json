@@ -303,7 +303,11 @@
 				}
 			}
 		],
-		"serviceLanguages": ["PT", "EN", "ES"]
+		"serviceLanguages": [
+			"PT",
+			"EN",
+			"ES"
+		]
 	},
 	"navigation": {
 		"consulting": {
@@ -403,7 +407,7 @@
 			},
 			"mentoring": {
 				"label": {
-					"pt": "Mentorias e Apoio Académico",
+					"pt": "Mentorias Profissionais e Académicas",
 					"en": "Mentoring"
 				},
 				"description": {
