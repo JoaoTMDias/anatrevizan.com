@@ -9,15 +9,15 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					"bg-linear-to-br from-[color-mix(in_oklch,var(--primary),white_10%)] to-primary text-primary-foreground hover:from-[color-mix(in_oklch,var(--primary),black_10%)]",
+					"bg-linear-to-br from-[color-mix(in_oklch,var(--primary),white_10%)] to-primary text-primary-foreground hover:from-[color-mix(in_oklch,var(--primary),black_18%)] focus-visible:from-[color-mix(in_oklch,var(--primary),black_28%)] focus-visible:to-[color-mix(in_oklch,var(--primary),black_8%)]",
 				outline:
-					"border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+					"border-border bg-background hover:bg-muted hover:text-foreground focus-visible:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_16%)] focus-visible:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
 				secondary:
-					"bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+					"bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_12%)] focus-visible:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_24%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
 				ghost:
-					"hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+					"hover:bg-muted hover:text-foreground focus-visible:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_16%)] focus-visible:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
 				destructive:
-					"bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+					"bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:bg-destructive/30 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:bg-destructive/40 dark:focus-visible:ring-destructive/40",
 				link: "text-primary underline-offset-4 hover:underline",
 			},
 			size: {

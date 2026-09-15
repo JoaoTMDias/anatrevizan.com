@@ -114,6 +114,11 @@
 		color: var(--accent-foreground);
 	}
 
+	.theme-toggle:focus-visible {
+		background: color-mix(in oklab, var(--accent), black 16%);
+		color: var(--accent-foreground);
+	}
+
 	.theme-toggle svg {
 		width: 1.125rem;
 		height: 1.125rem;

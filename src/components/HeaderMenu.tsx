@@ -159,7 +159,7 @@ export default function HeaderMenu({
 										navigationMenuTriggerStyle(),
 										"text-foreground/80 hover:text-primary",
 										item.emphasis &&
-											"ml-2 rounded-full bg-linear-to-br from-[color-mix(in_oklch,var(--action-primary),white_10%)] to-action-primary px-5 text-action-primary-foreground shadow-sm hover:from-[color-mix(in_oklch,var(--action-primary),black_10%)] hover:text-action-primary-foreground focus:text-action-primary-foreground active:text-action-primary-foreground",
+											"ml-2 rounded-full bg-linear-to-br from-[color-mix(in_oklch,var(--action-primary),white_10%)] to-action-primary px-5 text-action-primary-foreground shadow-sm hover:from-[color-mix(in_oklch,var(--action-primary),black_18%)] hover:text-action-primary-foreground focus-visible:from-[color-mix(in_oklch,var(--action-primary),black_28%)] focus-visible:to-[color-mix(in_oklch,var(--action-primary),black_8%)] focus:text-action-primary-foreground active:text-action-primary-foreground",
 									)}
 									aria-current={item.isCurrent ? "page" : undefined}
 								>
@@ -259,7 +259,7 @@ export default function HeaderMenu({
 										className={cn(
 											"block rounded-md px-3 py-3 font-medium hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
 											item.emphasis &&
-												"rounded-full bg-action-primary px-5 text-action-primary-foreground hover:bg-action-primary/90 hover:text-action-primary-foreground focus:bg-action-primary focus:text-action-primary-foreground active:bg-action-primary active:text-action-primary-foreground",
+												"rounded-full bg-action-primary px-5 text-action-primary-foreground hover:bg-[color-mix(in_oklch,var(--action-primary),black_18%)] hover:text-action-primary-foreground focus:bg-[color-mix(in_oklch,var(--action-primary),black_28%)] focus:text-action-primary-foreground active:bg-action-primary active:text-action-primary-foreground",
 										)}
 										aria-current={item.isCurrent ? "page" : undefined}
 									>

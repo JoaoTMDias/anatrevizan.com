@@ -178,10 +178,10 @@
 		@apply size-5;
 	}
 	.home-gateway h2 {
-		@apply relative max-w-[calc(100%-5rem)] text-[clamp(2rem,4vw,3rem)] leading-[1.05] font-bold;
+		@apply relative max-w-[calc(100%-9rem)] text-[clamp(2rem,4vw,3rem)] leading-[1.05] font-bold;
 	}
 	.home-gateway__eyebrow {
-		@apply relative mt-2.5 max-w-[calc(100%-5rem)] text-[0.8125rem]/[1.5] font-semibold tracking-[0.08em] text-[#d9c8c3] uppercase;
+		@apply relative mt-2.5 max-w-[calc(100%-9rem)] text-[0.8125rem]/[1.5] font-semibold tracking-[0.08em] text-[#d9c8c3] uppercase;
 	}
 	.home-gateway__description {
 		@apply relative max-w-[34rem] self-center text-base/[1.65] text-[#d9c8c3];
