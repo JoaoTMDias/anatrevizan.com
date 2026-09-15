@@ -368,10 +368,6 @@
 		gap: 1.5rem;
 		max-width: none;
 	}
-	.contact-hero .editorial-hero__foreground {
-		max-width: 10rem;
-		justify-self: start;
-	}
 	.contact-hero__actions {
 		display: flex;
 		flex-wrap: wrap;
@@ -384,15 +380,6 @@
 	.contact-message:target {
 		outline: 2px solid var(--ring);
 		outline-offset: 0.5rem;
-	}
-	@media (min-width: 48rem) {
-		.contact-hero .editorial-hero__content {
-			grid-template-columns: minmax(0, 1fr) minmax(10rem, 16rem);
-		}
-		.contact-hero .editorial-hero__foreground {
-			max-width: 16rem;
-			justify-self: end;
-		}
 	}
 }
 
