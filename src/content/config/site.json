@@ -303,11 +303,7 @@
 				}
 			}
 		],
-		"serviceLanguages": [
-			"PT",
-			"EN",
-			"ES"
-		]
+		"serviceLanguages": ["PT", "EN", "ES"]
 	},
 	"navigation": {
 		"consulting": {
