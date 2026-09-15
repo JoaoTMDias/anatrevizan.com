@@ -64,6 +64,8 @@ const sharedStringNames = new Set([
 	"slug",
 	"date",
 	"year",
+	"language",
+	"precision",
 ]);
 
 const listLabelKeys = [

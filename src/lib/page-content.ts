@@ -183,16 +183,39 @@ export interface EventsPageContent {
 	emptyHeading: string;
 	emptyText: string;
 	speakerKitCta: string;
+	listHeading: string;
+	filters: {
+		allYears: string;
+		allFormats: string;
+		allLanguages: string;
+		clear: string;
+		singleResult: string;
+		multipleResults: string;
+		view: string;
+		empty: string;
+	};
 	entries?: Array<{
 		slug: string;
-		date: string;
+		title: string;
+		date: {
+			year: string;
+			month?: number | null;
+			day?: number | null;
+			endDay?: number | null;
+			precision: string;
+			pending?: boolean | null;
+		};
+		format: string;
 		city: string;
 		country: string;
+		online?: boolean | null;
 		event: string;
 		institution: string;
+		language: string;
 		topic?: string | null;
 		role?: string | null;
 		url?: string | null;
+		highlight?: string | null;
 	}> | null;
 }
 

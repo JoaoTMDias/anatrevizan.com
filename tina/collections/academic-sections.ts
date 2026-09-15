@@ -97,7 +97,7 @@ export const publicationsPageFields: TinaField[] = [
 export const eventsPageFields: TinaField[] = [
 	{
 		name: "eventsPage",
-		label: "Conteúdo da página Eventos",
+		label: "Eventos",
 		type: "object",
 		fields: [
 			text("tag", "Etiqueta do hero"),
@@ -105,18 +105,55 @@ export const eventsPageFields: TinaField[] = [
 			text("emptyHeading", "Título sem eventos"),
 			text("emptyText", "Texto sem eventos"),
 			text("speakerKitCta", "CTA do kit de palestrante"),
+			text("listHeading", "Título da lista"),
+			{
+				name: "filters",
+				label: "Labels dos filtros",
+				type: "object",
+				fields: [
+					text("allYears", "Todos os anos"),
+					text("allFormats", "Todos os formatos"),
+					text("allLanguages", "Todos os idiomas"),
+					text("clear", "Limpar filtros"),
+					text("singleResult", "Resultado no singular"),
+					text("multipleResults", "Resultados no plural"),
+					text("view", "Ver evento"),
+					text("empty", "Mensagem sem resultados"),
+				],
+			},
 			{
 				name: "entries",
-				label: "Eventos",
+				label: "Palestras e participações",
 				type: "object",
 				list: true,
 				fields: [
 					text("slug", "Slug"),
-					{ name: "date", label: "Data", type: "datetime", required: true },
+					text("title", "Título"),
+					{
+						name: "date",
+						label: "Data editorial",
+						type: "object",
+						fields: [
+							{ name: "year", label: "Ano", type: "string", required: true },
+							{ name: "month", label: "Mês", type: "number" },
+							{ name: "day", label: "Dia", type: "number" },
+							{ name: "endDay", label: "Dia final", type: "number" },
+							{
+								name: "precision",
+								label: "Precisão",
+								type: "string",
+								required: true,
+							},
+							{ name: "pending", label: "Data a confirmar", type: "boolean" },
+						],
+					},
+					text("format", "Formato"),
 					text("city", "Cidade"),
 					text("country", "País"),
+					{ name: "online", label: "Participação online", type: "boolean" },
 					text("event", "Evento"),
 					text("institution", "Instituição"),
+					text("language", "Idioma"),
 					text("topic", "Tema", false),
 					text("role", "Papel", false),
 					text("url", "URL", false),
@@ -129,7 +166,7 @@ export const eventsPageFields: TinaField[] = [
 export const speakingPageFields: TinaField[] = [
 	{
 		name: "speakingPage",
-		label: "Conteúdo da página Palestras",
+		label: "Palestras",
 		type: "object",
 		fields: [
 			text("tag", "Etiqueta do hero"),
