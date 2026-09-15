@@ -19,12 +19,15 @@ const {
   sizes,
   loading = "lazy",
   decoding = "async",
-  border = "default",
+  border = "none",
   class: className,
   ...rest
 } = Astro.props;
 const publicPath = typeof src === "string" ? src : null;
-const borderClass = border === "none" ? "" : `gradient-border${border === "golden" ? " gradient-border--golden" : ""}`;
+const borderClass =
+  border === "none"
+    ? ""
+    : `gradient-border${border === "golden" ? " gradient-border--golden" : ""}`;
 const cssClass = [borderClass, className].filter(Boolean).join(" ");
 
 if (publicPath && !isRenderableImage(publicPath))
