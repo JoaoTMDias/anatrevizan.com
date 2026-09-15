@@ -119,20 +119,6 @@
 		background: var(--brand-burgundy);
 		color: var(--inverse-foreground);
 	}
-	.publication-card--highlight .publication-card__meta,
-	.publication-card--highlight h2 + p,
-	.publication-card--highlight .publication-card__link {
-		color: var(--inverse-foreground) !important;
-	}
-	.publication-card--highlight .publication-card__meta strong {
-		@apply rounded-none bg-transparent p-0;
-
-		color: var(--inverse-foreground);
-	}
-	.publication-card--highlight li {
-		background: rgb(255 255 255 / 8%) !important;
-		color: var(--inverse-foreground) !important;
-	}
 	.publication-card--highlight .acronym-tooltip__trigger {
 		text-decoration-color: var(--inverse-foreground);
 	}
@@ -177,6 +163,20 @@
 		@apply rounded-sm px-2 py-0.5 text-xs text-primary;
 
 		background: color-mix(in oklab, var(--primary) 9%, var(--background));
+	}
+	.publication-card--highlight .publication-card__meta,
+	.publication-card--highlight h2 + p,
+	.publication-card--highlight .publication-card__link {
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight .publication-card__meta strong {
+		@apply rounded-none bg-transparent p-0;
+
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight li {
+		background: rgb(255 255 255 / 8%);
+		color: var(--inverse-foreground);
 	}
 	.publication-card__unavailable {
 		@apply text-left text-base text-muted-foreground;

@@ -144,7 +144,7 @@
 	}
 	@media (min-width: 64rem) {
 		.about-region-card {
-			flex-direction: row !important;
+			flex-direction: row;
 		}
 		.about-region-card__media {
 			@apply aspect-auto w-2/5 shrink-0;
