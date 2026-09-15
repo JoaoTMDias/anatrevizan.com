@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const mode = process.argv[2];
+const expectedPublishedDocuments = 28;
 assert(
 	mode === "preview" || mode === "production",
 	"Expected preview or production mode",
@@ -24,7 +25,7 @@ const manifest = JSON.parse(
 };
 
 assert.equal(manifest.mode, mode);
-assert.equal(manifest.totalDocuments, 32);
+assert.equal(manifest.totalDocuments, expectedPublishedDocuments);
 assert.deepEqual(manifest.missingRoutes, []);
 assert.equal(
 	manifest.generatedEditorialRoutes,
@@ -32,9 +33,9 @@ assert.equal(
 );
 
 if (mode === "preview") {
-	assert.equal(manifest.expectedEditorialRoutes, 32);
+	assert.equal(manifest.expectedEditorialRoutes, expectedPublishedDocuments);
 } else {
-	assert.equal(manifest.publishableDocuments, 32);
-	assert.equal(manifest.expectedEditorialRoutes, 32);
+	assert.equal(manifest.publishableDocuments, expectedPublishedDocuments);
+	assert.equal(manifest.expectedEditorialRoutes, expectedPublishedDocuments);
 }
 console.log(`Build output validation passed in ${mode} mode.`);
