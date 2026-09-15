@@ -60,7 +60,6 @@ const landscapeHeroRoutes = new Set<RouteKey>([
 	"publications",
 	"training",
 	"about",
-	"legal-opinions",
 	"legal",
 ]);
 

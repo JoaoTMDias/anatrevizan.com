@@ -147,20 +147,10 @@ export const GlobalConfigCollection: Collection = {
 							true,
 						),
 						navigationEntry("legal", "Advocacia no Brasil", true),
-						navigationEntry(
-							"portugalSupport",
-							"Apoio administrativo em Portugal",
-							true,
-						),
 						navigationEntry("environmentalEsg", "Ambiental e ESG", true),
 						navigationEntry(
 							"publicPolicy",
 							"Políticas Públicas e Governança",
-							true,
-						),
-						navigationEntry(
-							"legalOpinions",
-							"Pareceres e Notas Técnicas",
 							true,
 						),
 					],

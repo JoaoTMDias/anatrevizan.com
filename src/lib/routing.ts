@@ -6,10 +6,6 @@ export type EditorialLocale = (typeof editorialLocales)[number];
 
 export const routeMap = {
 	practice: { "pt-PT": "/atuacao", en: "/en/practice" },
-	"portugal-support": {
-		"pt-PT": "/atuacao/apoio-administrativo-portugal",
-		en: "/en/practice/administrative-support-portugal",
-	},
 	home: { "pt-PT": "/", en: "/en" },
 	"immigration-mobility": {
 		"pt-PT": "/atuacao/migracao-e-mobilidade",
@@ -26,10 +22,6 @@ export const routeMap = {
 	"public-policy": {
 		"pt-PT": "/atuacao/esg-politicas-publicas-sustentabilidade",
 		en: "/en/practice/esg-public-policy-sustainability",
-	},
-	"legal-opinions": {
-		"pt-PT": "/atuacao/pareceres-e-notas-tecnicas",
-		en: "/en/practice/legal-opinions-technical-reports",
 	},
 	mentoring: { "pt-PT": "/academia/mentorias", en: "/en/academic/mentoring" },
 	publications: {

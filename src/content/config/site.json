@@ -370,34 +370,6 @@
 					"pt": "🇧🇷",
 					"en": "🇧🇷"
 				}
-			},
-			"legalOpinions": {
-				"label": {
-					"pt": "Pareceres jurídicos em Direito brasileiro",
-					"en": "Legal opinions under Brazilian law"
-				},
-				"description": {
-					"pt": "Análise clara e fundamentada para apoiar decisões, propostas e projetos no contexto do Direito brasileiro.",
-					"en": "Clear, grounded analysis to support decisions, proposals and projects under Brazilian law."
-				},
-				"tag": {
-					"pt": "🇧🇷",
-					"en": "🇧🇷"
-				}
-			},
-			"portugalSupport": {
-				"label": {
-					"pt": "Apoio administrativo em Portugal",
-					"en": "Administrative support in Portugal"
-				},
-				"description": {
-					"pt": "Organização documental e acompanhamento prático para tornar procedimentos e registos mais claros e manejáveis.",
-					"en": "Document organisation and practical support to make procedures and registrations clearer and more manageable."
-				},
-				"tag": {
-					"pt": "🇵🇹",
-					"en": "🇵🇹"
-				}
 			}
 		},
 		"academic": {

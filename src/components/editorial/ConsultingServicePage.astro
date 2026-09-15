@@ -34,12 +34,32 @@ const crosslinkLabel =
       : "Consultoria jurídica no Brasil";
 const accent = data.routeKey === "environmental-esg";
 const serviceIconsByRoute = {
-  "immigration-mobility": ["route", "e-passport", "language", "clipboard-check", "briefcase", "award"],
-  "environmental-esg": ["scale", "shield-check", "file-certificate", "chart-donut", "route", "users-group"],
+  "immigration-mobility": [
+    "route",
+    "e-passport",
+    "language",
+    "clipboard-check",
+    "briefcase",
+    "award",
+  ],
+  "environmental-esg": [
+    "scale",
+    "shield-check",
+    "file-certificate",
+    "chart-donut",
+    "route",
+    "users-group",
+  ],
   "public-policy": ["file-analytics", "building-community", "users-group", "user-cog"],
-  "legal-opinions": ["leaf", "world", "e-passport", "scale", "shield-check", "users-group"],
 };
-const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIconsByRoute] ?? ["files", "files", "files", "files", "files", "files"];
+const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIconsByRoute] ?? [
+  "files",
+  "files",
+  "files",
+  "files",
+  "files",
+  "files",
+];
 ---
 
 <div
@@ -100,7 +120,11 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
           </div>
         </Section>
         <Section background="bg-secondary">
-          <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} locale={locale} />
+          <SectionHeading
+            title={service.servicesHeading}
+            subtitle={service.servicesSubtitle}
+            locale={locale}
+          />
           <div class="editorial-grid">
             {service.services.map((item, index) => (
               <Card
@@ -114,15 +138,21 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
                   <span class="consulting-card__icon" aria-hidden="true">
                     <Icon name={serviceIcons[index % serviceIcons.length]} />
                   </span>
-                  <h3 class="text-lg font-semibold"><AcronymText text={item.title} locale={locale} /></h3>
+                  <h3 class="text-lg font-semibold">
+                    <AcronymText text={item.title} locale={locale} />
+                  </h3>
                 </div>
                 {item.description && (
-                  <p class="text-base leading-relaxed text-muted-foreground"><AcronymText text={item.description} locale={locale} /></p>
+                  <p class="text-base leading-relaxed text-muted-foreground">
+                    <AcronymText text={item.description} locale={locale} />
+                  </p>
                 )}
                 {item.items && (
                   <ul class="consulting-card__items list-disc space-y-2 pl-5 text-base text-muted-foreground">
                     {item.items.map((entry) => (
-                      <li><AcronymText text={entry} locale={locale} /></li>
+                      <li>
+                        <AcronymText text={entry} locale={locale} />
+                      </li>
                     ))}
                   </ul>
                 )}
@@ -132,7 +162,11 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
         </Section>
         {service.steps?.length && service.stepsHeading && (
           <Section>
-            <SectionHeading title={service.stepsHeading} subtitle={service.stepsSubtitle} locale={locale} />
+            <SectionHeading
+              title={service.stepsHeading}
+              subtitle={service.stepsSubtitle}
+              locale={locale}
+            />
             <ol class="consulting-steps scroll-stagger-fade-in">
               {service.steps.map((step) => (
                 <li>
@@ -144,8 +178,12 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
                   >
                     {step.number}
                   </p>
-                  <h3><AcronymText text={step.title} locale={locale} /></h3>
-                  <p><AcronymText text={step.description} locale={locale} /></p>
+                  <h3>
+                    <AcronymText text={step.title} locale={locale} />
+                  </h3>
+                  <p>
+                    <AcronymText text={step.description} locale={locale} />
+                  </p>
                 </li>
               ))}
             </ol>
@@ -216,7 +254,9 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
                             <Icon name="award" />
                           </span>
                         )}
-                        <span><AcronymText text={credential} locale={locale} /></span>
+                        <span>
+                          <AcronymText text={credential} locale={locale} />
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -247,15 +287,17 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
                   class="block rounded-lg transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   aria-label={`${locale === "en" ? "Read publication" : "Ver publicação"}: ${publication.title}`}
                 >
-                <Card as="article" class="p-6 gap-2 relative h-full">
-                  {publication.highlight && (
-                    <p class="absolute -top-2 right-4 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
-                      {publication.highlight}
-                    </p>
-                  )}
-                  <h3 class="text-lg font-semibold"><AcronymText text={publication.title} locale={locale} /></h3>
-                  <p class="text-base text-muted-foreground">{publication.publication}</p>
-                </Card>
+                  <Card as="article" class="p-6 gap-2 relative h-full">
+                    {publication.highlight && (
+                      <p class="absolute -top-2 right-4 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        {publication.highlight}
+                      </p>
+                    )}
+                    <h3 class="text-lg font-semibold">
+                      <AcronymText text={publication.title} locale={locale} />
+                    </h3>
+                    <p class="text-base text-muted-foreground">{publication.publication}</p>
+                  </Card>
                 </a>
               ))}
             </div>

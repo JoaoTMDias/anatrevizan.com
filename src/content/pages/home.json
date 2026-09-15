@@ -68,21 +68,6 @@
           "en": "Explore practice in Brazil"
         },
         "routeKey": "legal"
-      },
-      {
-        "eyebrow": {
-          "pt": "Portugal - Apoio administrativo",
-          "en": "Portugal - Administrative support"
-        },
-        "description": {
-          "pt": "Organização documental e apoio prático em procedimentos administrativos",
-          "en": "Document organisation and practical support in administrative procedures, without legal advice, representation or activities reserved to authorised professionals."
-        },
-        "cta": {
-          "pt": "Conhecer o apoio administrativo",
-          "en": "Explore administrative support"
-        },
-        "routeKey": "portugal-support"
       }
     ],
     "differencesTitle": {

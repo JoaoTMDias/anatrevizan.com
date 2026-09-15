@@ -51,26 +51,6 @@
 			},
 			{
 				"title": {
-					"pt": "Portugal - Apoio administrativo",
-					"en": "Portugal - Administrative support"
-				},
-				"description": {
-					"pt": "Organização documental e apoio prático em procedimentos administrativos, sem consulta jurídica, representação ou prática de atos reservados.",
-					"en": "Document organisation and practical support in administrative procedures, without legal advice, representation or activities reserved to authorised professionals."
-				},
-				"notice": {
-					"pt": "",
-					"en": "No legal consultations or advice, interpretation of Portuguese legislation, drafting of legal documents or contracts, representation, mandates, negotiation on behalf of the person concerned or other activities reserved to lawyers and solicitors are provided."
-				},
-				"cta": {
-					"pt": "Conhecer o apoio administrativo",
-					"en": "Explore administrative support"
-				},
-				"routeKey": "portugal-support",
-				"scope": "PT_ADMIN"
-			},
-			{
-				"title": {
 					"pt": "Academia",
 					"en": "Academia"
 				},

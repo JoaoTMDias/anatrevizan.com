@@ -49,7 +49,11 @@ Atualizado em setembro de 2026. Este documento é a fonte normativa principal.
 
 ## Revisão territorial de setembro de 2026
 
-- Atuação separa advocacia e consultoria em Direito brasileiro (OAB/SP n.º 330.386) de apoio administrativo e técnico não jurídico em Portugal. A página portuguesa é única; Migração e Pareceres apresentam escolha explícita de país sem seleção inicial.
+- Atuação separa advocacia e consultoria em Direito brasileiro (OAB/SP n.º 330.386) de apoio administrativo e técnico não jurídico em Portugal. Migração apresenta escolha explícita de país sem seleção inicial.
 - A arquitetura passa a 16 páginas fixas. Civil, Trabalho e Direitos Humanos ficam agrupados na página brasileira. Não há redirecionamentos de migração, por confirmação de que o site ainda não foi lançado.
 - Nesta revisão, o responsável autorizou tradução assistida PT→EN e propostas para lacunas do documento; ambas aguardam revisão humana antes de produção. Ver `docs/revisao-brasil-portugal.md`.
 - O formulário transmite âmbito profissional independente da residência, IDs estáveis de pedido e validação territorial no servidor. A coluna M do Google Sheets guarda o âmbito, mantendo A:L. Previews exigem destinos de teste explícitos e encaminham ambos os emails para o destinatário de teste.
+
+## Remoção de páginas de setembro de 2026
+
+- As páginas "Apoio administrativo em Portugal" (`portugal-support`) e "Pareceres e Notas Técnicas" (`legal-opinions`) foram removidas, juntamente com as respetivas rotas, entradas de menu e referências no código. A arquitetura passa a 14 páginas fixas.

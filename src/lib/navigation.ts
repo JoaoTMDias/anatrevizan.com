@@ -51,10 +51,8 @@ export function navigationItems(
 					navigation?.consulting?.immigrationMobility,
 				),
 				entry("legal", navigation?.consulting?.legal),
-				entry("portugal-support", navigation?.consulting?.portugalSupport),
 				entry("environmental-esg", navigation?.consulting?.environmentalEsg),
 				entry("public-policy", navigation?.consulting?.publicPolicy),
-				entry("legal-opinions", navigation?.consulting?.legalOpinions),
 			],
 		},
 		{

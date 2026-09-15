@@ -5,7 +5,7 @@ import { installFakeTurnstile } from "./site";
 
 test.beforeEach(async ({ page }) => installFakeTurnstile(page));
 for (const locale of ["pt-PT", "en"] as const) {
-	for (const route of ["immigration-mobility", "legal-opinions"] as const) {
+	for (const route of ["immigration-mobility"] as const) {
 		test(`${locale} ${route}: explicit keyboard choice controls the complete scope`, async ({
 			page,
 		}) => {
@@ -40,28 +40,6 @@ for (const locale of ["pt-PT", "en"] as const) {
 			await expect(page.locator("#scope-br")).toBeHidden();
 		});
 	}
-	test(`${locale}: Portuguese support CTA carries explicit scope and changes clear incompatible requests`, async ({
-		page,
-	}) => {
-		await page.goto(routeMap["portugal-support"][locale]);
-		await page.locator(".practice-section a").click();
-		const form = page.getByRole("form");
-		const scope = form.locator("select[name=scope]");
-		const requestType = form.locator("select[name=requestType]");
-		await expect(scope).toHaveValue("PT_ADMIN");
-		await expect(requestType.locator("option[value=brazil-law]")).toHaveCount(
-			0,
-		);
-		await requestType.selectOption("portugal-administrative");
-		await scope.selectOption("BR_LEGAL");
-		await expect(requestType).toHaveValue("");
-		await expect(
-			requestType.locator("option[value=portugal-administrative]"),
-		).toHaveCount(0);
-		await requestType.selectOption("brazil-law");
-		await form.locator("select[name=country]").selectOption("PT");
-		await expect(scope).toHaveValue("BR_LEGAL");
-	});
 }
 
 test("direct contact has no professional scope inferred from language or geography", async ({

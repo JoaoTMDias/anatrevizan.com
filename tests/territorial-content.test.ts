@@ -1,12 +1,12 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { requestMatchesScope } from "../src/lib/contact-scope";
 import config from "../src/content/config/site.json";
-import portugal from "../src/content/pages/portugal-support.json";
+import about from "../src/content/pages/about.json";
+import home from "../src/content/pages/home.json";
 import migration from "../src/content/pages/immigration-mobility.json";
 import legal from "../src/content/pages/legal.json";
-import home from "../src/content/pages/home.json";
-import about from "../src/content/pages/about.json";
+import { requestMatchesScope } from "../src/lib/contact-scope";
+
 const approved = readFileSync(
 	"docs/fonte-editorial-brasil-portugal.txt",
 	"utf8",
@@ -17,10 +17,6 @@ describe("territorial editorial contract", () => {
 			home.home.hero.heading.pt,
 			home.home.hero.subtitle.pt,
 			// Contact copy is intentionally revised during the page-by-page review.
-			portugal.title.pt,
-			portugal.summary.pt,
-			portugal.practicePage.sections[0].description.pt,
-			portugal.practicePage.sections[0].notice.pt,
 			migration.consultingService.introParagraphs.pt,
 			migration.consultingService.note.pt,
 			about.about.currentWork[0].description.pt,

@@ -10,13 +10,13 @@ import {
 } from "../src/lib/routing.ts";
 
 describe("route map", () => {
-	it("contains 16 unique and reversible PT-PT to EN pairs", () => {
-		expect(routeKeys).toHaveLength(16);
+	it("contains 14 unique and reversible PT-PT to EN pairs", () => {
+		expect(routeKeys).toHaveLength(14);
 		expect(publishedLocales).toEqual(["pt-PT", "en"]);
 		expect(editorialLocales).toContain("es");
 		expect(
 			new Set(routeKeys.flatMap((key) => Object.values(routeMap[key]))).size,
-		).toBe(32);
+		).toBe(28);
 		for (const key of routeKeys)
 			expect(alternatePath(pathFor(key, "pt-PT"))).toBe(pathFor(key, "en"));
 	});
