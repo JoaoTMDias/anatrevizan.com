@@ -18,7 +18,7 @@ interface Props {
   embedded?: boolean;
 }
 const { data, embedded = false } = Astro.props;
-const speaking = data.speakingPage as SpeakingPageContent | null | undefined;
+const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)?.speaking;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const kitIcons = ["user", "photo", "list-check"];
 ---
@@ -39,7 +39,7 @@ const kitIcons = ["user", "photo", "list-check"];
               label: locale === "en" ? "Academic" : "Academia",
               href: pathFor("publications", locale),
             }}
-            data-tina-field={tinaField(data, "speakingPage")}
+            data-tina-field={tinaField(data, "eventsPage.speaking")}
           />
         )}
         <Section>

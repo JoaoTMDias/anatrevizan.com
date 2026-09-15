@@ -5,7 +5,6 @@ import {
 	academicServiceFields,
 	eventsPageFields,
 	publicationsPageFields,
-	speakingPageFields,
 } from "./academic-sections";
 import { bilingualFields, localizedText } from "./common";
 import { contactPageFields } from "./contact-sections";
@@ -117,7 +116,7 @@ export const EditorialCollection: Collection = {
 		{
 			name: "events",
 			label: "Eventos e Palestras",
-			fields: pageFields([...eventsPageFields, ...speakingPageFields]),
+			fields: pageFields(eventsPageFields),
 		},
 		{
 			name: "contact",

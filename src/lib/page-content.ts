@@ -194,6 +194,7 @@ export interface EventsPageContent {
 		view: string;
 		empty: string;
 	};
+	speaking?: SpeakingPageContent | null;
 	entries?: Array<{
 		slug: string;
 		title: string;

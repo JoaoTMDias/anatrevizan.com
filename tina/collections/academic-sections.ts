@@ -159,14 +159,16 @@ export const eventsPageFields: TinaField[] = [
 					text("url", "URL", false),
 				],
 			},
+			...speakingPageFields(),
 		],
 	},
 ];
 
-export const speakingPageFields: TinaField[] = [
+export function speakingPageFields(): TinaField[] {
+	return [
 	{
-		name: "speakingPage",
-		label: "Palestras",
+		name: "speaking",
+		label: "Conteúdo de palestras e participações",
 		type: "object",
 		fields: [
 			text("tag", "Etiqueta do hero"),
@@ -199,4 +201,5 @@ export const speakingPageFields: TinaField[] = [
 			text("ctaText", "Texto do CTA"),
 		],
 	},
-];
+	];
+}
