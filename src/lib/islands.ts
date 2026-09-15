@@ -9,8 +9,8 @@ import Header from "../components/Header.astro";
 import EditorialBody from "../components/islands/EditorialBody.astro";
 import type { CmsConfig } from "./data";
 import { getConfig, getEditorial, localizeEditorial } from "./data";
-import { isPublishedLocale } from "./routing";
 import { type IslandContext, islandContextFromParams } from "./island-context";
+import { isPublishedLocale } from "./routing";
 
 function contextProps(params: URLSearchParams): Partial<IslandContext> {
 	return islandContextFromParams(params) ?? {};
