@@ -55,6 +55,10 @@
 		},
 		"gateways": [
 			{
+				"title": {
+					"pt": "Advocacia e consultoria jurídica no Brasil",
+					"en": "Brazilian legal practice and legal consulting"
+				},
 				"eyebrow": {
 					"pt": "Brasil - Advocacia e consultoria jurídica",
 					"en": "Brazil - Legal practice and legal consulting"
@@ -68,6 +72,25 @@
 					"en": "Explore practice in Brazil"
 				},
 				"routeKey": "legal"
+			},
+			{
+				"title": {
+					"pt": "Migração e Mobilidade",
+					"en": "Immigration and Mobility"
+				},
+				"eyebrow": {
+					"pt": "Portugal - Apoio administrativo",
+					"en": "Portugal - Administrative support"
+				},
+				"description": {
+					"pt": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária.",
+					"en": "Support for those moving to another country to live, work, or study, providing clarity on the necessary steps and documentation."
+				},
+				"cta": {
+					"pt": "Saber mais",
+					"en": "Learn more"
+				},
+				"routeKey": "immigration-mobility"
 			}
 		],
 		"differencesTitle": {

@@ -303,7 +303,11 @@
 				}
 			}
 		],
-		"serviceLanguages": ["PT", "EN", "ES"]
+		"serviceLanguages": [
+			"Português",
+			"English",
+			"Español"
+		]
 	},
 	"navigation": {
 		"consulting": {
@@ -341,8 +345,8 @@
 			},
 			"environmentalEsg": {
 				"label": {
-					"pt": "Consultoria Ambiental e ESG",
-					"en": "Environmental and ESG consulting"
+					"pt": "Ambiental e ESG",
+					"en": "Environmental and ESG"
 				},
 				"description": {
 					"pt": "Advocacia e consultoria jurídica no Brasil em matérias ambientais, administrativas e urbanísticas.",

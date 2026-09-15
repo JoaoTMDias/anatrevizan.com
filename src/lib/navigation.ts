@@ -50,9 +50,9 @@ export function navigationItems(
 					"immigration-mobility",
 					navigation?.consulting?.immigrationMobility,
 				),
-				entry("legal", navigation?.consulting?.legal),
 				entry("environmental-esg", navigation?.consulting?.environmentalEsg),
 				entry("public-policy", navigation?.consulting?.publicPolicy),
+				entry("legal", navigation?.consulting?.legal),
 			],
 		},
 		{
