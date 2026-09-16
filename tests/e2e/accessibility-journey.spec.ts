@@ -13,6 +13,8 @@ const templatePaths = [
 	"/declaracao-de-acessibilidade",
 ];
 
+const axeBatchCount = 2;
+
 async function expectNoViolations(page: Page) {
 	const results = await new AxeBuilder({ page })
 		.withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
@@ -22,24 +24,29 @@ async function expectNoViolations(page: Page) {
 
 test.describe("visitor uses accessibility preferences", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
-	test("every published page passes axe in light mode", async ({
-		page,
-		request,
-	}) => {
-		await page.emulateMedia({ colorScheme: "light" });
-		for (const path of await publishedPaths(request)) {
-			await page.goto(path);
-			await expectNoViolations(page);
-		}
-	});
+	for (const colorScheme of ["light", "dark"] as const) {
+		for (let batchIndex = 0; batchIndex < axeBatchCount; batchIndex += 1) {
+			test(`pages have no a11y violations: ${colorScheme} mode (batch ${batchIndex + 1})`, async ({
+				page,
+				request,
+			}) => {
+				test.setTimeout(60_000);
+				await page.emulateMedia({ colorScheme });
 
-	test("every template passes axe in dark mode", async ({ page }) => {
-		await page.emulateMedia({ colorScheme: "dark" });
-		for (const path of templatePaths) {
-			await page.goto(path);
-			await expectNoViolations(page);
+				const paths = await publishedPaths(request);
+				const batchSize = Math.ceil(paths.length / axeBatchCount);
+				const batchPaths = paths.slice(
+					batchIndex * batchSize,
+					(batchIndex + 1) * batchSize,
+				);
+
+				for (const path of batchPaths) {
+					await page.goto(path);
+					await expectNoViolations(page);
+				}
+			});
 		}
-	});
+	}
 
 	test("all routes reflow at 320px, equivalent to 400% zoom at 1280px", async ({
 		page,
