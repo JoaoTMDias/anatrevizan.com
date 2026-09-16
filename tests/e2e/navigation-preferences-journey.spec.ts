@@ -93,7 +93,7 @@ test.describe("visitor navigates and keeps accessibility preferences", () => {
 		await page.keyboard.press("Enter");
 		await expect(page).toHaveURL(/\/contacto$/);
 		const name = page
-			.getByRole("form", { name: "Pedido de contacto" })
+			.getByRole("form", { name: "Formulário de contacto" })
 			.getByLabel("Nome");
 		await name.focus();
 		await page.keyboard.type("Pessoa Teclado");
