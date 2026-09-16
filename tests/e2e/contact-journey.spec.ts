@@ -21,7 +21,9 @@ async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	const emailInput = form.getByLabel("E-mail");
 	const whatsappInput = form.getByLabel("WhatsApp (opcional)");
 	const requestTypeSelect = form.getByLabel("Tipo de pedido");
-	const countrySelect = form.getByLabel("País de residência");
+	const countrySelect = form.getByLabel("País de residência (opcional)", {
+		exact: true,
+	});
 	const messageTextarea = form.getByRole("textbox", {
 		name: "Mensagem",
 		exact: true,
@@ -36,7 +38,6 @@ async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	await whatsappInput.click();
 	await whatsappInput.fill(persona.whatsapp);
 
-	await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
 	await requestTypeSelect.selectOption("brazil-law");
 
 	await countrySelect.selectOption("PT");
@@ -192,7 +193,6 @@ test.describe("potential client sends a contact request", () => {
 		});
 		await whatsappChannel.focus();
 		await whatsappChannel.press("Space");
-		await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
 		await form.getByLabel("Tipo de pedido").selectOption("brazil-law");
 		await form.getByLabel("País de residência").selectOption("PT");
 		await form
@@ -299,20 +299,26 @@ test.describe("potential client sends a contact request", () => {
 			});
 		});
 		await page.goto("/en/contact");
-		const form = page.getByRole("form", { name: "Contact request" });
+		const form = page.getByRole("form", { name: "Contact form" });
+		await expect(form.locator('input[name="turnstileToken"]')).toHaveValue(
+			"test-token",
+		);
 		await form.getByLabel("Name").fill(englishPersona.name);
 		await form
 			.getByRole("textbox", { name: "Email", exact: true })
 			.fill(englishPersona.email);
-		await form.getByLabel("Scope of the enquiry").selectOption("BR_LEGAL");
 		await form.getByLabel("Type of request").selectOption("brazil-law");
-		await form.getByLabel("Country").selectOption("PT");
+		await form
+			.getByLabel("Country (optional)", { exact: true })
+			.selectOption("PT");
 		await form
 			.getByRole("textbox", { name: "Message", exact: true })
 			.fill(englishPersona.message);
-		await form.getByRole("button", { name: "Send request" }).press("Enter");
+		await form
+			.getByRole("button", { name: "Send a legal contact request" })
+			.press("Enter");
 		await expect(page).toHaveURL(
-			/\/en\/contact\?scope=BR_LEGAL#contact-form-status$/,
+			/\/en\/contact\/?\?scope=BR_LEGAL#contact-form-status$/,
 		);
 		await expect(page.getByRole("status")).toContainText(
 			"I received your enquiry relating to Brazilian law",
@@ -350,7 +356,6 @@ test.describe("potential client sends a contact request", () => {
 		await form
 			.getByRole("radio", { name: /Enviar pelo WhatsApp/ })
 			.press("Space");
-		await form.getByLabel("Âmbito do pedido").selectOption("BR_LEGAL");
 		await form.getByLabel("Tipo de pedido").selectOption("brazil-law");
 		await form.getByLabel("País de residência").selectOption("PT");
 		await form

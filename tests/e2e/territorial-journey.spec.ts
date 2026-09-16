@@ -46,6 +46,8 @@ test("direct contact has no professional scope inferred from language or geograp
 	page,
 }) => {
 	await page.goto("/contacto");
-	await expect(page.locator("select[name=scope]")).toHaveValue("");
-	await expect(page.locator("select[name=requestType] option")).toHaveCount(1);
+	await expect(page.locator('input[name="scope"]')).toHaveValue("");
+	await expect(
+		page.locator('select[name="requestType"] option:checked'),
+	).toHaveValue("");
 });

@@ -81,7 +81,7 @@ export function ContactFields({
 					required
 					{...register("requestType")}
 				>
-					<option value="" disabled selected>
+					<option value="" disabled>
 						{t.choose}
 					</option>
 					{requestTypes.map((option) => (
