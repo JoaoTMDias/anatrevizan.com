@@ -6,7 +6,7 @@ const baseURL = externalBaseUrl ?? "http://127.0.0.1:4322";
 export default defineConfig({
 	testDir: "./tests/e2e",
 	fullyParallel: true,
-	timeout: 180_000,
+	timeout: 30_000,
 	forbidOnly: !!process.env.CI,
 	retries: 0,
 	reporter: process.env.CI
