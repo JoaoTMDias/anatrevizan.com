@@ -68,7 +68,6 @@ jobs:
           filters: |
             e2e:
               - "**"
-              - "!docs/**"
               - "!**/*.md"
 
       - name: Setup pnpm

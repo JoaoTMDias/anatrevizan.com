@@ -30,7 +30,7 @@ export default defineConfig({
 			publicFolder: "public",
 		},
 	},
-	// See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
+	// Keep the schema definition explicit and versioned with the project.
 	schema: {
 		collections: [
 			EditorialCollection,
