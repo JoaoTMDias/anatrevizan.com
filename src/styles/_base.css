@@ -126,17 +126,29 @@
 	}
 
 	.button-accent {
-		background: #844732;
-		background-image: none;
-		color: #ffffff;
+		background: var(--color-accent);
+		color: var(--background);
+	}
+
+	.dark .button-accent {
+		background: var(--color-accent-200);
+		color: var(--background);
 	}
 
 	.button-accent:hover {
-		background: #6f3928;
+		background: var(--color-accent-600);
+	}
+
+	.dark .button-accent:hover {
+		background: var(--color-accent-300);
 	}
 
 	.button-accent:focus-visible {
-		background: #5f3124;
+		background: var(--color-accent-700);
+	}
+
+	.dark .button-accent:focus-visible {
+		background: var(--color-accent-400);
 	}
 
 	.theme-toggle__sun,
