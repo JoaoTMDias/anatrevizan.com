@@ -1,5 +1,7 @@
+import { readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import { routeKeys, routeMap } from "../../src/lib/routing";
 import { installFakeTurnstile, publishedPaths } from "./site";
 
 const templatePaths = [
@@ -13,7 +15,14 @@ const templatePaths = [
 	"/declaracao-de-acessibilidade",
 ];
 
-const axeBatchCount = 2;
+const publishedEnglish = JSON.parse(
+	readFileSync("src/content/published-en.json", "utf8"),
+) as string[];
+
+const auditPaths = routeKeys.flatMap((key) => [
+	routeMap[key]["pt-PT"],
+	...(publishedEnglish.includes(key) ? [routeMap[key].en] : []),
+]);
 
 async function expectNoViolations(page: Page) {
 	const results = await new AxeBuilder({ page })
@@ -24,26 +33,21 @@ async function expectNoViolations(page: Page) {
 
 test.describe("visitor uses accessibility preferences", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
-	for (const colorScheme of ["light", "dark"] as const) {
-		for (let batchIndex = 0; batchIndex < axeBatchCount; batchIndex += 1) {
-			test(`pages have no a11y violations: ${colorScheme} mode (batch ${batchIndex + 1})`, async ({
-				page,
-				request,
-			}) => {
-				test.setTimeout(60_000);
+	test("accessibility audits cover every published page", async ({
+		request,
+	}) => {
+		expect([...auditPaths].sort()).toEqual(
+			(await publishedPaths(request)).sort(),
+		);
+	});
+
+	for (const path of auditPaths) {
+		for (const colorScheme of ["light", "dark"] as const) {
+			test(`accessibility: ${path} — ${colorScheme}`, async ({ page }) => {
 				await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
-
-				const paths = await publishedPaths(request);
-				const batchSize = Math.ceil(paths.length / axeBatchCount);
-				const batchPaths = paths.slice(
-					batchIndex * batchSize,
-					(batchIndex + 1) * batchSize,
-				);
-
-				for (const path of batchPaths) {
-					await page.goto(path);
-					await expectNoViolations(page);
-				}
+				const response = await page.goto(path);
+				expect(response?.ok()).toBe(true);
+				await expectNoViolations(page);
 			});
 		}
 	}
