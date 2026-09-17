@@ -64,137 +64,145 @@
 		"services": [
 			{
 				"title": {
-					"pt": "Direito Ambiental",
-					"en": "Environmental Law"
+					"pt": "Licenciamento e regularização",
+					"en": "Licensing and regularisation"
 				},
 				"items": [
 					{
-						"pt": "Acompanho empresas e organizações que desenvolvem projetos no Brasil em questões de Direito Ambiental, desde a análise do problema até à definição do caminho jurídico mais adequado;",
-						"en": "ESG assessment and KPI definition;"
+							"pt": "Análise de requisitos e acompanhamento de procedimentos para a adequação ambiental e urbanística de atividades e projetos.",
+							"en": "Analysis of requirements and monitoring of procedures for the environmental and urban-planning compliance of activities and projects."
 					},
 					{
-						"pt": "Relatórios de sustentabilidade;",
-						"en": "Sustainability reports;"
+							"pt": "Identificação de licenças e autorizações necessárias.",
+							"en": "Identifying the licences and authorisations required."
 					},
 					{
-						"pt": "Governança corporativa e análise regulatória;",
-						"en": "Corporate governance and regulatory analysis;"
+							"pt": "Preparação de documentos e requerimentos.",
+							"en": "Preparing documents and applications."
 					},
 					{
-						"pt": "Apoio à implementação de boas práticas.",
-						"en": "Support for implementing best practices."
+							"pt": "Acompanhamento de exigências e condicionantes.",
+							"en": "Monitoring requirements and conditions."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Compliance ambiental",
-					"en": "Environmental compliance"
+					"pt": "Processos administrativos",
+					"en": "Administrative proceedings"
 				},
 				"items": [
 					{
-						"pt": "Revejo os processos e as obrigações ambientais da atividade, identifico pontos de atenção e ajudo a definir as medidas necessárias para os cumprir;",
-						"en": "I review the processes and environmental obligations associated with the activity, identify areas requiring attention and help to define the measures needed to ensure compliance;"
+							"pt": "Preparação de requerimentos, defesas e recursos perante órgãos públicos, com análise dos fundamentos e dos prazos aplicáveis.",
+							"en": "Preparing applications, defences and appeals before public authorities, with analysis of the applicable grounds and deadlines."
 					},
 					{
-						"pt": "EUDR;",
-						"en": "EUDR;"
+							"pt": "Análise de notificações e autos de infração.",
+							"en": "Analysing notices and infringement reports."
 					},
 					{
-						"pt": "Análise de cadeias produtivas e de fornecedores;",
-						"en": "Supply chain and supplier analysis;"
+							"pt": "Elaboração de manifestações e impugnações.",
+							"en": "Preparing submissions and challenges."
 					},
 					{
-						"pt": "Gestão de riscos regulatórios.",
-						"en": "Regulatory risk management."
+							"pt": "Acompanhamento processual e cumprimento de prazos.",
+							"en": "Monitoring proceedings and meeting deadlines."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Políticas ambientais e licenciamento",
-					"en": "Environmental policy and licensing"
+					"pt": "Responsabilidade e proteção ambiental",
+					"en": "Environmental liability and protection"
 				},
 				"items": [
 					{
-						"pt": "Organizo informação sobre fornecedores, condições de trabalho e riscos identificados, para apoiar os processos internos de avaliação e acompanhamento;",
-						"en": "Compliance with Brazilian and European law;"
+							"pt": "Atuação em questões relacionadas a danos ambientais, obrigações de reparação e proteção de recursos naturais.",
+							"en": "Work on matters relating to environmental damage, remediation obligations and the protection of natural resources."
 					},
 					{
-						"pt": "Riscos de trabalho forçado e infantil nas cadeias de fornecimento;",
-						"en": "Forced and child labor risks in supply chains;"
+							"pt": "Avaliação de responsabilidades e obrigações legais.",
+							"en": "Assessing liabilities and legal obligations."
 					},
 					{
-						"pt": "Avaliação de fornecedores e de impactos;",
-						"en": "Supplier and impact assessment;"
+							"pt": "Análise de medidas de prevenção e reparação de danos.",
+							"en": "Analysing measures to prevent and remedy damage."
 					},
 					{
-						"pt": "Apoio à implementação de políticas de direitos humanos.",
-						"en": "Support for implementing human rights policies."
+							"pt": "Negociação de compromissos e soluções para conflitos ambientais.",
+							"en": "Negotiating commitments and solutions to environmental disputes."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "ESG e relatórios de sustentabilidade",
-					"en": "ESG and sustainability reporting"
+					"pt": "Urbanismo e ordenamento territorial",
+					"en": "Urban planning and spatial planning"
 				},
 				"items": [
 					{
-						"pt": "Desmatamento;",
-						"en": "Deforestation;"
+							"pt": "Avaliação jurídica do uso e ocupação do solo, planos urbanos e restrições incidentes sobre imóveis e empreendimentos.",
+							"en": "Legal assessment of land use and occupation, urban plans and restrictions affecting properties and developments."
 					},
 					{
-						"pt": "Relatório de sustentabilidade;",
-						"en": "Corporate sustainability reporting;"
+							"pt": "Análise de planos diretores e regras de zoneamento.",
+							"en": "Analysing master plans and zoning rules."
 					},
 					{
-						"pt": "Adequação e fortalecimento da governança;",
-						"en": "Governance alignment and strengthening;"
+							"pt": "Estudos de viabilidade jurídica de projetos.",
+							"en": "Legal feasibility studies for projects."
 					},
 					{
-						"pt": "Estratégias para municípios e regiões.",
-						"en": "Strategies for municipalities and regions."
+							"pt": "Identificação de limitações ao uso de imóveis.",
+							"en": "Identifying restrictions on the use of properties."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Cadeias de fornecimento e EUDR",
-					"en": "Supply chains and EUDR"
+					"pt": "ESG e responsabilidade empresarial",
+					"en": "ESG and corporate responsibility"
 				},
 				"items": [
 					{
-						"pt": "Governança e adaptação climática;",
-						"en": "Climate governance and adaptation;"
+							"pt": "Diagnóstico de riscos socioambientais, avaliação de práticas internas e desenvolvimento de medidas para fortalecer a governança.",
+							"en": "Diagnosing social and environmental risks, assessing internal practices and developing measures to strengthen governance."
 					},
 					{
-						"pt": "Políticas públicas e planeamento territorial;",
-						"en": "Public policies and spatial planning;"
+							"pt": "Elaboração de políticas e planos de ação.",
+							"en": "Developing policies and action plans."
 					},
-					{
-						"pt": "Due diligence em matéria de sustentabilidade empresarial.",
-						"en": "Corporate sustainability due diligence."
+						{
+							"pt": "Definição de indicadores e metas de sustentabilidade.",
+							"en": "Defining sustainability indicators and targets."
+						},
+						{
+							"pt": "Produção de relatórios e acompanhamento de compromissos.",
+							"en": "Preparing reports and monitoring commitments."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Direitos humanos e fornecedores",
-					"en": "Human rights and suppliers"
+					"pt": "Compliance e Due Diligence",
+					"en": "Compliance and due diligence"
 				},
 				"items": [
 					{
-						"pt": "Riscos climáticos, regulatórios e ambientais;",
-						"en": "Climate, regulatory, and environmental risks;"
+							"pt": "Análise de riscos e conformidade em operações e cadeias de fornecimento, com atenção aos impactos ambientais, às condições de trabalho e ao respeito pelos direitos humanos.",
+							"en": "Analysing risks and compliance in operations and supply chains, with attention to environmental impacts, working conditions and respect for human rights."
 					},
 					{
-						"pt": "Análise de vulnerabilidades e de impactos de novas normas;",
-						"en": "Vulnerability and new regulatory impact analysis;"
+							"pt": "Verificação de requisitos legais e padrões aplicáveis.",
+							"en": "Verifying applicable legal requirements and standards."
 					},
-					{
-						"pt": "Pareceres, notas técnicas e estudos ambientais.",
-						"en": "Legal opinions, technical briefs, and environmental studies."
+						{
+							"pt": "Avaliação de fornecedores e identificação de riscos.",
+							"en": "Assessing suppliers and identifying risks."
+						},
+						{
+							"pt": "Recomendações de medidas corretivas e mecanismos de monitorização.",
+							"en": "Recommending corrective measures and monitoring mechanisms."
 					}
 				]
 			}
