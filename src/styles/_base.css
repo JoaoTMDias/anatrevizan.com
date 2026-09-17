@@ -1,49 +1,62 @@
 @layer base {
+	/* Shared document defaults */
 	* {
-		border-color: var(--border);
 		@apply border-border outline-ring/50;
 	}
+
 	body {
-		background-color: var(--background);
-		color: var(--foreground);
+		@apply m-0 min-w-80 bg-background text-foreground;
+
 		font-family: var(--font-sans);
-		margin: 0;
-		min-width: 20rem;
-		@apply bg-background text-foreground;
 	}
+
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		font-family: var(--font-heading);
+		@apply font-heading;
 	}
+
 	a {
-		text-underline-offset: 0.2em;
+		@apply underline-offset-2;
 	}
+
+	/* Keyboard focus */
 	:focus-visible {
-		outline: 3px solid var(--ring);
-		outline-offset: 3px;
+		@apply outline-3 outline-ring outline-offset-3;
 	}
+
 	.home-hero :focus-visible,
 	.editorial-hero :focus-visible,
 	.editorial-cta :focus-visible,
 	.bg-primary :focus-visible {
-		outline-color: #ffffff;
+		@apply outline-white;
 	}
+
 	::selection {
 		background: color-mix(in oklab, var(--primary) 22%, transparent);
 	}
-	.bg-default {
-		background-color: var(--background);
-	}
+
 	html {
 		@apply font-sans;
 	}
+}
 
+@layer components {
+	/* Shared helpers */
+	.bg-default {
+		@apply bg-background;
+	}
+
+	.font-emoji {
+		font-family: var(--font-emoji);
+	}
+
+	/* Decorative borders */
 	.gradient-border {
-		@apply border-2 rounded-2xl;
+		@apply rounded-2xl border-2;
 
 		--gradient-border-angle: 120deg;
 
@@ -75,54 +88,32 @@
 			border-box;
 	}
 
-	.font-emoji {
-		font-family: var(--font-emoji);
-	}
-}
-
-@layer components {
+	/* Header actions */
 	.header-actions {
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
+		@apply flex items-center gap-1;
 	}
 
 	.theme-toggle {
-		display: inline-flex;
-		min-height: 2.75rem;
-		width: fit-content;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-		border: 1px solid var(--input);
-		border-radius: 999px;
-		background: var(--background);
-		color: var(--foreground);
-		padding: 0.625rem 0.875rem;
+		@apply inline-flex min-h-11 w-fit cursor-pointer items-center justify-center gap-2 rounded-full border border-input bg-background px-3.5 py-2.5 font-semibold;
+
 		font: inherit;
-		font-weight: 600;
-		cursor: pointer;
 	}
 
 	.theme-toggle--compact {
-		width: 2.75rem;
-		padding: 0;
+		@apply w-11 p-0;
 	}
 
 	.theme-toggle:hover {
-		background: var(--accent);
-		color: var(--accent-foreground);
+		@apply bg-accent text-accent-foreground;
 	}
 
 	.theme-toggle:focus-visible {
 		background: color-mix(in oklab, var(--accent), black 16%);
-		color: var(--accent-foreground);
+		@apply text-accent-foreground;
 	}
 
 	.theme-toggle svg {
-		width: 1.125rem;
-		height: 1.125rem;
-		flex: none;
+		@apply size-4.5 flex-none;
 	}
 
 	.button-accent {
@@ -159,27 +150,28 @@
 	.dark .theme-toggle__sun {
 		display: block;
 	}
+}
 
-	@media (min-width: 64rem) {
-		.theme-toggle--compact {
-			width: fit-content;
-			margin-left: 0.25rem;
-			padding: 0.625rem 0.875rem;
-		}
+@media (min-width: 64rem) {
+	.theme-toggle--compact {
+		@apply ml-1 w-fit px-3.5 py-2.5;
 	}
 }
 
 @media (min-width: 48rem) {
 	.home-hero {
-		min-height: 40rem;
+		@apply min-h-160;
 	}
+
 	.editorial-hero {
-		min-height: 42.5rem;
+		@apply min-h-170;
 	}
+
 	.editorial-hero__inner {
-		padding-top: 7rem;
+		@apply pt-28;
 	}
+
 	.academic-hub-card {
-		padding: 2rem;
+		@apply p-8;
 	}
 }
