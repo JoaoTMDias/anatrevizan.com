@@ -30,8 +30,8 @@ function fixture() {
 		}),
 	);
 	for (const output of [
-		"dist/client/index.html",
-		"dist/client/en/index.html",
+		"dist/index.html",
+		"dist/en/index.html",
 	]) {
 		mkdirSync(dirname(join(root, output)), { recursive: true });
 		writeFileSync(join(root, output), "<!doctype html><title>Home</title>");
@@ -82,8 +82,8 @@ describe("editorial build report", () => {
 			}),
 		);
 		for (const output of [
-			"dist/client/atuacao/advocacia-brasil/index.html",
-			"dist/client/en/practice/brazilian-law/index.html",
+			"dist/atuacao/advocacia-brasil/index.html",
+			"dist/en/practice/brazilian-law/index.html",
 		]) {
 			mkdirSync(dirname(join(root, output)), { recursive: true });
 			writeFileSync(join(root, output), "<!doctype html><title>Legal</title>");

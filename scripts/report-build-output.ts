@@ -8,16 +8,16 @@ import {
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { isLocaleComplete, localizeValue } from "../src/lib/bilingual.ts";
 import {
 	type EditorialDocument,
 	isPublishable,
 	shouldRenderEditorialDocument,
 } from "../src/lib/editorial.ts";
-import { isLocaleComplete, localizeValue } from "../src/lib/bilingual.ts";
 import {
-	publishedLocales,
 	type PublishedLocale,
 	pathFor,
+	publishedLocales,
 } from "../src/lib/routing.ts";
 
 export type BuildReportMode = "preview" | "production";
@@ -28,7 +28,7 @@ export function createEditorialBuildReport(
 	allowEmptyProduction = false,
 ) {
 	const contentDirectory = join(root, "src/content/pages");
-	const outputDirectory = join(root, "dist/client");
+	const outputDirectory = join(root, "dist");
 	const sourceFiles = readdirSync(contentDirectory, { recursive: true }).filter(
 		(file): file is string =>
 			typeof file === "string" && file.endsWith(".json"),
