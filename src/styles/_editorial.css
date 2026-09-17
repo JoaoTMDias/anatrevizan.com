@@ -121,7 +121,8 @@
 	}
 
 	.editorial-breadcrumbs a {
-		color: inherit;
+		color: var(--hero-white);
+		text-shadow: none;
 		text-decoration: underline;
 		text-underline-offset: 0.18em;
 	}

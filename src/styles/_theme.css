@@ -201,7 +201,7 @@
 	--ring: var(--brand-wine);
 	--action-primary: var(--brand-burgundy);
 	--action-primary-foreground: #ffffff;
-	--action-accent: var(--brand-wine);
+	--action-accent: var(--brand-terracotta-accessible);
 	--action-accent-foreground: #ffffff;
 	--brand-surface: var(--brand-burgundy);
 	--brand-surface-foreground: #ffffff;
@@ -244,8 +244,8 @@
 	--ring: #f4ede1;
 	--action-primary: #f4ede1;
 	--action-primary-foreground: #140607;
-	--action-accent: #d8a07a;
-	--action-accent-foreground: #140607;
+	--action-accent: var(--brand-terracotta-accessible);
+	--action-accent-foreground: #ffffff;
 	--brand-surface: #4a1519;
 	--brand-surface-foreground: #ffffff;
 	--inverse-foreground: #ffffff;

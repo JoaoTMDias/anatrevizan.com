@@ -125,6 +125,20 @@
 		flex: none;
 	}
 
+	.button-accent {
+		background: #844732;
+		background-image: none;
+		color: #ffffff;
+	}
+
+	.button-accent:hover {
+		background: #6f3928;
+	}
+
+	.button-accent:focus-visible {
+		background: #5f3124;
+	}
+
 	.theme-toggle__sun,
 	.dark .theme-toggle__moon {
 		display: none;
