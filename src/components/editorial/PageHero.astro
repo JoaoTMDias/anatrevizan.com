@@ -63,18 +63,32 @@ const items = [
     <Breadcrumbs items={items} />
     <div class="editorial-hero__content">
       <div class="editorial-hero__copy">
-        {tag && <p class="editorial-eyebrow"><AcronymText text={tag} locale={locale} /></p>}
+        {
+          tag && (
+            <p class="editorial-eyebrow">
+              <AcronymText text={tag} locale={locale} />
+            </p>
+          )
+        }
         <h1><AcronymText text={title} locale={locale} /></h1>
-        {subtitle && <p class="editorial-hero__subtitle"><AcronymText text={subtitle} locale={locale} /></p>}
+        {
+          subtitle && (
+            <p class="editorial-hero__subtitle">
+              <AcronymText text={subtitle} locale={locale} />
+            </p>
+          )
+        }
         {
           showActions && (
-            <div class="mt-8 flex flex-wrap gap-4">
+            <div class="mt-8 flex flex-col md:flex-row flex-wrap gap-4">
               <Button variant="accent" href={contactBookingPath(locale)}>
                 {locale === "en" ? "Book an initial call" : "Agendar contacto"}
               </Button>
-              {showContactLink && <Button variant="outlineInverse" href={pathFor("contact", locale)}>
-                {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
-              </Button>}
+              {showContactLink && (
+                <Button variant="outlineInverse" href={pathFor("contact", locale)}>
+                  {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
+                </Button>
+              )}
             </div>
           )
         }

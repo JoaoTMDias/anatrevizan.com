@@ -94,7 +94,7 @@
 		@apply mt-6 max-w-xl text-[clamp(1rem,2vw,1.125rem)] leading-[1.7] text-white/90;
 	}
 	.home-hero__actions {
-		@apply mt-8 flex flex-wrap gap-4;
+		@apply mt-8 flex flex-col md:flex-row flex-wrap gap-4;
 	}
 	/* --- Gateways section --- */
 	.home-gateways-section {
@@ -178,13 +178,13 @@
 		@apply size-5;
 	}
 	.home-gateway h2 {
-		@apply relative max-w-[calc(100%-9rem)] text-[clamp(2rem,4vw,3rem)] leading-[1.05] font-bold;
+		@apply relative md:max-w-[calc(100%-9rem)] text-[clamp(2rem,4vw,3rem)] leading-[1.05] font-bold;
 	}
 	.home-gateway__eyebrow {
-		@apply relative mt-2.5 max-w-[calc(100%-9rem)] text-[0.8125rem]/[1.5] font-semibold tracking-[0.08em] text-[#d9c8c3] uppercase;
+		@apply relative mt-2.5 md:max-w-[calc(100%-9rem)] text-[0.8125rem]/[1.5] font-semibold tracking-[0.08em] text-[#d9c8c3] uppercase;
 	}
 	.home-gateway__description {
-		@apply relative max-w-[34rem] self-center text-base/[1.65] text-[#d9c8c3];
+		@apply relative md:max-w-[34rem] self-center text-base/[1.65] text-[#d9c8c3];
 	}
 	.home-gateway__cta {
 		@apply inline-flex items-center gap-1 text-base font-semibold;
@@ -234,7 +234,10 @@
 		@apply mb-8 flex flex-wrap gap-3;
 	}
 	.home-academic-heading .editorial-section-heading {
-		@apply flex-col items-start justify-start;
+		@apply flex flex-col items-start justify-start;
+	}
+	.home-services-heading .editorial-section-heading {
+		@apply flex flex-col items-center md:items-start md:justify-start;
 	}
 	.home-publications {
 		display: grid;
@@ -392,6 +395,10 @@
 		grid-template-columns: minmax(0, 1fr);
 		gap: 1rem;
 	}
+	.home-services-heading {
+		@apply flex flex-col md:flex-row items-center md:gap-6;
+	}
+
 	.home-services-heading .editorial-mark {
 		width: 8rem;
 		margin-bottom: 2rem;

@@ -311,7 +311,7 @@ const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIc
                   <h2 class="text-xl font-semibold">{service.crosslinkHeading}</h2>
                   <p class="mt-3 max-w-2xl text-muted-foreground">{service.crosslinkText}</p>
                 </div>
-                <Button variant="outline" href={crosslink}>
+                <Button class="w-full md:w-auto" variant="outline" href={crosslink}>
                   {crosslinkLabel}
                 </Button>
               </div>

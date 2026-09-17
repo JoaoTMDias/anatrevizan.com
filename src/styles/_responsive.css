@@ -16,7 +16,7 @@
 		@apply w-full;
 	}
 	.publication-filters > p {
-		@apply ml-0 w-auto;
+		@apply m-auto w-auto;
 	}
 	.speaking-bio,
 	.speaking-kit-grid,

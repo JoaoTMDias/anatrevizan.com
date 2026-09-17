@@ -43,7 +43,7 @@
 	}
 
 	.gradient-border {
-		@apply border-4 rounded-2xl;
+		@apply border-2 rounded-2xl;
 
 		--gradient-border-angle: 120deg;
 

@@ -203,7 +203,7 @@ export default function HeaderMenu({
 				<SheetContent
 					side="right"
 					showCloseButton={false}
-					className="w-full max-w-[85vw]! gap-0 overflow-y-auto bg-background p-5"
+					className="w-full max-w-[95vw] md:max-w-[85vw] gap-0 overflow-y-auto bg-background p-5"
 				>
 					<SheetTitle className="sr-only">{menuLabel}</SheetTitle>
 					<div className="mb-8 flex items-center justify-between gap-4">

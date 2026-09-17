@@ -8,8 +8,8 @@ interface Props {
   text: string;
   locale: PublishedLocale;
   showContactLink?: boolean;
- label?: string;
- href?: string;
+  label?: string;
+  href?: string;
 }
 
 const { heading, text, locale, showContactLink = true, label, href } = Astro.props;
@@ -20,12 +20,22 @@ const { heading, text, locale, showContactLink = true, label, href } = Astro.pro
     <h2 id="editorial-cta-heading"><AcronymText text={heading} locale={locale} /></h2>
     <p><AcronymText text={text} locale={locale} /></p>
     <div class="editorial-cta__actions">
-      <Button href={href ?? contactBookingPath(locale)} variant="accent" size="lg">
+      <Button
+        href={href ?? contactBookingPath(locale)}
+        class="w-full md:w-auto"
+        variant="accent"
+        size="lg"
+      >
         {label ?? (locale === "en" ? "Schedule a first conversation" : "Agendar contacto")}
       </Button>
       {
         showContactLink && (
-          <Button href={pathFor("contact", locale)} variant="outlineInverse" size="lg">
+          <Button
+            href={pathFor("contact", locale)}
+            class="w-full md:w-auto"
+            variant="outlineInverse"
+            size="lg"
+          >
             {locale === "en" ? "Contact me" : "Falar sobre o meu caso"}
           </Button>
         )

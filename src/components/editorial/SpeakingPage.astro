@@ -18,7 +18,8 @@ interface Props {
   embedded?: boolean;
 }
 const { data, embedded = false } = Astro.props;
-const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)?.speaking;
+const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)
+  ?.speaking;
 const locale = data.locale === "en" ? "en" : "pt-PT";
 const kitIcons = ["user", "photo", "list-check"];
 ---
@@ -68,13 +69,21 @@ const kitIcons = ["user", "photo", "list-check"];
               <div>
                 <>
                   <SectionHeading title={speaking.bioHeading} locale={locale} />
-                  <RichText content={speaking.bioParagraphs} locale={locale} class="speaking-bio__text" />
+                  <RichText
+                    content={speaking.bioParagraphs}
+                    locale={locale}
+                    class="speaking-bio__text"
+                  />
                   <p class="speaking-kit-notice">
                     <Icon name="info-circle" />
                     {speaking.kitDownloadLabel}:{" "}
                     {locale === "en" ? "file not yet available." : "ficheiro ainda não disponível."}
                   </p>
-                  <Button class="mt-5" variant="outline" href={pathFor("contact", locale)}>
+                  <Button
+                    class="w-full md:w-auto mt-5"
+                    variant="outline"
+                    href={pathFor("contact", locale)}
+                  >
                     {speaking.inviteCta}
                   </Button>
                 </>
@@ -87,7 +96,9 @@ const kitIcons = ["user", "photo", "list-check"];
             <SectionHeading title={speaking.topicsHeading} locale={locale} />
             <ul class="speaking-topics">
               {speaking.topics.map((topic) => (
-                <li><AcronymText text={topic} locale={locale} /></li>
+                <li>
+                  <AcronymText text={topic} locale={locale} />
+                </li>
               ))}
             </ul>
           </>
@@ -102,7 +113,9 @@ const kitIcons = ["user", "photo", "list-check"];
                     <span class="academic-icon" aria-hidden="true">
                       <Icon name={kitIcons[index]} />
                     </span>
-                    <span class="min-w-0"><AcronymText text={item} locale={locale} /></span>
+                    <span class="min-w-0">
+                      <AcronymText text={item} locale={locale} />
+                    </span>
                   </Card>
                 </li>
               ))}
