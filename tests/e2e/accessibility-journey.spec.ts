@@ -31,7 +31,7 @@ test.describe("visitor uses accessibility preferences", () => {
 				request,
 			}) => {
 				test.setTimeout(60_000);
-				await page.emulateMedia({ colorScheme });
+				await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
 
 				const paths = await publishedPaths(request);
 				const batchSize = Math.ceil(paths.length / axeBatchCount);
@@ -84,6 +84,7 @@ test.describe("visitor uses accessibility preferences", () => {
 	test("acronym tooltip opens with focus and closes with Escape", async ({
 		page,
 	}) => {
+		await page.emulateMedia({ reducedMotion: "reduce" });
 		await page.goto("/atuacao/esg-politicas-publicas-sustentabilidade");
 		const acronym = page.locator("[data-acronym-trigger]").first();
 		await acronym.focus();
