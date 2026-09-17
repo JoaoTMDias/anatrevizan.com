@@ -258,6 +258,27 @@
 				"pt": "Soluções Inclusivas Sustentáveis",
 				"en": "Soluções Inclusivas Sustentáveis"
 			}
+		},
+		{
+			"acronym": "LACLIMA",
+			"expansion": {
+				"pt": "Latin American Climate Lawyers Initiative for Mobilizing Action",
+				"en": "Latin American Climate Lawyers Initiative for Mobilizing Action"
+			}
+		},
+		{
+			"acronym": "CEDAT",
+			"expansion": {
+				"pt": "Centro de Estudos de Direito Ambiental de Tarragona",
+				"en": "Tarragona Environmental Law Studies Centre"
+			}
+		},
+		{
+			"acronym": "QUERCUS",
+			"expansion": {
+				"pt": "Associação Nacional de Conservação da Natureza",
+				"en": "National Association for Nature Conservation"
+			}
 		}
 	],
 	"contacts": {
@@ -345,12 +366,12 @@
 					"en": "Environmental and ESG"
 				},
 				"description": {
-					"pt": "Advocacia e consultoria jurídica no Brasil em matérias ambientais, administrativas e urbanísticas.",
-					"en": "Legal practice and legal consulting in Brazil on environmental, administrative and urban planning matters."
+					"pt": "Direito Ambiental e ESG no Brasil, com apoio técnico sobre regulação europeia.",
+					"en": "Environmental Law and ESG in Brazil, with technical support on European regulation."
 				},
 				"tag": {
-					"pt": "🇧🇷",
-					"en": "🇧🇷"
+					"pt": "🇧🇷 · 🇪🇺",
+					"en": "🇧🇷 · 🇪🇺"
 				}
 			},
 			"publicPolicy": {
@@ -359,12 +380,12 @@
 					"en": "Public Policy and Governance"
 				},
 				"description": {
-					"pt": "Advocacia e consultoria jurídica no Brasil em ESG, políticas públicas e sustentabilidade.",
-					"en": "Legal practice and legal consulting in Brazil on ESG, public policy and sustainability."
+					"pt": "Investigação, análise e apoio técnico em políticas públicas, governança e sustentabilidade; a prestação jurídica limita-se ao Brasil.",
+					"en": "Research, analysis and technical support in public policy, governance and sustainability; legal services are limited to Brazil."
 				},
 				"tag": {
-					"pt": "🇧🇷",
-					"en": "🇧🇷"
+					"pt": "🇧🇷 · 🇪🇺",
+					"en": "🇧🇷 · 🇪🇺"
 				}
 			}
 		},
@@ -379,8 +400,8 @@
 					"en": "Mentoring"
 				},
 				"description": {
-					"pt": "Revisão técnica, orientação metodológica e preparação para publicação",
-					"en": "Technical review, methodological guidance and preparation for publication"
+					"pt": "Revisão técnica, orientação metodológica, carreira e candidaturas a mestrados e doutoramentos",
+					"en": "Technical review, methodological guidance, career support and master’s and doctoral applications"
 				}
 			},
 			"publications": {
@@ -494,14 +515,6 @@
 			"label": {
 				"pt": "Investigação e colaboração científica",
 				"en": "Research and scientific collaboration"
-			}
-		},
-		{
-			"id": "academic-training",
-			"scope": "ACADEMIC",
-			"label": {
-				"pt": "Formação",
-				"en": "Training"
 			}
 		},
 		{

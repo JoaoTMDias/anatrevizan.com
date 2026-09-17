@@ -4,7 +4,6 @@ import type { CmsEditorial } from "../../lib/data";
 import type { SpeakingPageContent } from "../../lib/page-content";
 import { pathFor } from "../../lib/routing";
 import Button from "../ui/Button.astro";
-import Card from "../ui/Card.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
 import ContactCta from "./ContactCta.astro";
@@ -21,10 +20,9 @@ const { data, embedded = false } = Astro.props;
 const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)
   ?.speaking;
 const locale = data.locale === "en" ? "en" : "pt-PT";
-const kitIcons = ["user", "photo", "list-check"];
 ---
 
-<div id={embedded ? "speaker-kit" : "main-content"} tabindex={embedded ? undefined : "-1"}>
+<div id={embedded ? undefined : "main-content"} tabindex={embedded ? undefined : "-1"}>
   {
     speaking ? (
       <>
@@ -74,11 +72,6 @@ const kitIcons = ["user", "photo", "list-check"];
                     locale={locale}
                     class="speaking-bio__text"
                   />
-                  <p class="speaking-kit-notice">
-                    <Icon name="info-circle" />
-                    {speaking.kitDownloadLabel}:{" "}
-                    {locale === "en" ? "file not yet available." : "ficheiro ainda não disponível."}
-                  </p>
                   <Button
                     class="w-full md:w-auto mt-5"
                     variant="outline"
@@ -98,25 +91,6 @@ const kitIcons = ["user", "photo", "list-check"];
               {speaking.topics.map((topic) => (
                 <li>
                   <AcronymText text={topic} locale={locale} />
-                </li>
-              ))}
-            </ul>
-          </>
-        </Section>
-        <Section>
-          <>
-            <SectionHeading title={speaking.kitHeading} locale={locale} />
-            <ul class="speaking-kit-grid scroll-stagger-fade-in">
-              {speaking.kitItems.map((item, index) => (
-                <li>
-                  <Card class="speaking-kit-card flex flex-col gap-4 p-6 sm:flex-row sm:items-start">
-                    <span class="academic-icon" aria-hidden="true">
-                      <Icon name={kitIcons[index]} />
-                    </span>
-                    <span class="min-w-0">
-                      <AcronymText text={item} locale={locale} />
-                    </span>
-                  </Card>
                 </li>
               ))}
             </ul>

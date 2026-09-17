@@ -104,7 +104,6 @@ export const eventsPageFields: TinaField[] = [
 			text("subtitle", "Introdução do hero"),
 			text("emptyHeading", "Título sem eventos"),
 			text("emptyText", "Texto sem eventos"),
-			text("speakerKitCta", "CTA do kit de palestrante"),
 			text("listHeading", "Título da lista"),
 			{
 				name: "filters",
@@ -193,9 +192,6 @@ export function speakingPageFields(): TinaField[] {
 			richText("bioParagraphs", "Biografia"),
 			text("topicsHeading", "Título dos temas"),
 			stringList("topics", "Topics"),
-			text("kitHeading", "Título do kit"),
-			stringList("kitItems", "Kit contents"),
-			text("kitDownloadLabel", "Label do futuro download do kit"),
 			text("inviteCta", "CTA para convites"),
 			text("ctaHeading", "Título do CTA"),
 			text("ctaText", "Texto do CTA"),

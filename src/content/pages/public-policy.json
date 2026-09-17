@@ -32,8 +32,8 @@
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Políticas públicas · apoio técnico",
-			"en": "Brazil and Portugal"
+			"pt": "Brasil · União Europeia",
+			"en": "Brazil · European Union"
 		},
 		"subtitle": {
 			"pt": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
@@ -71,20 +71,20 @@
 				},
 				"items": [
 					{
-						"pt": "Leio propostas, programas e regulamentos para identificar os seus objetivos, impactos possíveis e condições de implementação.",
-						"en": "Legal and technical analysis"
+					"pt": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados.",
+					"en": "I analyse regulatory impacts, legislative improvement and comparative studies."
 					},
 					{
-						"pt": "Identificação de impactos regulatórios",
-						"en": "Regulatory impact identification"
+					"pt": "Impactos regulatórios",
+					"en": "Regulatory impacts"
 					},
 					{
-						"pt": "Sugestões de aperfeiçoamento legislativo",
-						"en": "Recommendations for legislative enhancement"
+					"pt": "Aperfeiçoamento legislativo",
+					"en": "Legislative improvement"
 					},
 					{
-						"pt": "Compatibilização com normas nacionais e internacionais",
-						"en": "Alignment with national and international standards"
+					"pt": "Estudos comparados",
+					"en": "Comparative studies"
 					}
 				]
 			},
@@ -95,20 +95,20 @@
 				},
 				"items": [
 					{
-						"pt": "Apoio municípios e equipas técnicas a transformar objetivos ambientais e climáticos em planos, projetos e formas de acompanhamento.",
-						"en": "Public policy drafting"
+					"pt": "Apoio municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
+					"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators."
 					},
 					{
-						"pt": "Governança e adaptação climática",
-						"en": "Governance and climate adaptation"
+					"pt": "Planos de adaptação",
+					"en": "Adaptation plans"
 					},
 					{
-						"pt": "Planos municipais e regulamentação ambiental",
-						"en": "Municipal plans and environmental regulations"
+					"pt": "Projetos municipais",
+					"en": "Municipal projects"
 					},
 					{
-						"pt": "Projetos financiados por organismos nacionais e internacionais",
-						"en": "Projects funded by national and international institutions"
+					"pt": "Indicadores de resultados",
+					"en": "Outcome indicators"
 					}
 				]
 			},
@@ -119,20 +119,20 @@
 				},
 				"items": [
 					{
-						"pt": "Trabalho com organizações que desenvolvem projetos ambientais e de direitos humanos, ajudando a estruturar informação, objetivos e formas de avaliação.",
-						"en": "Regulatory analysis and legal opinions"
+					"pt": "Apoio projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos.",
+					"en": "I support projects and public advocacy, technical studies and briefs, and the assessment of results and impacts."
 					},
 					{
-						"pt": "Advocacy e fortalecimento institucional",
-						"en": "Advocacy and institutional strengthening"
+					"pt": "Projetos e incidência pública",
+					"en": "Projects and public advocacy"
 					},
 					{
-						"pt": "Governança",
-						"en": "Governance"
+					"pt": "Estudos e notas técnicas",
+					"en": "Technical studies and briefs"
 					},
 					{
-						"pt": "Projetos de direitos humanos e ambiente",
-						"en": "Human rights and environmental projects"
+					"pt": "Avaliação de resultados e impactos",
+					"en": "Assessment of results and impacts"
 					}
 				]
 			},
@@ -143,20 +143,20 @@
 				},
 				"items": [
 					{
-						"pt": "Ajudo associações e instituições a organizar regras internas, responsabilidades e informação para acompanhar os seus compromissos ambientais e sociais.",
-						"en": "Internal regulations and governance"
+					"pt": "Apoio responsabilidades e decisão, participação e diálogo, transparência e prestação de contas.",
+					"en": "I support responsibility and decision-making, participation and dialogue, transparency and accountability."
 					},
 					{
-						"pt": "Análise de riscos",
-						"en": "Risk assessment"
+					"pt": "Responsabilidades e decisão",
+					"en": "Responsibility and decision-making"
 					},
 					{
-						"pt": "Compliance e sustentabilidade",
-						"en": "Compliance and sustainability"
+					"pt": "Participação e diálogo",
+					"en": "Participation and dialogue"
 					},
 					{
-						"pt": "Relacionamento com órgãos públicos",
-						"en": "Liaison with public authorities"
+					"pt": "Transparência e prestação de contas",
+					"en": "Transparency and accountability"
 					}
 				]
 			}

@@ -213,8 +213,8 @@
 			},
 			{
 				"label": {
-					"pt": "Ambiental, Administrativo e Urbanismo",
-					"en": "Environmental, Administrative and Urban Planning Law"
+					"pt": "Direito Ambiental e ESG",
+					"en": "Environmental Law and ESG"
 				},
 				"tag": {
 					"pt": "Brasil",
@@ -232,7 +232,7 @@
 			},
 			{
 				"label": {
-					"pt": "ESG, Políticas Públicas e Sustentabilidade",
+					"pt": "Políticas Públicas e Governança",
 					"en": "Public Policy and Governance"
 				},
 				"tag": {
@@ -240,8 +240,8 @@
 					"en": "Brazil"
 				},
 				"description": {
-					"pt": "Consultoria para transformar compromissos socioambientais em ações concretas, reduzir riscos e fortalecer a gestão de empresas e organizações.",
-					"en": "Consultancy services to translate social and environmental commitments into concrete actions, reduce risks and strengthen the management of companies and organisations."
+					"pt": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade.",
+					"en": "Research, analysis and technical support for public policy, governance and sustainability."
 				},
 				"cta": {
 					"pt": "Saber mais",
@@ -316,10 +316,6 @@
 		"publicationsCta": {
 			"pt": "Ver repositório completo",
 			"en": "View full repository"
-		},
-		"speakerKitCta": {
-			"pt": "Kit de palestrante",
-			"en": "Speaker Kit"
 		},
 		"finalCtaHeading": {
 			"pt": "Como posso ajudar?",

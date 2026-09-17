@@ -28,7 +28,6 @@ export interface HomeContent {
 	academicTitle: string;
 	academicSubtitle: string;
 	publicationsCta: string;
-	speakerKitCta: string;
 	credentialsLabel: string;
 	credentials: string[];
 	finalCtaHeading: string;
@@ -59,7 +58,6 @@ export interface AboutContent {
 	values: Array<{ title: string; description: string }>;
 	networksLabel: string;
 	networks: string[];
-	speakerKitCta: string;
 	finalCtaHeading: string;
 	finalCtaText: string;
 	finalCtaLabel: string;
@@ -182,7 +180,6 @@ export interface EventsPageContent {
 	subtitle: string;
 	emptyHeading: string;
 	emptyText: string;
-	speakerKitCta: string;
 	listHeading: string;
 	filters: {
 		allYears: string;
@@ -233,9 +230,6 @@ export interface SpeakingPageContent {
 	bioParagraphs: TinaRichTextContent;
 	topicsHeading: string;
 	topics: string[];
-	kitHeading: string;
-	kitItems: string[];
-	kitDownloadLabel: string;
 	inviteCta: string;
 	ctaHeading: string;
 	ctaText: string;

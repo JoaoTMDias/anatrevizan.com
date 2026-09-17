@@ -42,12 +42,8 @@
 			"en": "Journal under compilation"
 		},
 		"emptyText": {
-			"pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019. Entretanto, se me quiser convidar para o seu evento, o kit de palestrante já está disponível.",
-			"en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019. In the meantime, if you would like to invite me to speak at your event, my speaker kit is already available."
-		},
-		"speakerKitCta": {
-			"pt": "Ver kit de palestrante",
-			"en": "View Speaker Kit"
+			"pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019.",
+			"en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019."
 		},
 		"listHeading": {
 			"pt": "Palestras e participações",
@@ -708,28 +704,6 @@
 					"en": "Human Rights"
 				}
 			],
-			"kitHeading": {
-				"pt": "O que encontra no kit",
-				"en": "What's in the kit"
-			},
-			"kitItems": [
-				{
-					"pt": "Biografia curta e completa",
-					"en": "Short and full biographies"
-				},
-				{
-					"pt": "Foto em alta resolução",
-					"en": "High-resolution headshots"
-				},
-				{
-					"pt": "Lista de temas e formatos",
-					"en": "Overview of speaking topics and presentation formats"
-				}
-			],
-			"kitDownloadLabel": {
-				"pt": "Descarregar kit de palestrante",
-				"en": "Download Speaker Kit"
-			},
 			"inviteCta": {
 				"pt": "Convidar para palestrar",
 				"en": "Invite to Speak"
