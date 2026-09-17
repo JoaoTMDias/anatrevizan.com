@@ -15,7 +15,7 @@
 		},
 		"description": {
 			"pt": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito Ambiental, ESG, governança climática, compliance e Direito da UE.",
-			"en": "Courses, workshops, and training programs for universities, corporations, municipalities, and organizations in Environmental Law, ESG, climate governance, compliance, and EU Law."
+			"en": "Courses, workshops, and training programmes for universities, corporations, municipalities, and organisations in Environmental Law, ESG, climate governance, compliance, and EU Law."
 		}
 	},
 	"media": {
@@ -47,7 +47,7 @@
 		},
 		"introParagraphs": {
 			"pt": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n",
-			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programs for universities, corporations, municipalities, and organizations, combining research rigor with pedagogical clarity.\n"
+			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programmes for universities, corporations, municipalities, and organisations, combining research rigour with pedagogical clarity.\n"
 		},
 		"servicesHeading": {
 			"pt": "Temas",
@@ -55,7 +55,7 @@
 		},
 		"servicesSubtitle": {
 			"pt": "Programas adaptados ao público e aos objetivos de cada instituição.",
-			"en": "Programs tailored to the audience and goals of each institution."
+			"en": "Programmes tailored to the audience and goals of each institution."
 		},
 		"services": [
 			{
@@ -121,15 +121,15 @@
 		],
 		"note": {
 			"pt": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
-			"en": "Courses, workshops, and training programs by invitation. Curricula and formats defined in collaboration with each institution."
+			"en": "Courses, workshops, and training programmes by invitation. Curricula and formats defined in collaboration with each institution."
 		},
 		"ctaHeading": {
 			"pt": "Quer uma formação para a sua equipa ou instituição?",
-			"en": "Looking for a training program for your team or institution?"
+			"en": "Looking for a training programme for your team or institution?"
 		},
 		"ctaText": {
 			"pt": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
-			"en": "Schedule an initial call and we will design a program tailored to your audience."
+			"en": "Schedule an initial call and we will design a programme tailored to your audience."
 		}
 	},
 	"_template": "academicService"

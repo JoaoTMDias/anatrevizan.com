@@ -53,7 +53,7 @@
 		},
 		"introParagraphs": {
 			"pt": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
-			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent - it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organizations, and institutions seeking solid technical backing to decide and act."
+			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent - it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organisations, and institutions seeking solid technical backing to decide and act."
 		},
 		"servicesHeading": {
 			"pt": "Como posso ajudar",
@@ -71,20 +71,20 @@
 				},
 				"items": [
 					{
-					"pt": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados.",
-					"en": "I analyse regulatory impacts, legislative improvement and comparative studies."
+						"pt": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados.",
+						"en": "I analyse regulatory impacts, legislative improvement and comparative studies."
 					},
 					{
-					"pt": "Impactos regulatórios",
-					"en": "Regulatory impacts"
+						"pt": "Impactos regulatórios",
+						"en": "Regulatory impacts"
 					},
 					{
-					"pt": "Aperfeiçoamento legislativo",
-					"en": "Legislative improvement"
+						"pt": "Aperfeiçoamento legislativo",
+						"en": "Legislative improvement"
 					},
 					{
-					"pt": "Estudos comparados",
-					"en": "Comparative studies"
+						"pt": "Estudos comparados",
+						"en": "Comparative studies"
 					}
 				]
 			},
@@ -95,20 +95,20 @@
 				},
 				"items": [
 					{
-					"pt": "Apoio municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
-					"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators."
+						"pt": "Apoio municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
+						"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators."
 					},
 					{
-					"pt": "Planos de adaptação",
-					"en": "Adaptation plans"
+						"pt": "Planos de adaptação",
+						"en": "Adaptation plans"
 					},
 					{
-					"pt": "Projetos municipais",
-					"en": "Municipal projects"
+						"pt": "Projetos municipais",
+						"en": "Municipal projects"
 					},
 					{
-					"pt": "Indicadores de resultados",
-					"en": "Outcome indicators"
+						"pt": "Indicadores de resultados",
+						"en": "Outcome indicators"
 					}
 				]
 			},
@@ -119,20 +119,20 @@
 				},
 				"items": [
 					{
-					"pt": "Apoio projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos.",
-					"en": "I support projects and public advocacy, technical studies and briefs, and the assessment of results and impacts."
+						"pt": "Apoio projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos.",
+						"en": "I support projects and public advocacy, technical studies and briefs, and the assessment of results and impacts."
 					},
 					{
-					"pt": "Projetos e incidência pública",
-					"en": "Projects and public advocacy"
+						"pt": "Projetos e incidência pública",
+						"en": "Projects and public advocacy"
 					},
 					{
-					"pt": "Estudos e notas técnicas",
-					"en": "Technical studies and briefs"
+						"pt": "Estudos e notas técnicas",
+						"en": "Technical studies and briefs"
 					},
 					{
-					"pt": "Avaliação de resultados e impactos",
-					"en": "Assessment of results and impacts"
+						"pt": "Avaliação de resultados e impactos",
+						"en": "Assessment of results and impacts"
 					}
 				]
 			},
@@ -143,20 +143,20 @@
 				},
 				"items": [
 					{
-					"pt": "Apoio responsabilidades e decisão, participação e diálogo, transparência e prestação de contas.",
-					"en": "I support responsibility and decision-making, participation and dialogue, transparency and accountability."
+						"pt": "Apoio responsabilidades e decisão, participação e diálogo, transparência e prestação de contas.",
+						"en": "I support responsibility and decision-making, participation and dialogue, transparency and accountability."
 					},
 					{
-					"pt": "Responsabilidades e decisão",
-					"en": "Responsibility and decision-making"
+						"pt": "Responsabilidades e decisão",
+						"en": "Responsibility and decision-making"
 					},
 					{
-					"pt": "Participação e diálogo",
-					"en": "Participation and dialogue"
+						"pt": "Participação e diálogo",
+						"en": "Participation and dialogue"
 					},
 					{
-					"pt": "Transparência e prestação de contas",
-					"en": "Transparency and accountability"
+						"pt": "Transparência e prestação de contas",
+						"en": "Transparency and accountability"
 					}
 				]
 			}
@@ -179,7 +179,7 @@
 		},
 		"ctaText": {
 			"pt": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil.",
-			"en": "Schedule an initial call to evaluate the scope of support your organization requires."
+			"en": "Schedule an initial call to evaluate the scope of support your organisation requires."
 		}
 	}
 }
