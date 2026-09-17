@@ -1,0 +1,110 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { SpeakingPageContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import EditorialImage from "./EditorialImage.astro";
+import PageHero from "./PageHero.astro";
+import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
+import AcronymText from "./AcronymText.astro";
+interface Props {
+  data: CmsEditorial;
+  embedded?: boolean;
+}
+const { data, embedded = false } = Astro.props;
+const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)
+  ?.speaking;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+---
+
+<div id={embedded ? undefined : "main-content"} tabindex={embedded ? undefined : "-1"}>
+  {
+    speaking ? (
+      <>
+        {!embedded && (
+          <PageHero
+            title={data.title}
+            subtitle={speaking.subtitle}
+            tag={speaking.tag}
+            locale={locale}
+            routeKey={data.routeKey}
+            heroMedia={data.media}
+            parent={{
+              label: locale === "en" ? "Academic" : "Academia",
+              href: pathFor("publications", locale),
+            }}
+            data-tina-field={tinaField(data, "eventsPage.speaking")}
+          />
+        )}
+        <Section>
+          <div class="speaking-bio">
+            <>
+              {speaking.photo?.image ? (
+                <figure class="speaking-photo">
+                  <EditorialImage
+                    src={speaking.photo.image}
+                    alt={speaking.photo.decorative ? "" : (speaking.photo.alt?.trim() ?? "")}
+                    width={540}
+                    height={960}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                  />
+                </figure>
+              ) : (
+                <div class="speaking-photo" role="img" aria-label={speaking.photoPlaceholderLabel}>
+                  <>
+                    <Icon name="photo" />
+                    <span>{speaking.photoPlaceholderLabel}</span>
+                  </>
+                </div>
+              )}
+              <div>
+                <>
+                  <SectionHeading title={speaking.bioHeading} locale={locale} />
+                  <RichText
+                    content={speaking.bioParagraphs}
+                    locale={locale}
+                    class="speaking-bio__text"
+                  />
+                  <Button
+                    class="w-full md:w-auto mt-5"
+                    variant="outline"
+                    href={pathFor("contact", locale)}
+                  >
+                    {speaking.inviteCta}
+                  </Button>
+                </>
+              </div>
+            </>
+          </div>
+        </Section>
+        <Section background="bg-secondary">
+          <>
+            <SectionHeading title={speaking.topicsHeading} locale={locale} />
+            <ul class="speaking-topics">
+              {speaking.topics.map((topic) => (
+                <li>
+                  <AcronymText text={topic} locale={locale} />
+                </li>
+              ))}
+            </ul>
+          </>
+        </Section>
+        <ContactCta heading={speaking.ctaHeading} text={speaking.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

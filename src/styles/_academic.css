@@ -1,0 +1,264 @@
+@layer components {
+	.academic-icon {
+		@apply grid size-11 shrink-0 place-items-center rounded-lg;
+
+		background: color-mix(in oklab, var(--accent) 16%, var(--card));
+		@apply text-accent;
+	}
+	.academic-icon svg {
+		@apply size-5;
+	}
+	.academic-hub-card {
+		@apply flex flex-col gap-4 rounded-lg border border-border bg-card p-6 text-card-foreground no-underline shadow-sm transition-[border-color,box-shadow] duration-200;
+	}
+	.academic-hub-card:hover {
+		border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
+		@apply shadow-md;
+	}
+	.academic-hub-card--highlight {
+		@apply border-l-4 border-l-accent;
+	}
+	.academic-hub-card h2,
+	.academic-service-card h3 {
+		@apply text-lg font-semibold;
+	}
+	.academic-hub-card p,
+	.academic-service-card p {
+		@apply text-base text-muted-foreground;
+		line-height: 1.65;
+	}
+	.academic-hub-card p {
+		flex: 1;
+	}
+	.academic-hub-card__cta {
+		@apply inline-flex self-start items-center gap-1 text-base font-semibold text-accent;
+	}
+	.academic-hub-card__cta svg {
+		@apply size-4 transition-transform duration-200;
+	}
+	.academic-hub-card:hover .academic-hub-card__cta svg {
+		transform: translateX(0.2rem);
+	}
+	.academic-service-card {
+		@apply gap-4;
+	}
+	.academic-timeline {
+		@apply relative ml-3 max-w-3xl list-none border-l-2 border-border pl-8;
+	}
+	.academic-timeline li {
+		@apply relative mb-10;
+	}
+	.academic-timeline li:last-child {
+		@apply mb-0;
+	}
+	.academic-timeline li::before {
+		@apply absolute size-4 rounded-full border-2 border-background bg-accent;
+
+		top: 0.15rem;
+		left: calc(-2rem - 0.55rem);
+		content: "";
+	}
+	.academic-timeline__meta {
+		@apply text-xs font-bold text-accent;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.academic-timeline h2 {
+		@apply mt-1 text-lg font-semibold;
+	}
+	.academic-timeline article > h2 + p {
+		@apply mt-1 text-base text-muted-foreground;
+	}
+	.academic-empty {
+		@apply mx-auto max-w-2xl rounded-lg border border-dashed border-border;
+	}
+	.publication-filters {
+		@apply my-8 flex flex-wrap items-center gap-3;
+	}
+	.publication-filters select {
+		@apply min-h-11 max-w-full rounded-md border border-border bg-background py-2 pr-9 pl-3 text-base text-foreground;
+	}
+	.publication-filters button {
+		@apply inline-flex flex-row justify-center items-center min-h-11 w-full md:w-auto gap-1 rounded-full border border-primary px-4 text-base font-semibold text-primary text-center;
+	}
+	.publication-filters button svg {
+		@apply size-4;
+	}
+	.publication-filters > p {
+		@apply ml-auto text-xs text-muted-foreground;
+	}
+	.publication-list {
+		--publications-per-row: 1;
+		@apply grid gap-0;
+		grid-template-columns: repeat(var(--publications-per-row), minmax(0, 1fr));
+	}
+
+	@media (min-width: 48rem) {
+		.publication-list {
+			--publications-per-row: 2;
+
+			@apply gap-x-6;
+		}
+	}
+
+	@media (min-width: 64rem) {
+		.publication-list {
+			--publications-per-row: 3;
+
+			@apply gap-x-7;
+		}
+	}
+	.publication-card {
+		@apply border-b border-border p-6;
+		container-name: publication-card;
+		container-type: inline-size;
+	}
+	.publication-card--highlight {
+		@apply mb-6 rounded-lg border-0 md:mb-0;
+
+		background: var(--brand-burgundy);
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight .acronym-tooltip__trigger {
+		text-decoration-color: var(--inverse-foreground);
+	}
+	.publication-card__layout {
+		@apply flex flex-col items-start gap-3;
+	}
+	.publication-card__link {
+		@apply min-h-11 shrink-0 px-0 py-2;
+	}
+	.publication-card__link svg {
+		@apply size-4 shrink-0;
+	}
+	.publication-card__content {
+		@apply min-w-0 flex-1;
+	}
+	.publication-card__meta {
+		@apply flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground;
+	}
+	.publication-card__meta > span + span::before {
+		@apply mr-2 text-border;
+
+		content: "·";
+	}
+	.publication-card__meta strong {
+		@apply inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-0.5 text-accent-foreground;
+	}
+	.publication-card__meta svg {
+		@apply size-3.5;
+	}
+	.publication-card h2 {
+		@apply mt-2 mb-1 font-semibold leading-7;
+
+		font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+	}
+	.publication-card h2 + p {
+		@apply mb-3 text-base text-muted-foreground;
+	}
+	.publication-card ul {
+		@apply mt-3 flex flex-wrap gap-1.5 list-none;
+	}
+	.publication-card li {
+		@apply rounded-sm px-2 py-0.5 text-xs text-primary;
+
+		background: color-mix(in oklab, var(--primary) 9%, var(--background));
+	}
+	.publication-card--highlight .publication-card__meta,
+	.publication-card--highlight h2 + p,
+	.publication-card--highlight .publication-card__link {
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight .publication-card__meta strong {
+		@apply rounded-none bg-transparent p-0;
+
+		color: var(--inverse-foreground);
+	}
+	.publication-card--highlight li {
+		background: rgb(255 255 255 / 8%);
+		color: var(--inverse-foreground);
+	}
+	.publication-card__unavailable {
+		@apply text-left text-base text-muted-foreground;
+	}
+	@container publication-card (min-width: 32rem) {
+		.publication-card__unavailable {
+			@apply max-w-36 text-right;
+		}
+	}
+	@media (min-width: 48rem) {
+		.publication-card--highlight {
+			grid-row: span 2;
+		}
+		.publication-card h2 + p,
+		.publication-card__unavailable {
+			@apply text-lg;
+		}
+	}
+	@media (min-width: 64rem) {
+		.publication-card h2 {
+			font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+		}
+		.publication-card--highlight h2 {
+			font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+			line-height: 1.15;
+		}
+		.publication-card h2 + p {
+			font-size: 1.125rem;
+		}
+	}
+	.publication-empty {
+		@apply py-10 text-center text-base text-muted-foreground;
+	}
+	.publication-orcid-note {
+		@apply mt-10 max-w-3xl text-base text-muted-foreground;
+
+		line-height: 1.6;
+	}
+	.speaking-bio {
+		@apply grid items-start gap-10;
+
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	}
+	.speaking-photo {
+		@apply grid place-items-center content-center gap-2 rounded-lg;
+
+		aspect-ratio: 9 / 16;
+		overflow: hidden;
+	}
+	.speaking-photo img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+	.speaking-photo svg {
+		@apply size-10;
+	}
+	.speaking-bio__text {
+		@apply grid gap-4 text-muted-foreground;
+
+		line-height: 1.7;
+	}
+	.speaking-kit-notice {
+		@apply mt-8 flex items-start gap-2 rounded-md border p-3 text-base;
+
+		border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+	}
+	.speaking-kit-notice svg {
+		@apply size-4.5 shrink-0 text-accent;
+	}
+	.speaking-topics {
+		@apply flex flex-wrap gap-3 list-none;
+	}
+	.speaking-topics li {
+		@apply rounded-full border border-border bg-background px-4 py-2 text-base text-muted-foreground;
+	}
+	.speaking-kit-grid {
+		@apply grid gap-6 list-none;
+
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.speaking-kit-card {
+		@apply h-full flex-row items-center gap-4 text-base font-semibold;
+	}
+}

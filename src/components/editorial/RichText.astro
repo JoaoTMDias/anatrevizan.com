@@ -1,0 +1,19 @@
+---
+import TinaMarkdown from "@tinacms/astro/TinaMarkdown.astro";
+import type { TinaRichTextContent } from "@tinacms/astro";
+import { configuredAcronyms, transformRichTextAcronyms } from "../../lib/acronyms";
+import type { PublishedLocale } from "../../lib/routing";
+import Acronym from "./Acronym.astro";
+import RichLink from "./RichLink.astro";
+
+interface Props {
+  content?: TinaRichTextContent;
+  class?: string;
+  locale: PublishedLocale;
+}
+
+const { content, locale, class: className } = Astro.props;
+const transformed = transformRichTextAcronyms(content, configuredAcronyms(locale)) as TinaRichTextContent;
+---
+
+{content && <div class:list={["rich-text", className]}><TinaMarkdown content={transformed} components={{ acronym: Acronym, a: RichLink }} /></div>}

@@ -1,0 +1,2 @@
+@custom-variant dark (&:is(.dark *));
+@plugin "@tailwindcss/typography";

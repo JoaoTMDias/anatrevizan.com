@@ -5,9 +5,10 @@
  * itself comes from `@tinacms/astro/experimental`, so adding a new editable
  * region only ever touches the registry.
  */
-import type { APIRoute } from 'astro';
-import { experimental_createIslandRoute } from '@tinacms/astro/experimental';
-import { islands } from '../../lib/islands';
+
+import { experimental_createIslandRoute } from "@tinacms/astro/experimental";
+import type { APIRoute } from "astro";
+import { islands } from "../../lib/islands";
 
 export const prerender = false;
 export const ALL: APIRoute = experimental_createIslandRoute(islands);

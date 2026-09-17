@@ -12,6 +12,9 @@ lerna-debug.log*
 .impeccable
 .prototools
 
+# Windows download metadata
+*:Zone.Identifier
+
 # TinaCMS generated output (also covered by tina/.gitignore)
 tina/__generated__
 
@@ -57,7 +60,6 @@ node_modules/
 # chosen lockfile (we recommend pnpm-lock.yaml) is committed. See README → "Commit your lockfile".
 # Package Manager Lock Files
 package-lock.json
-pnpm-lock.yaml
 yarn.lock
 .yarn/cache
 bun.lockb
@@ -68,3 +70,9 @@ deno.lock
 .netlify
 .wrangler
 dist
+
+# Playwright output
+test-results
+
+# React Email local preview cache
+.react-email/

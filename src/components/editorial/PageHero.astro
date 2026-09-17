@@ -1,0 +1,121 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { heroAspectRatioForRoute, type HeroMedia } from "../../lib/hero-media";
+import {
+  contactBookingPath,
+  pathFor,
+  type PublishedLocale,
+  type RouteKey,
+} from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import EditorialImage from "./EditorialImage.astro";
+import AcronymText from "./AcronymText.astro";
+
+interface Props extends Omit<HTMLAttributes<"header">, "title"> {
+  title: string;
+  subtitle?: string;
+  tag?: string;
+  locale: PublishedLocale;
+  routeKey: RouteKey;
+  parent?: { label: string; href: string };
+  tone?: "accent" | "primary";
+  heroMedia?: HeroMedia | null;
+  showActions?: boolean;
+  showContactLink?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  tag,
+  locale,
+  routeKey,
+  parent,
+  tone = "primary",
+  heroMedia,
+  showActions = false,
+  showContactLink = true,
+  class: className,
+  ...rest
+} = Astro.props;
+const foreground = heroMedia?.foreground?.image ? heroMedia.foreground : null;
+const foregroundRatio = heroAspectRatioForRoute(routeKey);
+const foregroundDimensions =
+  foregroundRatio === "landscape" ? { width: 960, height: 720 } : { width: 960, height: 960 };
+const items = [
+  { label: locale === "en" ? "Home" : "Início", href: pathFor("home", locale) },
+  ...(parent ? [parent] : []),
+  { label: title },
+];
+---
+
+<div
+  class:list={[
+    "editorial-hero",
+    tone === "accent" && "editorial-hero--accent",
+    foreground && "editorial-hero--with-foreground",
+    className,
+  ]}
+  {...rest}
+>
+  <div class="site-container editorial-hero__inner">
+    <Breadcrumbs items={items} />
+    <div class="editorial-hero__content">
+      <div class="editorial-hero__copy">
+        {
+          tag && (
+            <p class="editorial-eyebrow">
+              <AcronymText text={tag} locale={locale} />
+            </p>
+          )
+        }
+        <h1><AcronymText text={title} locale={locale} /></h1>
+        {
+          subtitle && (
+            <p class="editorial-hero__subtitle">
+              <AcronymText text={subtitle} locale={locale} />
+            </p>
+          )
+        }
+        {
+          showActions && (
+            <div class="mt-8 flex flex-col md:flex-row flex-wrap gap-4">
+              <Button variant="accent" href={contactBookingPath(locale)}>
+                {locale === "en" ? "Book an initial call" : "Agendar contacto"}
+              </Button>
+              {showContactLink && (
+                <Button variant="outlineInverse" href={pathFor("contact", locale)}>
+                  {locale === "en" ? "Discuss my case" : "Falar sobre o meu caso"}
+                </Button>
+              )}
+            </div>
+          )
+        }
+        <slot name="actions" />
+      </div>
+      {
+        foreground && (
+          <figure
+            class:list={[
+              "editorial-hero__foreground",
+              `editorial-hero__foreground--${foregroundRatio}`,
+            ]}
+          >
+            <EditorialImage
+              src={foreground.image!}
+              alt={foreground.decorative ? "" : (foreground.alt?.trim() ?? "")}
+              width={foregroundDimensions.width}
+              height={foregroundDimensions.height}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              border="golden"
+              sizes="(min-width: 1024px) min(40vw, 32rem), calc(100vw - 2.5rem)"
+            />
+          </figure>
+        )
+      }
+    </div>
+  </div>
+</div>

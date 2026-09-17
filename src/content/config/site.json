@@ -1,0 +1,566 @@
+{
+	"acronyms": [
+		{
+			"acronym": "Ph.D.",
+			"expansion": {
+				"pt": "Doutoramento",
+				"en": "Doctor"
+			}
+		},
+		{
+			"acronym": "OAB",
+			"expansion": {
+				"pt": "Ordem dos Advogados do Brasil",
+				"en": "Brazilian Bar Association"
+			}
+		},
+		{
+			"acronym": "NIF",
+			"expansion": {
+				"pt": "Número de Identificação Fiscal",
+				"en": "Tax Identification Number"
+			}
+		},
+		{
+			"acronym": "DGES",
+			"expansion": {
+				"pt": "Direção-Geral do Ensino Superior",
+				"en": "Directorate-General for Higher Education"
+			}
+		},
+		{
+			"acronym": "UFMT",
+			"expansion": {
+				"pt": "Universidade Federal de Mato Grosso",
+				"en": "Federal University of Mato Grosso"
+			}
+		},
+		{
+			"acronym": "FAPEMAT",
+			"expansion": {
+				"pt": "Fundação de Amparo à Pesquisa do Estado de Mato Grosso",
+				"en": "Mato Grosso State Research Support Foundation"
+			}
+		},
+		{
+			"acronym": "SEMA-MT",
+			"expansion": {
+				"pt": "Secretaria de Estado de Meio Ambiente de Mato Grosso",
+				"en": "Mato Grosso State Department of the Environment"
+			}
+		},
+		{
+			"acronym": "FCT",
+			"expansion": {
+				"pt": "Fundação para a Ciência e a Tecnologia",
+				"en": "Foundation for Science and Technology"
+			}
+		},
+		{
+			"acronym": "ESG",
+			"expansion": {
+				"pt": "Ambiental, Social e Governança",
+				"en": "Environmental, Social and Governance"
+			}
+		},
+		{
+			"acronym": "EUDR",
+			"expansion": {
+				"pt": "Regulamento Europeu de Produtos Livres de Desflorestação",
+				"en": "European Union Deforestation Regulation"
+			}
+		},
+		{
+			"acronym": "CSDDD",
+			"expansion": {
+				"pt": "Diretiva relativa ao dever de diligência das empresas em matéria de sustentabilidade",
+				"en": "Corporate Sustainability Due Diligence Directive"
+			}
+		},
+		{
+			"acronym": "CSRD",
+			"expansion": {
+				"pt": "Diretiva relativa ao relato de sustentabilidade das empresas",
+				"en": "Corporate Sustainability Reporting Directive"
+			}
+		},
+		{
+			"acronym": "KPI",
+			"expansion": {
+				"pt": "Indicador-chave de desempenho",
+				"en": "Key Performance Indicator"
+			}
+		},
+		{
+			"acronym": "UE",
+			"expansion": {
+				"pt": "União Europeia",
+				"en": "European Union"
+			}
+		},
+		{
+			"acronym": "EU",
+			"expansion": {
+				"pt": "União Europeia",
+				"en": "European Union"
+			}
+		},
+		{
+			"acronym": "RGPD",
+			"expansion": {
+				"pt": "Regulamento Geral sobre a Proteção de Dados",
+				"en": "General Data Protection Regulation"
+			}
+		},
+		{
+			"acronym": "GDPR",
+			"expansion": {
+				"pt": "Regulamento Geral sobre a Proteção de Dados",
+				"en": "General Data Protection Regulation"
+			}
+		},
+		{
+			"acronym": "ONGs",
+			"expansion": {
+				"pt": "Organizações Não Governamentais",
+				"en": "Non-governmental Organisations"
+			}
+		},
+		{
+			"acronym": "ORCID",
+			"expansion": {
+				"pt": "Identificador Aberto de Investigador e Colaborador",
+				"en": "Open Researcher and Contributor ID"
+			}
+		},
+		{
+			"acronym": "DOI",
+			"expansion": {
+				"pt": "Identificador de Objeto Digital",
+				"en": "Digital Object Identifier"
+			}
+		},
+		{
+			"acronym": "OCDE",
+			"expansion": {
+				"pt": "Organização para a Cooperação e Desenvolvimento Económico",
+				"en": "Organisation for Economic Co-operation and Development"
+			}
+		},
+		{
+			"acronym": "OMC",
+			"expansion": {
+				"pt": "Organização Mundial do Comércio",
+				"en": "World Trade Organization"
+			}
+		},
+		{
+			"acronym": "MBRE",
+			"expansion": {
+				"pt": "Mercado Brasileiro de Redução de Emissões",
+				"en": "Brazilian Emissions Reduction Market"
+			}
+		},
+		{
+			"acronym": "ETUI",
+			"expansion": {
+				"pt": "Instituto Sindical Europeu",
+				"en": "European Trade Union Institute"
+			}
+		},
+		{
+			"acronym": "ETUC",
+			"expansion": {
+				"pt": "Confederação Europeia de Sindicatos",
+				"en": "European Trade Union Confederation"
+			}
+		},
+		{
+			"acronym": "ETIC",
+			"expansion": {
+				"pt": "Encontro de Iniciação Científica",
+				"en": "Scientific Initiation Meeting"
+			}
+		},
+		{
+			"acronym": "CONPEDI",
+			"expansion": {
+				"pt": "Conselho Nacional de Pesquisa e Pós-Graduação em Direito",
+				"en": "National Council for Research and Graduate Studies in Law"
+			}
+		},
+		{
+			"acronym": "GJHSS",
+			"expansion": {
+				"pt": "Global Journal of Human-Social Science",
+				"en": "Global Journal of Human-Social Science"
+			}
+		},
+		{
+			"acronym": "PT",
+			"expansion": {
+				"pt": "Português",
+				"en": "Portuguese"
+			}
+		},
+		{
+			"acronym": "EN",
+			"expansion": {
+				"pt": "Inglês",
+				"en": "English"
+			}
+		},
+		{
+			"acronym": "ES",
+			"expansion": {
+				"pt": "Espanhol",
+				"en": "Spanish"
+			}
+		},
+		{
+			"acronym": "CEJEIA",
+			"expansion": {
+				"pt": "Centro de Estudos Jurídicos, Económicos e Ambientais",
+				"en": "Center for Juridical, Economic and Environmental Studies"
+			}
+		},
+		{
+			"acronym": "CENSE",
+			"expansion": {
+				"pt": "Centro de Investigação em Ambiente e Sustentabilidade",
+				"en": "Center for Environmental and Sustainability Research"
+			}
+		},
+		{
+			"acronym": "GPMAT",
+			"expansion": {
+				"pt": "Grupos de Pesquisa em Meio Ambiente do Trabalho",
+				"en": "Research Group on Labor Environment"
+			}
+		},
+		{
+			"acronym": "SPF",
+			"expansion": {
+				"pt": "Fundo de Prioridades Estratégicas",
+				"en": "Strategic Priorities Fund"
+			}
+		},
+		{
+			"acronym": "EULAS",
+			"expansion": {
+				"pt": "Sinergias Académicas UE-América Latina",
+				"en": "EU-Latin America Academic Synergies"
+			}
+		},
+		{
+			"acronym": "SIS",
+			"expansion": {
+				"pt": "Soluções Inclusivas Sustentáveis",
+				"en": "Soluções Inclusivas Sustentáveis"
+			}
+		},
+		{
+			"acronym": "LACLIMA",
+			"expansion": {
+				"pt": "Latin American Climate Lawyers Initiative for Mobilizing Action",
+				"en": "Latin American Climate Lawyers Initiative for Mobilizing Action"
+			}
+		},
+		{
+			"acronym": "CEDAT",
+			"expansion": {
+				"pt": "Centro de Estudos de Direito Ambiental de Tarragona",
+				"en": "Tarragona Environmental Law Studies Centre"
+			}
+		},
+		{
+			"acronym": "QUERCUS",
+			"expansion": {
+				"pt": "Associação Nacional de Conservação da Natureza",
+				"en": "National Association for Nature Conservation"
+			}
+		}
+	],
+	"contacts": {
+		"email": "contato@anatrevizan.com",
+		"phone": "+351926430792",
+		"calendlyUrl": "https://calendly.com/dratrevizan",
+		"profiles": [
+			{
+				"label": {
+					"pt": "LinkedIn",
+					"en": "LinkedIn"
+				},
+				"url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/"
+			},
+			{
+				"label": {
+					"pt": "Instagram",
+					"en": "Instagram"
+				},
+				"url": "https://www.instagram.com/dratrevizan"
+			},
+			{
+				"label": {
+					"pt": "ORCID",
+					"en": "ORCID"
+				},
+				"url": "https://orcid.org/0000-0003-4365-6053"
+			}
+		],
+		"regions": [
+			{
+				"flag": "🇵🇹",
+				"label": {
+					"pt": "Portugal",
+					"en": "Portugal"
+				}
+			},
+			{
+				"flag": "🇧🇷",
+				"label": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				}
+			}
+		],
+		"serviceLanguages": ["Português", "English", "Español"]
+	},
+	"navigation": {
+		"consulting": {
+			"label": {
+				"pt": "Atuação",
+				"en": "Practice"
+			},
+			"immigrationMobility": {
+				"label": {
+					"pt": "Migração e Mobilidade",
+					"en": "Migration and Mobility"
+				},
+				"description": {
+					"pt": "Mudar de país é uma das decisões mais importantes da sua vida.",
+					"en": "Changing countries is one of the most important decisions in your life."
+				},
+				"tag": {
+					"pt": "🇵🇹 · 🇧🇷",
+					"en": "🇵🇹 · 🇧🇷"
+				}
+			},
+			"legal": {
+				"label": {
+					"pt": "Advocacia e consultoria jurídica no Brasil",
+					"en": "Legal practice and legal consulting in Brazil"
+				},
+				"description": {
+					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
+				},
+				"tag": {
+					"pt": "🇧🇷",
+					"en": "🇧🇷"
+				}
+			},
+			"environmentalEsg": {
+				"label": {
+					"pt": "Ambiental e ESG",
+					"en": "Environmental and ESG"
+				},
+				"description": {
+					"pt": "Direito Ambiental e ESG no Brasil, com apoio técnico sobre regulação europeia.",
+					"en": "Environmental Law and ESG in Brazil, with technical support on European regulation."
+				},
+				"tag": {
+					"pt": "🇧🇷 · 🇪🇺",
+					"en": "🇧🇷 · 🇪🇺"
+				}
+			},
+			"publicPolicy": {
+				"label": {
+					"pt": "Políticas Públicas e Governança",
+					"en": "Public Policy and Governance"
+				},
+				"description": {
+					"pt": "Investigação, análise e apoio técnico em políticas públicas, governança e sustentabilidade; a prestação jurídica limita-se ao Brasil.",
+					"en": "Research, analysis and technical support in public policy, governance and sustainability; legal services are limited to Brazil."
+				},
+				"tag": {
+					"pt": "🇧🇷 · 🇪🇺",
+					"en": "🇧🇷 · 🇪🇺"
+				}
+			}
+		},
+		"academic": {
+			"label": {
+				"pt": "Academia",
+				"en": "Academic"
+			},
+			"mentoring": {
+				"label": {
+					"pt": "Mentorias Profissionais e Académicas",
+					"en": "Mentoring"
+				},
+				"description": {
+					"pt": "Revisão técnica, orientação metodológica, carreira e candidaturas a mestrados e doutoramentos",
+					"en": "Technical review, methodological guidance, career support and master’s and doctoral applications"
+				}
+			},
+			"publications": {
+				"label": {
+					"pt": "Publicações",
+					"en": "Publications"
+				},
+				"description": {
+					"pt": "Artigos em revistas científicas internacionais",
+					"en": "Articles in international scientific journals"
+				}
+			},
+			"events": {
+				"label": {
+					"pt": "Eventos e Palestras",
+					"en": "Events"
+				},
+				"description": {
+					"pt": "Histórico de participações desde 2019",
+					"en": "Record of participation since 2019"
+				}
+			},
+			"training": {
+				"label": {
+					"pt": "Cursos e Formações",
+					"en": "Training"
+				},
+				"description": {
+					"pt": "Para universidades, empresas e organizações",
+					"en": "For universities, businesses and organisations"
+				}
+			}
+		},
+		"about": {
+			"pt": "Sobre mim",
+			"en": "About me"
+		},
+		"contact": {
+			"pt": "Contacto",
+			"en": "Contact"
+		}
+	},
+	"requestTypes": [
+		{
+			"id": "brazil-law",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Assunto jurídico de Direito brasileiro",
+				"en": "Legal matter under Brazilian law"
+			}
+		},
+		{
+			"id": "brazil-civil-contracts-consumer",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Civil, contratos e consumidor",
+				"en": "Civil law, contracts and consumer matters"
+			}
+		},
+		{
+			"id": "brazil-labour",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Trabalho e relações laborais",
+				"en": "Labour and employment relations"
+			}
+		},
+		{
+			"id": "brazil-human-rights",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Direitos humanos",
+				"en": "Human rights"
+			}
+		},
+		{
+			"id": "brazil-legal-opinion",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Parecer jurídico",
+				"en": "Legal opinion"
+			}
+		},
+		{
+			"id": "brazil-environment",
+			"scope": "BR_LEGAL",
+			"label": {
+				"pt": "Ambiental, ESG e políticas públicas - Brasil",
+				"en": "Environmental, ESG and public policy - Brazil"
+			}
+		},
+		{
+			"id": "portugal-administrative",
+			"scope": "PT_ADMIN",
+			"label": {
+				"pt": "Apoio administrativo ou documental em Portugal",
+				"en": "Administrative or document support in Portugal"
+			}
+		},
+		{
+			"id": "academic-mentoring",
+			"scope": "ACADEMIC",
+			"label": {
+				"pt": "Mentoria ou investigação",
+				"en": "Mentoring or research"
+			}
+		},
+		{
+			"id": "academic-research",
+			"scope": "ACADEMIC",
+			"label": {
+				"pt": "Investigação e colaboração científica",
+				"en": "Research and scientific collaboration"
+			}
+		},
+		{
+			"id": "academic-speaking",
+			"scope": "ACADEMIC",
+			"label": {
+				"pt": "Palestra ou formação",
+				"en": "Talk or training"
+			}
+		},
+		{
+			"id": "professional-other",
+			"scope": "OTHER",
+			"label": {
+				"pt": "Outro pedido profissional",
+				"en": "Other professional request"
+			}
+		}
+	],
+	"seo": {
+		"defaultTitle": {
+			"pt": "Ana Flávia Trevizan - Atuação profissional e Academia",
+			"en": "Ana Flávia Trevizan - Professional Practice and Academia"
+		},
+		"defaultDescription": {
+			"pt": "Atuação profissional, investigação e formação em ambiente, direitos humanos e políticas públicas.",
+			"en": "Professional practice, research and teaching in environment, human rights and public policy."
+		},
+		"defaultImage": "/open-graph-image.webp"
+	},
+	"footer": {
+		"copyright": {
+			"pt": "Ana Trevizan",
+			"en": "Ana Trevizan"
+		},
+		"contactIntro": {
+			"pt": "Envie uma mensagem através do formulário ou continue pelo WhatsApp.",
+			"en": "Send a message through the form or continue via WhatsApp."
+		},
+		"contactCta": {
+			"pt": "Entrar em contacto",
+			"en": "Get in touch"
+		},
+		"rightsReserved": {
+			"pt": "Todos os direitos reservados.",
+			"en": "All rights reserved."
+		}
+	}
+}

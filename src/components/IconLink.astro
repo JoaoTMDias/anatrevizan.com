@@ -1,20 +1,27 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
+import { isExternalHref } from '../lib/external-url';
 
 type Props = HTMLAttributes<'a'> & {
-	title?: string | null;
-	link?: string | null;
+	title: string;
+	link: string;
 	/** Any Iconify icon name, e.g. "tabler:brand-x". */
-	icon?: string | null;
+	icon: string;
 };
 
-const { title, link, icon, ...rest } = Astro.props;
-const safeTitle = title ?? '';
-const safeLink = link ?? '#';
+const { title, link, icon, target, rel, ...rest } = Astro.props;
+const isExternal = isExternalHref(link);
+const linkTarget = isExternal ? '_blank' : target;
+const linkRel = isExternal
+	? [...new Set(`${rel ?? ''} external noopener noreferrer`.trim().split(/\s+/))].join(' ')
+	: rel;
+const externalHint = Astro.url.pathname.startsWith('/en')
+	? 'opens in a new tab'
+	: 'abre num novo separador';
+const accessibleTitle = isExternal ? `${title} (${externalHint})` : title;
 ---
 
-<a href={safeLink} target="_blank" aria-label={`Go to ${safeTitle}`} {...rest}>
-	<span class="sr-only">{safeTitle}</span>
-	{icon && <Icon name={icon} size={32} />}
+<a href={link} target={linkTarget} rel={linkRel} aria-label={accessibleTitle} title={title} {...rest}>
+	<Icon name={icon} aria-hidden="true" />
 </a>

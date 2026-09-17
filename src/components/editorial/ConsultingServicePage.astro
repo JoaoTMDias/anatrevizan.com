@@ -1,0 +1,341 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { ConsultingServiceContent } from "../../lib/page-content";
+import { isRouteKey, pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Card from "../ui/Card.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
+import EditorialImage from "./EditorialImage.astro";
+import PageHero from "./PageHero.astro";
+import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
+
+interface Props {
+  data: CmsEditorial;
+}
+const { data } = Astro.props;
+const service = data.consultingService as ConsultingServiceContent | null | undefined;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const crosslink =
+  service?.crosslinkRouteKey && isRouteKey(service.crosslinkRouteKey)
+    ? pathFor(service.crosslinkRouteKey, locale)
+    : undefined;
+const crosslinkLabel =
+  service?.crosslinkRouteKey === "about"
+    ? locale === "en"
+      ? "Discover the journey"
+      : "Conhecer o percurso"
+    : locale === "en"
+      ? "Legal consulting in Brazil"
+      : "Consultoria jurídica no Brasil";
+const accent = data.routeKey === "environmental-esg";
+const serviceIconsByRoute = {
+  "immigration-mobility": [
+    "route",
+    "e-passport",
+    "language",
+    "clipboard-check",
+    "briefcase",
+    "award",
+  ],
+  "environmental-esg": [
+    "scale",
+    "shield-check",
+    "file-certificate",
+    "chart-donut",
+    "route",
+    "users-group",
+  ],
+  "public-policy": ["file-analytics", "building-community", "users-group", "user-cog"],
+};
+const serviceIcons = serviceIconsByRoute[data.routeKey as keyof typeof serviceIconsByRoute] ?? [
+  "files",
+  "files",
+  "files",
+  "files",
+  "files",
+  "files",
+];
+---
+
+<div
+  id="main-content"
+  tabindex="-1"
+  class:list={["consulting-service", `consulting-service--${data.routeKey}`]}
+>
+  {
+    service ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={service.subtitle}
+          tag={service.tag}
+          locale={locale}
+          routeKey={data.routeKey}
+          tone={accent ? "accent" : "primary"}
+          heroMedia={data.media}
+          showActions
+          showContactLink={accent}
+          parent={{
+            label: locale === "en" ? "Practice" : "Atuação",
+            href: pathFor("practice", locale),
+          }}
+          data-tina-field={tinaField(data, "consultingService")}
+        />
+        <Section>
+          <div
+            class:list={[
+              "consulting-intro",
+              !service.introImage?.image && "consulting-intro--text-only",
+            ]}
+          >
+            {service.introImage?.image && (
+              <figure
+                class="consulting-intro__media"
+                data-tina-field={tinaField(data, "consultingService")}
+              >
+                <EditorialImage
+                  src={service.introImage.image}
+                  alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
+                  width={960}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </figure>
+            )}
+            <div class="consulting-intro__copy">
+              <SectionHeading title={service.introHeading} locale={locale} />
+              <RichText
+                content={service.introParagraphs}
+                locale={locale}
+                class="space-y-5 text-lg leading-relaxed text-muted-foreground"
+              />
+            </div>
+          </div>
+        </Section>
+        <Section background="bg-secondary">
+          <SectionHeading
+            title={service.servicesHeading}
+            subtitle={service.servicesSubtitle}
+            locale={locale}
+          />
+          <div class="editorial-grid">
+            {service.services.map((item, index) => (
+              <Card
+                as="article"
+                class:list={[
+                  "consulting-card gap-0 p-6 md:p-8",
+                  accent && "consulting-card--accent",
+                ]}
+              >
+                <div class="consulting-card__heading">
+                  <span class="consulting-card__icon" aria-hidden="true">
+                    <Icon name={serviceIcons[index % serviceIcons.length]} />
+                  </span>
+                  <h3 class="text-lg font-semibold">
+                    <AcronymText text={item.title} locale={locale} />
+                  </h3>
+                </div>
+                {item.description && (
+                  <p class="text-base leading-relaxed text-muted-foreground">
+                    <AcronymText text={item.description} locale={locale} />
+                  </p>
+                )}
+                {item.items && (
+                  <ul class="consulting-card__items list-disc space-y-2 pl-5 text-base text-muted-foreground">
+                    {item.items.map((entry) => (
+                      <li>
+                        <AcronymText text={entry} locale={locale} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Card>
+            ))}
+          </div>
+        </Section>
+        {service.steps?.length && service.stepsHeading && (
+          <Section>
+            <SectionHeading
+              title={service.stepsHeading}
+              subtitle={service.stepsSubtitle}
+              locale={locale}
+            />
+            <ol class="consulting-steps scroll-stagger-fade-in">
+              {service.steps.map((step) => (
+                <li>
+                  <p
+                    class:list={[
+                      "consulting-step__number",
+                      accent && "consulting-step__number--accent",
+                    ]}
+                  >
+                    {step.number}
+                  </p>
+                  <h3>
+                    <AcronymText text={step.title} locale={locale} />
+                  </h3>
+                  <p>
+                    <AcronymText text={step.description} locale={locale} />
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Section>
+        )}
+        {service.differentiatorHeading && (
+          <Section>
+            <div
+              class:list={[
+                "consulting-differentiator",
+                accent
+                  ? "consulting-differentiator--accent"
+                  : "consulting-differentiator--standard",
+              ]}
+            >
+              <div class="consulting-differentiator__column">
+                <SectionHeading
+                  title={service.differentiatorHeading}
+                  eyebrow={service.differentiatorEyebrow}
+                  locale={locale}
+                  class={accent ? "consulting-differentiator__heading" : undefined}
+                />
+                {service.differentiatorImage?.image && (
+                  <figure
+                    class="consulting-differentiator__media"
+                    data-tina-field={tinaField(data, "consultingService")}
+                  >
+                    <EditorialImage
+                      src={service.differentiatorImage.image}
+                      alt={
+                        service.differentiatorImage.decorative
+                          ? ""
+                          : (service.differentiatorImage.alt?.trim() ?? "")
+                      }
+                      width={960}
+                      height={720}
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
+                  </figure>
+                )}
+              </div>
+              <div class="consulting-differentiator__column">
+                <RichText
+                  content={service.differentiatorParagraphs}
+                  locale={locale}
+                  class="consulting-differentiator__text space-y-5 leading-relaxed text-muted-foreground"
+                />
+                {service.differentiatorCredentials?.length && (
+                  <ul
+                    class:list={
+                      accent
+                        ? "consulting-differentiator__credentials space-y-4 rounded-lg bg-brand-surface p-8 text-brand-surface-foreground"
+                        : "mt-7 grid gap-3 sm:grid-cols-2"
+                    }
+                  >
+                    {service.differentiatorCredentials.map((credential) => (
+                      <li
+                        class:list={
+                          accent
+                            ? "flex gap-3 text-base leading-relaxed"
+                            : "rounded-md border bg-card p-4 text-base"
+                        }
+                      >
+                        {accent && (
+                          <span class="mt-0.5 text-white" aria-hidden="true">
+                            <Icon name="award" />
+                          </span>
+                        )}
+                        <span>
+                          <AcronymText text={credential} locale={locale} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </Section>
+        )}
+        {service.relatedWorkHeading && (
+          <Section background="bg-secondary">
+            <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <SectionHeading
+                title={service.relatedWorkHeading}
+                subtitle={service.relatedWorkSubtitle}
+                locale={locale}
+                class="mb-0"
+              />
+              {accent && (
+                <Button variant="outline" href={pathFor("publications", locale)}>
+                  {locale === "en" ? "View all publications" : "Ver todas as publicações"}
+                </Button>
+              )}
+            </div>
+            <div class="grid gap-6 md:grid-cols-2">
+              {service.relatedPublications?.map((publication) => (
+                <a
+                  href={pathFor("publications", locale)}
+                  class="block rounded-lg transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  aria-label={`${locale === "en" ? "Read publication" : "Ver publicação"}: ${publication.title}`}
+                >
+                  <Card as="article" class="p-6 gap-2 relative h-full">
+                    {publication.highlight && (
+                      <p class="absolute -top-2 right-4 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        {publication.highlight}
+                      </p>
+                    )}
+                    <h3 class="text-lg font-semibold">
+                      <AcronymText text={publication.title} locale={locale} />
+                    </h3>
+                    <p class="text-base text-muted-foreground">{publication.publication}</p>
+                  </Card>
+                </a>
+              ))}
+            </div>
+          </Section>
+        )}
+        {service.crosslinkHeading && crosslink && (
+          <aside class="border-y bg-secondary">
+            <div class="site-container py-16">
+              <div class="consulting-crosslink">
+                <div>
+                  <h2 class="text-xl font-semibold">{service.crosslinkHeading}</h2>
+                  <p class="mt-3 max-w-2xl text-muted-foreground">{service.crosslinkText}</p>
+                </div>
+                <Button class="w-full md:w-auto" variant="outline" href={crosslink}>
+                  {crosslinkLabel}
+                </Button>
+              </div>
+            </div>
+          </aside>
+        )}
+        {service.note && (
+          <aside class="border-b">
+            <div class="site-container max-w-4xl py-8">
+              <p class="border-l-4 border-primary pl-4 text-base leading-relaxed text-muted-foreground">
+                {service.note}
+              </p>
+            </div>
+          </aside>
+        )}
+        <ContactCta heading={service.ctaHeading} text={service.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

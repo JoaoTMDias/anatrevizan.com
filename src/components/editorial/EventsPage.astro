@@ -1,0 +1,240 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { EventsPageContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import EmptyState from "./EmptyState.astro";
+import PageHero from "./PageHero.astro";
+import SpeakingPage from "./SpeakingPage.astro";
+interface Props {
+  data: CmsEditorial;
+}
+const { data } = Astro.props;
+const events = data.eventsPage as EventsPageContent | null | undefined;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const months =
+  locale === "en"
+    ? [
+        "",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ]
+    : [
+        "",
+        "janeiro",
+        "fevereiro",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "dezembro",
+      ];
+type EventEntry = NonNullable<EventsPageContent["entries"]>[number];
+const formatDate = (date: EventEntry["date"]) => {
+  const pending = locale === "en" ? "date to be confirmed" : "data a confirmar";
+  if (date.precision === "year" || !date.month)
+    return `${date.year}${date.pending ? ` · ${pending}` : ""}`;
+  if (!date.day) return `${months[date.month]} ${date.year}${date.pending ? ` · ${pending}` : ""}`;
+  return `${date.day}${date.endDay ? `–${date.endDay}` : ""} ${months[date.month]} ${date.year}${date.pending ? ` · ${pending}` : ""}`;
+};
+const entries = [...(events?.entries ?? [])].sort((a, b) =>
+  `${b.date.year}-${b.date.month ?? 0}-${b.date.day ?? 0}`.localeCompare(
+    `${a.date.year}-${a.date.month ?? 0}-${a.date.day ?? 0}`
+  )
+);
+const years = [...new Set(entries.map((entry) => entry.date.year))].sort().reverse();
+const formats = [...new Set(entries.map((entry) => entry.format))].sort();
+const languages = [...new Set(entries.map((entry) => entry.language))].sort();
+const formatPlace = (entry: EventEntry) => {
+  const connector = locale === "en" ? "in" : "em";
+  const country = entry.country ? ` (${entry.country})` : "";
+  if (entry.institution)
+    return `${entry.institution}${entry.city ? `, ${connector} ${entry.city}` : ""}${country}`;
+  if (entry.city)
+    return `${connector[0].toUpperCase()}${connector.slice(1)} ${entry.city}${country}`;
+  return entry.country;
+};
+const formatTopicRole = (entry: EventEntry) => {
+  if (!entry.topic) return "";
+  if (!entry.role) return entry.topic;
+  const role = entry.role.charAt(0).toLocaleLowerCase(locale === "en" ? "en-US" : "pt-PT") + entry.role.slice(1);
+  return `${entry.topic}${locale === "en" ? ", as " : ", como "}${role}`;
+};
+---
+
+<div id="main-content" tabindex="-1">
+  {
+    events ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={events.subtitle}
+          tag={events.tag}
+          locale={locale}
+          routeKey={data.routeKey}
+          heroMedia={data.media}
+          parent={{ label: "Academia", href: pathFor("publications", locale) }}
+          data-tina-field={tinaField(data, "eventsPage")}
+        />
+        <>
+          <Section>
+            <h2 class="mb-6 text-2xl font-semibold">{events.listHeading}</h2>
+            {entries.length ? (
+              <>
+                <form class="publication-filters" data-event-filters>
+                  <select name="year" aria-label={events.filters.allYears}>
+                    <option value="">{events.filters.allYears}</option>
+                    {years.map((year) => (
+                      <option value={year}>{year}</option>
+                    ))}
+                  </select>
+                  <select name="format" aria-label={events.filters.allFormats}>
+                    <option value="">{events.filters.allFormats}</option>
+                    {formats.map((format) => (
+                      <option value={format}>{format}</option>
+                    ))}
+                  </select>
+                  <select name="language" aria-label={events.filters.allLanguages}>
+                    <option value="">{events.filters.allLanguages}</option>
+                    {languages.map((language) => (
+                      <option value={language}>{language}</option>
+                    ))}
+                  </select>
+                  <button type="reset">
+                    <Icon name="x" />
+                    {events.filters.clear}
+                  </button>
+                  <p
+                    aria-live="polite"
+                    data-event-count
+                    data-single={events.filters.singleResult}
+                    data-multiple={events.filters.multipleResults}
+                  >
+                    {entries.length} {events.filters.multipleResults}
+                  </p>
+                </form>
+                <div class="publication-list" data-events>
+                  {entries.map((entry, index) => {
+                    const place = formatPlace(entry);
+                    return (
+                      <article
+                        class:list={[
+                          "publication-card",
+                          entry.highlight && "publication-card--highlight",
+                        ]}
+                        aria-labelledby={`event-${index}`}
+                        data-year={entry.date.year}
+                        data-format={entry.format}
+                        data-language={entry.language}
+                      >
+                        <div class="publication-card__layout">
+                          <div class="publication-card__content">
+                            <div class="publication-card__meta">
+                              {entry.highlight && <strong>{entry.highlight}</strong>}
+                              <span>{formatDate(entry.date)}</span>
+                              <span>{entry.format}</span>
+                              <span>{entry.language}</span>
+                            </div>
+                            <h2 id={`event-${index}`}>{entry.title}</h2>
+                            <p>{entry.event}</p>
+                            <p class="mt-2 text-sm text-muted-foreground">
+                              {place}
+                              {entry.online
+                                ? locale === "en"
+                                  ? " · Online participation"
+                                  : " · Participação online"
+                                : ""}
+                            </p>
+                            {entry.topic && (
+                              <p class="mt-2 text-sm text-muted-foreground">
+                                {formatTopicRole(entry)}
+                              </p>
+                            )}
+                          </div>
+                          {entry.url ? (
+                            <Button
+                              class="publication-card__link !pl-0 whitespace-normal"
+                              variant="link"
+                              href={entry.url}
+                              rel="external"
+                            >
+                              {events.filters.view}
+                              <Icon name="external-link" />
+                            </Button>
+                          ) : null}
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+                <p class="publication-empty hidden" data-event-empty>
+                  {events.filters.empty}
+                </p>
+              </>
+            ) : (
+              <div class="academic-empty">
+                <EmptyState
+                  heading={events.emptyHeading}
+                  text={events.emptyText}
+                />
+              </div>
+            )}
+          </Section>
+          <SpeakingPage data={data} embedded />
+        </>
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>
+<script>
+  const form = document.querySelector<HTMLFormElement>("[data-event-filters]");
+  const items = [...document.querySelectorAll<HTMLElement>("[data-events] > article")];
+  const count = document.querySelector<HTMLElement>("[data-event-count]");
+  const empty = document.querySelector<HTMLElement>("[data-event-empty]");
+  const apply = () => {
+    if (!form) return;
+    const values = new FormData(form);
+    const year = String(values.get("year") ?? "");
+    const format = String(values.get("format") ?? "");
+    const language = String(values.get("language") ?? "");
+    let visible = 0;
+    for (const item of items) {
+      const matches =
+        (!year || item.dataset.year === year) &&
+        (!format || item.dataset.format === format) &&
+        (!language || item.dataset.language === language);
+      item.hidden = !matches;
+      if (matches) visible++;
+    }
+    if (count)
+      count.textContent = `${visible} ${visible === 1 ? count.dataset.single : count.dataset.multiple}`;
+    if (empty) empty.hidden = visible !== 0;
+  };
+  form?.addEventListener("change", apply);
+  form?.addEventListener("reset", () => setTimeout(apply));
+</script>

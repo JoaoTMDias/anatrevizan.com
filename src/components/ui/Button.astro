@@ -1,41 +1,72 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '../../lib/cn';
+import type { HTMLAttributes } from "astro/types";
+import { tv, type VariantProps } from "tailwind-variants";
+import { cn } from "../../lib/cn";
+import { isExternalHref } from "../../lib/external-url";
 
 const button = tv({
-	base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] shrink-0",
-	variants: {
-		variant: {
-			default: 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
-			destructive: 'bg-destructive text-white shadow-xs hover:bg-destructive/90',
-			outline: 'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
-			secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-			ghost: 'hover:bg-accent hover:text-accent-foreground',
-			link: 'text-primary underline-offset-4 hover:underline',
-		},
-		size: {
-			default: 'h-9 px-4 py-2',
-			sm: 'h-8 rounded-md gap-1.5 px-3',
-			lg: 'h-10 rounded-md px-6',
-			icon: 'size-9',
-		},
-	},
-	defaultVariants: { variant: 'default', size: 'default' },
+  base: "inline-flex min-h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+  variants: {
+    variant: {
+      default:
+        "bg-linear-to-br from-[color-mix(in_oklch,var(--action-primary),white_10%)] to-action-primary text-action-primary-foreground shadow-sm hover:from-[color-mix(in_oklch,var(--action-primary),black_18%)] focus-visible:from-[color-mix(in_oklch,var(--action-primary),black_28%)] focus-visible:to-[color-mix(in_oklch,var(--action-primary),black_8%)]",
+      accent:
+        "button-accent shadow-sm",
+      accentBlack: "bg-black text-white shadow-sm hover:bg-black/85 focus-visible:bg-black/70",
+      destructive: "bg-destructive text-white shadow-xs hover:bg-destructive/85 focus-visible:bg-destructive/70",
+      outline:
+        "backdrop-blur border-2 border-action-primary bg-white/10 text-action-primary hover:bg-action-primary hover:text-action-primary-foreground focus-visible:bg-[color-mix(in_oklch,var(--action-primary),black_16%)] focus-visible:text-action-primary-foreground",
+      outlineBlack:
+        "backdrop-blur border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background",
+      outlineInverse:
+        "backdrop-blur border-2 border-inverse-foreground bg-black/20 text-inverse-foreground hover:bg-inverse-foreground hover:text-primary-950 focus-visible:bg-[color-mix(in_oklch,var(--inverse-foreground),black_16%)] focus-visible:text-primary-950",
+      secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-[color-mix(in_oklch,var(--secondary),white_55%)] focus-visible:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_16%)]",
+      ghost: "hover:bg-accent hover:text-accent-foreground focus-visible:bg-[color-mix(in_oklch,var(--accent),black_16%)] focus-visible:text-accent-foreground",
+      link: "min-h-0 rounded-none p-0 text-primary underline decoration-1 underline-offset-4 hover:decoration-2",
+    },
+    size: {
+      default: "px-6 py-3",
+      sm: "min-h-11 gap-1.5 px-5 py-2",
+      lg: "min-h-12 px-8 py-3",
+      icon: "size-11 p-0",
+    },
+  },
+  defaultVariants: { variant: "default", size: "default" },
 });
 
 type Props = VariantProps<typeof button> &
-	Omit<HTMLAttributes<'a'>, 'href'> &
-	Omit<HTMLAttributes<'button'>, 'type'> & {
-		href?: string | null;
-	};
+  Omit<HTMLAttributes<"a">, "href"> &
+  Omit<HTMLAttributes<"button">, "type"> & {
+    href?: string | null;
+  };
 
-const { variant, size, href, class: className, ...rest } = Astro.props;
+const { variant, size, href, class: className, target, rel, ...rest } = Astro.props;
 const classes = cn(button({ variant, size }), className);
+const external = isExternalHref(href);
+const linkTarget = external ? "_blank" : target;
+const linkRel = external
+  ? [...new Set(`${rel ?? ""} external noopener noreferrer`.trim().split(/\s+/))].join(" ")
+  : rel;
+const externalHint = Astro.url.pathname.startsWith("/en")
+  ? "opens in a new tab"
+  : "abre num novo separador";
 ---
 
-{href ? (
-	<a href={href} class={classes} {...rest as HTMLAttributes<'a'>}><slot /></a>
-) : (
-	<button class={classes} {...rest as HTMLAttributes<'button'>}><slot /></button>
-)}
+{
+  href ? (
+    <a
+      href={href}
+      class={classes}
+      target={linkTarget}
+      rel={linkRel}
+      {...(rest as HTMLAttributes<"a">)}
+    >
+      <slot />
+      {external && <span class="sr-only"> ({externalHint})</span>}
+    </a>
+  ) : (
+    <button class={classes} {...(rest as HTMLAttributes<"button">)}>
+      <slot />
+    </button>
+  )
+}

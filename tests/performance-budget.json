@@ -1,0 +1,6 @@
+{
+	"javascript": { "raw": 1003649, "gzip": 344768 },
+	"css": { "raw": 4338400, "gzip": 651369 },
+	"media": { "raw": 1378996, "gzip": 1377454 },
+	"sourceMaps": { "raw": 0, "gzip": 0 }
+}

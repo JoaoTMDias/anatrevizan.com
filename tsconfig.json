@@ -1,8 +1,21 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "public", "tina/__generated__", "tina/collections", "tina/config.ts"],
-  "compilerOptions": {
-    "strictNullChecks": true
-  }
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": [
+		"dist",
+		"public",
+		"tina/__generated__",
+		"tina/collections",
+		"tina/config.ts"
+	],
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"strictNullChecks": true,
+		"ignoreDeprecations": "6.0",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
 }

@@ -1,125 +1,231 @@
 import type { Collection } from "tinacms";
+import { ReadonlyField } from "../components/ReadonlyField.ts";
+import { editorialListItemLabel } from "./common";
+
+const localizedText = (name: string, label: string) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		{
+			name: "pt",
+			label: "Português (Portugal)",
+			type: "string" as const,
+			required: true,
+		},
+		{ name: "en", label: "Inglês", type: "string" as const, required: true },
+	],
+});
+
+const optionalLocalizedText = (name: string, label: string) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		{ name: "pt", label: "Português (Portugal)", type: "string" as const },
+		{ name: "en", label: "Inglês", type: "string" as const },
+	],
+});
+
+const navigationEntry = (name: string, label: string, withTag = false) => ({
+	name,
+	label,
+	type: "object" as const,
+	fields: [
+		localizedText("label", "Nome no menu"),
+		localizedText("description", "Descrição curta"),
+		...(withTag ? [localizedText("tag", "Etiqueta opcional")] : []),
+	],
+});
 
 export const GlobalConfigCollection: Collection = {
-  name: "config",
-  label: "Global Config",
-  path: "src/content/config",
-  format: "json",
-  ui: {
-    global: true,
-  },
-  fields: [
-    {
-      name: "seo",
-      label: "Site Identity & SEO",
-      description:
-        "Site-wide identity. These values appear on every page — the Site Name is shown in the header navigation and used as the default browser title; the Description is the default for search results and social shares.",
-      type: "object",
-      fields: [
-        {
-          name: "title",
-          label: "Site Name",
-          type: "string",
-          required: true,
-          description:
-            "Shown in the header navigation on every page. Lives in Global Config because it's the same site-wide — each page sets its own browser title via the Meta Title field on the page, and this Site Name is used as the fallback if a page is ever missing one.",
-        },
-        {
-          name: "description",
-          label: "Default Meta Description (SEO)",
-          type: "string",
-          required: true,
-          description:
-            "Default description shown in search results and social-sharing previews when a page does not provide its own.",
-        },
-        {
-          name: "siteOwner",
-          label: "Site Owner (shown in footer)",
-          required: true,
-          type: "string",
-          description: "Your name or company name. Displayed in the site footer.",
-          ui: {
-            defaultValue: "Your name here"
-          },
-        },
-        {
-          name: 'logo',
-          label: 'Logo',
-          type: 'image',
-          description: 'Shown next to the Site Name in the header navigation.',
-        }
-        //Add more site settings here...
-      ],
-    },
-    {
-      name: "nav",
-      label: "Navigation Menu",
-      description:
-        "Links shown in the header navigation. Reorder, add, or remove items below. The Site Name shown to the left of these links is set in Site Identity & SEO above.",
-      type: "object",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return {
-            label: item.title
-          };
-        },
-      },
-      fields: [
-        {
-          name: "title",
-          label: "Link Label",
-          description: "The text shown in the nav for this link.",
-          type: "string",
-          required: true
-        },
-        {
-          name: "link",
-          label: "Link URL",
-          description: "Where this nav item points (e.g. /about or https://example.com).",
-          type: "string",
-          required: true
-
-        }
-      ]
-    },
-    {
-      name: "contactLinks",
-      label: "Contact Links",
-      type: "object",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return {
-            label: item.title
-          }
-        },
-      },
-      fields: [
-        {
-          name: "title",
-          label: "Title",
-          type: "string"
-        },
-        {
-          name: "link",
-          label: "Link",
-          type: "string"
-        },
-        {
-          name: "icon",
-          label: "Icon",
-          description: "Any Tabler icon name, e.g. tabler:brand-x, tabler:book-2, tabler:brand-github. Browse at https://icones.js.org/collection/tabler",
-          type: "string"
-        }
-      ],
-    },
-    {
-      name: "footerStarfield",
-      label: "Show starfield in footer",
-      type: "boolean",
-    }
-
-    // Add other config fields here...
-  ]
-}
+	name: "config",
+	label: "Configuração global",
+	path: "src/content/config",
+	format: "json",
+	ui: { global: true },
+	fields: [
+		{
+			name: "acronyms",
+			label: "Glossário de siglas",
+			type: "object",
+			list: true,
+			description:
+				"As siglas são reconhecidas exatamente como aqui escritas no conteúdo editorial.",
+			ui: {
+				itemProps: (item) => ({ label: item.acronym ?? "Sigla" }),
+			},
+			fields: [
+				{
+					name: "acronym",
+					label: "Sigla",
+					type: "string",
+					required: true,
+				},
+				{
+					name: "expansion",
+					label: "Nome por extenso",
+					type: "object",
+					fields: [
+						{
+							name: "pt",
+							label: "Português (Portugal)",
+							type: "string",
+							required: true,
+						},
+						{ name: "en", label: "Inglês", type: "string" },
+					],
+				},
+			],
+		},
+		{
+			name: "contacts",
+			label: "Contactos, perfis e atendimento",
+			type: "object",
+			fields: [
+				{ name: "email", label: "E-mail profissional", type: "string" },
+				{ name: "phone", label: "Telefone/WhatsApp", type: "string" },
+				{
+					name: "calendlyUrl",
+					label: "Endereço externo do Calendly",
+					type: "string",
+					description:
+						"Usar apenas um endereço HTTPS. O Calendly não é incorporado no site.",
+				},
+				{
+					name: "profiles",
+					label: "Perfis profissionais",
+					type: "object",
+					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Perfil profissional"),
+						}),
+					},
+					fields: [
+						localizedText("label", "Nome apresentado"),
+						{ name: "url", label: "URL", type: "string", required: true },
+					],
+				},
+				{
+					name: "regions",
+					label: "Regiões de atendimento",
+					type: "object",
+					list: true,
+					ui: {
+						itemProps: (item) => ({
+							label: editorialListItemLabel(item, "Região"),
+						}),
+					},
+					fields: [
+						{ name: "flag", label: "Flag", type: "string", required: true },
+						localizedText("label", "Nome da região"),
+					],
+				},
+				{
+					name: "serviceLanguages",
+					label: "Idiomas de atendimento",
+					type: "string",
+					list: true,
+				},
+			],
+		},
+		{
+			name: "navigation",
+			label: "Textos da navegação",
+			type: "object",
+			fields: [
+				{
+					name: "consulting",
+					label: "Menu Atuação",
+					type: "object",
+					fields: [
+						localizedText("label", "Nome do menu"),
+						navigationEntry(
+							"immigrationMobility",
+							"Migração e Mobilidade",
+							true,
+						),
+						navigationEntry("legal", "Advocacia no Brasil", true),
+						navigationEntry("environmentalEsg", "Ambiental e ESG", true),
+						navigationEntry(
+							"publicPolicy",
+							"Políticas Públicas e Governança",
+							true,
+						),
+					],
+				},
+				{
+					name: "academic",
+					label: "Menu Academia",
+					type: "object",
+					fields: [
+						localizedText("label", "Nome do menu"),
+						navigationEntry(
+							"mentoring",
+							"Mentorias Profissionais e Académicas",
+						),
+						navigationEntry("publications", "Publicações"),
+						navigationEntry("events", "Eventos e Palestras"),
+						navigationEntry("training", "Cursos e Formações"),
+					],
+				},
+				localizedText("about", "Sobre"),
+				localizedText("contact", "Contacto"),
+			],
+		},
+		{
+			name: "requestTypes",
+			label: "Tipos de pedido do formulário",
+			type: "object",
+			list: true,
+			ui: {
+				itemProps: (item) => ({ label: item.label?.pt ?? "Tipo de pedido" }),
+			},
+			fields: [
+				{
+					name: "id",
+					label: "Identificador estável",
+					type: "string",
+					required: true,
+					ui: { component: ReadonlyField },
+				},
+				{
+					name: "scope",
+					label: "Âmbito",
+					type: "string",
+					required: true,
+					options: ["BR_LEGAL", "PT_ADMIN", "ACADEMIC", "OTHER"],
+					ui: { component: ReadonlyField },
+				},
+				localizedText("label", "Nome apresentado"),
+			],
+		},
+		{
+			name: "seo",
+			label: "SEO global",
+			type: "object",
+			required: true,
+			fields: [
+				localizedText("defaultTitle", "Título predefinido"),
+				localizedText("defaultDescription", "Descrição predefinida"),
+				{
+					name: "defaultImage",
+					label: "Imagem social predefinida",
+					type: "image",
+				},
+			],
+		},
+		{
+			name: "footer",
+			label: "Rodapé e navegação legal",
+			type: "object",
+			fields: [
+				localizedText("copyright", "Texto de copyright"),
+				localizedText("contactIntro", "Introdução de contacto"),
+				localizedText("contactCta", "Botão de contacto"),
+				optionalLocalizedText("rightsReserved", "Texto de direitos reservados"),
+			],
+		},
+	],
+};

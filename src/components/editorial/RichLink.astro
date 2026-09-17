@@ -1,0 +1,22 @@
+---
+import { isExternalHref } from "../../lib/external-url";
+
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+const external = isExternalHref(url);
+const externalHint = Astro.url.pathname.startsWith("/en")
+  ? "opens in a new tab"
+  : "abre num novo separador";
+---
+
+<a
+  href={url}
+  target={external ? "_blank" : undefined}
+  rel={external ? "external noopener noreferrer" : undefined}
+>
+  <slot />
+  {external && <span class="sr-only"> ({externalHint})</span>}
+</a>

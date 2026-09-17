@@ -1,0 +1,107 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { AcademicServiceContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Card from "../ui/Card.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
+import EditorialImage from "./EditorialImage.astro";
+import PageHero from "./PageHero.astro";
+import SectionHeading from "./SectionHeading.astro";
+import RichText from "./RichText.astro";
+interface Props {
+  data: CmsEditorial;
+}
+const { data } = Astro.props;
+const service = data.academicService as AcademicServiceContent | null | undefined;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const icons =
+  data.routeKey === "training"
+    ? ["leaf", "chart-bar", "world", "shield-check", "flag", "plane-departure"]
+    : ["file-pencil", "affiliate", "layout-2", "compass", "writing", "world"];
+---
+
+<div id="main-content" tabindex="-1">
+  {
+    service ? (
+      <>
+        <PageHero
+          title={data.title}
+          subtitle={service.subtitle}
+          locale={locale}
+          routeKey={data.routeKey}
+          heroMedia={data.media}
+          showActions
+          showContactLink={false}
+          parent={{ label: "Academia", href: pathFor("publications", locale) }}
+          data-tina-field={tinaField(data, "academicService")}
+        />
+        <Section>
+          <div
+            class:list={[
+              "editorial-intro",
+              !service.introImage?.image && "editorial-intro--text-only",
+            ]}
+          >
+            {service.introImage?.image && (
+              <figure
+                class="editorial-intro__media"
+                data-tina-field={tinaField(data, "academicService")}
+              >
+                <EditorialImage
+                  src={service.introImage.image}
+                  alt={service.introImage.decorative ? "" : (service.introImage.alt?.trim() ?? "")}
+                  width={960}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </figure>
+            )}
+            <div class="editorial-intro__copy">
+              <SectionHeading title={service.introHeading} locale={locale} />
+              <RichText
+                content={service.introParagraphs}
+                locale={locale}
+                class="space-y-5 text-lg leading-relaxed text-muted-foreground"
+              />
+            </div>
+          </div>
+        </Section>
+        <Section background="bg-secondary">
+          <>
+            <SectionHeading title={service.servicesHeading} subtitle={service.servicesSubtitle} locale={locale} />
+            <div class="editorial-grid">
+              {service.services.map((item, index) => (
+                <Card as="article" class="academic-service-card flex flex-col gap-4 p-6 sm:flex-row sm:items-start md:p-8">
+                  <span class="academic-icon shrink-0" aria-hidden="true">
+                    <Icon name={icons[index]} />
+                  </span>
+                  <div><h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p></div>
+                </Card>
+              ))}
+            </div>
+          </>
+        </Section>
+        <aside class="border-y">
+          <div class="site-container py-8">
+            <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">{service.note}</p>
+          </div>
+        </aside>
+        <ContactCta heading={service.ctaHeading} text={service.ctaText} locale={locale} />
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

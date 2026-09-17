@@ -1,0 +1,171 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import { getConfig } from "../../lib/data";
+import ContactForm from "../ContactForm";
+import BrasiliaClock from "../islands/BrasiliaClock";
+import { safeCalendlyUrl, safeProfileUrl, safeWhatsAppHref } from "../../lib/external-url";
+import type { ContactPageContent } from "../../lib/page-content";
+import { pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import PageHero from "./PageHero.astro";
+import SectionHeading from "./SectionHeading.astro";
+interface Props {
+  data: CmsEditorial;
+}
+interface LocalizedLabel {
+  pt: string;
+  en: string;
+}
+interface Profile {
+  label?: LocalizedLabel | null;
+  url?: string | null;
+}
+interface RequestType {
+  id: string;
+  scope: string;
+  label?: LocalizedLabel | null;
+}
+const { data } = Astro.props;
+const contact = data.contactPage as ContactPageContent | null | undefined;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const config = contact ? (await getConfig()).data.config : null;
+const requestTypes = ((config?.requestTypes as RequestType[] | null | undefined) ?? []).flatMap(
+  (item: RequestType) => {
+    const label = locale === "en" ? item?.label?.en : item?.label?.pt;
+    return label ? [{ value: item.id, scope: item.scope, label }] : [];
+  }
+);
+const whatsappHref = safeWhatsAppHref(config?.contacts?.phone);
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+const calendlyUrl = safeCalendlyUrl(config?.contacts?.calendlyUrl);
+const bookingId = locale === "en" ? "book" : "agendar";
+const messageId = locale === "en" ? "message" : "mensagem";
+const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefined) ?? []).flatMap(
+  (profile: Profile) => {
+    const href = safeProfileUrl(profile?.url);
+    const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
+    return href && label ? [{ href, label }] : [];
+  }
+);
+---
+
+<div id="main-content" tabindex="-1">
+  {
+    contact ? (
+      <>
+        <PageHero
+          class="contact-hero"
+          title={data.title}
+          subtitle={contact.subtitle}
+          tag={contact.tag}
+          locale={locale}
+          routeKey={data.routeKey}
+          heroMedia={data.media}
+          data-tina-field={tinaField(data, "contactPage")}
+        >
+          <div slot="actions" class="contact-hero__actions">
+            <Button variant="accent" href={`#${messageId}`}>
+              {locale === "en" ? "Send a message" : "Enviar mensagem"}
+            </Button>
+            <Button variant="outlineInverse" href={`#${bookingId}`}>
+              {locale === "en" ? "Book a conversation" : "Agendar conversa"}
+            </Button>
+          </div>
+        </PageHero>
+        <Section class="contact-layout">
+          <div id={messageId} class="contact-message" tabindex="-1">
+            <SectionHeading
+              title={locale === "en" ? "Contact form" : "Formulário de contacto"}
+              locale={locale}
+              headingId={`${messageId}-heading`}
+            />
+            <ContactForm
+              client:load
+              locale={locale}
+              formHeadingId={`${messageId}-heading`}
+              privacyHref={pathFor("privacy", locale)}
+              requestTypes={requestTypes}
+              turnstileSiteKey={turnstileSiteKey}
+              whatsappHref={whatsappHref}
+            />
+          </div>
+          <aside class="contact-sidebar">
+            <section id={bookingId} class="contact-booking" tabindex="-1">
+              <div class="contact-booking__header">
+                <span class="contact-booking__icon">
+                  <Icon name={calendlyUrl ? "calendar-event" : "calendar-off"} />
+                </span>
+                <h2>{contact.bookingHeading}</h2>
+              </div>
+              <p>{contact.bookingIntro}</p>
+              <dl class="contact-booking__details">
+                <div>
+                  <dt>
+                    <Icon name="clock" /> {contact.duration}
+                  </dt>
+                  <dd>{contact.validFor}</dd>
+                </div>
+                <div>
+                  <dt>
+                    <Icon name="world" /> {contact.timezone}
+                  </dt>
+                  <dd>
+                    {contact.timezoneNote}
+                    <BrasiliaClock client:load locale={locale} />
+                  </dd>
+                </div>
+              </dl>
+              {calendlyUrl ? (
+                <Button
+                  class="w-full whitespace-normal [&_svg]:shrink-0"
+                  href={calendlyUrl}
+                  rel="external noreferrer"
+                >
+                  <span>
+                    {locale === "en" ? "Open booking calendar" : "Abrir calendário de agendamento"}
+                  </span>
+                  <Icon name="external-link" />
+                </Button>
+              ) : (
+                <p class="contact-booking__notice">
+                  {locale === "en"
+                    ? "The booking link is not yet configured."
+                    : "A ligação de agendamento ainda não está configurada."}
+                </p>
+              )}
+            </section>
+            <section class="contact-methods">
+              <h2>{contact.otherMethodsHeading}</h2>
+              <ul>
+                {profileLinks.map((profile) => (
+                  <li>
+                    <Icon name="external-link" />
+                    <a href={profile.href} target="_blank" rel="external noopener noreferrer">
+                      {profile.label}
+                      <span class="sr-only">
+                        ({locale === "en" ? "opens in a new tab" : "abre num novo separador"})
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <hr />
+              <p class="font-emoji" aria-hidden="true">
+                {contact.countriesLabel}
+              </p>
+              <p>{contact.languagesLabel}</p>
+            </section>
+          </aside>
+        </Section>
+      </>
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <h1>{data.title}</h1>
+        <p class="mt-4">{data.summary}</p>
+      </section>
+    )
+  }
+</div>

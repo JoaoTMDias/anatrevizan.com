@@ -1,0 +1,92 @@
+@layer components {
+	.site-container {
+		@apply mx-auto w-full;
+
+		max-width: 90rem;
+
+		padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+	}
+	.site-link {
+		@apply font-semibold text-primary underline;
+
+		text-decoration-thickness: 0.08em;
+	}
+	.site-link:hover {
+		text-decoration-thickness: 0.14em;
+	}
+	.nav-menu__trigger {
+		@apply flex min-h-11 items-center gap-1 rounded-md px-3 py-2 font-medium;
+
+		color: color-mix(in oklab, var(--foreground) 82%, transparent);
+		list-style: none;
+		cursor: pointer;
+	}
+	.nav-menu__trigger::-webkit-details-marker {
+		display: none;
+	}
+	.nav-menu__trigger:hover,
+	.header-menu__item[data-current="true"] > .nav-menu__trigger,
+	.nav-menu__trigger[data-popup-open] {
+		background: color-mix(in oklab, var(--primary) 7%, var(--background));
+		color: var(--primary);
+	}
+	.nav-dropdown {
+		@apply absolute top-full right-0 z-40 mt-2 rounded-lg border border-border bg-background p-2;
+
+		width: min(20rem, calc(100vw - 3rem));
+		box-shadow: 0 1rem 2.5rem oklch(0.2 0.03 18 / 0.16);
+	}
+	.header-menu__content.nav-dropdown {
+		position: relative;
+		top: auto;
+		right: auto;
+		margin-top: 0;
+		border: 0;
+		box-shadow: none;
+	}
+	.nav-dropdown__item {
+		@apply grid rounded-none px-3 py-3.5 text-foreground no-underline transition-[background-color,border-color] duration-150;
+
+		gap: 0.1875rem;
+		border-left: 3px solid transparent;
+	}
+	.nav-dropdown__item:hover,
+	.nav-dropdown__item:focus-visible {
+		background: color-mix(in oklab, var(--primary) 7%, var(--background));
+		border-left-color: color-mix(in oklab, var(--primary) 38%, transparent);
+	}
+	.nav-dropdown__item[aria-current="page"] {
+		background: color-mix(in oklab, var(--primary) 9%, var(--background));
+		border-left-color: var(--primary);
+	}
+	.nav-dropdown__item--highlight[aria-current="page"] {
+		background: color-mix(in oklab, var(--accent) 12%, var(--background));
+		border-left-color: var(--accent);
+	}
+	.nav-dropdown__item--highlight:not([aria-current="page"]) {
+		border-left-color: color-mix(in oklab, var(--accent) 55%, transparent);
+	}
+	.nav-dropdown__tag {
+		@apply text-xs font-medium text-primary;
+
+		letter-spacing: normal;
+		line-height: 1.2;
+	}
+	.nav-dropdown__item[aria-current="page"] .nav-dropdown__tag {
+		color: var(--primary);
+	}
+	.nav-dropdown__item--highlight[aria-current="page"] .nav-dropdown__tag {
+		color: color-mix(in oklab, var(--accent) 78%, black);
+	}
+	.nav-dropdown__title {
+		@apply text-base;
+
+		font-weight: 650;
+		line-height: 1.25;
+	}
+	.nav-dropdown__description {
+		@apply text-xs text-muted-foreground;
+
+		line-height: 1.35;
+	}
+}

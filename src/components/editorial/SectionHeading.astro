@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { PublishedLocale } from "../../lib/routing";
+import AcronymText from "./AcronymText.astro";
+
+interface Props extends HTMLAttributes<"header"> {
+  title: string;
+  subtitle?: string | null;
+  eyebrow?: string | null;
+  centered?: boolean;
+  locale: PublishedLocale;
+  headingId?: string;
+}
+
+const { title, subtitle, eyebrow, locale, centered = false, headingId, class: className, ...rest } = Astro.props;
+---
+
+<div
+  class:list={["editorial-section-heading", centered && "text-center mx-auto", className]}
+  {...rest}
+>
+  {eyebrow && <p class="editorial-eyebrow"><AcronymText text={eyebrow} locale={locale} /></p>}
+  <h2 id={headingId}><AcronymText text={title} locale={locale} /></h2>
+  {
+    subtitle && (
+      <p class:list={["editorial-section-heading__subtitle", centered && "mx-auto"]}><AcronymText text={subtitle} locale={locale} /></p>
+    )
+  }
+</div>

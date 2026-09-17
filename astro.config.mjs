@@ -1,11 +1,50 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import react from "@astrojs/react";
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import tina from '@tinacms/astro/integration';
 import { tinaAdminDevRedirect } from '@tinacms/astro/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { buildMediaVariants } from './src/lib/media-pipeline.ts';
+import { extname, join, normalize } from 'node:path';
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+
+/** @type {import('astro').AstroIntegration} */
+const editorialMedia = {
+	name: 'editorial-media-pipeline',
+	hooks: {
+		'astro:build:done': async ({ dir }) => buildMediaVariants(fileURLToPath(new URL('./public', import.meta.url)), fileURLToPath(dir)),
+		'astro:server:setup': async ({ server }) => {
+			const publicDirectory = fileURLToPath(new URL('./public', import.meta.url));
+			const generated = fileURLToPath(new URL('./.astro/editorial-media/', import.meta.url));
+			await buildMediaVariants(publicDirectory, generated);
+			server.middlewares.use(async (request, response, next) => {
+				const pathname = decodeURIComponent(new URL(request.url ?? '/', 'http://localhost').pathname);
+				const generatedPath = pathname.startsWith('/_media/')
+					? join(generated, pathname)
+					: extname(pathname).toLowerCase() === '.svg'
+						? join(generated, pathname)
+						: undefined;
+				if (!generatedPath || !normalize(generatedPath).startsWith(normalize(generated))) return next();
+				try {
+					response.setHeader('Content-Type', pathname.endsWith('.svg') ? 'image/svg+xml' : 'image/webp');
+					response.end(await readFile(generatedPath));
+				} catch {
+					next();
+				}
+			});
+			/** @type {ReturnType<typeof setTimeout> | undefined} */
+			let rebuilding;
+			server.watcher.on('change', (path) => {
+				if (!path.startsWith(publicDirectory)) return;
+				if (rebuilding) clearTimeout(rebuilding);
+				rebuilding = setTimeout(() => void buildMediaVariants(publicDirectory, generated), 100);
+			});
+		},
+	},
+};
 
 // Host-neutral: every content page prerenders to static HTML, and the one
 // on-demand route (/tina-island, the visual-editing endpoint) is served by
@@ -57,7 +96,7 @@ export default defineConfig({
 	output: 'static',
 	adapter: await getAdapter(),
 	redirects: { '/home': '/' },
-	integrations: [mdx(), sitemap(), icon(), tina()],
+	integrations: [mdx(), icon(), react(), tina(), editorialMedia],
 	build: {
 		// Inline the (~10 KiB) bundled CSS into a <style> in <head> instead of a
 		// separate render-blocking <link>. Astro's default ('auto') only inlines
@@ -74,6 +113,12 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: [tailwindcss(), tinaAdminDevRedirect()],
+		server: {
+			// Tina compiles its config into timestamped cache directories while
+			// starting. Vite 8 otherwise treats every temporary tsconfig.json as a
+			// project-config change and repeatedly invalidates Astro's SSR graph.
+			watch: { ignored: ['**/tina/__generated__/.cache/**'] },
+		},
 		// Bundle @tinacms/astro into the SSR build instead of resolving it
 		// per-module on every cold request — otherwise each
 		// `import TinaMarkdown from '@tinacms/astro/TinaMarkdown.astro'`

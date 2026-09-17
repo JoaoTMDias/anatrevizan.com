@@ -1,0 +1,212 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import type { HomeContent } from "../../lib/page-content";
+import { isRouteKey } from "../../lib/routing";
+import { getPublications } from "../../lib/publication-content";
+import { selectHomePublications } from "../../lib/publications";
+import { pathFor } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+import ContactCta from "./ContactCta.astro";
+import AcronymText from "./AcronymText.astro";
+import EditorialImage from "./EditorialImage.astro";
+import EditorialMark from "./EditorialMark.astro";
+import SectionHeading from "./SectionHeading.astro";
+interface Props {
+  data: CmsEditorial;
+}
+const { data } = Astro.props;
+const home = data.home as HomeContent | null | undefined;
+const locale = data.locale === "en" ? "en" : "pt-PT";
+const destination = (item: { routeKey?: unknown; anchor?: string }) =>
+  isRouteKey(item.routeKey) ? pathFor(item.routeKey, locale) + (item.anchor ? `#${item.anchor}` : "") : undefined;
+const brandIcons = ["scale", "leaf", "school", "world"];
+const differenceIcons = ["world", "microscope", "language", "arrows-exchange"];
+const featuredPublications = home ? selectHomePublications(await getPublications()) : [];
+const foreground = data.media?.foreground?.image ? data.media.foreground : null;
+const spotlight = featuredPublications.find((publication) => publication.highlight) ?? featuredPublications[0];
+const homePublications = spotlight
+  ? [spotlight, ...featuredPublications.filter((publication) => publication.sourceId !== spotlight.sourceId)]
+  : [];
+---
+
+<div id="main-content" tabindex="-1">
+  {
+    home ? (
+        <div class:list={["home-hero", !foreground && "home-hero--text-only"]} data-tina-field={tinaField(data, "home")}>
+          <EditorialMark class="home-hero__mark" />
+          <div class="site-container home-hero__inner">
+            <div class="home-hero__layout">
+              <div class="home-hero__copy">
+                <ul
+                  class="home-brand-words"
+                  aria-label={locale === "en" ? "Brand values" : "Valores da marca"}
+                >
+                  {home.hero.brandWords.map((word, index) => (
+                    <li>
+                      <Icon name={brandIcons[index]} />
+                      {word}
+                    </li>
+                  ))}
+                </ul>
+                <h1><AcronymText text={home.hero.heading} locale={locale} /></h1>
+                <p>{home.hero.subtitle}</p>
+                <div class="home-hero__actions">
+                  <Button size="lg" variant="accent" href={pathFor("practice", locale)}>
+                    {home.hero.primaryCta}
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outlineInverse"
+                    href={pathFor("contact", locale)}
+                  >
+                    {home.hero.secondaryCta}
+                  </Button>
+                </div>
+              </div>
+              {foreground && (
+                <figure
+                  class="editorial-hero__foreground home-hero__foreground"
+                  data-tina-field={tinaField(data, "media")}
+                >
+                  <EditorialImage
+                    src={foreground.image!}
+                    alt={foreground.decorative ? "" : foreground.alt?.trim() ?? ""}
+                    width={960}
+                    height={720}
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    border="golden"
+                    sizes="(min-width: 1024px) min(44vw, 34rem), (min-width: 768px) 28rem, calc(100vw - 2.5rem)"
+                  />
+                </figure>
+              )}
+            </div>
+          </div>
+        </div>
+        <Section background="home-gateways-section" class="home-gateways-shell">
+          <nav
+            class="home-gateways"
+            aria-label={locale === "en" ? "Areas" : "Áreas"}
+          >
+            {home.gateways.map(
+              (item, index) =>
+                destination(item) && (
+                  <a
+                    class:list={["home-gateway", index === 1 && "home-gateway--accent"]}
+                    href={destination(item)}
+                  >
+                    <span class="home-gateway__icon">
+                      <Icon
+                        name={item.routeKey === "legal" ? "scale" : "world"}
+                        class="home-gateway__icon-mark"
+                      />
+                    </span>
+                    <div>
+                      <h2><AcronymText text={item.routeKey === "publications" ? home.academicTitle : item.title} locale={locale} /></h2>
+                      <p class="home-gateway__eyebrow"><AcronymText text={item.eyebrow} locale={locale} /></p>
+                    </div>
+                    <p class="home-gateway__description"><AcronymText text={item.description} locale={locale} /></p>
+                    <span class="home-gateway__cta">
+                      {item.cta}
+                      <Icon name="arrow-right" />
+                    </span>
+                  </a>
+                )
+            )}
+          </nav>
+        </Section>
+        <Section background="bg-secondary">
+            <SectionHeading
+              title={home.differencesTitle}
+              subtitle={home.differencesSubtitle}
+              locale={locale}
+              centered
+            />
+            <div class="home-differences">
+              {home.differences.map((item, index) => (
+                <article class="home-difference">
+                  <span class="home-difference__icon">
+                    <Icon name={differenceIcons[index]} />
+                  </span>
+                  <h3><AcronymText text={item.title} locale={locale} /></h3>
+                  <p><AcronymText text={item.description} locale={locale} /></p>
+                </article>
+              ))}
+            </div>
+        </Section>
+        <Section class="home-services-layout">
+          <div class="home-services-heading">
+            <EditorialMark />
+            <SectionHeading title={home.servicesTitle} subtitle={home.servicesSubtitle} locale={locale} />
+          </div>
+          <ol class="home-service-index" role="list">
+            {home.services.map((item, index) => destination(item) && (
+              <li>
+                <a class="home-service-entry" href={destination(item)}>
+                  <span class="home-service-entry__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <div class="home-service-entry__copy">
+                    <p class="home-service-entry__region"><AcronymText text={item.tag} locale={locale} /></p>
+                    <h3><AcronymText text={item.label ?? item.title} locale={locale} /></h3>
+                    <p class="home-service-entry__description"><AcronymText text={item.description} locale={locale} /></p>
+                  </div>
+                  <span class="home-service-entry__cta">{item.cta}<Icon name="arrow-up-right" /></span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </Section>
+        <Section background="bg-secondary">
+          <div class="home-academic-heading">
+            <SectionHeading title={home.academicTitle} subtitle={home.academicSubtitle} locale={locale} />
+            <div class="w-full lg:w-auto">
+              <Button class="w-full md:w-auto" variant="secondary" size="sm" href={pathFor("publications", locale)}>
+                {home.publicationsCta}
+              </Button>
+            </div>
+          </div>
+          <div class="editorial-grid scroll-stagger-fade-in mb-8">
+ {home.academicCards.map(item => <a class="rounded-lg border bg-card p-6" href={destination(item)}><h3 class="text-xl font-semibold">{item.label}</h3><p class="mt-3">{item.description}</p></a>)}
+ </div>
+ <div class="home-publications">
+            {homePublications.map((publication, index) => (
+              <article class:list={["home-publication", index === 0 && "home-publication--spotlight"]}>
+                {index === 0 && <EditorialMark class="home-publication__mark" />}
+                <div class="home-publication__meta">
+                  {publication.highlight && <strong>{publication.highlight}</strong>}
+                  <p>{[publication.year, publication.language].filter(Boolean).join(" · ")}</p>
+                </div>
+                <h3>{publication.title}</h3>
+                {publication.journal && <p class="home-publication__journal">{publication.journal}</p>}
+                {publication.url && (
+                  <a href={publication.url} target="_blank" rel="external noopener noreferrer">
+                    {locale === "en" ? "View publication" : "Ver publicação"}
+                    <Icon name="external-link" />
+                    <span class="sr-only">({locale === "en" ? "opens in a new tab" : "abre num novo separador"})</span>
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </Section>
+        <ContactCta
+          heading={home.finalCtaHeading}
+          text={home.finalCtaText}
+          locale={locale}
+          showContactLink={false}
+ label={home.finalCtaLabel}
+ href={pathFor("contact", locale)}
+        />
+    ) : (
+      <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <>
+          <h1>{data.title}</h1>
+          <p class="mt-4">{data.summary}</p>
+        </>
+      </section>
+    )
+  }
+</div>

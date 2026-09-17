@@ -1,0 +1,50 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+import type { CmsEditorial } from "../../lib/data";
+import PracticePage from "../editorial/PracticePage.astro";
+import AboutPage from "../editorial/AboutPage.astro";
+import AcademicServicePage from "../editorial/AcademicServicePage.astro";
+import ConsultingServicePage from "../editorial/ConsultingServicePage.astro";
+import EventsPage from "../editorial/EventsPage.astro";
+import HomePage from "../editorial/HomePage.astro";
+import PublicationsPage from "../editorial/PublicationsPage.astro";
+import ContactPage from "../editorial/ContactPage.astro";
+import PrivacyPage from "../editorial/PrivacyPage.astro";
+import AccessibilityPage from "../editorial/AccessibilityPage.astro";
+import AcronymText from "../editorial/AcronymText.astro";
+interface Props {
+  data?: CmsEditorial | null;
+}
+const { data } = Astro.props;
+---
+
+{
+  data?.routeKey === "home" ? (
+    <HomePage data={data} />
+  ) : data?.routeKey === "about" ? (
+    <AboutPage data={data} />
+  ) : data?.practicePage ? (
+    <PracticePage data={data} />
+  ) : data?.consultingService ? (
+    <ConsultingServicePage data={data} />
+  ) : data?.academicService ? (
+    <AcademicServicePage data={data} />
+  ) : data?.routeKey === "publications" ? (
+    <PublicationsPage data={data} />
+  ) : data?.routeKey === "events" ? (
+    <EventsPage data={data} />
+  ) : data?.routeKey === "contact" ? (
+    <ContactPage data={data} />
+  ) : data?.routeKey === "privacy" ? (
+    <PrivacyPage data={data} />
+  ) : data?.routeKey === "accessibility" ? (
+    <AccessibilityPage data={data} />
+  ) : (
+    data && (
+      <div id="main-content" tabindex="-1" class="mx-auto min-h-[60vh] max-w-4xl px-6 py-20">
+        <h1 data-tina-field={tinaField(data, "title")}><AcronymText text={data.title} locale={data.locale} /></h1>
+        {data.summary && <p data-tina-field={tinaField(data, "summary")}><AcronymText text={data.summary} locale={data.locale} /></p>}
+      </div>
+    )
+  )
+}

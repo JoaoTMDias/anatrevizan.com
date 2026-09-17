@@ -1,0 +1,56 @@
+@layer components {
+	.acronym-tooltip {
+		@apply inline;
+	}
+
+	.acronym-tooltip__trigger {
+		@apply cursor-help underline decoration-1 decoration-dotted decoration-[var(--accent)] underline-offset-2;
+	}
+
+	.acronym-tooltip__trigger:focus-visible {
+		@apply rounded-sm outline-3 outline-offset-3;
+
+		outline-color: color-mix(in srgb, var(--ring) 45%, transparent);
+	}
+
+	.acronym-tooltip__content {
+		@apply fixed z-70 invisible max-w-[min(28rem,calc(100vw-1rem))] overflow-visible border border-border rounded-md bg-popover px-4 py-3 font-[family-name:var(--font-body)] text-base font-normal not-italic leading-6 text-popover-foreground opacity-0 pointer-events-none translate-y-1 transition-[opacity,transform,visibility] duration-150;
+
+		inset: auto;
+		margin: 0;
+		box-shadow: 0 8px 24px
+			color-mix(in srgb, var(--foreground) 16%, transparent);
+		text-shadow: none;
+	}
+
+	.acronym-tooltip[data-open] .acronym-tooltip__content {
+		@apply visible opacity-100 pointer-events-auto translate-y-0;
+	}
+
+	.acronym-tooltip__content:popover-open {
+		@apply visible block opacity-100 pointer-events-auto translate-y-0;
+	}
+
+	.acronym-tooltip__content::after {
+		@apply absolute size-3 border-b border-r border-border bg-popover;
+
+		inset-inline-start: var(--acronym-tooltip-arrow-inline, 50%);
+		content: "";
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.acronym-tooltip__content[data-placement="top"]::after {
+		@apply -bottom-1.5;
+	}
+
+	.acronym-tooltip__content[data-placement="bottom"]::after {
+		@apply -top-1.5;
+		transform: translateX(-50%) rotate(225deg);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.acronym-tooltip__content {
+			@apply transition-none;
+		}
+	}
+}

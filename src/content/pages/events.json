@@ -1,0 +1,722 @@
+{
+	"routeKey": "events",
+	"title": {
+		"pt": "Eventos e Palestras",
+		"en": "Events & Speaking Engagements"
+	},
+	"summary": {
+		"pt": "Participo em conferências, debates e encontros sobre ambiente, direitos humanos, políticas públicas e investigação.",
+		"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
+	},
+	"seo": {
+		"title": {
+			"pt": "Eventos e Palestras · Diário desde 2019",
+			"en": "Events & Speaking Engagements · Journal since 2019 - Ana Trevizan"
+		},
+		"description": {
+			"pt": "Diário de participações em conferências, painéis e eventos académicos e institucionais da Dra. Ana Trevizan, desde 2019.",
+			"en": "Journal of conference participations, panels, and academic/institutional speaking engagements by Dr. Ana Trevizan since 2019."
+		}
+	},
+	"media": {
+		"foreground": {
+			"image": "/palestras-hero.webp",
+			"alt": {
+				"pt": "Ana a dar uma palestra sobre direito climático",
+				"en": "Ana giving a lecture on climate law"
+			},
+			"decorative": false
+		}
+	},
+	"eventsPage": {
+		"tag": {
+			"pt": "Academia",
+			"en": "Academia"
+		},
+		"subtitle": {
+			"pt": "Participo em conferências, debates e encontros sobre ambiente, direitos humanos, políticas públicas e investigação.",
+			"en": "A living record of where I've been, what I've spoken about, and with whom. The best portfolio for future invitations."
+		},
+		"emptyHeading": {
+			"pt": "Diário em consolidação",
+			"en": "Journal under compilation"
+		},
+		"emptyText": {
+			"pt": "Estou a reunir as participações em conferências, painéis e eventos desde 2019.",
+			"en": "I am compiling my speaking engagements, conference presentations, and panel discussions since 2019."
+		},
+		"listHeading": {
+			"pt": "Palestras e participações",
+			"en": "Talks and engagements"
+		},
+		"filters": {
+			"allYears": {
+				"pt": "Todos os anos",
+				"en": "All years"
+			},
+			"allFormats": {
+				"pt": "Todos os formatos",
+				"en": "All formats"
+			},
+			"allLanguages": {
+				"pt": "Todos os idiomas",
+				"en": "All languages"
+			},
+			"clear": {
+				"pt": "Limpar filtros",
+				"en": "Clear filters"
+			},
+			"singleResult": {
+				"pt": "resultado",
+				"en": "result"
+			},
+			"multipleResults": {
+				"pt": "resultados",
+				"en": "results"
+			},
+			"view": {
+				"pt": "Ver evento",
+				"en": "View event"
+			},
+			"empty": {
+				"pt": "Não foram encontradas participações com estes filtros.",
+				"en": "No engagements match these filters."
+			}
+		},
+		"entries": [
+			{
+				"slug": "waste-pickers-sustainability",
+				"title": {
+					"pt": "Waste Pickers and Sustainability Transitions: Protecting the Most Vulnerable",
+					"en": "Waste Pickers and Sustainability Transitions: Protecting the Most Vulnerable"
+				},
+				"date": {
+					"year": "2026",
+					"month": 4,
+					"day": 28,
+					"precision": "day"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Bruxelas",
+					"en": "Brussels"
+				},
+				"country": {
+					"pt": "Bélgica",
+					"en": "Belgium"
+				},
+				"online": false,
+				"event": {
+					"pt": "Climate Change and Workers’ Health",
+					"en": "Climate Change and Workers’ Health"
+				},
+				"institution": {
+					"pt": "ETUI/ETUC",
+					"en": "ETUI/ETUC"
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Sustainability transitions",
+					"en": "Sustainability transitions"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "modern-slavery-deforestation-maraba",
+				"title": {
+					"pt": "Links between Modern Slavery and Deforestation in the Legal Amazon: A Geodata-Based Analysis of Socio-Environmental Drivers",
+					"en": "Links between Modern Slavery and Deforestation in the Legal Amazon: A Geodata-Based Analysis of Socio-Environmental Drivers"
+				},
+				"date": {
+					"year": "2025",
+					"month": 10,
+					"precision": "month"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Marabá",
+					"en": "Marabá"
+				},
+				"country": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"online": true,
+				"event": {
+					"pt": "III Congresso sobre Trabalho Escravo Contemporâneo na Amazônia",
+					"en": "3rd Congress on Contemporary Slave Labour in the Amazon"
+				},
+				"institution": {
+					"pt": "",
+					"en": ""
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Trabalho escravo e desflorestação",
+					"en": "Modern slavery and deforestation"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "modern-slavery-deforestation-2025",
+				"title": {
+					"pt": "Links between Modern Slavery and Deforestation in the Legal Amazon: A Geodata-Based Analysis of Socio-Environmental Drivers",
+					"en": "Links between Modern Slavery and Deforestation in the Legal Amazon: A Geodata-Based Analysis of Socio-Environmental Drivers"
+				},
+				"date": {
+					"year": "2025",
+					"precision": "year",
+					"pending": true
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "",
+					"en": ""
+				},
+				"country": {
+					"pt": "",
+					"en": ""
+				},
+				"online": false,
+				"event": {
+					"pt": "International Conference on Human Rights, Sustainability and Climate Change",
+					"en": "International Conference on Human Rights, Sustainability and Climate Change"
+				},
+				"institution": {
+					"pt": "",
+					"en": ""
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Direitos humanos e sustentabilidade",
+					"en": "Human rights and sustainability"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "tratado-plasticos-ufba",
+				"title": {
+					"pt": "Tratado dos Plásticos: Desafios e Oportunidades para o Brasil na Governança Internacional de Resíduos",
+					"en": "Plastics Treaty: Challenges and Opportunities for Brazil in the International Governance of Waste"
+				},
+				"date": {
+					"year": "2024",
+					"month": 10,
+					"day": 26,
+					"precision": "day"
+				},
+				"format": {
+					"pt": "Aula",
+					"en": "Lecture"
+				},
+				"city": {
+					"pt": "Salvador",
+					"en": "Salvador"
+				},
+				"country": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"online": false,
+				"event": {
+					"pt": "Aula e mesa-redonda",
+					"en": "Lecture and roundtable"
+				},
+				"institution": {
+					"pt": "Universidade Federal da Bahia",
+					"en": "Federal University of Bahia"
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Governança internacional de resíduos",
+					"en": "International waste governance"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "stakeholders-community-forest-management",
+				"title": {
+					"pt": "The Importance of Stakeholders’ Support for Community Forest Management and the Preservation of Traditional Communities",
+					"en": "The Importance of Stakeholders’ Support for Community Forest Management and the Preservation of Traditional Communities"
+				},
+				"date": {
+					"year": "2024",
+					"precision": "year",
+					"pending": true
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Buckingham",
+					"en": "Buckingham"
+				},
+				"country": {
+					"pt": "Reino Unido",
+					"en": "United Kingdom"
+				},
+				"online": false,
+				"event": {
+					"pt": "International Conference on Human Rights, Sustainability and Climate Change",
+					"en": "International Conference on Human Rights, Sustainability and Climate Change"
+				},
+				"institution": {
+					"pt": "University of Buckingham",
+					"en": "University of Buckingham"
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Gestão florestal comunitária",
+					"en": "Community forest management"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "tarragona-environmental-law-colloquium",
+				"title": {
+					"pt": "Moderação do painel de encerramento do IX Tarragona International Environmental Law Colloquium",
+					"en": "Moderation of the closing panel of the 9th Tarragona International Environmental Law Colloquium"
+				},
+				"date": {
+					"year": "2024",
+					"month": 6,
+					"day": 6,
+					"endDay": 7,
+					"precision": "range"
+				},
+				"format": {
+					"pt": "Moderação",
+					"en": "Moderation"
+				},
+				"city": {
+					"pt": "Tarragona",
+					"en": "Tarragona"
+				},
+				"country": {
+					"pt": "Espanha",
+					"en": "Spain"
+				},
+				"online": false,
+				"event": {
+					"pt": "Eco-social Synergies: Legal Challenges at the Intersection of Environmental and Employment Realms",
+					"en": "Eco-social Synergies: Legal Challenges at the Intersection of Environmental and Employment Realms"
+				},
+				"institution": {
+					"pt": "",
+					"en": ""
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Direito ambiental e trabalho",
+					"en": "Environmental and employment law"
+				},
+				"role": {
+					"pt": "Moderadora",
+					"en": "Moderator"
+				}
+			},
+			{
+				"slug": "cites-direito-ambiental-ufba",
+				"title": {
+					"pt": "CITES e Direito Ambiental Internacional",
+					"en": "CITES and International Environmental Law"
+				},
+				"date": {
+					"year": "2023",
+					"month": 12,
+					"precision": "month"
+				},
+				"format": {
+					"pt": "Aula",
+					"en": "Lecture"
+				},
+				"city": {
+					"pt": "Salvador",
+					"en": "Salvador"
+				},
+				"country": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"online": false,
+				"event": {
+					"pt": "Preparação da Stetson International Environmental Moot Court Competition",
+					"en": "Preparation for the Stetson International Environmental Moot Court Competition"
+				},
+				"institution": {
+					"pt": "Universidade Federal da Bahia",
+					"en": "Federal University of Bahia"
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Direito ambiental internacional",
+					"en": "International environmental law"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "dever-diligencia-guarani-kaiowas",
+				"title": {
+					"pt": "Da futura diretiva europeia sobre dever de diligência das empresas: Efeito Bruxelas e os Guarani-Kaiowás da região de Dourados-MS",
+					"en": "The future European directive on corporate due diligence: the Brussels Effect and the Guarani-Kaiowá of the Dourados region"
+				},
+				"date": {
+					"year": "2023",
+					"month": 10,
+					"day": 30,
+					"precision": "day"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Coimbra",
+					"en": "Coimbra"
+				},
+				"country": {
+					"pt": "Portugal",
+					"en": "Portugal"
+				},
+				"online": false,
+				"event": {
+					"pt": "Congresso Internacional Sustentabilidade Empresarial, Direitos Humanos e Ambiente",
+					"en": "International Congress on Corporate Sustainability, Human Rights and the Environment"
+				},
+				"institution": {
+					"pt": "Universidade de Coimbra",
+					"en": "University of Coimbra"
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Dever de diligência e direitos humanos",
+					"en": "Due diligence and human rights"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "ods6-amazonia-esa-oab-para",
+				"title": {
+					"pt": "ODS 6 da Agenda 2030: Águas, Saneamento e os Aspectos Jurídicos e Socioambientais na Amazônia",
+					"en": "SDG 6 of the 2030 Agenda: Water, Sanitation and Legal and Socio-Environmental Aspects in the Amazon"
+				},
+				"date": {
+					"year": "2023",
+					"month": 10,
+					"precision": "month"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "",
+					"en": ""
+				},
+				"country": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"online": false,
+				"event": {
+					"pt": "",
+					"en": ""
+				},
+				"institution": {
+					"pt": "Escola Superior de Advocacia — ESA / OAB-Pará",
+					"en": "School of Advocacy — ESA / OAB-Pará"
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Água e saneamento",
+					"en": "Water and sanitation"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "efeito-bruxelas-mercosul-ue",
+				"title": {
+					"pt": "Efeito Bruxelas e o Acordo Mercosul-União Europeia: Análise da perspectiva ambiental",
+					"en": "The Brussels Effect and the Mercosur–European Union Agreement: An Environmental Perspective"
+				},
+				"date": {
+					"year": "2023",
+					"precision": "year"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Coimbra",
+					"en": "Coimbra"
+				},
+				"country": {
+					"pt": "Portugal",
+					"en": "Portugal"
+				},
+				"online": false,
+				"event": {
+					"pt": "VIII Congresso Internacional de Direitos Humanos de Coimbra",
+					"en": "8th International Congress on Human Rights of Coimbra"
+				},
+				"institution": {
+					"pt": "",
+					"en": ""
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Efeito Bruxelas e ambiente",
+					"en": "Brussels Effect and the environment"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "catastrofe-ambiental-nordeste",
+				"title": {
+					"pt": "Catástrofe Ambiental no Nordeste Brasileiro",
+					"en": "Environmental Catastrophe in the Brazilian Northeast"
+				},
+				"date": {
+					"year": "2023",
+					"month": 6,
+					"precision": "month"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Ilhéus",
+					"en": "Ilhéus"
+				},
+				"country": {
+					"pt": "Brasil",
+					"en": "Brazil"
+				},
+				"online": false,
+				"event": {
+					"pt": "Semana de Economia",
+					"en": "Economics Week"
+				},
+				"institution": {
+					"pt": "Universidade Estadual de Santa Cruz",
+					"en": "State University of Santa Cruz"
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Ambiente",
+					"en": "Environment"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			},
+			{
+				"slug": "alteracoes-climaticas-justica-climatica",
+				"title": {
+					"pt": "Enquadramento jurídico das alterações climáticas e justiça climática",
+					"en": "Legal framework of climate change and climate justice"
+				},
+				"date": {
+					"year": "2023",
+					"precision": "year",
+					"pending": true
+				},
+				"format": {
+					"pt": "Formação",
+					"en": "Training"
+				},
+				"city": {
+					"pt": "",
+					"en": ""
+				},
+				"country": {
+					"pt": "",
+					"en": ""
+				},
+				"online": false,
+				"event": {
+					"pt": "Formação EPERSOL",
+					"en": "EPERSOL training"
+				},
+				"institution": {
+					"pt": "",
+					"en": ""
+				},
+				"language": "Português",
+				"topic": {
+					"pt": "Alterações climáticas e justiça climática",
+					"en": "Climate change and climate justice"
+				},
+				"role": {
+					"pt": "Formadora",
+					"en": "Trainer"
+				}
+			},
+			{
+				"slug": "environmental-dumping-sustainable-policies",
+				"title": {
+					"pt": "Environmental Dumping and Sustainable Policies",
+					"en": "Environmental Dumping and Sustainable Policies"
+				},
+				"date": {
+					"year": "2021",
+					"month": 9,
+					"day": 8,
+					"endDay": 10,
+					"precision": "range"
+				},
+				"format": {
+					"pt": "Palestra",
+					"en": "Talk"
+				},
+				"city": {
+					"pt": "Bournemouth",
+					"en": "Bournemouth"
+				},
+				"country": {
+					"pt": "Reino Unido",
+					"en": "United Kingdom"
+				},
+				"online": false,
+				"event": {
+					"pt": "8.ª Conferência Anual do European Environmental Law Forum",
+					"en": "8th Annual Conference of the European Environmental Law Forum"
+				},
+				"institution": {
+					"pt": "Bournemouth University",
+					"en": "Bournemouth University"
+				},
+				"language": "English",
+				"topic": {
+					"pt": "Políticas sustentáveis",
+					"en": "Sustainable policies"
+				},
+				"role": {
+					"pt": "Palestrante",
+					"en": "Speaker"
+				}
+			}
+		],
+		"speaking": {
+			"tag": {
+				"pt": "Academia",
+				"en": "Academia"
+			},
+			"subtitle": {
+				"pt": "Uma palestrante que fala do EUDR com trabalho de campo próprio - não de segunda mão. Verifique a autoridade em dois minutos e convide.",
+				"en": "Keynotes on the EUDR delivered through firsthand field research - not secondhand accounts. Verify subject-matter authority in two minutes and send an invitation."
+			},
+			"photoPlaceholderLabel": {
+				"pt": "Foto em alta resolução",
+				"en": "High-resolution photo"
+			},
+			"photo": {
+				"image": "/palestras-info.webp",
+				"alt": {
+					"pt": "Ana à frente de um palanque da Universidade de Coimbra",
+					"en": "Ana in front of a stage platform from Coimbra University"
+				},
+				"decorative": false
+			},
+			"bioHeading": {
+				"pt": "Quem sobe ao palco",
+				"en": "About the Speaker"
+			},
+			"bioParagraphs": {
+				"pt": "Doutorada em Alterações Climáticas e Políticas de Desenvolvimento Sustentável pela NOVA Lisboa, SPF Early Career Fellow do Rights Lab (Nottingham) e advogada no Brasil, inscrita na OAB/SP sob o n.º 330.386 desde 2013. A minha investigação levou-me ao campo, na Amazónia, para estudar o «Efeito Bruxelas» e o EUDR onde eles realmente acontecem.\n\nFalo em português, inglês e espanhol, para públicos académicos, corporativos e institucionais - sempre com o mesmo objetivo: tornar claro um tema complexo, sem perder o rigor.\n",
+				"en": "Holding a Ph.D. in Climate Change and Sustainable Development Policies from NOVA University Lisbon, serves as an SPF Early Career Fellow at the Rights Lab (University of Nottingham), and is a lawyer in Brazil, registered with OAB/SP under no. 330.386 since 2013. Her empirical research led her into the field in the Amazon, examining the 'Brussels Effect' and the EUDR where they unfold on the ground.\n\nShe delivers keynotes in Portuguese, English, and Spanish to academic, corporate, and policy audiences - consistently focusing on making complex issues clear without compromising scientific rigor.\n"
+			},
+			"topicsHeading": {
+				"pt": "Temas que ministro",
+				"en": "Speaking Topics"
+			},
+			"topics": [
+				{
+					"pt": "EUDR e cadeias florestais",
+					"en": "EUDR and Forest Supply Chains"
+				},
+				{
+					"pt": "Direito Ambiental",
+					"en": "Environmental Law"
+				},
+				{
+					"pt": "ESG e Sustentabilidade",
+					"en": "ESG and Sustainability"
+				},
+				{
+					"pt": "Governança Climática",
+					"en": "Climate Governance"
+				},
+				{
+					"pt": "Compliance",
+					"en": "Compliance"
+				},
+				{
+					"pt": "Direito da União Europeia",
+					"en": "European Union Law"
+				},
+				{
+					"pt": "Direito Migratório",
+					"en": "Immigration Law"
+				},
+				{
+					"pt": "Direitos Humanos",
+					"en": "Human Rights"
+				}
+			],
+			"inviteCta": {
+				"pt": "Convidar para palestrar",
+				"en": "Invite to Speak"
+			},
+			"ctaHeading": {
+				"pt": "Tem um evento à vista?",
+				"en": "Planning an upcoming event?"
+			},
+			"ctaText": {
+				"pt": "Envie os detalhes - data, tema e formato - e retomo o contacto para combinarmos.",
+				"en": "Send over the event details - date, topic, and format - and I will get back to you to coordinate."
+			}
+		}
+	},
+	"_template": "events"
+}

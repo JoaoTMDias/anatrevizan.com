@@ -1,0 +1,45 @@
+---
+import { contactBookingPath, pathFor, type PublishedLocale } from "../../lib/routing";
+import Button from "../ui/Button.astro";
+import AcronymText from "./AcronymText.astro";
+
+interface Props {
+  heading: string;
+  text: string;
+  locale: PublishedLocale;
+  showContactLink?: boolean;
+  label?: string;
+  href?: string;
+}
+
+const { heading, text, locale, showContactLink = true, label, href } = Astro.props;
+---
+
+<section class="editorial-cta" aria-labelledby="editorial-cta-heading">
+  <div class="site-container text-center">
+    <h2 id="editorial-cta-heading"><AcronymText text={heading} locale={locale} /></h2>
+    <p><AcronymText text={text} locale={locale} /></p>
+    <div class="editorial-cta__actions">
+      <Button
+        href={href ?? contactBookingPath(locale)}
+        class="w-full md:w-auto"
+        variant="accent"
+        size="lg"
+      >
+        {label ?? (locale === "en" ? "Schedule a first conversation" : "Agendar contacto")}
+      </Button>
+      {
+        showContactLink && (
+          <Button
+            href={pathFor("contact", locale)}
+            class="w-full md:w-auto"
+            variant="outlineInverse"
+            size="lg"
+          >
+            {locale === "en" ? "Contact me" : "Falar sobre o meu caso"}
+          </Button>
+        )
+      }
+    </div>
+  </div>
+</section>

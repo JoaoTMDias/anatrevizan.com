@@ -1,0 +1,20 @@
+import type { RouteKey } from "./routing";
+export interface PracticeSection {
+	variant?: "bento" | "services";
+	anchor?: string;
+	title: string;
+	description: string;
+	paragraphs?: string[];
+	items?: Array<{ title: string; description?: string }>;
+	notice: string;
+	cta: string;
+	routeKey: RouteKey;
+	scope?: string;
+}
+export interface PracticeContent {
+	tag: string;
+	intro: string;
+	sections?: PracticeSection[];
+	portugal?: PracticeSection;
+	brazil?: PracticeSection;
+}
