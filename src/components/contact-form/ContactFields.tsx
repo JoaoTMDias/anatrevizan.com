@@ -14,7 +14,11 @@ interface ContactFieldsProps {
 	privacyHref: string;
 }
 
-type RequestGroup = "brazilLaw" | "publicPolicyPortugal" | "researchKnowledge" | "other";
+type RequestGroup =
+	| "brazilLaw"
+	| "publicPolicyPortugal"
+	| "researchKnowledge"
+	| "other";
 
 const requestGroupByValue: Record<string, RequestGroup> = {
 	"brazil-law": "brazilLaw",
