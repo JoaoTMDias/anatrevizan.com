@@ -14,14 +14,6 @@ async function tabToHref(page: Page, href: string) {
 	throw new Error(`Keyboard could not reach ${href}`);
 }
 
-async function switchToEnglish(page: Page) {
-	const selector = page
-		.locator("header")
-		.getByRole("button", { name: "Escolher idioma / Choose language" });
-	await selector.click();
-	await page.getByRole("option", { name: "English" }).click();
-}
-
 test.describe("visitor navigates and keeps accessibility preferences", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
 

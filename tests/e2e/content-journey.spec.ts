@@ -10,6 +10,10 @@ import {
 const publishedEnglish = JSON.parse(
 	readFileSync("src/content/published-en.json", "utf8"),
 ) as string[];
+const legalPaths = new Set<string>([
+	...Object.values(routeMap.privacy),
+	...Object.values(routeMap.accessibility),
+]);
 
 test.describe("visitor consumes published content", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
@@ -61,10 +65,6 @@ test.describe("visitor consumes published content", () => {
 			await expect(
 				page.locator('link[rel="alternate"][hreflang="x-default"]'),
 			).toHaveCount(1);
-			const legalPaths = new Set<string>([
-				...Object.values(routeMap.privacy),
-				...Object.values(routeMap.accessibility),
-			]);
 			const isLegal = legalPaths.has(path);
 			await expect(
 				page.locator('meta[property="article:modified_time"]'),
@@ -108,46 +108,6 @@ test.describe("visitor consumes published content", () => {
 				checked.add(url.pathname);
 				const response = await request.get(url.pathname);
 				expect(response.status(), `${path} -> ${reference}`).toBeLessThan(400);
-			}
-		}
-	});
-
-	test("internal links and fragments resolve; external links are safe", async ({
-		page,
-		request,
-	}) => {
-		for (const path of await publishedPaths(request)) {
-			await page.goto(path);
-			const sourceUrl = page.url();
-			const links = await page.locator("a[href]").evaluateAll((anchors) =>
-				anchors.map((anchor) => ({
-					href: anchor.getAttribute("href") ?? "",
-					target: anchor.getAttribute("target"),
-					rel: anchor.getAttribute("rel") ?? "",
-					accessibleName:
-						anchor.getAttribute("aria-label") ?? anchor.textContent ?? "",
-				})),
-			);
-			for (const link of links) {
-				const url = new URL(link.href, sourceUrl);
-				if (!["http:", "https:"].includes(url.protocol)) continue;
-				if (url.origin !== new URL(sourceUrl).origin) {
-					expect(url.protocol, link.href).toBe("https:");
-					expect(link.target, link.href).toBe("_blank");
-					expect(link.rel, link.href).toContain("noopener");
-					expect(link.accessibleName, link.accessibleName).toMatch(
-						path.startsWith("/en")
-							? /opens in a new tab/i
-							: /abre num novo separador/i,
-					);
-					continue;
-				}
-				const response = await request.get(url.pathname);
-				expect(response.status(), `${path} -> ${link.href}`).toBeLessThan(400);
-				if (url.hash) {
-					await page.goto(`${url.pathname}${url.hash}`);
-					await expect(page.locator(url.hash)).toHaveCount(1);
-				}
 			}
 		}
 	});

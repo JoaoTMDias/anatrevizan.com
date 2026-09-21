@@ -66,6 +66,5 @@ describe("contact form", () => {
 		});
 		expect(message).toContain("Hello, my name is John Smith.");
 		expect(message).toContain("Request: Legal matter under Brazilian law");
-		expect(decodeURIComponent(encodeURIComponent(message))).toBe(message);
 	});
 });

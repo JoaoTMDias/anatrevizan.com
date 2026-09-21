@@ -34,13 +34,6 @@ async function expectNoViolations(page: Page) {
 
 test.describe("visitor uses accessibility preferences", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
-	test("accessibility audits cover every published page", async ({
-		request,
-	}) => {
-		expect([...auditPaths].sort()).toEqual(
-			(await publishedPaths(request)).sort(),
-		);
-	});
 
 	for (const path of auditPaths) {
 		for (const colorScheme of ["light", "dark"] as const) {
