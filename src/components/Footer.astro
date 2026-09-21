@@ -11,11 +11,11 @@ interface Props {
   locale?: PublishedLocale;
 }
 interface LocalizedLabel {
-	"pt-PT": string;
-	"pt-BR": string;
-	pt_PT?: string;
-	pt_BR?: string;
-	en: string;
+  "pt-PT": string;
+  "pt-BR": string;
+  pt_PT?: string;
+  pt_BR?: string;
+  en: string;
 }
 interface Profile {
   label?: LocalizedLabel | null;
@@ -24,10 +24,12 @@ interface Profile {
 const { config, locale = "pt-PT" } = Astro.props;
 const languageField = locale;
 const localizedConfig = (value: unknown) =>
-	(value as Record<string, string | null | undefined> | null | undefined)?.[languageField] ??
-	(value as Record<string, string | null | undefined> | null | undefined)?.[languageField.replace("-", "_")];
+  (value as Record<string, string | null | undefined> | null | undefined)?.[languageField] ??
+  (value as Record<string, string | null | undefined> | null | undefined)?.[
+    languageField.replace("-", "_")
+  ];
 const labelFor = (value: { "pt-PT"?: string; "pt-BR"?: string; en?: string } | null | undefined) =>
-	value?.[languageField] ?? "";
+  value?.[languageField] ?? "";
 const present = <T,>(value: T | null): value is T => value !== null;
 const navigation = navigationItems(config?.navigation, locale);
 const menus = navigation.filter((item) => item.children?.length);
@@ -53,21 +55,56 @@ const profileIcon = (label: string, url: string) => {
 const legalLabels: Record<RouteKey, { "pt-PT": string; "pt-BR": string; en: string }> = {
   practice: { "pt-PT": "Atuação", "pt-BR": "Atuação", en: "Practice" },
   home: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
-  "immigration-mobility": { "pt-PT": "Migração e mobilidade", "pt-BR": "Migração e mobilidade", en: "Immigration and mobility" },
-  legal: { "pt-PT": "Consultoria jurídica", "pt-BR": "Consultoria jurídica", en: "Legal consulting" },
-  "environmental-esg": { "pt-PT": "Ambiente e ESG", "pt-BR": "Ambiental e ESG", en: "Environmental and ESG" },
-  "public-policy": { "pt-PT": "Políticas públicas", "pt-BR": "Políticas públicas", en: "Public policy" },
+  "immigration-mobility": {
+    "pt-PT": "Migração e mobilidade",
+    "pt-BR": "Migração e mobilidade",
+    en: "Immigration and mobility",
+  },
+  legal: {
+    "pt-PT": "Consultoria jurídica",
+    "pt-BR": "Consultoria jurídica",
+    en: "Legal consulting",
+  },
+  "environmental-esg": {
+    "pt-PT": "Ambiente e ESG",
+    "pt-BR": "Ambiental e ESG",
+    en: "Environmental and ESG",
+  },
+  "public-policy": {
+    "pt-PT": "Políticas públicas",
+    "pt-BR": "Políticas públicas",
+    en: "Public policy",
+  },
   mentoring: { "pt-PT": "Mentorias", "pt-BR": "Mentorias", en: "Mentoring" },
   publications: { "pt-PT": "Publicações", "pt-BR": "Publicações", en: "Publications" },
   events: { "pt-PT": "Eventos", "pt-BR": "Eventos", en: "Events" },
   training: { "pt-PT": "Formações", "pt-BR": "Formações", en: "Training" },
   about: { "pt-PT": "Sobre", "pt-BR": "Sobre", en: "About" },
   contact: { "pt-PT": "Contacto", "pt-BR": "Contato", en: "Contact" },
-  privacy: { "pt-PT": "Política de privacidade", "pt-BR": "Política de privacidade", en: "Privacy policy" },
-  accessibility: { "pt-PT": "Declaração de acessibilidade", "pt-BR": "Declaração de acessibilidade", en: "Accessibility statement" },
+  privacy: {
+    "pt-PT": "Política de privacidade",
+    "pt-BR": "Política de privacidade",
+    en: "Privacy policy",
+  },
+  accessibility: {
+    "pt-PT": "Declaração de acessibilidade",
+    "pt-BR": "Declaração de acessibilidade",
+    en: "Accessibility statement",
+  },
 };
-const languageOptions = publishedLocales.map((candidate) => ({ locale: candidate, label: candidate === "pt-PT" ? "Português (Portugal)" : candidate === "pt-BR" ? "Português (Brasil)" : "English", flag: candidate === "pt-PT" ? "🇵🇹" : candidate === "pt-BR" ? "🇧🇷" : "🇬🇧", href: pathFor("home", candidate) }));
-const currentLanguage = languageOptions.find((option) => option.locale === locale) ?? languageOptions[0];
+const languageOptions = publishedLocales.map((candidate) => ({
+  locale: candidate,
+  label:
+    candidate === "pt-PT"
+      ? "Português (Portugal)"
+      : candidate === "pt-BR"
+        ? "Português (Brasil)"
+        : "English",
+  flag: candidate === "pt-PT" ? "🇵🇹" : candidate === "pt-BR" ? "🇧🇷" : "🇬🇧",
+  href: pathFor("home", candidate),
+}));
+const currentLanguage =
+  languageOptions.find((option) => option.locale === locale) ?? languageOptions[0];
 ---
 
 <footer class="site-footer">
@@ -155,7 +192,16 @@ const currentLanguage = languageOptions.find((option) => option.locale === local
       }
     </div>
   </div>
-  <div class="site-container pb-8"><LanguageSelect client:load current={currentLanguage} options={languageOptions} label="Escolher idioma / Choose language" /></div>
+  <div class="site-container flex justify-center pb-8">
+    <LanguageSelect
+      client:load
+      current={currentLanguage}
+      options={languageOptions}
+      label="Escolher idioma / Choose language"
+      triggerClassName="bg-[var(--footer-foreground)] text-black hover:bg-[var(--footer-foreground)]"
+      valueClassName="text-brand-ink"
+    />
+  </div>
   <div class="footer-legal">
     <div class="site-container footer-legal__inner">
       <div class="footer-legal__brand">

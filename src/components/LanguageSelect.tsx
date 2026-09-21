@@ -13,10 +13,14 @@ export default function LanguageSelect({
 	current,
 	options,
 	label,
+	triggerClassName,
+	valueClassName,
 }: {
 	current: LanguageOption;
 	options: LanguageOption[];
 	label: string;
+	triggerClassName?: string;
+	valueClassName?: string;
 }) {
 	if (options.length < 2) return null;
 	return (
@@ -39,12 +43,17 @@ export default function LanguageSelect({
 		>
 			<SelectPrimitive.Trigger
 				aria-label={label}
-				className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-background px-3 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
+				className={cn(
+					"inline-flex h-11 items-center gap-2 rounded-full border border-border bg-background px-3 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring",
+					triggerClassName,
+				)}
 			>
 				<span className="font-emoji" aria-hidden="true">
 					{current.flag}
 				</span>
-				<SelectPrimitive.Value>{current.label}</SelectPrimitive.Value>
+				<SelectPrimitive.Value className={valueClassName}>
+					{current.label}
+				</SelectPrimitive.Value>
 				<ChevronDownIcon className="size-4" aria-hidden="true" />
 			</SelectPrimitive.Trigger>
 			<SelectPrimitive.Portal>
