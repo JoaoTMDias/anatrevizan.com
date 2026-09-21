@@ -14,6 +14,22 @@ interface ContactFieldsProps {
 	privacyHref: string;
 }
 
+type RequestGroup = "brazilLaw" | "publicPolicyPortugal" | "researchKnowledge" | "other";
+
+const requestGroupByValue: Record<string, RequestGroup> = {
+	"brazil-law": "brazilLaw",
+	"brazil-civil-contracts-consumer": "brazilLaw",
+	"brazil-labour": "brazilLaw",
+	"brazil-human-rights": "brazilLaw",
+	"brazil-legal-opinion": "brazilLaw",
+	"brazil-environment": "publicPolicyPortugal",
+	"portugal-administrative": "publicPolicyPortugal",
+	"academic-mentoring": "researchKnowledge",
+	"academic-research": "researchKnowledge",
+	"academic-speaking": "researchKnowledge",
+	"professional-other": "other",
+};
+
 export function ContactFields({
 	t,
 	id,
@@ -84,11 +100,27 @@ export function ContactFields({
 					<option value="" disabled>
 						{t.choose}
 					</option>
-					{requestTypes.map((option) => (
-						<option key={option.value} value={option.value}>
-							{option.label}
-						</option>
-					))}
+					{(
+						[
+							"brazilLaw",
+							"publicPolicyPortugal",
+							"researchKnowledge",
+							"other",
+						] as const
+					).map((group) => {
+						const options = requestTypes.filter(
+							(option) => requestGroupByValue[option.value] === group,
+						);
+						return options.length ? (
+							<optgroup key={group} label={t.requestGroups[group]}>
+								{options.map((option) => (
+									<option key={option.value} value={option.value}>
+										{option.label}
+									</option>
+								))}
+							</optgroup>
+						) : null;
+					})}
 				</select>
 				<FieldError
 					id={id("request-type-error")}

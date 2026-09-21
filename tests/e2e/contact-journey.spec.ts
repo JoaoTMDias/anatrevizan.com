@@ -21,6 +21,23 @@ async function fillPortugueseForm(page: import("@playwright/test").Page) {
 	const emailInput = form.getByLabel("E-mail");
 	const whatsappInput = form.getByLabel("WhatsApp (opcional)");
 	const requestTypeSelect = form.getByLabel("Tipo de pedido");
+	await expect(requestTypeSelect.locator("optgroup")).toHaveCount(4);
+	await expect(requestTypeSelect.locator("optgroup").nth(0)).toHaveAttribute(
+		"label",
+		"Direito brasileiro",
+	);
+	await expect(requestTypeSelect.locator("optgroup").nth(1)).toHaveAttribute(
+		"label",
+		"Políticas públicas e Portugal",
+	);
+	await expect(requestTypeSelect.locator("optgroup").nth(2)).toHaveAttribute(
+		"label",
+		"Investigação e conhecimento",
+	);
+	await expect(requestTypeSelect.locator("optgroup").nth(3)).toHaveAttribute(
+		"label",
+		"Outro",
+	);
 	const countrySelect = form.getByLabel("País de residência (opcional)", {
 		exact: true,
 	});
