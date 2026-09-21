@@ -1,8 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/ui/Button.astro';
+import { getConfig } from '../lib/data';
+
+const config = (await getConfig()).data.config;
 ---
-<Base title="Página não encontrada" description="A página pedida não existe." locale="pt-PT" routeKey="home" noindex>
+<Base title="Página não encontrada" description="A página pedida não existe." locale="pt-PT" routeKey="home" noindex config={config}>
 	<section class="not-found-page">
 		<div>
 			<p>404</p>
