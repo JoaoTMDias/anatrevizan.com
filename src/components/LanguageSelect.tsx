@@ -55,7 +55,7 @@ export default function LanguageSelect({
 								key={option.locale}
 								value={option.locale}
 								className={cn(
-									"flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm outline-none data-highlighted:bg-accent",
+									"flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm text-popover-foreground outline-none data-highlighted:bg-accent data-highlighted:!text-accent-foreground data-selected:bg-accent data-selected:!text-accent-foreground",
 									option.locale === current.locale && "font-semibold",
 								)}
 							>
