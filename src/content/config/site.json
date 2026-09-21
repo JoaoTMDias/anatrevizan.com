@@ -324,7 +324,11 @@
 				}
 			}
 		],
-		"serviceLanguages": ["Português", "English", "Español"]
+		"serviceLanguages": [
+			"Português",
+			"English",
+			"Español"
+		]
 	},
 	"navigation": {
 		"consulting": {
@@ -338,8 +342,8 @@
 					"en": "Migration and Mobility"
 				},
 				"description": {
-					"pt": "Mudar de país é uma das decisões mais importantes da sua vida.",
-					"en": "Changing countries is one of the most important decisions in your life."
+					"pt": "Planeamento da sua mudança, preparação documental e acompanhamento de procedimentos administrativos em Portugal.",
+					"en": "Planning your move, preparing the necessary documents, and assisting with administrative procedures in Portugal."
 				},
 				"tag": {
 					"pt": "🇵🇹 · 🇧🇷",
