@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const mode = process.argv[2];
-const expectedPublishedDocuments = 28;
+const expectedPublishedDocuments = 42;
 assert(
 	mode === "preview" || mode === "production",
 	"Expected preview or production mode",
