@@ -34,11 +34,7 @@
 		}
 	},
 	"practicePage": {
-		"tag": {
-			"pt-PT": "BRASIL",
-			"en": "BRAZIL",
-			"pt-BR": "BRASIL"
-		},
+		"tag": { "pt-PT": "BRASIL", "en": "BRAZIL", "pt-BR": "BRASIL" },
 		"intro": {
 			"pt-PT": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos.",
 			"en": "Legal services for individuals, businesses and organisations, with a focus on risk prevention, the protection of rights and conflict resolution.",
@@ -141,7 +137,7 @@
 				"notice": {
 					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
 					"en": "BRAZIL · OAB/SP no. 330.386",
-					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
+					"pt-BR": "BRASIL · OAB/SP nº 330.386"
 				},
 				"cta": {
 					"pt-PT": "Apresentar uma questão de Direito brasileiro",
@@ -247,7 +243,7 @@
 				"notice": {
 					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
 					"en": "BRAZIL · OAB/SP no. 330.386",
-					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
+					"pt-BR": "BRASIL · OAB/SP nº 330.386"
 				},
 				"cta": {
 					"pt-PT": "Solicitar atendimento em Direito do Trabalho brasileiro",
@@ -279,7 +275,7 @@
 				"notice": {
 					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
 					"en": "BRAZIL · OAB/SP no. 330.386",
-					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
+					"pt-BR": "BRASIL · OAB/SP nº 330.386"
 				},
 				"cta": {
 					"pt-PT": "Apresentar uma questão de Direito brasileiro",

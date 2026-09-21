@@ -3,23 +3,23 @@
 	"title": {
 		"pt-PT": "Mentorias Profissionais e Académicas",
 		"en": "Mentorship and Academic Support",
-		"pt-BR": "Mentorias Profissionais e Académicas"
+		"pt-BR": "Mentorias Profissionais e Acadêmicas"
 	},
 	"summary": {
 		"pt-PT": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
 		"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
-		"pt-BR": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação."
+		"pt-BR": "Acompanhamento personalizado para planejar os próximos passos da sua carreira, preparar candidaturas a mestrados e doutorados e desenvolver projetos de pesquisa."
 	},
 	"seo": {
 		"title": {
 			"pt-PT": "Mentorias Profissionais e Académicas · Publicar com quem já publicou",
 			"en": "Mentorship and Academic Support · Publish with Proven Experience - Ana Trevizan",
-			"pt-BR": "Mentorias Profissionais e Académicas · Publicar com quem já publicou"
+			"pt-BR": "Mentorias Profissionais e Acadêmicas · Publicar com quem já publicou"
 		},
 		"description": {
 			"pt-PT": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
 			"en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation.",
-			"pt-BR": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional."
+			"pt-BR": "Mentoria e apoio acadêmico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional."
 		}
 	},
 	"media": {
@@ -37,7 +37,7 @@
 		"subtitle": {
 			"pt-PT": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
 			"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
-			"pt-BR": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação."
+			"pt-BR": "Acompanhamento personalizado para planejar os próximos passos da sua carreira, preparar candidaturas a mestrados e doutorados e desenvolver projetos de pesquisa."
 		},
 		"introHeading": {
 			"pt-PT": "Experiência para acompanhar o seu percurso",
@@ -56,7 +56,7 @@
 		"introParagraphs": {
 			"pt-PT": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n",
 			"en": "Choosing a master’s or PhD programme, undertaking research or taking your career in a new direction involves uncertainties and important decisions. It is not always easy to identify opportunities and work out where to start.\n\nI draw on the experience I have gained in the legal profession, in teaching and in international research to help you turn your goals into an action plan, using a structured approach, listening carefully and taking your career path into account.\n",
-			"pt-BR": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n"
+			"pt-BR": "Escolher um mestrado ou doutorado, desenvolver uma pesquisa ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nCompartilho a experiência que construí na advocacia, na docência e na pesquisa internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n"
 		},
 		"servicesHeading": {
 			"pt-PT": "Como posso apoiar",
@@ -68,7 +68,7 @@
 				"title": {
 					"pt-PT": "Planeamento de carreira",
 					"en": "Career planning",
-					"pt-BR": "Planeamento de carreira"
+					"pt-BR": "Planejamento de carreira"
 				},
 				"description": {
 					"pt-PT": "Definição de objetivos e próximos passos profissionais, considerando a sua experiência, os seus interesses e as oportunidades de atuação.",
@@ -80,7 +80,7 @@
 				"title": {
 					"pt-PT": "Candidaturas a mestrados e doutoramentos",
 					"en": "Applications for master’s and doctoral programmes",
-					"pt-BR": "Candidaturas a mestrados e doutoramentos"
+					"pt-BR": "Candidaturas a mestrados e doutorados"
 				},
 				"description": {
 					"pt-PT": "Escolha de programas e preparação de candidaturas, com atenção aos requisitos, à documentação e ao projeto exigido.",
@@ -97,14 +97,14 @@
 				"description": {
 					"pt-PT": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto.",
 					"en": "Defining the topic, formulating the research question and selecting the appropriate methods for your project.",
-					"pt-BR": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto."
+					"pt-BR": "Delimitação do tema, formulação da pergunta de pesquisa e escolha dos métodos adequados ao seu projeto."
 				}
 			},
 			{
 				"title": {
 					"pt-PT": "Estruturação e escrita académica",
 					"en": "Academic structuring and writing",
-					"pt-BR": "Estruturação e escrita académica"
+					"pt-BR": "Estruturação e escrita acadêmica"
 				},
 				"description": {
 					"pt-PT": "Organização de dissertações e teses, desenvolvimento dos argumentos e estratégias para superar bloqueios na escrita.",

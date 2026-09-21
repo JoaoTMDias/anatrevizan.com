@@ -33,7 +33,7 @@
 			{
 				"pt-PT": "Auditoria abrangente com tecnologias de apoio e utilizadores",
 				"en": "Comprehensive audit with assistive technologies and users",
-				"pt-BR": "Auditoria abrangente com tecnologias de apoio e utilizadores"
+				"pt-BR": "Auditoria abrangente com tecnologias de apoio e usuárioes"
 			},
 			{
 				"pt-PT": "Confirmação do processo e prazo de resposta a comunicações",
@@ -51,7 +51,7 @@
 				"paragraphs": {
 					"pt-PT": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil. Em Portugal, o site apresenta apenas apoio administrativo e trabalho técnico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. Esta distinção também orienta a forma como o conteúdo e os contactos devem ser acessíveis e compreensíveis.",
 					"en": "Legal practice and consultancy in Brazilian law are provided in Brazil. In Portugal, this website presents only administrative support and technical work, without legal advice, representation, or activities reserved to Portuguese lawyers or solicitors. This distinction also guides how the content and contact options should remain accessible and understandable.",
-					"pt-BR": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil. Em Portugal, o site apresenta apenas apoio administrativo e trabalho técnico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. Esta distinção também orienta a forma como o conteúdo e os contactos devem ser acessíveis e compreensíveis."
+					"pt-BR": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil. Em Portugal, o site apresenta apenas apoio administrativo e trabalho técnico, sem consulta jurídica, representação ou prática de atos reservados a advogados e solicitadores. Esta distinção também orienta a forma como o conteúdo e os contatos devem ser acessíveis e compreensíveis."
 				}
 			},
 			{
@@ -99,19 +99,19 @@
 				"paragraphs": {
 					"pt-PT": "Não foi concluída uma auditoria abrangente com utilizadores e múltiplas tecnologias de apoio. Os serviços externos abertos a partir deste site, incluindo Calendly, WhatsApp, ORCID e perfis sociais, têm ambientes próprios cuja acessibilidade não é controlada por este site. Se encontrar outra barreira, comunique-a através do contacto abaixo.",
 					"en": "A comprehensive audit with users and multiple assistive technologies has not been completed. External services opened from this site, including Calendly, WhatsApp, ORCID, and social profiles, have their own environments, whose accessibility is not controlled by this website. If you encounter another barrier, please report it using the contact below.",
-					"pt-BR": "Não foi concluída uma auditoria abrangente com utilizadores e múltiplas tecnologias de apoio. Os serviços externos abertos a partir deste site, incluindo Calendly, WhatsApp, ORCID e perfis sociais, têm ambientes próprios cuja acessibilidade não é controlada por este site. Se encontrar outra barreira, comunique-a através do contacto abaixo."
+					"pt-BR": "Não foi concluída uma auditoria abrangente com usuárioes e múltiplas tecnologias de apoio. Os serviços externos abertos a partir deste site, incluindo Calendly, WhatsApp, ORCID e perfis sociais, têm ambientes próprios cuja acessibilidade não é controlada por este site. Se encontrar outra barreira, comunique-a através do contato abaixo."
 				}
 			},
 			{
 				"heading": {
 					"pt-PT": "Alternativas e contacto",
 					"en": "Alternatives and contact",
-					"pt-BR": "Alternativas e contacto"
+					"pt-BR": "Alternativas e contato"
 				},
 				"paragraphs": {
 					"pt-PT": "Se não conseguir aceder a conteúdo ou concluir uma ação, envie uma mensagem para [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Indique a página, a barreira encontrada, o dispositivo ou tecnologia de apoio utilizada e o formato acessível de que necessita, apenas se se sentir confortável em fazê-lo. Pode também usar o WhatsApp indicado na página de Contacto.\n\nSerá acusada a receção da comunicação, analisada a barreira e procurada uma alternativa acessível.",
 					"en": "If you cannot access content or complete an action, email [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Please identify the page, the barrier encountered, the device or assistive technology used, and the accessible format you need, only if you are comfortable doing so. You may also use the WhatsApp contact shown on the Contact page.\n\nThe report will be acknowledged, the barrier will be reviewed, and an accessible alternative will be sought.",
-					"pt-BR": "Se não conseguir aceder a conteúdo ou concluir uma ação, envie uma mensagem para [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Indique a página, a barreira encontrada, o dispositivo ou tecnologia de apoio utilizada e o formato acessível de que necessita, apenas se se sentir confortável em fazê-lo. Pode também usar o WhatsApp indicado na página de Contacto.\n\nSerá acusada a receção da comunicação, analisada a barreira e procurada uma alternativa acessível."
+					"pt-BR": "Se não conseguir aceder a conteúdo ou concluir uma ação, envie uma mensagem para [contato@anatrevizan.com](mailto:contato@anatrevizan.com). Indique a página, a barreira encontrada, o dispositivo ou tecnologia de apoio utilizada e o formato acessível de que necessita, apenas se se sentir confortável em fazê-lo. Pode também usar o WhatsApp indicado na página de Contato.\n\nSerá acusada a receção da comunicação, analisada a barreira e procurada uma alternativa acessível."
 				}
 			},
 			{
@@ -128,7 +128,5 @@
 			}
 		]
 	},
-	"legal": {
-		"effectiveDate": "2026-09-04"
-	}
+	"legal": { "effectiveDate": "2026-09-04" }
 }

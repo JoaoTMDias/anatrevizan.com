@@ -1,14 +1,10 @@
 {
 	"routeKey": "home",
-	"title": {
-		"pt-PT": "Início",
-		"en": "Home",
-		"pt-BR": "Início"
-	},
+	"title": { "pt-PT": "Início", "en": "Home", "pt-BR": "Início" },
 	"summary": {
 		"pt-PT": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
 		"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice.",
-		"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
+		"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registros e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
 	},
 	"seo": {
 		"title": {
@@ -19,7 +15,7 @@
 		"description": {
 			"pt-PT": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
 			"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice.",
-			"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
+			"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registros e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
 		}
 	},
 	"media": {
@@ -60,7 +56,7 @@
 			"secondaryCta": {
 				"pt-PT": "Entrar em contacto",
 				"en": "Get in touch",
-				"pt-BR": "Entrar em contacto"
+				"pt-BR": "Entrar em contato"
 			}
 		},
 		"gateways": [
@@ -114,12 +110,12 @@
 		"differencesTitle": {
 			"pt-PT": "Experiência, investigação e acompanhamento especializado",
 			"en": "Experience, research, and dedicated support",
-			"pt-BR": "Experiência, investigação e acompanhamento especializado"
+			"pt-BR": "Experiência, pesquisa e acompanhamento especializado"
 		},
 		"differencesSubtitle": {
 			"pt-PT": "Trajetória profissional e académica com âmbitos de atuação distintos.",
 			"en": "A professional and academic journey with distinct scopes of practice.",
-			"pt-BR": "Trajetória profissional e académica com âmbitos de atuação distintos."
+			"pt-BR": "Trajetória profissional e acadêmica com âmbitos de atuação distintos."
 		},
 		"differences": [
 			{
@@ -131,7 +127,7 @@
 				"description": {
 					"pt-PT": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386.",
 					"en": "Legal practice in Brazil, registered with OAB/SP under no. 330.386.",
-					"pt-BR": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386."
+					"pt-BR": "Advocacia no Brasil, com inscrição na OAB/SP sob o nº 330.386."
 				}
 			},
 			{
@@ -155,7 +151,7 @@
 				"description": {
 					"pt-PT": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática.",
 					"en": "Ph.D. from NOVA University Lisbon, empirical field research in the Amazon on the EUDR. Academic rigour applied to practice.",
-					"pt-BR": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática."
+					"pt-BR": "Doutorado na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor acadêmico aplicado à prática."
 				}
 			},
 			{
@@ -212,11 +208,7 @@
 					"pt-BR": "Civil, Contratos e Consumidor"
 				},
 				"anchor": "civil",
-				"tag": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"tag": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"description": {
 					"pt-PT": "Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica.",
 					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty.",
@@ -236,11 +228,7 @@
 					"pt-BR": "Trabalho e Relações Laborais"
 				},
 				"anchor": "trabalho",
-				"tag": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"tag": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"description": {
 					"pt-PT": "Direitos, deveres e relações profissionais exigem clareza, tanto na prevenção quanto diante de um conflito.",
 					"en": "Rights, duties and professional relationships require clarity, both in prevention and when facing a dispute.",
@@ -259,11 +247,7 @@
 					"en": "Environmental Law and ESG",
 					"pt-BR": "Direito Ambiental e ESG"
 				},
-				"tag": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"tag": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"description": {
 					"pt-PT": "Análise de riscos e soluções jurídicas para projetos, questões ambientais e urbanísticas e relações com o poder público.",
 					"en": "Risk analysis and legal solutions for projects, environmental and urban planning issues, and relations with public authorities.",
@@ -282,15 +266,11 @@
 					"en": "Public Policy and Governance",
 					"pt-BR": "Políticas Públicas e Governança"
 				},
-				"tag": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"tag": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"description": {
 					"pt-PT": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade.",
 					"en": "Research, analysis and technical support for public policy, governance and sustainability.",
-					"pt-BR": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade."
+					"pt-BR": "Pesquisa, análise e apoio técnico para políticas públicas, governança e sustentabilidade."
 				},
 				"cta": {
 					"pt-PT": "Saber mais",
@@ -306,11 +286,7 @@
 					"pt-BR": "Direitos Humanos"
 				},
 				"anchor": "direitos-humanos",
-				"tag": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"tag": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"description": {
 					"pt-PT": "Defesa de direitos humanos, promoção da inclusão e proteção de pessoas e comunidades em situação de vulnerabilidade.",
 					"en": "Defending human rights, promoting inclusion and protecting vulnerable individuals and communities.",
@@ -329,12 +305,12 @@
 				"label": {
 					"pt-PT": "Mentoria Académica",
 					"en": "Academic Mentoring",
-					"pt-BR": "Mentoria Académica"
+					"pt-BR": "Mentoria Acadêmica"
 				},
 				"description": {
 					"pt-PT": "Acompanhamento para planear o ingresso no mestrado ou doutoramento e desenvolver projetos, dissertações, teses e artigos científicos.",
 					"en": "I provide support to help you plan your entry onto a master’s or doctoral programme and to develop projects, dissertations, theses and scientific articles.",
-					"pt-BR": "Acompanhamento para planear o ingresso no mestrado ou doutoramento e desenvolver projetos, dissertações, teses e artigos científicos."
+					"pt-BR": "Acompanhamento para planejar o ingresso no mestrado ou doutorado e desenvolver projetos, dissertações, teses e artigos científicos."
 				},
 				"routeKey": "mentoring"
 			},
@@ -373,7 +349,7 @@
 		"academicSubtitle": {
 			"pt-PT": "Conhecimento e experiência para a sua trajetória académica e profissional.",
 			"en": "Knowledge and experience to support your academic and professional development.",
-			"pt-BR": "Conhecimento e experiência para a sua trajetória académica e profissional."
+			"pt-BR": "Conhecimento e experiência para a sua trajetória acadêmica e profissional."
 		},
 		"publicationsCta": {
 			"pt-PT": "Ver repositório completo",
@@ -393,7 +369,7 @@
 		"finalCtaLabel": {
 			"pt-PT": "Entrar em contacto",
 			"en": "Get in touch",
-			"pt-BR": "Entrar em contacto"
+			"pt-BR": "Entrar em contato"
 		}
 	},
 	"_template": "home"

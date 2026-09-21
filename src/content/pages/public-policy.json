@@ -63,7 +63,7 @@
 		"introParagraphs": {
 			"pt-PT": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
 			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent - it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organisations, and institutions seeking solid technical backing to decide and act.",
-			"pt-BR": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir."
+			"pt-BR": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à pesquisa acadêmica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir."
 		},
 		"servicesHeading": {
 			"pt-PT": "Como posso ajudar",
@@ -73,7 +73,7 @@
 		"servicesSubtitle": {
 			"pt-PT": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade.",
 			"en": "Technical support and strategic advisory in public policy and governance.",
-			"pt-BR": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade."
+			"pt-BR": "Pesquisa, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade."
 		},
 		"services": [
 			{
@@ -115,7 +115,7 @@
 					{
 						"pt-PT": "Apoio a municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
 						"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators.",
-						"pt-BR": "Apoio a municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados."
+						"pt-BR": "Apoio a municípios e equipes técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados."
 					},
 					{
 						"pt-PT": "Planos de adaptação",
@@ -193,20 +193,12 @@
 				]
 			}
 		],
-		"stepsHeading": {
-			"pt-PT": "",
-			"en": "",
-			"pt-BR": ""
-		},
-		"stepsSubtitle": {
-			"pt-PT": "",
-			"en": "",
-			"pt-BR": ""
-		},
+		"stepsHeading": { "pt-PT": "", "en": "", "pt-BR": "" },
+		"stepsSubtitle": { "pt-PT": "", "en": "", "pt-BR": "" },
 		"note": {
 			"pt-PT": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal.",
 			"en": "Technical advisory and consulting practice. Does not include litigation or court representation.",
-			"pt-BR": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal."
+			"pt-BR": "O trabalho nesta área consiste em pesquisa, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal."
 		},
 		"ctaHeading": {
 			"pt-PT": "Tem uma política ou projeto para desenvolver?",
@@ -216,7 +208,7 @@
 		"ctaText": {
 			"pt-PT": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil.",
 			"en": "Schedule an initial call to evaluate the scope of support your organisation requires.",
-			"pt-BR": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil."
+			"pt-BR": "Conte-me o que está preparando e vemos que tipo de apoio técnico pode ser útil."
 		}
 	}
 }

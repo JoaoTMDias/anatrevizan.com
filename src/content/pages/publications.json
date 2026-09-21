@@ -34,11 +34,7 @@
 		}
 	},
 	"publicationsPage": {
-		"tag": {
-			"pt-PT": "Academia",
-			"en": "Academia",
-			"pt-BR": "Academia"
-		},
+		"tag": { "pt-PT": "Academia", "en": "Academia", "pt-BR": "Academia" },
 		"subtitle": {
 			"pt-PT": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada.",
 			"en": "Academic research in environmental law, climate governance and human rights, collated, searchable and constantly updated.",
@@ -47,7 +43,7 @@
 		"introText": {
 			"pt-PT": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de investigação. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional.",
 			"en": "This repository brings together articles, book chapters and other publications that reflect my research journey. Browse the works by year, topic or language and find resources to support your research or professional activities.",
-			"pt-BR": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de investigação. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional."
+			"pt-BR": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de pesquisa. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional."
 		},
 		"orcidNote": {
 			"pt-PT": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI.",

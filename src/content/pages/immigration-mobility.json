@@ -34,11 +34,7 @@
 		}
 	},
 	"consultingService": {
-		"tag": {
-			"pt-PT": "Portugal",
-			"en": "Portugal",
-			"pt-BR": "Portugal"
-		},
+		"tag": { "pt-PT": "Portugal", "en": "Portugal", "pt-BR": "Portugal" },
 		"subtitle": {
 			"pt-PT": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos.",
 			"en": "Moving to a new country involves planning, uncertainties and new challenges. I’ll guide you through every administrative step of your move to Portugal, taking your background and your goals into account.",
@@ -119,7 +115,7 @@
 				"description": {
 					"pt-PT": "Apoio na obtenção dos registos essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal.",
 					"en": "Assistance with obtaining essential registrations needed to live, work, and access public services in Portugal.",
-					"pt-BR": "Apoio na obtenção dos registos essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal."
+					"pt-BR": "Apoio na obtenção dos registros essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal."
 				}
 			},
 			{
@@ -194,7 +190,7 @@
 				"description": {
 					"pt-PT": "Mantenho-me presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis.",
 					"en": "I stay involved at every stage, checking the status of your application and helping to respond to enquiries from the relevant authorities.",
-					"pt-BR": "Mantenho-me presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis."
+					"pt-BR": "Me mantenho presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis."
 				}
 			},
 			{
@@ -207,7 +203,7 @@
 				"description": {
 					"pt-PT": "Continuamos a apoiar a organização dos registos e das tarefas práticas do dia a dia.",
 					"en": "Support with your legal status regularization and integration upon arrival in Portugal.",
-					"pt-BR": "Continuamos a apoiar a organização dos registos e das tarefas práticas do dia a dia."
+					"pt-BR": "Continuamos a apoiar a organização dos registros e das tarefas práticas do dia a dia."
 				}
 			}
 		],
@@ -219,7 +215,7 @@
 		"crosslinkText": {
 			"pt-PT": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, permite-me compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança.",
 			"en": "I have been a lawyer in Brazil since 2013 and I live in Portugal, where I too have experienced the challenges of settling into a new country. This experience, combined with my professional background, enables me to understand your concerns and closely support you through every stage of your move.",
-			"pt-BR": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, permite-me compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança."
+			"pt-BR": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, me permite compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança."
 		},
 		"crosslinkRouteKey": "about",
 		"note": {

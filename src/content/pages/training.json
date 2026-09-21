@@ -8,7 +8,7 @@
 	"summary": {
 		"pt-PT": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
 		"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe.",
-		"pt-BR": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
+		"pt-BR": "Formação para equipes, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
 	},
 	"seo": {
 		"title": {
@@ -37,7 +37,7 @@
 		"subtitle": {
 			"pt-PT": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
 			"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe.",
-			"pt-BR": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
+			"pt-BR": "Formação para equipes, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
 		},
 		"introHeading": {
 			"pt-PT": "Conhecimento para aplicar no trabalho",
@@ -58,11 +58,7 @@
 			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programmes for universities, corporations, municipalities, and organisations, combining research rigour with pedagogical clarity.\n",
 			"pt-BR": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n"
 		},
-		"servicesHeading": {
-			"pt-PT": "Temas",
-			"en": "Topics",
-			"pt-BR": "Temas"
-		},
+		"servicesHeading": { "pt-PT": "Temas", "en": "Topics", "pt-BR": "Temas" },
 		"servicesSubtitle": {
 			"pt-PT": "Programas adaptados ao público e aos objetivos de cada instituição.",
 			"en": "Programmes tailored to the audience and goals of each institution.",
@@ -150,7 +146,7 @@
 		"ctaHeading": {
 			"pt-PT": "Quer uma formação para a sua equipa ou instituição?",
 			"en": "Looking for a training programme for your team or institution?",
-			"pt-BR": "Quer uma formação para a sua equipa ou instituição?"
+			"pt-BR": "Quer uma formação para a sua equipe ou instituição?"
 		},
 		"ctaText": {
 			"pt-PT": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",

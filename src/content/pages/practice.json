@@ -49,7 +49,7 @@
 				"notice": {
 					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
 					"en": "BRAZIL · OAB/SP no. 330.386",
-					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
+					"pt-BR": "BRASIL · OAB/SP nº 330.386"
 				},
 				"cta": {
 					"pt-PT": "Conhecer a atuação no Brasil",
@@ -60,20 +60,16 @@
 				"scope": "BR_LEGAL"
 			},
 			{
-				"title": {
-					"pt-PT": "Academia",
-					"en": "Academia",
-					"pt-BR": "Academia"
-				},
+				"title": { "pt-PT": "Academia", "en": "Academia", "pt-BR": "Academia" },
 				"description": {
 					"pt-PT": "Mentoria, investigação, palestras e formação.",
 					"en": "Mentoring, research, talks and training.",
-					"pt-BR": "Mentoria, investigação, palestras e formação."
+					"pt-BR": "Mentoria, pesquisa, palestras e formação."
 				},
 				"notice": {
 					"pt-PT": "Área académica autónoma.",
 					"en": "A separate academic area.",
-					"pt-BR": "Área académica autónoma."
+					"pt-BR": "Área acadêmica autónoma."
 				},
 				"cta": {
 					"pt-PT": "Explorar Academia",

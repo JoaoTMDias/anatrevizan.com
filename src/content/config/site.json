@@ -5,7 +5,7 @@
 			"expansion": {
 				"pt-PT": "Doutoramento",
 				"en": "Doctor",
-				"pt-BR": "Doutoramento"
+				"pt-BR": "Doutorado"
 			}
 		},
 		{
@@ -165,7 +165,7 @@
 			"expansion": {
 				"pt-PT": "Organização para a Cooperação e Desenvolvimento Económico",
 				"en": "Organisation for Economic Co-operation and Development",
-				"pt-BR": "Organização para a Cooperação e Desenvolvimento Económico"
+				"pt-BR": "Organização para a Cooperação e Desenvolvimento Econômico"
 			}
 		},
 		{
@@ -234,26 +234,18 @@
 		},
 		{
 			"acronym": "EN",
-			"expansion": {
-				"pt-PT": "Inglês",
-				"en": "English",
-				"pt-BR": "Inglês"
-			}
+			"expansion": { "pt-PT": "Inglês", "en": "English", "pt-BR": "Inglês" }
 		},
 		{
 			"acronym": "ES",
-			"expansion": {
-				"pt-PT": "Espanhol",
-				"en": "Spanish",
-				"pt-BR": "Espanhol"
-			}
+			"expansion": { "pt-PT": "Espanhol", "en": "Spanish", "pt-BR": "Espanhol" }
 		},
 		{
 			"acronym": "CEJEIA",
 			"expansion": {
 				"pt-PT": "Centro de Estudos Jurídicos, Económicos e Ambientais",
 				"en": "Center for Juridical, Economic and Environmental Studies",
-				"pt-BR": "Centro de Estudos Jurídicos, Económicos e Ambientais"
+				"pt-BR": "Centro de Estudos Jurídicos, Econômicos e Ambientais"
 			}
 		},
 		{
@@ -261,7 +253,7 @@
 			"expansion": {
 				"pt-PT": "Centro de Investigação em Ambiente e Sustentabilidade",
 				"en": "Center for Environmental and Sustainability Research",
-				"pt-BR": "Centro de Investigação em Ambiente e Sustentabilidade"
+				"pt-BR": "Centro de Pesquisa em Ambiente e Sustentabilidade"
 			}
 		},
 		{
@@ -285,7 +277,7 @@
 			"expansion": {
 				"pt-PT": "Sinergias Académicas UE-América Latina",
 				"en": "EU-Latin America Academic Synergies",
-				"pt-BR": "Sinergias Académicas UE-América Latina"
+				"pt-BR": "Sinergias Acadêmicas UE-América Latina"
 			}
 		},
 		{
@@ -327,11 +319,7 @@
 		"calendlyUrl": "https://calendly.com/dratrevizan",
 		"profiles": [
 			{
-				"label": {
-					"pt-PT": "LinkedIn",
-					"en": "LinkedIn",
-					"pt-BR": "LinkedIn"
-				},
+				"label": { "pt-PT": "LinkedIn", "en": "LinkedIn", "pt-BR": "LinkedIn" },
 				"url": "https://www.linkedin.com/in/ana-fl%C3%A1via-trevizan/"
 			},
 			{
@@ -343,45 +331,25 @@
 				"url": "https://www.instagram.com/dratrevizan"
 			},
 			{
-				"label": {
-					"pt-PT": "ORCID",
-					"en": "ORCID",
-					"pt-BR": "ORCID"
-				},
+				"label": { "pt-PT": "ORCID", "en": "ORCID", "pt-BR": "ORCID" },
 				"url": "https://orcid.org/0000-0003-4365-6053"
 			}
 		],
 		"regions": [
 			{
 				"flag": "🇵🇹",
-				"label": {
-					"pt-PT": "Portugal",
-					"en": "Portugal",
-					"pt-BR": "Portugal"
-				}
+				"label": { "pt-PT": "Portugal", "en": "Portugal", "pt-BR": "Portugal" }
 			},
 			{
 				"flag": "🇧🇷",
-				"label": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				}
+				"label": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" }
 			}
 		],
-		"serviceLanguages": [
-			"Português",
-			"English",
-			"Español"
-		]
+		"serviceLanguages": ["Português", "English", "Español"]
 	},
 	"navigation": {
 		"consulting": {
-			"label": {
-				"pt-PT": "Atuação",
-				"en": "Practice",
-				"pt-BR": "Atuação"
-			},
+			"label": { "pt-PT": "Atuação", "en": "Practice", "pt-BR": "Atuação" },
 			"immigrationMobility": {
 				"label": {
 					"pt-PT": "Migração e Mobilidade",
@@ -391,13 +359,9 @@
 				"description": {
 					"pt-PT": "Planeamento da sua mudança, preparação documental e acompanhamento de procedimentos administrativos em Portugal.",
 					"en": "Planning your move, preparing the necessary documents, and assisting with administrative procedures in Portugal.",
-					"pt-BR": "Planeamento da sua mudança, preparação documental e acompanhamento de procedimentos administrativos em Portugal."
+					"pt-BR": "Planejamento da sua mudança, preparação documental e acompanhamento de procedimentos administrativos em Portugal."
 				},
-				"tag": {
-					"pt-PT": "🇵🇹 · 🇧🇷",
-					"en": "🇵🇹 · 🇧🇷",
-					"pt-BR": "🇵🇹 · 🇧🇷"
-				}
+				"tag": { "pt-PT": "🇵🇹 · 🇧🇷", "en": "🇵🇹 · 🇧🇷", "pt-BR": "🇵🇹 · 🇧🇷" }
 			},
 			"legal": {
 				"label": {
@@ -410,11 +374,7 @@
 					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations.",
 					"pt-BR": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações."
 				},
-				"tag": {
-					"pt-PT": "🇧🇷",
-					"en": "🇧🇷",
-					"pt-BR": "🇧🇷"
-				}
+				"tag": { "pt-PT": "🇧🇷", "en": "🇧🇷", "pt-BR": "🇧🇷" }
 			},
 			"environmentalEsg": {
 				"label": {
@@ -427,11 +387,7 @@
 					"en": "Environmental Law and ESG in Brazil, with technical support on European regulation.",
 					"pt-BR": "Direito Ambiental e ESG no Brasil, com apoio técnico sobre regulação europeia."
 				},
-				"tag": {
-					"pt-PT": "🇧🇷 · 🇪🇺",
-					"en": "🇧🇷 · 🇪🇺",
-					"pt-BR": "🇧🇷 · 🇪🇺"
-				}
+				"tag": { "pt-PT": "🇧🇷 · 🇪🇺", "en": "🇧🇷 · 🇪🇺", "pt-BR": "🇧🇷 · 🇪🇺" }
 			},
 			"publicPolicy": {
 				"label": {
@@ -442,31 +398,23 @@
 				"description": {
 					"pt-PT": "Investigação, análise e apoio técnico em políticas públicas, governança e sustentabilidade; a prestação jurídica limita-se ao Brasil.",
 					"en": "Research, analysis and technical support in public policy, governance and sustainability; legal services are limited to Brazil.",
-					"pt-BR": "Investigação, análise e apoio técnico em políticas públicas, governança e sustentabilidade; a prestação jurídica limita-se ao Brasil."
+					"pt-BR": "Pesquisa, análise e apoio técnico em políticas públicas, governança e sustentabilidade; a prestação jurídica limita-se ao Brasil."
 				},
-				"tag": {
-					"pt-PT": "🇧🇷 · 🇪🇺",
-					"en": "🇧🇷 · 🇪🇺",
-					"pt-BR": "🇧🇷 · 🇪🇺"
-				}
+				"tag": { "pt-PT": "🇧🇷 · 🇪🇺", "en": "🇧🇷 · 🇪🇺", "pt-BR": "🇧🇷 · 🇪🇺" }
 			}
 		},
 		"academic": {
-			"label": {
-				"pt-PT": "Academia",
-				"en": "Academic",
-				"pt-BR": "Academia"
-			},
+			"label": { "pt-PT": "Academia", "en": "Academic", "pt-BR": "Academia" },
 			"mentoring": {
 				"label": {
 					"pt-PT": "Mentorias Profissionais e Académicas",
 					"en": "Mentoring",
-					"pt-BR": "Mentorias Profissionais e Académicas"
+					"pt-BR": "Mentorias Profissionais e Acadêmicas"
 				},
 				"description": {
 					"pt-PT": "Revisão técnica, orientação metodológica, carreira e candidaturas a mestrados e doutoramentos",
 					"en": "Technical review, methodological guidance, career support and master’s and doctoral applications",
-					"pt-BR": "Revisão técnica, orientação metodológica, carreira e candidaturas a mestrados e doutoramentos"
+					"pt-BR": "Revisão técnica, orientação metodológica, carreira e candidaturas a mestrados e doutorados"
 				}
 			},
 			"publications": {
@@ -506,16 +454,8 @@
 				}
 			}
 		},
-		"about": {
-			"pt-PT": "Sobre mim",
-			"en": "About me",
-			"pt-BR": "Sobre mim"
-		},
-		"contact": {
-			"pt-PT": "Contacto",
-			"en": "Contact",
-			"pt-BR": "Contacto"
-		}
+		"about": { "pt-PT": "Sobre mim", "en": "About me", "pt-BR": "Sobre mim" },
+		"contact": { "pt-PT": "Contacto", "en": "Contact", "pt-BR": "Contato" }
 	},
 	"requestTypes": [
 		{
@@ -587,7 +527,7 @@
 			"label": {
 				"pt-PT": "Mentoria ou investigação",
 				"en": "Mentoring or research",
-				"pt-BR": "Mentoria ou investigação"
+				"pt-BR": "Mentoria ou pesquisa"
 			}
 		},
 		{
@@ -596,7 +536,7 @@
 			"label": {
 				"pt-PT": "Investigação e colaboração científica",
 				"en": "Research and scientific collaboration",
-				"pt-BR": "Investigação e colaboração científica"
+				"pt-BR": "Pesquisa e colaboração científica"
 			}
 		},
 		{
@@ -627,7 +567,7 @@
 		"defaultDescription": {
 			"pt-PT": "Atuação profissional, investigação e formação em ambiente, direitos humanos e políticas públicas.",
 			"en": "Professional practice, research and teaching in environment, human rights and public policy.",
-			"pt-BR": "Atuação profissional, investigação e formação em ambiente, direitos humanos e políticas públicas."
+			"pt-BR": "Atuação profissional, pesquisa e formação em ambiente, direitos humanos e políticas públicas."
 		},
 		"defaultImage": "/open-graph-image.webp"
 	},
@@ -645,7 +585,7 @@
 		"contactCta": {
 			"pt-PT": "Entrar em contacto",
 			"en": "Get in touch",
-			"pt-BR": "Entrar em contacto"
+			"pt-BR": "Entrar em contato"
 		},
 		"rightsReserved": {
 			"pt-PT": "Todos os direitos reservados.",

@@ -28,17 +28,13 @@
 			"alt": {
 				"pt-PT": "Ana, usando o telemóvel para contactar com os seus clientes.",
 				"en": "Ana, using her cell phone to contact her clients.",
-				"pt-BR": "Ana, usando o telemóvel para contactar com os seus clientes."
+				"pt-BR": "Ana, usando o celular para entrar em contato com os seus clientes."
 			},
 			"decorative": false
 		}
 	},
 	"contactPage": {
-		"tag": {
-			"pt-PT": "Contacto",
-			"en": "Contact",
-			"pt-BR": "Contacto"
-		},
+		"tag": { "pt-PT": "Contacto", "en": "Contact", "pt-BR": "Contato" },
 		"subtitle": {
 			"pt-PT": "Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal.",
 			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly.",
@@ -77,7 +73,7 @@
 		"otherMethodsHeading": {
 			"pt-PT": "Outras formas de contacto",
 			"en": "Other ways to connect",
-			"pt-BR": "Outras formas de contacto"
+			"pt-BR": "Outras formas de contato"
 		},
 		"countriesLabel": {
 			"pt-PT": "🇵🇹 · 🇧🇷",

@@ -8,7 +8,7 @@
 	"summary": {
 		"pt-PT": "Informação sobre o tratamento de dados pessoais neste site e nos canais de contacto associados.",
 		"en": "Information about personal data processing on this website and through its associated contact channels.",
-		"pt-BR": "Informação sobre o tratamento de dados pessoais neste site e nos canais de contacto associados."
+		"pt-BR": "Informação sobre o tratamento de dados pessoais neste site e nos canais de contato associados."
 	},
 	"seo": {
 		"title": {
@@ -39,14 +39,14 @@
 				"paragraphs": {
 					"pt-PT": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil, no âmbito da inscrição profissional indicada no site. Em Portugal, os contactos relativos a apoio administrativo, trabalho técnico e consulta jurídica, não constituem representação ou prática de atos reservados a advogados e solicitadores.\n",
 					"en": "Legal services and the provision of advice on Brazilian law are carried out in Brazil, within the scope of the professional registration indicated on the website. In Portugal, contacts relating to administrative support, technical work and legal advice do not constitute representation or the performance of acts reserved for lawyers and solicitors.\n",
-					"pt-BR": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil, no âmbito da inscrição profissional indicada no site. Em Portugal, os contactos relativos a apoio administrativo, trabalho técnico e consulta jurídica, não constituem representação ou prática de atos reservados a advogados e solicitadores.\n"
+					"pt-BR": "A atividade jurídica e a prestação de consultoria em Direito brasileiro são realizadas no Brasil, no âmbito da inscrição profissional indicada no site. Em Portugal, os contatos relativos a apoio administrativo, trabalho técnico e consulta jurídica, não constituem representação ou prática de atos reservados a advogados e solicitadores.\n"
 				}
 			},
 			{
 				"heading": {
 					"pt-PT": "Responsável e contacto",
 					"en": "Controller and contact",
-					"pt-BR": "Responsável e contacto"
+					"pt-BR": "Responsável e contato"
 				},
 				"paragraphs": {
 					"pt-PT": "A responsável pelo tratamento é Ana Trevizan. Para questões de privacidade ou para exercer direitos, escreva para [contato@anatrevizan.com](mailto\\:contato@anatrevizan.com).\n",
@@ -75,7 +75,7 @@
 				"paragraphs": {
 					"pt-PT": "A implementação do formulário utiliza a infraestrutura de alojamento da Netlify, Cloudflare Turnstile para verificação anti-spam, Google Sheets para registo dos pedidos e Resend para notificações por email. Os dados são disponibilizados apenas na medida necessária a estes serviços e à resposta ao pedido.\n",
 					"en": "The form implementation uses Netlify hosting infrastructure, Cloudflare Turnstile for anti-spam verification, Google Sheets to record requests, and Resend for email notifications. Data is made available only as needed for these services and to reply to the request.\n",
-					"pt-BR": "A implementação do formulário utiliza a infraestrutura de alojamento da Netlify, Cloudflare Turnstile para verificação anti-spam, Google Sheets para registo dos pedidos e Resend para notificações por email. Os dados são disponibilizados apenas na medida necessária a estes serviços e à resposta ao pedido.\n"
+					"pt-BR": "A implementação do formulário utiliza a infraestrutura de alojamento da Netlify, Cloudflare Turnstile para verificação anti-spam, Google Sheets para registro dos pedidos e Resend para notificações por email. Os dados são disponibilizados apenas na medida necessária a estes serviços e à resposta ao pedido.\n"
 				}
 			},
 			{
@@ -87,7 +87,7 @@
 				"paragraphs": {
 					"pt-PT": "O formulário valida o conteúdo no servidor, limita o tamanho dos pedidos, verifica a origem, usa proteção anti-spam e neutraliza fórmulas no registo. Os segredos das integrações não são enviados para o navegador. Nenhuma medida elimina todos os riscos.\n",
 					"en": "The form validates content on the server, limits the size of requests, verifies the source, uses anti-spam protection and disables formulas in the form. Integration secrets are not sent to the browser. No measure can eliminate all risks.\n",
-					"pt-BR": "O formulário valida o conteúdo no servidor, limita o tamanho dos pedidos, verifica a origem, usa proteção anti-spam e neutraliza fórmulas no registo. Os segredos das integrações não são enviados para o navegador. Nenhuma medida elimina todos os riscos.\n"
+					"pt-BR": "O formulário valida o conteúdo no servidor, limita o tamanho dos pedidos, verifica a origem, usa proteção anti-spam e neutraliza fórmulas no registro. Os segredos das integrações não são enviados para o navegador. Nenhuma medida elimina todos os riscos.\n"
 				}
 			},
 			{
@@ -111,7 +111,7 @@
 				"paragraphs": {
 					"pt-PT": "A auditoria técnica de 14 de setembro de 2026 não identificou cookies de analítica, publicidade ou perfilamento, nem analytics ou pixels no site público. Por isso, o site não apresenta um banner de consentimento.\n\nA preferência de tema claro ou escuro é guardada no `localStorage` do navegador depois de escolher o tema. Não é enviada ao servidor. Na página de contacto, o Cloudflare Turnstile é carregado para proteger o envio por email e pode usar armazenamento estritamente necessário à verificação de segurança. Não é carregado nas restantes páginas.\n",
 					"en": "The technical audit of 14 September 2026 found no analytics, advertising, or profiling cookies and no analytics tools or pixels on the public site. The site therefore does not display a consent banner.\n\nYour light or dark theme preference is stored in browser `localStorage` after you choose a theme. It is not sent to the server. On the contact page, Cloudflare Turnstile loads to protect email submission and may use storage strictly necessary for the security check. It does not load on other pages.\n",
-					"pt-BR": "A auditoria técnica de 14 de setembro de 2026 não identificou cookies de analítica, publicidade ou perfilamento, nem analytics ou pixels no site público. Por isso, o site não apresenta um banner de consentimento.\n\nA preferência de tema claro ou escuro é guardada no `localStorage` do navegador depois de escolher o tema. Não é enviada ao servidor. Na página de contacto, o Cloudflare Turnstile é carregado para proteger o envio por email e pode usar armazenamento estritamente necessário à verificação de segurança. Não é carregado nas restantes páginas.\n"
+					"pt-BR": "A auditoria técnica de 14 de setembro de 2026 não identificou cookies de analítica, publicidade ou perfilamento, nem analytics ou pixels no site público. Por isso, o site não apresenta um banner de consentimento.\n\nA preferência de tema claro ou escuro é guardada no `localStorage` do navegador depois de escolher o tema. Não é enviada ao servidor. Na página de contato, o Cloudflare Turnstile é carregado para proteger o envio por email e pode usar armazenamento estritamente necessário à verificação de segurança. Não é carregado nas restantes páginas.\n"
 				}
 			},
 			{
@@ -140,8 +140,6 @@
 			}
 		]
 	},
-	"legal": {
-		"effectiveDate": "2026-09-14T00:00:00.000Z"
-	},
+	"legal": { "effectiveDate": "2026-09-14T00:00:00.000Z" },
 	"_template": "privacy"
 }

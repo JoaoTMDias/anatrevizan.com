@@ -1,10 +1,6 @@
 {
 	"routeKey": "about",
-	"title": {
-		"pt-PT": "Sobre mim",
-		"en": "About me",
-		"pt-BR": "Sobre mim"
-	},
+	"title": { "pt-PT": "Sobre mim", "en": "About me", "pt-BR": "Sobre mim" },
 	"summary": {
 		"pt-PT": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países.",
 		"en": "A career forged at the intersection of science, law and people, and between two countries.",
@@ -19,7 +15,7 @@
 		"description": {
 			"pt-PT": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
 			"en": "My legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors.",
-			"pt-BR": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores."
+			"pt-BR": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o nº 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores."
 		}
 	},
 	"media": {
@@ -108,12 +104,12 @@
 				"title": {
 					"pt-PT": "Doutoramento - NOVA Lisboa",
 					"en": "Ph.D. - NOVA University Lisbon",
-					"pt-BR": "Doutoramento - NOVA Lisboa"
+					"pt-BR": "Doutorado - NOVA Lisboa"
 				},
 				"description": {
 					"pt-PT": "Bolseira da FCT. Investigação sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil.",
 					"en": "FCT Fellow. Research on the extraterritorial impacts of law on forestry policies in the EU and Brazil.",
-					"pt-BR": "Bolseira da FCT. Investigação sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil."
+					"pt-BR": "Bolseira da FCT. Pesquisa sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil."
 				}
 			},
 			{
@@ -126,7 +122,7 @@
 				"description": {
 					"pt-PT": "Integração formal ao espaço académico europeu.",
 					"en": "Formal integration into the European academic space.",
-					"pt-BR": "Integração formal ao espaço académico europeu."
+					"pt-BR": "Integração formal ao espaço acadêmico europeu."
 				}
 			},
 			{
@@ -177,15 +173,11 @@
 				"description": {
 					"pt-PT": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
 					"en": "I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures.",
-					"pt-BR": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos."
+					"pt-BR": "Desenvolvo atividades de pesquisa, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos."
 				}
 			},
 			{
-				"country": {
-					"pt-PT": "Brasil",
-					"en": "Brazil",
-					"pt-BR": "Brasil"
-				},
+				"country": { "pt-PT": "Brasil", "en": "Brazil", "pt-BR": "Brasil" },
 				"image": "/brasil.jpg",
 				"title": {
 					"pt-PT": "No Brasil",
@@ -286,14 +278,10 @@
 		"networksLabel": {
 			"pt-PT": "Redes e vínculos de investigação",
 			"en": "Research Networks and Academic Affiliations",
-			"pt-BR": "Redes e vínculos de investigação"
+			"pt-BR": "Redes e vínculos de pesquisa"
 		},
 		"networks": [
-			{
-				"pt-PT": "LACLIMA",
-				"en": "LACLIMA",
-				"pt-BR": "LACLIMA"
-			},
+			{ "pt-PT": "LACLIMA", "en": "LACLIMA", "pt-BR": "LACLIMA" },
 			{
 				"pt-PT": "Legally Green",
 				"en": "Legally Green",
@@ -309,31 +297,19 @@
 				"en": "CEDAT - Rovira i Virgili University",
 				"pt-BR": "CEDAT - Rovira i Virgili"
 			},
-			{
-				"pt-PT": "CEJEIA",
-				"en": "CEJEIA",
-				"pt-BR": "CEJEIA"
-			},
+			{ "pt-PT": "CEJEIA", "en": "CEJEIA", "pt-BR": "CEJEIA" },
 			{
 				"pt-PT": "GPMAT - UFMT",
 				"en": "GPMAT - UFMT",
 				"pt-BR": "GPMAT - UFMT"
 			},
-			{
-				"pt-PT": "Observa-MT",
-				"en": "Observa-MT",
-				"pt-BR": "Observa-MT"
-			},
+			{ "pt-PT": "Observa-MT", "en": "Observa-MT", "pt-BR": "Observa-MT" },
 			{
 				"pt-PT": "Casa Comum da Humanidade",
 				"en": "Common Home of Humanity",
 				"pt-BR": "Casa Comum da Humanidade"
 			},
-			{
-				"pt-PT": "QUERCUS",
-				"en": "QUERCUS",
-				"pt-BR": "QUERCUS"
-			}
+			{ "pt-PT": "QUERCUS", "en": "QUERCUS", "pt-BR": "QUERCUS" }
 		],
 		"finalCtaHeading": {
 			"pt-PT": "Falamos?",
@@ -348,7 +324,7 @@
 		"finalCtaLabel": {
 			"pt-PT": "Agendar contacto",
 			"en": "Schedule a call",
-			"pt-BR": "Agendar contacto"
+			"pt-BR": "Agendar contato"
 		}
 	},
 	"_template": "about"
