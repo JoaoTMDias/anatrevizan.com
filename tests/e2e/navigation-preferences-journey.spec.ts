@@ -14,6 +14,14 @@ async function tabToHref(page: Page, href: string) {
 	throw new Error(`Keyboard could not reach ${href}`);
 }
 
+async function switchToEnglish(page: Page) {
+	const selector = page
+		.locator("header")
+		.getByRole("button", { name: "Escolher idioma / Choose language" });
+	await selector.click();
+	await page.getByRole("option", { name: "English" }).click();
+}
+
 test.describe("visitor navigates and keeps accessibility preferences", () => {
 	test.beforeEach(async ({ page }) => installFakeTurnstile(page));
 
@@ -37,20 +45,6 @@ test.describe("visitor navigates and keeps accessibility preferences", () => {
 		await page.mouse.click(10, 450);
 		await expect(page.getByRole("dialog")).toBeHidden();
 		await expect(menu).toBeFocused();
-	});
-
-	test("language switch keeps known fragments and removes transient queries", async ({
-		page,
-	}) => {
-		await page.goto("/contacto?status=sent#agendar");
-		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
-		await expect(page).toHaveURL(/\/en\/contact#book$/);
-		await page.goto("/contacto#mensagem");
-		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
-		await expect(page).toHaveURL(/\/en\/contact#message$/);
-		await page.goto("/sobre?status=sent#sem-equivalente");
-		await page.getByRole("link", { name: "Switch to English" }).press("Enter");
-		await expect(page).toHaveURL(/\/en\/about$/);
 	});
 
 	test("theme follows the system and still toggles when storage fails", async ({

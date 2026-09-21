@@ -22,7 +22,7 @@ test.describe("visitor consumes published content", () => {
 		const enPaths = paths.filter((path) => path.startsWith("/en"));
 		const problems = collectBrowserProblems(page);
 		expect(new Set(paths).size).toBe(paths.length);
-		expect(ptPaths).toHaveLength(14);
+		expect(ptPaths).toHaveLength(publishedEnglish.length * 2);
 		expect(enPaths.sort()).toEqual(
 			publishedEnglish
 				.map((key) => routeMap[key as keyof typeof routeMap].en)
@@ -35,7 +35,11 @@ test.describe("visitor consumes published content", () => {
 			expect(response?.ok(), path).toBe(true);
 			await expect(page.locator("html")).toHaveAttribute(
 				"lang",
-				path.startsWith("/en") ? "en" : "pt-PT",
+				path.startsWith("/en")
+					? "en"
+					: path.startsWith("/pt-br")
+						? "pt-BR"
+						: "pt-PT",
 			);
 			await expect(page.getByRole("main")).toHaveCount(1);
 			await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
@@ -57,12 +61,11 @@ test.describe("visitor consumes published content", () => {
 			await expect(
 				page.locator('link[rel="alternate"][hreflang="x-default"]'),
 			).toHaveCount(1);
-			const isLegal = [
-				"/politica-de-privacidade",
-				"/en/privacy-policy",
-				"/declaracao-de-acessibilidade",
-				"/en/accessibility-statement",
-			].includes(path);
+			const legalPaths = new Set<string>([
+				...Object.values(routeMap.privacy),
+				...Object.values(routeMap.accessibility),
+			]);
+			const isLegal = legalPaths.has(path);
 			await expect(
 				page.locator('meta[property="article:modified_time"]'),
 			).toHaveCount(isLegal ? 1 : 0);

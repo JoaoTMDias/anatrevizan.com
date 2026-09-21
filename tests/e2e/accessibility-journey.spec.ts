@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
-import { routeKeys, routeMap } from "../../src/lib/routing";
+import { publishedLocales, routeKeys, routeMap } from "../../src/lib/routing";
 import { installFakeTurnstile, publishedPaths } from "./site";
 
 const templatePaths = [
@@ -20,8 +20,9 @@ const publishedEnglish = JSON.parse(
 ) as string[];
 
 const auditPaths = routeKeys.flatMap((key) => [
-	routeMap[key]["pt-PT"],
-	...(publishedEnglish.includes(key) ? [routeMap[key].en] : []),
+	...publishedLocales
+		.filter((locale) => locale !== "en" || publishedEnglish.includes(key))
+		.map((locale) => routeMap[key][locale]),
 ]);
 
 async function expectNoViolations(page: Page) {

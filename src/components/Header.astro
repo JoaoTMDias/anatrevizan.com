@@ -38,7 +38,8 @@ const desktopItems = renderedNavigation.map(({ item, itemRoute, children }) => (
     isCurrent: child.routeKey === routeKey,
   })),
 }));
-const languageOptions = availableLocales.map((candidate) => ({
+const languageLocales = availableLocales.length > 1 ? availableLocales : publishedLocales;
+const languageOptions = languageLocales.map((candidate) => ({
   locale: candidate,
   label: candidate === "pt-PT" ? "Português (Portugal)" : candidate === "pt-BR" ? "Português (Brasil)" : "English",
   flag: candidate === "pt-PT" ? "🇵🇹" : candidate === "pt-BR" ? "🇧🇷" : "🇬🇧",
