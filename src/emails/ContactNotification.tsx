@@ -19,7 +19,7 @@ export interface ContactNotificationProps {
 	email: string;
 	message: string;
 	requestId: string;
-	locale: "pt-PT" | "en";
+	locale: "pt-PT" | "pt-BR" | "en";
 	scope?: ContactScope;
 	logoUrl?: string;
 	whatsapp: string;
@@ -33,6 +33,20 @@ const copy = {
 		greeting: "Olá",
 		confirmation:
 			"Recebeu um novo pedido através do formulário do site. Pode responder diretamente a este email para contactar a pessoa.",
+		message: "Mensagem",
+		reference: "Referência",
+		details: "Dados do pedido",
+		name: "Nome",
+		website: "Visitar o site",
+		privacy: "Privacidade",
+		requestType: "Tipo de pedido",
+		country: "País",
+	},
+	"pt-BR": {
+		title: "Novo pedido de contato",
+		greeting: "Olá",
+		confirmation:
+			"Você recebeu um novo pedido pelo formulário do site. Pode responder diretamente a este e-mail para entrar em contato com a pessoa.",
 		message: "Mensagem",
 		reference: "Referência",
 		details: "Dados do pedido",
@@ -78,7 +92,7 @@ export default function ContactNotification({
 	requestType,
 	country,
 }: ContactNotificationProps) {
-	const text = copy[locale];
+	const text = copy[locale] ?? copy["pt-PT"];
 	const siteUrl =
 		locale === "en" ? "https://anatrevizan.com/en" : "https://anatrevizan.com";
 	const divider: React.CSSProperties = {

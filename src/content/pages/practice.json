@@ -1,70 +1,84 @@
 {
 	"routeKey": "practice",
 	"title": {
-		"pt": "Atuação profissional no Brasil e apoio administrativo em Portugal",
-		"en": "Professional practice in Brazil and administrative support in Portugal"
+		"pt-PT": "Atuação profissional no Brasil e apoio administrativo em Portugal",
+		"en": "Professional practice in Brazil and administrative support in Portugal",
+		"pt-BR": "Atuação profissional no Brasil e apoio administrativo em Portugal"
 	},
 	"summary": {
-		"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
-		"en": "Explore the work available in Brazil, Portugal and Academia."
+		"pt-PT": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+		"en": "Explore the work available in Brazil, Portugal and Academia.",
+		"pt-BR": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites."
 	},
 	"seo": {
 		"title": {
-			"pt": "Atuação profissional no Brasil e apoio administrativo em Portugal",
-			"en": "Professional practice in Brazil and administrative support in Portugal"
+			"pt-PT": "Atuação profissional no Brasil e apoio administrativo em Portugal",
+			"en": "Professional practice in Brazil and administrative support in Portugal",
+			"pt-BR": "Atuação profissional no Brasil e apoio administrativo em Portugal"
 		},
 		"description": {
-			"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
-			"en": "Explore the work available in Brazil, Portugal and Academia."
+			"pt-PT": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+			"en": "Explore the work available in Brazil, Portugal and Academia.",
+			"pt-BR": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites."
 		}
 	},
 	"_template": "practice",
 	"practicePage": {
 		"tag": {
-			"pt": "Brasil e Portugal · Âmbitos de atuação distintos",
-			"en": "Brazil and Portugal · Distinct scopes of practice"
+			"pt-PT": "Brasil e Portugal · Âmbitos de atuação distintos",
+			"en": "Brazil and Portugal · Distinct scopes of practice",
+			"pt-BR": "Brasil e Portugal · Âmbitos de atuação distintos"
 		},
 		"intro": {
-			"pt": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
-			"en": "Explore the work available in Brazil, Portugal and Academia."
+			"pt-PT": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites.",
+			"en": "Explore the work available in Brazil, Portugal and Academia.",
+			"pt-BR": "A natureza do trabalho varia conforme o país. Selecione o âmbito correspondente para conhecer os serviços disponíveis e os respetivos limites."
 		},
 		"sections": [
 			{
 				"title": {
-					"pt": "Brasil - Advocacia e consultoria jurídica",
-					"en": "Brazil - Legal practice and legal consulting"
+					"pt-PT": "Brasil - Advocacia e consultoria jurídica",
+					"en": "Brazil - Legal practice and legal consulting",
+					"pt-BR": "Brasil - Advocacia e consultoria jurídica"
 				},
 				"description": {
-					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
-					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
+					"pt-PT": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations.",
+					"pt-BR": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações."
 				},
 				"notice": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386",
+					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
 				},
 				"cta": {
-					"pt": "Conhecer a atuação no Brasil",
-					"en": "Explore practice in Brazil"
+					"pt-PT": "Conhecer a atuação no Brasil",
+					"en": "Explore practice in Brazil",
+					"pt-BR": "Conhecer a atuação no Brasil"
 				},
 				"routeKey": "legal",
 				"scope": "BR_LEGAL"
 			},
 			{
 				"title": {
-					"pt": "Academia",
-					"en": "Academia"
+					"pt-PT": "Academia",
+					"en": "Academia",
+					"pt-BR": "Academia"
 				},
 				"description": {
-					"pt": "Mentoria, investigação, palestras e formação.",
-					"en": "Mentoring, research, talks and training."
+					"pt-PT": "Mentoria, investigação, palestras e formação.",
+					"en": "Mentoring, research, talks and training.",
+					"pt-BR": "Mentoria, investigação, palestras e formação."
 				},
 				"notice": {
-					"pt": "Área académica autónoma.",
-					"en": "A separate academic area."
+					"pt-PT": "Área académica autónoma.",
+					"en": "A separate academic area.",
+					"pt-BR": "Área académica autónoma."
 				},
 				"cta": {
-					"pt": "Explorar Academia",
-					"en": "Explore Academia"
+					"pt-PT": "Explorar Academia",
+					"en": "Explore Academia",
+					"pt-BR": "Explorar Academia"
 				},
 				"routeKey": "publications",
 				"scope": "ACADEMIC"

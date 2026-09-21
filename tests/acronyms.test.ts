@@ -43,7 +43,14 @@ describe("glossário de siglas", () => {
 
 	it("usa a expansão do locale sem fallback", () => {
 		const raw = [
-			{ acronym: "NIF", expansion: { pt: "Número fiscal", en: "" } },
+			{
+				acronym: "NIF",
+				expansion: {
+					"pt-PT": "Número fiscal",
+					"pt-BR": "Número fiscal",
+					en: "",
+				},
+			},
 		];
 		expect(localizeAcronyms(raw, "pt-PT")).toEqual([
 			{ acronym: "NIF", expansion: "Número fiscal" },

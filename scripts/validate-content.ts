@@ -21,7 +21,7 @@ const config = JSON.parse(
 ) as {
 	acronyms?: Array<{
 		acronym?: unknown;
-		expansion?: { pt?: unknown; en?: unknown };
+		expansion?: { "pt-PT"?: unknown; "pt-BR"?: unknown; en?: unknown };
 	}>;
 };
 const seenAcronyms = new Set<string>();
@@ -31,7 +31,10 @@ for (const [index, entry] of (config.acronyms ?? []).entries()) {
 	else if (seenAcronyms.has(acronym))
 		errors.push(`[config/acronyms[${index}]] sigla duplicada: ${acronym}`);
 	else seenAcronyms.add(acronym);
-	if (typeof entry.expansion?.pt !== "string" || !entry.expansion.pt.trim())
+	if (
+		typeof entry.expansion?.["pt-PT"] !== "string" ||
+		!entry.expansion["pt-PT"].trim()
+	)
 		errors.push(`[config/acronyms[${index}]] nome PT-PT obrigatório`);
 }
 const directory = join(root, "src/content/pages");
@@ -51,6 +54,7 @@ for (const route of invalidPublishedRoutes)
 for (const issue of validateEditorialDocuments(
 	pages.map(({ value }) => value),
 	publishedEnglishRoutes.filter(isRouteKey) as RouteKey[],
+	process.env.REQUIRE_PT_BR === "true" ? ["pt-PT", "pt-BR", "en"] : ["pt-PT"],
 ))
 	errors.push(`[pages/${issue.code}] ${issue.message}`);
 for (const { file, value } of pages) {
@@ -77,8 +81,8 @@ for (const { file, value } of pages) {
 			const alt = record.alt;
 			if (
 				!isLocalizedValue(alt) ||
-				typeof alt.pt !== "string" ||
-				alt.pt.trim() === ""
+				typeof alt["pt-PT"] !== "string" ||
+				alt["pt-PT"].trim() === ""
 			)
 				errors.push(
 					`[pages/${file}] imagem não decorativa sem alt PT-PT em ${path}`,

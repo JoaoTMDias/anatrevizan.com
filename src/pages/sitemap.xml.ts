@@ -30,7 +30,7 @@ export const GET: APIRoute = async ({ site }) => {
 	);
 	const urls = documents
 		.map((document) => {
-			const alternates = (["pt-PT", "en"] as PublishedLocale[])
+			const alternates = publishedLocales
 				.filter((locale) => available.has(`${document.routeKey}:${locale}`))
 				.map(
 					(locale) =>

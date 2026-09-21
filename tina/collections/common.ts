@@ -11,11 +11,29 @@ export const localizedText = (
 	type: "object",
 	required,
 	description:
-		"Preencher primeiro PT-PT e depois EN. Traduções parciais podem ser guardadas; EN só é publicado quando estiver completo.",
+		"Preencher PT-PT, PT-BR e EN. Traduções parciais podem ser guardadas; cada variante só é publicada quando estiver completa.",
 	fields: [
 		{
-			name: "pt",
+			name: "pt_PT",
+			nameOverride: "pt-PT",
 			label: "Português (Portugal)",
+			type: component === "rich-text" ? "rich-text" : "string",
+			required,
+			...(component === "rich-text"
+				? {
+						overrides: {
+							toolbar: ["heading", "link", "ul", "ol", "bold", "italic"],
+							headingLevels: ["h2", "h3", "h4"],
+						},
+					}
+				: component === "textarea"
+					? { ui: { component: "textarea" } }
+					: {}),
+		},
+		{
+			name: "pt_BR",
+			nameOverride: "pt-BR",
+			label: "Português (Brasil)",
 			type: component === "rich-text" ? "rich-text" : "string",
 			required,
 			...(component === "rich-text"
@@ -93,7 +111,11 @@ function displayText(value: unknown): string | undefined {
 	if (typeof value === "string" && value.trim()) return value.trim();
 	if (!value || typeof value !== "object" || Array.isArray(value)) return;
 	const localized = value as Record<string, unknown>;
-	return displayText(localized.pt) ?? displayText(localized.en);
+	return (
+		displayText(localized["pt-PT"]) ??
+		displayText(localized["pt-BR"]) ??
+		displayText(localized.en)
+	);
 }
 
 export function editorialListItemLabel(

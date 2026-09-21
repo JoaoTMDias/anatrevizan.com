@@ -242,7 +242,7 @@ async function sendContactEmails(
 	configuration: EmailConfiguration,
 	submission: {
 		email: string;
-		locale: "pt-PT" | "en";
+		locale: "pt-PT" | "pt-BR" | "en";
 		scope: ContactScope;
 		message: string;
 		name: string;
@@ -253,13 +253,14 @@ async function sendContactEmails(
 	country: string,
 ): Promise<[EmailStatus, EmailStatus]> {
 	const isEnglish = submission.locale === "en";
+	const isBrazilianPortuguese = submission.locale === "pt-BR";
 	const messages: [EmailMessage, EmailMessage] = [
 		{
 			to: configuration.to,
 			replyTo: submission.email,
 			subject: isEnglish
 				? `New contact request — ${submission.name}`
-				: `Novo pedido de contacto — ${submission.name}`,
+				: `${isBrazilianPortuguese ? "Novo pedido de contato" : "Novo pedido de contacto"} — ${submission.name}`,
 			html: async () =>
 				await render(
 					createElement(ContactNotification, {
@@ -408,14 +409,13 @@ export default async function contact(
 			),
 			tab: env(preview ? "CONTACT_PREVIEW_SHEET_TAB" : "GOOGLE_SHEETS_TAB"),
 		};
-		const requestType = siteConfig.requestTypes.find(
-			(type) => type.id === submission.requestType,
-		)?.label[submission.locale === "en" ? "en" : "pt"];
-		const country = contactCountries.find(
-			(option) => option.value === submission.country,
-		)?.label[submission.locale] ?? "";
-		if (!requestType)
-			return json(400, "invalid", submission.requestId);
+		const requestType =
+			siteConfig.requestTypes.find((type) => type.id === submission.requestType)
+				?.label[submission.locale] ?? "";
+		const country =
+			contactCountries.find((option) => option.value === submission.country)
+				?.label[submission.locale] ?? "";
+		if (!requestType) return json(400, "invalid", submission.requestId);
 		logIntegrationStage("started");
 		const accessToken = await googleAccessToken();
 		logIntegrationStage("completed");

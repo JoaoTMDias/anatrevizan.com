@@ -10,18 +10,34 @@ export const CONTACT_FORM_MINIMUM_SECONDS = 3;
 export const CONTACT_FORM_MAXIMUM_BYTES = 16_384;
 
 export const contactCountries = [
-	{ value: "PT", flag: "🇵🇹", label: { "pt-PT": "Portugal", en: "Portugal" } },
-	{ value: "BR", flag: "🇧🇷", label: { "pt-PT": "Brasil", en: "Brazil" } },
-	{ value: "ES", flag: "🇪🇸", label: { "pt-PT": "Espanha", en: "Spain" } },
+	{
+		value: "PT",
+		flag: "🇵🇹",
+		label: { "pt-PT": "Portugal", "pt-BR": "Portugal", en: "Portugal" },
+	},
+	{
+		value: "BR",
+		flag: "🇧🇷",
+		label: { "pt-PT": "Brasil", "pt-BR": "Brasil", en: "Brazil" },
+	},
+	{
+		value: "ES",
+		flag: "🇪🇸",
+		label: { "pt-PT": "Espanha", "pt-BR": "Espanha", en: "Spain" },
+	},
 	{
 		value: "EU_OTHER",
 		flag: "🇪🇺",
 		label: {
 			"pt-PT": "Outro país da União Europeia",
+			"pt-BR": "Outro país da União Europeia",
 			en: "Another European Union country",
 		},
 	},
-	{ value: "OTHER", label: { "pt-PT": "Outro", en: "Other" } },
+	{
+		value: "OTHER",
+		label: { "pt-PT": "Outro", "pt-BR": "Outro", en: "Other" },
+	},
 ] as const;
 
 const countryValues = contactCountries.map((country) => country.value) as [
@@ -33,7 +49,7 @@ export const contactSubmissionSchema = z
 	.object({
 		requestId: z.uuid(),
 		scope: z.enum(contactScopes),
-		locale: z.enum(["pt-PT", "en"]),
+		locale: z.enum(["pt-PT", "pt-BR", "en"]),
 		name: z.string().trim().min(2).max(120),
 		email: z.email().max(254),
 		whatsapp: z.string().trim().max(32).optional().default(""),
@@ -68,7 +84,7 @@ export function isPlausibleSubmissionTime(
 }
 
 export function buildWhatsAppMessage(input: {
-	locale: "pt-PT" | "en";
+	locale: "pt-PT" | "pt-BR" | "en";
 	scope: ContactScope;
 	name: string;
 	requestType: string;
@@ -78,6 +94,8 @@ export function buildWhatsAppMessage(input: {
 	const labels =
 		input.locale === "en"
 			? { intro: "Hello, my name is", type: "Request", country: "Country" }
-			: { intro: "Olá, o meu nome é", type: "Pedido", country: "País" };
+			: input.locale === "pt-BR"
+				? { intro: "Olá, meu nome é", type: "Pedido", country: "País" }
+				: { intro: "Olá, o meu nome é", type: "Pedido", country: "País" };
 	return `${labels.intro} ${input.name}.\n\n${scopeLabels[input.locale][input.scope]}\n${labels.type}: ${input.requestType}\n${labels.country}: ${input.country}\n\n${input.message}`;
 }

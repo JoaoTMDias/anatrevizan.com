@@ -17,7 +17,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const about = data.about as AboutContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", "leaf"];
 ---
 
@@ -83,7 +83,7 @@ const valueIcons = ["scale", "award", "users-group", "lock", "heart-handshake", 
           <SectionHeading title={about.currentWorkTitle} locale={locale} />
           <div class="about-current-work">
             {about.currentWork.map((item, index) => (
-              <Card as="article" class="about-region-card !gap-0 !py-0">
+              <Card as="article" class="lg:flex-row about-region-card !gap-0 !py-0">
                 <div class="about-region-card__media">
                   {item.image ? (
                     <EditorialImage

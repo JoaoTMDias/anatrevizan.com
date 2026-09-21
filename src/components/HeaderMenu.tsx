@@ -22,6 +22,7 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import LanguageSelect, { type LanguageOption } from "./LanguageSelect";
 
 export interface HeaderMenuChild {
 	description?: string;
@@ -42,26 +43,19 @@ export interface HeaderMenuItem {
 	type: string;
 }
 
-interface LanguageLink {
-	accessibleLabel: string;
-	href: string;
-	hreflang: string;
-	label: string;
-	lang: string;
-	mobileLabel: string;
-}
-
 interface HeaderMenuProps {
 	closeLabel: string;
 	items: HeaderMenuItem[];
-	languageLink?: LanguageLink;
+	languageOptions: LanguageOption[];
+	currentLanguage: LanguageOption;
 	menuLabel: string;
 }
 
 export default function HeaderMenu({
 	closeLabel,
 	items,
-	languageLink,
+	languageOptions,
+	currentLanguage,
 	menuLabel,
 }: HeaderMenuProps) {
 	const [mobileOpen, setMobileOpen] = useState(false);
@@ -90,17 +84,6 @@ export default function HeaderMenu({
 		document.addEventListener("keydown", closeOnEscape);
 		return () => document.removeEventListener("keydown", closeOnEscape);
 	}, [mobileOpen]);
-
-	const localizedLanguageHref = (href: string) => {
-		if (typeof window === "undefined") return href;
-		const fragments: Record<string, string> = {
-			"#agendar": "#book",
-			"#book": "#agendar",
-			"#mensagem": "#message",
-			"#message": "#mensagem",
-		};
-		return `${href}${fragments[window.location.hash] ?? ""}`;
-	};
 
 	return (
 		<>
@@ -168,27 +151,13 @@ export default function HeaderMenu({
 							)}
 						</NavigationMenuItem>
 					))}
-					{languageLink && (
-						<NavigationMenuItem>
-							<NavigationMenuLink
-								href={languageLink.href}
-								className={navigationMenuTriggerStyle()}
-								lang={languageLink.lang}
-								hrefLang={languageLink.hreflang}
-								aria-label={languageLink.accessibleLabel}
-								onClick={(event) => {
-									event.currentTarget.href = localizedLanguageHref(
-										languageLink.href,
-									);
-								}}
-							>
-								<span className="font-emoji" aria-hidden="true">
-									{languageLink.lang === "pt-PT" ? "🇵🇹" : "🇬🇧"}
-								</span>
-								<span>{languageLink.label}</span>
-							</NavigationMenuLink>
-						</NavigationMenuItem>
-					)}
+					<NavigationMenuItem>
+						<LanguageSelect
+							current={currentLanguage}
+							options={languageOptions}
+							label="Escolher idioma / Choose language"
+						/>
+					</NavigationMenuItem>
 				</NavigationMenuList>
 			</NavigationMenu>
 
@@ -269,23 +238,13 @@ export default function HeaderMenu({
 							</li>
 						))}
 					</ul>
-					{languageLink && (
-						<a
-							className="mt-2 block border-t px-3 py-3"
-							href={languageLink.href}
-							lang={languageLink.lang}
-							hrefLang={languageLink.hreflang}
-							aria-label={languageLink.accessibleLabel}
-							onClick={(event) => {
-								event.currentTarget.href = localizedLanguageHref(
-									languageLink.href,
-								);
-								setMobileOpen(false);
-							}}
-						>
-							{languageLink.mobileLabel}
-						</a>
-					)}
+					<div className="mt-2 border-t px-3 py-3">
+						<LanguageSelect
+							current={currentLanguage}
+							options={languageOptions}
+							label="Escolher idioma / Choose language"
+						/>
+					</div>
 				</SheetContent>
 			</Sheet>
 		</>

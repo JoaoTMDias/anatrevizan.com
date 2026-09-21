@@ -8,8 +8,16 @@ const localizedText = (name: string, label: string) => ({
 	type: "object" as const,
 	fields: [
 		{
-			name: "pt",
+			name: "pt_PT",
+			nameOverride: "pt-PT",
 			label: "Português (Portugal)",
+			type: "string" as const,
+			required: true,
+		},
+		{
+			name: "pt_BR",
+			nameOverride: "pt-BR",
+			label: "Português (Brasil)",
 			type: "string" as const,
 			required: true,
 		},
@@ -22,7 +30,18 @@ const optionalLocalizedText = (name: string, label: string) => ({
 	label,
 	type: "object" as const,
 	fields: [
-		{ name: "pt", label: "Português (Portugal)", type: "string" as const },
+		{
+			name: "pt_PT",
+			nameOverride: "pt-PT",
+			label: "Português (Portugal)",
+			type: "string" as const,
+		},
+		{
+			name: "pt_BR",
+			nameOverride: "pt-BR",
+			label: "Português (Brasil)",
+			type: "string" as const,
+		},
 		{ name: "en", label: "Inglês", type: "string" as const },
 	],
 });
@@ -68,10 +87,17 @@ export const GlobalConfigCollection: Collection = {
 					type: "object",
 					fields: [
 						{
-							name: "pt",
+							name: "pt_PT",
+							nameOverride: "pt-PT",
 							label: "Português (Portugal)",
 							type: "string",
 							required: true,
+						},
+						{
+							name: "pt_BR",
+							nameOverride: "pt-BR",
+							label: "Português (Brasil)",
+							type: "string",
 						},
 						{ name: "en", label: "Inglês", type: "string" },
 					],
@@ -180,7 +206,10 @@ export const GlobalConfigCollection: Collection = {
 			type: "object",
 			list: true,
 			ui: {
-				itemProps: (item) => ({ label: item.label?.pt ?? "Tipo de pedido" }),
+				itemProps: (item) => ({
+					label:
+						item.label?.["pt-PT"] ?? item.label?.["pt-BR"] ?? "Tipo de pedido",
+				}),
 			},
 			fields: [
 				{

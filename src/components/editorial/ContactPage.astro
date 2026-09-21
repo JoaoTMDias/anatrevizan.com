@@ -16,8 +16,11 @@ interface Props {
   data: CmsEditorial;
 }
 interface LocalizedLabel {
-  pt: string;
-  en: string;
+	"pt-PT": string;
+	"pt-BR": string;
+	pt_PT?: string;
+	pt_BR?: string;
+	en: string;
 }
 interface Profile {
   label?: LocalizedLabel | null;
@@ -30,11 +33,13 @@ interface RequestType {
 }
 const { data } = Astro.props;
 const contact = data.contactPage as ContactPageContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
+const localizedLabel = (value: LocalizedLabel | null | undefined) =>
+  value?.[locale] ?? value?.[locale.replace("-", "_") as "pt_PT" | "pt_BR"];
 const config = contact ? (await getConfig()).data.config : null;
 const requestTypes = ((config?.requestTypes as RequestType[] | null | undefined) ?? []).flatMap(
   (item: RequestType) => {
-    const label = locale === "en" ? item?.label?.en : item?.label?.pt;
+    const label = localizedLabel(item?.label);
     return label ? [{ value: item.id, scope: item.scope, label }] : [];
   }
 );
@@ -46,7 +51,7 @@ const messageId = locale === "en" ? "message" : "mensagem";
 const profileLinks = ((config?.contacts?.profiles as Profile[] | null | undefined) ?? []).flatMap(
   (profile: Profile) => {
     const href = safeProfileUrl(profile?.url);
-    const label = locale === "en" ? profile?.label?.en : profile?.label?.pt;
+    const label = localizedLabel(profile?.label);
     return href && label ? [{ href, label }] : [];
   }
 );

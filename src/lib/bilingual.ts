@@ -1,8 +1,13 @@
 import type { PublishedLocale } from "./routing";
 
 export interface LocalizedValue {
-	pt: unknown;
+	"pt-PT": unknown;
+	"pt-BR": unknown;
 	en: unknown;
+}
+
+function localeValue(value: Record<string, unknown>, locale: PublishedLocale) {
+	return value[locale] ?? value[locale.replace("-", "_")];
 }
 
 export function isLocalizedValue(value: unknown): value is LocalizedValue {
@@ -10,7 +15,8 @@ export function isLocalizedValue(value: unknown): value is LocalizedValue {
 		value &&
 			typeof value === "object" &&
 			!Array.isArray(value) &&
-			"pt" in value &&
+			("pt-PT" in value || "pt_PT" in value) &&
+			("pt-BR" in value || "pt_BR" in value) &&
 			"en" in value,
 	);
 }
@@ -20,7 +26,10 @@ export function localizeValue(
 	locale: PublishedLocale,
 ): unknown {
 	if (isLocalizedValue(value))
-		return localizeValue(locale === "pt-PT" ? value.pt : value.en, locale);
+		return localizeValue(
+			localeValue(value as unknown as Record<string, unknown>, locale),
+			locale,
+		);
 	if (Array.isArray(value))
 		return value.map((item) => localizeValue(item, locale));
 	if (value && typeof value === "object")
@@ -39,9 +48,14 @@ export function missingLocalizedPaths(
 	prefix = "",
 ): string[] {
 	if (isLocalizedValue(value)) {
-		const localized = locale === "pt-PT" ? value.pt : value.en;
-		return locale === "en" &&
-			hasLocalizedContent(value.pt) &&
+		const localized = localeValue(
+			value as unknown as Record<string, unknown>,
+			locale,
+		);
+		return locale !== "pt-PT" &&
+			hasLocalizedContent(
+				localeValue(value as unknown as Record<string, unknown>, "pt-PT"),
+			) &&
 			!hasLocalizedContent(localized)
 			? [prefix]
 			: [];

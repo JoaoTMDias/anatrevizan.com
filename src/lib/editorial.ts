@@ -25,6 +25,7 @@ export interface EditorialIssue {
 		| "duplicate-route"
 		| "missing-page"
 		| "incomplete-portuguese"
+		| "incomplete-brazilian-portuguese"
 		| "published-english-regression";
 	message: string;
 }
@@ -32,6 +33,7 @@ export interface EditorialIssue {
 export function validateEditorialDocuments(
 	documents: readonly BilingualEditorialDocument[],
 	publishedEnglishRoutes: readonly RouteKey[] = [],
+	requiredLocales: readonly PublishedLocale[] = ["pt-PT"],
 ): EditorialIssue[] {
 	const issues: EditorialIssue[] = [];
 	const seen = new Set<RouteKey>();
@@ -53,6 +55,14 @@ export function validateEditorialDocuments(
 			issues.push({
 				code: "incomplete-portuguese",
 				message: `${document.routeKey}: ${missingLocalizedPaths(document, "pt-PT").join(", ")}`,
+			});
+		if (
+			requiredLocales.includes("pt-BR") &&
+			!isLocaleComplete(document, "pt-BR")
+		)
+			issues.push({
+				code: "incomplete-brazilian-portuguese",
+				message: `${document.routeKey}: ${missingLocalizedPaths(document, "pt-BR").join(", ")}`,
 			});
 		if (
 			publishedEnglishRoutes.includes(document.routeKey) &&

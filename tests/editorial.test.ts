@@ -35,7 +35,10 @@ describe("publicação editorial bilingue", () => {
 	});
 
 	it("localiza inglês sem recorrer ao português", () => {
-		const value = { heading: { pt: "Olá", en: "" }, routeKey: "home" };
+		const value = {
+			heading: { "pt-PT": "Olá", "pt-BR": "Olá", en: "" },
+			routeKey: "home",
+		};
 		expect(localizeValue(value, "en")).toEqual({
 			heading: "",
 			routeKey: "home",
@@ -60,7 +63,7 @@ describe("publicação editorial bilingue", () => {
 		const home = pages.find((page) => page.routeKey === "home");
 		expect(home).toBeDefined();
 		const regressedHome = structuredClone(home) as typeof home & {
-			title: { pt: string; en: string };
+			title: { "pt-PT": string; "pt-BR": string; en: string };
 		};
 		regressedHome.title.en = "";
 		const regressedPages = pages.map((page) =>
@@ -77,7 +80,13 @@ describe("publicação editorial bilingue", () => {
 	it("considera rich text EN vazio incompleto", () => {
 		const value = {
 			body: {
-				pt: {
+				"pt-PT": {
+					type: "root",
+					children: [
+						{ type: "p", children: [{ type: "text", text: "Texto" }] },
+					],
+				},
+				"pt-BR": {
 					type: "root",
 					children: [
 						{ type: "p", children: [{ type: "text", text: "Texto" }] },

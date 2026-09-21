@@ -165,37 +165,37 @@ export const eventsPageFields: TinaField[] = [
 
 export function speakingPageFields(): TinaField[] {
 	return [
-	{
-		name: "speaking",
-		label: "Conteúdo de palestras e participações",
-		type: "object",
-		fields: [
-			text("tag", "Etiqueta do hero"),
-			text("subtitle", "Introdução do hero"),
-			text("photoPlaceholderLabel", "Texto da fotografia temporária"),
-			{
-				name: "photo",
-				label: "Fotografia da palestrante",
-				type: "object",
-				fields: [
-					{ name: "image", label: "Imagem", type: "image", required: false },
-					text("alt", "Texto alternativo", false),
-					{
-						name: "decorative",
-						label: "Imagem decorativa",
-						type: "boolean",
-						ui: { defaultValue: false },
-					},
-				],
-			},
-			text("bioHeading", "Título da biografia"),
-			richText("bioParagraphs", "Biografia"),
-			text("topicsHeading", "Título dos temas"),
-			stringList("topics", "Topics"),
-			text("inviteCta", "CTA para convites"),
-			text("ctaHeading", "Título do CTA"),
-			text("ctaText", "Texto do CTA"),
-		],
-	},
+		{
+			name: "speaking",
+			label: "Conteúdo de palestras e participações",
+			type: "object",
+			fields: [
+				text("tag", "Etiqueta do hero"),
+				text("subtitle", "Introdução do hero"),
+				text("photoPlaceholderLabel", "Texto da fotografia temporária"),
+				{
+					name: "photo",
+					label: "Fotografia da palestrante",
+					type: "object",
+					fields: [
+						{ name: "image", label: "Imagem", type: "image", required: false },
+						text("alt", "Texto alternativo", false),
+						{
+							name: "decorative",
+							label: "Imagem decorativa",
+							type: "boolean",
+							ui: { defaultValue: false },
+						},
+					],
+				},
+				text("bioHeading", "Título da biografia"),
+				richText("bioParagraphs", "Biografia"),
+				text("topicsHeading", "Título dos temas"),
+				stringList("topics", "Topics"),
+				text("inviteCta", "CTA para convites"),
+				text("ctaHeading", "Título do CTA"),
+				text("ctaText", "Texto do CTA"),
+			],
+		},
 	];
 }

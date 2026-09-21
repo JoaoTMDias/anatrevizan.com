@@ -21,16 +21,17 @@ function fixture() {
 		join(directory, "home.json"),
 		JSON.stringify({
 			routeKey: "home",
-			title: { pt: "Início", en: "Home" },
-			summary: { pt: "Resumo", en: "Summary" },
+			title: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
+			summary: { "pt-PT": "Resumo", "pt-BR": "Resumo", en: "Summary" },
 			seo: {
-				title: { pt: "Início", en: "Home" },
-				description: { pt: "Resumo", en: "Summary" },
+				title: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
+				description: { "pt-PT": "Resumo", "pt-BR": "Resumo", en: "Summary" },
 			},
 		}),
 	);
 	for (const output of [
 		"dist/index.html",
+		"dist/pt-br/index.html",
 		"dist/en/index.html",
 	]) {
 		mkdirSync(dirname(join(root, output)), { recursive: true });
@@ -53,8 +54,8 @@ describe("editorial build report", () => {
 		);
 		expect(manifest).toMatchObject({
 			mode: "preview",
-			totalDocuments: 2,
-			generatedEditorialRoutes: 2,
+			totalDocuments: 3,
+			generatedEditorialRoutes: 3,
 			missingRoutes: [],
 		});
 	});
@@ -73,16 +74,17 @@ describe("editorial build report", () => {
 			join(root, "src/content/pages/legal.json"),
 			JSON.stringify({
 				routeKey: "legal",
-				title: { pt: "Início", en: "Home" },
-				summary: { pt: "Resumo", en: "Summary" },
+				title: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
+				summary: { "pt-PT": "Resumo", "pt-BR": "Resumo", en: "Summary" },
 				seo: {
-					title: { pt: "Início", en: "Home" },
-					description: { pt: "Resumo", en: "Summary" },
+					title: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
+					description: { "pt-PT": "Resumo", "pt-BR": "Resumo", en: "Summary" },
 				},
 			}),
 		);
 		for (const output of [
 			"dist/atuacao/advocacia-brasil/index.html",
+			"dist/pt-br/atuacao/advocacia-brasil/index.html",
 			"dist/en/practice/brazilian-law/index.html",
 		]) {
 			mkdirSync(dirname(join(root, output)), { recursive: true });
@@ -90,7 +92,7 @@ describe("editorial build report", () => {
 		}
 		const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
 		const report = createEditorialBuildReport(root, "preview");
-		expect(report.duplicateMetadata).toHaveLength(4);
-		expect(warn).toHaveBeenCalledTimes(4);
+		expect(report.duplicateMetadata).toHaveLength(6);
+		expect(warn).toHaveBeenCalledTimes(6);
 	});
 });

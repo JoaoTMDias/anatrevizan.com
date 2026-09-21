@@ -23,6 +23,28 @@ const copy = {
 			"Outro",
 		],
 	},
+	"pt-BR": {
+		nameLabel: "Nome",
+		whatsappLabel: "WhatsApp",
+		emailLabel: "E-mail",
+		requestTypeLabel: "Tipo de pedido",
+		countryLabel: "País onde está",
+		subjectLabel: "Assunto",
+		subjectPlaceholder: "Conte o que aconteceu e o que procura",
+		privacyPolicyLabel: "Política de Privacidade",
+		submitLabel: "Enviar",
+		successMessage:
+			"Mensagem enviada com sucesso. Entrarei em contato em breve.",
+		errorMessage:
+			"Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.",
+		countries: [
+			"Portugal",
+			"Brasil",
+			"Espanha",
+			"Outro país da União Europeia",
+			"Outro",
+		],
+	},
 	en: {
 		nameLabel: "Name",
 		whatsappLabel: "WhatsApp",

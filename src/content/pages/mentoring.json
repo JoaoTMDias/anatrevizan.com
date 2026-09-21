@@ -1,131 +1,156 @@
 {
 	"routeKey": "mentoring",
 	"title": {
-		"pt": "Mentorias Profissionais e Académicas",
-		"en": "Mentorship and Academic Support"
+		"pt-PT": "Mentorias Profissionais e Académicas",
+		"en": "Mentorship and Academic Support",
+		"pt-BR": "Mentorias Profissionais e Académicas"
 	},
 	"summary": {
-		"pt": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
-		"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+		"pt-PT": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
+		"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
+		"pt-BR": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação."
 	},
 	"seo": {
 		"title": {
-			"pt": "Mentorias Profissionais e Académicas · Publicar com quem já publicou",
-			"en": "Mentorship and Academic Support · Publish with Proven Experience - Ana Trevizan"
+			"pt-PT": "Mentorias Profissionais e Académicas · Publicar com quem já publicou",
+			"en": "Mentorship and Academic Support · Publish with Proven Experience - Ana Trevizan",
+			"pt-BR": "Mentorias Profissionais e Académicas · Publicar com quem já publicou"
 		},
 		"description": {
-			"pt": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
-			"en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation."
+			"pt-PT": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional.",
+			"en": "Academic mentorship and support: technical review in PT/EN/ES, research strategy, thesis structuring, and international publication preparation.",
+			"pt-BR": "Mentoria e apoio académico: revisão técnica em PT/EN/ES, estratégia de pesquisa, estruturação de dissertações e preparação para publicação internacional."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/mentorias-e-apoio-academico-hero.webp",
 			"alt": {
-				"pt": "Close-up da Ana a tomar notas em papel.",
-				"en": "Close-up of Ana taking notes on paper."
+				"pt-PT": "Close-up da Ana a tomar notas em papel.",
+				"en": "Close-up of Ana taking notes on paper.",
+				"pt-BR": "Close-up da Ana a tomar notas em papel."
 			},
 			"decorative": false
 		}
 	},
 	"academicService": {
 		"subtitle": {
-			"pt": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
-			"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+			"pt-PT": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação.",
+			"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
+			"pt-BR": "Acompanhamento personalizado para planear os próximos passos da sua carreira, preparar candidaturas a mestrados e doutoramentos e desenvolver projetos de investigação."
 		},
 		"introHeading": {
-			"pt": "Experiência para acompanhar o seu percurso",
-			"en": "Experience to support you on your journey"
+			"pt-PT": "Experiência para acompanhar o seu percurso",
+			"en": "Experience to support you on your journey",
+			"pt-BR": "Experiência para acompanhar o seu percurso"
 		},
 		"introImage": {
 			"image": "/mentoria-intro.webp",
 			"alt": {
-				"pt": "Ana, sentada, segurando livros no regaço.",
-				"en": "Ana, sitting with books on her lap."
+				"pt-PT": "Ana, sentada, segurando livros no regaço.",
+				"en": "Ana, sitting with books on her lap.",
+				"pt-BR": "Ana, sentada, segurando livros no regaço."
 			},
 			"decorative": false
 		},
 		"introParagraphs": {
-			"pt": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n",
-			"en": "Choosing a master’s or PhD programme, undertaking research or taking your career in a new direction involves uncertainties and important decisions. It is not always easy to identify opportunities and work out where to start.\n\nI draw on the experience I have gained in the legal profession, in teaching and in international research to help you turn your goals into an action plan, using a structured approach, listening carefully and taking your career path into account.\n"
+			"pt-PT": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n",
+			"en": "Choosing a master’s or PhD programme, undertaking research or taking your career in a new direction involves uncertainties and important decisions. It is not always easy to identify opportunities and work out where to start.\n\nI draw on the experience I have gained in the legal profession, in teaching and in international research to help you turn your goals into an action plan, using a structured approach, listening carefully and taking your career path into account.\n",
+			"pt-BR": "Escolher um mestrado ou doutoramento, desenvolver uma investigação ou dar um novo rumo à carreira envolve dúvidas e decisões importantes. Nem sempre é fácil identificar as oportunidades e definir por onde começar.\n\nPartilho a experiência que construí na advocacia, na docência e na investigação internacional para ajudar a transformar os seus objetivos num plano de ação, com método, escuta e atenção à sua trajetória.\n"
 		},
 		"servicesHeading": {
-			"pt": "Como posso apoiar",
-			"en": "How I can support you"
+			"pt-PT": "Como posso apoiar",
+			"en": "How I can support you",
+			"pt-BR": "Como posso apoiar"
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Planeamento de carreira",
-					"en": "Career planning"
+					"pt-PT": "Planeamento de carreira",
+					"en": "Career planning",
+					"pt-BR": "Planeamento de carreira"
 				},
 				"description": {
-					"pt": "Definição de objetivos e próximos passos profissionais, considerando a sua experiência, os seus interesses e as oportunidades de atuação.",
-					"en": "Setting career goals and planning your next career steps, taking into account your experience, your interests and the opportunities available."
+					"pt-PT": "Definição de objetivos e próximos passos profissionais, considerando a sua experiência, os seus interesses e as oportunidades de atuação.",
+					"en": "Setting career goals and planning your next career steps, taking into account your experience, your interests and the opportunities available.",
+					"pt-BR": "Definição de objetivos e próximos passos profissionais, considerando a sua experiência, os seus interesses e as oportunidades de atuação."
 				}
 			},
 			{
 				"title": {
-					"pt": "Candidaturas a mestrados e doutoramentos",
-					"en": "Applications for master’s and doctoral programmes"
+					"pt-PT": "Candidaturas a mestrados e doutoramentos",
+					"en": "Applications for master’s and doctoral programmes",
+					"pt-BR": "Candidaturas a mestrados e doutoramentos"
 				},
 				"description": {
-					"pt": "Escolha de programas e preparação de candidaturas, com atenção aos requisitos, à documentação e ao projeto exigido.",
-					"en": "Selecting programmes and preparing applications, paying close attention to the requirements, the necessary documentation and the project proposal."
+					"pt-PT": "Escolha de programas e preparação de candidaturas, com atenção aos requisitos, à documentação e ao projeto exigido.",
+					"en": "Selecting programmes and preparing applications, paying close attention to the requirements, the necessary documentation and the project proposal.",
+					"pt-BR": "Escolha de programas e preparação de candidaturas, com atenção aos requisitos, à documentação e ao projeto exigido."
 				}
 			},
 			{
 				"title": {
-					"pt": "Estratégia e metodologia de pesquisa",
-					"en": "Research strategy and methodology"
+					"pt-PT": "Estratégia e metodologia de pesquisa",
+					"en": "Research strategy and methodology",
+					"pt-BR": "Estratégia e metodologia de pesquisa"
 				},
 				"description": {
-					"pt": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto.",
-					"en": "Defining the topic, formulating the research question and selecting the appropriate methods for your project."
+					"pt-PT": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto.",
+					"en": "Defining the topic, formulating the research question and selecting the appropriate methods for your project.",
+					"pt-BR": "Delimitação do tema, formulação da pergunta de investigação e escolha dos métodos adequados ao seu projeto."
 				}
 			},
 			{
 				"title": {
-					"pt": "Estruturação e escrita académica",
-					"en": "Academic structuring and writing"
+					"pt-PT": "Estruturação e escrita académica",
+					"en": "Academic structuring and writing",
+					"pt-BR": "Estruturação e escrita académica"
 				},
 				"description": {
-					"pt": "Organização de dissertações e teses, desenvolvimento dos argumentos e estratégias para superar bloqueios na escrita.",
-					"en": "Organisation of dissertations and theses, development of arguments and strategies for overcoming writer’s block."
+					"pt-PT": "Organização de dissertações e teses, desenvolvimento dos argumentos e estratégias para superar bloqueios na escrita.",
+					"en": "Organisation of dissertations and theses, development of arguments and strategies for overcoming writer’s block.",
+					"pt-BR": "Organização de dissertações e teses, desenvolvimento dos argumentos e estratégias para superar bloqueios na escrita."
 				}
 			},
 			{
 				"title": {
-					"pt": "Revisão técnica de artigos",
-					"en": "Technical review of articles"
+					"pt-PT": "Revisão técnica de artigos",
+					"en": "Technical review of articles",
+					"pt-BR": "Revisão técnica de artigos"
 				},
 				"description": {
-					"pt": "Análise do rigor do conteúdo, da coerência dos argumentos e da clareza da escrita em português, inglês e espanhol.",
-					"en": "Analysis of the accuracy of the content, the coherence of the arguments and the clarity of the writing in Portuguese, English and Spanish."
+					"pt-PT": "Análise do rigor do conteúdo, da coerência dos argumentos e da clareza da escrita em português, inglês e espanhol.",
+					"en": "Analysis of the accuracy of the content, the coherence of the arguments and the clarity of the writing in Portuguese, English and Spanish.",
+					"pt-BR": "Análise do rigor do conteúdo, da coerência dos argumentos e da clareza da escrita em português, inglês e espanhol."
 				}
 			},
 			{
 				"title": {
-					"pt": "Preparação para publicação internacional",
-					"en": "International Publishing Preparation"
+					"pt-PT": "Preparação para publicação internacional",
+					"en": "International Publishing Preparation",
+					"pt-BR": "Preparação para publicação internacional"
 				},
 				"description": {
-					"pt": "Seleção de revistas e adequação do manuscrito às normas editoriais e aos critérios de submissão.",
-					"en": "Selection of journals and ensuring the manuscript complies with editorial guidelines and submission criteria."
+					"pt-PT": "Seleção de revistas e adequação do manuscrito às normas editoriais e aos critérios de submissão.",
+					"en": "Selection of journals and ensuring the manuscript complies with editorial guidelines and submission criteria.",
+					"pt-BR": "Seleção de revistas e adequação do manuscrito às normas editoriais e aos critérios de submissão."
 				}
 			}
 		],
 		"note": {
-			"pt": "Cada mentoria é definida a partir dos seus objetivos, do momento em que se encontra e dos desafios que pretende trabalhar.",
-			"en": "Each mentoring programme is tailored to your objectives, your current situation and the challenges you wish to address."
+			"pt-PT": "Cada mentoria é definida a partir dos seus objetivos, do momento em que se encontra e dos desafios que pretende trabalhar.",
+			"en": "Each mentoring programme is tailored to your objectives, your current situation and the challenges you wish to address.",
+			"pt-BR": "Cada mentoria é definida a partir dos seus objetivos, do momento em que se encontra e dos desafios que pretende trabalhar."
 		},
 		"ctaHeading": {
-			"pt": "Vamos destravar a sua pesquisa?",
-			"en": "Ready to advance your research?"
+			"pt-PT": "Vamos destravar a sua pesquisa?",
+			"en": "Ready to advance your research?",
+			"pt-BR": "Vamos destravar a sua pesquisa?"
 		},
 		"ctaText": {
-			"pt": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
-			"en": "Schedule an initial call and share where you currently stand with your thesis or paper."
+			"pt-PT": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo.",
+			"en": "Schedule an initial call and share where you currently stand with your thesis or paper.",
+			"pt-BR": "Marque uma conversa inicial e conte-me em que ponto está a sua tese ou o seu artigo."
 		}
 	},
 	"_template": "academicService"

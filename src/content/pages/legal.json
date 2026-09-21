@@ -1,128 +1,152 @@
 {
 	"routeKey": "legal",
 	"title": {
-		"pt": "Advocacia e consultoria jurídica no Brasil",
-		"en": "Legal practice and legal consulting in Brazil"
+		"pt-PT": "Advocacia e consultoria jurídica no Brasil",
+		"en": "Legal practice and legal consulting in Brazil",
+		"pt-BR": "Advocacia e consultoria jurídica no Brasil"
 	},
 	"summary": {
-		"pt": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos.",
-		"en": "Legal services for individuals, businesses and organisations, with a focus on risk prevention, the protection of rights and conflict resolution."
+		"pt-PT": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos.",
+		"en": "Legal services for individuals, businesses and organisations, with a focus on risk prevention, the protection of rights and conflict resolution.",
+		"pt-BR": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos."
 	},
 	"seo": {
 		"title": {
-			"pt": "Advocacia e consultoria jurídica no Brasil",
-			"en": "Legal practice and legal consulting in Brazil"
+			"pt-PT": "Advocacia e consultoria jurídica no Brasil",
+			"en": "Legal practice and legal consulting in Brazil",
+			"pt-BR": "Advocacia e consultoria jurídica no Brasil"
 		},
 		"description": {
-			"pt": "Se a sua questão é regida pelo Direito brasileiro, podemos começar por aqui. Encontre apoio para uma situação pessoal, um contrato, uma relação de trabalho ou um projeto que envolva ambiente, direitos humanos ou políticas públicas.",
-			"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
+			"pt-PT": "Se a sua questão é regida pelo Direito brasileiro, podemos começar por aqui. Encontre apoio para uma situação pessoal, um contrato, uma relação de trabalho ou um projeto que envolva ambiente, direitos humanos ou políticas públicas.",
+			"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations.",
+			"pt-BR": "Se a sua questão é regida pelo Direito brasileiro, podemos começar por aqui. Encontre apoio para uma situação pessoal, um contrato, uma relação de trabalho ou um projeto que envolva ambiente, direitos humanos ou políticas públicas."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/hero-consultoria.webp",
 			"alt": {
-				"pt": "Uma vista superior de uma mesa, onde está uma pequena estátua de Têmis, a Senhora da Justiça.",
-				"en": "Top-down view of a desk featuring a small statue of Themis, Lady Justice."
+				"pt-PT": "Uma vista superior de uma mesa, onde está uma pequena estátua de Têmis, a Senhora da Justiça.",
+				"en": "Top-down view of a desk featuring a small statue of Themis, Lady Justice.",
+				"pt-BR": "Uma vista superior de uma mesa, onde está uma pequena estátua de Têmis, a Senhora da Justiça."
 			},
 			"decorative": false
 		}
 	},
 	"practicePage": {
 		"tag": {
-			"pt": "BRASIL",
-			"en": "BRAZIL"
+			"pt-PT": "BRASIL",
+			"en": "BRAZIL",
+			"pt-BR": "BRASIL"
 		},
 		"intro": {
-			"pt": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos.",
-			"en": "Legal services for individuals, businesses and organisations, with a focus on risk prevention, the protection of rights and conflict resolution."
+			"pt-PT": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos.",
+			"en": "Legal services for individuals, businesses and organisations, with a focus on risk prevention, the protection of rights and conflict resolution.",
+			"pt-BR": "Serviços jurídicos para pessoas, empresas e organizações, com foco na prevenção de riscos, proteção de direitos e resolução de conflitos."
 		},
 		"sections": [
 			{
 				"anchor": "civil",
 				"title": {
-					"pt": "Civil, Contratos e Consumidor",
-					"en": "Civil Law, Contracts and Consumer Matters"
+					"pt-PT": "Civil, Contratos e Consumidor",
+					"en": "Civil Law, Contracts and Consumer Matters",
+					"pt-BR": "Civil, Contratos e Consumidor"
 				},
 				"description": {
-					"pt": "Questões do dia a dia podem ter consequências jurídicas importantes. Analiso contratos, responsabilidades e relações de consumo para ajudar a perceber os seus direitos e a decidir como agir.",
-					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty."
+					"pt-PT": "Questões do dia a dia podem ter consequências jurídicas importantes. Analiso contratos, responsabilidades e relações de consumo para ajudar a perceber os seus direitos e a decidir como agir.",
+					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty.",
+					"pt-BR": "Questões do dia a dia podem ter consequências jurídicas importantes. Analiso contratos, responsabilidades e relações de consumo para ajudar a perceber os seus direitos e a decidir como agir."
 				},
 				"paragraphs": [
 					{
-						"pt": "Um contrato, uma obrigação não cumprida, uma cobrança, uma compra, um prejuízo ou uma questão patrimonial podem produzir consequências que nem sempre são percebidas de imediato. A atuação jurídica permite avaliar essas consequências, proteger direitos e procurar soluções antes ou depois do surgimento de um conflito.",
-						"en": "A contract, an unfulfilled obligation, a charge, a purchase, a loss or a property matter can have consequences that are not always immediately apparent. Legal assistance makes it possible to assess those consequences, protect rights and seek solutions before or after a dispute arises."
+						"pt-PT": "Um contrato, uma obrigação não cumprida, uma cobrança, uma compra, um prejuízo ou uma questão patrimonial podem produzir consequências que nem sempre são percebidas de imediato. A atuação jurídica permite avaliar essas consequências, proteger direitos e procurar soluções antes ou depois do surgimento de um conflito.",
+						"en": "A contract, an unfulfilled obligation, a charge, a purchase, a loss or a property matter can have consequences that are not always immediately apparent. Legal assistance makes it possible to assess those consequences, protect rights and seek solutions before or after a dispute arises.",
+						"pt-BR": "Um contrato, uma obrigação não cumprida, uma cobrança, uma compra, um prejuízo ou uma questão patrimonial podem produzir consequências que nem sempre são percebidas de imediato. A atuação jurídica permite avaliar essas consequências, proteger direitos e procurar soluções antes ou depois do surgimento de um conflito."
 					}
 				],
 				"items": [
 					{
 						"title": {
-							"pt": "Contratos",
-							"en": "Contracts"
+							"pt-PT": "Contratos",
+							"en": "Contracts",
+							"pt-BR": "Contratos"
 						},
 						"description": {
-							"pt": "Elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos",
-							"en": "Drafting and reviewing contracts, clauses, obligations, guarantees and risks"
+							"pt-PT": "Elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos",
+							"en": "Drafting and reviewing contracts, clauses, obligations, guarantees and risks",
+							"pt-BR": "Elaboração e revisão de contratos, cláusulas, obrigações, garantias e riscos"
 						}
 					},
 					{
 						"title": {
-							"pt": "Obrigações e responsabilidade civil",
-							"en": "Obligations and civil liability"
+							"pt-PT": "Obrigações e responsabilidade civil",
+							"en": "Obligations and civil liability",
+							"pt-BR": "Obrigações e responsabilidade civil"
 						},
 						"description": {
-							"pt": "Incumprimento, danos e deveres de reparação.",
-							"en": "Breach of contract, damages and the duty to make good."
+							"pt-PT": "Incumprimento, danos e deveres de reparação.",
+							"en": "Breach of contract, damages and the duty to make good.",
+							"pt-BR": "Incumprimento, danos e deveres de reparação."
 						}
 					},
 					{
 						"title": {
-							"pt": "Relações de consumo",
-							"en": "Consumer matters"
+							"pt-PT": "Relações de consumo",
+							"en": "Consumer matters",
+							"pt-BR": "Relações de consumo"
 						},
 						"description": {
-							"pt": "Cobranças indevidas, falhas na prestação de serviços, produtos e garantias.",
-							"en": "Unjustified charges, failings in the provision of services, products and guarantees."
+							"pt-PT": "Cobranças indevidas, falhas na prestação de serviços, produtos e garantias.",
+							"en": "Unjustified charges, failings in the provision of services, products and guarantees.",
+							"pt-BR": "Cobranças indevidas, falhas na prestação de serviços, produtos e garantias."
 						}
 					},
 					{
 						"title": {
-							"pt": "Questões patrimoniais",
-							"en": "Property matters"
+							"pt-PT": "Questões patrimoniais",
+							"en": "Property matters",
+							"pt-BR": "Questões patrimoniais"
 						},
 						"description": {
-							"pt": "Bens, direitos e obrigações com repercussão patrimonial.",
-							"en": "Assets, rights and obligations affecting one’s financial position."
+							"pt-PT": "Bens, direitos e obrigações com repercussão patrimonial.",
+							"en": "Assets, rights and obligations affecting one’s financial position.",
+							"pt-BR": "Bens, direitos e obrigações com repercussão patrimonial."
 						}
 					},
 					{
 						"title": {
-							"pt": "Cobranças, acordos e negociação",
-							"en": "Debt collection, agreements and negotiation"
+							"pt-PT": "Cobranças, acordos e negociação",
+							"en": "Debt collection, agreements and negotiation",
+							"pt-BR": "Cobranças, acordos e negociação"
 						},
 						"description": {
-							"pt": "Negociação de obrigações e soluções extrajudiciais.",
-							"en": "Debt negotiation and out-of-court settlements."
+							"pt-PT": "Negociação de obrigações e soluções extrajudiciais.",
+							"en": "Debt negotiation and out-of-court settlements.",
+							"pt-BR": "Negociação de obrigações e soluções extrajudiciais."
 						}
 					},
 					{
 						"title": {
-							"pt": "Direito digital",
-							"en": "Digital law"
+							"pt-PT": "Direito digital",
+							"en": "Digital law",
+							"pt-BR": "Direito digital"
 						},
 						"description": {
-							"pt": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas.",
-							"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+							"pt-PT": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas.",
+							"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
+							"pt-BR": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas."
 						}
 					}
 				],
 				"notice": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386",
+					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
 				},
 				"cta": {
-					"pt": "Apresentar uma questão de Direito brasileiro",
-					"en": "Describe a matter of Brazilian law"
+					"pt-PT": "Apresentar uma questão de Direito brasileiro",
+					"en": "Describe a matter of Brazilian law",
+					"pt-BR": "Apresentar uma questão de Direito brasileiro"
 				},
 				"routeKey": "contact",
 				"scope": "BR_LEGAL"
@@ -130,88 +154,105 @@
 			{
 				"anchor": "trabalho",
 				"title": {
-					"pt": "Trabalho e Relações Laborais",
-					"en": "Employment and Labour Relations"
+					"pt-PT": "Trabalho e Relações Laborais",
+					"en": "Employment and Labour Relations",
+					"pt-BR": "Trabalho e Relações Laborais"
 				},
 				"description": {
-					"pt": "Uma relação de trabalho pode levantar dúvidas para qualquer das partes. Analiso a situação e os documentos disponíveis para explicar o que está em causa e quais os caminhos possíveis no Direito brasileiro.",
-					"en": "Rights, duties and professional relationships require clarity - both in prevention and when facing a dispute."
+					"pt-PT": "Uma relação de trabalho pode levantar dúvidas para qualquer das partes. Analiso a situação e os documentos disponíveis para explicar o que está em causa e quais os caminhos possíveis no Direito brasileiro.",
+					"en": "Rights, duties and professional relationships require clarity - both in prevention and when facing a dispute.",
+					"pt-BR": "Uma relação de trabalho pode levantar dúvidas para qualquer das partes. Analiso a situação e os documentos disponíveis para explicar o que está em causa e quais os caminhos possíveis no Direito brasileiro."
 				},
 				"paragraphs": [
 					{
-						"pt": "Do início de um vínculo profissional ao seu encerramento, diferentes decisões podem produzir consequências para trabalhadores e empregadores. Uma atuação jurídica cuidadosa permite antecipar riscos, enfrentar conflitos e proteger os interesses envolvidos em cada etapa.",
-						"en": "From the start of a professional relationship to its end, different decisions can have consequences for workers and employers. Careful legal assistance makes it possible to anticipate risks, address disputes and protect the interests involved at each stage."
+						"pt-PT": "Do início de um vínculo profissional ao seu encerramento, diferentes decisões podem produzir consequências para trabalhadores e empregadores. Uma atuação jurídica cuidadosa permite antecipar riscos, enfrentar conflitos e proteger os interesses envolvidos em cada etapa.",
+						"en": "From the start of a professional relationship to its end, different decisions can have consequences for workers and employers. Careful legal assistance makes it possible to anticipate risks, address disputes and protect the interests involved at each stage.",
+						"pt-BR": "Do início de um vínculo profissional ao seu encerramento, diferentes decisões podem produzir consequências para trabalhadores e empregadores. Uma atuação jurídica cuidadosa permite antecipar riscos, enfrentar conflitos e proteger os interesses envolvidos em cada etapa."
 					}
 				],
 				"items": [
 					{
 						"title": {
-							"pt": "Contratos de trabalho",
-							"en": "Employment contracts"
+							"pt-PT": "Contratos de trabalho",
+							"en": "Employment contracts",
+							"pt-BR": "Contratos de trabalho"
 						},
 						"description": {
-							"pt": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato.",
-							"en": "Review of the main clauses, conditions and risks associated with the contract."
+							"pt-PT": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato.",
+							"en": "Review of the main clauses, conditions and risks associated with the contract.",
+							"pt-BR": "Análise e revisão das principais cláusulas, condições e riscos associados ao contrato."
 						}
 					},
 					{
 						"title": {
-							"pt": "Direitos e deveres decorrentes do vínculo",
-							"en": "Rights and duties arising from the employment relationship"
+							"pt-PT": "Direitos e deveres decorrentes do vínculo",
+							"en": "Rights and duties arising from the employment relationship",
+							"pt-BR": "Direitos e deveres decorrentes do vínculo"
 						},
 						"description": {
-							"pt": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores.",
-							"en": "Clarification of legal matters relating to employers’ and workers’ rights and duties."
+							"pt-PT": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores.",
+							"en": "Clarification of legal matters relating to employers’ and workers’ rights and duties.",
+							"pt-BR": "Esclarecimento das questões jurídicas relacionadas com os direitos e deveres de empregadores e trabalhadores."
 						}
 					},
 					{
 						"title": {
-							"pt": "Cessação do contrato e acordos de saída",
-							"en": "Termination of employment and exit agreements"
+							"pt-PT": "Cessação do contrato e acordos de saída",
+							"en": "Termination of employment and exit agreements",
+							"pt-BR": "Cessação do contrato e acordos de saída"
 						},
 						"description": {
-							"pt": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída.",
-							"en": "Analysis of termination arrangements and support in assessing the terms of an exit agreement."
+							"pt-PT": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída.",
+							"en": "Analysis of termination arrangements and support in assessing the terms of an exit agreement.",
+							"pt-BR": "Análise das modalidades de cessação e apoio na avaliação das condições de um acordo de saída."
 						}
 					},
 					{
 						"title": {
-							"pt": "Conflitos, assédio e discriminação",
-							"en": "Workplace conflicts, harassment and discrimination"
+							"pt-PT": "Conflitos, assédio e discriminação",
+							"en": "Workplace conflicts, harassment and discrimination",
+							"pt-BR": "Conflitos, assédio e discriminação"
 						},
 						"description": {
-							"pt": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral.",
-							"en": "Initial analysis of conflict, harassment or discrimination situations in the workplace."
+							"pt-PT": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral.",
+							"en": "Initial analysis of conflict, harassment or discrimination situations in the workplace.",
+							"pt-BR": "Análise inicial de situações de conflito, assédio ou discriminação no contexto laboral."
 						}
 					},
 					{
 						"title": {
-							"pt": "Negociação e acordos",
-							"en": "Negotiation and agreements"
+							"pt-PT": "Negociação e acordos",
+							"en": "Negotiation and agreements",
+							"pt-BR": "Negociação e acordos"
 						},
 						"description": {
-							"pt": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho.",
-							"en": "Support with analysing and negotiating solutions for employment-related matters."
+							"pt-PT": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho.",
+							"en": "Support with analysing and negotiating solutions for employment-related matters.",
+							"pt-BR": "Apoio na análise e negociação de soluções para questões surgidas na relação de trabalho."
 						}
 					},
 					{
 						"title": {
-							"pt": "Conformidade laboral para empresas",
-							"en": "Employment compliance for businesses"
+							"pt-PT": "Conformidade laboral para empresas",
+							"en": "Employment compliance for businesses",
+							"pt-BR": "Conformidade laboral para empresas"
 						},
 						"description": {
-							"pt": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa.",
-							"en": "Analysis of employment matters and identification of relevant legal risks for the business."
+							"pt-PT": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa.",
+							"en": "Analysis of employment matters and identification of relevant legal risks for the business.",
+							"pt-BR": "Análise de questões laborais e identificação de riscos jurídicos relevantes para a atividade da empresa."
 						}
 					}
 				],
 				"notice": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386",
+					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
 				},
 				"cta": {
-					"pt": "Solicitar atendimento em Direito do Trabalho brasileiro",
-					"en": "Request assistance in Brazilian employment law"
+					"pt-PT": "Solicitar atendimento em Direito do Trabalho brasileiro",
+					"en": "Request assistance in Brazilian employment law",
+					"pt-BR": "Solicitar atendimento em Direito do Trabalho brasileiro"
 				},
 				"routeKey": "contact",
 				"scope": "BR_LEGAL"
@@ -219,26 +260,31 @@
 			{
 				"anchor": "direitos-humanos",
 				"title": {
-					"pt": "Direitos Humanos",
-					"en": "Human Rights"
+					"pt-PT": "Direitos Humanos",
+					"en": "Human Rights",
+					"pt-BR": "Direitos Humanos"
 				},
 				"description": {
-					"pt": "Analiso questões relacionadas com direitos fundamentais, discriminação e acesso a serviços ou garantias previstas no Direito brasileiro. O primeiro passo é compreender a situação e identificar os instrumentos jurídicos que podem ser utilizados.",
-					"en": "In Brazil, legal practice and consulting under Brazilian law, where the case falls within the experience and scope of the service actually accepted."
+					"pt-PT": "Analiso questões relacionadas com direitos fundamentais, discriminação e acesso a serviços ou garantias previstas no Direito brasileiro. O primeiro passo é compreender a situação e identificar os instrumentos jurídicos que podem ser utilizados.",
+					"en": "In Brazil, legal practice and consulting under Brazilian law, where the case falls within the experience and scope of the service actually accepted.",
+					"pt-BR": "Analiso questões relacionadas com direitos fundamentais, discriminação e acesso a serviços ou garantias previstas no Direito brasileiro. O primeiro passo é compreender a situação e identificar os instrumentos jurídicos que podem ser utilizados."
 				},
 				"paragraphs": [
 					{
-						"pt": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas.",
-						"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices."
+						"pt-PT": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas.",
+						"en": "I also carry out research, prepare reports and develop projects aimed at protecting vulnerable groups, tackling discrimination and strengthening inclusive institutional practices.",
+						"pt-BR": "Desenvolvo também estudos, pareceres e projetos voltados à proteção de grupos vulnerabilizados, ao enfrentamento da discriminação e ao fortalecimento de práticas institucionais inclusivas."
 					}
 				],
 				"notice": {
-					"pt": "BRASIL · OAB/SP n.º 330.386",
-					"en": "BRAZIL · OAB/SP no. 330.386"
+					"pt-PT": "BRASIL · OAB/SP n.º 330.386",
+					"en": "BRAZIL · OAB/SP no. 330.386",
+					"pt-BR": "BRASIL · OAB/SP n.º 330.386"
 				},
 				"cta": {
-					"pt": "Apresentar uma questão de Direito brasileiro",
-					"en": "Describe a matter of Brazilian law"
+					"pt-PT": "Apresentar uma questão de Direito brasileiro",
+					"en": "Describe a matter of Brazilian law",
+					"pt-BR": "Apresentar uma questão de Direito brasileiro"
 				},
 				"routeKey": "contact",
 				"scope": "BR_LEGAL"

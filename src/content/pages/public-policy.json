@@ -2,21 +2,25 @@
 	"_template": "consultingService",
 	"routeKey": "public-policy",
 	"title": {
-		"pt": "Políticas Públicas e Governança",
-		"en": "Public Policy and Governance"
+		"pt-PT": "Políticas Públicas e Governança",
+		"en": "Public Policy and Governance",
+		"pt-BR": "Políticas Públicas e Governança"
 	},
 	"summary": {
-		"pt": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
-		"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
+		"pt-PT": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
+		"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies.",
+		"pt-BR": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas."
 	},
 	"seo": {
 		"title": {
-			"pt": "Políticas Públicas e Governança · Municípios, ONGs e associações",
-			"en": "Public Policy and Governance · Municipalities, NGOs, and Associations - Ana Trevizan"
+			"pt-PT": "Políticas Públicas e Governança · Municípios, ONGs e associações",
+			"en": "Public Policy and Governance · Municipalities, NGOs, and Associations - Ana Trevizan",
+			"pt-BR": "Políticas Públicas e Governança · Municípios, ONGs e associações"
 		},
 		"description": {
-			"pt": "Apoio técnico em políticas públicas, governança ambiental e sustentabilidade para municípios, organizações e instituições no Brasil e noutros contextos internacionais.",
-			"en": "Public policy and environmental governance consulting: legislative draft analysis and technical support for municipalities, NGOs, associations, and public institutions."
+			"pt-PT": "Apoio técnico em políticas públicas, governança ambiental e sustentabilidade para municípios, organizações e instituições no Brasil e noutros contextos internacionais.",
+			"en": "Public policy and environmental governance consulting: legislative draft analysis and technical support for municipalities, NGOs, associations, and public institutions.",
+			"pt-BR": "Apoio técnico em políticas públicas, governança ambiental e sustentabilidade para municípios, organizações e instituições no Brasil e noutros contextos internacionais."
 		},
 		"noindex": true
 	},
@@ -24,162 +28,195 @@
 		"foreground": {
 			"image": "/politicas-publicas-hero.webp",
 			"alt": {
-				"pt": "Parlamento Europeu.",
-				"en": "European Parliament building."
+				"pt-PT": "Parlamento Europeu.",
+				"en": "European Parliament building.",
+				"pt-BR": "Parlamento Europeu."
 			},
 			"decorative": false
 		}
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Brasil · União Europeia",
-			"en": "Brazil · European Union"
+			"pt-PT": "Brasil · União Europeia",
+			"en": "Brazil · European Union",
+			"pt-BR": "Brasil · União Europeia"
 		},
 		"subtitle": {
-			"pt": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
-			"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies."
+			"pt-PT": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas.",
+			"en": "Good laws are not enough. They must work in practice. Technical support for those shaping and implementing environmental and climate policies.",
+			"pt-BR": "Apoio técnico a municípios, organizações e instituições que desenham, implementam e avaliam políticas ambientais e climáticas."
 		},
 		"introHeading": {
-			"pt": "Da norma à implementação",
-			"en": "From regulation to implementation"
+			"pt-PT": "Da norma à implementação",
+			"en": "From regulation to implementation",
+			"pt-BR": "Da norma à implementação"
 		},
 		"introImage": {
 			"image": "/politicas-publicas-e-governanca-intro.webp",
 			"alt": {
-				"pt": "Ana Flávia na Amazónia.",
-				"en": "Ana Flávia in the Amazon."
+				"pt-PT": "Ana Flávia na Amazónia.",
+				"en": "Ana Flávia in the Amazon.",
+				"pt-BR": "Ana Flávia na Amazónia."
 			},
 			"decorative": false
 		},
 		"introParagraphs": {
-			"pt": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
-			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent - it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organisations, and institutions seeking solid technical backing to decide and act."
+			"pt-PT": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir.",
+			"en": "Having served in public administration at SEMA-MT, I saw firsthand why some policies deliver results while others remain on paper. The difference rarely lies in intent - it lies in legal design and governance.\n\nIt is this knowledge, combined with academic research, that I offer to municipalities, organisations, and institutions seeking solid technical backing to decide and act.",
+			"pt-BR": "Passei pela administração pública, na SEMA-MT, e vi de perto por que algumas políticas alcançam resultados e outras ficam no papel. A diferença raramente está na intenção - está no desenho jurídico e na governança.\n\nÉ esse conhecimento, aliado à investigação académica, que coloco ao serviço de municípios, organizações e instituições que precisam de fundamentação técnica para decidir e agir."
 		},
 		"servicesHeading": {
-			"pt": "Como posso ajudar",
-			"en": "How I can help"
+			"pt-PT": "Como posso ajudar",
+			"en": "How I can help",
+			"pt-BR": "Como posso ajudar"
 		},
 		"servicesSubtitle": {
-			"pt": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade.",
-			"en": "Technical support and strategic advisory in public policy and governance."
+			"pt-PT": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade.",
+			"en": "Technical support and strategic advisory in public policy and governance.",
+			"pt-BR": "Investigação, análise e apoio técnico para políticas ambientais, climáticas e de sustentabilidade."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Análise de políticas e propostas",
-					"en": "Policy and proposal analysis"
+					"pt-PT": "Análise de políticas e propostas",
+					"en": "Policy and proposal analysis",
+					"pt-BR": "Análise de políticas e propostas"
 				},
 				"items": [
 					{
-						"pt": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados.",
-						"en": "I analyse regulatory impacts, legislative improvement and comparative studies."
+						"pt-PT": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados.",
+						"en": "I analyse regulatory impacts, legislative improvement and comparative studies.",
+						"pt-BR": "Analiso impactos regulatórios, aperfeiçoamento legislativo e estudos comparados."
 					},
 					{
-						"pt": "Impactos regulatórios",
-						"en": "Regulatory impacts"
+						"pt-PT": "Impactos regulatórios",
+						"en": "Regulatory impacts",
+						"pt-BR": "Impactos regulatórios"
 					},
 					{
-						"pt": "Aperfeiçoamento legislativo",
-						"en": "Legislative improvement"
+						"pt-PT": "Aperfeiçoamento legislativo",
+						"en": "Legislative improvement",
+						"pt-BR": "Aperfeiçoamento legislativo"
 					},
 					{
-						"pt": "Estudos comparados",
-						"en": "Comparative studies"
+						"pt-PT": "Estudos comparados",
+						"en": "Comparative studies",
+						"pt-BR": "Estudos comparados"
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Políticas locais e clima",
-					"en": "Local policy and climate"
+					"pt-PT": "Políticas locais e clima",
+					"en": "Local policy and climate",
+					"pt-BR": "Políticas locais e clima"
 				},
 				"items": [
 					{
-						"pt": "Apoio a municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
-						"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators."
+						"pt-PT": "Apoio a municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados.",
+						"en": "I support municipalities and technical teams with adaptation plans, municipal projects and outcome indicators.",
+						"pt-BR": "Apoio a municípios e equipas técnicas na elaboração de planos de adaptação, projetos municipais e indicadores de resultados."
 					},
 					{
-						"pt": "Planos de adaptação",
-						"en": "Adaptation plans"
+						"pt-PT": "Planos de adaptação",
+						"en": "Adaptation plans",
+						"pt-BR": "Planos de adaptação"
 					},
 					{
-						"pt": "Projetos municipais",
-						"en": "Municipal projects"
+						"pt-PT": "Projetos municipais",
+						"en": "Municipal projects",
+						"pt-BR": "Projetos municipais"
 					},
 					{
-						"pt": "Indicadores de resultados",
-						"en": "Outcome indicators"
+						"pt-PT": "Indicadores de resultados",
+						"en": "Outcome indicators",
+						"pt-BR": "Indicadores de resultados"
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Organizações e direitos humanos",
-					"en": "Organisations and human rights"
+					"pt-PT": "Organizações e direitos humanos",
+					"en": "Organisations and human rights",
+					"pt-BR": "Organizações e direitos humanos"
 				},
 				"items": [
 					{
-						"pt": "Apoio a projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos.",
-						"en": "I support projects and public advocacy, technical studies and briefs, and the assessment of results and impacts."
+						"pt-PT": "Apoio a projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos.",
+						"en": "I support projects and public advocacy, technical studies and briefs, and the assessment of results and impacts.",
+						"pt-BR": "Apoio a projetos e incidência pública, estudos e notas técnicas, e avaliação de resultados e impactos."
 					},
 					{
-						"pt": "Projetos e incidência pública",
-						"en": "Projects and public advocacy"
+						"pt-PT": "Projetos e incidência pública",
+						"en": "Projects and public advocacy",
+						"pt-BR": "Projetos e incidência pública"
 					},
 					{
-						"pt": "Estudos e notas técnicas",
-						"en": "Technical studies and briefs"
+						"pt-PT": "Estudos e notas técnicas",
+						"en": "Technical studies and briefs",
+						"pt-BR": "Estudos e notas técnicas"
 					},
 					{
-						"pt": "Avaliação de resultados e impactos",
-						"en": "Assessment of results and impacts"
+						"pt-PT": "Avaliação de resultados e impactos",
+						"en": "Assessment of results and impacts",
+						"pt-BR": "Avaliação de resultados e impactos"
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Governança e sustentabilidade",
-					"en": "Governance and sustainability"
+					"pt-PT": "Governança e sustentabilidade",
+					"en": "Governance and sustainability",
+					"pt-BR": "Governança e sustentabilidade"
 				},
 				"items": [
 					{
-						"pt": "Apoio à definição de responsabilidades e decisões, participação e diálogo, transparência e prestação de contas.",
-						"en": "I support responsibility and decision-making, participation and dialogue, transparency and accountability."
+						"pt-PT": "Apoio à definição de responsabilidades e decisões, participação e diálogo, transparência e prestação de contas.",
+						"en": "I support responsibility and decision-making, participation and dialogue, transparency and accountability.",
+						"pt-BR": "Apoio à definição de responsabilidades e decisões, participação e diálogo, transparência e prestação de contas."
 					},
 					{
-						"pt": "Responsabilidades e decisão",
-						"en": "Responsibility and decision-making"
+						"pt-PT": "Responsabilidades e decisão",
+						"en": "Responsibility and decision-making",
+						"pt-BR": "Responsabilidades e decisão"
 					},
 					{
-						"pt": "Participação e diálogo",
-						"en": "Participation and dialogue"
+						"pt-PT": "Participação e diálogo",
+						"en": "Participation and dialogue",
+						"pt-BR": "Participação e diálogo"
 					},
 					{
-						"pt": "Transparência e prestação de contas",
-						"en": "Transparency and accountability"
+						"pt-PT": "Transparência e prestação de contas",
+						"en": "Transparency and accountability",
+						"pt-BR": "Transparência e prestação de contas"
 					}
 				]
 			}
 		],
 		"stepsHeading": {
-			"pt": "",
-			"en": ""
+			"pt-PT": "",
+			"en": "",
+			"pt-BR": ""
 		},
 		"stepsSubtitle": {
-			"pt": "",
-			"en": ""
+			"pt-PT": "",
+			"en": "",
+			"pt-BR": ""
 		},
 		"note": {
-			"pt": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal.",
-			"en": "Technical advisory and consulting practice. Does not include litigation or court representation."
+			"pt-PT": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal.",
+			"en": "Technical advisory and consulting practice. Does not include litigation or court representation.",
+			"pt-BR": "O trabalho nesta área consiste em investigação, análise e apoio técnico a políticas públicas, governança e sustentabilidade. Quando houver prestação jurídica, ela será limitada ao Direito brasileiro. Não presto consulta jurídica nem pratico atos reservados em Portugal."
 		},
 		"ctaHeading": {
-			"pt": "Tem uma política ou projeto para desenvolver?",
-			"en": "Do you need technical backing for a public decision?"
+			"pt-PT": "Tem uma política ou projeto para desenvolver?",
+			"en": "Do you need technical backing for a public decision?",
+			"pt-BR": "Tem uma política ou projeto para desenvolver?"
 		},
 		"ctaText": {
-			"pt": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil.",
-			"en": "Schedule an initial call to evaluate the scope of support your organisation requires."
+			"pt-PT": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil.",
+			"en": "Schedule an initial call to evaluate the scope of support your organisation requires.",
+			"pt-BR": "Conte-me o que está a preparar e vemos que tipo de apoio técnico pode ser útil."
 		}
 	}
 }

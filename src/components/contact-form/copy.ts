@@ -1,4 +1,4 @@
-export type Locale = "pt-PT" | "en";
+export type Locale = "pt-PT" | "pt-BR" | "en";
 export type Channel = "email" | "whatsapp";
 
 export const contactFormCopy = {
@@ -61,6 +61,67 @@ export const contactFormCopy = {
 		copyInstructions:
 			"Se o WhatsApp não abrir, copie manualmente o número e a mensagem abaixo.",
 		externalHint: "abre num novo separador",
+		contactFormLegend: "Dados do pedido",
+	},
+	"pt-BR": {
+		scope: "Escopo do pedido",
+		legend: "Como você prefere enviar seu pedido?",
+		channelInstruction:
+			"A escolha do canal altera os dados necessários e a forma de envio.",
+		emailSelected:
+			"Envio pelo formulário selecionado. O endereço de e-mail é obrigatório.",
+		whatsappSelected:
+			"Envio pelo WhatsApp selecionado. Não é necessário informar um e-mail.",
+		emailChannel: "Enviar pelo formulário",
+		emailHelp: "Seu pedido será enviado por e-mail e registrado com segurança.",
+		whatsappChannel: "Enviar pelo WhatsApp",
+		whatsappHelp:
+			"Abriremos o WhatsApp com sua mensagem pronta para revisar e enviar.",
+		name: "Nome",
+		email: "E-mail",
+		whatsapp: "WhatsApp (opcional)",
+		requestType: "Tipo de pedido",
+		country: "País de residência",
+		optional: "opcional",
+		message: "Mensagem",
+		messageHint:
+			"Não inclua informações particularmente sensíveis que não sejam necessárias para este primeiro contato.",
+		messagePlaceholder: "Conte brevemente o que aconteceu e o que você procura",
+		privacyNotice:
+			"Usarei os dados para receber e responder ao seu pedido. Consulte a",
+		privacyExternal:
+			"Ao continuar, você sairá deste site para o WhatsApp, que tratará os dados segundo suas próprias práticas.",
+		privacy: "Política de Privacidade",
+		submit: "Enviar pedido",
+		sending: "Enviando…",
+		openWhatsapp: "Continuar pelo WhatsApp",
+		whatsappNotice:
+			"A mensagem só será enviada depois que você confirmar no WhatsApp.",
+		success:
+			"Mensagem enviada com sucesso. Você receberá uma confirmação por e-mail.",
+		error:
+			"Não foi possível enviar a mensagem. Os dados foram mantidos para que você possa tentar novamente.",
+		turnstileError:
+			"Não foi possível concluir a verificação de segurança. Tente novamente.",
+		configurationError:
+			"O envio por e-mail ainda não está configurado. Você pode entrar em contato pelo WhatsApp.",
+		choose: "Selecione uma opção",
+		required: "Este campo é obrigatório.",
+		invalidEmail: "Informe um endereço de e-mail válido.",
+		shortName: "Informe pelo menos 2 caracteres.",
+		shortMessage: "Informe pelo menos 20 caracteres.",
+		formLabel: "Pedido de contato",
+		errorSummary: "Corrija os campos indicados",
+		fallbackHeading: "Continuar pelo WhatsApp",
+		fallbackIntro:
+			"O envio pelo formulário está indisponível. Revise a mensagem antes de transferi-la para o WhatsApp.",
+		fallbackNote: "Observação: o formulário do site estava indisponível.",
+		fallbackPreview: "Mensagem para o WhatsApp",
+		fallbackTooLong: "Reduza a mensagem antes de continuar pelo WhatsApp.",
+		copyFallback: "Copiar número e mensagem",
+		copyInstructions:
+			"Se o WhatsApp não abrir, copie manualmente o número e a mensagem abaixo.",
+		externalHint: "abre em uma nova aba",
 		contactFormLegend: "Dados do pedido",
 	},
 	en: {

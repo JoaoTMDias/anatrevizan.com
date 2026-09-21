@@ -1,77 +1,93 @@
 {
 	"routeKey": "contact",
 	"title": {
-		"pt": "Vamos falar",
-		"en": "Let's talk"
+		"pt-PT": "Vamos falar",
+		"en": "Let's talk",
+		"pt-BR": "Vamos falar"
 	},
 	"summary": {
-		"pt": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
-		"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
+		"pt-PT": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
+		"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly.",
+		"pt-BR": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar."
 	},
 	"seo": {
 		"title": {
-			"pt": "Vamos falar",
-			"en": "Let us understand the scope of your request"
+			"pt-PT": "Vamos falar",
+			"en": "Let us understand the scope of your request",
+			"pt-BR": "Vamos falar"
 		},
 		"description": {
-			"pt": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
-			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
+			"pt-PT": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar.",
+			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly.",
+			"pt-BR": "Conte-me o que procura e em que ponto está. A partir daí, vemos juntos qual é a melhor forma de ajudar."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/contact-hero.webp",
 			"alt": {
-				"pt": "Ana, usando o telemóvel para contactar com os seus clientes.",
-				"en": "Ana, using her cell phone to contact her clients."
+				"pt-PT": "Ana, usando o telemóvel para contactar com os seus clientes.",
+				"en": "Ana, using her cell phone to contact her clients.",
+				"pt-BR": "Ana, usando o telemóvel para contactar com os seus clientes."
 			},
 			"decorative": false
 		}
 	},
 	"contactPage": {
 		"tag": {
-			"pt": "Contacto",
-			"en": "Contact"
+			"pt-PT": "Contacto",
+			"en": "Contact",
+			"pt-BR": "Contacto"
 		},
 		"subtitle": {
-			"pt": "Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal.",
-			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly."
+			"pt-PT": "Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal.",
+			"en": "Select the country and the nature of your enquiry. This choice allows legal enquiries relating to Brazil and requests for administrative support in Portugal to be directed correctly.",
+			"pt-BR": "Selecione o país e a natureza do assunto. Esta escolha permite encaminhar corretamente pedidos jurídicos relativos ao Brasil e pedidos de apoio administrativo em Portugal."
 		},
 		"bookingHeading": {
-			"pt": "Agende uma conversa",
-			"en": "Book a call"
+			"pt-PT": "Agende uma conversa",
+			"en": "Book a call",
+			"pt-BR": "Agende uma conversa"
 		},
 		"bookingIntro": {
-			"pt": "Se preferir falar primeiro, pode marcar uma conversa inicial. Conte-me brevemente o que procura e combinamos o próximo passo.",
-			"en": "The initial conversation identifies the scope and presents the terms of engagement. For the Portuguese scope, it does not include legal advice or legal assessment."
+			"pt-PT": "Se preferir falar primeiro, pode marcar uma conversa inicial. Conte-me brevemente o que procura e combinamos o próximo passo.",
+			"en": "The initial conversation identifies the scope and presents the terms of engagement. For the Portuguese scope, it does not include legal advice or legal assessment.",
+			"pt-BR": "Se preferir falar primeiro, pode marcar uma conversa inicial. Conte-me brevemente o que procura e combinamos o próximo passo."
 		},
 		"duration": {
-			"pt": "Conversa inicial",
-			"en": "Initial conversation"
+			"pt-PT": "Conversa inicial",
+			"en": "Initial conversation",
+			"pt-BR": "Conversa inicial"
 		},
 		"validFor": {
-			"pt": "Conversa inicial",
-			"en": "Identifying the scope of the enquiry"
+			"pt-PT": "Conversa inicial",
+			"en": "Identifying the scope of the enquiry",
+			"pt-BR": "Conversa inicial"
 		},
 		"timezone": {
-			"pt": "Fuso de Portugal",
-			"en": "Portugal Time Zone"
+			"pt-PT": "Fuso de Portugal",
+			"en": "Portugal Time Zone",
+			"pt-BR": "Fuso de Portugal"
 		},
 		"timezoneNote": {
-			"pt": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
-			"en": "Note: Local time in Brazil will be a few hours behind Portugal time."
+			"pt-PT": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal.",
+			"en": "Note: Local time in Brazil will be a few hours behind Portugal time.",
+			"pt-BR": "Nota: no Brasil, o horário estará algumas horas atrás do horário de Portugal."
 		},
 		"otherMethodsHeading": {
-			"pt": "Outras formas de contacto",
-			"en": "Other ways to connect"
+			"pt-PT": "Outras formas de contacto",
+			"en": "Other ways to connect",
+			"pt-BR": "Outras formas de contacto"
 		},
 		"countriesLabel": {
-			"pt": "🇵🇹 · 🇧🇷",
-			"en": "🇵🇹 · 🇧🇷"
+			"pt-PT": "🇵🇹 · 🇧🇷",
+			"en": "🇵🇹 · 🇧🇷",
+			"pt-BR": "🇵🇹 · 🇧🇷"
 		},
 		"languagesLabel": {
-			"pt": "Atendimento em Português, Inglês e Espanhol",
-			"en": "Available in Portuguese, English and Spanish"
+			"pt-PT": "Atendimento em Português, Inglês e Espanhol",
+			"en": "Available in Portuguese, English and Spanish",
+			"pt-BR": "Atendimento em Português, Inglês e Espanhol"
 		}
 	},
 	"_template": "contact"

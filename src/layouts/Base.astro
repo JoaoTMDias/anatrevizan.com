@@ -22,7 +22,7 @@ const config = props.config ?? null;
 ---
 
 <!doctype html>
-<html lang={props.locale === "en" ? "en" : "pt-PT"}>
+<html lang={props.locale}>
   <head>
     <script is:inline>
       (() => {
@@ -51,7 +51,7 @@ const config = props.config ?? null;
         config={config}
         locale={props.locale}
         routeKey={props.routeKey}
-        languageAvailable={props.availableLocales?.includes(props.locale === "en" ? "pt-PT" : "en")}
+        availableLocales={props.availableLocales}
       /></TinaIsland
     >
     <slot />

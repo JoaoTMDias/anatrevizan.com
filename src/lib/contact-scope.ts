@@ -21,6 +21,12 @@ export const scopeLabels = {
 		ACADEMIC: "Academia — mentoring, research, talk or training",
 		OTHER: "Other professional request",
 	},
+	"pt-BR": {
+		BR_LEGAL: "Brasil — assunto jurídico de Direito brasileiro",
+		PT_ADMIN: "Portugal — apoio administrativo ou documental",
+		ACADEMIC: "Academia — mentoria, pesquisa, palestra ou formação",
+		OTHER: "Outro pedido profissional",
+	},
 };
 export const scopeSubmitLabels = {
 	"pt-PT": {
@@ -34,6 +40,12 @@ export const scopeSubmitLabels = {
 		PT_ADMIN: "Send an administrative support request",
 		ACADEMIC: "Send an academic enquiry",
 		OTHER: "Send a professional enquiry",
+	},
+	"pt-BR": {
+		BR_LEGAL: "Enviar pedido de contato jurídico",
+		PT_ADMIN: "Enviar pedido de apoio administrativo",
+		ACADEMIC: "Enviar pedido acadêmico",
+		OTHER: "Enviar pedido profissional",
 	},
 };
 export const scopeConfirmations = {
@@ -56,6 +68,15 @@ export const scopeConfirmations = {
 			"I received your academic, research, speaking or training enquiry.",
 		OTHER:
 			"I received your professional enquiry. The next contact will clarify its scope.",
+	},
+	"pt-BR": {
+		BR_LEGAL:
+			"Recebi seu pedido relativo ao Direito brasileiro. Atuação no Brasil — OAB/SP nº 330.386.",
+		PT_ADMIN:
+			"Recebi seu pedido de apoio administrativo ou documental em Portugal. Este contato não inclui consulta ou avaliação jurídica, representação ou mandato.",
+		ACADEMIC: "Recebi seu pedido acadêmico, de pesquisa, palestra ou formação.",
+		OTHER:
+			"Recebi seu pedido profissional. O próximo contato permitirá esclarecer o escopo.",
 	},
 };
 export function requestMatchesScope(

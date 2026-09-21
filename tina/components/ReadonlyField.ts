@@ -7,7 +7,8 @@ interface ReadonlyFieldProps {
 
 export function ReadonlyField({ field, input }: ReadonlyFieldProps) {
 	const value = input.value;
-	const display = value === undefined || value === null || value === "" ? "—" : String(value);
+	const display =
+		value === undefined || value === null || value === "" ? "—" : String(value);
 	const label =
 		typeof field.label === "string" ? field.label : "Informação ORCID";
 

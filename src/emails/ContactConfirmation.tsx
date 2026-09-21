@@ -19,7 +19,7 @@ export interface ContactConfirmationProps {
 	email: string;
 	message: string;
 	requestId: string;
-	locale: "pt-PT" | "en";
+	locale: "pt-PT" | "pt-BR" | "en";
 	scope?: ContactScope;
 	logoUrl?: string;
 	signatureUrl?: string;
@@ -34,6 +34,19 @@ const copy = {
 		message: "A sua mensagem",
 		reference: "Referência",
 		details: "O seu pedido",
+		name: "Nome",
+		website: "Visitar o site",
+		privacy: "Privacidade",
+		thanks: "Obrigada,",
+	},
+	"pt-BR": {
+		title: "Recebi sua mensagem",
+		greeting: "Olá",
+		confirmation:
+			"Sua mensagem foi recebida com sucesso. Entrarei em contato em breve.",
+		message: "Sua mensagem",
+		reference: "Referência",
+		details: "Seu pedido",
 		name: "Nome",
 		website: "Visitar o site",
 		privacy: "Privacidade",
@@ -72,7 +85,7 @@ export default function ContactConfirmation({
 	logoUrl = "https://anatrevizan.com/emails/logo.png",
 	signatureUrl = "https://anatrevizan.com/signature.png",
 }: ContactConfirmationProps) {
-	const text = copy[locale];
+	const text = copy[locale] ?? copy["pt-PT"];
 	const siteUrl =
 		locale === "en" ? "https://anatrevizan.com/en" : "https://anatrevizan.com";
 	const divider: React.CSSProperties = {

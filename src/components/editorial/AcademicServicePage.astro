@@ -17,7 +17,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const service = data.academicService as AcademicServiceContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const icons =
   data.routeKey === "training"
     ? ["leaf", "chart-bar", "world", "shield-check", "flag", "plane-departure"]

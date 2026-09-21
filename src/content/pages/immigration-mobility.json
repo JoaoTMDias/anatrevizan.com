@@ -1,202 +1,241 @@
 {
 	"routeKey": "immigration-mobility",
 	"title": {
-		"pt": "Migração e Mobilidade",
-		"en": "Immigration and Mobility"
+		"pt-PT": "Migração e Mobilidade",
+		"en": "Immigration and Mobility",
+		"pt-BR": "Migração e Mobilidade"
 	},
 	"summary": {
-		"pt": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos.",
-		"en": "Moving to a new country involves planning, uncertainties and new challenges. I’ll guide you through every administrative step of your move to Portugal, taking your background and your goals into account."
+		"pt-PT": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos.",
+		"en": "Moving to a new country involves planning, uncertainties and new challenges. I’ll guide you through every administrative step of your move to Portugal, taking your background and your goals into account.",
+		"pt-BR": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos."
 	},
 	"seo": {
 		"title": {
-			"pt": "Migração e Mobilidade · Apoio administrativo para viver em Portugal",
-			"en": "Immigration and Mobility · Administrative support for living in Portugal"
+			"pt-PT": "Migração e Mobilidade · Apoio administrativo para viver em Portugal",
+			"en": "Immigration and Mobility · Administrative support for living in Portugal",
+			"pt-BR": "Migração e Mobilidade · Apoio administrativo para viver em Portugal"
 		},
 		"description": {
-			"pt": "Organização documental e apoio prático em procedimentos administrativos relacionados com a mudança para Portugal.",
-			"en": "Document organisation and practical support with administrative procedures related to relocating to Portugal."
+			"pt-PT": "Organização documental e apoio prático em procedimentos administrativos relacionados com a mudança para Portugal.",
+			"en": "Document organisation and practical support with administrative procedures related to relocating to Portugal.",
+			"pt-BR": "Organização documental e apoio prático em procedimentos administrativos relacionados com a mudança para Portugal."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/migracao-e-mobilidade-hero.webp",
 			"alt": {
-				"pt": "Uma vista superior com uma bússola em cima de uma agenda e um documento com o carimbo «Visa».",
-				"en": "Top-down view of a compass resting on a planner next to a paper stamped 'Visa'."
+				"pt-PT": "Uma vista superior com uma bússola em cima de uma agenda e um documento com o carimbo «Visa».",
+				"en": "Top-down view of a compass resting on a planner next to a paper stamped 'Visa'.",
+				"pt-BR": "Uma vista superior com uma bússola em cima de uma agenda e um documento com o carimbo «Visa»."
 			},
 			"decorative": false
 		}
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Portugal",
-			"en": "Portugal"
+			"pt-PT": "Portugal",
+			"en": "Portugal",
+			"pt-BR": "Portugal"
 		},
 		"subtitle": {
-			"pt": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos.",
-			"en": "Moving to a new country involves planning, uncertainties and new challenges. I’ll guide you through every administrative step of your move to Portugal, taking your background and your goals into account."
+			"pt-PT": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos.",
+			"en": "Moving to a new country involves planning, uncertainties and new challenges. I’ll guide you through every administrative step of your move to Portugal, taking your background and your goals into account.",
+			"pt-BR": "Mudar de país envolve planos, dúvidas e novos desafios. Acompanho cada etapa administrativa da sua mudança para Portugal, com atenção à sua história e aos seus objetivos."
 		},
 		"introHeading": {
-			"pt": "Entendo o que está em jogo",
-			"en": "I understand what is at stake"
+			"pt-PT": "Entendo o que está em jogo",
+			"en": "I understand what is at stake",
+			"pt-BR": "Entendo o que está em jogo"
 		},
 		"introImage": {
 			"image": "/migracao-e-mobilidade-intro.webp",
 			"alt": {
-				"pt": "Ana Flávia a segurar dois passaportes na mão: um de Portugal e outro do Brasil.",
-				"en": "Ana Flávia holding two passports in her hand: one from Portugal and one from Brazil."
+				"pt-PT": "Ana Flávia a segurar dois passaportes na mão: um de Portugal e outro do Brasil.",
+				"en": "Ana Flávia holding two passports in her hand: one from Portugal and one from Brazil.",
+				"pt-BR": "Ana Flávia a segurar dois passaportes na mão: um de Portugal e outro do Brasil."
 			},
 			"decorative": false
 		},
 		"introParagraphs": {
-			"pt": "Vistos, NIF, Segurança Social, número de utente, reconhecimento do diploma. Cada sigla esconde um processo, um prazo e o receio de dar um passo em falso que atrase tudo o resto.\n\nVivo em Portugal e conheço o outro lado, o de quem chega. Ajudo a organizar documentos, a utilizar plataformas e a acompanhar etapas administrativas, para tornar esta parte da mudança mais clara e mais fácil de gerir.\n",
-			"en": "Visas, NIF, Social Security, healthcare registration, degree recognition. Behind every acronym lies a procedure, a deadline, and the fear of making a misstep that delays everything else.\n\nLiving in Portugal, I know the newcomer's perspective firsthand. I provide clear legal guidance and close support, ensuring every step of your relocation is an informed, secure decision rather than a leap into the unknown.\n"
+			"pt-PT": "Vistos, NIF, Segurança Social, número de utente, reconhecimento do diploma. Cada sigla esconde um processo, um prazo e o receio de dar um passo em falso que atrase tudo o resto.\n\nVivo em Portugal e conheço o outro lado, o de quem chega. Ajudo a organizar documentos, a utilizar plataformas e a acompanhar etapas administrativas, para tornar esta parte da mudança mais clara e mais fácil de gerir.\n",
+			"en": "Visas, NIF, Social Security, healthcare registration, degree recognition. Behind every acronym lies a procedure, a deadline, and the fear of making a misstep that delays everything else.\n\nLiving in Portugal, I know the newcomer's perspective firsthand. I provide clear legal guidance and close support, ensuring every step of your relocation is an informed, secure decision rather than a leap into the unknown.\n",
+			"pt-BR": "Vistos, NIF, Segurança Social, número de utente, reconhecimento do diploma. Cada sigla esconde um processo, um prazo e o receio de dar um passo em falso que atrase tudo o resto.\n\nVivo em Portugal e conheço o outro lado, o de quem chega. Ajudo a organizar documentos, a utilizar plataformas e a acompanhar etapas administrativas, para tornar esta parte da mudança mais clara e mais fácil de gerir.\n"
 		},
 		"servicesHeading": {
-			"pt": "Como posso ajudar",
-			"en": "How I can help"
+			"pt-PT": "Como posso ajudar",
+			"en": "How I can help",
+			"pt-BR": "Como posso ajudar"
 		},
 		"servicesSubtitle": {
-			"pt": "Da preparação da mudança à organização das etapas administrativas em Portugal.",
-			"en": "From preparing the move to organizing administrative steps in Portugal."
+			"pt-PT": "Da preparação da mudança à organização das etapas administrativas em Portugal.",
+			"en": "From preparing the move to organizing administrative steps in Portugal.",
+			"pt-BR": "Da preparação da mudança à organização das etapas administrativas em Portugal."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Organização da mudança",
-					"en": "Relocation Planning"
+					"pt-PT": "Organização da mudança",
+					"en": "Relocation Planning",
+					"pt-BR": "Organização da mudança"
 				},
 				"description": {
-					"pt": "Juntamos documentos, datas e tarefas para que saiba o que tratar em cada momento.",
-					"en": "A tailored immigration strategy designed for your specific situation, outlining the route, required documents, and timelines clearly from day one."
+					"pt-PT": "Juntamos documentos, datas e tarefas para que saiba o que tratar em cada momento.",
+					"en": "A tailored immigration strategy designed for your specific situation, outlining the route, required documents, and timelines clearly from day one.",
+					"pt-BR": "Juntamos documentos, datas e tarefas para que saiba o que tratar em cada momento."
 				}
 			},
 			{
 				"title": {
-					"pt": "Vistos e documentos",
-					"en": "Visas and Residency"
+					"pt-PT": "Vistos e documentos",
+					"en": "Visas and Residency",
+					"pt-BR": "Vistos e documentos"
 				},
 				"description": {
-					"pt": "A partir da lista oficial do seu pedido, ajudamos a reunir a documentação e a preencher os formulários com os seus dados.",
-					"en": "Guidance on selecting the appropriate visa and residency permit options aligned with your profile and goals."
+					"pt-PT": "A partir da lista oficial do seu pedido, ajudamos a reunir a documentação e a preencher os formulários com os seus dados.",
+					"en": "Guidance on selecting the appropriate visa and residency permit options aligned with your profile and goals.",
+					"pt-BR": "A partir da lista oficial do seu pedido, ajudamos a reunir a documentação e a preencher os formulários com os seus dados."
 				}
 			},
 			{
 				"title": {
-					"pt": "Organização de documentos",
-					"en": "Document Preparation"
+					"pt-PT": "Organização de documentos",
+					"en": "Document Preparation",
+					"pt-BR": "Organização de documentos"
 				},
 				"description": {
-					"pt": "Verificação da documentação exigida, identificação de pendências e preparação do processo para apresentação à entidade competente.",
-					"en": "Verification of the required documentation, identification of outstanding issues and preparation of the application for submission to the relevant authority."
+					"pt-PT": "Verificação da documentação exigida, identificação de pendências e preparação do processo para apresentação à entidade competente.",
+					"en": "Verification of the required documentation, identification of outstanding issues and preparation of the application for submission to the relevant authority.",
+					"pt-BR": "Verificação da documentação exigida, identificação de pendências e preparação do processo para apresentação à entidade competente."
 				}
 			},
 			{
 				"title": {
-					"pt": "NIF, Seg. Social e nº de utente",
-					"en": "NIF, Social Security, and Healthcare Registration"
+					"pt-PT": "NIF, Seg. Social e nº de utente",
+					"en": "NIF, Social Security, and Healthcare Registration",
+					"pt-BR": "NIF, Seg. Social e nº de utente"
 				},
 				"description": {
-					"pt": "Apoio na obtenção dos registos essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal.",
-					"en": "Assistance with obtaining essential registrations needed to live, work, and access public services in Portugal."
+					"pt-PT": "Apoio na obtenção dos registos essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal.",
+					"en": "Assistance with obtaining essential registrations needed to live, work, and access public services in Portugal.",
+					"pt-BR": "Apoio na obtenção dos registos essenciais para viver, trabalhar, estudar e aceder aos serviços em Portugal."
 				}
 			},
 			{
 				"title": {
-					"pt": "Abrir atividade",
-					"en": "Business activity registration"
+					"pt-PT": "Abrir atividade",
+					"en": "Business activity registration",
+					"pt-BR": "Abrir atividade"
 				},
 				"description": {
-					"pt": "Apoio prático para reunir os dados, preencher os formulários e seguir os passos administrativos necessários para começar a trabalhar por conta própria.",
-					"en": "Legal guidance for individuals moving to Portugal to work independently or start a business."
+					"pt-PT": "Apoio prático para reunir os dados, preencher os formulários e seguir os passos administrativos necessários para começar a trabalhar por conta própria.",
+					"en": "Legal guidance for individuals moving to Portugal to work independently or start a business.",
+					"pt-BR": "Apoio prático para reunir os dados, preencher os formulários e seguir os passos administrativos necessários para começar a trabalhar por conta própria."
 				}
 			},
 			{
 				"title": {
-					"pt": "Reconhecimento de diplomas",
-					"en": "Degree Recognition (DGES)"
+					"pt-PT": "Reconhecimento de diplomas",
+					"en": "Degree Recognition (DGES)",
+					"pt-BR": "Reconhecimento de diplomas"
 				},
 				"description": {
-					"pt": "Damos forma ao processo para que as suas qualificações possam ser apresentadas em Portugal, acompanhando cada etapa administrativa até à resposta da entidade responsável.",
-					"en": "Assistance throughout the official degree recognition process with DGES."
+					"pt-PT": "Damos forma ao processo para que as suas qualificações possam ser apresentadas em Portugal, acompanhando cada etapa administrativa até à resposta da entidade responsável.",
+					"en": "Assistance throughout the official degree recognition process with DGES.",
+					"pt-BR": "Damos forma ao processo para que as suas qualificações possam ser apresentadas em Portugal, acompanhando cada etapa administrativa até à resposta da entidade responsável."
 				}
 			}
 		],
 		"stepsHeading": {
-			"pt": "Como trabalhamos juntos",
-			"en": "How we work together"
+			"pt-PT": "Como trabalhamos juntos",
+			"en": "How we work together",
+			"pt-BR": "Como trabalhamos juntos"
 		},
 		"stepsSubtitle": {
-			"pt": "Um percurso pensado para tirar peso dos seus ombros, um passo de cada vez.",
-			"en": "A step-by-step process designed to take the burden off your shoulders."
+			"pt-PT": "Um percurso pensado para tirar peso dos seus ombros, um passo de cada vez.",
+			"en": "A step-by-step process designed to take the burden off your shoulders.",
+			"pt-BR": "Um percurso pensado para tirar peso dos seus ombros, um passo de cada vez."
 		},
 		"steps": [
 			{
 				"number": "01",
 				"title": {
-					"pt": "Conversa inicial",
-					"en": "Initial Conversation"
+					"pt-PT": "Conversa inicial",
+					"en": "Initial Conversation",
+					"pt-BR": "Conversa inicial"
 				},
 				"description": {
-					"pt": "Ouço a sua situação e os seus objetivos, sem pressa e sem juridiquês.",
-					"en": "I listen carefully to your situation and goals, without rushing or using legal jargon."
+					"pt-PT": "Ouço a sua situação e os seus objetivos, sem pressa e sem juridiquês.",
+					"en": "I listen carefully to your situation and goals, without rushing or using legal jargon.",
+					"pt-BR": "Ouço a sua situação e os seus objetivos, sem pressa e sem juridiquês."
 				}
 			},
 			{
 				"number": "02",
 				"title": {
-					"pt": "Plano claro",
-					"en": "Clear Roadmap"
+					"pt-PT": "Plano claro",
+					"en": "Clear Roadmap",
+					"pt-BR": "Plano claro"
 				},
 				"description": {
-					"pt": "Definimos juntos os documentos necessários, a sequência das etapas e os prazos a considerar.",
-					"en": "Together, we will determine the necessary documents, the sequence of steps and the deadlines to be taken into account."
+					"pt-PT": "Definimos juntos os documentos necessários, a sequência das etapas e os prazos a considerar.",
+					"en": "Together, we will determine the necessary documents, the sequence of steps and the deadlines to be taken into account.",
+					"pt-BR": "Definimos juntos os documentos necessários, a sequência das etapas e os prazos a considerar."
 				}
 			},
 			{
 				"number": "03",
 				"title": {
-					"pt": "Acompanhamento",
-					"en": "Guided Support"
+					"pt-PT": "Acompanhamento",
+					"en": "Guided Support",
+					"pt-BR": "Acompanhamento"
 				},
 				"description": {
-					"pt": "Mantenho-me presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis.",
-					"en": "I stay involved at every stage, checking the status of your application and helping to respond to enquiries from the relevant authorities."
+					"pt-PT": "Mantenho-me presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis.",
+					"en": "I stay involved at every stage, checking the status of your application and helping to respond to enquiries from the relevant authorities.",
+					"pt-BR": "Mantenho-me presente em cada etapa, verificando o estado do seu pedido e ajudando a responder às solicitações das entidades responsáveis."
 				}
 			},
 			{
 				"number": "04",
 				"title": {
-					"pt": "Depois da chegada",
-					"en": "Integration"
+					"pt-PT": "Depois da chegada",
+					"en": "Integration",
+					"pt-BR": "Depois da chegada"
 				},
 				"description": {
-					"pt": "Continuamos a apoiar a organização dos registos e das tarefas práticas do dia a dia.",
-					"en": "Support with your legal status regularization and integration upon arrival in Portugal."
+					"pt-PT": "Continuamos a apoiar a organização dos registos e das tarefas práticas do dia a dia.",
+					"en": "Support with your legal status regularization and integration upon arrival in Portugal.",
+					"pt-BR": "Continuamos a apoiar a organização dos registos e das tarefas práticas do dia a dia."
 				}
 			}
 		],
 		"crosslinkHeading": {
-			"pt": "Porquê confiar esta etapa a mim",
-			"en": "Why entrust this step to me"
+			"pt-PT": "Porquê confiar esta etapa a mim",
+			"en": "Why entrust this step to me",
+			"pt-BR": "Porquê confiar esta etapa a mim"
 		},
 		"crosslinkText": {
-			"pt": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, permite-me compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança.",
-			"en": "I have been a lawyer in Brazil since 2013 and I live in Portugal, where I too have experienced the challenges of settling into a new country. This experience, combined with my professional background, enables me to understand your concerns and closely support you through every stage of your move."
+			"pt-PT": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, permite-me compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança.",
+			"en": "I have been a lawyer in Brazil since 2013 and I live in Portugal, where I too have experienced the challenges of settling into a new country. This experience, combined with my professional background, enables me to understand your concerns and closely support you through every stage of your move.",
+			"pt-BR": "Sou advogada no Brasil desde 2013 e resido em Portugal, onde também vivi os desafios da adaptação a um novo país. Essa experiência, aliada à minha trajetória profissional, permite-me compreender as suas dúvidas e acompanhar de perto as etapas da sua mudança."
 		},
 		"crosslinkRouteKey": "about",
 		"note": {
-			"pt": "Em Portugal, este serviço consiste em apoio administrativo e documental. Não inclui representação jurídica ou prática de atos reservados a advogados e solicitadores. Quando é necessária intervenção jurídica, trabalho em parceria com advogados habilitados em Portugal.",
-			"en": "In Portugal, this service consists of administrative and documentation support. It does not include legal representation or the performance of acts reserved for lawyers and solicitors. Where legal intervention is required, I work in partnership with qualified lawyers in Portugal."
+			"pt-PT": "Em Portugal, este serviço consiste em apoio administrativo e documental. Não inclui representação jurídica ou prática de atos reservados a advogados e solicitadores. Quando é necessária intervenção jurídica, trabalho em parceria com advogados habilitados em Portugal.",
+			"en": "In Portugal, this service consists of administrative and documentation support. It does not include legal representation or the performance of acts reserved for lawyers and solicitors. Where legal intervention is required, I work in partnership with qualified lawyers in Portugal.",
+			"pt-BR": "Em Portugal, este serviço consiste em apoio administrativo e documental. Não inclui representação jurídica ou prática de atos reservados a advogados e solicitadores. Quando é necessária intervenção jurídica, trabalho em parceria com advogados habilitados em Portugal."
 		},
 		"ctaHeading": {
-			"pt": "Vamos organizar a sua mudança para Portugal",
-			"en": "Let's organize your relocation to Portugal"
+			"pt-PT": "Vamos organizar a sua mudança para Portugal",
+			"en": "Let's organize your relocation to Portugal",
+			"pt-BR": "Vamos organizar a sua mudança para Portugal"
 		},
 		"ctaText": {
-			"pt": "Conte-me em que ponto está e de que apoio precisa para os próximos passos.",
-			"en": "Schedule an initial call. Share where you currently stand and we will plan the next steps together."
+			"pt-PT": "Conte-me em que ponto está e de que apoio precisa para os próximos passos.",
+			"en": "Schedule an initial call. Share where you currently stand and we will plan the next steps together.",
+			"pt-BR": "Conte-me em que ponto está e de que apoio precisa para os próximos passos."
 		}
 	},
 	"_template": "consultingService"

@@ -10,15 +10,17 @@ import {
 } from "../src/lib/routing.ts";
 
 describe("route map", () => {
-	it("contains 14 unique and reversible PT-PT to EN pairs", () => {
+	it("contains 14 unique and reversible locale routes", () => {
 		expect(routeKeys).toHaveLength(14);
-		expect(publishedLocales).toEqual(["pt-PT", "en"]);
+		expect(publishedLocales).toEqual(["pt-PT", "pt-BR", "en"]);
 		expect(editorialLocales).toContain("es");
 		expect(
 			new Set(routeKeys.flatMap((key) => Object.values(routeMap[key]))).size,
-		).toBe(28);
-		for (const key of routeKeys)
-			expect(alternatePath(pathFor(key, "pt-PT"))).toBe(pathFor(key, "en"));
+		).toBe(42);
+		for (const key of routeKeys) {
+			expect(alternatePath(pathFor(key, "pt-PT"))).toBe(pathFor(key, "pt-BR"));
+			expect(pathFor(key, "pt-BR")).toContain("/pt-br");
+		}
 	});
 
 	it("publishes accessibility and retires launch-only legal routes", () => {

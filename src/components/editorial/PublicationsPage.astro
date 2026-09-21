@@ -15,7 +15,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const page = data.publicationsPage as PublicationsPageContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const publications = page
   ? (await getPublications()).sort((a, b) => {
       const aHighlight = Boolean(a.highlight);

@@ -19,7 +19,7 @@ interface Props {
 const { data, embedded = false } = Astro.props;
 const speaking = (data.eventsPage as { speaking?: SpeakingPageContent } | null | undefined)
   ?.speaking;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 ---
 
 <div id={embedded ? undefined : "main-content"} tabindex={embedded ? undefined : "-1"}>

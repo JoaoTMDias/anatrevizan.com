@@ -8,7 +8,7 @@ export interface AcronymEntry {
 
 interface RawAcronymEntry {
 	acronym?: unknown;
-	expansion?: { pt?: unknown; en?: unknown };
+	expansion?: { "pt-PT"?: unknown; "pt-BR"?: unknown; en?: unknown };
 }
 
 export interface TextSegment {
@@ -24,8 +24,7 @@ export function localizeAcronyms(
 	return (entries ?? []).flatMap((entry) => {
 		const acronym =
 			typeof entry.acronym === "string" ? entry.acronym.trim() : "";
-		const localized =
-			locale === "en" ? entry.expansion?.en : entry.expansion?.pt;
+		const localized = entry.expansion?.[locale] ?? entry.expansion?.["pt-PT"];
 		const expansion = typeof localized === "string" ? localized.trim() : "";
 		return acronym && expansion ? [{ acronym, expansion }] : [];
 	});

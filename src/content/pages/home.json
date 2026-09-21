@@ -1,29 +1,34 @@
 {
 	"routeKey": "home",
 	"title": {
-		"pt": "Início",
-		"en": "Home"
+		"pt-PT": "Início",
+		"en": "Home",
+		"pt-BR": "Início"
 	},
 	"summary": {
-		"pt": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
-		"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
+		"pt-PT": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
+		"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice.",
+		"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
 	},
 	"seo": {
 		"title": {
-			"pt": "Ana Flávia Trevizan - Atuação profissional e Academia",
-			"en": "Ana Flávia Trevizan - Professional Practice and Academia"
+			"pt-PT": "Ana Flávia Trevizan - Atuação profissional e Academia",
+			"en": "Ana Flávia Trevizan - Professional Practice and Academia",
+			"pt-BR": "Ana Flávia Trevizan - Atuação profissional e Academia"
 		},
 		"description": {
-			"pt": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
-			"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
+			"pt-PT": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação.",
+			"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice.",
+			"pt-BR": "No Brasil, atuação em advocacia e consultoria jurídica, com inscrição na OAB/SP. Em Portugal, apoio administrativo e documental para pessoas que precisam de organizar procedimentos, registos e etapas práticas. Em ambos os contextos, o trabalho começa pela escuta, pela clareza e pela definição rigorosa do âmbito de atuação."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/cover_homepage.webp",
 			"alt": {
-				"pt": "Dra. Ana Flávia Trevizan, sentada num banco alto, a sorrir.",
-				"en": "Dr. Ana Flávia Trevizan, sitting on a high stool, smiling."
+				"pt-PT": "Dra. Ana Flávia Trevizan, sentada num banco alto, a sorrir.",
+				"en": "Dr. Ana Flávia Trevizan, sitting on a high stool, smiling.",
+				"pt-BR": "Dra. Ana Flávia Trevizan, sentada num banco alto, a sorrir."
 			},
 			"decorative": false
 		}
@@ -31,241 +36,290 @@
 	"home": {
 		"hero": {
 			"heading": {
-				"pt": "Clareza e acompanhamento para decisões que atravessam fronteiras.",
-				"en": "Clarity and support for decisions that cross borders."
+				"pt-PT": "Clareza e acompanhamento para decisões que atravessam fronteiras.",
+				"en": "Clarity and support for decisions that cross borders.",
+				"pt-BR": "Clareza e acompanhamento para decisões que atravessam fronteiras."
 			},
 			"subtitle": {
-				"pt": "Advocacia e consultoria jurídica no Brasil, apoio administrativo e documental em Portugal. Acompanhamento próximo para pessoas, empresas e organizações.",
-				"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice."
+				"pt-PT": "Advocacia e consultoria jurídica no Brasil, apoio administrativo e documental em Portugal. Acompanhamento próximo para pessoas, empresas e organizações.",
+				"en": "In Brazil, legal practice and legal consulting, with registration with OAB/SP. In Portugal, administrative and document support for people who need to organise procedures, registrations and practical steps. In both contexts, the work begins with listening, clarity and a rigorous definition of the scope of practice.",
+				"pt-BR": "Advocacia e consultoria jurídica no Brasil, apoio administrativo e documental em Portugal. Acompanhamento próximo para pessoas, empresas e organizações."
 			},
 			"brandWords": [
 				{
-					"pt": "Brasil e Portugal",
-					"en": "Brazil and Portugal · Distinct scopes of practice"
+					"pt-PT": "Brasil e Portugal",
+					"en": "Brazil and Portugal · Distinct scopes of practice",
+					"pt-BR": "Brasil e Portugal"
 				}
 			],
 			"primaryCta": {
-				"pt": "Conhecer a atuação",
-				"en": "Explore the practice"
+				"pt-PT": "Conhecer a atuação",
+				"en": "Explore the practice",
+				"pt-BR": "Conhecer a atuação"
 			},
 			"secondaryCta": {
-				"pt": "Entrar em contacto",
-				"en": "Get in touch"
+				"pt-PT": "Entrar em contacto",
+				"en": "Get in touch",
+				"pt-BR": "Entrar em contacto"
 			}
 		},
 		"gateways": [
 			{
 				"title": {
-					"pt": "Advocacia e consultoria jurídica no Brasil",
-					"en": "Brazilian legal practice and legal consulting"
+					"pt-PT": "Advocacia e consultoria jurídica no Brasil",
+					"en": "Brazilian legal practice and legal consulting",
+					"pt-BR": "Advocacia e consultoria jurídica no Brasil"
 				},
 				"eyebrow": {
-					"pt": "Brasil - Advocacia e consultoria jurídica",
-					"en": "Brazil - Legal practice and legal consulting"
+					"pt-PT": "Brasil - Advocacia e consultoria jurídica",
+					"en": "Brazil - Legal practice and legal consulting",
+					"pt-BR": "Brasil - Advocacia e consultoria jurídica"
 				},
 				"description": {
-					"pt": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
-					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations."
+					"pt-PT": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações.",
+					"en": "Consulting, legal advisory services, out-of-court and judicial practice in matters of Brazilian law for individuals, businesses and organisations.",
+					"pt-BR": "Consultoria, assessoria, atuação extrajudicial e judicial em matérias de Direito brasileiro, para pessoas, empresas e organizações."
 				},
 				"cta": {
-					"pt": "Conhecer a atuação no Brasil",
-					"en": "Explore practice in Brazil"
+					"pt-PT": "Conhecer a atuação no Brasil",
+					"en": "Explore practice in Brazil",
+					"pt-BR": "Conhecer a atuação no Brasil"
 				},
 				"routeKey": "legal"
 			},
 			{
 				"title": {
-					"pt": "Migração e Mobilidade",
-					"en": "Immigration and Mobility"
+					"pt-PT": "Migração e Mobilidade",
+					"en": "Immigration and Mobility",
+					"pt-BR": "Migração e Mobilidade"
 				},
 				"eyebrow": {
-					"pt": "Portugal - Apoio administrativo",
-					"en": "Portugal - Administrative support"
+					"pt-PT": "Portugal - Apoio administrativo",
+					"en": "Portugal - Administrative support",
+					"pt-BR": "Portugal - Apoio administrativo"
 				},
 				"description": {
-					"pt": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária.",
-					"en": "Support for those moving to another country to live, work, or study, providing clarity on the necessary steps and documentation."
+					"pt-PT": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária.",
+					"en": "Support for those moving to another country to live, work, or study, providing clarity on the necessary steps and documentation.",
+					"pt-BR": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "immigration-mobility"
 			}
 		],
 		"differencesTitle": {
-			"pt": "Experiência, investigação e acompanhamento especializado",
-			"en": "Experience, research, and dedicated support"
+			"pt-PT": "Experiência, investigação e acompanhamento especializado",
+			"en": "Experience, research, and dedicated support",
+			"pt-BR": "Experiência, investigação e acompanhamento especializado"
 		},
 		"differencesSubtitle": {
-			"pt": "Trajetória profissional e académica com âmbitos de atuação distintos.",
-			"en": "A professional and academic journey with distinct scopes of practice."
+			"pt-PT": "Trajetória profissional e académica com âmbitos de atuação distintos.",
+			"en": "A professional and academic journey with distinct scopes of practice.",
+			"pt-BR": "Trajetória profissional e académica com âmbitos de atuação distintos."
 		},
 		"differences": [
 			{
 				"title": {
-					"pt": "Experiência desde 2013",
-					"en": "Experience since 2013"
+					"pt-PT": "Experiência desde 2013",
+					"en": "Experience since 2013",
+					"pt-BR": "Experiência desde 2013"
 				},
 				"description": {
-					"pt": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386.",
-					"en": "Legal practice in Brazil, registered with OAB/SP under no. 330.386."
+					"pt-PT": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386.",
+					"en": "Legal practice in Brazil, registered with OAB/SP under no. 330.386.",
+					"pt-BR": "Advocacia no Brasil, com inscrição na OAB/SP sob o n.º 330.386."
 				}
 			},
 			{
 				"title": {
-					"pt": "Atuação em três idiomas",
-					"en": "In three languages"
+					"pt-PT": "Atuação em três idiomas",
+					"en": "In three languages",
+					"pt-BR": "Atuação em três idiomas"
 				},
 				"description": {
-					"pt": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas.",
-					"en": "Assistance in Portuguese, English and Spanish. Publications and talks in all three languages."
+					"pt-PT": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas.",
+					"en": "Assistance in Portuguese, English and Spanish. Publications and talks in all three languages.",
+					"pt-BR": "Atendimento em português, inglês e espanhol. Publicações e palestras nos três idiomas."
 				}
 			},
 			{
 				"title": {
-					"pt": "Ponte Ciência–Direito",
-					"en": "Science-Law Bridge"
+					"pt-PT": "Ponte Ciência–Direito",
+					"en": "Science-Law Bridge",
+					"pt-BR": "Ponte Ciência–Direito"
 				},
 				"description": {
-					"pt": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática.",
-					"en": "Ph.D. from NOVA University Lisbon, empirical field research in the Amazon on the EUDR. Academic rigour applied to practice."
+					"pt-PT": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática.",
+					"en": "Ph.D. from NOVA University Lisbon, empirical field research in the Amazon on the EUDR. Academic rigour applied to practice.",
+					"pt-BR": "Doutoramento na NOVA Lisboa, pesquisa de campo na Amazónia sobre o EUDR. Rigor académico aplicado à prática."
 				}
 			},
 			{
 				"title": {
-					"pt": "Atendimento pessoal",
-					"en": "Custom support"
+					"pt-PT": "Atendimento pessoal",
+					"en": "Custom support",
+					"pt-BR": "Atendimento pessoal"
 				},
 				"description": {
-					"pt": "Escuta individualizada e atenta, com clareza sobre o âmbito do trabalho.",
-					"en": "Attentive, individual listening, with clarity about the scope of the work."
+					"pt-PT": "Escuta individualizada e atenta, com clareza sobre o âmbito do trabalho.",
+					"en": "Attentive, individual listening, with clarity about the scope of the work.",
+					"pt-BR": "Escuta individualizada e atenta, com clareza sobre o âmbito do trabalho."
 				}
 			}
 		],
 		"servicesTitle": {
-			"pt": "Áreas de atuação",
-			"en": "Practice areas"
+			"pt-PT": "Áreas de atuação",
+			"en": "Practice areas",
+			"pt-BR": "Áreas de atuação"
 		},
 		"servicesSubtitle": {
-			"pt": "Selecione a área e confirme o âmbito territorial.",
-			"en": "Select the area and check its territorial scope."
+			"pt-PT": "Selecione a área e confirme o âmbito territorial.",
+			"en": "Select the area and check its territorial scope.",
+			"pt-BR": "Selecione a área e confirme o âmbito territorial."
 		},
 		"services": [
 			{
 				"label": {
-					"pt": "Migração e Mobilidade",
-					"en": "Migration and Mobility"
+					"pt-PT": "Migração e Mobilidade",
+					"en": "Migration and Mobility",
+					"pt-BR": "Migração e Mobilidade"
 				},
 				"tag": {
-					"pt": "Portugal e Brasil",
-					"en": "Portugal and Brazil"
+					"pt-PT": "Portugal e Brasil",
+					"en": "Portugal and Brazil",
+					"pt-BR": "Portugal e Brasil"
 				},
 				"description": {
-					"pt": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária.",
-					"en": "Support for those moving to another country to live, work, or study, providing clarity on the necessary steps and documentation."
+					"pt-PT": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária.",
+					"en": "Support for those moving to another country to live, work, or study, providing clarity on the necessary steps and documentation.",
+					"pt-BR": "Apoio para quem vai viver, trabalhar ou estudar em outro país, com clareza sobre os passos e a documentação necessária."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "immigration-mobility"
 			},
 			{
 				"label": {
-					"pt": "Civil, Contratos e Consumidor",
-					"en": "Civil Law, Contracts and Consumer Matters"
+					"pt-PT": "Civil, Contratos e Consumidor",
+					"en": "Civil Law, Contracts and Consumer Matters",
+					"pt-BR": "Civil, Contratos e Consumidor"
 				},
 				"anchor": "civil",
 				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"description": {
-					"pt": "Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica.",
-					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty."
+					"pt-PT": "Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica.",
+					"en": "Preventing disputes, protecting rights and providing guidance for decisions that require legal certainty.",
+					"pt-BR": "Prevenção de conflitos, proteção de direitos e orientação para decisões que exigem segurança jurídica."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "legal"
 			},
 			{
 				"label": {
-					"pt": "Trabalho e Relações Laborais",
-					"en": "Employment and Labour Relations"
+					"pt-PT": "Trabalho e Relações Laborais",
+					"en": "Employment and Labour Relations",
+					"pt-BR": "Trabalho e Relações Laborais"
 				},
 				"anchor": "trabalho",
 				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"description": {
-					"pt": "Direitos, deveres e relações profissionais exigem clareza, tanto na prevenção quanto diante de um conflito.",
-					"en": "Rights, duties and professional relationships require clarity, both in prevention and when facing a dispute."
+					"pt-PT": "Direitos, deveres e relações profissionais exigem clareza, tanto na prevenção quanto diante de um conflito.",
+					"en": "Rights, duties and professional relationships require clarity, both in prevention and when facing a dispute.",
+					"pt-BR": "Direitos, deveres e relações profissionais exigem clareza, tanto na prevenção quanto diante de um conflito."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "legal"
 			},
 			{
 				"label": {
-					"pt": "Direito Ambiental e ESG",
-					"en": "Environmental Law and ESG"
+					"pt-PT": "Direito Ambiental e ESG",
+					"en": "Environmental Law and ESG",
+					"pt-BR": "Direito Ambiental e ESG"
 				},
 				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"description": {
-					"pt": "Análise de riscos e soluções jurídicas para projetos, questões ambientais e urbanísticas e relações com o poder público.",
-					"en": "Risk analysis and legal solutions for projects, environmental and urban planning issues, and relations with public authorities."
+					"pt-PT": "Análise de riscos e soluções jurídicas para projetos, questões ambientais e urbanísticas e relações com o poder público.",
+					"en": "Risk analysis and legal solutions for projects, environmental and urban planning issues, and relations with public authorities.",
+					"pt-BR": "Análise de riscos e soluções jurídicas para projetos, questões ambientais e urbanísticas e relações com o poder público."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "environmental-esg"
 			},
 			{
 				"label": {
-					"pt": "Políticas Públicas e Governança",
-					"en": "Public Policy and Governance"
+					"pt-PT": "Políticas Públicas e Governança",
+					"en": "Public Policy and Governance",
+					"pt-BR": "Políticas Públicas e Governança"
 				},
 				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"description": {
-					"pt": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade.",
-					"en": "Research, analysis and technical support for public policy, governance and sustainability."
+					"pt-PT": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade.",
+					"en": "Research, analysis and technical support for public policy, governance and sustainability.",
+					"pt-BR": "Investigação, análise e apoio técnico para políticas públicas, governança e sustentabilidade."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "public-policy"
 			},
 			{
 				"label": {
-					"pt": "Direitos Humanos",
-					"en": "Human Rights"
+					"pt-PT": "Direitos Humanos",
+					"en": "Human Rights",
+					"pt-BR": "Direitos Humanos"
 				},
 				"anchor": "direitos-humanos",
 				"tag": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"description": {
-					"pt": "Defesa de direitos humanos, promoção da inclusão e proteção de pessoas e comunidades em situação de vulnerabilidade.",
-					"en": "Defending human rights, promoting inclusion and protecting vulnerable individuals and communities."
+					"pt-PT": "Defesa de direitos humanos, promoção da inclusão e proteção de pessoas e comunidades em situação de vulnerabilidade.",
+					"en": "Defending human rights, promoting inclusion and protecting vulnerable individuals and communities.",
+					"pt-BR": "Defesa de direitos humanos, promoção da inclusão e proteção de pessoas e comunidades em situação de vulnerabilidade."
 				},
 				"cta": {
-					"pt": "Saber mais",
-					"en": "Learn more"
+					"pt-PT": "Saber mais",
+					"en": "Learn more",
+					"pt-BR": "Saber mais"
 				},
 				"routeKey": "legal"
 			}
@@ -273,61 +327,73 @@
 		"academicCards": [
 			{
 				"label": {
-					"pt": "Mentoria Académica",
-					"en": "Academic Mentoring"
+					"pt-PT": "Mentoria Académica",
+					"en": "Academic Mentoring",
+					"pt-BR": "Mentoria Académica"
 				},
 				"description": {
-					"pt": "Acompanhamento para planear o ingresso no mestrado ou doutoramento e desenvolver projetos, dissertações, teses e artigos científicos.",
-					"en": "I provide support to help you plan your entry onto a master’s or doctoral programme and to develop projects, dissertations, theses and scientific articles."
+					"pt-PT": "Acompanhamento para planear o ingresso no mestrado ou doutoramento e desenvolver projetos, dissertações, teses e artigos científicos.",
+					"en": "I provide support to help you plan your entry onto a master’s or doctoral programme and to develop projects, dissertations, theses and scientific articles.",
+					"pt-BR": "Acompanhamento para planear o ingresso no mestrado ou doutoramento e desenvolver projetos, dissertações, teses e artigos científicos."
 				},
 				"routeKey": "mentoring"
 			},
 			{
 				"label": {
-					"pt": "Publicações e Pesquisa",
-					"en": "Publications and Research"
+					"pt-PT": "Publicações e Pesquisa",
+					"en": "Publications and Research",
+					"pt-BR": "Publicações e Pesquisa"
 				},
 				"description": {
-					"pt": "Artigos, capítulos e produção científica.",
-					"en": "Articles, chapters and scientific output."
+					"pt-PT": "Artigos, capítulos e produção científica.",
+					"en": "Articles, chapters and scientific output.",
+					"pt-BR": "Artigos, capítulos e produção científica."
 				},
 				"routeKey": "publications"
 			},
 			{
 				"label": {
-					"pt": "Palestras e Eventos",
-					"en": "Talks and Events"
+					"pt-PT": "Palestras e Eventos",
+					"en": "Talks and Events",
+					"pt-BR": "Palestras e Eventos"
 				},
 				"description": {
-					"pt": "Aulas, palestras e participações em português, inglês e espanhol.",
-					"en": "Classes, talks and participation in Portuguese, English and Spanish."
+					"pt-PT": "Aulas, palestras e participações em português, inglês e espanhol.",
+					"en": "Classes, talks and participation in Portuguese, English and Spanish.",
+					"pt-BR": "Aulas, palestras e participações em português, inglês e espanhol."
 				},
 				"routeKey": "events"
 			}
 		],
 		"academicTitle": {
-			"pt": "Academia",
-			"en": "Academia"
+			"pt-PT": "Academia",
+			"en": "Academia",
+			"pt-BR": "Academia"
 		},
 		"academicSubtitle": {
-			"pt": "Conhecimento e experiência para a sua trajetória académica e profissional.",
-			"en": "Knowledge and experience to support your academic and professional development."
+			"pt-PT": "Conhecimento e experiência para a sua trajetória académica e profissional.",
+			"en": "Knowledge and experience to support your academic and professional development.",
+			"pt-BR": "Conhecimento e experiência para a sua trajetória académica e profissional."
 		},
 		"publicationsCta": {
-			"pt": "Ver repositório completo",
-			"en": "View full repository"
+			"pt-PT": "Ver repositório completo",
+			"en": "View full repository",
+			"pt-BR": "Ver repositório completo"
 		},
 		"finalCtaHeading": {
-			"pt": "Como posso ajudar?",
-			"en": "Let us understand the scope of your request"
+			"pt-PT": "Como posso ajudar?",
+			"en": "Let us understand the scope of your request",
+			"pt-BR": "Como posso ajudar?"
 		},
 		"finalCtaText": {
-			"pt": "Conte-me o que precisa e vamos encontrar o melhor caminho para o seu caso, projeto ou próximo passo profissional.",
-			"en": "Tell me what you need and let’s find the best way forward for your situation, project or next career move."
+			"pt-PT": "Conte-me o que precisa e vamos encontrar o melhor caminho para o seu caso, projeto ou próximo passo profissional.",
+			"en": "Tell me what you need and let’s find the best way forward for your situation, project or next career move.",
+			"pt-BR": "Conte-me o que precisa e vamos encontrar o melhor caminho para o seu caso, projeto ou próximo passo profissional."
 		},
 		"finalCtaLabel": {
-			"pt": "Entrar em contacto",
-			"en": "Get in touch"
+			"pt-PT": "Entrar em contacto",
+			"en": "Get in touch",
+			"pt-BR": "Entrar em contacto"
 		}
 	},
 	"_template": "home"

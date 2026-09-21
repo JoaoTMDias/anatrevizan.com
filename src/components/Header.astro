@@ -3,16 +3,16 @@ import HeaderMenu from "./HeaderMenu";
 import { SkipLinks } from "@jtmdias/react-a11y-tools";
 import type { CmsConfig } from "../lib/data";
 import { navigationItems } from "../lib/navigation";
-import { pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
+import { pathFor, publishedLocales, type PublishedLocale, type RouteKey } from "../lib/routing";
 import LogoHeader from "./LogoHeader.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 interface Props {
   config?: CmsConfig | null;
   locale?: PublishedLocale;
   routeKey?: RouteKey;
-  languageAvailable?: boolean;
+  availableLocales?: PublishedLocale[];
 }
-const { config, locale = "pt-PT", routeKey = "home", languageAvailable = false } = Astro.props;
+const { config, locale = "pt-PT", routeKey = "home", availableLocales = publishedLocales } = Astro.props;
 const isEnglish = locale === "en";
 const navigation = navigationItems(config?.navigation, locale);
 const isCurrentSection = (item: (typeof navigation)[number]) =>
@@ -38,17 +38,13 @@ const desktopItems = renderedNavigation.map(({ item, itemRoute, children }) => (
     isCurrent: child.routeKey === routeKey,
   })),
 }));
-const alternateLocale = isEnglish ? "pt-PT" : "en";
-const languageLink = languageAvailable
-  ? {
-      label: isEnglish ? "PT" : "EN",
-      mobileLabel: isEnglish ? "Português" : "English",
-      accessibleLabel: isEnglish ? "Mudar para português" : "Switch to English",
-      href: pathFor(routeKey, alternateLocale),
-      lang: alternateLocale,
-      hreflang: alternateLocale,
-    }
-  : undefined;
+const languageOptions = availableLocales.map((candidate) => ({
+  locale: candidate,
+  label: candidate === "pt-PT" ? "Português (Portugal)" : candidate === "pt-BR" ? "Português (Brasil)" : "English",
+  flag: candidate === "pt-PT" ? "🇵🇹" : candidate === "pt-BR" ? "🇧🇷" : "🇬🇧",
+  href: pathFor(routeKey, candidate),
+}));
+const currentLanguage = languageOptions.find((option) => option.locale === locale) ?? languageOptions[0];
 ---
 
 <SkipLinks
@@ -76,7 +72,8 @@ const languageLink = languageAvailable
       <HeaderMenu
         client:load
         items={desktopItems}
-        languageLink={languageLink}
+        languageOptions={languageOptions}
+        currentLanguage={currentLanguage}
         menuLabel={isEnglish ? "Main menu" : "Menu principal"}
         closeLabel={isEnglish ? "Close menu" : "Fechar menu"}
       />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface BrasiliaClockProps {
-	locale: "pt-PT" | "en";
+	locale: "pt-PT" | "pt-BR" | "en";
 }
 
 const timeZone = "America/Sao_Paulo";

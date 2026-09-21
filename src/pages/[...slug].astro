@@ -2,22 +2,19 @@
 import LocalizedPage from '../components/LocalizedPage.astro';
 import { isEditorialPreviewEnabled } from '../lib/editorial';
 import { resolveEditorialPages } from '../lib/editorial-page';
-import { routeKeys, routeMap } from '../lib/routing';
+import { publishedLocales, routeKeys, routeMap } from '../lib/routing';
 
 export async function getStaticPaths() {
 	const previewEnabled = isEditorialPreviewEnabled();
 	const pages = await resolveEditorialPages(previewEnabled);
 
 	return routeKeys.flatMap((routeKey) => {
-		const localizedPaths = [
-			...(routeMap[routeKey]['pt-PT'] === '/'
-				? []
-				: [{
-						params: { slug: routeMap[routeKey]['pt-PT'].slice(1) },
-						props: { routeKey, locale: 'pt-PT' as const },
-					}]),
-			{ params: { slug: routeMap[routeKey].en.slice(1) }, props: { routeKey, locale: 'en' as const } },
-		].filter(({ props }) => {
+		const localizedPaths = publishedLocales
+			.map((locale) => ({
+				params: { slug: routeMap[routeKey][locale] === '/' ? undefined : routeMap[routeKey][locale].slice(1) },
+				props: { routeKey, locale },
+			}))
+			.filter(({ props }) => {
 			if (!props) return true;
 			return pages.has(`${props.routeKey}:${props.locale}`);
 		});

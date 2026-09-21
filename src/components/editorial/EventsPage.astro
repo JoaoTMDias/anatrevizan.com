@@ -14,7 +14,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const events = data.eventsPage as EventsPageContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const months =
   locale === "en"
     ? [

@@ -1,7 +1,16 @@
 import type { CmsConfig } from "./data";
 import type { PublishedLocale, RouteKey } from "./routing";
 
-type Localized = { pt?: string | null; en?: string | null } | null | undefined;
+type Localized =
+	| {
+			"pt-PT"?: string | null;
+			"pt-BR"?: string | null;
+			pt_PT?: string | null;
+			pt_BR?: string | null;
+			en?: string | null;
+	  }
+	| null
+	| undefined;
 type Entry =
 	| {
 			label?: Localized;
@@ -26,7 +35,9 @@ export interface NavigationItem {
 }
 
 const localized = (value: Localized, locale: PublishedLocale) =>
-	value?.[locale === "en" ? "en" : "pt"] ?? "";
+	value?.[locale] ??
+	value?.[locale.replace("-", "_") as "pt_PT" | "pt_BR"] ??
+	"";
 
 export function navigationItems(
 	navigation: CmsConfig["navigation"] | undefined,

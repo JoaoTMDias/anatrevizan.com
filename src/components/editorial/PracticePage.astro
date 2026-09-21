@@ -12,7 +12,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const page = data.practicePage as PracticeContent;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const hasChoice = Boolean(page.portugal && page.brazil);
 const practiceLinks =
   navigationItems((await getConfig()).data.config.navigation, locale)[0].children ?? [];

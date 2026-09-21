@@ -1,91 +1,110 @@
 {
 	"routeKey": "publications",
 	"title": {
-		"pt": "Publicações",
-		"en": "Publications"
+		"pt-PT": "Publicações",
+		"en": "Publications",
+		"pt-BR": "Publicações"
 	},
 	"summary": {
-		"pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada.",
-		"en": "Academic research in environmental law, climate governance and human rights, collated, searchable and constantly updated."
+		"pt-PT": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada.",
+		"en": "Academic research in environmental law, climate governance and human rights, collated, searchable and constantly updated.",
+		"pt-BR": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada."
 	},
 	"seo": {
 		"title": {
-			"pt": "Publicações · Produção científica",
-			"en": "Publications · Research & Academic Work - Ana Trevizan"
+			"pt-PT": "Publicações · Produção científica",
+			"en": "Publications · Research & Academic Work - Ana Trevizan",
+			"pt-BR": "Publicações · Produção científica"
 		},
 		"description": {
-			"pt": "Repositório de publicações em Direito Ambiental, EUDR, governança climática e direitos humanos, com filtros por ano, tema e idioma.",
-			"en": "Repository of academic publications in Environmental Law, EUDR, climate governance, and human rights, searchable by year, topic, and language."
+			"pt-PT": "Repositório de publicações em Direito Ambiental, EUDR, governança climática e direitos humanos, com filtros por ano, tema e idioma.",
+			"en": "Repository of academic publications in Environmental Law, EUDR, climate governance, and human rights, searchable by year, topic, and language.",
+			"pt-BR": "Repositório de publicações em Direito Ambiental, EUDR, governança climática e direitos humanos, com filtros por ano, tema e idioma."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/publicacoes-hero.webp",
 			"alt": {
-				"pt": "Ana segura um livro sentada no chão, onde outros quatro se encontram espalhados.",
-				"en": "Ana is sitting on the floor holding a book, with four others scattered around her."
+				"pt-PT": "Ana segura um livro sentada no chão, onde outros quatro se encontram espalhados.",
+				"en": "Ana is sitting on the floor holding a book, with four others scattered around her.",
+				"pt-BR": "Ana segura um livro sentada no chão, onde outros quatro se encontram espalhados."
 			},
 			"decorative": false
 		}
 	},
 	"publicationsPage": {
 		"tag": {
-			"pt": "Academia",
-			"en": "Academia"
+			"pt-PT": "Academia",
+			"en": "Academia",
+			"pt-BR": "Academia"
 		},
 		"subtitle": {
-			"pt": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada.",
-			"en": "Academic research in environmental law, climate governance and human rights, collated, searchable and constantly updated."
+			"pt-PT": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada.",
+			"en": "Academic research in environmental law, climate governance and human rights, collated, searchable and constantly updated.",
+			"pt-BR": "Produção científica em Direito Ambiental, governança climática e direitos humanos, reunida, filtrável e sempre atualizada."
 		},
 		"introText": {
-			"pt": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de investigação. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional.",
-			"en": "This repository brings together articles, book chapters and other publications that reflect my research journey. Browse the works by year, topic or language and find resources to support your research or professional activities."
+			"pt-PT": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de investigação. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional.",
+			"en": "This repository brings together articles, book chapters and other publications that reflect my research journey. Browse the works by year, topic or language and find resources to support your research or professional activities.",
+			"pt-BR": "Este repositório reúne artigos, capítulos e outras publicações que refletem o meu percurso de investigação. Explore os trabalhos por ano, tema ou idioma e encontre contributos para a sua pesquisa ou atividade profissional."
 		},
 		"orcidNote": {
-			"pt": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI.",
-			"en": "Repository maintained directly from ORCID (0000-0003-4365-6053), the official record of published work. Listings link directly to the journal or DOI."
+			"pt-PT": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI.",
+			"en": "Repository maintained directly from ORCID (0000-0003-4365-6053), the official record of published work. Listings link directly to the journal or DOI.",
+			"pt-BR": "Repositório mantido a partir do ORCID (0000-0003-4365-6053), a fonte oficial da produção. As publicações incluem a hiperligação para a revista ou DOI."
 		},
 		"filters": {
 			"allYears": {
-				"pt": "Todos os anos",
-				"en": "All years"
+				"pt-PT": "Todos os anos",
+				"en": "All years",
+				"pt-BR": "Todos os anos"
 			},
 			"allTopics": {
-				"pt": "Todos os temas",
-				"en": "All topics"
+				"pt-PT": "Todos os temas",
+				"en": "All topics",
+				"pt-BR": "Todos os temas"
 			},
 			"allLanguages": {
-				"pt": "Todos os idiomas",
-				"en": "All languages"
+				"pt-PT": "Todos os idiomas",
+				"en": "All languages",
+				"pt-BR": "Todos os idiomas"
 			},
 			"clear": {
-				"pt": "Limpar filtros",
-				"en": "Clear filters"
+				"pt-PT": "Limpar filtros",
+				"en": "Clear filters",
+				"pt-BR": "Limpar filtros"
 			},
 			"singleResult": {
-				"pt": "publicação",
-				"en": "publication"
+				"pt-PT": "publicação",
+				"en": "publication",
+				"pt-BR": "publicação"
 			},
 			"multipleResults": {
-				"pt": "publicações",
-				"en": "publications"
+				"pt-PT": "publicações",
+				"en": "publications",
+				"pt-BR": "publicações"
 			},
 			"view": {
-				"pt": "Ver publicação",
-				"en": "View publication"
+				"pt-PT": "Ver publicação",
+				"en": "View publication",
+				"pt-BR": "Ver publicação"
 			},
 			"empty": {
-				"pt": "Nenhuma publicação corresponde a estes filtros.",
-				"en": "No publications match the selected filters."
+				"pt-PT": "Nenhuma publicação corresponde a estes filtros.",
+				"en": "No publications match the selected filters.",
+				"pt-BR": "Nenhuma publicação corresponde a estes filtros."
 			}
 		},
 		"ctaHeading": {
-			"pt": "Procura autoridade verificável num tema?",
-			"en": "Looking for verifiable expertise on a subject?"
+			"pt-PT": "Procura autoridade verificável num tema?",
+			"en": "Looking for verifiable expertise on a subject?",
+			"pt-BR": "Procura autoridade verificável num tema?"
 		},
 		"ctaText": {
-			"pt": "Para pareceres, mentorias ou convites para palestrar, comece por uma conversa.",
-			"en": "For legal opinions, mentorship, or speaking invitations, let's start with a conversation."
+			"pt-PT": "Para pareceres, mentorias ou convites para palestrar, comece por uma conversa.",
+			"en": "For legal opinions, mentorship, or speaking invitations, let's start with a conversation.",
+			"pt-BR": "Para pareceres, mentorias ou convites para palestrar, comece por uma conversa."
 		}
 	},
 	"_template": "publications"

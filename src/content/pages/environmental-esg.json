@@ -1,292 +1,351 @@
 {
 	"routeKey": "environmental-esg",
 	"title": {
-		"pt": "Direito Ambiental e ESG",
-		"en": "Environmental Law and ESG"
+		"pt-PT": "Direito Ambiental e ESG",
+		"en": "Environmental Law and ESG",
+		"pt-BR": "Direito Ambiental e ESG"
 	},
 	"summary": {
-		"pt": "Trabalho com Direito Ambiental brasileiro e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
-		"en": "European environmental regulation has reached Brazilian supply chains. I translate this complexity into sound decisions for your business."
+		"pt-PT": "Trabalho com Direito Ambiental brasileiro e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
+		"en": "European environmental regulation has reached Brazilian supply chains. I translate this complexity into sound decisions for your business.",
+		"pt-BR": "Trabalho com Direito Ambiental brasileiro e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento."
 	},
 	"seo": {
 		"title": {
-			"pt": "Direito Ambiental brasileiro, ESG e regulação europeia · EUDR, CSDDD e CSRD",
-			"en": "Environmental and ESG Consulting · EUDR, CSDDD, and CSRD - Ana Trevizan"
+			"pt-PT": "Direito Ambiental brasileiro, ESG e regulação europeia · EUDR, CSDDD e CSRD",
+			"en": "Environmental and ESG Consulting · EUDR, CSDDD, and CSRD - Ana Trevizan",
+			"pt-BR": "Direito Ambiental brasileiro, ESG e regulação europeia · EUDR, CSDDD e CSRD"
 		},
 		"description": {
-			"pt": "Direito Ambiental brasileiro, ESG e apoio técnico sobre EUDR, CSDDD e CSRD para empresas e organizações com operações ou cadeias de fornecimento ligadas ao Brasil.",
-			"en": "Consulting in Environmental Law, ESG, and compliance for companies exposed to European regulations - EUDR, CSDDD, and CSRD - backed by empirical field research on forest supply chains."
+			"pt-PT": "Direito Ambiental brasileiro, ESG e apoio técnico sobre EUDR, CSDDD e CSRD para empresas e organizações com operações ou cadeias de fornecimento ligadas ao Brasil.",
+			"en": "Consulting in Environmental Law, ESG, and compliance for companies exposed to European regulations - EUDR, CSDDD, and CSRD - backed by empirical field research on forest supply chains.",
+			"pt-BR": "Direito Ambiental brasileiro, ESG e apoio técnico sobre EUDR, CSDDD e CSRD para empresas e organizações com operações ou cadeias de fornecimento ligadas ao Brasil."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/consultoria-ambiental-esg-hero.webp",
 			"alt": {
-				"pt": "Uma fotografia de floresta tropical.",
-				"en": "A photograph of a tropical rainforest."
+				"pt-PT": "Uma fotografia de floresta tropical.",
+				"en": "A photograph of a tropical rainforest.",
+				"pt-BR": "Uma fotografia de floresta tropical."
 			},
 			"decorative": false
 		}
 	},
 	"consultingService": {
 		"tag": {
-			"pt": "Brasil · União Europeia",
-			"en": "Brazil · European Union"
+			"pt-PT": "Brasil · União Europeia",
+			"en": "Brazil · European Union",
+			"pt-BR": "Brasil · União Europeia"
 		},
 		"subtitle": {
-			"pt": "Trabalho com Direito Ambiental e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
-			"en": "I specialise in environmental law and help companies and organisations understand the impact of European sustainability regulations on their operations and supply chains."
+			"pt-PT": "Trabalho com Direito Ambiental e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento.",
+			"en": "I specialise in environmental law and help companies and organisations understand the impact of European sustainability regulations on their operations and supply chains.",
+			"pt-BR": "Trabalho com Direito Ambiental e apoio empresas e organizações a compreender o impacto das regras europeias de sustentabilidade nas suas operações e cadeias de fornecimento."
 		},
 		"introHeading": {
-			"pt": "Quando a norma europeia muda a sua operação",
-			"en": "When European regulations impact your operations"
+			"pt-PT": "Quando a norma europeia muda a sua operação",
+			"en": "When European regulations impact your operations",
+			"pt-BR": "Quando a norma europeia muda a sua operação"
 		},
 		"introImage": {
 			"image": "/ambiental-esg-intro.webp",
 			"alt": {
-				"pt": "Ana Flávia no Miradouro da Pedra Bela, no Parque Nacional do Gerês.",
-				"en": "Ana Flávia at the Pedra Bela viewpoint, on Gerês National Park."
+				"pt-PT": "Ana Flávia no Miradouro da Pedra Bela, no Parque Nacional do Gerês.",
+				"en": "Ana Flávia at the Pedra Bela viewpoint, on Gerês National Park.",
+				"pt-BR": "Ana Flávia no Miradouro da Pedra Bela, no Parque Nacional do Gerês."
 			},
 			"decorative": true
 		},
 		"introParagraphs": {
-			"pt": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia, mesmo a partir do Brasil. Um produtor que exporta madeira ou exportação de *commodities*, todos passam a responder por aquilo que acontece na sua cadeia.\n\nO desafio está em ligar o texto dos regulamentos europeus à realidade de cada operação. A minha experiência em Direito Ambiental, investigação e trabalho de campo ajuda a transformar estas exigências em informação útil para a sua empresa.\n",
-			"en": "EUDR, CSDDD, CSRD. European sustainability requirements are advancing rapidly and affect anyone who produces, exports or supplies goods to the European Union, even from Brazil. Whether a producer exports timber or other commodities, they are now all accountable for what happens within their supply chain.\n\nThe challenge lies in linking the text of the European regulations to the reality of each operation. My experience in environmental law, research and fieldwork helps to translate these requirements into useful information for your company.\n"
+			"pt-PT": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia, mesmo a partir do Brasil. Um produtor que exporta madeira ou exportação de *commodities*, todos passam a responder por aquilo que acontece na sua cadeia.\n\nO desafio está em ligar o texto dos regulamentos europeus à realidade de cada operação. A minha experiência em Direito Ambiental, investigação e trabalho de campo ajuda a transformar estas exigências em informação útil para a sua empresa.\n",
+			"en": "EUDR, CSDDD, CSRD. European sustainability requirements are advancing rapidly and affect anyone who produces, exports or supplies goods to the European Union, even from Brazil. Whether a producer exports timber or other commodities, they are now all accountable for what happens within their supply chain.\n\nThe challenge lies in linking the text of the European regulations to the reality of each operation. My experience in environmental law, research and fieldwork helps to translate these requirements into useful information for your company.\n",
+			"pt-BR": "EUDR, CSDDD, CSRD. As exigências europeias de sustentabilidade avançam depressa e alcançam quem produz, exporta ou fornece para a União Europeia, mesmo a partir do Brasil. Um produtor que exporta madeira ou exportação de *commodities*, todos passam a responder por aquilo que acontece na sua cadeia.\n\nO desafio está em ligar o texto dos regulamentos europeus à realidade de cada operação. A minha experiência em Direito Ambiental, investigação e trabalho de campo ajuda a transformar estas exigências em informação útil para a sua empresa.\n"
 		},
 		"servicesHeading": {
-			"pt": "Como posso ajudar",
-			"en": "How I can help"
+			"pt-PT": "Como posso ajudar",
+			"en": "How I can help",
+			"pt-BR": "Como posso ajudar"
 		},
 		"servicesSubtitle": {
-			"pt": "Direito Ambiental e apoio técnico para lidar com exigências ambientais e de sustentabilidade.",
-			"en": "Environmental law and technical support to address environmental and sustainability requirements.\n"
+			"pt-PT": "Direito Ambiental e apoio técnico para lidar com exigências ambientais e de sustentabilidade.",
+			"en": "Environmental law and technical support to address environmental and sustainability requirements.\n",
+			"pt-BR": "Direito Ambiental e apoio técnico para lidar com exigências ambientais e de sustentabilidade."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Licenciamento e regularização",
-					"en": "Licensing and regularisation"
+					"pt-PT": "Licenciamento e regularização",
+					"en": "Licensing and regularisation",
+					"pt-BR": "Licenciamento e regularização"
 				},
 				"items": [
 					{
-						"pt": "Análise de requisitos e acompanhamento de procedimentos para a adequação ambiental e urbanística de atividades e projetos.",
-						"en": "Analysis of requirements and monitoring of procedures for the environmental and urban-planning compliance of activities and projects."
+						"pt-PT": "Análise de requisitos e acompanhamento de procedimentos para a adequação ambiental e urbanística de atividades e projetos.",
+						"en": "Analysis of requirements and monitoring of procedures for the environmental and urban-planning compliance of activities and projects.",
+						"pt-BR": "Análise de requisitos e acompanhamento de procedimentos para a adequação ambiental e urbanística de atividades e projetos."
 					},
 					{
-						"pt": "Identificação de licenças e autorizações necessárias.",
-						"en": "Identifying the licences and authorisations required."
+						"pt-PT": "Identificação de licenças e autorizações necessárias.",
+						"en": "Identifying the licences and authorisations required.",
+						"pt-BR": "Identificação de licenças e autorizações necessárias."
 					},
 					{
-						"pt": "Preparação de documentos e requerimentos.",
-						"en": "Preparing documents and applications."
+						"pt-PT": "Preparação de documentos e requerimentos.",
+						"en": "Preparing documents and applications.",
+						"pt-BR": "Preparação de documentos e requerimentos."
 					},
 					{
-						"pt": "Acompanhamento de exigências e condicionantes.",
-						"en": "Monitoring requirements and conditions."
+						"pt-PT": "Acompanhamento de exigências e condicionantes.",
+						"en": "Monitoring requirements and conditions.",
+						"pt-BR": "Acompanhamento de exigências e condicionantes."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Processos administrativos",
-					"en": "Administrative proceedings"
+					"pt-PT": "Processos administrativos",
+					"en": "Administrative proceedings",
+					"pt-BR": "Processos administrativos"
 				},
 				"items": [
 					{
-						"pt": "Preparação de requerimentos, defesas e recursos perante órgãos públicos, com análise dos fundamentos e dos prazos aplicáveis.",
-						"en": "Preparing applications, defences and appeals before public authorities, with analysis of the applicable grounds and deadlines."
+						"pt-PT": "Preparação de requerimentos, defesas e recursos perante órgãos públicos, com análise dos fundamentos e dos prazos aplicáveis.",
+						"en": "Preparing applications, defences and appeals before public authorities, with analysis of the applicable grounds and deadlines.",
+						"pt-BR": "Preparação de requerimentos, defesas e recursos perante órgãos públicos, com análise dos fundamentos e dos prazos aplicáveis."
 					},
 					{
-						"pt": "Análise de notificações e autos de infração.",
-						"en": "Analysing notices and infringement reports."
+						"pt-PT": "Análise de notificações e autos de infração.",
+						"en": "Analysing notices and infringement reports.",
+						"pt-BR": "Análise de notificações e autos de infração."
 					},
 					{
-						"pt": "Elaboração de manifestações e impugnações.",
-						"en": "Preparing submissions and challenges."
+						"pt-PT": "Elaboração de manifestações e impugnações.",
+						"en": "Preparing submissions and challenges.",
+						"pt-BR": "Elaboração de manifestações e impugnações."
 					},
 					{
-						"pt": "Acompanhamento processual e cumprimento de prazos.",
-						"en": "Monitoring proceedings and meeting deadlines."
+						"pt-PT": "Acompanhamento processual e cumprimento de prazos.",
+						"en": "Monitoring proceedings and meeting deadlines.",
+						"pt-BR": "Acompanhamento processual e cumprimento de prazos."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Responsabilidade e proteção ambiental",
-					"en": "Environmental liability and protection"
+					"pt-PT": "Responsabilidade e proteção ambiental",
+					"en": "Environmental liability and protection",
+					"pt-BR": "Responsabilidade e proteção ambiental"
 				},
 				"items": [
 					{
-						"pt": "Atuação em questões relacionadas com danos ambientais, obrigações de reparação e proteção de recursos naturais.",
-						"en": "Work on matters relating to environmental damage, remediation obligations and the protection of natural resources."
+						"pt-PT": "Atuação em questões relacionadas com danos ambientais, obrigações de reparação e proteção de recursos naturais.",
+						"en": "Work on matters relating to environmental damage, remediation obligations and the protection of natural resources.",
+						"pt-BR": "Atuação em questões relacionadas com danos ambientais, obrigações de reparação e proteção de recursos naturais."
 					},
 					{
-						"pt": "Avaliação de responsabilidades e obrigações legais.",
-						"en": "Assessing liabilities and legal obligations."
+						"pt-PT": "Avaliação de responsabilidades e obrigações legais.",
+						"en": "Assessing liabilities and legal obligations.",
+						"pt-BR": "Avaliação de responsabilidades e obrigações legais."
 					},
 					{
-						"pt": "Análise de medidas de prevenção e reparação de danos.",
-						"en": "Analysing measures to prevent and remedy damage."
+						"pt-PT": "Análise de medidas de prevenção e reparação de danos.",
+						"en": "Analysing measures to prevent and remedy damage.",
+						"pt-BR": "Análise de medidas de prevenção e reparação de danos."
 					},
 					{
-						"pt": "Negociação de compromissos e soluções para conflitos ambientais.",
-						"en": "Negotiating commitments and solutions to environmental disputes."
+						"pt-PT": "Negociação de compromissos e soluções para conflitos ambientais.",
+						"en": "Negotiating commitments and solutions to environmental disputes.",
+						"pt-BR": "Negociação de compromissos e soluções para conflitos ambientais."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Urbanismo e ordenamento territorial",
-					"en": "Urban planning and spatial planning"
+					"pt-PT": "Urbanismo e ordenamento territorial",
+					"en": "Urban planning and spatial planning",
+					"pt-BR": "Urbanismo e ordenamento territorial"
 				},
 				"items": [
 					{
-						"pt": "Avaliação jurídica do uso e ocupação do solo, planos urbanos e restrições incidentes sobre imóveis e empreendimentos.",
-						"en": "Legal assessment of land use and occupation, urban plans and restrictions affecting properties and developments."
+						"pt-PT": "Avaliação jurídica do uso e ocupação do solo, planos urbanos e restrições incidentes sobre imóveis e empreendimentos.",
+						"en": "Legal assessment of land use and occupation, urban plans and restrictions affecting properties and developments.",
+						"pt-BR": "Avaliação jurídica do uso e ocupação do solo, planos urbanos e restrições incidentes sobre imóveis e empreendimentos."
 					},
 					{
-						"pt": "Análise de planos diretores e regras de zoneamento.",
-						"en": "Analysing master plans and zoning rules."
+						"pt-PT": "Análise de planos diretores e regras de zoneamento.",
+						"en": "Analysing master plans and zoning rules.",
+						"pt-BR": "Análise de planos diretores e regras de zoneamento."
 					},
 					{
-						"pt": "Estudos de viabilidade jurídica de projetos.",
-						"en": "Legal feasibility studies for projects."
+						"pt-PT": "Estudos de viabilidade jurídica de projetos.",
+						"en": "Legal feasibility studies for projects.",
+						"pt-BR": "Estudos de viabilidade jurídica de projetos."
 					},
 					{
-						"pt": "Identificação de limitações ao uso de imóveis.",
-						"en": "Identifying restrictions on the use of properties."
+						"pt-PT": "Identificação de limitações ao uso de imóveis.",
+						"en": "Identifying restrictions on the use of properties.",
+						"pt-BR": "Identificação de limitações ao uso de imóveis."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "ESG e responsabilidade empresarial",
-					"en": "ESG and corporate responsibility"
+					"pt-PT": "ESG e responsabilidade empresarial",
+					"en": "ESG and corporate responsibility",
+					"pt-BR": "ESG e responsabilidade empresarial"
 				},
 				"items": [
 					{
-						"pt": "Diagnóstico de riscos socioambientais, avaliação de práticas internas e desenvolvimento de medidas para fortalecer a governança.",
-						"en": "Diagnosing social and environmental risks, assessing internal practices and developing measures to strengthen governance."
+						"pt-PT": "Diagnóstico de riscos socioambientais, avaliação de práticas internas e desenvolvimento de medidas para fortalecer a governança.",
+						"en": "Diagnosing social and environmental risks, assessing internal practices and developing measures to strengthen governance.",
+						"pt-BR": "Diagnóstico de riscos socioambientais, avaliação de práticas internas e desenvolvimento de medidas para fortalecer a governança."
 					},
 					{
-						"pt": "Elaboração de políticas e planos de ação.",
-						"en": "Developing policies and action plans."
+						"pt-PT": "Elaboração de políticas e planos de ação.",
+						"en": "Developing policies and action plans.",
+						"pt-BR": "Elaboração de políticas e planos de ação."
 					},
 					{
-						"pt": "Definição de indicadores e metas de sustentabilidade.",
-						"en": "Defining sustainability indicators and targets."
+						"pt-PT": "Definição de indicadores e metas de sustentabilidade.",
+						"en": "Defining sustainability indicators and targets.",
+						"pt-BR": "Definição de indicadores e metas de sustentabilidade."
 					},
 					{
-						"pt": "Produção de relatórios e acompanhamento de compromissos.",
-						"en": "Preparing reports and monitoring commitments."
+						"pt-PT": "Produção de relatórios e acompanhamento de compromissos.",
+						"en": "Preparing reports and monitoring commitments.",
+						"pt-BR": "Produção de relatórios e acompanhamento de compromissos."
 					}
 				]
 			},
 			{
 				"title": {
-					"pt": "Compliance e Due Diligence",
-					"en": "Compliance and due diligence"
+					"pt-PT": "Compliance e Due Diligence",
+					"en": "Compliance and due diligence",
+					"pt-BR": "Compliance e Due Diligence"
 				},
 				"items": [
 					{
-						"pt": "Análise de riscos e conformidade em operações e cadeias de fornecimento, com atenção aos impactos ambientais, às condições de trabalho e ao respeito pelos direitos humanos.",
-						"en": "Analysing risks and compliance in operations and supply chains, with attention to environmental impacts, working conditions and respect for human rights."
+						"pt-PT": "Análise de riscos e conformidade em operações e cadeias de fornecimento, com atenção aos impactos ambientais, às condições de trabalho e ao respeito pelos direitos humanos.",
+						"en": "Analysing risks and compliance in operations and supply chains, with attention to environmental impacts, working conditions and respect for human rights.",
+						"pt-BR": "Análise de riscos e conformidade em operações e cadeias de fornecimento, com atenção aos impactos ambientais, às condições de trabalho e ao respeito pelos direitos humanos."
 					},
 					{
-						"pt": "Verificação de requisitos legais e padrões aplicáveis.",
-						"en": "Verifying applicable legal requirements and standards."
+						"pt-PT": "Verificação de requisitos legais e padrões aplicáveis.",
+						"en": "Verifying applicable legal requirements and standards.",
+						"pt-BR": "Verificação de requisitos legais e padrões aplicáveis."
 					},
 					{
-						"pt": "Avaliação de fornecedores e identificação de riscos.",
-						"en": "Assessing suppliers and identifying risks."
+						"pt-PT": "Avaliação de fornecedores e identificação de riscos.",
+						"en": "Assessing suppliers and identifying risks.",
+						"pt-BR": "Avaliação de fornecedores e identificação de riscos."
 					},
 					{
-						"pt": "Recomendações de medidas corretivas e mecanismos de monitorização.",
-						"en": "Recommending corrective measures and monitoring mechanisms."
+						"pt-PT": "Recomendações de medidas corretivas e mecanismos de monitorização.",
+						"en": "Recommending corrective measures and monitoring mechanisms.",
+						"pt-BR": "Recomendações de medidas corretivas e mecanismos de monitorização."
 					}
 				]
 			}
 		],
 		"differentiatorEyebrow": {
-			"pt": "O que me distingue",
-			"en": "What Sets Me Apart"
+			"pt-PT": "O que me distingue",
+			"en": "What Sets Me Apart",
+			"pt-BR": "O que me distingue"
 		},
 		"differentiatorHeading": {
-			"pt": "Não falo do EUDR de fora. Fui à Amazónia para o estudar.",
-			"en": "I don't examine the EUDR from afar. I went to the Amazon to study it."
+			"pt-PT": "Não falo do EUDR de fora. Fui à Amazónia para o estudar.",
+			"en": "I don't examine the EUDR from afar. I went to the Amazon to study it.",
+			"pt-BR": "Não falo do EUDR de fora. Fui à Amazónia para o estudar."
 		},
 		"differentiatorImage": {
 			"image": "/ambiental-esg-amazonia.webp",
 			"alt": {
-				"pt": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta.",
-				"en": "Ana Flávia standing next to a tree trunk in a forested area."
+				"pt-PT": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta.",
+				"en": "Ana Flávia standing next to a tree trunk in a forested area.",
+				"pt-BR": "Ana Flávia junto ao tronco de uma árvore, numa área de floresta."
 			},
 			"decorative": false
 		},
 		"differentiatorParagraphs": {
-			"pt": "O meu doutoramento na NOVA Lisboa investigou sobre a política florestal brasileira e as políticas ambientais da União Europeia. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta as notas técnicas, os estudos e o apoio que presto a empresas e organizações.\n",
-			"en": "My PhD at NOVA Lisbon focused on Brazilian forestry policy and the European Union’s environmental policies. I went into the field in the Amazon to interview producers, companies, communities and public bodies to understand how the new European requirements work in practice.\n\nIt is the difference between knowing the regulations and knowing the terrain where they are applied. This scientific foundation underpins the technical reports, studies and support I provide to companies and organisations.\n"
+			"pt-PT": "O meu doutoramento na NOVA Lisboa investigou sobre a política florestal brasileira e as políticas ambientais da União Europeia. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta as notas técnicas, os estudos e o apoio que presto a empresas e organizações.\n",
+			"en": "My PhD at NOVA Lisbon focused on Brazilian forestry policy and the European Union’s environmental policies. I went into the field in the Amazon to interview producers, companies, communities and public bodies to understand how the new European requirements work in practice.\n\nIt is the difference between knowing the regulations and knowing the terrain where they are applied. This scientific foundation underpins the technical reports, studies and support I provide to companies and organisations.\n",
+			"pt-BR": "O meu doutoramento na NOVA Lisboa investigou sobre a política florestal brasileira e as políticas ambientais da União Europeia. Fui a campo, na Amazónia, entrevistar produtores, empresas, comunidades e órgãos públicos para compreender como as novas exigências europeias funcionam na prática.\n\nÉ a diferença entre conhecer o regulamento e conhecer o terreno onde ele é aplicado. Essa base científica sustenta as notas técnicas, os estudos e o apoio que presto a empresas e organizações.\n"
 		},
 		"differentiatorCredentials": [
 			{
-				"pt": "Mestre em Direito Agro-Ambiental - Universidade Federal de Mato Grosso (bolseira FAPEMAT)",
-				"en": "Master’s degree in Agro-Environmental Law – Federal University of Mato Grosso (FAPEMAT scholarship holder)"
+				"pt-PT": "Mestre em Direito Agro-Ambiental - Universidade Federal de Mato Grosso (bolseira FAPEMAT)",
+				"en": "Master’s degree in Agro-Environmental Law – Federal University of Mato Grosso (FAPEMAT scholarship holder)",
+				"pt-BR": "Mestre em Direito Agro-Ambiental - Universidade Federal de Mato Grosso (bolseira FAPEMAT)"
 			},
 			{
-				"pt": "Assessora Especial na Secretaria de Meio Ambiente de Mato Grosso (SEMA-MT) - políticas ambientais por dentro",
-				"en": "Special Advisor at the Department of Environment of the State of Mato Grosso (SEMA-MT) - firsthand policy expertise"
+				"pt-PT": "Assessora Especial na Secretaria de Meio Ambiente de Mato Grosso (SEMA-MT) - políticas ambientais por dentro",
+				"en": "Special Advisor at the Department of Environment of the State of Mato Grosso (SEMA-MT) - firsthand policy expertise",
+				"pt-BR": "Assessora Especial na Secretaria de Meio Ambiente de Mato Grosso (SEMA-MT) - políticas ambientais por dentro"
 			},
 			{
-				"pt": "Doutora em Alterações Climáticas e Políticas de Desenvolvimento Sustentável - NOVA Lisboa (bolseira FCT)",
-				"en": "PhD in Climate Change and Sustainable Development Policies – NOVA Lisbon (FCT scholarship holder)"
+				"pt-PT": "Doutora em Alterações Climáticas e Políticas de Desenvolvimento Sustentável - NOVA Lisboa (bolseira FCT)",
+				"en": "PhD in Climate Change and Sustainable Development Policies – NOVA Lisbon (FCT scholarship holder)",
+				"pt-BR": "Doutora em Alterações Climáticas e Políticas de Desenvolvimento Sustentável - NOVA Lisboa (bolseira FCT)"
 			},
 			{
-				"pt": "SPF Early Career Fellow - Rights Lab, University of Nottingham, em cadeias globais de fornecimento",
-				"en": "SPF Early Career Fellow - Rights Lab, University of Nottingham, focusing on global supply chains"
+				"pt-PT": "SPF Early Career Fellow - Rights Lab, University of Nottingham, em cadeias globais de fornecimento",
+				"en": "SPF Early Career Fellow - Rights Lab, University of Nottingham, focusing on global supply chains",
+				"pt-BR": "SPF Early Career Fellow - Rights Lab, University of Nottingham, em cadeias globais de fornecimento"
 			}
 		],
 		"relatedWorkHeading": {
-			"pt": "Trabalho relacionado",
-			"en": "Related Publications"
+			"pt-PT": "Trabalho relacionado",
+			"en": "Related Publications",
+			"pt-BR": "Trabalho relacionado"
 		},
 		"relatedWorkSubtitle": {
-			"pt": "Investigação e publicações relacionadas com esta área.",
-			"en": "Subject-matter expertise is not just a statement - it is published and verifiable."
+			"pt-PT": "Investigação e publicações relacionadas com esta área.",
+			"en": "Subject-matter expertise is not just a statement - it is published and verifiable.",
+			"pt-BR": "Investigação e publicações relacionadas com esta área."
 		},
 		"relatedPublications": [
 			{
 				"title": {
-					"pt": "Exploring the Brussels Effect",
-					"en": "Exploring the Brussels Effect"
+					"pt-PT": "Exploring the Brussels Effect",
+					"en": "Exploring the Brussels Effect",
+					"pt-BR": "Exploring the Brussels Effect"
 				},
 				"publication": {
-					"pt": "Revista de Direito (2024)",
-					"en": "Revista de Direito (2024)"
+					"pt-PT": "Revista de Direito (2024)",
+					"en": "Revista de Direito (2024)",
+					"pt-BR": "Revista de Direito (2024)"
 				},
 				"highlight": {}
 			},
 			{
 				"title": {
-					"pt": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
-					"en": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR"
+					"pt-PT": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+					"en": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR",
+					"pt-BR": "Forest Trade on the Amazon Frontier and Its Interaction with the EUDR"
 				},
 				"publication": {
-					"pt": "International Journal for the Semiotics of Law (2025)",
-					"en": "International Journal for the Semiotics of Law (2025)"
+					"pt-PT": "International Journal for the Semiotics of Law (2025)",
+					"en": "International Journal for the Semiotics of Law (2025)",
+					"pt-BR": "International Journal for the Semiotics of Law (2025)"
 				}
 			}
 		],
 		"note": {
-			"pt": "Os serviços jurídicos são prestados exclusivamente no âmbito do Direito Ambiental no Brasil. O trabalho sobre regulação europeia consiste em apoio técnico, investigação e organização de informação.",
-			"en": "Legal services are provided exclusively in the field of environmental law in Brazil. Work on European regulation consists of technical support, research and the organisation of information."
+			"pt-PT": "Os serviços jurídicos são prestados exclusivamente no âmbito do Direito Ambiental no Brasil. O trabalho sobre regulação europeia consiste em apoio técnico, investigação e organização de informação.",
+			"en": "Legal services are provided exclusively in the field of environmental law in Brazil. Work on European regulation consists of technical support, research and the organisation of information.",
+			"pt-BR": "Os serviços jurídicos são prestados exclusivamente no âmbito do Direito Ambiental no Brasil. O trabalho sobre regulação europeia consiste em apoio técnico, investigação e organização de informação."
 		},
 		"ctaHeading": {
-			"pt": "A sua cadeia está preparada para a regulação europeia?",
-			"en": "Is your supply chain prepared for European regulations?"
+			"pt-PT": "A sua cadeia está preparada para a regulação europeia?",
+			"en": "Is your supply chain prepared for European regulations?",
+			"pt-BR": "A sua cadeia está preparada para a regulação europeia?"
 		},
 		"ctaText": {
-			"pt": "Se a sua empresa tem operações ou fornecedores ligados ao Brasil ou União Europeia, posso ajudar a organizar a informação necessária e a identificar os pontos que precisam de atenção.",
-			"en": "If your company has operations or suppliers linked to Brazil or the European Union, I can help you organise the necessary information and identify the areas that require attention."
+			"pt-PT": "Se a sua empresa tem operações ou fornecedores ligados ao Brasil ou União Europeia, posso ajudar a organizar a informação necessária e a identificar os pontos que precisam de atenção.",
+			"en": "If your company has operations or suppliers linked to Brazil or the European Union, I can help you organise the necessary information and identify the areas that require attention.",
+			"pt-BR": "Se a sua empresa tem operações ou fornecedores ligados ao Brasil ou União Europeia, posso ajudar a organizar a informação necessária e a identificar os pontos que precisam de atenção."
 		}
 	},
 	"_template": "consultingService"

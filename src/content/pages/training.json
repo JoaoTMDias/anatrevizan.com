@@ -1,135 +1,161 @@
 {
 	"routeKey": "training",
 	"title": {
-		"pt": "Cursos e Formações",
-		"en": "Training & Courses"
+		"pt-PT": "Cursos e Formações",
+		"en": "Training & Courses",
+		"pt-BR": "Cursos e Formações"
 	},
 	"summary": {
-		"pt": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
-		"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
+		"pt-PT": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
+		"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe.",
+		"pt-BR": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
 	},
 	"seo": {
 		"title": {
-			"pt": "Cursos e Formações · Direito Ambiental, ESG e Clima",
-			"en": "Training & Courses · Environmental Law, ESG, and Climate - Ana Trevizan"
+			"pt-PT": "Cursos e Formações · Direito Ambiental, ESG e Clima",
+			"en": "Training & Courses · Environmental Law, ESG, and Climate - Ana Trevizan",
+			"pt-BR": "Cursos e Formações · Direito Ambiental, ESG e Clima"
 		},
 		"description": {
-			"pt": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito Ambiental, ESG, governança climática, compliance e Direito da UE.",
-			"en": "Courses, workshops, and training programmes for universities, corporations, municipalities, and organisations in Environmental Law, ESG, climate governance, compliance, and EU Law."
+			"pt-PT": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito Ambiental, ESG, governança climática, compliance e Direito da UE.",
+			"en": "Courses, workshops, and training programmes for universities, corporations, municipalities, and organisations in Environmental Law, ESG, climate governance, compliance, and EU Law.",
+			"pt-BR": "Cursos, workshops e formações para universidades, empresas, municípios e organizações em Direito Ambiental, ESG, governança climática, compliance e Direito da UE."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/cursos-hero.webp",
 			"alt": {
-				"pt": "Ana a palestrar",
-				"en": "Ana giving a speech"
+				"pt-PT": "Ana a palestrar",
+				"en": "Ana giving a speech",
+				"pt-BR": "Ana a palestrar"
 			},
 			"decorative": true
 		}
 	},
 	"academicService": {
 		"subtitle": {
-			"pt": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
-			"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe."
+			"pt-PT": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança.",
+			"en": "Training that translates complex topics into actionable knowledge. Certified trainer in Portugal with teaching experience in Brazil and Europe.",
+			"pt-BR": "Formação para equipas, estudantes e organizações que querem compreender melhor um tema e trabalhar sobre ele com mais segurança."
 		},
 		"introHeading": {
-			"pt": "Conhecimento para aplicar no trabalho",
-			"en": "Knowledge to use at work"
+			"pt-PT": "Conhecimento para aplicar no trabalho",
+			"en": "Knowledge to use at work",
+			"pt-BR": "Conhecimento para aplicar no trabalho"
 		},
 		"introImage": {
 			"image": "/formacoes-intro.webp",
 			"alt": {
-				"pt": "Ana, sentada nas escadas da Faculdade de Direito de Coimbra, a ler um livro.",
-				"en": "Ana, sitting on the steps of the Coimbra Law School, reading a book."
+				"pt-PT": "Ana, sentada nas escadas da Faculdade de Direito de Coimbra, a ler um livro.",
+				"en": "Ana, sitting on the steps of the Coimbra Law School, reading a book.",
+				"pt-BR": "Ana, sentada nas escadas da Faculdade de Direito de Coimbra, a ler um livro."
 			},
 			"decorative": true
 		},
 		"introParagraphs": {
-			"pt": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n",
-			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programmes for universities, corporations, municipalities, and organisations, combining research rigour with pedagogical clarity.\n"
+			"pt-PT": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n",
+			"en": "I have been teaching for over a decade: in Brazil, and in English at LUNEX in Luxembourg. I learned that good training doesn't just unload theory: it starts from the audience's reality and delivers practical tools they can apply immediately.\n\nI design tailored courses, workshops, and training programmes for universities, corporations, municipalities, and organisations, combining research rigour with pedagogical clarity.\n",
+			"pt-BR": "Uma boa formação deve ajudar a compreender um tema e a saber o que fazer com essa informação. Por isso, trabalhamos exemplos, perguntas e situações próximas da realidade de quem participa.\n"
 		},
 		"servicesHeading": {
-			"pt": "Temas",
-			"en": "Topics"
+			"pt-PT": "Temas",
+			"en": "Topics",
+			"pt-BR": "Temas"
 		},
 		"servicesSubtitle": {
-			"pt": "Programas adaptados ao público e aos objetivos de cada instituição.",
-			"en": "Programmes tailored to the audience and goals of each institution."
+			"pt-PT": "Programas adaptados ao público e aos objetivos de cada instituição.",
+			"en": "Programmes tailored to the audience and goals of each institution.",
+			"pt-BR": "Programas adaptados ao público e aos objetivos de cada instituição."
 		},
 		"services": [
 			{
 				"title": {
-					"pt": "Direito Ambiental",
-					"en": "Environmental Law"
+					"pt-PT": "Direito Ambiental",
+					"en": "Environmental Law",
+					"pt-BR": "Direito Ambiental"
 				},
 				"description": {
-					"pt": "Fundamentos e aplicação prática, do licenciamento à litigância climática.",
-					"en": "Fundamentals and practical application, from licensing to climate litigation."
+					"pt-PT": "Fundamentos e aplicação prática, do licenciamento à litigância climática.",
+					"en": "Fundamentals and practical application, from licensing to climate litigation.",
+					"pt-BR": "Fundamentos e aplicação prática, do licenciamento à litigância climática."
 				}
 			},
 			{
 				"title": {
-					"pt": "ESG e Sustentabilidade",
-					"en": "ESG and Sustainability"
+					"pt-PT": "ESG e Sustentabilidade",
+					"en": "ESG and Sustainability",
+					"pt-BR": "ESG e Sustentabilidade"
 				},
 				"description": {
-					"pt": "Diagnóstico, indicadores e governança corporativa.",
-					"en": "Assessment, metrics, and corporate governance."
+					"pt-PT": "Diagnóstico, indicadores e governança corporativa.",
+					"en": "Assessment, metrics, and corporate governance.",
+					"pt-BR": "Diagnóstico, indicadores e governança corporativa."
 				}
 			},
 			{
 				"title": {
-					"pt": "Governança Climática",
-					"en": "Climate Governance"
+					"pt-PT": "Governança Climática",
+					"en": "Climate Governance",
+					"pt-BR": "Governança Climática"
 				},
 				"description": {
-					"pt": "Políticas, adaptação e o papel do Direito na transição.",
-					"en": "Policies, adaptation, and the role of law in the green transition."
+					"pt-PT": "Políticas, adaptação e o papel do Direito na transição.",
+					"en": "Policies, adaptation, and the role of law in the green transition.",
+					"pt-BR": "Políticas, adaptação e o papel do Direito na transição."
 				}
 			},
 			{
 				"title": {
-					"pt": "Compliance",
-					"en": "Compliance"
+					"pt-PT": "Compliance",
+					"en": "Compliance",
+					"pt-BR": "Compliance"
 				},
 				"description": {
-					"pt": "Gestão de riscos regulatórios e boas práticas.",
-					"en": "Regulatory risk management and best practices."
+					"pt-PT": "Gestão de riscos regulatórios e boas práticas.",
+					"en": "Regulatory risk management and best practices.",
+					"pt-BR": "Gestão de riscos regulatórios e boas práticas."
 				}
 			},
 			{
 				"title": {
-					"pt": "Direito da União Europeia",
-					"en": "European Union Law"
+					"pt-PT": "Direito da União Europeia",
+					"en": "European Union Law",
+					"pt-BR": "Direito da União Europeia"
 				},
 				"description": {
-					"pt": "EUDR, CSDDD, CSRD e o alcance da regulação europeia.",
-					"en": "EUDR, CSDDD, CSRD, and the reach of European regulation."
+					"pt-PT": "EUDR, CSDDD, CSRD e o alcance da regulação europeia.",
+					"en": "EUDR, CSDDD, CSRD, and the reach of European regulation.",
+					"pt-BR": "EUDR, CSDDD, CSRD e o alcance da regulação europeia."
 				}
 			},
 			{
 				"title": {
-					"pt": "Direito Migratório e Direitos Humanos",
-					"en": "Immigration Law and Human Rights"
+					"pt-PT": "Direito Migratório e Direitos Humanos",
+					"en": "Immigration Law and Human Rights",
+					"pt-BR": "Direito Migratório e Direitos Humanos"
 				},
 				"description": {
-					"pt": "Mobilidade internacional e dignidade nas cadeias de fornecimento.",
-					"en": "International mobility and human dignity in supply chains."
+					"pt-PT": "Mobilidade internacional e dignidade nas cadeias de fornecimento.",
+					"en": "International mobility and human dignity in supply chains.",
+					"pt-BR": "Mobilidade internacional e dignidade nas cadeias de fornecimento."
 				}
 			}
 		],
 		"note": {
-			"pt": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
-			"en": "Courses, workshops, and training programmes by invitation. Curricula and formats defined in collaboration with each institution."
+			"pt-PT": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição.",
+			"en": "Courses, workshops, and training programmes by invitation. Curricula and formats defined in collaboration with each institution.",
+			"pt-BR": "Cursos, workshops e formações sob convite. Programas e formatos definidos com cada instituição."
 		},
 		"ctaHeading": {
-			"pt": "Quer uma formação para a sua equipa ou instituição?",
-			"en": "Looking for a training programme for your team or institution?"
+			"pt-PT": "Quer uma formação para a sua equipa ou instituição?",
+			"en": "Looking for a training programme for your team or institution?",
+			"pt-BR": "Quer uma formação para a sua equipa ou instituição?"
 		},
 		"ctaText": {
-			"pt": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
-			"en": "Schedule an initial call and we will design a programme tailored to your audience."
+			"pt-PT": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público.",
+			"en": "Schedule an initial call and we will design a programme tailored to your audience.",
+			"pt-BR": "Marque uma conversa inicial e desenhamos o programa adequado ao seu público."
 		}
 	},
 	"_template": "academicService"

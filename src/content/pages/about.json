@@ -1,296 +1,354 @@
 {
 	"routeKey": "about",
 	"title": {
-		"pt": "Sobre mim",
-		"en": "About me"
+		"pt-PT": "Sobre mim",
+		"en": "About me",
+		"pt-BR": "Sobre mim"
 	},
 	"summary": {
-		"pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países.",
-		"en": "A career forged at the intersection of science, law and people, and between two countries."
+		"pt-PT": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países.",
+		"en": "A career forged at the intersection of science, law and people, and between two countries.",
+		"pt-BR": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países."
 	},
 	"seo": {
 		"title": {
-			"pt": "Ana Flávia Trevizan - Sobre mim",
-			"en": "Ana Flávia Trevizan - About me"
+			"pt-PT": "Ana Flávia Trevizan - Sobre mim",
+			"en": "Ana Flávia Trevizan - About me",
+			"pt-BR": "Ana Flávia Trevizan - Sobre mim"
 		},
 		"description": {
-			"pt": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
-			"en": "My legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors."
+			"pt-PT": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores.",
+			"en": "My legal practice is conducted in Brazil, where I am a lawyer registered with OAB/SP under no. 330.386. In Portugal, I do not provide legal consultations, representation or activities reserved to lawyers and solicitors.",
+			"pt-BR": "A atividade jurídica é exercida no Brasil, onde sou advogada inscrita na OAB/SP sob o n.º 330.386. Em Portugal, não presto consulta jurídica, representação ou atos reservados a advogados e solicitadores."
 		}
 	},
 	"media": {
 		"foreground": {
 			"image": "/about-hero.webp",
 			"alt": {
-				"pt": "Ana Flávia sentada num divã, a sorrir para a câmara.",
-				"en": "Ana Flávia sitting on a couch, smiling at the camera."
+				"pt-PT": "Ana Flávia sentada num divã, a sorrir para a câmara.",
+				"en": "Ana Flávia sitting on a couch, smiling at the camera.",
+				"pt-BR": "Ana Flávia sentada num divã, a sorrir para a câmara."
 			},
 			"decorative": false
 		}
 	},
 	"about": {
 		"tag": {
-			"pt": "Dra. Ana, PhD",
-			"en": "Dr. Ana, PhD"
+			"pt-PT": "Dra. Ana, PhD",
+			"en": "Dr. Ana, PhD",
+			"pt-BR": "Dra. Ana, PhD"
 		},
 		"subtitle": {
-			"pt": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países.",
-			"en": "A career forged at the intersection of science, law and people, and between two countries."
+			"pt-PT": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países.",
+			"en": "A career forged at the intersection of science, law and people, and between two countries.",
+			"pt-BR": "Uma trajetória construída na fronteira entre a ciência, o Direito e as pessoas, e entre dois países."
 		},
 		"introImage": {
 			"image": "/about-intro.webp",
 			"alt": {
-				"pt": "Uma fotografia divertida da Ana, a segurar um portátil, um telefone, um copo e um livro na cabeça, tudo ao mesmo tempo.",
-				"en": "A funny photo of Ana balancing a laptop, a phone, a glass, and a book on her head—all at the same time."
+				"pt-PT": "Uma fotografia divertida da Ana, a segurar um portátil, um telefone, um copo e um livro na cabeça, tudo ao mesmo tempo.",
+				"en": "A funny photo of Ana balancing a laptop, a phone, a glass, and a book on her head—all at the same time.",
+				"pt-BR": "Uma fotografia divertida da Ana, a segurar um portátil, um telefone, um copo e um livro na cabeça, tudo ao mesmo tempo."
 			},
 			"decorative": false
 		},
 		"narrative": {
-			"pt": "A minha trajetória sempre foi guiada pela inquietação de perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nAcredito que o Direito deve ser um instrumento de transformação, aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.\n",
-			"en": "My career has always been driven by a desire to understand how the law can protect those in vulnerable situations and contribute to a fairer society.\n\nI believe that the law should be an instrument of change, combined with a personalised approach, in which every person is listened to and understood.\n"
+			"pt-PT": "A minha trajetória sempre foi guiada pela inquietação de perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nAcredito que o Direito deve ser um instrumento de transformação, aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.\n",
+			"en": "My career has always been driven by a desire to understand how the law can protect those in vulnerable situations and contribute to a fairer society.\n\nI believe that the law should be an instrument of change, combined with a personalised approach, in which every person is listened to and understood.\n",
+			"pt-BR": "A minha trajetória sempre foi guiada pela inquietação de perceber como o Direito pode proteger quem está em situação de vulnerabilidade e contribuir para uma sociedade mais justa.\n\nAcredito que o Direito deve ser um instrumento de transformação, aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.\n"
 		},
 		"milestonesTitle": {
-			"pt": "Marcos do percurso",
-			"en": "Milestones"
+			"pt-PT": "Marcos do percurso",
+			"en": "Milestones",
+			"pt-BR": "Marcos do percurso"
 		},
 		"milestones": [
 			{
 				"year": "2013",
 				"title": {
-					"pt": "Inscrição na OAB e início da advocacia",
-					"en": "Admission to the Brazilian Bar Association (OAB) and start of legal practice"
+					"pt-PT": "Inscrição na OAB e início da advocacia",
+					"en": "Admission to the Brazilian Bar Association (OAB) and start of legal practice",
+					"pt-BR": "Inscrição na OAB e início da advocacia"
 				},
 				"description": {
-					"pt": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil.",
-					"en": "Passed the Bar Examination while still in law school. Began practising in Civil Law and Civil Procedure."
+					"pt-PT": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil.",
+					"en": "Passed the Bar Examination while still in law school. Began practising in Civil Law and Civil Procedure.",
+					"pt-BR": "Aprovada no Exame da Ordem ainda durante a graduação. Início da atuação em Direito Civil e Processo Civil."
 				}
 			},
 			{
 				"year": "2015",
 				"title": {
-					"pt": "Mestrado em Direito Agroambiental - UFMT",
-					"en": "Master’s Degree in Agro-Environmental Law - Federal University of Mato Grosso (UFMT)"
+					"pt-PT": "Mestrado em Direito Agroambiental - UFMT",
+					"en": "Master’s Degree in Agro-Environmental Law - Federal University of Mato Grosso (UFMT)",
+					"pt-BR": "Mestrado em Direito Agroambiental - UFMT"
 				},
 				"description": {
-					"pt": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas.",
-					"en": "FAPEMAT Research Fellow. Here, academic research joined legal practice, with a focus on environmental issues and public policy."
+					"pt-PT": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas.",
+					"en": "FAPEMAT Research Fellow. Here, academic research joined legal practice, with a focus on environmental issues and public policy.",
+					"pt-BR": "Bolseira da FAPEMAT. Aqui a pesquisa passa a caminhar ao lado da advocacia, com foco em ambiente e políticas públicas."
 				}
 			},
 			{
 				"year": "2018–2019",
 				"title": {
-					"pt": "Assessora Especial - SEMA-MT",
-					"en": "Special Advisor - Department of Environment of the State of Mato Grosso (SEMA-MT)"
+					"pt-PT": "Assessora Especial - SEMA-MT",
+					"en": "Special Advisor - Department of Environment of the State of Mato Grosso (SEMA-MT)",
+					"pt-BR": "Assessora Especial - SEMA-MT"
 				},
 				"description": {
-					"pt": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança.",
-					"en": "Drafting and analysis of environmental laws and public policies within public administration, with a focus on carbon markets and governance."
+					"pt-PT": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança.",
+					"en": "Drafting and analysis of environmental laws and public policies within public administration, with a focus on carbon markets and governance.",
+					"pt-BR": "Elaboração e análise de leis e políticas ambientais por dentro da administração pública, incluindo mercado de carbono e governança."
 				}
 			},
 			{
 				"year": "2019–2024",
 				"title": {
-					"pt": "Doutoramento - NOVA Lisboa",
-					"en": "Ph.D. - NOVA University Lisbon"
+					"pt-PT": "Doutoramento - NOVA Lisboa",
+					"en": "Ph.D. - NOVA University Lisbon",
+					"pt-BR": "Doutoramento - NOVA Lisboa"
 				},
 				"description": {
-					"pt": "Bolseira da FCT. Investigação sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil.",
-					"en": "FCT Fellow. Research on the extraterritorial impacts of law on forestry policies in the EU and Brazil."
+					"pt-PT": "Bolseira da FCT. Investigação sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil.",
+					"en": "FCT Fellow. Research on the extraterritorial impacts of law on forestry policies in the EU and Brazil.",
+					"pt-BR": "Bolseira da FCT. Investigação sobre os impactos extraterritoriais do Direito nas políticas florestais da UE e do Brasil."
 				}
 			},
 			{
 				"year": "2020",
 				"title": {
-					"pt": "Mestrado reconhecido pela Universidade de Lisboa",
-					"en": "Master's degree recognized by the University of Lisbon"
+					"pt-PT": "Mestrado reconhecido pela Universidade de Lisboa",
+					"en": "Master's degree recognized by the University of Lisbon",
+					"pt-BR": "Mestrado reconhecido pela Universidade de Lisboa"
 				},
 				"description": {
-					"pt": "Integração formal ao espaço académico europeu.",
-					"en": "Formal integration into the European academic space."
+					"pt-PT": "Integração formal ao espaço académico europeu.",
+					"en": "Formal integration into the European academic space.",
+					"pt-BR": "Integração formal ao espaço académico europeu."
 				}
 			},
 			{
 				"year": "2025",
 				"title": {
-					"pt": "SPF Early Career Fellow - Rights Lab, Nottingham",
-					"en": "SPF Early Career Fellow - Rights Lab, Nottingham"
+					"pt-PT": "SPF Early Career Fellow - Rights Lab, Nottingham",
+					"en": "SPF Early Career Fellow - Rights Lab, Nottingham",
+					"pt-BR": "SPF Early Career Fellow - Rights Lab, Nottingham"
 				},
 				"description": {
-					"pt": "Pesquisa sobre trabalho escravo e dados geoespaciais na Amazónia brasileira",
-					"en": "Research on slave labour and geospatial data in the Brazilian Amazon."
+					"pt-PT": "Pesquisa sobre trabalho escravo e dados geoespaciais na Amazónia brasileira",
+					"en": "Research on slave labour and geospatial data in the Brazilian Amazon.",
+					"pt-BR": "Pesquisa sobre trabalho escravo e dados geoespaciais na Amazónia brasileira"
 				}
 			},
 			{
 				"year": "2026",
 				"title": {
-					"pt": "Formadora certificada em Portugal",
-					"en": "Certified Trainer in Portugal"
+					"pt-PT": "Formadora certificada em Portugal",
+					"en": "Certified Trainer in Portugal",
+					"pt-BR": "Formadora certificada em Portugal"
 				},
 				"description": {
-					"pt": "Habilitação oficial para o desenvolvimento de ações de formação no país.",
-					"en": "Official accreditation to conduct vocational training in the country."
+					"pt-PT": "Habilitação oficial para o desenvolvimento de ações de formação no país.",
+					"en": "Official accreditation to conduct vocational training in the country.",
+					"pt-BR": "Habilitação oficial para o desenvolvimento de ações de formação no país."
 				}
 			}
 		],
 		"currentWorkTitle": {
-			"pt": "Onde atuo hoje",
-			"en": "Where I practice today"
+			"pt-PT": "Onde atuo hoje",
+			"en": "Where I practice today",
+			"pt-BR": "Onde atuo hoje"
 		},
 		"currentWork": [
 			{
 				"country": {
-					"pt": "Portugal",
-					"en": "Portugal"
+					"pt-PT": "Portugal",
+					"en": "Portugal",
+					"pt-BR": "Portugal"
 				},
 				"image": "/Portugal.jpg",
 				"title": {
-					"pt": "Em Portugal",
-					"en": "In Portugal"
+					"pt-PT": "Em Portugal",
+					"en": "In Portugal",
+					"pt-BR": "Em Portugal"
 				},
 				"description": {
-					"pt": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
-					"en": "I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures."
+					"pt-PT": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos.",
+					"en": "I carry out research, training and administrative support activities, with particular attention to international mobility, document organisation and dealings with public services and procedures.",
+					"pt-BR": "Desenvolvo atividades de investigação, formação e apoio administrativo, com especial atenção à mobilidade internacional, à organização documental e à relação com serviços e procedimentos públicos."
 				}
 			},
 			{
 				"country": {
-					"pt": "Brasil",
-					"en": "Brazil"
+					"pt-PT": "Brasil",
+					"en": "Brazil",
+					"pt-BR": "Brasil"
 				},
 				"image": "/brasil.jpg",
 				"title": {
-					"pt": "No Brasil",
-					"en": "In Brazil"
+					"pt-PT": "No Brasil",
+					"en": "In Brazil",
+					"pt-BR": "No Brasil"
 				},
 				"description": {
-					"pt": "Advocacia em Direito Ambiental, Civil, Climático e Florestal, com elaboração de pareceres, análise de políticas públicas e consultoria em compliance e sustentabilidade para organizações públicas e privadas.",
-					"en": "Legal services in environmental, civil, climate and forestry law, including the preparation of legal opinions, analysis of public policies, and consultancy on compliance and sustainability for public and private organisations."
+					"pt-PT": "Advocacia em Direito Ambiental, Civil, Climático e Florestal, com elaboração de pareceres, análise de políticas públicas e consultoria em compliance e sustentabilidade para organizações públicas e privadas.",
+					"en": "Legal services in environmental, civil, climate and forestry law, including the preparation of legal opinions, analysis of public policies, and consultancy on compliance and sustainability for public and private organisations.",
+					"pt-BR": "Advocacia em Direito Ambiental, Civil, Climático e Florestal, com elaboração de pareceres, análise de políticas públicas e consultoria em compliance e sustentabilidade para organizações públicas e privadas."
 				}
 			}
 		],
 		"valuesTitle": {
-			"pt": "O que orienta o meu trabalho",
-			"en": "My Core Values"
+			"pt-PT": "O que orienta o meu trabalho",
+			"en": "My Core Values",
+			"pt-BR": "O que orienta o meu trabalho"
 		},
 		"valuesSubtitle": {
-			"pt": "Acredito que o Direito deve ser um instrumento de transformação - aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
-			"en": "I believe that law should be a tool for transformation - grounded in a close, personal approach where every client is truly heard and understood."
+			"pt-PT": "Acredito que o Direito deve ser um instrumento de transformação - aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida.",
+			"en": "I believe that law should be a tool for transformation - grounded in a close, personal approach where every client is truly heard and understood.",
+			"pt-BR": "Acredito que o Direito deve ser um instrumento de transformação - aliado a um atendimento próximo, em que cada pessoa é ouvida e compreendida."
 		},
 		"values": [
 			{
 				"title": {
-					"pt": "Ética e integridade",
-					"en": "Ethics and Integrity"
+					"pt-PT": "Ética e integridade",
+					"en": "Ethics and Integrity",
+					"pt-BR": "Ética e integridade"
 				},
 				"description": {
-					"pt": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos.",
-					"en": "Accountability, confidentiality, and commitment to legal principles."
+					"pt-PT": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos.",
+					"en": "Accountability, confidentiality, and commitment to legal principles.",
+					"pt-BR": "Responsabilidade, confidencialidade e respeito aos princípios jurídicos."
 				}
 			},
 			{
 				"title": {
-					"pt": "Excelência técnica",
-					"en": "Technical Excellence"
+					"pt-PT": "Excelência técnica",
+					"en": "Technical Excellence",
+					"pt-BR": "Excelência técnica"
 				},
 				"description": {
-					"pt": "Soluções fundamentadas e atualização profissional permanente.",
-					"en": "Well-founded solutions and ongoing professional development."
+					"pt-PT": "Soluções fundamentadas e atualização profissional permanente.",
+					"en": "Well-founded solutions and ongoing professional development.",
+					"pt-BR": "Soluções fundamentadas e atualização profissional permanente."
 				}
 			},
 			{
 				"title": {
-					"pt": "Diversidade e inclusão",
-					"en": "Diversity and Inclusion"
+					"pt-PT": "Diversidade e inclusão",
+					"en": "Diversity and Inclusion",
+					"pt-BR": "Diversidade e inclusão"
 				},
 				"description": {
-					"pt": "Valorização da pluralidade de pessoas, culturas e perspetivas.",
-					"en": "Valuing the diversity of people, cultures, and perspectives."
+					"pt-PT": "Valorização da pluralidade de pessoas, culturas e perspetivas.",
+					"en": "Valuing the diversity of people, cultures, and perspectives.",
+					"pt-BR": "Valorização da pluralidade de pessoas, culturas e perspetivas."
 				}
 			},
 			{
 				"title": {
-					"pt": "Proteção de dados",
-					"en": "Data Protection"
+					"pt-PT": "Proteção de dados",
+					"en": "Data Protection",
+					"pt-BR": "Proteção de dados"
 				},
 				"description": {
-					"pt": "Confidencialidade e cumprimento do RGPD e demais normas aplicáveis.",
-					"en": "Confidentiality and compliance with GDPR and other applicable regulations."
+					"pt-PT": "Confidencialidade e cumprimento do RGPD e demais normas aplicáveis.",
+					"en": "Confidentiality and compliance with GDPR and other applicable regulations.",
+					"pt-BR": "Confidencialidade e cumprimento do RGPD e demais normas aplicáveis."
 				}
 			},
 			{
 				"title": {
-					"pt": "Compromisso com o cliente",
-					"en": "Client Commitment"
+					"pt-PT": "Compromisso com o cliente",
+					"en": "Client Commitment",
+					"pt-BR": "Compromisso com o cliente"
 				},
 				"description": {
-					"pt": "Atendimento próximo, estratégico e personalizado.",
-					"en": "Close, strategic, and personalised client support."
+					"pt-PT": "Atendimento próximo, estratégico e personalizado.",
+					"en": "Close, strategic, and personalised client support.",
+					"pt-BR": "Atendimento próximo, estratégico e personalizado."
 				}
 			},
 			{
 				"title": {
-					"pt": "Sustentabilidade",
-					"en": "Sustainability"
+					"pt-PT": "Sustentabilidade",
+					"en": "Sustainability",
+					"pt-BR": "Sustentabilidade"
 				},
 				"description": {
-					"pt": "Práticas alinhadas ao ESG e ao desenvolvimento sustentável.",
-					"en": "Practices aligned with ESG principles and sustainable development."
+					"pt-PT": "Práticas alinhadas ao ESG e ao desenvolvimento sustentável.",
+					"en": "Practices aligned with ESG principles and sustainable development.",
+					"pt-BR": "Práticas alinhadas ao ESG e ao desenvolvimento sustentável."
 				}
 			}
 		],
 		"networksLabel": {
-			"pt": "Redes e vínculos de investigação",
-			"en": "Research Networks and Academic Affiliations"
+			"pt-PT": "Redes e vínculos de investigação",
+			"en": "Research Networks and Academic Affiliations",
+			"pt-BR": "Redes e vínculos de investigação"
 		},
 		"networks": [
 			{
-				"pt": "LACLIMA",
-				"en": "LACLIMA"
+				"pt-PT": "LACLIMA",
+				"en": "LACLIMA",
+				"pt-BR": "LACLIMA"
 			},
 			{
-				"pt": "Legally Green",
-				"en": "Legally Green"
+				"pt-PT": "Legally Green",
+				"en": "Legally Green",
+				"pt-BR": "Legally Green"
 			},
 			{
-				"pt": "CENSE - NOVA Lisboa",
-				"en": "CENSE - NOVA University Lisbon"
+				"pt-PT": "CENSE - NOVA Lisboa",
+				"en": "CENSE - NOVA University Lisbon",
+				"pt-BR": "CENSE - NOVA Lisboa"
 			},
 			{
-				"pt": "CEDAT - Rovira i Virgili",
-				"en": "CEDAT - Rovira i Virgili University"
+				"pt-PT": "CEDAT - Rovira i Virgili",
+				"en": "CEDAT - Rovira i Virgili University",
+				"pt-BR": "CEDAT - Rovira i Virgili"
 			},
 			{
-				"pt": "CEJEIA",
-				"en": "CEJEIA"
+				"pt-PT": "CEJEIA",
+				"en": "CEJEIA",
+				"pt-BR": "CEJEIA"
 			},
 			{
-				"pt": "GPMAT - UFMT",
-				"en": "GPMAT - UFMT"
+				"pt-PT": "GPMAT - UFMT",
+				"en": "GPMAT - UFMT",
+				"pt-BR": "GPMAT - UFMT"
 			},
 			{
-				"pt": "Observa-MT",
-				"en": "Observa-MT"
+				"pt-PT": "Observa-MT",
+				"en": "Observa-MT",
+				"pt-BR": "Observa-MT"
 			},
 			{
-				"pt": "Casa Comum da Humanidade",
-				"en": "Common Home of Humanity"
+				"pt-PT": "Casa Comum da Humanidade",
+				"en": "Common Home of Humanity",
+				"pt-BR": "Casa Comum da Humanidade"
 			},
 			{
-				"pt": "QUERCUS",
-				"en": "QUERCUS"
+				"pt-PT": "QUERCUS",
+				"en": "QUERCUS",
+				"pt-BR": "QUERCUS"
 			}
 		],
 		"finalCtaHeading": {
-			"pt": "Falamos?",
-			"en": "Get in touch"
+			"pt-PT": "Falamos?",
+			"en": "Get in touch",
+			"pt-BR": "Falamos?"
 		},
 		"finalCtaText": {
-			"pt": "Seja para consultoria, mentoria ou um convite para palestrar, o primeiro passo é uma conversa.",
-			"en": "Whether for consulting, mentoring, or a speaking engagement, the first step is a conversation."
+			"pt-PT": "Seja para consultoria, mentoria ou um convite para palestrar, o primeiro passo é uma conversa.",
+			"en": "Whether for consulting, mentoring, or a speaking engagement, the first step is a conversation.",
+			"pt-BR": "Seja para consultoria, mentoria ou um convite para palestrar, o primeiro passo é uma conversa."
 		},
 		"finalCtaLabel": {
-			"pt": "Agendar contacto",
-			"en": "Schedule a call"
+			"pt-PT": "Agendar contacto",
+			"en": "Schedule a call",
+			"pt-BR": "Agendar contacto"
 		}
 	},
 	"_template": "about"

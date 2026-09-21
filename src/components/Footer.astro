@@ -4,22 +4,30 @@ import { navigationItems } from "../lib/navigation";
 import { pathFor, type PublishedLocale, type RouteKey } from "../lib/routing";
 import Button from "./ui/Button.astro";
 import IconLink from "./IconLink.astro";
+import LanguageSelect from "./LanguageSelect";
+import { publishedLocales } from "../lib/routing";
 interface Props {
   config?: CmsConfig | null;
   locale?: PublishedLocale;
 }
 interface LocalizedLabel {
-  pt: string;
-  en: string;
+	"pt-PT": string;
+	"pt-BR": string;
+	pt_PT?: string;
+	pt_BR?: string;
+	en: string;
 }
 interface Profile {
   label?: LocalizedLabel | null;
   url?: string | null;
 }
 const { config, locale = "pt-PT" } = Astro.props;
-const languageField = locale === "pt-PT" ? "pt" : "en";
-const labelFor = (value: { pt: string; en: string } | null | undefined) =>
-  value?.[languageField] ?? "";
+const languageField = locale;
+const localizedConfig = (value: unknown) =>
+	(value as Record<string, string | null | undefined> | null | undefined)?.[languageField] ??
+	(value as Record<string, string | null | undefined> | null | undefined)?.[languageField.replace("-", "_")];
+const labelFor = (value: { "pt-PT"?: string; "pt-BR"?: string; en?: string } | null | undefined) =>
+	value?.[languageField] ?? "";
 const present = <T,>(value: T | null): value is T => value !== null;
 const navigation = navigationItems(config?.navigation, locale);
 const menus = navigation.filter((item) => item.children?.length);
@@ -33,31 +41,33 @@ const profiles = ((config?.contacts?.profiles as Profile[] | null | undefined) ?
 const serviceLanguages = (
   (config?.contacts?.serviceLanguages as (string | null)[] | null | undefined) ?? []
 ).filter((language: string | null): language is string => Boolean(language));
-const contactIntro = config?.footer?.contactIntro?.[languageField];
-const contactCta = config?.footer?.contactCta?.[languageField];
-const rightsReserved = config?.footer?.rightsReserved?.[languageField];
+const contactIntro = localizedConfig(config?.footer?.contactIntro);
+const contactCta = localizedConfig(config?.footer?.contactCta);
+const rightsReserved = localizedConfig(config?.footer?.rightsReserved);
 const profileIcon = (label: string, url: string) => {
   const value = `${label} ${url}`.toLowerCase();
   if (value.includes("linkedin")) return "tabler:brand-linkedin";
   if (value.includes("instagram")) return "tabler:brand-instagram";
   return "tabler:external-link";
 };
-const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
-  practice: { pt: "Atuação", en: "Practice" },
-  home: { pt: "Início", en: "Home" },
-  "immigration-mobility": { pt: "Migração e mobilidade", en: "Immigration and mobility" },
-  legal: { pt: "Consultoria jurídica", en: "Legal consulting" },
-  "environmental-esg": { pt: "Ambiente e ESG", en: "Environmental and ESG" },
-  "public-policy": { pt: "Políticas públicas", en: "Public policy" },
-  mentoring: { pt: "Mentorias", en: "Mentoring" },
-  publications: { pt: "Publicações", en: "Publications" },
-  events: { pt: "Eventos", en: "Events" },
-  training: { pt: "Formações", en: "Training" },
-  about: { pt: "Sobre", en: "About" },
-  contact: { pt: "Contacto", en: "Contact" },
-  privacy: { pt: "Política de privacidade", en: "Privacy policy" },
-  accessibility: { pt: "Declaração de acessibilidade", en: "Accessibility statement" },
+const legalLabels: Record<RouteKey, { "pt-PT": string; "pt-BR": string; en: string }> = {
+  practice: { "pt-PT": "Atuação", "pt-BR": "Atuação", en: "Practice" },
+  home: { "pt-PT": "Início", "pt-BR": "Início", en: "Home" },
+  "immigration-mobility": { "pt-PT": "Migração e mobilidade", "pt-BR": "Migração e mobilidade", en: "Immigration and mobility" },
+  legal: { "pt-PT": "Consultoria jurídica", "pt-BR": "Consultoria jurídica", en: "Legal consulting" },
+  "environmental-esg": { "pt-PT": "Ambiente e ESG", "pt-BR": "Ambiental e ESG", en: "Environmental and ESG" },
+  "public-policy": { "pt-PT": "Políticas públicas", "pt-BR": "Políticas públicas", en: "Public policy" },
+  mentoring: { "pt-PT": "Mentorias", "pt-BR": "Mentorias", en: "Mentoring" },
+  publications: { "pt-PT": "Publicações", "pt-BR": "Publicações", en: "Publications" },
+  events: { "pt-PT": "Eventos", "pt-BR": "Eventos", en: "Events" },
+  training: { "pt-PT": "Formações", "pt-BR": "Formações", en: "Training" },
+  about: { "pt-PT": "Sobre", "pt-BR": "Sobre", en: "About" },
+  contact: { "pt-PT": "Contacto", "pt-BR": "Contato", en: "Contact" },
+  privacy: { "pt-PT": "Política de privacidade", "pt-BR": "Política de privacidade", en: "Privacy policy" },
+  accessibility: { "pt-PT": "Declaração de acessibilidade", "pt-BR": "Declaração de acessibilidade", en: "Accessibility statement" },
 };
+const languageOptions = publishedLocales.map((candidate) => ({ locale: candidate, label: candidate === "pt-PT" ? "Português (Portugal)" : candidate === "pt-BR" ? "Português (Brasil)" : "English", flag: candidate === "pt-PT" ? "🇵🇹" : candidate === "pt-BR" ? "🇧🇷" : "🇬🇧", href: pathFor("home", candidate) }));
+const currentLanguage = languageOptions.find((option) => option.locale === locale) ?? languageOptions[0];
 ---
 
 <footer class="site-footer">
@@ -145,6 +155,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
       }
     </div>
   </div>
+  <div class="site-container pb-8"><LanguageSelect client:load current={currentLanguage} options={languageOptions} label="Escolher idioma / Choose language" /></div>
   <div class="footer-legal">
     <div class="site-container footer-legal__inner">
       <div class="footer-legal__brand">
@@ -182,7 +193,7 @@ const legalLabels: Record<RouteKey, { pt: string; en: string }> = {
       <p>
         © {new Date().getFullYear()}
         &nbsp;
-        {rightsReserved ?? config?.footer?.copyright?.[languageField] ?? "Ana Trevizan"}
+        {rightsReserved ?? localizedConfig(config?.footer?.copyright) ?? "Ana Trevizan"}
       </p>
     </div>
   </div>

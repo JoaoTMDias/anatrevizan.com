@@ -19,7 +19,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const service = data.consultingService as ConsultingServiceContent | null | undefined;
-const locale = data.locale === "en" ? "en" : "pt-PT";
+const locale = data.locale;
 const crosslink =
   service?.crosslinkRouteKey && isRouteKey(service.crosslinkRouteKey)
     ? pathFor(service.crosslinkRouteKey, locale)
