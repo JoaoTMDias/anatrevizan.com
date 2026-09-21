@@ -28,7 +28,11 @@ export function createEditorialBuildReport(
 	allowEmptyProduction = false,
 ) {
 	const contentDirectory = join(root, "src/content/pages");
-	const outputDirectory = join(root, "dist");
+	const distDirectory = join(root, "dist");
+	const clientDirectory = join(distDirectory, "client");
+	const outputDirectory = existsSync(clientDirectory)
+		? clientDirectory
+		: distDirectory;
 	const sourceFiles = readdirSync(contentDirectory, { recursive: true }).filter(
 		(file): file is string =>
 			typeof file === "string" && file.endsWith(".json"),

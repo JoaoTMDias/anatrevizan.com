@@ -9,9 +9,13 @@ export async function getStaticPaths() {
 	const pages = await resolveEditorialPages(previewEnabled);
 
 	return routeKeys.flatMap((routeKey) => {
-		const localizedPaths = publishedLocales
+		const locales =
+			routeKey === "home"
+				? publishedLocales.filter((locale) => locale !== "pt-PT")
+				: publishedLocales;
+		const localizedPaths = locales
 			.map((locale) => ({
-				params: { slug: routeMap[routeKey][locale] === '/' ? undefined : routeMap[routeKey][locale].slice(1) },
+				params: { slug: routeMap[routeKey][locale].slice(1) },
 				props: { routeKey, locale },
 			}))
 			.filter(({ props }) => {
