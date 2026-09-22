@@ -337,7 +337,7 @@
 		@apply flex flex-col md:flex-row flex-wrap gap-4 mt-4;
 	}
 	.contact-message {
-		scroll-margin-top: 2rem;
+		scroll-margin-top: var(--site-header-scroll-offset);
 	}
 	.contact-message:target {
 		outline: 2px solid var(--ring);

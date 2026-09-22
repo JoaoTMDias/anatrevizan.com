@@ -35,7 +35,7 @@ export const islands: IslandRegistry = {
 	global: {
 		fetch: () => getConfig(),
 		component: Header,
-		wrapper: { tag: "div" },
+		wrapper: { tag: "div", className: "tina-global-island" },
 		propsFromData: (data, params) => ({
 			config: (data as QueryResult<ConfigQuery>).data?.config as
 				| CmsConfig

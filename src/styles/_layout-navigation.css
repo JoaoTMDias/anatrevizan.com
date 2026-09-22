@@ -21,6 +21,7 @@
 		list-style: none;
 		cursor: pointer;
 	}
+
 	.nav-menu__trigger::-webkit-details-marker {
 		display: none;
 	}

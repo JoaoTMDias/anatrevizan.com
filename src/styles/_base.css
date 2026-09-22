@@ -41,6 +41,47 @@
 
 	html {
 		@apply font-sans;
+
+		--site-header-scroll-offset: calc(var(--spacing) * 18);
+		scroll-padding-top: var(--site-header-scroll-offset);
+	}
+}
+
+@layer components {
+	.header-sticky-sentinel {
+		height: 1px;
+		margin-bottom: -1px;
+		width: 100%;
+	}
+
+	/* Keep Tina's island marker without constraining sticky descendants. */
+	.tina-global-island {
+		display: contents;
+	}
+
+	.site-header {
+		--site-header-height: calc(var(--spacing) * 16);
+
+		@apply sticky top-0 z-40 bg-background shadow-sm transition-all duration-180;
+
+		height: var(--site-header-height);
+		min-height: var(--site-header-height);
+	}
+
+	.site-header[data-stuck] {
+		--site-header-height: calc(var(--spacing) * 14);
+
+		@apply border-b border-border/70 shadow-md;
+
+		.logo-header__lettering {
+			@apply opacity-0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.site-header {
+			transition: none;
+		}
 	}
 }
 
