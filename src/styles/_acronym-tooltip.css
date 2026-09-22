@@ -5,6 +5,8 @@
 
 	.acronym-tooltip__trigger {
 		@apply cursor-help underline decoration-1 decoration-dotted decoration-[var(--accent)] underline-offset-2;
+
+		scroll-margin-top: var(--site-header-scroll-offset);
 	}
 
 	.acronym-tooltip__trigger:focus-visible {

@@ -24,13 +24,17 @@ function position({ trigger, content }: TooltipParts) {
 
 	const triggerRect = trigger.getBoundingClientRect();
 	const tooltipRect = content.getBoundingClientRect();
-	const roomAbove = triggerRect.top;
+	const headerBottom =
+		document.querySelector<HTMLElement>("[data-site-header]")?.getBoundingClientRect()
+			.bottom ?? 0;
+	const roomAbove = triggerRect.top - headerBottom;
 	const placement =
 		roomAbove >= tooltipRect.height + VIEWPORT_GAP * 2 ? "top" : "bottom";
-	const top =
+	const preferredTop =
 		placement === "top"
 			? triggerRect.top - tooltipRect.height - VIEWPORT_GAP
 			: triggerRect.bottom + VIEWPORT_GAP;
+	const top = Math.max(headerBottom + VIEWPORT_GAP, preferredTop);
 	const idealLeft =
 		triggerRect.left + triggerRect.width / 2 - tooltipRect.width / 2;
 	const left = Math.min(

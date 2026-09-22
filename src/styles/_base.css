@@ -72,10 +72,6 @@
 		--site-header-height: calc(var(--spacing) * 14);
 
 		@apply border-b border-border/70 shadow-md;
-
-		.logo-header__lettering {
-			@apply opacity-0;
-		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
