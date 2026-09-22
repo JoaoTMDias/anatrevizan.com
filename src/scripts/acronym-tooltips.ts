@@ -25,8 +25,9 @@ function position({ trigger, content }: TooltipParts) {
 	const triggerRect = trigger.getBoundingClientRect();
 	const tooltipRect = content.getBoundingClientRect();
 	const headerBottom =
-		document.querySelector<HTMLElement>("[data-site-header]")?.getBoundingClientRect()
-			.bottom ?? 0;
+		document
+			.querySelector<HTMLElement>("[data-site-header]")
+			?.getBoundingClientRect().bottom ?? 0;
 	const roomAbove = triggerRect.top - headerBottom;
 	const placement =
 		roomAbove >= tooltipRect.height + VIEWPORT_GAP * 2 ? "top" : "bottom";
